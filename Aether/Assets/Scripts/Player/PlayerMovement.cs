@@ -6,18 +6,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float movementSpeed = 5;
 
+    [SerializeField]
+    private float jumpPower;
+
     private CharacterController characterController;
-    private Vector2 movementInput;
+    private Vector3 localMovement;
+
 
     public void Awake()
     {
         characterController = GetComponent<CharacterController>();
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
-        Vector3 localMovement = (transform.right * movementInput.x + transform.forward * movementInput.y) * movementSpeed;
-
+        
         if (!characterController.isGrounded)
         {
             // Add our gravity Vector
@@ -31,6 +34,18 @@ public class PlayerMovement : MonoBehaviour
     // Contains a Vector2 for the movement direction.
     public void Move(CallbackContext context)
     {
-        movementInput = context.ReadValue<Vector2>();
+        Vector2 movementInput = context.ReadValue<Vector2>();
+        localMovement = (transform.right * movementInput.x + transform.forward * movementInput.y) * movementSpeed;
+    }
+
+    public void Jump(CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (characterController.isGrounded)
+            {
+                localMovement.y = jumpPower;
+            }
+        }
     }
 }
