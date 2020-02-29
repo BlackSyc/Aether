@@ -14,14 +14,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
-        this.characterController = this.GetComponent<CharacterController>();
+        characterController = GetComponent<CharacterController>();
     }
 
     // Gets called from PlayerInput when the movement action is triggered.
     // Contains a Vector2 for the movement direction.
     public void Move(CallbackContext context)
     {
-        this.movementInput = context.ReadValue<Vector2>();
+        movementInput = context.ReadValue<Vector2>();
     }
 
     void Update()
