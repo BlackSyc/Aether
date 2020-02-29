@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,10 +9,22 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController characterController;
     private Vector2 movementInput;
 
-
-    void Awake()
+    public void Awake()
     {
         characterController = GetComponent<CharacterController>();
+    }
+
+    public void Update()
+    {
+        Vector3 localMovement = (transform.right * movementInput.x + transform.forward * movementInput.y) * movementSpeed;
+
+        if (!characterController.isGrounded)
+        {
+            // Add our gravity Vector
+            localMovement += Physics.gravity;
+        }
+
+        characterController.Move(localMovement * Time.deltaTime);
     }
 
     // Gets called from PlayerInput when the movement action is triggered.
@@ -22,11 +32,5 @@ public class PlayerMovement : MonoBehaviour
     public void Move(CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
-    }
-
-    void Update()
-    {
-        Vector3 localMovement = transform.right * movementInput.x + transform.forward * movementInput.y;
-        characterController.Move(localMovement * movementSpeed * Time.deltaTime);
     }
 }
