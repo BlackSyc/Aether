@@ -20,14 +20,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
-        
         if (!characterController.isGrounded)
         {
             // Add our gravity Vector
-            localMovement += Physics.gravity;
+            localMovement += Physics.gravity * Time.fixedDeltaTime;
         }
 
-        characterController.Move(localMovement * Time.deltaTime);
+        characterController.Move(localMovement * Time.fixedDeltaTime);
     }
 
     // Gets called from PlayerInput when the movement action is triggered.
@@ -35,7 +34,9 @@ public class PlayerMovement : MonoBehaviour
     public void Move(CallbackContext context)
     {
         Vector2 movementInput = context.ReadValue<Vector2>();
+        float upwardsMovement = localMovement.y;
         localMovement = (transform.right * movementInput.x + transform.forward * movementInput.y) * movementSpeed;
+        localMovement.y = upwardsMovement;
     }
 
     public void Jump(CallbackContext context)
