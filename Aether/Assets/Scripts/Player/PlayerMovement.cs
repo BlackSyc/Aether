@@ -5,13 +5,15 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float movementSpeed = 5;
-
     [SerializeField]
-    private float jumpPower;
+    private float rotationSpeed = 5;
+    [SerializeField]
+    private float jumpPower = 5;
+
+    private Vector3 movementInput;
+    private float upwardsMovement = 0;
 
     private CharacterController characterController;
-    private Vector3 localMovement;
-
 
     public void Awake()
     {
@@ -20,11 +22,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
+        Vector3 localMovement = (transform.right * movementInput.x + transform.forward * movementInput.y) * movementSpeed;
+        localMovement.y = upwardsMovement;
+
         if (!characterController.isGrounded)
         {
             // Add our gravity Vector
             localMovement += Physics.gravity * Time.fixedDeltaTime;
         }
+
+        upwardsMovement = localMovement.y;
 
         characterController.Move(localMovement * Time.fixedDeltaTime);
     }
@@ -33,20 +40,21 @@ public class PlayerMovement : MonoBehaviour
     // Contains a Vector2 for the movement direction.
     public void Move(CallbackContext context)
     {
-        Vector2 movementInput = context.ReadValue<Vector2>();
-        float upwardsMovement = localMovement.y;
-        localMovement = (transform.right * movementInput.x + transform.forward * movementInput.y) * movementSpeed;
-        localMovement.y = upwardsMovement;
+        movementInput = context.ReadValue<Vector2>();
     }
 
     public void Jump(CallbackContext context)
     {
-        if (context.started)
+        if (context.started && characterController.isGrounded)
         {
-            if (characterController.isGrounded)
-            {
-                localMovement.y = jumpPower;
-            }
+            upwardsMovement = jumpPower;
         }
+    }
+
+    public void Rotate(CallbackContext context)
+    {
+        Vector2 lookInput = context.ReadValue<Vector2>();
+        Vector3 localRotation = transform.up * lookInput.x * rotationSpeed;
+        transform.Rotate(localRotation * Time.deltaTime, Space.World);
     }
 }
