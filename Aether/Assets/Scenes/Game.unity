@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -457,6 +458,24 @@ Transform:
   m_Father: {fileID: 1138305640}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79c451f1fc0e454cbe58c84a9601c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPivot: {fileID: 1138305639}
+  rotationSpeed: 10
+  zoomSpeed: 5
+  zoomDistanceMultiplier: 0.005
+  minZoomDistance: 2.5
+  maxZoomDistance: 10
 --- !u!1 &1138305639
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,9 +485,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1138305640}
-  - component: {fileID: 1138305641}
   m_Layer: 0
-  m_Name: CameraOrbit
+  m_Name: CameraPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -489,19 +507,6 @@ Transform:
   m_Father: {fileID: 205025359}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
---- !u!114 &1138305641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138305639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d79c451f1fc0e454cbe58c84a9601c50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 10
 --- !u!1 &1500325365
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,7 +680,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1138305641}
+      - m_Target: {fileID: 963194229}
         m_MethodName: Rotate
         m_Mode: 0
         m_Arguments:
@@ -688,6 +693,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3e3dec64-8c1a-49d2-a07a-bcbdac484b23
     m_ActionName: Player/Rotation[/Mouse/delta/x,/Mouse/delta/x]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 963194229}
+        m_MethodName: Zoom
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fe7767d3-39ee-49e2-bdda-8e974e378aad
+    m_ActionName: Player/Zoom[/Mouse/scroll]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
