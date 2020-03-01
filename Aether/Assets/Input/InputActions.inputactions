@@ -44,6 +44,14 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "SwapActionMap",
+                    "type": "Button",
+                    "id": "a037d2ed-f02d-4178-b989-9c48c7b77fa6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -145,6 +153,17 @@
                     "action": "Zoom",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "10202580-9391-40cd-8ed8-502c29984fd8",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwapActionMap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -153,7 +172,7 @@
             "id": "5625ece3-9ebe-4fac-be4d-c36d80359ea4",
             "actions": [
                 {
-                    "name": "ToggleUI",
+                    "name": "SwapActionMap",
                     "type": "Button",
                     "id": "0f0bab17-3dc9-4edc-9979-0769e0cdba7c",
                     "expectedControlType": "",
@@ -169,7 +188,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ToggleUI",
+                    "action": "SwapActionMap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
