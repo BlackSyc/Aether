@@ -168,7 +168,7 @@ MonoBehaviour:
     showEyeDropper: 1
   maxFogDistance:
     m_OverrideState: 1
-    m_Value: 100
+    m_Value: 87.8
     min: 0
   mipFogMaxMip:
     m_OverrideState: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
     min: 0
   baseHeight:
     m_OverrideState: 1
-    m_Value: -1.5
+    m_Value: 2.6
   maximumHeight:
     m_OverrideState: 0
     m_Value: 50
