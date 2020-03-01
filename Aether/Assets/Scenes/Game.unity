@@ -470,12 +470,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79c451f1fc0e454cbe58c84a9601c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPivot: {fileID: 1138305639}
+  cameraPivot: {fileID: 1138305640}
   rotationSpeed: 10
   zoomSpeed: 5
   zoomDistanceMultiplier: 0.005
   minZoomDistance: 2.5
   maxZoomDistance: 10
+  preferredZoomDistance: 7.5
+  xRotation: 0
 --- !u!1 &1138305639
 GameObject:
   m_ObjectHideFlags: 0
