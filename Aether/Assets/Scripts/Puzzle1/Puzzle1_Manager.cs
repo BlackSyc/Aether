@@ -5,17 +5,29 @@ using UnityEngine;
 public class Puzzle1_Manager : MonoBehaviour
 {
     [SerializeField]
-    private List<Puzzle1_Child> puzzlePieces;
+    private GameObject puzzle1_Trigger;
 
     [SerializeField]
-    private Material puzzleCompleteMaterial;
+    private Material triggeredMaterial;
 
-    public void CheckPuzzleComplete()
+    [SerializeField]
+    private List<Puzzle1_Child> puzzlePieces;
+
+
+    public void Trigger(Puzzle1_Child child)
     {
-        if(puzzlePieces.TrueForAll(x => x.IsTriggered))
+        child.IsTriggered = true;
+        child.GetComponent<MeshRenderer>().material = triggeredMaterial;
+        if (puzzlePieces.TrueForAll(x => x.IsTriggered))
         {
-            GetComponent<MeshRenderer>().material = puzzleCompleteMaterial;
-            Debug.Log("Puzzle1 completed!");
+            CompletePuzzle();
         }
+    }
+
+    public void CompletePuzzle()
+    {
+        GetComponent<MeshRenderer>().material = triggeredMaterial;
+        GetComponent<Animator>().SetTrigger("Complete");
+        Destroy(puzzle1_Trigger);
     }
 }
