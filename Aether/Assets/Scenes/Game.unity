@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8192d647e657cfb4687602d5e471dca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed: 10
   rotationSpeed: 5
   jumpPower: 5
 --- !u!143 &205025358
@@ -4972,6 +4972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ea3c880fbda394caf01df17a91d6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzle1_Trigger: {fileID: 334036038}
   triggeredMaterial: {fileID: 2100000, guid: f6992b3035a793346ae0242594ab6978, type: 2}
   puzzlePieces:
   - {fileID: 6514783930703526676}
