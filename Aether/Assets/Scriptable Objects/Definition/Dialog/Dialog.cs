@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
 
-[CreateAssetMenu(menuName = "Dialog/Dialog")]
+[CreateAssetMenu(menuName = "Scriptable Objects/Dialog/Dialog")]
 public class Dialog : ScriptableObject
 {
     public List<DialogLine> dialogLines;
