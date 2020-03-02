@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Arcane Missile
   m_EditorClassIdentifier: 
   Name: Arcane Missile
-  castDuration: 10
+  castDuration: 1
   coolDown: 20
-  SpellObject: {fileID: 229573813302224, guid: 9fee57749fb9ba245a40c411a6a4ece1, type: 3}
+  SpellObject: {fileID: 1244014788113687684, guid: 9fee57749fb9ba245a40c411a6a4ece1,
+    type: 3}

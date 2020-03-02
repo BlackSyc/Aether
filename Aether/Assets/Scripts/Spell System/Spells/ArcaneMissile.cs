@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class ArcaneMissile : SpellObject
 {
+
+    [SerializeField]
+    private float lifeTime = 10;
+
+    private bool travelling = false;
+    private float despawnTime;
+
+    [SerializeField]
+    private float movementSpeed;
     public override void CastCanceled()
     {
         Debug.Log("Arcane Missile Cancelled!");
@@ -11,16 +20,30 @@ public class ArcaneMissile : SpellObject
 
     public override void CastStarted()
     {
-        Debug.Log("Arcane Missile Cast started!");
+        GetComponent<Animator>().SetTrigger("CastStarted");
     }
 
     public override void CastFired()
     {
-        Debug.Log("Arcane Missile Fired!");
+        GetComponent<Animator>().SetTrigger("CastFired");
+        transform.SetParent(null, true);
+        travelling = true;
+        despawnTime = Time.time + lifeTime;
     }
 
     public override void CastInterrupted()
     {
         Debug.Log("Arcane Missile Interrupted!");
+    }
+
+    private void FixedUpdate()
+    {
+        if (travelling)
+        {
+            if(despawnTime < Time.time)
+                Destroy(this.gameObject);
+
+            transform.Translate(new Vector3(0, 0, movementSpeed * Time.fixedDeltaTime), Space.Self);
+        }
     }
 }
