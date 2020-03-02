@@ -9,6 +9,7 @@ public class Interaction : UnityEvent<Interactor, Interactable>{}
 
 public class Interactable : MonoBehaviour
 {
+    public string TooltipText = "to interact";
 
     public Interaction interaction;
 

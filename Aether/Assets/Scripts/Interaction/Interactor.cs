@@ -18,7 +18,7 @@ public class Interactor : MonoBehaviour
         if (context.performed)
         {
             currentInteractable?.Interact(with: this);
-            // ADD: animate tooltip
+            TooltipManager.GetInteractionTooltip().PerformAnimation();
         }
     }
 
@@ -28,12 +28,12 @@ public class Interactor : MonoBehaviour
         if (interactables.Length > 0)
         {
             currentInteractable = interactables[0].GetComponent<Interactable>();
-            TooltipManager.ShowInteractionTooltip();
+            TooltipManager.GetInteractionTooltip().Activate(currentInteractable.TooltipText);
         }
         else
         {
             currentInteractable = null;
-            TooltipManager.HideInteractionTooltip();
+            TooltipManager.GetInteractionTooltip().Deactivate();
         }
     }
 
