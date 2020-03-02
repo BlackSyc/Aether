@@ -303,14 +303,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellSlot1:
     spell: {fileID: 0}
+    coolDownUntil: 0
   spellSlot2:
     spell: {fileID: 0}
+    coolDownUntil: 0
   spellSlot3:
     spell: {fileID: 0}
+    coolDownUntil: 0
   spellSlot4:
     spell: {fileID: 0}
+    coolDownUntil: 0
   spellSlot5:
     spell: {fileID: 0}
+    coolDownUntil: 0
 --- !u!64 &205697926
 MeshCollider:
   m_ObjectHideFlags: 0
