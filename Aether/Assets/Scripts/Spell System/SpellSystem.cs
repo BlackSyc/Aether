@@ -22,13 +22,28 @@ public class SpellSystem : MonoBehaviour
         if (!context.performed)
             return;
 
-        if (!spellSlot1.hasActiveSpell())
+        if (!spellSlot1.HasActiveSpell)
         {
             Debug.LogWarning("No spell bound!");
             return;
         }
-        currentSpellCast = new SpellCast(spellSlot1?.spell, transform);
+
+        currentSpellCast?.Cancel();
+
+        currentSpellCast = spellSlot1.Cast(transform);
+        if(currentSpellCast == null)
+            return;
+
+        currentSpellCast.CastEvents.AddListener(HandleCastEvents);
         StartCoroutine(currentSpellCast.Start());
+    }
+
+    public void HandleCastEvents(EventType castEvent, SpellCast spellCast)
+    {
+        if(castEvent == EventType.CastCancelled || castEvent == EventType.CastComplete)
+        {
+            currentSpellCast = null;
+        }
     }
 
 }
