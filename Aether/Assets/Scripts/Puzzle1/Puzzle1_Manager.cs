@@ -13,6 +13,9 @@ public class Puzzle1_Manager : MonoBehaviour
     [SerializeField]
     private List<Puzzle1_Child> puzzlePieces;
 
+    [SerializeField]
+    private GameObject aspectOfCreation;
+
 
     public void Trigger(Puzzle1_Child child)
     {
@@ -29,5 +32,6 @@ public class Puzzle1_Manager : MonoBehaviour
         GetComponent<MeshRenderer>().material = triggeredMaterial;
         GetComponent<Animator>().SetTrigger("Complete");
         Destroy(puzzle1_Trigger);
+        aspectOfCreation.SetActive(true);
     }
 }
