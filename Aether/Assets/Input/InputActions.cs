@@ -38,7 +38,7 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""aaf50eed-de6a-4aa4-b4e1-9f22efcee2c4"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },

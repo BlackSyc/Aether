@@ -13,6 +13,16 @@ public class Puzzle1_Manager : MonoBehaviour
     [SerializeField]
     private List<Puzzle1_Child> puzzlePieces;
 
+    [SerializeField]
+    private GameObject aspectOfCreation;
+
+
+    private Material defaultMaterial;
+
+    public void Start()
+    {
+        defaultMaterial = GetComponent<MeshRenderer>().material;
+    }
 
     public void Trigger(Puzzle1_Child child)
     {
@@ -20,14 +30,23 @@ public class Puzzle1_Manager : MonoBehaviour
         child.GetComponent<MeshRenderer>().material = triggeredMaterial;
         if (puzzlePieces.TrueForAll(x => x.IsTriggered))
         {
-            CompletePuzzle();
+            CompleteStage1();
         }
     }
 
-    public void CompletePuzzle()
+    public void CompleteStage1()
     {
         GetComponent<MeshRenderer>().material = triggeredMaterial;
-        GetComponent<Animator>().SetTrigger("Complete");
+        GetComponent<Animator>().SetTrigger("Stage1_Complete");
         Destroy(puzzle1_Trigger);
+        aspectOfCreation.SetActive(true);
+    }
+
+    public void StartStage2()
+    {
+        Destroy(aspectOfCreation);
+        Debug.Log("Started stage 2!");
+        GetComponent<MeshRenderer>().material = defaultMaterial;
+        GetComponent<Animator>().SetTrigger("Stage2_Start");
     }
 }
