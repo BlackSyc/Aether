@@ -7,22 +7,20 @@ public class AspectOfCreation : MonoBehaviour
     [SerializeField]
     private Puzzle1_Manager puzzleManager;
 
-    private List<string> dialog = new List<string>() { 
-        "Greetings, Scryer.", 
-        "We didn't expect you here so soon...", 
-        "The others haven't even completed the-",
-        "-Never mind... Let's get you going.", 
-        "Take this. Just... Don't upset the others..." };
+    [SerializeField]
+    private Dialog dialog;
 
     public void Interact(Interactor interactor, Interactable interactable)
     {
         interactable.IsActive = false;
-        DialogCallback callBack = WindowManager.GetDialogWindow().StartDialog(dialog);
-        callBack.DialogComplete.AddListener(() => Despawn());
+        dialog.Line("Never mind")?.OnComplete(() => GrantArcaneMissile());
+        dialog.OnComplete(() => puzzleManager.StartStage2());
+        dialog.Start();
     }
 
-    public void Despawn()
+    private void GrantArcaneMissile()
     {
-        puzzleManager.StartStage2();
+        //ADD: call to add Arcane Missile to the player
+        Debug.Log("Player has received the ability to cast Arcane Missile!");
     }
 }

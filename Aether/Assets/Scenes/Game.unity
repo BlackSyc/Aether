@@ -1755,6 +1755,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38967ceaf92dc454bba986d7fe2bb74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleManager: {fileID: 7598736670066065866}
+  dialog: {fileID: 11400000, guid: d4070c8a5f59d98459cdad6974956379, type: 2}
 --- !u!64 &1154177982
 MeshCollider:
   m_ObjectHideFlags: 0

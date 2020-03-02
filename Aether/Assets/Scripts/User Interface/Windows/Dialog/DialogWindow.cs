@@ -3,17 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-
-public class DialogCallback
-{
-    public UnityEvent DialogComplete;
-
-    public DialogCallback()
-    {
-        DialogComplete = new UnityEvent();
-    }
-}
-
 public class DialogWindow : MonoBehaviour
 {
     [SerializeField]
@@ -32,26 +21,24 @@ public class DialogWindow : MonoBehaviour
 
     
 
-    public DialogCallback StartDialog(List<string> dialogLines)
+    public void StartDialog(Dialog dialog)
     {
-        DialogCallback callBack = new DialogCallback();
-        StartCoroutine(DialogCoroutine(dialogLines, callBack));
-        return callBack;
+        StartCoroutine(DialogCoroutine(dialog));
     }
 
-    private IEnumerator DialogCoroutine(List<string> dialogLines, DialogCallback callBack)
+    private IEnumerator DialogCoroutine(Dialog dialog)
     {
-        foreach(string dialogLine in dialogLines)
+        foreach(DialogLine dialogLine in dialog.dialogLines)
         {
-            dialogText.text = dialogLine;
+            dialogText.text = dialogLine.Content;
             animator.SetBool("ShowText", true);
             yield return new WaitForSeconds(dialogLineDuration);
 
             animator.SetBool("ShowText", false);
             yield return new WaitForSeconds(dialogLineTransitionDuration);
-            //callBack.LineComplete.Invoke(dialogLine);
+            dialogLine.Complete();
 
         }
-        callBack.DialogComplete.Invoke();
+        dialog.Complete();
     }
 }
