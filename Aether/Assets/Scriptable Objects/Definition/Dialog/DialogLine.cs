@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(menuName = "Dialog/DialogLine")]
+[CreateAssetMenu(menuName = "Scriptable Objects/Dialog/DialogLine")]
 public class DialogLine : ScriptableObject
 {
     public string Name;
