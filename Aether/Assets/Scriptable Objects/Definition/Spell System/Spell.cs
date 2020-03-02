@@ -12,4 +12,20 @@ public class Spell : ScriptableObject
     public float coolDown;
 
     public SpellObject SpellObject;
+
+    private float coolDownUntil;
+
+    public void SetCoolDownUntil(float coolDownUntil)
+    {
+        this.coolDownUntil = coolDownUntil;
+    }
+
+    public float getCoolDownUntil()
+    {
+        return this.coolDownUntil;
+    }
+
+
+
+
 }

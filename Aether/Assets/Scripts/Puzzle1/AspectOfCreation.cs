@@ -10,8 +10,14 @@ public class AspectOfCreation : MonoBehaviour
     [SerializeField]
     private Dialog dialog;
 
+    [SerializeField]
+    private Spell reward;
+
+    private Interactor interactor;
+
     public void Interact(Interactor interactor, Interactable interactable)
     {
+        this.interactor = interactor;
         interactable.IsActive = false;
         dialog.Line("Never mind")?.OnComplete(() => GrantArcaneMissile());
         dialog.OnComplete(() => puzzleManager.StartStage2());
@@ -20,7 +26,7 @@ public class AspectOfCreation : MonoBehaviour
 
     private void GrantArcaneMissile()
     {
-        //ADD: call to add Arcane Missile to the player
+        interactor.transform.parent.GetComponent<SpellSystem>().spellSlot1.spell = reward;
         Debug.Log("Player has received the ability to cast Arcane Missile!");
     }
 }
