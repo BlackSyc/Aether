@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AspectOfCreation : MonoBehaviour
 {
+    [SerializeField]
+    private Puzzle1_Manager puzzleManager;
+
     private List<string> dialog = new List<string>() { 
         "Greetings, Scryer.", 
         "We didn't expect you here so soon...", 
@@ -14,6 +17,12 @@ public class AspectOfCreation : MonoBehaviour
     public void Interact(Interactor interactor, Interactable interactable)
     {
         interactable.IsActive = false;
-        WindowManager.GetDialogWindow().StartDialog(dialog);
+        DialogCallback callBack = WindowManager.GetDialogWindow().StartDialog(dialog);
+        callBack.DialogComplete.AddListener(() => Despawn());
+    }
+
+    public void Despawn()
+    {
+        puzzleManager.StartStage2();
     }
 }
