@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
+using System.Linq;
 
 public class Interactor : MonoBehaviour
 {
@@ -24,10 +25,13 @@ public class Interactor : MonoBehaviour
 
     public void CheckForInteractables()
     {
-        Collider[] interactables = Physics.OverlapSphere(this.transform.position, interactionRadius, layers);
-        if (interactables.Length > 0)
+        //IEnumerable<Interactable> test1 = Physics.OverlapSphere(this.transform.position, interactionRadius, layers).Select(x => x.GetComponent<Interactable>());
+        //Interactable test2 = test1.FirstOrDefault(x => x.IsActive);
+
+        Interactable interactable = Physics.OverlapSphere(this.transform.position, interactionRadius, layers).Select(x => x.GetComponent<Interactable>()).FirstOrDefault(x => x.IsActive);
+        if (interactable != null)
         {
-            currentInteractable = interactables[0].GetComponent<Interactable>();
+            currentInteractable = interactable;
             TooltipManager.GetInteractionTooltip().Activate(currentInteractable.TooltipText);
         }
         else

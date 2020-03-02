@@ -11,11 +11,13 @@ public class Interactable : MonoBehaviour
 {
     public string TooltipText = "to interact";
 
-    public Interaction interaction;
+    public Interaction Interaction;
+
+    public bool IsActive = true;
 
     public void Interact(Interactor with)
     {
         Debug.Log("interacted");
-        interaction.Invoke(with, this);
+        Interaction.Invoke(with, this);
     }
 }
