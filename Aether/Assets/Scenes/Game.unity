@@ -626,43 +626,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Missile:
-    Spell: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
+    Spell: {fileID: 0}
     coolDownUntil: 0
     SpellChanged:
       m_PersistentCalls:
         m_Calls: []
   spellType2:
-    Spell: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
+    Spell: {fileID: 0}
     coolDownUntil: 0
     SpellChanged:
       m_PersistentCalls:
         m_Calls: []
   spellType3:
-    Spell: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
+    Spell: {fileID: 0}
     coolDownUntil: 0
     SpellChanged:
       m_PersistentCalls:
         m_Calls: []
   spellType4:
-    Spell: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
+    Spell: {fileID: 0}
     coolDownUntil: 0
     SpellChanged:
       m_PersistentCalls:
         m_Calls: []
   spellType5:
-    Spell: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
+    Spell: {fileID: 0}
     coolDownUntil: 0
     SpellChanged:
       m_PersistentCalls:
         m_Calls: []
   spellType6:
-    Spell: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
+    Spell: {fileID: 0}
     coolDownUntil: 0
     SpellChanged:
       m_PersistentCalls:
         m_Calls: []
   spellType7:
-    Spell: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
+    Spell: {fileID: 0}
     coolDownUntil: 0
     SpellChanged:
       m_PersistentCalls:
@@ -3358,7 +3358,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141515415}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
