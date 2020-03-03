@@ -47,6 +47,10 @@ public class SpellButton : MonoBehaviour
             castBar.Play("CastComplete", -1, 0f);
             StartCoroutine(CoolDown(cast.spell.coolDown + Time.time));
         }
+        if(eventType == EventType.CastCancelled)
+        {
+            castBar.Play("CastCancelled", -1);
+        }
     }
 
     private IEnumerator CoolDown(float until)

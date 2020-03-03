@@ -69,6 +69,7 @@ public class SpellCast
     public void Cancel()
     {
         spellObject.GetComponent<SpellObject>().CastCanceled();
+        CastEvents?.Invoke(EventType.CastCancelled, this);
         castCancelled = true;
     }
 
