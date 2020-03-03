@@ -42,6 +42,14 @@ public class SpellSystem : MonoBehaviour
         StartCoroutine(currentSpellCast.Start());
     }
 
+    public void CancelCast(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        currentSpellCast?.Cancel();
+    }
+
     public void HandleCastEvents(EventType castEvent, SpellCast spellCast)
     {
         if(castEvent == EventType.CastCancelled || castEvent == EventType.CastComplete)

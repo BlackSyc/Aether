@@ -16,7 +16,7 @@ public class ArcaneMissile : SpellObject
 
     public override void CastCanceled()
     {
-        Debug.Log("Arcane Missile Cancelled!");
+        Destroy(this.gameObject);
     }
 
     public override void CastStarted()
