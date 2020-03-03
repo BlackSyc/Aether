@@ -16,17 +16,24 @@ public class SpellCast
 {
     public CastEvent CastEvents;
 
+    public float CastProgress { get
+        {
+            return castTime / spell.castDuration;
+        } }
+
     private Transform caster;
 
     private GameObject spellObject;
 
     public Spell spell { get; private set; }
 
-    private float endCast;
-
     private float beginCast;
 
+    private float castTime = 0;
+
     private bool castCancelled = false;
+
+
 
     public SpellCast(Spell spell, Transform caster)
     {
@@ -38,15 +45,16 @@ public class SpellCast
     public IEnumerator Start()
     {
         beginCast = Time.time;
-        endCast = beginCast + spell.castDuration;
+        castTime = Time.time - beginCast;
         spellObject = GameObject.Instantiate(spell.SpellObject.gameObject, caster);
 
         spellObject.GetComponent<SpellObject>().Spell = spell;
         spellObject.GetComponent<SpellObject>().CastStarted();
         CastEvents?.Invoke(EventType.CastStarted, this);
 
-        while(Time.time < endCast)
+        while(castTime < spell.castDuration)
         {
+            castTime = Time.time - beginCast;
             if (castCancelled)
                 yield break;
 

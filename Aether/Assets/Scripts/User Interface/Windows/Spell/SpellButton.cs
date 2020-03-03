@@ -14,6 +14,9 @@ public class SpellButton : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI text;
 
+    [SerializeField]
+    private Animator castBar;
+
     public void LinkToSpellType(SpellType spellType)
     {
         linkedSpellType = spellType;
@@ -30,16 +33,18 @@ public class SpellButton : MonoBehaviour
     private void NewSpellCast(SpellCast spellCast)
     {
         spellCast.CastEvents.AddListener(HandleSpellCastEvents);
+        castBar.Play("Cast", -1, 0f);
     }
 
     private void HandleSpellCastEvents(EventType eventType, SpellCast cast)
     {
         if(eventType == EventType.CastProgress)
         {
-            
+            castBar.Play("Cast", -1, cast.CastProgress);
         }
         if(eventType == EventType.CastComplete)
         {
+            castBar.Play("CastComplete", -1, 0f);
             StartCoroutine(CoolDown(cast.spell.coolDown + Time.time));
         }
     }
@@ -48,7 +53,7 @@ public class SpellButton : MonoBehaviour
     {
         while(Time.time < until)
         {
-            text.text = ((int)(until - Time.time)).ToString();
+            text.text = ((int)(until - Time.time) + 1).ToString();
             yield return null;
         }
         text.text = linkedSpellType.Spell.Name;
