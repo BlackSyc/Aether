@@ -26,7 +26,7 @@ public class AspectOfCreation : MonoBehaviour
 
     private void GrantArcaneMissile()
     {
-        interactor.transform.parent.GetComponent<SpellSystem>().spellSlot1.spell = reward;
+        interactor.transform.parent.GetComponent<SpellSystem>().Missile.SetSpell(reward);
         Debug.Log("Player has received the ability to cast Arcane Missile!");
     }
 }

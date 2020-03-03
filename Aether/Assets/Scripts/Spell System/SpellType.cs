@@ -2,22 +2,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
+public class SpellCastEvent : UnityEvent<SpellCast>{}
 [Serializable]
-public class SpellSlot
+public class SpellType
 {
-    public Spell spell;
+    public Spell Spell;
 
-    public float coolDownUntil;
+    [HideInInspector]
+    public float coolDownUntil = 0;
+
+    [HideInInspector]
+    public UnityEvent SpellChanged;
+
+    public SpellCastEvent NewSpellCast = new SpellCastEvent();
+
+    public void SetSpell(Spell spell)
+    {
+        Spell = spell;
+        SpellChanged?.Invoke();
+    }
 
     public bool HasActiveSpell { get
         {
-            return spell != null;
+            return Spell != null;
         } }
 
     public SpellCast Cast(Transform parent)
     {
-        if (spell != null)
+        if (Spell != null)
         {
             if (Time.time < coolDownUntil)
             {
@@ -25,8 +39,9 @@ public class SpellSlot
                 return null;
             }
 
-            SpellCast spellCast = new SpellCast(spell, parent);
+            SpellCast spellCast = new SpellCast(Spell, parent);
             spellCast.CastEvents.AddListener(SetCooldown);
+            NewSpellCast.Invoke(spellCast);
             return spellCast;
         }
         else

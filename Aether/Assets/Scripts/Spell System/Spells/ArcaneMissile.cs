@@ -12,7 +12,8 @@ public class ArcaneMissile : SpellObject
     private float despawnTime;
 
     [SerializeField]
-    private float movementSpeed;
+    private float movementSpeed = 20;
+
     public override void CastCanceled()
     {
         Debug.Log("Arcane Missile Cancelled!");
@@ -20,6 +21,7 @@ public class ArcaneMissile : SpellObject
 
     public override void CastStarted()
     {
+        GetComponent<Animator>().SetFloat("CastTime", 1/Spell.castDuration);
         GetComponent<Animator>().SetTrigger("CastStarted");
     }
 

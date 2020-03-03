@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class SpellObject : MonoBehaviour
 {
+    public Spell Spell;
+
     public abstract void CastStarted();
 
     public abstract void CastInterrupted();
