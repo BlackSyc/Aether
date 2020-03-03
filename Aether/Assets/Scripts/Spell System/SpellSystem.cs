@@ -7,22 +7,26 @@ public class SpellSystem : MonoBehaviour
 {
     private SpellCast currentSpellCast;
 
-    public SpellSlot spellSlot1;
+    public SpellType Missile;
 
-    public SpellSlot spellSlot2;
+    public SpellType spellType2;
 
-    public SpellSlot spellSlot3;
+    public SpellType spellType3;
 
-    public SpellSlot spellSlot4;
+    public SpellType spellType4;
 
-    public SpellSlot spellSlot5;
+    public SpellType spellType5;
 
-    public void CastSpell1(CallbackContext context)
+    public SpellType spellType6;
+
+    public SpellType spellType7;
+
+    public void CastMissile(CallbackContext context)
     {
         if (!context.performed)
             return;
 
-        if (!spellSlot1.HasActiveSpell)
+        if (!Missile.HasActiveSpell)
         {
             Debug.LogWarning("No spell bound!");
             return;
@@ -30,7 +34,7 @@ public class SpellSystem : MonoBehaviour
 
         currentSpellCast?.Cancel();
 
-        currentSpellCast = spellSlot1.Cast(transform);
+        currentSpellCast = Missile.Cast(transform);
         if(currentSpellCast == null)
             return;
 

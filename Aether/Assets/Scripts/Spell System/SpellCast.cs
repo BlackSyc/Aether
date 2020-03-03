@@ -41,6 +41,7 @@ public class SpellCast
         endCast = beginCast + spell.castDuration;
         spellObject = GameObject.Instantiate(spell.SpellObject.gameObject, caster);
 
+        spellObject.GetComponent<SpellObject>().Spell = spell;
         spellObject.GetComponent<SpellObject>().CastStarted();
         CastEvents?.Invoke(EventType.CastStarted, this);
 
