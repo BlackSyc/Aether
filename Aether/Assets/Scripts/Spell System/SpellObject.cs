@@ -12,6 +12,6 @@ public abstract class SpellObject : MonoBehaviour
 
     public abstract void CastCanceled();
 
-    public abstract void CastFired();
+    public abstract void CastFired(Target target);
 
 }

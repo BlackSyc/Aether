@@ -13,15 +13,16 @@ public class SpellType
     [HideInInspector]
     public float coolDownUntil = 0;
 
-    [HideInInspector]
-    public UnityEvent SpellChanged;
+    public delegate void SpellChangedEventHandler(SpellType spellType);
+    public event SpellChangedEventHandler SpellChanged;
 
-    public SpellCastEvent NewSpellCast = new SpellCastEvent();
+    public delegate void NewSpellCastEventHandler(SpellCast spellCast);
+    public event NewSpellCastEventHandler NewSpellCast;
 
     public void SetSpell(Spell spell)
     {
         Spell = spell;
-        SpellChanged?.Invoke();
+        SpellChanged?.Invoke(this);
     }
 
     public bool HasActiveSpell { get
@@ -29,7 +30,7 @@ public class SpellType
             return Spell != null;
         } }
 
-    public SpellCast Cast(Transform parent)
+    public SpellCast Cast(Transform parent, TargetManager targetManager)
     {
         if (Spell != null)
         {
@@ -39,24 +40,15 @@ public class SpellType
                 return null;
             }
 
-            SpellCast spellCast = new SpellCast(Spell, parent);
-            spellCast.CastEvents.AddListener(SetCooldown);
-            NewSpellCast.Invoke(spellCast);
+            SpellCast spellCast = new SpellCast(Spell, parent, targetManager);
+            spellCast.CastComplete += x => coolDownUntil = Time.time + x.Spell.CoolDown;
+            NewSpellCast?.Invoke(spellCast);
             return spellCast;
         }
         else
         {
             Debug.LogWarning("No spell bound to this spell slot!");
             return null;
-        }
-    }
-
-
-    public void SetCooldown(EventType castEvent, SpellCast spellCast)
-    {
-        if (castEvent == EventType.CastComplete)
-        {
-            coolDownUntil = Time.time + spellCast.spell.coolDown;
         }
     }
 }
