@@ -18,6 +18,6 @@ MonoBehaviour:
   CastWhileMoving: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 1536
   SpellObject: {fileID: 1244014788113687684, guid: 9fee57749fb9ba245a40c411a6a4ece1,
     type: 3}
