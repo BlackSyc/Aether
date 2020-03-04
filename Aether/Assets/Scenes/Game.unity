@@ -663,9 +663,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
   maxRange: 100
-  layers:
+  targetLayer:
     serializedVersion: 2
     m_Bits: 512
+  obstructionLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!64 &205697926
 MeshCollider:
   m_ObjectHideFlags: 0

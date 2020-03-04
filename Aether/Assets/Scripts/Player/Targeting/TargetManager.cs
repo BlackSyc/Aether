@@ -12,7 +12,10 @@ public class TargetManager : MonoBehaviour
     private float maxRange = 100f;
 
     [SerializeField]
-    private LayerMask layers;
+    private LayerMask targetLayer;
+
+    [SerializeField]
+    private LayerMask obstructionLayer;
 
     public bool HasLockedTarget { get
         {
@@ -29,11 +32,28 @@ public class TargetManager : MonoBehaviour
         if (lockedTarget != null)
             return lockedTarget;
 
-        RaycastHit hit;
-        if (Physics.Raycast(camera.position, camera.forward, out hit, maxRange, layers))
+        RaycastHit obstructionHit;
+        bool obstructionHitFound = Physics.Raycast(camera.position, camera.forward, out obstructionHit, maxRange, obstructionLayer);
+
+        RaycastHit targetHit;
+        bool targetHitFound = Physics.Raycast(camera.position, camera.forward, out targetHit, maxRange, targetLayer);
+
+        if (targetHitFound)
         {
-            return new Target(hit.transform);
+            if(obstructionHitFound)
+            {
+                if (Vector3.Distance(camera.position, targetHit.transform.position) > Vector3.Distance(camera.position, obstructionHit.point))
+                {
+                    return new Target(obstructionHit.point);
+                }
+            }
+            return new Target(targetHit.transform);
         }
+        else if(obstructionHitFound)
+        {
+            return new Target(obstructionHit.point);
+        }
+
 
         Vector3 emptyTargetPosition = camera.position + camera.forward * maxRange;
 

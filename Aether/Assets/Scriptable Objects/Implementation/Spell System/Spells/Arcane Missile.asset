@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Arcane Missile
   CastDuration: 1.5
   CoolDown: 2
-  CastWhileMoving: 0
+  CastWhileMoving: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 1536
