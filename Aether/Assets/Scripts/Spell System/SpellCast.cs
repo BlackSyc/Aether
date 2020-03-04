@@ -4,19 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum EventType
-{
-    CastStarted, CastProgress, CastComplete, CastCancelled, CastInterrupted 
-}
-
-[Serializable]
-public class CastEvent : UnityEvent<EventType, SpellCast> { }
-
 public class SpellCast
 {
-    public CastEvent CastEvents;
+    public delegate void CastEventHandler(SpellCast cast);
+    public event CastEventHandler CastStarted;
+    public event CastEventHandler CastProgress;
+    public event CastEventHandler CastCancelled;
+    public event CastEventHandler CastInterrupted;
+    public event CastEventHandler CastComplete;
 
-    public float CastProgress { get
+    
+    public float Progress { get
         {
             return castTime / spell.CastDuration;
         } }
@@ -39,7 +37,6 @@ public class SpellCast
     {
         this.spell = spell;
         this.castParent = castParent;
-        CastEvents = new CastEvent();
     }
 
     public IEnumerator Start()
@@ -50,7 +47,7 @@ public class SpellCast
 
         spellObject.GetComponent<SpellObject>().Spell = spell;
         spellObject.GetComponent<SpellObject>().CastStarted();
-        CastEvents?.Invoke(EventType.CastStarted, this);
+        CastStarted?.Invoke(this);
 
         while(castTime < spell.CastDuration)
         {
@@ -58,25 +55,25 @@ public class SpellCast
             if (castCancelled)
                 yield break;
 
-            CastEvents?.Invoke(EventType.CastProgress, this);
+            CastProgress?.Invoke(this);
             yield return null;
         }
 
         spellObject.GetComponent<SpellObject>().CastFired();
-        CastEvents?.Invoke(EventType.CastComplete, this);
+        CastComplete?.Invoke(this);
     }
 
     public void Cancel()
     {
         spellObject.GetComponent<SpellObject>().CastCanceled();
-        CastEvents?.Invoke(EventType.CastCancelled, this);
+        CastCancelled?.Invoke(this);
         castCancelled = true;
     }
 
     public void Interrupt()
     {
         spellObject.GetComponent<SpellObject>().CastInterrupted();
-        CastEvents?.Invoke(EventType.CastInterrupted, this);
+        CastInterrupted?.Invoke(this);
         Cancel();
     }
 

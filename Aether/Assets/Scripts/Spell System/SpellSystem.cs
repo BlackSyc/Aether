@@ -41,7 +41,8 @@ public class SpellSystem : MonoBehaviour
         if (currentSpellCast == null)
             return;
 
-        currentSpellCast.CastEvents.AddListener(HandleCastEvents);
+        currentSpellCast.CastCancelled += x => this.currentSpellCast = null;
+        currentSpellCast.CastComplete += x => this.currentSpellCast = null;
         StartCoroutine(currentSpellCast.Start());
     }
 
@@ -65,14 +66,6 @@ public class SpellSystem : MonoBehaviour
             return;
 
         currentSpellCast?.Cancel();
-    }
-
-    public void HandleCastEvents(EventType castEvent, SpellCast spellCast)
-    {
-        if(castEvent == EventType.CastCancelled || castEvent == EventType.CastComplete)
-        {
-            currentSpellCast = null;
-        }
     }
 
 }

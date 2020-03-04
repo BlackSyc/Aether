@@ -20,8 +20,8 @@ public class SpellButton : MonoBehaviour
     public void LinkToSpellType(SpellType spellType)
     {
         linkedSpellType = spellType;
-        linkedSpellType.SpellChanged.AddListener(ChangeSpell);
-        linkedSpellType.NewSpellCast.AddListener(NewSpellCast);
+        linkedSpellType.NewSpellCast += NewSpellCast;
+        linkedSpellType.SpellChanged += ChangeSpell;
 
         if (linkedSpellType.HasActiveSpell)
         {
@@ -32,25 +32,15 @@ public class SpellButton : MonoBehaviour
 
     private void NewSpellCast(SpellCast spellCast)
     {
-        spellCast.CastEvents.AddListener(HandleSpellCastEvents);
         castBar.Play("Cast", -1, 0f);
-    }
 
-    private void HandleSpellCastEvents(EventType eventType, SpellCast cast)
-    {
-        if(eventType == EventType.CastProgress)
-        {
-            castBar.Play("Cast", -1, cast.CastProgress);
-        }
-        if(eventType == EventType.CastComplete)
+        spellCast.CastProgress += x => castBar.Play("Cast", -1, x.Progress);
+        spellCast.CastCancelled += x => castBar.Play("CastCancelled", -1);
+        spellCast.CastComplete += x =>
         {
             castBar.Play("CastComplete", -1, 0f);
-            StartCoroutine(CoolDown(cast.spell.CoolDown + Time.time));
-        }
-        if(eventType == EventType.CastCancelled)
-        {
-            castBar.Play("CastCancelled", -1);
-        }
+            StartCoroutine(CoolDown(x.spell.CoolDown + Time.time));
+        };
     }
 
     private IEnumerator CoolDown(float until)
@@ -64,10 +54,10 @@ public class SpellButton : MonoBehaviour
 
     }
 
-    private void ChangeSpell()
+    private void ChangeSpell(SpellType spellType)
     {
         mainPanel.SetActive(true);
-        text.text = linkedSpellType.Spell.Name;
+        text.text = spellType.Spell.Name;
         //TODO: Change button icon like:
         //icon.sprite = linkedSpellSlot.Spell.Icon;
     }
