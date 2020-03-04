@@ -16,14 +16,16 @@ public class SpellCast
     
     public float Progress { get
         {
-            return castTime / spell.CastDuration;
+            return castTime / Spell.CastDuration;
         } }
 
-    private Transform castParent;
+    public Transform CastParent { get; private set; }
 
     private GameObject spellObject;
 
-    public Spell spell { get; private set; }
+    public Spell Spell { get; private set; }
+
+    private TargetManager targetManager;
 
     private float beginCast;
 
@@ -33,33 +35,42 @@ public class SpellCast
 
 
 
-    public SpellCast(Spell spell, Transform castParent)
+    public SpellCast(Spell spell, Transform castParent, TargetManager targetManager)
     {
-        this.spell = spell;
-        this.castParent = castParent;
+        Spell = spell;
+        CastParent = castParent;
+        this.targetManager = targetManager;
     }
 
     public IEnumerator Start()
     {
         beginCast = Time.time;
         castTime = Time.time - beginCast;
-        spellObject = GameObject.Instantiate(spell.SpellObject.gameObject, castParent);
+        spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, CastParent);
 
-        spellObject.GetComponent<SpellObject>().Spell = spell;
+        spellObject.GetComponent<SpellObject>().Spell = Spell;
         spellObject.GetComponent<SpellObject>().CastStarted();
         CastStarted?.Invoke(this);
 
-        while(castTime < spell.CastDuration)
+        Target initialTarget = targetManager.GetCurrentTarget();
+        if (initialTarget.HasTargetTransform)
+            targetManager.LockTarget(initialTarget);
+
+        while(castTime < Spell.CastDuration)
         {
             castTime = Time.time - beginCast;
             if (castCancelled)
+            {
+                targetManager.UnlockTarget();
                 yield break;
+            }
 
             CastProgress?.Invoke(this);
             yield return null;
         }
 
-        spellObject.GetComponent<SpellObject>().CastFired();
+        spellObject.GetComponent<SpellObject>().CastFired(targetManager.GetCurrentTarget());
+        targetManager.UnlockTarget();
         CastComplete?.Invoke(this);
     }
 

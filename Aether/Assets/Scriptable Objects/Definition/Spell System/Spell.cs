@@ -13,6 +13,8 @@ public class Spell : ScriptableObject
 
     public bool CastWhileMoving;
 
+    public LayerMask layerMask;
+
     public SpellObject SpellObject;
 
 }

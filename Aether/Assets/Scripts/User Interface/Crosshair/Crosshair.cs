@@ -9,6 +9,6 @@ public class Crosshair : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Animator>().SetBool("HasObjectTarget", targetManager.GetCurrentTarget().HasTargetObject);
+        GetComponent<Animator>().SetBool("HasObjectTarget", targetManager.GetCurrentTarget().HasTargetTransform);
     }
 }

@@ -30,7 +30,7 @@ public class SpellType
             return Spell != null;
         } }
 
-    public SpellCast Cast(Transform parent)
+    public SpellCast Cast(Transform parent, TargetManager targetManager)
     {
         if (Spell != null)
         {
@@ -40,8 +40,8 @@ public class SpellType
                 return null;
             }
 
-            SpellCast spellCast = new SpellCast(Spell, parent);
-            spellCast.CastComplete += x => coolDownUntil = Time.time + x.spell.CoolDown;
+            SpellCast spellCast = new SpellCast(Spell, parent, targetManager);
+            spellCast.CastComplete += x => coolDownUntil = Time.time + x.Spell.CoolDown;
             NewSpellCast?.Invoke(spellCast);
             return spellCast;
         }

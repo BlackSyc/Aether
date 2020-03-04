@@ -19,7 +19,7 @@ public class ArcaneMissile : SpellObject
 
     private Quaternion initialRotation;
 
-    public Vector3 TargetPosition;
+    public Target Target;
 
     public override void CastCanceled()
     {
@@ -32,8 +32,9 @@ public class ArcaneMissile : SpellObject
         GetComponent<Animator>().SetTrigger("CastStarted");
     }
 
-    public override void CastFired()
+    public override void CastFired(Target target)
     {
+        Target = target;
         GetComponent<Animator>().SetTrigger("CastFired");
         transform.SetParent(null, true);
         initialRotation = transform.rotation;
@@ -46,6 +47,13 @@ public class ArcaneMissile : SpellObject
         Debug.Log("Arcane Missile Interrupted!");
     }
 
+    private void Hit()
+    {
+        travelling = false;
+        GetComponent<Animator>().SetTrigger("CastHit");
+        Destroy(this.gameObject, 1);
+    }
+
     private void FixedUpdate()
     {
         if (travelling)
@@ -53,10 +61,17 @@ public class ArcaneMissile : SpellObject
             if(despawnTime < Time.time)
                 Destroy(this.gameObject);
 
+            if(Physics.OverlapSphere(transform.position, .5f, Spell.layerMask).Length > 0)
+            {
+                Hit();
+            }
+
             transform.Translate(new Vector3(0, 0, movementSpeed * Time.fixedDeltaTime), Space.Self);
 
-            //Quaternion desiredRotation = Quaternion.LookRotation(TargetPosition - transform.position, transform.up);
-            //transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.fixedDeltaTime);
+            Quaternion desiredRotation = Quaternion.LookRotation(Target.Position - transform.position, transform.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.fixedDeltaTime);
         }
     }
+
+
 }

@@ -4,21 +4,30 @@ using UnityEngine;
 
 public class Target
 {
-    public GameObject TargetObject { get; private set; }
-    public Vector3 Position { get; private set; }
-    public bool HasTargetObject { get; private set; } = false;
+    public Vector3 Position { get {
+            return HasTargetTransform ? targetTransform.position : targetPosition;
+        }}
+
+    public bool HasTargetTransform
+    {
+        get
+        {
+            return targetTransform != null;
+        }
+    }
+
+    private Transform targetTransform;
+
+    private Vector3 targetPosition;
 
     public Target(Vector3 position)
     {
-        TargetObject = null;
-        Position = position;
-        HasTargetObject = false;
+        targetTransform = null;
+        this.targetPosition = position;
     }
 
-    public Target(Vector3 position, GameObject targetObject)
+    public Target(Transform targetTransform)
     {
-        TargetObject = targetObject;
-        Position = position;
-        HasTargetObject = true;
+        this.targetTransform = targetTransform;
     }
 }

@@ -37,7 +37,7 @@ public class SpellSystem : MonoBehaviour
 
         currentSpellCast?.Cancel();
 
-        currentSpellCast = Missile.Cast(castParent);
+        currentSpellCast = Missile.Cast(castParent, this.GetComponent<TargetManager>());
         if (currentSpellCast == null)
             return;
 
@@ -52,7 +52,7 @@ public class SpellSystem : MonoBehaviour
         {
             if(currentSpellCast != null)
             {
-                if (!currentSpellCast.spell.CastWhileMoving)
+                if (!currentSpellCast.Spell.CastWhileMoving)
                 {
                     currentSpellCast.Cancel();
                 }

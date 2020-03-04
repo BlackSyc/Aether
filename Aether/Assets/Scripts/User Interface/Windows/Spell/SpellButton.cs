@@ -39,7 +39,7 @@ public class SpellButton : MonoBehaviour
         spellCast.CastComplete += x =>
         {
             castBar.Play("CastComplete", -1, 0f);
-            StartCoroutine(CoolDown(x.spell.CoolDown + Time.time));
+            StartCoroutine(CoolDown(x.Spell.CoolDown + Time.time));
         };
     }
 
