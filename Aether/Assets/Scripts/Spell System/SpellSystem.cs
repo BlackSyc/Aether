@@ -35,7 +35,17 @@ public class SpellSystem : MonoBehaviour
             return;
         }
 
-        currentSpellCast?.Cancel();
+        if(currentSpellCast != null)
+        {
+            if(currentSpellCast.Spell == Missile.Spell)
+            {
+                UpdateTargetLock();
+                return;
+            }
+            currentSpellCast.Cancel();
+        }
+
+        
 
         currentSpellCast = Missile.Cast(castParent, this.GetComponent<TargetManager>());
         if (currentSpellCast == null)
@@ -44,6 +54,27 @@ public class SpellSystem : MonoBehaviour
         currentSpellCast.CastCancelled += x => this.currentSpellCast = null;
         currentSpellCast.CastComplete += x => this.currentSpellCast = null;
         StartCoroutine(currentSpellCast.Start());
+    }
+
+    private void UpdateTargetLock()
+    {
+        if (!GetComponent<TargetManager>().HasLockedTarget && !GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
+            return;
+
+        if (GetComponent<TargetManager>().HasLockedTarget && !GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
+            return;
+
+        if (!GetComponent<TargetManager>().HasLockedTarget && GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
+        {
+            GetComponent<TargetManager>().LockTarget();
+            return;
+        }
+        if (GetComponent<TargetManager>().HasLockedTarget && GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
+        {
+            GetComponent<TargetManager>().UnlockTarget();
+            GetComponent<TargetManager>().LockTarget();
+            return;
+        }
     }
 
     public void MovementInterrupt(CallbackContext context)

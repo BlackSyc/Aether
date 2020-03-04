@@ -52,9 +52,8 @@ public class SpellCast
         spellObject.GetComponent<SpellObject>().CastStarted();
         CastStarted?.Invoke(this);
 
-        Target initialTarget = targetManager.GetCurrentTarget();
-        if (initialTarget.HasTargetTransform)
-            targetManager.LockTarget(initialTarget);
+        if (targetManager.GetCurrentTarget().HasTargetTransform)
+            targetManager.LockTarget();
 
         while(castTime < Spell.CastDuration)
         {
@@ -69,7 +68,7 @@ public class SpellCast
             yield return null;
         }
 
-        spellObject.GetComponent<SpellObject>().CastFired(targetManager.GetCurrentTarget());
+        spellObject.GetComponent<SpellObject>().CastFired(targetManager.Target);
         targetManager.UnlockTarget();
         CastComplete?.Invoke(this);
     }
@@ -87,6 +86,8 @@ public class SpellCast
         CastInterrupted?.Invoke(this);
         Cancel();
     }
+
+
 
 
 }

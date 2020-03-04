@@ -11,16 +11,38 @@ public class Crosshair : MonoBehaviour
     private RectTransform targetLock;
 
     [SerializeField]
+    private GameObject targetTracker;
+
+    [SerializeField]
     private Camera camera;
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        GetComponent<Animator>().SetBool("HasObjectTarget", targetManager.GetCurrentTarget().HasTargetTransform);
-        targetLock.anchoredPosition = Vector2.zero;
+        if(targetManager.GetCurrentTarget().HasTargetTransform)
+        {
+            if (targetManager.HasLockedTarget && targetManager.GetCurrentTarget().TargetTransform == targetManager.Target.TargetTransform)
+            {
+                GetComponent<Animator>().SetBool("HasObjectTarget", false);
+            }
+            else
+            {
+                GetComponent<Animator>().SetBool("HasObjectTarget", true);
+            }
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("HasObjectTarget", false);
+        }
+
         if (targetManager.HasLockedTarget)
         {
-            targetLock.position = camera.WorldToScreenPoint(targetManager.GetCurrentTarget().Position);
+            targetTracker.SetActive(true);
+            targetTracker.GetComponent<RectTransform>().position = camera.WorldToScreenPoint(targetManager.Target.Position);
+        }
+        else
+        {
+            targetTracker.SetActive(false);
         }
     }
 }
