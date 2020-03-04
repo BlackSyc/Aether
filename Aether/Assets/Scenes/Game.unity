@@ -628,7 +628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castParent: {fileID: 1033358240}
   Missile:
-    Spell: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
+    Spell: {fileID: 0}
     coolDownUntil: 0
     SpellChanged:
       m_PersistentCalls:
