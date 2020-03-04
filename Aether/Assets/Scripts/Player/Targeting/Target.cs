@@ -5,29 +5,29 @@ using UnityEngine;
 public class Target
 {
     public Vector3 Position { get {
-            return HasTargetTransform ? targetTransform.position : targetPosition;
+            return HasTargetTransform ? TargetTransform.position : targetPosition;
         }}
 
     public bool HasTargetTransform
     {
         get
         {
-            return targetTransform != null;
+            return TargetTransform != null;
         }
     }
 
-    private Transform targetTransform;
+    public Transform TargetTransform { get;  private set; }
 
     private Vector3 targetPosition;
 
     public Target(Vector3 position)
     {
-        targetTransform = null;
+        TargetTransform = null;
         this.targetPosition = position;
     }
 
     public Target(Transform targetTransform)
     {
-        this.targetTransform = targetTransform;
+        this.TargetTransform = targetTransform;
     }
 }

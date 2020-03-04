@@ -23,15 +23,20 @@ public class TargetManager : MonoBehaviour
         }
     }
 
+    public Target Target
+    {
+        get
+        {
+            return lockedTarget != null ? lockedTarget : GetCurrentTarget();
+        }
+    }
+
     private Target lockedTarget;
 
 
 
     public Target GetCurrentTarget()
     {
-        if (lockedTarget != null)
-            return lockedTarget;
-
         RaycastHit obstructionHit;
         bool obstructionHitFound = Physics.Raycast(camera.position, camera.forward, out obstructionHit, maxRange, obstructionLayer);
 
@@ -60,9 +65,9 @@ public class TargetManager : MonoBehaviour
         return new Target(emptyTargetPosition);
     }
 
-    public void LockTarget(Target target)
+    public void LockTarget()
     {
-        lockedTarget = target;
+        lockedTarget = GetCurrentTarget();
     }
 
     public void UnlockTarget()
