@@ -18,7 +18,7 @@ public class SpellCast
 
     public float CastProgress { get
         {
-            return castTime / spell.castDuration;
+            return castTime / spell.CastDuration;
         } }
 
     private Transform castParent;
@@ -52,7 +52,7 @@ public class SpellCast
         spellObject.GetComponent<SpellObject>().CastStarted();
         CastEvents?.Invoke(EventType.CastStarted, this);
 
-        while(castTime < spell.castDuration)
+        while(castTime < spell.CastDuration)
         {
             castTime = Time.time - beginCast;
             if (castCancelled)

@@ -56,7 +56,7 @@ public class SpellType
     {
         if (castEvent == EventType.CastComplete)
         {
-            coolDownUntil = Time.time + spellCast.spell.coolDown;
+            coolDownUntil = Time.time + spellCast.spell.CoolDown;
         }
     }
 }

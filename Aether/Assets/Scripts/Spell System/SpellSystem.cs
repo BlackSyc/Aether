@@ -38,11 +38,25 @@ public class SpellSystem : MonoBehaviour
         currentSpellCast?.Cancel();
 
         currentSpellCast = Missile.Cast(castParent);
-        if(currentSpellCast == null)
+        if (currentSpellCast == null)
             return;
 
         currentSpellCast.CastEvents.AddListener(HandleCastEvents);
         StartCoroutine(currentSpellCast.Start());
+    }
+
+    public void MovementInterrupt(CallbackContext context)
+    {
+        if (context.performed || context.started)
+        {
+            if(currentSpellCast != null)
+            {
+                if (!currentSpellCast.spell.CastWhileMoving)
+                {
+                    currentSpellCast.Cancel();
+                }
+            }
+        }
     }
 
     public void CancelCast(CallbackContext context)

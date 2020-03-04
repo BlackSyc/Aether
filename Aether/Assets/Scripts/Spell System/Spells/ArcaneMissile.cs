@@ -28,7 +28,7 @@ public class ArcaneMissile : SpellObject
 
     public override void CastStarted()
     {
-        GetComponent<Animator>().SetFloat("CastTime", 1/Spell.castDuration);
+        GetComponent<Animator>().SetFloat("CastTime", 1/Spell.CastDuration);
         GetComponent<Animator>().SetTrigger("CastStarted");
     }
 
@@ -55,8 +55,8 @@ public class ArcaneMissile : SpellObject
 
             transform.Translate(new Vector3(0, 0, movementSpeed * Time.fixedDeltaTime), Space.Self);
 
-            Quaternion desiredRotation = Quaternion.LookRotation(TargetPosition - transform.position, transform.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.fixedDeltaTime);
+            //Quaternion desiredRotation = Quaternion.LookRotation(TargetPosition - transform.position, transform.up);
+            //transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.fixedDeltaTime);
         }
     }
 }
