@@ -14,6 +14,13 @@ public class ArcaneMissile : SpellObject
     [SerializeField]
     private float movementSpeed = 20;
 
+    [SerializeField]
+    private float rotationSpeed = 500;
+
+    private Quaternion initialRotation;
+
+    public Vector3 TargetPosition;
+
     public override void CastCanceled()
     {
         Destroy(this.gameObject);
@@ -29,6 +36,7 @@ public class ArcaneMissile : SpellObject
     {
         GetComponent<Animator>().SetTrigger("CastFired");
         transform.SetParent(null, true);
+        initialRotation = transform.rotation;
         travelling = true;
         despawnTime = Time.time + lifeTime;
     }
@@ -46,6 +54,9 @@ public class ArcaneMissile : SpellObject
                 Destroy(this.gameObject);
 
             transform.Translate(new Vector3(0, 0, movementSpeed * Time.fixedDeltaTime), Space.Self);
+
+            Quaternion desiredRotation = Quaternion.LookRotation(TargetPosition - transform.position, transform.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.fixedDeltaTime);
         }
     }
 }

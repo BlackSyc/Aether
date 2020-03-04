@@ -5,6 +5,9 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class SpellSystem : MonoBehaviour
 {
+    [SerializeField]
+    private Transform castParent;
+
     private SpellCast currentSpellCast;
 
     public SpellType Missile;
@@ -34,7 +37,7 @@ public class SpellSystem : MonoBehaviour
 
         currentSpellCast?.Cancel();
 
-        currentSpellCast = Missile.Cast(transform);
+        currentSpellCast = Missile.Cast(castParent);
         if(currentSpellCast == null)
             return;
 

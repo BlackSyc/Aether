@@ -21,7 +21,7 @@ public class SpellCast
             return castTime / spell.castDuration;
         } }
 
-    private Transform caster;
+    private Transform castParent;
 
     private GameObject spellObject;
 
@@ -35,10 +35,10 @@ public class SpellCast
 
 
 
-    public SpellCast(Spell spell, Transform caster)
+    public SpellCast(Spell spell, Transform castParent)
     {
         this.spell = spell;
-        this.caster = caster;
+        this.castParent = castParent;
         CastEvents = new CastEvent();
     }
 
@@ -46,7 +46,7 @@ public class SpellCast
     {
         beginCast = Time.time;
         castTime = Time.time - beginCast;
-        spellObject = GameObject.Instantiate(spell.SpellObject.gameObject, caster);
+        spellObject = GameObject.Instantiate(spell.SpellObject.gameObject, castParent);
 
         spellObject.GetComponent<SpellObject>().Spell = spell;
         spellObject.GetComponent<SpellObject>().CastStarted();
