@@ -5,6 +5,9 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class SpellSystem : MonoBehaviour
 {
+    [SerializeField]
+    private Transform castParent;
+
     private SpellCast currentSpellCast;
 
     public SpellType Missile;
@@ -34,12 +37,27 @@ public class SpellSystem : MonoBehaviour
 
         currentSpellCast?.Cancel();
 
-        currentSpellCast = Missile.Cast(transform);
-        if(currentSpellCast == null)
+        currentSpellCast = Missile.Cast(castParent, this.GetComponent<TargetManager>());
+        if (currentSpellCast == null)
             return;
 
-        currentSpellCast.CastEvents.AddListener(HandleCastEvents);
+        currentSpellCast.CastCancelled += x => this.currentSpellCast = null;
+        currentSpellCast.CastComplete += x => this.currentSpellCast = null;
         StartCoroutine(currentSpellCast.Start());
+    }
+
+    public void MovementInterrupt(CallbackContext context)
+    {
+        if (context.performed || context.started)
+        {
+            if(currentSpellCast != null)
+            {
+                if (!currentSpellCast.Spell.CastWhileMoving)
+                {
+                    currentSpellCast.Cancel();
+                }
+            }
+        }
     }
 
     public void CancelCast(CallbackContext context)
@@ -48,14 +66,6 @@ public class SpellSystem : MonoBehaviour
             return;
 
         currentSpellCast?.Cancel();
-    }
-
-    public void HandleCastEvents(EventType castEvent, SpellCast spellCast)
-    {
-        if(castEvent == EventType.CastCancelled || castEvent == EventType.CastComplete)
-        {
-            currentSpellCast = null;
-        }
     }
 
 }
