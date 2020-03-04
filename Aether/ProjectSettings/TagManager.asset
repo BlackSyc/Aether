@@ -16,8 +16,8 @@ TagManager:
   - 
   - Interactable
   - Enemy
-  - 
-  - 
+  - Friendly
+  - MissileTarget
   - 
   - 
   - 

@@ -665,7 +665,7 @@ MonoBehaviour:
   maxRange: 100
   layers:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 3584
 --- !u!64 &205697926
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -795,7 +795,8 @@ GameObject:
   - component: {fileID: 287161786}
   - component: {fileID: 287161788}
   - component: {fileID: 287161787}
-  m_Layer: 0
+  - component: {fileID: 287161789}
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +812,7 @@ Transform:
   m_GameObject: {fileID: 287161785}
   m_LocalRotation: {x: 0.5000001, y: 0.49999988, z: 0.4999999, w: 0.5000001}
   m_LocalPosition: {x: -0.07043997, y: 0.06998004, z: 0.007420001}
-  m_LocalScale: {x: 0.06998, y: 0.002, z: 0.070439994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7641953851754198981}
   m_RootOrder: 0
@@ -983,6 +984,19 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &287161789
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287161785}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.005
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &296477066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,6 +1307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1948141725}
+  animator: {fileID: 334378989}
 --- !u!95 &334378989
 Animator:
   serializedVersion: 3
@@ -3893,7 +3908,8 @@ GameObject:
   - component: {fileID: 1189097487}
   - component: {fileID: 1189097489}
   - component: {fileID: 1189097488}
-  m_Layer: 0
+  - component: {fileID: 1189097490}
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4081,6 +4097,19 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &1189097490
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189097486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.005
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1204156573
 GameObject:
   m_ObjectHideFlags: 0
@@ -4447,7 +4476,8 @@ GameObject:
   - component: {fileID: 1371069656}
   - component: {fileID: 1371069658}
   - component: {fileID: 1371069657}
-  m_Layer: 0
+  - component: {fileID: 1371069659}
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4635,6 +4665,19 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &1371069659
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371069655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.005
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &1373962278
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6168,7 +6211,8 @@ GameObject:
   - component: {fileID: 1895513246}
   - component: {fileID: 1895513248}
   - component: {fileID: 1895513247}
-  m_Layer: 0
+  - component: {fileID: 1895513249}
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6184,7 +6228,7 @@ Transform:
   m_GameObject: {fileID: 1895513245}
   m_LocalRotation: {x: -0.00000013767877, y: -0.7071068, z: -0.70710677, w: -0.00000013767878}
   m_LocalPosition: {x: -0.06997997, y: 0.07044002, z: 0.007419991}
-  m_LocalScale: {x: 0.06998, y: 0.002, z: 0.070439994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3935021931425268156}
   m_RootOrder: 0
@@ -6356,6 +6400,19 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!135 &1895513249
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895513245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.005
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &1904928862
 MeshCollider:
   m_ObjectHideFlags: 0
