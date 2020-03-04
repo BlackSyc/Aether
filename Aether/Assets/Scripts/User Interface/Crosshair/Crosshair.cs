@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Crosshair : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    [SerializeField]
+    private TargetManager targetManager;
     // Update is called once per frame
     void Update()
     {
-        
+        GetComponent<Animator>().SetBool("HasObjectTarget", targetManager.GetCurrentTarget().HasTargetObject);
     }
 }
