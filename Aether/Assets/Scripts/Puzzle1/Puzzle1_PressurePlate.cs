@@ -15,7 +15,10 @@ public class Puzzle1_PressurePlate : MonoBehaviour
     {
         if (other.CompareTag("Puzzle1_Trigger") && !IsTriggered)
         {
-            puzzleManager.Trigger(this);
+            IsTriggered = true;
+            GetComponent<MeshRenderer>().material = puzzleManager.GlowingMaterial;
+
+            puzzleManager.TryCompleteStage1();
         }
     }
 }
