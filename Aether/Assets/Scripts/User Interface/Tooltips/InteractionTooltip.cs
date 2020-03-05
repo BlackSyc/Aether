@@ -8,20 +8,23 @@ public class InteractionTooltip : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI text;
 
+    [SerializeField]
+    private Animator animator;
+
 
     public void Activate(string message)
     {
         text.text = message;
-        GetComponent<Animator>().SetBool("Shown", true);
+        animator.SetBool("Shown", true);
     }
 
     public void Deactivate()
     {
-        GetComponent<Animator>().SetBool("Shown", false);
+        animator.SetBool("Shown", false);
     }
 
     public void PerformAnimation()
     {
-        GetComponent<Animator>().SetTrigger("Performed");
+        animator.SetTrigger("Performed");
     }
 }

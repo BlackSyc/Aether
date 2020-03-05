@@ -4,71 +4,90 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum EventType
-{
-    CastStarted, CastProgress, CastComplete, CastCancelled, CastInterrupted 
-}
-
-[Serializable]
-public class CastEvent : UnityEvent<EventType, SpellCast> { }
-
 public class SpellCast
 {
-    public CastEvent CastEvents;
+    public delegate void CastEventHandler(SpellCast cast);
+    public event CastEventHandler CastStarted;
+    public event CastEventHandler CastProgress;
+    public event CastEventHandler CastCancelled;
+    public event CastEventHandler CastInterrupted;
+    public event CastEventHandler CastComplete;
 
-    private Transform caster;
+    
+    public float Progress { get
+        {
+            return castTime / Spell.CastDuration;
+        } }
+
+    public Transform CastParent { get; private set; }
 
     private GameObject spellObject;
 
-    public Spell spell { get; private set; }
+    public Spell Spell { get; private set; }
 
-    private float endCast;
+    private TargetManager targetManager;
 
     private float beginCast;
 
+    private float castTime = 0;
+
     private bool castCancelled = false;
 
-    public SpellCast(Spell spell, Transform caster)
+
+
+    public SpellCast(Spell spell, Transform castParent, TargetManager targetManager)
     {
-        this.spell = spell;
-        this.caster = caster;
-        CastEvents = new CastEvent();
+        Spell = spell;
+        CastParent = castParent;
+        this.targetManager = targetManager;
     }
 
     public IEnumerator Start()
     {
         beginCast = Time.time;
-        endCast = beginCast + spell.castDuration;
-        spellObject = GameObject.Instantiate(spell.SpellObject.gameObject, caster);
+        castTime = Time.time - beginCast;
+        spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, CastParent);
 
+        spellObject.GetComponent<SpellObject>().Spell = Spell;
         spellObject.GetComponent<SpellObject>().CastStarted();
-        CastEvents?.Invoke(EventType.CastStarted, this);
+        CastStarted?.Invoke(this);
 
-        while(Time.time < endCast)
+        if (targetManager.GetCurrentTarget().HasTargetTransform)
+            targetManager.LockTarget();
+
+        while(castTime < Spell.CastDuration)
         {
+            castTime = Time.time - beginCast;
             if (castCancelled)
+            {
+                targetManager.UnlockTarget();
                 yield break;
+            }
 
-            CastEvents?.Invoke(EventType.CastProgress, this);
+            CastProgress?.Invoke(this);
             yield return null;
         }
 
-        spellObject.GetComponent<SpellObject>().CastFired();
-        CastEvents?.Invoke(EventType.CastComplete, this);
+        spellObject.GetComponent<SpellObject>().CastFired(targetManager.Target);
+        targetManager.UnlockTarget();
+        CastComplete?.Invoke(this);
     }
 
     public void Cancel()
     {
         spellObject.GetComponent<SpellObject>().CastCanceled();
+        CastCancelled?.Invoke(this);
         castCancelled = true;
     }
 
     public void Interrupt()
     {
         spellObject.GetComponent<SpellObject>().CastInterrupted();
-        CastEvents?.Invoke(EventType.CastInterrupted, this);
+        CastInterrupted?.Invoke(this);
         Cancel();
     }
+
+
 
 
 }

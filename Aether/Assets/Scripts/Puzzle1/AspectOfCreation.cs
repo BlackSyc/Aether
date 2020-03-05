@@ -11,6 +11,10 @@ public class AspectOfCreation : MonoBehaviour
     private Dialog dialog;
 
     [SerializeField]
+    private GameObject crosshair;
+    
+
+    [SerializeField]
     private Spell reward;
 
     private Interactor interactor;
@@ -26,7 +30,8 @@ public class AspectOfCreation : MonoBehaviour
 
     private void GrantArcaneMissile()
     {
-        interactor.transform.parent.GetComponent<SpellSystem>().spellSlot1.spell = reward;
+        interactor.transform.parent.GetComponent<SpellSystem>().Missile.SetSpell(reward);
+        crosshair.SetActive(true);
         Debug.Log("Player has received the ability to cast Arcane Missile!");
     }
 }

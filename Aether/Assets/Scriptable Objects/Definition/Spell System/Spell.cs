@@ -7,25 +7,14 @@ public class Spell : ScriptableObject
 {
     public string Name;
 
-    public float castDuration;
+    public float CastDuration;
 
-    public float coolDown;
+    public float CoolDown;
+
+    public bool CastWhileMoving;
+
+    public LayerMask layerMask;
 
     public SpellObject SpellObject;
-
-    private float coolDownUntil;
-
-    public void SetCoolDownUntil(float coolDownUntil)
-    {
-        this.coolDownUntil = coolDownUntil;
-    }
-
-    public float getCoolDownUntil()
-    {
-        return this.coolDownUntil;
-    }
-
-
-
 
 }

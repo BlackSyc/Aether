@@ -4,12 +4,14 @@ using UnityEngine;
 
 public abstract class SpellObject : MonoBehaviour
 {
+    public Spell Spell;
+
     public abstract void CastStarted();
 
     public abstract void CastInterrupted();
 
     public abstract void CastCanceled();
 
-    public abstract void CastFired();
+    public abstract void CastFired(Target target);
 
 }

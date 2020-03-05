@@ -5,45 +5,98 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class SpellSystem : MonoBehaviour
 {
+    [SerializeField]
+    private Transform castParent;
+
     private SpellCast currentSpellCast;
 
-    public SpellSlot spellSlot1;
+    public SpellType Missile;
 
-    public SpellSlot spellSlot2;
+    public SpellType spellType2;
 
-    public SpellSlot spellSlot3;
+    public SpellType spellType3;
 
-    public SpellSlot spellSlot4;
+    public SpellType spellType4;
 
-    public SpellSlot spellSlot5;
+    public SpellType spellType5;
 
-    public void CastSpell1(CallbackContext context)
+    public SpellType spellType6;
+
+    public SpellType spellType7;
+
+    public void CastMissile(CallbackContext context)
     {
         if (!context.performed)
             return;
 
-        if (!spellSlot1.HasActiveSpell)
+        if (!Missile.HasActiveSpell)
         {
             Debug.LogWarning("No spell bound!");
             return;
         }
 
-        currentSpellCast?.Cancel();
+        if(currentSpellCast != null)
+        {
+            if(currentSpellCast.Spell == Missile.Spell)
+            {
+                UpdateTargetLock();
+                return;
+            }
+            currentSpellCast.Cancel();
+        }
 
-        currentSpellCast = spellSlot1.Cast(transform);
-        if(currentSpellCast == null)
+        
+
+        currentSpellCast = Missile.Cast(castParent, this.GetComponent<TargetManager>());
+        if (currentSpellCast == null)
             return;
 
-        currentSpellCast.CastEvents.AddListener(HandleCastEvents);
+        currentSpellCast.CastCancelled += x => this.currentSpellCast = null;
+        currentSpellCast.CastComplete += x => this.currentSpellCast = null;
         StartCoroutine(currentSpellCast.Start());
     }
 
-    public void HandleCastEvents(EventType castEvent, SpellCast spellCast)
+    private void UpdateTargetLock()
     {
-        if(castEvent == EventType.CastCancelled || castEvent == EventType.CastComplete)
+        if (!GetComponent<TargetManager>().HasLockedTarget && !GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
+            return;
+
+        if (GetComponent<TargetManager>().HasLockedTarget && !GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
+            return;
+
+        if (!GetComponent<TargetManager>().HasLockedTarget && GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
         {
-            currentSpellCast = null;
+            GetComponent<TargetManager>().LockTarget();
+            return;
         }
+        if (GetComponent<TargetManager>().HasLockedTarget && GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
+        {
+            GetComponent<TargetManager>().UnlockTarget();
+            GetComponent<TargetManager>().LockTarget();
+            return;
+        }
+    }
+
+    public void MovementInterrupt(CallbackContext context)
+    {
+        if (context.performed || context.started)
+        {
+            if(currentSpellCast != null)
+            {
+                if (!currentSpellCast.Spell.CastWhileMoving)
+                {
+                    currentSpellCast.Cancel();
+                }
+            }
+        }
+    }
+
+    public void CancelCast(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        currentSpellCast?.Cancel();
     }
 
 }
