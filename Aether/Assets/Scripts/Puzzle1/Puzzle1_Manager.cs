@@ -67,7 +67,7 @@ public class Puzzle1_Manager : MonoBehaviour
     {
         Debug.Log("Completed Stage 2!");
         Stage2Complete = true;
-        //cloakParent.SetActive(true);
+        cloakParent.SetActive(true);
         missileTargets.ForEach(x => x.MoveToCloakPosition());
     }
 
