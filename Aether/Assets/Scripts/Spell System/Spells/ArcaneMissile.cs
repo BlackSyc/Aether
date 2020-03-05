@@ -47,11 +47,17 @@ public class ArcaneMissile : SpellObject
         Debug.Log("Arcane Missile Interrupted!");
     }
 
-    private void Hit()
+    private bool Hit()
     {
-        travelling = false;
-        GetComponent<Animator>().SetTrigger("CastHit");
-        Destroy(this.gameObject, 1);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, .5f, Spell.layerMask);
+        if (colliders.Length > 0)
+        {
+            colliders[0].GetComponent<ArcaneMissileTarget>()?.Hit();
+
+            GetComponent<Animator>().SetTrigger("CastHit");
+            return true;
+        }
+        return false;
     }
 
     private void FixedUpdate()
@@ -61,10 +67,14 @@ public class ArcaneMissile : SpellObject
             if(despawnTime < Time.time)
                 Destroy(this.gameObject);
 
-            if(Physics.OverlapSphere(transform.position, .5f, Spell.layerMask).Length > 0)
+            if (Hit())
             {
-                Hit();
+                travelling = false;
+                Destroy(this.gameObject, 1);
+                return;
             }
+
+            
 
             transform.Translate(new Vector3(0, 0, movementSpeed * Time.fixedDeltaTime), Space.Self);
 

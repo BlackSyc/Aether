@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Puzzle1_Child : MonoBehaviour
+public class Puzzle1_PressurePlate : MonoBehaviour
 {
     public bool IsTriggered { get; set; }
 
