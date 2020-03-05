@@ -48,7 +48,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Puzzle1_Diamond1/Point Light
+    path: Puzzle1_Diamond1/Missile Target
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -82,7 +82,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Puzzle1_Diamond2/Point Light
+    path: Puzzle1_Diamond2/Missile Target
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -116,7 +116,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Puzzle1_Diamond3/Point Light
+    path: Puzzle1_Diamond3/Missile Target
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -150,7 +150,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Puzzle1_Diamond4/Point Light
+    path: Puzzle1_Diamond4/Missile Target
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
@@ -162,28 +162,28 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1240567241
+      path: 2734375923
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4097564935
+      path: 2335438593
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 699218050
+      path: 626747024
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1423851226
+      path: 3634536165
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -245,7 +245,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Puzzle1_Diamond1/Point Light
+    path: Puzzle1_Diamond1/Missile Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -282,7 +282,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Puzzle1_Diamond1/Point Light
+    path: Puzzle1_Diamond1/Missile Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -319,7 +319,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Puzzle1_Diamond1/Point Light
+    path: Puzzle1_Diamond1/Missile Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -356,7 +356,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Puzzle1_Diamond2/Point Light
+    path: Puzzle1_Diamond2/Missile Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -393,7 +393,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Puzzle1_Diamond2/Point Light
+    path: Puzzle1_Diamond2/Missile Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -430,7 +430,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Puzzle1_Diamond2/Point Light
+    path: Puzzle1_Diamond2/Missile Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -467,7 +467,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Puzzle1_Diamond3/Point Light
+    path: Puzzle1_Diamond3/Missile Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -504,7 +504,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Puzzle1_Diamond3/Point Light
+    path: Puzzle1_Diamond3/Missile Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -541,7 +541,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Puzzle1_Diamond3/Point Light
+    path: Puzzle1_Diamond3/Missile Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -578,7 +578,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Puzzle1_Diamond4/Point Light
+    path: Puzzle1_Diamond4/Missile Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -615,7 +615,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Puzzle1_Diamond4/Point Light
+    path: Puzzle1_Diamond4/Missile Target
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -652,7 +652,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Puzzle1_Diamond4/Point Light
+    path: Puzzle1_Diamond4/Missile Target
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []
