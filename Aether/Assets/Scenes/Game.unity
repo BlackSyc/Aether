@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 287161790}
   - component: {fileID: 287161791}
   m_Layer: 9
-  m_Name: Missile Target
+  m_Name: MissileTarget_Corruption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1225,7 +1225,7 @@ Animator:
   m_GameObject: {fileID: 287161785}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b57ec7935d7b7ac409b8d5717ba695f7, type: 2}
+  m_Controller: {fileID: 9100000, guid: b5212a31e0fd4e84c90334bfcdeb145f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4458,7 +4458,7 @@ GameObject:
   - component: {fileID: 1189097491}
   - component: {fileID: 1189097492}
   m_Layer: 9
-  m_Name: Missile Target
+  m_Name: MissileTarget_Nightmare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4682,7 +4682,7 @@ Animator:
   m_GameObject: {fileID: 1189097486}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b57ec7935d7b7ac409b8d5717ba695f7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 98668ffb960b9c94381ee72740b362ba, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5061,7 +5061,7 @@ GameObject:
   - component: {fileID: 1371069660}
   - component: {fileID: 1371069661}
   m_Layer: 9
-  m_Name: Missile Target
+  m_Name: MissileTarget_Dream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7137,7 +7137,7 @@ GameObject:
   - component: {fileID: 1895513250}
   - component: {fileID: 1895513251}
   m_Layer: 9
-  m_Name: Missile Target
+  m_Name: MissileTarget_Illusion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7361,7 +7361,7 @@ Animator:
   m_GameObject: {fileID: 1895513245}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b57ec7935d7b7ac409b8d5717ba695f7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 87da2e2bda34296438cf8be22868f1c6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -10601,7 +10601,6 @@ GameObject:
   - component: {fileID: 7644297644208309983}
   - component: {fileID: 201319393}
   - component: {fileID: 7598736670066065866}
-  - component: {fileID: 7598736670066065867}
   m_Layer: 0
   m_Name: Puzzle1
   m_TagString: Untagged
@@ -10622,7 +10621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzle1_Trigger: {fileID: 334036038}
-  triggeredMaterial: {fileID: 2100000, guid: f6992b3035a793346ae0242594ab6978, type: 2}
+  glowingMaterial: {fileID: 2100000, guid: f6992b3035a793346ae0242594ab6978, type: 2}
   pressurePlates:
   - {fileID: 6514783930703526676}
   - {fileID: 3677239673693437831}
@@ -10635,25 +10634,6 @@ MonoBehaviour:
   - {fileID: 287161790}
   cloakParent: {fileID: 1590946206}
   aspectOfCreation: {fileID: 1141515415}
---- !u!95 &7598736670066065867
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7598736670066065865}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0ce0dfa3e5bc8d04fa7a101ac6aaa13c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7631260963204925840
 GameObject:
   m_ObjectHideFlags: 0
