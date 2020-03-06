@@ -8,60 +8,72 @@ public class AetherEvents : MonoBehaviour
 
     public struct GameEvents
     {
-        public struct Interaction 
+        public struct InteractionEvents 
         {
-            public static event Action<string> ShowInteraction;
-            public static event Action HideInteraction;
-            public static event Action Interact;
+            public static event Action<string> OnShowInteraction;
+            public static event Action OnHideInteraction;
+            public static event Action OnInteract;
 
-            public static void InvokeShowInteraction(string message)
+            public static void ShowInteraction(string message)
             {
-                if (ShowInteraction == null)
+                if (OnShowInteraction == null)
                     return;
 
-                ShowInteraction(message);
+                OnShowInteraction(message);
             }
 
-            public static void InvokeHideInteraction()
+            public static void HideInteraction()
             {
-                if (HideInteraction == null)
+                if (OnHideInteraction == null)
                     return;
 
-                HideInteraction();
+                OnHideInteraction();
             }
 
-            public static void InvokeInteract()
+            public static void Interact()
             {
-                if (Interact == null)
+                if (OnInteract == null)
                     return;
 
-                Interact();
+                OnInteract();
             }
         }
     
+        public struct DialogEvents
+        {
+            public static event Action<Dialog> OnStartDialog;
+
+            public static void StartDialog(Dialog dialog)
+            {
+                if (OnStartDialog == null)
+                    return;
+
+                OnStartDialog(dialog);
+            }
+        }
     }
 
     public struct UIEvents
     {
         public struct ToolTips
         {
-            public static event Action HideAll;
-            public static event Action UnhideAll;
+            public static event Action OnHideAll;
+            public static event Action OnUnhideAll;
 
-            public static void InvokeHideAll()
+            public static void HideAll()
             {
-                if(HideAll == null)
+                if(OnHideAll == null)
                     return;
 
-                HideAll();
+                OnHideAll();
             }
 
-            public static void InvokeUnhideAll()
+            public static void UnhideAll()
             {
-                if(UnhideAll == null)
+                if(OnUnhideAll == null)
                     return;
 
-                UnhideAll();
+                OnUnhideAll();
             }
         }
     }

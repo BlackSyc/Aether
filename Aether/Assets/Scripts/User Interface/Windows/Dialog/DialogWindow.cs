@@ -19,9 +19,12 @@ public class DialogWindow : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
-    
+    private void Start()
+    {
+        AetherEvents.GameEvents.DialogEvents.OnStartDialog += StartDialog;
+    }
 
-    public void StartDialog(Dialog dialog)
+    private void StartDialog(Dialog dialog)
     {
         StartCoroutine(DialogCoroutine(dialog));
     }
@@ -40,5 +43,10 @@ public class DialogWindow : MonoBehaviour
 
         }
         dialog.Complete();
+    }
+
+    private void OnDestroy()
+    {
+        AetherEvents.GameEvents.DialogEvents.OnStartDialog -= StartDialog;
     }
 }

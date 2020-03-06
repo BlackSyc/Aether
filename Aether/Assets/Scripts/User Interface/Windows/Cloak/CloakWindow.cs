@@ -80,7 +80,7 @@ public class CloakWindow : MonoBehaviour
         content.text = dreamContent;
 
         actionMapManager.EnablePopUpActionMap();
-        AetherEvents.UIEvents.ToolTips.InvokeHideAll();
+        AetherEvents.UIEvents.ToolTips.HideAll();
         window.SetActive(true);
     }
 
@@ -93,7 +93,7 @@ public class CloakWindow : MonoBehaviour
         content.text = nightmareContent;
 
         actionMapManager.EnablePopUpActionMap();
-        AetherEvents.UIEvents.ToolTips.InvokeHideAll();
+        AetherEvents.UIEvents.ToolTips.HideAll();
         window.SetActive(true);
     }
 
@@ -106,7 +106,7 @@ public class CloakWindow : MonoBehaviour
         content.text = illusionContent;
 
         actionMapManager.EnablePopUpActionMap();
-        AetherEvents.UIEvents.ToolTips.InvokeHideAll();
+        AetherEvents.UIEvents.ToolTips.HideAll();
         window.SetActive(true);
     }
 
@@ -130,7 +130,7 @@ public class CloakWindow : MonoBehaviour
     public void CloseWindow()
     {
         window.SetActive(false);
-        AetherEvents.UIEvents.ToolTips.InvokeUnhideAll();
+        AetherEvents.UIEvents.ToolTips.UnhideAll();
         actionMapManager.EnablePlayerActionMap();
     }
 
@@ -140,7 +140,7 @@ public class CloakWindow : MonoBehaviour
             return;
 
         window.SetActive(false);
-        AetherEvents.UIEvents.ToolTips.InvokeUnhideAll();
+        AetherEvents.UIEvents.ToolTips.UnhideAll();
         actionMapManager.EnablePlayerActionMap();
     }
 }
