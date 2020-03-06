@@ -296,12 +296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a1dd5ec9749354f833da9ecd179b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dreamCloakPrefab: {fileID: 1511576211006047054, guid: 172acf02efea7684c8c4a6ab152a413e,
-    type: 3}
-  nightmareCloakPrefab: {fileID: 1511576211006047054, guid: 9fd8a3fd315a3be4a8142d4122d0c2dc,
-    type: 3}
-  illusionCloakPrefab: {fileID: 1511576211006047054, guid: 45a40a93d20b86d449b30955a6caf6af,
-    type: 3}
 --- !u!1 &106336056
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,29 +752,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionMapManager: {fileID: 1512811190}
-  shoulder: {fileID: 102965017}
-  tooltipManager: {fileID: 1285250356}
   header: {fileID: 982665976}
   keywords: {fileID: 1823742933}
   content: {fileID: 898988299}
   window: {fileID: 1911329723}
-  dreamHeader: The Dreamweave Cloak
-  dreamColour: {r: 0.48584908, g: 1, b: 0.56987476, a: 1}
-  dreamKeywords: Supporting - Healing - Inspiring
-  dreamContent: A gift from the Dream Aspect. Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  nightmareHeader: The Cloak of Nightmares
-  nightmareColour: {r: 0.8018868, g: 0.049172327, b: 0.049172327, a: 1}
-  nightmareKeywords: Destructing - Forcing - Breaking
-  nightmareContent: A request from the Aspect of Nightmare. Lorem ipsum dolor sit
-    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-    et dolore magna aliqua.
-  illusionHeader: The Illusionist's Cloak
-  illusionColour: {r: 0.34242615, g: 0.8759928, b: 0.8962264, a: 1}
-  illusionKeywords: Controlling - Cunning - Confusing
-  illusionContent: A trick from The Illusion, Aspect of the Aether. Lorem ipsum dolor
-    sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-    et dolore magna aliqua.
 --- !u!64 &190045525
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -895,27 +870,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castParent: {fileID: 1033358240}
-  Missile:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
-  spellType2:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
-  spellType3:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
-  spellType4:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
-  spellType5:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
-  spellType6:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
-  spellType7:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
+  spellSlot1: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
+  spellSlot2: {fileID: 0}
+  spellSlot3: {fileID: 0}
+  spellSlot4: {fileID: 0}
+  spellSlot5: {fileID: 0}
+  spellSlot6: {fileID: 0}
+  spellSlot7: {fileID: 0}
 --- !u!114 &205025361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -999,6 +960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
   mainPanel: {fileID: 1204156573}
   text: {fileID: 490953791}
   castBar: {fileID: 151136571}
@@ -2494,7 +2456,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 516568583}
-  - component: {fileID: 516568585}
   - component: {fileID: 516568584}
   m_Layer: 5
   m_Name: SpellWindow
@@ -2553,26 +2514,6 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 1
   m_ConstraintCount: 5
---- !u!114 &516568585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516568582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c12c9671d7a758488faa70be2adc794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spellSystem: {fileID: 205025360}
-  missiles: {fileID: 219592345}
-  spellButton2: {fileID: 2058968362}
-  spellButton3: {fileID: 562468760}
-  spellButton4: {fileID: 2052378978}
-  spellButton5: {fileID: 1152479319}
-  spellButton6: {fileID: 1119549345}
-  spellButton7: {fileID: 1615449653}
 --- !u!1 &562468758
 GameObject:
   m_ObjectHideFlags: 0
@@ -2622,6 +2563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 0}
   mainPanel: {fileID: 327418020}
   text: {fileID: 154331808}
   castBar: {fileID: 984328484}
@@ -2862,9 +2804,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600622257}
-  - component: {fileID: 600622258}
   m_Layer: 5
-  m_Name: WindowManager
+  m_Name: WindowContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2892,19 +2833,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &600622258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600622256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9d8df70223fdd4aab507ebbe0d5768, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogWindow: {fileID: 1331652342}
 --- !u!1001 &668128900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3818,12 +3746,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TooltipText: to inspect
+  ProposeInteractionMessage: to interact
   Interaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 172224455}
-        m_MethodName: ShowDream
+      - m_Target: {fileID: 11400000, guid: 4480b7999006e7341a7ebdd21e95d8ed, type: 2}
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3847,18 +3775,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.02
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &777089808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777089801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6baeebb3deb34b24da53686da02b6493, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &777560727
 GameObject:
   m_ObjectHideFlags: 0
@@ -4795,6 +4711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDelay: 2
   cloakObject: {fileID: 8296172668811736711}
+  cloakInfo: {fileID: 0}
 --- !u!1 &1033358239
 GameObject:
   m_ObjectHideFlags: 0
@@ -4977,6 +4894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 0}
   mainPanel: {fileID: 1784454879}
   text: {fileID: 566234160}
   castBar: {fileID: 1685437989}
@@ -5056,7 +4974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TooltipText: to speak
+  ProposeInteractionMessage: to interact
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -5150,6 +5068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 0}
   mainPanel: {fileID: 12699377}
   text: {fileID: 512196927}
   castBar: {fileID: 1771175402}
@@ -5763,9 +5682,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1285250355}
-  - component: {fileID: 1285250356}
   m_Layer: 5
-  m_Name: TooltipManager
+  m_Name: TooltipContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5791,19 +5709,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1285250356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285250354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51e0dafbac3cb4a4688b08cb9820e558, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionTooltip: {fileID: 334378988}
 --- !u!1 &1311021613
 GameObject:
   m_ObjectHideFlags: 0
@@ -6247,6 +6152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDelay: 2
   cloakObject: {fileID: 1631476379}
+  cloakInfo: {fileID: 0}
 --- !u!1 &1414482858
 GameObject:
   m_ObjectHideFlags: 0
@@ -7290,6 +7196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 0}
   mainPanel: {fileID: 1833635228}
   text: {fileID: 1171152932}
   castBar: {fileID: 1650492971}
@@ -7691,12 +7598,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TooltipText: to inspect
+  ProposeInteractionMessage: to interact
   Interaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 172224455}
-        m_MethodName: ShowIllusion
+      - m_Target: {fileID: 11400000, guid: 1909c5330ac9b544aaba2db58c6e728f, type: 2}
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8934,6 +8841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDelay: 2
   cloakObject: {fileID: 777089801}
+  cloakInfo: {fileID: 0}
 --- !u!64 &1904928862
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9170,6 +9078,49 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -986557449581867336, guid: d4cd12e20887ab3489c58b238b38ccf0, type: 3}
+--- !u!1 &1929949807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1929949809}
+  - component: {fileID: 1929949808}
+  m_Layer: 0
+  m_Name: AetherEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1929949808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929949807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce70917d70dd44444bd879f705a0de9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1929949809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929949807}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.9023485, y: -2.3962178, z: -3.7940092}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1948141723
 GameObject:
   m_ObjectHideFlags: 0
@@ -9504,6 +9455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 0}
   mainPanel: {fileID: 392136011}
   text: {fileID: 832053514}
   castBar: {fileID: 1827027036}
@@ -9556,6 +9508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 0}
   mainPanel: {fileID: 1103988956}
   text: {fileID: 1599747697}
   castBar: {fileID: 457270118}
@@ -12356,9 +12309,6 @@ MonoBehaviour:
   - {fileID: 1189097491}
   - {fileID: 1895513250}
   - {fileID: 287161790}
-  dreamCloakObjectParent: {fileID: 1897496757}
-  nightmareCloakObjectParent: {fileID: 984577803}
-  illusionCloakObjectParent: {fileID: 1383274264}
   aspectOfCreation: {fileID: 1141515415}
 --- !u!1 &7631260963204925840
 GameObject:
@@ -12950,9 +12900,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
         type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
       propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 172224455}
+      objectReference: {fileID: 11400000, guid: 295d88bd32d50fe4c917a850ff342795,
+        type: 2}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 295d88bd32d50fe4c917a850ff342795,
+        type: 2}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Show
+      objectReference: {fileID: 0}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Show
+      objectReference: {fileID: 0}
     - target: {fileID: 8710789207618047514, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
         type: 3}
       propertyPath: m_AABB.m_Center.x

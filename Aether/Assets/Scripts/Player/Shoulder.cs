@@ -1,33 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Shoulder : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject dreamCloakPrefab;
-
-    [SerializeField]
-    private GameObject nightmareCloakPrefab;
-
-    [SerializeField]
-    private GameObject illusionCloakPrefab;
-
-    public void EquipDreamCloak()
+    private void Start()
     {
-        GameObject dreamCloak = Instantiate(dreamCloakPrefab, transform);
-        dreamCloak.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[]{ GetComponent<CapsuleCollider>()};
+        AetherEvents.GameEvents.CloakEvents.OnEquipCloak += EquipCloak;
     }
 
-    public void EquipNightmareCloak()
+    private void EquipCloak(GameObject cloakPrefab)
     {
-        GameObject nightmareCloak = Instantiate(nightmareCloakPrefab, transform);
-        nightmareCloak.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[] { GetComponent<CapsuleCollider>() };
+        GameObject cloak = Instantiate(cloakPrefab, transform);
+        cloak.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[] { GetComponent<CapsuleCollider>() };
     }
 
-    public void EquipIllusionCloak()
+    private void OnDestroy()
     {
-        GameObject illusionCloak = Instantiate(illusionCloakPrefab, transform);
-        illusionCloak.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[] { GetComponent<CapsuleCollider>() };
+        AetherEvents.GameEvents.CloakEvents.OnEquipCloak -= EquipCloak;
     }
 }

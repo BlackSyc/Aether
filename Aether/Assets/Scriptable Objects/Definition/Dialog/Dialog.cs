@@ -3,31 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using System;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Dialog/Dialog")]
 public class Dialog : ScriptableObject
 {
     public List<DialogLine> dialogLines;
 
-    private UnityAction onComplete;
+    public event Action OnComplete;
 
-    public DialogLine Line(string name)
+    public DialogLine GetDialogLine(string name)
     {
         return dialogLines.FirstOrDefault(x => x.Name.Equals(name));
     }
 
     public void Complete()
     {
-        onComplete?.Invoke();
-    }
+        if(OnComplete == null)
+            return;
 
-    public void OnComplete(UnityAction onComplete)
-    {
-        this.onComplete = onComplete;
-    }
-
-    public void Start()
-    {
-        WindowManager.GetDialogWindow().StartDialog(this);
+        OnComplete();
     }
 }
