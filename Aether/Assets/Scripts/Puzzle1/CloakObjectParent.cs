@@ -10,6 +10,9 @@ public class CloakObjectParent : MonoBehaviour
     [SerializeField]
     private GameObject cloakObject;
 
+    [SerializeField]
+    private CloakInfo cloakInfo;
+
     public void Show()
     {
         StartCoroutine(ShowAfter(showDelay));
@@ -20,4 +23,6 @@ public class CloakObjectParent : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         cloakObject.SetActive(true);
     }
+
+
 }

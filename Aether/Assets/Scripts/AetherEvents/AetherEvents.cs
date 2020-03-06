@@ -16,26 +16,17 @@ public class AetherEvents : MonoBehaviour
 
             public static void ShowInteraction(string message)
             {
-                if (OnShowInteraction == null)
-                    return;
-
-                OnShowInteraction(message);
+                OnShowInteraction?.Invoke(message);
             }
 
             public static void HideInteraction()
             {
-                if (OnHideInteraction == null)
-                    return;
-
-                OnHideInteraction();
+                OnHideInteraction?.Invoke();
             }
 
             public static void Interact()
             {
-                if (OnInteract == null)
-                    return;
-
-                OnInteract();
+                OnInteract?.Invoke();
             }
         }
     
@@ -45,57 +36,63 @@ public class AetherEvents : MonoBehaviour
 
             public static void StartDialog(Dialog dialog)
             {
-                if (OnStartDialog == null)
-                    return;
-
-                OnStartDialog(dialog);
+                OnStartDialog?.Invoke(dialog);
             }
         }
 
-        public struct SpellSystemEvents
+        public struct SpellSystemEvents 
         {
             public static event Action<SpellSlot, Spell> OnSelectSpell;
             public static event Action<SpellCast> OnCastSpell;
 
             public static void SelectSpell(SpellSlot spellSlot, Spell spell)
             {
-                if (OnSelectSpell == null)
-                    return;
-
-                OnSelectSpell(spellSlot, spell);
+                OnSelectSpell?.Invoke(spellSlot, spell);
             }
             public static void CastSpell(SpellCast spellCast)
             {
-                if (OnCastSpell == null)
-                    return;
-
-                OnCastSpell(spellCast);
+                OnCastSpell?.Invoke(spellCast);
             }
         }
 
+        public struct CloakEvents
+        {
+            public static event Action<CloakInfo> OnShowCloakInfo;
+            public static event Action OnHideCloakInfo;
+            public static event Action<CloakInfo> OnEquipCloak;
+
+            public static void ShowCloakInfo(CloakInfo cloakInfo)
+            {
+                OnShowCloakInfo?.Invoke(cloakInfo);
+            }
+
+            public static void HideCloakInfo()
+            {
+                OnHideCloakInfo?.Invoke();
+            }
+
+            public static void EquipCloak(CloakInfo cloakInfo)
+            {
+                OnEquipCloak?.Invoke(cloakInfo);
+            }
+        }
     }
 
     public struct UIEvents
     {
-        public struct ToolTips
+        public struct ToolTips 
         {
             public static event Action OnHideAll;
             public static event Action OnUnhideAll;
 
             public static void HideAll()
             {
-                if(OnHideAll == null)
-                    return;
-
-                OnHideAll();
+                OnHideAll?.Invoke();
             }
 
             public static void UnhideAll()
             {
-                if(OnUnhideAll == null)
-                    return;
-
-                OnUnhideAll();
+                OnUnhideAll?.Invoke();
             }
         }
     }

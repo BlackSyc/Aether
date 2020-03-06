@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79012654c50abd047ae1b21e8dcb97cd, type: 3}
+  m_Name: Nightmare
+  m_EditorClassIdentifier: 
+  Name: The Cloak of Nightmares
+  Colour: {r: 0.8018868, g: 0.049172327, b: 0.049172327, a: 1}
+  Keywords: Forcing - Breaking - Devastating
+  Description: A request from the Aspect of Nightmare. Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    magna aliqua.
