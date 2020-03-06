@@ -25,7 +25,13 @@ public class Puzzle1_Manager : MonoBehaviour
     private List<ArcaneMissileTarget> missileTargets;
 
     [SerializeField]
-    private GameObject cloakParent;
+    private CloakObjectParent dreamCloakObjectParent;
+
+    [SerializeField]
+    private CloakObjectParent nightmareCloakObjectParent;
+
+    [SerializeField]
+    private CloakObjectParent illusionCloakObjectParent;
 
 
     [SerializeField]
@@ -67,7 +73,9 @@ public class Puzzle1_Manager : MonoBehaviour
     {
         Debug.Log("Completed Stage 2!");
         Stage2Complete = true;
-        cloakParent.SetActive(true);
+        dreamCloakObjectParent.Show();
+        nightmareCloakObjectParent.Show();
+        illusionCloakObjectParent.Show();
         missileTargets.ForEach(x => x.MoveToCloakPosition());
     }
 
