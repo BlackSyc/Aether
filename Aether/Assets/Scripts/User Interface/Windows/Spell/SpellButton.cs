@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class SpellButton : MonoBehaviour
 {
-    private SpellType linkedSpellType;
+    [SerializeField]
+    private SpellSlot spellSlot;
 
     [SerializeField]
     private GameObject mainPanel;
@@ -17,48 +18,81 @@ public class SpellButton : MonoBehaviour
     [SerializeField]
     private Animator castBar;
 
-    public void LinkToSpellType(SpellType spellType)
+    private void Start()
     {
-        linkedSpellType = spellType;
-        linkedSpellType.NewSpellCast += NewSpellCast;
-        linkedSpellType.SpellChanged += ChangeSpell;
+        if (spellSlot == null)
+            return;
 
-        if (linkedSpellType.HasActiveSpell)
+        if (spellSlot.HasActiveSpell)
         {
             mainPanel.SetActive(true);
-            text.text = linkedSpellType.Spell.Name;
+            text.text = spellSlot.State.Spell.Name;
+        }
+
+        AetherEvents.GameEvents.SpellSystemEvents.OnSelectSpell += SelectSpell;
+        AetherEvents.GameEvents.SpellSystemEvents.OnCastSpell += StartSpellCast;
+    }
+
+    private void SelectSpell(SpellSlot spellSlot, Spell spell)
+    {
+        if (spellSlot == this.spellSlot)
+        {
+            mainPanel.SetActive(true);
+            text.text = spell.Name;
+            //TODO: Change button icon like: icon.sprite = linkedSpellSlot.Spell.Icon;
         }
     }
 
-    private void NewSpellCast(SpellCast spellCast)
+    private void StartSpellCast(SpellCast spellCast)
     {
         castBar.Play("Cast", -1, 0f);
+        SubscribeToSpellCast(spellCast);
+    }
 
-        spellCast.CastProgress += x => castBar.Play("Cast", -1, x.Progress);
-        spellCast.CastCancelled += x => castBar.Play("CastCancelled", -1);
-        spellCast.CastComplete += x =>
-        {
-            castBar.Play("CastComplete", -1, 0f);
-            StartCoroutine(CoolDown(x.Spell.CoolDown + Time.time));
-        };
+    private void UpdateCast(float progress)
+    {
+        castBar.Play("Cast", -1, progress);
+    }
+
+    private void CancelCast(SpellCast spellCast)
+    {
+        castBar.Play("CastCancelled", -1);
+        UnSubscribeFromSpellCast(spellCast);
+    }
+
+    private void CompleteCast(SpellCast spellCast)
+    {
+        castBar.Play("CastComplete", -1, 0f);
+        StartCoroutine(CoolDown(spellCast.Spell.CoolDown + Time.time));
+        UnSubscribeFromSpellCast(spellCast);
+    }
+
+    private void SubscribeToSpellCast(SpellCast spellCast)
+    {
+        spellCast.CastProgress += UpdateCast;
+        spellCast.CastCancelled += CancelCast;
+        spellCast.CastComplete += CompleteCast;
+    }
+
+    private void UnSubscribeFromSpellCast(SpellCast spellCast)
+    {
+        spellCast.CastCancelled -= CancelCast;
+        spellCast.CastComplete -= CompleteCast;
     }
 
     private IEnumerator CoolDown(float until)
     {
-        while(Time.time < until)
+        while (Time.time < until)
         {
             text.text = ((int)(until - Time.time) + 1).ToString();
             yield return null;
         }
-        text.text = linkedSpellType.Spell.Name;
-
+        text.text = spellSlot.State.Spell.Name;
     }
 
-    private void ChangeSpell(SpellType spellType)
+    private void OnDestroy()
     {
-        mainPanel.SetActive(true);
-        text.text = spellType.Spell.Name;
-        //TODO: Change button icon like:
-        //icon.sprite = linkedSpellSlot.Spell.Icon;
+        AetherEvents.GameEvents.SpellSystemEvents.OnSelectSpell -= SelectSpell;
+        AetherEvents.GameEvents.SpellSystemEvents.OnCastSpell -= StartSpellCast;
     }
 }

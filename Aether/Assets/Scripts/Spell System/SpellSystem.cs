@@ -10,34 +10,50 @@ public class SpellSystem : MonoBehaviour
 
     private SpellCast currentSpellCast;
 
-    public SpellType Missile;
+    [SerializeField]
+    private SpellSlot spellSlot1;
 
-    public SpellType spellType2;
+    public SpellSlot SpellSlot1
+    {
+        get
+        {
+            return spellSlot1;
+        }
+    }
 
-    public SpellType spellType3;
+    [SerializeField]
+    private SpellSlot spellSlot2;
 
-    public SpellType spellType4;
+    [SerializeField]
+    private SpellSlot spellSlot3;
 
-    public SpellType spellType5;
+    [SerializeField]
+    private SpellSlot spellSlot4;
 
-    public SpellType spellType6;
+    [SerializeField]
+    private SpellSlot spellSlot5;
 
-    public SpellType spellType7;
+    [SerializeField]
+    private SpellSlot spellSlot6;
+
+    [SerializeField]
+    private SpellSlot spellSlot7;
+
 
     public void CastMissile(CallbackContext context)
     {
         if (!context.performed)
             return;
 
-        if (!Missile.HasActiveSpell)
+        if (!SpellSlot1.HasActiveSpell)
         {
             Debug.LogWarning("No spell bound!");
             return;
         }
 
-        if(currentSpellCast != null)
+        if (currentSpellCast != null)
         {
-            if(currentSpellCast.Spell == Missile.Spell)
+            if (currentSpellCast.Spell == SpellSlot1.State.Spell)
             {
                 UpdateTargetLock();
                 return;
@@ -45,15 +61,20 @@ public class SpellSystem : MonoBehaviour
             currentSpellCast.Cancel();
         }
 
-        
-
-        currentSpellCast = Missile.Cast(castParent, this.GetComponent<TargetManager>());
+        currentSpellCast = SpellSlot1.Cast(castParent, this.GetComponent<TargetManager>());
         if (currentSpellCast == null)
             return;
 
-        currentSpellCast.CastCancelled += x => this.currentSpellCast = null;
-        currentSpellCast.CastComplete += x => this.currentSpellCast = null;
+        currentSpellCast.CastCancelled += ClearCurrentCast;
+        currentSpellCast.CastComplete += ClearCurrentCast;
         StartCoroutine(currentSpellCast.Start());
+    }
+
+    private void ClearCurrentCast(SpellCast spellCast)
+    {
+        currentSpellCast.CastCancelled -= ClearCurrentCast;
+        currentSpellCast.CastComplete -= ClearCurrentCast;
+        this.currentSpellCast = null;
     }
 
     private void UpdateTargetLock()
@@ -81,7 +102,7 @@ public class SpellSystem : MonoBehaviour
     {
         if (context.performed || context.started)
         {
-            if(currentSpellCast != null)
+            if (currentSpellCast != null)
             {
                 if (!currentSpellCast.Spell.CastWhileMoving)
                 {

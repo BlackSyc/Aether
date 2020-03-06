@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,15 +11,13 @@ public class DialogLine : ScriptableObject
 
     public string Content;
 
-    private UnityAction onComplete;
+    public event Action OnComplete;
 
     public void Complete()
     {
-        onComplete?.Invoke();
-    }
+        if (OnComplete == null)
+            return;
 
-    public void OnComplete(UnityAction onComplete)
-    {
-        this.onComplete = onComplete;
+        OnComplete();
     }
 }
