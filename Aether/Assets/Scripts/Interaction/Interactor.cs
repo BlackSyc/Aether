@@ -19,7 +19,7 @@ public class Interactor : MonoBehaviour
         if (context.performed)
         {
             currentInteractable?.Interact(with: this);
-            TooltipManager.GetInteractionTooltip().PerformAnimation();
+            AetherEvents.GameEvents.Interaction.InvokeInteract();
         }
     }
 
@@ -29,12 +29,12 @@ public class Interactor : MonoBehaviour
         if (interactable != null)
         {
             currentInteractable = interactable;
-            TooltipManager.GetInteractionTooltip().Activate(currentInteractable.TooltipText);
+            AetherEvents.GameEvents.Interaction.InvokeShowInteraction(currentInteractable.TooltipText);
         }
         else
         {
             currentInteractable = null;
-            TooltipManager.GetInteractionTooltip().Deactivate();
+            AetherEvents.GameEvents.Interaction.InvokeHideInteraction();
         }
     }
 

@@ -17,9 +17,6 @@ public class CloakWindow : MonoBehaviour
     private Shoulder shoulder;
 
     [SerializeField]
-    private TooltipManager tooltipManager;
-
-    [SerializeField]
     private TextMeshProUGUI header;
 
     [SerializeField]
@@ -83,7 +80,7 @@ public class CloakWindow : MonoBehaviour
         content.text = dreamContent;
 
         actionMapManager.EnablePopUpActionMap();
-        tooltipManager.HideAllToolTips();
+        AetherEvents.UIEvents.ToolTips.InvokeHideAll();
         window.SetActive(true);
     }
 
@@ -96,7 +93,7 @@ public class CloakWindow : MonoBehaviour
         content.text = nightmareContent;
 
         actionMapManager.EnablePopUpActionMap();
-        tooltipManager.HideAllToolTips();
+        AetherEvents.UIEvents.ToolTips.InvokeHideAll();
         window.SetActive(true);
     }
 
@@ -109,7 +106,7 @@ public class CloakWindow : MonoBehaviour
         content.text = illusionContent;
 
         actionMapManager.EnablePopUpActionMap();
-        tooltipManager.HideAllToolTips();
+        AetherEvents.UIEvents.ToolTips.InvokeHideAll();
         window.SetActive(true);
     }
 
@@ -133,7 +130,7 @@ public class CloakWindow : MonoBehaviour
     public void CloseWindow()
     {
         window.SetActive(false);
-        tooltipManager.UnHideAllToolTips();
+        AetherEvents.UIEvents.ToolTips.InvokeUnhideAll();
         actionMapManager.EnablePlayerActionMap();
     }
 
@@ -143,7 +140,7 @@ public class CloakWindow : MonoBehaviour
             return;
 
         window.SetActive(false);
-        tooltipManager.UnHideAllToolTips();
+        AetherEvents.UIEvents.ToolTips.InvokeUnhideAll();
         actionMapManager.EnablePlayerActionMap();
     }
 }
