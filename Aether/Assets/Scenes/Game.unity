@@ -759,7 +759,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionMapManager: {fileID: 1512811190}
   shoulder: {fileID: 102965017}
-  tooltipManager: {fileID: 1285250356}
   header: {fileID: 982665976}
   keywords: {fileID: 1823742933}
   content: {fileID: 898988299}
@@ -895,27 +894,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castParent: {fileID: 1033358240}
-  Missile:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
-  spellType2:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
-  spellType3:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
-  spellType4:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
-  spellType5:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
-  spellType6:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
-  spellType7:
-    Spell: {fileID: 0}
-    coolDownUntil: 0
+  spellSlot1: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
+  spellSlot2: {fileID: 0}
+  spellSlot3: {fileID: 0}
+  spellSlot4: {fileID: 0}
+  spellSlot5: {fileID: 0}
+  spellSlot6: {fileID: 0}
+  spellSlot7: {fileID: 0}
 --- !u!114 &205025361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -999,6 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
   mainPanel: {fileID: 1204156573}
   text: {fileID: 490953791}
   castBar: {fileID: 151136571}
@@ -2494,7 +2480,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 516568583}
-  - component: {fileID: 516568585}
   - component: {fileID: 516568584}
   m_Layer: 5
   m_Name: SpellWindow
@@ -2553,26 +2538,6 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 1
   m_ConstraintCount: 5
---- !u!114 &516568585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516568582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c12c9671d7a758488faa70be2adc794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spellSystem: {fileID: 205025360}
-  missiles: {fileID: 219592345}
-  spellButton2: {fileID: 2058968362}
-  spellButton3: {fileID: 562468760}
-  spellButton4: {fileID: 2052378978}
-  spellButton5: {fileID: 1152479319}
-  spellButton6: {fileID: 1119549345}
-  spellButton7: {fileID: 1615449653}
 --- !u!1 &562468758
 GameObject:
   m_ObjectHideFlags: 0
@@ -2622,6 +2587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 0}
   mainPanel: {fileID: 327418020}
   text: {fileID: 154331808}
   castBar: {fileID: 984328484}
@@ -2862,9 +2828,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600622257}
-  - component: {fileID: 600622258}
   m_Layer: 5
-  m_Name: WindowManager
+  m_Name: WindowContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2892,19 +2857,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &600622258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600622256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9d8df70223fdd4aab507ebbe0d5768, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogWindow: {fileID: 1331652342}
 --- !u!1001 &668128900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4977,6 +4929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 0}
   mainPanel: {fileID: 1784454879}
   text: {fileID: 566234160}
   castBar: {fileID: 1685437989}
@@ -5150,6 +5103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 0}
   mainPanel: {fileID: 12699377}
   text: {fileID: 512196927}
   castBar: {fileID: 1771175402}
@@ -5763,9 +5717,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1285250355}
-  - component: {fileID: 1285250356}
   m_Layer: 5
-  m_Name: TooltipManager
+  m_Name: TooltipContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5791,19 +5744,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1285250356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285250354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51e0dafbac3cb4a4688b08cb9820e558, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionTooltip: {fileID: 334378988}
 --- !u!1 &1311021613
 GameObject:
   m_ObjectHideFlags: 0
@@ -7290,6 +7230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 0}
   mainPanel: {fileID: 1833635228}
   text: {fileID: 1171152932}
   castBar: {fileID: 1650492971}
@@ -9547,6 +9488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 0}
   mainPanel: {fileID: 392136011}
   text: {fileID: 832053514}
   castBar: {fileID: 1827027036}
@@ -9599,6 +9541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSlot: {fileID: 0}
   mainPanel: {fileID: 1103988956}
   text: {fileID: 1599747697}
   castBar: {fileID: 457270118}

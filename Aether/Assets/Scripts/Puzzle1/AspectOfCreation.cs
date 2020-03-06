@@ -35,9 +35,8 @@ public class AspectOfCreation : MonoBehaviour
 
     private void GrantArcaneMissile()
     {
-        interactor.transform.parent.GetComponent<SpellSystem>().Missile.SetSpell(reward);
+        interactor.transform.parent.GetComponent<SpellSystem>().SpellSlot1.SelectSpell(reward);
         crosshair.SetActive(true);
-        Debug.Log("Player has received the ability to cast Arcane Missile!");
     }
 
     private void OnDestroy()

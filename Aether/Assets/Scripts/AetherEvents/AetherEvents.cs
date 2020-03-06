@@ -39,7 +39,7 @@ public class AetherEvents : MonoBehaviour
             }
         }
     
-        public struct DialogEvents
+        public struct DialogEvents 
         {
             public static event Action<Dialog> OnStartDialog;
 
@@ -51,6 +51,28 @@ public class AetherEvents : MonoBehaviour
                 OnStartDialog(dialog);
             }
         }
+
+        public struct SpellSystemEvents
+        {
+            public static event Action<SpellSlot, Spell> OnSelectSpell;
+            public static event Action<SpellCast> OnCastSpell;
+
+            public static void SelectSpell(SpellSlot spellSlot, Spell spell)
+            {
+                if (OnSelectSpell == null)
+                    return;
+
+                OnSelectSpell(spellSlot, spell);
+            }
+            public static void CastSpell(SpellCast spellCast)
+            {
+                if (OnCastSpell == null)
+                    return;
+
+                OnCastSpell(spellCast);
+            }
+        }
+
     }
 
     public struct UIEvents
