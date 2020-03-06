@@ -296,12 +296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a1dd5ec9749354f833da9ecd179b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dreamCloakPrefab: {fileID: 1511576211006047054, guid: 172acf02efea7684c8c4a6ab152a413e,
-    type: 3}
-  nightmareCloakPrefab: {fileID: 1511576211006047054, guid: 9fd8a3fd315a3be4a8142d4122d0c2dc,
-    type: 3}
-  illusionCloakPrefab: {fileID: 1511576211006047054, guid: 45a40a93d20b86d449b30955a6caf6af,
-    type: 3}
 --- !u!1 &106336056
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,28 +752,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionMapManager: {fileID: 1512811190}
-  shoulder: {fileID: 102965017}
   header: {fileID: 982665976}
   keywords: {fileID: 1823742933}
   content: {fileID: 898988299}
   window: {fileID: 1911329723}
-  dreamHeader: The Dreamweave Cloak
-  dreamColour: {r: 0.48584908, g: 1, b: 0.56987476, a: 1}
-  dreamKeywords: Supporting - Healing - Inspiring
-  dreamContent: A gift from the Dream Aspect. Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  nightmareHeader: The Cloak of Nightmares
-  nightmareColour: {r: 0.8018868, g: 0.049172327, b: 0.049172327, a: 1}
-  nightmareKeywords: Destructing - Forcing - Breaking
-  nightmareContent: A request from the Aspect of Nightmare. Lorem ipsum dolor sit
-    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-    et dolore magna aliqua.
-  illusionHeader: The Illusionist's Cloak
-  illusionColour: {r: 0.34242615, g: 0.8759928, b: 0.8962264, a: 1}
-  illusionKeywords: Controlling - Cunning - Confusing
-  illusionContent: A trick from The Illusion, Aspect of the Aether. Lorem ipsum dolor
-    sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-    et dolore magna aliqua.
 --- !u!64 &190045525
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3774,8 +3750,8 @@ MonoBehaviour:
   Interaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 172224455}
-        m_MethodName: ShowDream
+      - m_Target: {fileID: 11400000, guid: 4480b7999006e7341a7ebdd21e95d8ed, type: 2}
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4735,6 +4711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDelay: 2
   cloakObject: {fileID: 8296172668811736711}
+  cloakInfo: {fileID: 0}
 --- !u!1 &1033358239
 GameObject:
   m_ObjectHideFlags: 0
@@ -6175,6 +6152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDelay: 2
   cloakObject: {fileID: 1631476379}
+  cloakInfo: {fileID: 0}
 --- !u!1 &1414482858
 GameObject:
   m_ObjectHideFlags: 0
@@ -7624,8 +7602,8 @@ MonoBehaviour:
   Interaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 172224455}
-        m_MethodName: ShowIllusion
+      - m_Target: {fileID: 11400000, guid: 1909c5330ac9b544aaba2db58c6e728f, type: 2}
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8863,6 +8841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDelay: 2
   cloakObject: {fileID: 777089801}
+  cloakInfo: {fileID: 0}
 --- !u!64 &1904928862
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12924,9 +12903,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
         type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
       propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 172224455}
+      objectReference: {fileID: 11400000, guid: 295d88bd32d50fe4c917a850ff342795,
+        type: 2}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 295d88bd32d50fe4c917a850ff342795,
+        type: 2}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Show
+      objectReference: {fileID: 0}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8710789207618047508, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
+        type: 3}
+      propertyPath: Interaction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Show
+      objectReference: {fileID: 0}
     - target: {fileID: 8710789207618047514, guid: a5f461a0ad2c92342bf6af4f2e04e49f,
         type: 3}
       propertyPath: m_AABB.m_Center.x

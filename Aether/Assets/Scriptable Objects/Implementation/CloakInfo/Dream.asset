@@ -17,3 +17,5 @@ MonoBehaviour:
   Keywords: Supporting - Healing - Inspiring
   Description: A gift from the Dream Aspect. Lorem ipsum dolor sit amet, consectetur
     adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  CloakPrefab: {fileID: 1511576211006047054, guid: 172acf02efea7684c8c4a6ab152a413e,
+    type: 3}
