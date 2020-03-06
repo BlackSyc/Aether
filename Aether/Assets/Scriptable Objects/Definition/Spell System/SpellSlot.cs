@@ -10,8 +10,6 @@ public class SpellSlot : ScriptableObject
 {
     public string Name;
 
-    public Spell DefaultSpell;
-
     public SpellSlotState State = new SpellSlotState();
 
     public struct SpellSlotState
