@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6915961028944300907}
   - component: {fileID: 7483821050755634254}
   - component: {fileID: 7483821050755634241}
+  - component: {fileID: 6619372873171571216}
   m_Layer: 8
   m_Name: NightmareCloak
   m_TagString: Untagged
@@ -415,3 +416,16 @@ Cloth:
   - {x: 0.6666667, y: 0.16666667, z: 0.16666667}
   - {x: 0.5, y: 0.5, z: 0}
   m_VirtualParticleIndices: 
+--- !u!114 &6619372873171571216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511576211006047054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5aef030453e02f4f8bd97c008bf220a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloakInfo: {fileID: 11400000, guid: 295d88bd32d50fe4c917a850ff342795, type: 2}

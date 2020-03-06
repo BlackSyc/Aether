@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 using static UnityEngine.InputSystem.InputAction;
 
 public class CloakWindow : MonoBehaviour
@@ -17,6 +19,12 @@ public class CloakWindow : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI content;
+
+    [SerializeField]
+    private Button equipButton;
+
+    [SerializeField]
+    private TextMeshProUGUI equipButtonText;
 
     [SerializeField]
     private GameObject window;
@@ -38,6 +46,17 @@ public class CloakWindow : MonoBehaviour
         keywords.text = cloakInfo.Keywords;
         content.text = cloakInfo.Description;
 
+        if (!currentCloakInfo.State.Equipped)
+        {
+            equipButton.onClick.AddListener(() => EquipCloak());
+            equipButtonText.text = "Equip";
+        }
+        else
+        {
+            equipButton.onClick.AddListener(() => UnequipCloak());
+            equipButtonText.text = "Unequip";
+        }
+
         actionMapManager.EnablePopUpActionMap();
         AetherEvents.UIEvents.ToolTips.HideAll();
         window.SetActive(true);
@@ -49,8 +68,15 @@ public class CloakWindow : MonoBehaviour
         CloseWindow();
     }
 
+    public void UnequipCloak()
+    {
+        AetherEvents.GameEvents.CloakEvents.UnequipCloak();
+        CloseWindow();
+    }
+
     private void CloseWindow()
     {
+        equipButton.onClick.RemoveAllListeners();
         window.SetActive(false);
         AetherEvents.UIEvents.ToolTips.UnhideAll();
         actionMapManager.EnablePlayerActionMap();
