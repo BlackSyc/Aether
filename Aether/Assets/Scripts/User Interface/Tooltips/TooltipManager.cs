@@ -18,4 +18,14 @@ public class TooltipManager : MonoBehaviour
     {
         return _instance.interactionTooltip;
     }
+
+    public void HideAllToolTips()
+    {
+        interactionTooltip.gameObject.SetActive(false);
+    }
+
+    public void UnHideAllToolTips()
+    {
+        interactionTooltip.gameObject.SetActive(true);
+    }
 }

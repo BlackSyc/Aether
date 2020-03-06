@@ -231,6 +231,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "PopUp",
+            "id": "825db8dc-d3a0-4e20-8341-7cad3ae4dd70",
+            "actions": [
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "54d4911f-079c-4648-9ceb-6fd399c8044d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5def669c-22b6-4c7f-b67f-c5d39bd4cbdd",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

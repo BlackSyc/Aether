@@ -16,15 +16,31 @@ public class ActionMapManager : MonoBehaviour
         {
             if(playerInput.currentActionMap.name.Equals("Player"))
             {
-                playerInput.SwitchCurrentActionMap("User Interface");
-                Cursor.lockState = CursorLockMode.None;
+                EnableUIActionMap();
             }
             else if (playerInput.currentActionMap.name.Equals("User Interface"))
             {
-                playerInput.SwitchCurrentActionMap("Player");
-                Cursor.lockState = CursorLockMode.Locked;
+                EnablePlayerActionMap();
             }
 
         }
+    }
+
+    public void EnablePopUpActionMap()
+    {
+        playerInput.SwitchCurrentActionMap("PopUp");
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void EnablePlayerActionMap()
+    {
+        playerInput.SwitchCurrentActionMap("Player");
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void EnableUIActionMap()
+    {
+        playerInput.SwitchCurrentActionMap("User Interface");
+        Cursor.lockState = CursorLockMode.None;
     }
 }
