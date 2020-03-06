@@ -4,10 +4,17 @@ using TMPro;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
+public enum Role
+{
+    Dream, Nightmare, Illusion, Corruption
+}
 public class CloakWindow : MonoBehaviour
 {
     [SerializeField]
     private ActionMapManager actionMapManager;
+
+    [SerializeField]
+    private Shoulder shoulder;
 
     [SerializeField]
     private TooltipManager tooltipManager;
@@ -23,6 +30,8 @@ public class CloakWindow : MonoBehaviour
 
     [SerializeField]
     private GameObject window;
+
+    private Role role;
 
     [SerializeField]
     private string dreamHeader;
@@ -67,6 +76,7 @@ public class CloakWindow : MonoBehaviour
 
     public void ShowDream()
     {
+        role = Role.Dream;
         header.text = dreamHeader;
         header.color = dreamColour;
         keywords.text = dreamKeywords;
@@ -79,6 +89,7 @@ public class CloakWindow : MonoBehaviour
 
     public void ShowNightmare()
     {
+        role = Role.Nightmare;
         header.text = nightmareHeader;
         header.color = nightmareColour;
         keywords.text = nightmareKeywords;
@@ -91,6 +102,7 @@ public class CloakWindow : MonoBehaviour
 
     public void ShowIllusion()
     {
+        role = Role.Illusion;
         header.text = illusionHeader;
         header.color = illusionColour;
         keywords.text = illusionKeywords;
@@ -99,6 +111,23 @@ public class CloakWindow : MonoBehaviour
         actionMapManager.EnablePopUpActionMap();
         tooltipManager.HideAllToolTips();
         window.SetActive(true);
+    }
+
+    public void EquipCloak()
+    {
+        switch (role)
+        {
+            case Role.Dream:
+                shoulder.EquipDreamCloak();
+                break;
+            case Role.Nightmare:
+                shoulder.EquipNightmareCloak();
+                break;
+            case Role.Illusion:
+                shoulder.EquipIllusionCloak();
+                break;
+        }
+        CloseWindow();
     }
 
     public void CloseWindow()
