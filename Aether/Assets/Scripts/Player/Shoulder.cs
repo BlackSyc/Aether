@@ -10,9 +10,9 @@ public class Shoulder : MonoBehaviour
         AetherEvents.GameEvents.CloakEvents.OnEquipCloak += EquipCloak;
     }
 
-    private void EquipCloak(CloakInfo cloakInfo)
+    private void EquipCloak(GameObject cloakPrefab)
     {
-        GameObject cloak = Instantiate(cloakInfo.CloakPrefab, transform);
+        GameObject cloak = Instantiate(cloakPrefab, transform);
         cloak.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[] { GetComponent<CapsuleCollider>() };
     }
 

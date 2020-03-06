@@ -59,7 +59,7 @@ public class AetherEvents : MonoBehaviour
         {
             public static event Action<CloakInfo> OnShowCloakInfo;
             public static event Action OnHideCloakInfo;
-            public static event Action<CloakInfo> OnEquipCloak;
+            public static event Action<GameObject> OnEquipCloak;
 
             public static void ShowCloakInfo(CloakInfo cloakInfo)
             {
@@ -71,9 +71,9 @@ public class AetherEvents : MonoBehaviour
                 OnHideCloakInfo?.Invoke();
             }
 
-            public static void EquipCloak(CloakInfo cloakInfo)
+            public static void EquipCloak(GameObject cloakPrefab)
             {
-                OnEquipCloak?.Invoke(cloakInfo);
+                OnEquipCloak?.Invoke(cloakPrefab);
             }
         }
     

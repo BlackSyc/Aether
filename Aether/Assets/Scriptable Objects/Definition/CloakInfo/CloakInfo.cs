@@ -12,6 +12,13 @@ public class CloakInfo : ScriptableObject
     [TextArea]
     public string Description;
 
+    public struct CloakInfoState
+    {
+        public bool Equipped;
+    }
+
+    public CloakInfoState State = new CloakInfoState();
+
     public GameObject CloakPrefab;
 
     public void Show()
