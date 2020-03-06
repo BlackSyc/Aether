@@ -13,7 +13,12 @@ public class CloakObjectParent : MonoBehaviour
     [SerializeField]
     private CloakInfo cloakInfo;
 
-    public void Show()
+    private void Start()
+    {
+        AetherEvents.GameEvents.Puzzle1Events.OnShowCloaks += Show;    
+    }
+
+    private void Show()
     {
         StartCoroutine(ShowAfter(showDelay));
     }
@@ -22,6 +27,11 @@ public class CloakObjectParent : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         cloakObject.SetActive(true);
+    }
+
+    private void OnDestroy()
+    {
+        AetherEvents.GameEvents.Puzzle1Events.OnShowCloaks -= Show;
     }
 
 

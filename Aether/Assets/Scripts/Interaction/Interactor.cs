@@ -29,12 +29,12 @@ public class Interactor : MonoBehaviour
         if (interactable != null)
         {
             currentInteractable = interactable;
-            AetherEvents.GameEvents.InteractionEvents.ShowInteraction(currentInteractable.TooltipText);
+            AetherEvents.GameEvents.InteractionEvents.ProposeInteraction(currentInteractable);
         }
         else
         {
             currentInteractable = null;
-            AetherEvents.GameEvents.InteractionEvents.HideInteraction();
+            AetherEvents.GameEvents.InteractionEvents.CancelProposeInteraction();
         }
     }
 

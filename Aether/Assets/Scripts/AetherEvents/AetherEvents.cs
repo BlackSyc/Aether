@@ -10,18 +10,18 @@ public class AetherEvents : MonoBehaviour
     {
         public struct InteractionEvents 
         {
-            public static event Action<string> OnShowInteraction;
-            public static event Action OnHideInteraction;
+            public static event Action<Interactable> OnProposeInteraction;
+            public static event Action OnCancelProposeInteraction;
             public static event Action OnInteract;
 
-            public static void ShowInteraction(string message)
+            public static void ProposeInteraction(Interactable interactable)
             {
-                OnShowInteraction?.Invoke(message);
+                OnProposeInteraction?.Invoke(interactable);
             }
 
-            public static void HideInteraction()
+            public static void CancelProposeInteraction()
             {
-                OnHideInteraction?.Invoke();
+                OnCancelProposeInteraction?.Invoke();
             }
 
             public static void Interact()
@@ -55,7 +55,7 @@ public class AetherEvents : MonoBehaviour
             }
         }
 
-        public struct CloakEvents
+        public struct CloakEvents 
         {
             public static event Action<CloakInfo> OnShowCloakInfo;
             public static event Action OnHideCloakInfo;
@@ -74,6 +74,16 @@ public class AetherEvents : MonoBehaviour
             public static void EquipCloak(CloakInfo cloakInfo)
             {
                 OnEquipCloak?.Invoke(cloakInfo);
+            }
+        }
+    
+        public struct Puzzle1Events 
+        {
+            public static event Action OnShowCloaks;
+
+            public static void ShowCloaks()
+            {
+                OnShowCloaks?.Invoke();
             }
         }
     }

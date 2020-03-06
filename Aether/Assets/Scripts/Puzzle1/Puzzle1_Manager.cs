@@ -25,16 +25,6 @@ public class Puzzle1_Manager : MonoBehaviour
     private List<ArcaneMissileTarget> missileTargets;
 
     [SerializeField]
-    private CloakObjectParent dreamCloakObjectParent;
-
-    [SerializeField]
-    private CloakObjectParent nightmareCloakObjectParent;
-
-    [SerializeField]
-    private CloakObjectParent illusionCloakObjectParent;
-
-
-    [SerializeField]
     private GameObject aspectOfCreation;
 
     private Material defaultMaterial;
@@ -73,9 +63,7 @@ public class Puzzle1_Manager : MonoBehaviour
     {
         Debug.Log("Completed Stage 2!");
         Stage2Complete = true;
-        dreamCloakObjectParent.Show();
-        nightmareCloakObjectParent.Show();
-        illusionCloakObjectParent.Show();
+        AetherEvents.GameEvents.Puzzle1Events.ShowCloaks();
         missileTargets.ForEach(x => x.MoveToCloakPosition());
     }
 

@@ -3746,7 +3746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TooltipText: to inspect
+  ProposeInteractionMessage: to interact
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -4974,7 +4974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TooltipText: to speak
+  ProposeInteractionMessage: to interact
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -7598,7 +7598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TooltipText: to inspect
+  ProposeInteractionMessage: to interact
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -12309,9 +12309,6 @@ MonoBehaviour:
   - {fileID: 1189097491}
   - {fileID: 1895513250}
   - {fileID: 287161790}
-  dreamCloakObjectParent: {fileID: 1897496757}
-  nightmareCloakObjectParent: {fileID: 984577803}
-  illusionCloakObjectParent: {fileID: 1383274264}
   aspectOfCreation: {fileID: 1141515415}
 --- !u!1 &7631260963204925840
 GameObject:
