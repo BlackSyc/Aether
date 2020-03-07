@@ -13,9 +13,26 @@ public class ArcaneMissileTarget : MonoBehaviour
     public bool IsHit { get; private set; }
 
 
+    public void MoveToCloakPosition()
+    {
+        GetComponent<Animator>().SetTrigger("MoveToCloakPosition");
+    }
+
+    public void MoveToCenter()
+    {
+        GetComponent<Animator>().SetTrigger("MoveToCenter");
+    }
+
+    public void MoveToOriginalPosition()
+    {
+        GetComponent<Animator>().SetTrigger("MoveToOriginalPosition");
+    }
 
     public void Hit()
     {
+        if (IsHit)
+            return;
+
         GetComponent<Animator>().SetBool("Hit", true);
         IsHit = true;
         gameObject.layer = LayerMask.NameToLayer("Obstruction");

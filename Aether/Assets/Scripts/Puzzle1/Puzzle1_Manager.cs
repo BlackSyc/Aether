@@ -8,17 +8,21 @@ public class Puzzle1_Manager : MonoBehaviour
     private GameObject puzzle1_Trigger;
 
     [SerializeField]
-    private Material triggeredMaterial;
+    private Material glowingMaterial;
+
+    public Material GlowingMaterial
+    {
+        get
+        {
+            return glowingMaterial;
+        }
+    }
 
     [SerializeField]
     private List<Puzzle1_PressurePlate> pressurePlates;
 
     [SerializeField]
     private List<ArcaneMissileTarget> missileTargets;
-
-    [SerializeField]
-    private GameObject cloakParent;
-
 
     [SerializeField]
     private GameObject aspectOfCreation;
@@ -34,14 +38,14 @@ public class Puzzle1_Manager : MonoBehaviour
         defaultMaterial = GetComponent<MeshRenderer>().material;
     }
 
-    public void Trigger(Puzzle1_PressurePlate pressurePlate)
+    public bool TryCompleteStage1()
     {
-        pressurePlate.IsTriggered = true;
-        pressurePlate.GetComponent<MeshRenderer>().material = triggeredMaterial;
         if (pressurePlates.TrueForAll(x => x.IsTriggered))
         {
             CompleteStage1();
+            return true;
         }
+        return false;
     }
 
     public bool TryCompleteStage2()
@@ -52,21 +56,21 @@ public class Puzzle1_Manager : MonoBehaviour
             return true;
         }
         return false;
-            
+
     }
 
     private void CompleteStage2()
     {
         Debug.Log("Completed Stage 2!");
         Stage2Complete = true;
-        cloakParent.SetActive(true);
-        missileTargets.ForEach(x => Destroy(x, 5));
+        AetherEvents.GameEvents.Puzzle1Events.ShowCloaks();
+        missileTargets.ForEach(x => x.MoveToCloakPosition());
     }
 
     private void CompleteStage1()
     {
-        GetComponent<MeshRenderer>().material = triggeredMaterial;
-        GetComponent<Animator>().SetTrigger("Stage1_Complete");
+        GetComponent<MeshRenderer>().material = GlowingMaterial;
+        missileTargets.ForEach(x => x.MoveToCenter());
         Destroy(puzzle1_Trigger);
         aspectOfCreation.SetActive(true);
         Stage1Complete = true;
@@ -76,6 +80,6 @@ public class Puzzle1_Manager : MonoBehaviour
     {
         Destroy(aspectOfCreation);
         GetComponent<MeshRenderer>().material = defaultMaterial;
-        GetComponent<Animator>().SetTrigger("Stage2_Start");
+        missileTargets.ForEach(x => x.MoveToOriginalPosition());
     }
 }

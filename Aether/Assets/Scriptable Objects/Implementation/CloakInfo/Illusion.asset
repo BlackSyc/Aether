@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79012654c50abd047ae1b21e8dcb97cd, type: 3}
+  m_Name: Illusion
+  m_EditorClassIdentifier: 
+  Name: The Illusionists' Cloak
+  Colour: {r: 0.34242615, g: 0.8759928, b: 0.8962264, a: 1}
+  Keywords: Controlling - Cunning - Confusing
+  Description: A trick from The Illusion, Aspect of the Aether. Lorem ipsum dolor
+    sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+    et dolore magna aliqua.
+  CloakPrefab: {fileID: 1511576211006047054, guid: 45a40a93d20b86d449b30955a6caf6af,
+    type: 3}

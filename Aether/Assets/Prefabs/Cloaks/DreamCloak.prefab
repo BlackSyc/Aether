@@ -1,0 +1,432 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1511576211006047054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2495393689080475997}
+  - component: {fileID: 6915961028944300907}
+  - component: {fileID: 7483821050755634254}
+  - component: {fileID: 7483821050755634241}
+  - component: {fileID: 7129665864801116486}
+  m_Layer: 8
+  m_Name: DreamCloak
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2495393689080475997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511576211006047054}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.02, z: 0.33}
+  m_LocalScale: {x: 60, y: 50, z: 50}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!33 &6915961028944300907
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511576211006047054}
+  m_Mesh: {fileID: -462981019419857548, guid: 6eabe9828d4ba4e4b8f6186d64ac77a6, type: 3}
+--- !u!137 &7483821050755634254
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511576211006047054}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 48bbf591e0bb78e4fbe93ee1726a659c, type: 2}
+  - {fileID: 2100000, guid: 7ff9eeba6500a7645b325f901691612b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -462981019419857548, guid: 6eabe9828d4ba4e4b8f6186d64ac77a6, type: 3}
+  m_Bones: []
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0.000000059604645, y: 0.1418306, z: -0.30319083}
+    m_Extent: {x: 0.49730447, y: 0.16244358, z: 0.40247303}
+  m_DirtyAABB: 0
+--- !u!183 &7483821050755634241
+Cloth:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511576211006047054}
+  m_Enabled: 1
+  m_StretchingStiffness: 1
+  m_BendingStiffness: 0.5
+  m_UseTethers: 1
+  m_UseGravity: 1
+  m_Damping: 0.05
+  m_ExternalAcceleration: {x: 0, y: 0, z: 0}
+  m_RandomAcceleration: {x: 0, y: 0, z: 0}
+  m_WorldVelocityScale: 0.02
+  m_WorldAccelerationScale: 0.01
+  m_Friction: 0.5
+  m_CollisionMassScale: 0
+  m_UseContinuousCollision: 1
+  m_UseVirtualParticles: 1
+  m_SolverFrequency: 120
+  m_SleepThreshold: 0.1
+  m_Coefficients:
+  - maxDistance: 0
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 0.9
+    collisionSphereDistance: 3.4028235e+38
+  - maxDistance: 1
+    collisionSphereDistance: 3.4028235e+38
+  m_CapsuleColliders:
+  - {fileID: 0}
+  m_SphereColliders: []
+  m_SelfCollisionDistance: 0
+  m_SelfCollisionStiffness: 0.2
+  m_SelfAndInterCollisionIndices: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000
+  m_VirtualParticleWeights:
+  - {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+  - {x: 0.6666667, y: 0.16666667, z: 0.16666667}
+  - {x: 0.5, y: 0.5, z: 0}
+  m_VirtualParticleIndices: 
+--- !u!114 &7129665864801116486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511576211006047054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5aef030453e02f4f8bd97c008bf220a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloakInfo: {fileID: 11400000, guid: 4480b7999006e7341a7ebdd21e95d8ed, type: 2}

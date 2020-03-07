@@ -11,20 +11,50 @@ public class InteractionTooltip : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
-
-    public void Activate(string message)
+    private void Start()
     {
-        text.text = message;
+        AetherEvents.GameEvents.InteractionEvents.OnProposeInteraction += Activate;
+        AetherEvents.GameEvents.InteractionEvents.OnCancelProposeInteraction += Deactivate;
+        AetherEvents.GameEvents.InteractionEvents.OnInteract += PerformAnimation;
+
+        AetherEvents.UIEvents.ToolTips.OnHideAll += Hide;
+        AetherEvents.UIEvents.ToolTips.OnUnhideAll += Unhide;
+    }
+
+    private void Activate(Interactable interactable)
+    {
+        text.text = interactable.ProposeInteractionMessage;
+        animator.SetBool("Performed", false);
         animator.SetBool("Shown", true);
     }
 
-    public void Deactivate()
+    private void Deactivate()
     {
         animator.SetBool("Shown", false);
     }
 
-    public void PerformAnimation()
+    private void PerformAnimation()
     {
-        animator.SetTrigger("Performed");
+        animator.SetBool("Performed", true);
+    }
+
+    private void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void Unhide()
+    {
+        gameObject.SetActive(true);
+    }
+
+    private void OnDestroy()
+    {
+        AetherEvents.GameEvents.InteractionEvents.OnProposeInteraction -= Activate;
+        AetherEvents.GameEvents.InteractionEvents.OnCancelProposeInteraction -= Deactivate;
+        AetherEvents.GameEvents.InteractionEvents.OnInteract -= PerformAnimation;
+
+        AetherEvents.UIEvents.ToolTips.OnHideAll -= Hide;
+        AetherEvents.UIEvents.ToolTips.OnUnhideAll -= Unhide;
     }
 }

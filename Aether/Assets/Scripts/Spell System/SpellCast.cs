@@ -6,12 +6,11 @@ using UnityEngine.Events;
 
 public class SpellCast
 {
-    public delegate void CastEventHandler(SpellCast cast);
-    public event CastEventHandler CastStarted;
-    public event CastEventHandler CastProgress;
-    public event CastEventHandler CastCancelled;
-    public event CastEventHandler CastInterrupted;
-    public event CastEventHandler CastComplete;
+    public event Action<SpellCast> CastStarted;
+    public event Action<float> CastProgress;
+    public event Action<SpellCast> CastCancelled;
+    public event Action<SpellCast> CastInterrupted;
+    public event Action<SpellCast> CastComplete;
 
     
     public float Progress { get
@@ -50,6 +49,7 @@ public class SpellCast
 
         spellObject.GetComponent<SpellObject>().Spell = Spell;
         spellObject.GetComponent<SpellObject>().CastStarted();
+        AetherEvents.GameEvents.SpellSystemEvents.CastSpell(this);
         CastStarted?.Invoke(this);
 
         if (targetManager.GetCurrentTarget().HasTargetTransform)
@@ -64,7 +64,7 @@ public class SpellCast
                 yield break;
             }
 
-            CastProgress?.Invoke(this);
+            CastProgress?.Invoke(Progress);
             yield return null;
         }
 

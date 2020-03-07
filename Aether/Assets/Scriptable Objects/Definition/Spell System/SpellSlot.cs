@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+[CreateAssetMenu(menuName = "Scriptable Objects/Spell System/SpellSlot")]
+[Serializable]
+public class SpellSlot : ScriptableObject
+{
+    public string Name;
+
+    public SpellSlotState State = new SpellSlotState();
+
+    public struct SpellSlotState
+    {
+        public Spell Spell;
+
+        public float CoolDownUntil;
+    }
+
+    public void SelectSpell(Spell spell)
+    {
+        if (spell == null)
+            return;
+
+        State.Spell = spell;
+        AetherEvents.GameEvents.SpellSystemEvents.SelectSpell(this, spell);
+    }
+
+    public bool HasActiveSpell { get
+        {
+            return State.Spell != null;
+        } }
+
+    public SpellCast Cast(Transform parent, TargetManager targetManager)
+    {
+        if (State.Spell != null)
+        {
+            if (Time.time < State.CoolDownUntil)
+            {
+                Debug.Log("Spell is still on cooldown!");
+                return null;
+            }
+
+            SpellCast spellCast = new SpellCast(State.Spell, parent, targetManager);
+            spellCast.CastComplete += SetCoolDown;
+            return spellCast;
+        }
+        else
+        {
+            Debug.LogWarning("No spell bound to this spell slot!");
+            return null;
+        }
+    }
+
+    private void SetCoolDown(SpellCast spellCast)
+    {
+        State.CoolDownUntil = Time.time + spellCast.Spell.CoolDown;
+    }
+}
