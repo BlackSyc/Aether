@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2868120797459138798}
-  - component: {fileID: 1244014788113687684}
   - component: {fileID: 2673095067969104084}
+  - component: {fileID: -5214996593726541444}
   m_Layer: 0
-  m_Name: Arcane Missile
+  m_Name: Illusion Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,22 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1244014788113687684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3282706551129572718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 152561897267f29499b405838d4c3e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spell: {fileID: 0}
-  lifeTime: 10
-  movementSpeed: 20
-  rotationSpeed: 500
 --- !u!95 &2673095067969104084
 Animator:
   serializedVersion: 3
@@ -68,6 +52,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5214996593726541444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282706551129572718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22cd16df964446a46ba0b0706835959c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spell: {fileID: 0}
+  lifeTime: 10
+  movementSpeed: 20
+  rotationSpeed: 500
 --- !u!1 &5332106631852866202
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.28773582, g: 0.36928874, b: 1, a: 1}
   m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 30

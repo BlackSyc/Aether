@@ -44,10 +44,10 @@ public class ArcaneMissile : SpellObject
 
     public override void CastInterrupted()
     {
-        Debug.Log("Arcane Missile Interrupted!");
+        Debug.Log("Missile Interrupted!");
     }
 
-    private bool Hit()
+    protected virtual bool Hit()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, .5f, Spell.layerMask);
         if (colliders.Length > 0)
