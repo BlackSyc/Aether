@@ -30,6 +30,9 @@ public class ArcaneMissileTarget : MonoBehaviour
 
     public void Hit()
     {
+        if (IsHit)
+            return;
+
         GetComponent<Animator>().SetBool("Hit", true);
         IsHit = true;
         gameObject.layer = LayerMask.NameToLayer("Obstruction");

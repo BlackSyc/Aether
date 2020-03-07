@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +16,31 @@ public class CloakObjectParent : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.Puzzle1Events.OnShowCloaks += Show;    
+        AetherEvents.GameEvents.Puzzle1Events.OnShowCloaks += Show;
+        AetherEvents.GameEvents.CloakEvents.OnEquipCloak += CloakEquipped;
+        AetherEvents.GameEvents.CloakEvents.OnUnequipCloak += CloakUnequipped;
+    }
+
+    private void CloakUnequipped()
+    {
+        CheckEquip();
+    }
+
+    private void CloakEquipped(GameObject cloakPrefab)
+    {
+        CheckEquip();
+    }
+
+    private void CheckEquip()
+    {
+        if (cloakInfo.State.Equipped)
+        {
+            cloakObject.SetActive(false);
+        }
+        else
+        {
+            cloakObject.SetActive(true);
+        }
     }
 
     private void Show()
@@ -27,11 +52,14 @@ public class CloakObjectParent : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         cloakObject.SetActive(true);
+        GetComponent<Interactable>().IsActive = true;
     }
 
     private void OnDestroy()
     {
         AetherEvents.GameEvents.Puzzle1Events.OnShowCloaks -= Show;
+        AetherEvents.GameEvents.CloakEvents.OnEquipCloak -= CloakEquipped;
+        AetherEvents.GameEvents.CloakEvents.OnUnequipCloak -= CloakUnequipped;
     }
 
 

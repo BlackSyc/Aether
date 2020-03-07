@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6915961028944300907}
   - component: {fileID: 7483821050755634254}
   - component: {fileID: 7483821050755634241}
+  - component: {fileID: 7129665864801116486}
   m_Layer: 8
   m_Name: DreamCloak
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511576211006047054}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 90, z: 90}
+  m_LocalPosition: {x: 0, y: -0.02, z: 0.33}
+  m_LocalScale: {x: 60, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -90,8 +91,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.00000011920929, y: 0.25529504, z: -0.5457434}
-    m_Extent: {x: 0.82884073, y: 0.2923984, z: 0.72445136}
+    m_Center: {x: 0.000000059604645, y: 0.1418306, z: -0.30319083}
+    m_Extent: {x: 0.49730447, y: 0.16244358, z: 0.40247303}
   m_DirtyAABB: 0
 --- !u!183 &7483821050755634241
 Cloth:
@@ -405,7 +406,8 @@ Cloth:
     collisionSphereDistance: 3.4028235e+38
   - maxDistance: 1
     collisionSphereDistance: 3.4028235e+38
-  m_CapsuleColliders: []
+  m_CapsuleColliders:
+  - {fileID: 0}
   m_SphereColliders: []
   m_SelfCollisionDistance: 0
   m_SelfCollisionStiffness: 0.2
@@ -415,3 +417,16 @@ Cloth:
   - {x: 0.6666667, y: 0.16666667, z: 0.16666667}
   - {x: 0.5, y: 0.5, z: 0}
   m_VirtualParticleIndices: 
+--- !u!114 &7129665864801116486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511576211006047054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5aef030453e02f4f8bd97c008bf220a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloakInfo: {fileID: 11400000, guid: 4480b7999006e7341a7ebdd21e95d8ed, type: 2}
