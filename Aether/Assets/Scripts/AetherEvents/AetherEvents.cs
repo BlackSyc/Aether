@@ -61,6 +61,18 @@ public class AetherEvents : MonoBehaviour
             public static event Action OnHideCloakInfo;
             public static event Action<GameObject> OnEquipCloak;
             public static event Action OnUnequipCloak;
+            public static event Action<CloakInfo> OnCloakEquipped;
+            public static event Action<CloakInfo> OnCloakUnequipped;
+
+            public static void CloakUnequipped(CloakInfo cloakInfo)
+            {
+                OnCloakUnequipped?.Invoke(cloakInfo);
+            }
+
+            public static void CloakEquipped(CloakInfo cloakInfo)
+            {
+                OnCloakEquipped?.Invoke(cloakInfo);
+            }
 
             public static void ShowCloakInfo(CloakInfo cloakInfo)
             {

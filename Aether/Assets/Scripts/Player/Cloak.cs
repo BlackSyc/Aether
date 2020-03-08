@@ -13,7 +13,7 @@ public class Cloak : MonoBehaviour
     public void Equip()
     {
         Debug.Log("Equipped cloak: " + cloakInfo.Name);
-        cloakInfo.State.Equipped = true;
+        cloakInfo.Equip();
         transform.parent.parent.GetComponent<SpellSystem>().SpellSlot1.SelectSpell(missileSpell);
 
         // add spells
@@ -23,7 +23,7 @@ public class Cloak : MonoBehaviour
     public void Unequip()
     {
         Debug.Log("Unequipped cloak: " + cloakInfo.Name);
-        cloakInfo.State.Equipped = false;
+        cloakInfo.UnEquip();
         // remove spells
         // perform spawning animation
     }

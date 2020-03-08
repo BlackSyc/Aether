@@ -46,7 +46,7 @@ public class CloakWindow : MonoBehaviour
         keywords.text = cloakInfo.Keywords;
         content.text = cloakInfo.Description;
 
-        if (!currentCloakInfo.State.Equipped)
+        if (!currentCloakInfo.IsEquipped)
         {
             equipButton.onClick.AddListener(() => EquipCloak());
             equipButtonText.text = "Equip";

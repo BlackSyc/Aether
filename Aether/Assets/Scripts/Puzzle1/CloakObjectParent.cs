@@ -33,7 +33,7 @@ public class CloakObjectParent : MonoBehaviour
 
     private void CheckEquip()
     {
-        if (cloakInfo.State.Equipped)
+        if (cloakInfo.IsEquipped)
         {
             cloakObject.SetActive(false);
         }

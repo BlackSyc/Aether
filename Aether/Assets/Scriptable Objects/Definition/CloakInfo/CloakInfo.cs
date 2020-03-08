@@ -12,14 +12,31 @@ public class CloakInfo : ScriptableObject
     [TextArea]
     public string Description;
 
+    public GameObject CloakPrefab;
+
     public struct CloakInfoState
     {
         public bool Equipped;
     }
 
-    public CloakInfoState State = new CloakInfoState();
+    private CloakInfoState State = new CloakInfoState();
 
-    public GameObject CloakPrefab;
+    public bool IsEquipped { get
+        {
+            return State.Equipped;
+        } }
+
+    public void Equip()
+    {
+        State.Equipped = true;
+        AetherEvents.GameEvents.CloakEvents.CloakEquipped(this);
+    }
+
+    public void UnEquip()
+    {
+        State.Equipped = false;
+        AetherEvents.GameEvents.CloakEvents.CloakUnequipped(this);
+    }
 
     public void Show()
     {

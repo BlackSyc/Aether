@@ -3034,6 +3034,40 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7522557420591234460, guid: d4cd12e20887ab3489c58b238b38ccf0, type: 3}
+--- !u!1 &732997116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 732997117}
+  m_Layer: 0
+  m_Name: PlatformStairs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &732997117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732997116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4508705276782740285}
+  - {fileID: 3117923080600333615}
+  - {fileID: 7900964334031720494}
+  - {fileID: 1730094574067569169}
+  m_Father: {fileID: 5006512735076541947}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &755391417
 GameObject:
   m_ObjectHideFlags: 0
@@ -8984,10 +9018,6 @@ Transform:
   - {fileID: 1389959269128780724}
   - {fileID: 6294933678769245144}
   - {fileID: 447423871781886962}
-  - {fileID: 4508705276782740285}
-  - {fileID: 3117923080600333615}
-  - {fileID: 1730094574067569169}
-  - {fileID: 7900964334031720494}
   m_Father: {fileID: 5006512735076541947}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9762,7 +9792,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -56664853607673411, guid: d4cd12e20887ab3489c58b238b38ccf0, type: 3}
+  - {fileID: 2100000, guid: d816a98177e11fe499ae9b8dc47410b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10130,7 +10160,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -56664853607673411, guid: d4cd12e20887ab3489c58b238b38ccf0, type: 3}
+  - {fileID: 2100000, guid: d816a98177e11fe499ae9b8dc47410b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10159,11 +10189,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7305203761999610262}
   m_LocalRotation: {x: -0.00000013767877, y: 0.7071068, z: 0.70710677, w: 0.00000013767878}
-  m_LocalPosition: {x: -0.026115894, y: -0.0053459406, z: 0}
+  m_LocalPosition: {x: -0.026115894, y: 0.46, z: 0}
   m_LocalScale: {x: 98.97586, y: 98.97586, z: 98.97586}
   m_Children: []
-  m_Father: {fileID: 1912667215}
-  m_RootOrder: 32
+  m_Father: {fileID: 732997117}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1821100796072795677
 GameObject:
@@ -10728,11 +10758,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9121654693870913393}
   m_LocalRotation: {x: -0.50000006, y: -0.4999999, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: -0.0053459406, z: 0.026115894}
+  m_LocalPosition: {x: 0, y: 0.46, z: 0.026115894}
   m_LocalScale: {x: 98.97586, y: 98.97586, z: 98.97586}
   m_Children: []
-  m_Father: {fileID: 1912667215}
-  m_RootOrder: 31
+  m_Father: {fileID: 732997117}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &3246463860806372386
 MeshRenderer:
@@ -10837,7 +10867,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -56664853607673411, guid: d4cd12e20887ab3489c58b238b38ccf0, type: 3}
+  - {fileID: 2100000, guid: d816a98177e11fe499ae9b8dc47410b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11285,11 +11315,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5898083688952929303}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.026115894, y: -0.0053459406, z: 0}
+  m_LocalPosition: {x: 0.02611589, y: 0.46, z: 0}
   m_LocalScale: {x: 98.97586, y: 98.97586, z: 98.97586}
   m_Children: []
-  m_Father: {fileID: 1912667215}
-  m_RootOrder: 30
+  m_Father: {fileID: 732997117}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4538630222022234681
 MeshFilter:
@@ -11515,6 +11545,7 @@ Transform:
   - {fileID: 984577802}
   - {fileID: 1897496756}
   - {fileID: 1383274263}
+  - {fileID: 732997117}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11748,13 +11779,76 @@ GameObject:
   - component: {fileID: 5016925360666039286}
   - component: {fileID: 360413239099810596}
   - component: {fileID: 1979454081}
-  m_Layer: 0
-  m_Name: StairsDouble
+  - component: {fileID: 5898083688952929306}
+  - component: {fileID: 5898083688952929305}
+  - component: {fileID: 5898083688952929304}
+  m_Layer: 8
+  m_Name: NightmareStairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &5898083688952929304
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898083688952929303}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2bb2b785abbbe3144b63aaf7ac8443c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5898083688952929305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898083688952929303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProposeInteractionMessage: to open
+  Interaction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5898083688952929306}
+        m_MethodName: MoveStairs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  IsActive: 0
+--- !u!114 &5898083688952929306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898083688952929303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6316fac18dfa040bb35eb3898fb66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloakInfo: {fileID: 11400000, guid: 295d88bd32d50fe4c917a850ff342795, type: 2}
 --- !u!33 &5948555683981463426
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11856,13 +11950,76 @@ GameObject:
   - component: {fileID: 4538630222022234681}
   - component: {fileID: 1728335788312392381}
   - component: {fileID: 1736219531}
-  m_Layer: 0
-  m_Name: StairsDouble.003
+  - component: {fileID: 6314178123290621697}
+  - component: {fileID: 6314178123290621696}
+  - component: {fileID: 6314178123290621695}
+  m_Layer: 8
+  m_Name: IllusionStairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &6314178123290621695
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6314178123290621694}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4caacfe099ed09246bfdde2ce7d5e4aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6314178123290621696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6314178123290621694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProposeInteractionMessage: to open
+  Interaction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6314178123290621697}
+        m_MethodName: MoveStairs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  IsActive: 0
+--- !u!114 &6314178123290621697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6314178123290621694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6316fac18dfa040bb35eb3898fb66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloakInfo: {fileID: 11400000, guid: 1909c5330ac9b544aaba2db58c6e728f, type: 2}
 --- !u!23 &6394381159625700045
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12124,8 +12281,8 @@ GameObject:
   - component: {fileID: 395996757198217529}
   - component: {fileID: 3470643381665388462}
   - component: {fileID: 862929599}
-  m_Layer: 0
-  m_Name: StairsDouble.002
+  m_Layer: 8
+  m_Name: CorruptionStairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12276,6 +12433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ea3c880fbda394caf01df17a91d6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSolved: 1
   puzzle1_Trigger: {fileID: 334036038}
   glowingMaterial: {fileID: 2100000, guid: f6992b3035a793346ae0242594ab6978, type: 2}
   pressurePlates:
@@ -12508,11 +12666,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6314178123290621694}
   m_LocalRotation: {x: 0.5, y: -0.49999997, z: -0.5, w: -0.5}
-  m_LocalPosition: {x: 0, y: -0.0053459406, z: -0.026115894}
+  m_LocalPosition: {x: 0, y: 0.46, z: -0.026115894}
   m_LocalScale: {x: 98.97586, y: 98.97586, z: 98.97586}
   m_Children: []
-  m_Father: {fileID: 1912667215}
-  m_RootOrder: 33
+  m_Father: {fileID: 732997117}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7937463218444708953
 MeshFilter:
@@ -13119,7 +13277,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -56664853607673411, guid: d4cd12e20887ab3489c58b238b38ccf0, type: 3}
+  - {fileID: 2100000, guid: d816a98177e11fe499ae9b8dc47410b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13358,13 +13516,76 @@ GameObject:
   - component: {fileID: 8165333566353179031}
   - component: {fileID: 8525571204562878930}
   - component: {fileID: 62114303}
-  m_Layer: 0
-  m_Name: StairsDouble.001
+  - component: {fileID: 9121654693870913396}
+  - component: {fileID: 9121654693870913395}
+  - component: {fileID: 9121654693870913394}
+  m_Layer: 8
+  m_Name: DreamStairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &9121654693870913394
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9121654693870913393}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbddcbb5a0b88f2429f7069d7d221b87, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9121654693870913395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9121654693870913393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProposeInteractionMessage: to open
+  Interaction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9121654693870913396}
+        m_MethodName: MoveStairs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  IsActive: 0
+--- !u!114 &9121654693870913396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9121654693870913393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6316fac18dfa040bb35eb3898fb66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloakInfo: {fileID: 11400000, guid: 4480b7999006e7341a7ebdd21e95d8ed, type: 2}
 --- !u!1 &9211257583638801067
 GameObject:
   m_ObjectHideFlags: 0
