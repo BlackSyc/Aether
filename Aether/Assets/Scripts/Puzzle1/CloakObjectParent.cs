@@ -6,7 +6,7 @@ using UnityEngine;
 public class CloakObjectParent : MonoBehaviour
 {
     [SerializeField]
-    private float showDelay = 2;
+    private float showDelay = 4;
 
     [SerializeField]
     private GameObject cloakObject;
