@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4dc81a40112cf49a4fcb8f2fa35033, type: 3}
+  m_Name: Dream Missile
+  m_EditorClassIdentifier: 
+  Name: Dream Missile
+  CastDuration: 2
+  CoolDown: 2
+  CastWhileMoving: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1536
+  SpellObject: {fileID: 1332817021308259537, guid: 386382b1f5c709c4fbbfb726211b1183,
+    type: 3}

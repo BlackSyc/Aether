@@ -10,9 +10,6 @@ public class AspectOfCreation : MonoBehaviour
     [SerializeField]
     private Dialog dialog;
 
-    [SerializeField]
-    private GameObject crosshair;
-
 
     [SerializeField]
     private Spell reward;
@@ -36,7 +33,6 @@ public class AspectOfCreation : MonoBehaviour
     private void GrantArcaneMissile()
     {
         interactor.transform.parent.GetComponent<SpellSystem>().SpellSlot1.SelectSpell(reward);
-        crosshair.SetActive(true);
     }
 
     private void OnDestroy()

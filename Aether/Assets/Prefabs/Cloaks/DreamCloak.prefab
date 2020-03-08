@@ -430,3 +430,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloakInfo: {fileID: 11400000, guid: 4480b7999006e7341a7ebdd21e95d8ed, type: 2}
+  missileSpell: {fileID: 11400000, guid: cf5f1679cd04d6246b731bc7d2c36fed, type: 2}
