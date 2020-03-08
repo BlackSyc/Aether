@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79012654c50abd047ae1b21e8dcb97cd, type: 3}
   m_Name: Nightmare
   m_EditorClassIdentifier: 
-  Name: The Cloak of Nightmares
+  Name: The Shroud of Nightmares
   Colour: {r: 0.8018868, g: 0.049172327, b: 0.049172327, a: 1}
   Keywords: Forcing - Breaking - Devastating
   Description: A request from the Aspect of Nightmare. Lorem ipsum dolor sit amet,

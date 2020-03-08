@@ -39,6 +39,10 @@ public class SpellSystem : MonoBehaviour
     [SerializeField]
     private SpellSlot spellSlot7;
 
+    private void Start()
+    {
+        spellSlot1.Initialize();
+    }
 
     public void CastMissile(CallbackContext context)
     {

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: MissileSlot
   m_EditorClassIdentifier: 
   Name: MissileSlot
+  prefillSpell: {fileID: 0}

@@ -12,11 +12,18 @@ public class SpellSlot : ScriptableObject
 
     public SpellSlotState State = new SpellSlotState();
 
+    public Spell prefillSpell;
+
     public struct SpellSlotState
     {
         public Spell Spell;
 
         public float CoolDownUntil;
+    }
+
+    public void Initialize()
+    {
+        SelectSpell(prefillSpell);
     }
 
     public void SelectSpell(Spell spell)

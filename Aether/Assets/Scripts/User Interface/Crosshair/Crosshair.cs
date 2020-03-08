@@ -14,7 +14,27 @@ public class Crosshair : MonoBehaviour
     private GameObject targetTracker;
 
     [SerializeField]
+    private Animator animator;
+
+    [SerializeField]
+    private GameObject crosshairContainer;
+
+    [SerializeField]
     private Camera camera;
+
+    private void Start()
+    {
+        AetherEvents.GameEvents.SpellSystemEvents.OnSelectSpell += SpellSelected;
+    }
+
+    private void SpellSelected(SpellSlot spellSlot, Spell spell)
+    {
+        if (spellSlot == null || spell == null)
+            return;
+
+        if (!crosshairContainer.activeSelf)
+            crosshairContainer.SetActive(true);
+    }
 
     // Update is called once per frame
     void LateUpdate()
@@ -23,16 +43,16 @@ public class Crosshair : MonoBehaviour
         {
             if (targetManager.HasLockedTarget && targetManager.GetCurrentTarget().TargetTransform == targetManager.Target.TargetTransform)
             {
-                GetComponent<Animator>().SetBool("HasObjectTarget", false);
+                animator.SetBool("HasObjectTarget", false);
             }
             else
             {
-                GetComponent<Animator>().SetBool("HasObjectTarget", true);
+                animator.SetBool("HasObjectTarget", true);
             }
         }
         else
         {
-            GetComponent<Animator>().SetBool("HasObjectTarget", false);
+            animator.SetBool("HasObjectTarget", false);
         }
 
         if (targetManager.HasLockedTarget)
@@ -44,5 +64,10 @@ public class Crosshair : MonoBehaviour
         {
             targetTracker.SetActive(false);
         }
+    }
+
+    private void OnDestroy()
+    {
+        AetherEvents.GameEvents.SpellSystemEvents.OnSelectSpell -= SpellSelected;
     }
 }

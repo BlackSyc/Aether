@@ -5,6 +5,9 @@ using UnityEngine;
 public class Puzzle1_Manager : MonoBehaviour
 {
     [SerializeField]
+    private bool isSolved;
+
+    [SerializeField]
     private GameObject puzzle1_Trigger;
 
     [SerializeField]
@@ -36,6 +39,10 @@ public class Puzzle1_Manager : MonoBehaviour
     public void Start()
     {
         defaultMaterial = GetComponent<MeshRenderer>().material;
+        if (isSolved)
+        {
+            CompleteStage2();
+        }
     }
 
     public bool TryCompleteStage1()
