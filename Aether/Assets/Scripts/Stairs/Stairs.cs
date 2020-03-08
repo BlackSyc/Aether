@@ -10,7 +10,6 @@ public class Stairs : MonoBehaviour
     private Interactable interactable;
 
     private Animator animator;
-
     void Start()
     {
         interactable = GetComponent<Interactable>();
@@ -40,12 +39,8 @@ public class Stairs : MonoBehaviour
 
     public void MoveStairs()
     {
-        animator.SetBool("move", true);
-    }
-
-    public void MoveBackStairs()
-    {
-        animator.SetBool("move", false);
+        animator.SetTrigger("move");
+        interactable.IsActive = false;
     }
 
 
