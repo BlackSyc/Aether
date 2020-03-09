@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Spell System/SpellSlot")]
 [Serializable]
@@ -27,7 +24,7 @@ public class SpellSlot : ScriptableObject
         SelectSpell(prefillSpell);
     }
 
-    public void SelectSpell(Spell spell)
+    private void SelectSpell(Spell spell)
     {
         if (spell == null)
             return;
