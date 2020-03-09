@@ -6,7 +6,7 @@ using UnityEngine;
 public class CloakObjectParent : MonoBehaviour
 {
     [SerializeField]
-    private float showDelay = 2;
+    private float showDelay = 4;
 
     [SerializeField]
     private GameObject cloakObject;
@@ -16,7 +16,7 @@ public class CloakObjectParent : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.Puzzle1Events.OnShowCloaks += Show;
+        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage2 += Show;
         AetherEvents.GameEvents.CloakEvents.OnEquipCloak += CloakEquipped;
         AetherEvents.GameEvents.CloakEvents.OnUnequipCloak += CloakUnequipped;
     }
@@ -26,14 +26,14 @@ public class CloakObjectParent : MonoBehaviour
         CheckEquip();
     }
 
-    private void CloakEquipped(GameObject cloakPrefab)
+    private void CloakEquipped(CloakInfo cloakInfo)
     {
         CheckEquip();
     }
 
     private void CheckEquip()
     {
-        if (cloakInfo.State.Equipped)
+        if (cloakInfo.IsEquipped)
         {
             cloakObject.SetActive(false);
         }
@@ -57,7 +57,7 @@ public class CloakObjectParent : MonoBehaviour
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.Puzzle1Events.OnShowCloaks -= Show;
+        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage2 -= Show;
         AetherEvents.GameEvents.CloakEvents.OnEquipCloak -= CloakEquipped;
         AetherEvents.GameEvents.CloakEvents.OnUnequipCloak -= CloakUnequipped;
     }

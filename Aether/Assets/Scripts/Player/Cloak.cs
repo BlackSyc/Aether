@@ -12,9 +12,8 @@ public class Cloak : MonoBehaviour
 
     public void Equip()
     {
-        Debug.Log("Equipped cloak: " + cloakInfo.Name);
-        cloakInfo.State.Equipped = true;
-        transform.parent.parent.GetComponent<SpellSystem>().SpellSlot1.SelectSpell(missileSpell);
+        cloakInfo.Equip();
+        AetherEvents.GameEvents.SpellSystemEvents.GrantNewSpell(missileSpell);
 
         // add spells
         // perform spawning animation
@@ -22,8 +21,7 @@ public class Cloak : MonoBehaviour
 
     public void Unequip()
     {
-        Debug.Log("Unequipped cloak: " + cloakInfo.Name);
-        cloakInfo.State.Equipped = false;
+        cloakInfo.UnEquip();
         // remove spells
         // perform spawning animation
     }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Arcane Missile
   m_EditorClassIdentifier: 
   Name: Arcane Missile
+  SpellSlot: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
   CastDuration: 1.5
   CoolDown: 2
   CastWhileMoving: 1

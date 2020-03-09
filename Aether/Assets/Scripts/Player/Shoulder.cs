@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Shoulder : MonoBehaviour
 {
+    public SpellSystem SpellSystem;
 
     private Cloak equippedCloak = null;
 
@@ -14,15 +15,15 @@ public class Shoulder : MonoBehaviour
         AetherEvents.GameEvents.CloakEvents.OnUnequipCloak += UnequipCloak;
     }
 
-    private void EquipCloak(GameObject cloakPrefab)
+    private void EquipCloak(CloakInfo cloakInfo)
     {
         if(equippedCloak != null)
             UnequipCloak();
 
-        GameObject cloak = Instantiate(cloakPrefab, transform);
-        cloak.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[] { GetComponent<CapsuleCollider>() };
-        equippedCloak = cloak.GetComponent<Cloak>();
+        equippedCloak = cloakInfo.InstantiateCloak(transform);
         equippedCloak.Equip();
+
+        equippedCloak.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[] { GetComponent<CapsuleCollider>() };
     }
 
     private void UnequipCloak()

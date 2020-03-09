@@ -4,40 +4,51 @@ using UnityEngine;
 
 public class AspectOfCreation : MonoBehaviour
 {
-    [SerializeField]
-    private Puzzle1_Manager puzzleManager;
 
     [SerializeField]
-    private Dialog dialog;
+    private Dialog dialog = null;
 
 
     [SerializeField]
-    private Spell reward;
-
-    private Interactor interactor;
+    private Spell reward = null;
 
     private void Start()
     {
+        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage1 += ActivateAspect;
         dialog.GetDialogLine("Never mind").OnComplete += GrantArcaneMissile;
-        dialog.OnComplete += puzzleManager.StartStage2;
+        dialog.OnComplete += AspectOfCreationDialogComplete;
     }
 
     public void Interact(Interactor interactor, Interactable interactable)
     {
-        this.interactor = interactor;
         interactable.IsActive = false;
 
         AetherEvents.GameEvents.DialogEvents.StartDialog(dialog);
     }
 
+    private void ActivateAspect()
+    {
+        GetComponent<Interactable>().IsActive = true;
+
+        // To do: Spawn Aspect model
+        // Instantiate(this.aspectPrefab, this.transform);
+    }
+
+    private void AspectOfCreationDialogComplete()
+    {
+        AetherEvents.GameEvents.Puzzle1Events.AspectOfCreationDialogComplete();
+        Destroy(this.gameObject);
+    }
+
     private void GrantArcaneMissile()
     {
-        interactor.transform.parent.GetComponent<SpellSystem>().SpellSlot1.SelectSpell(reward);
+        AetherEvents.GameEvents.SpellSystemEvents.GrantNewSpell(reward);
     }
 
     private void OnDestroy()
     {
+        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage1 -= ActivateAspect;
         dialog.GetDialogLine("Never mind").OnComplete -= GrantArcaneMissile;
-        dialog.OnComplete -= puzzleManager.StartStage2;
+        dialog.OnComplete -= AspectOfCreationDialogComplete;
     }
 }
