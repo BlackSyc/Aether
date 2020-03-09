@@ -12,7 +12,8 @@ public class CloakInfo : ScriptableObject
     [TextArea]
     public string Description;
 
-    public GameObject CloakPrefab;
+    [SerializeField]
+    private GameObject cloakPrefab;
 
     public struct CloakInfoState
     {
@@ -20,6 +21,12 @@ public class CloakInfo : ScriptableObject
     }
 
     private CloakInfoState State = new CloakInfoState();
+
+    public Cloak InstantiateCloak(Transform parent)
+    {
+        GameObject cloakObject = GameObject.Instantiate(cloakPrefab, parent);
+        return cloakObject.GetComponent<Cloak>();
+    }
 
     public bool IsEquipped { get
         {

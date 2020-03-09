@@ -29,13 +29,13 @@ public class SpellButton : MonoBehaviour
             text.text = spellSlot.State.Spell.Name;
         }
 
-        AetherEvents.GameEvents.SpellSystemEvents.OnSelectSpell += SelectSpell;
+        AetherEvents.GameEvents.SpellSystemEvents.OnNewSpellSelected += NewSpellSelected;
         AetherEvents.GameEvents.SpellSystemEvents.OnCastSpell += StartSpellCast;
     }
 
-    private void SelectSpell(SpellSlot spellSlot, Spell spell)
+    private void NewSpellSelected(Spell spell)
     {
-        if (spellSlot == this.spellSlot)
+        if (spell.SpellSlot == this.spellSlot)
         {
             mainPanel.SetActive(true);
             text.text = spell.Name;
@@ -92,7 +92,7 @@ public class SpellButton : MonoBehaviour
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.SpellSystemEvents.OnSelectSpell -= SelectSpell;
+        AetherEvents.GameEvents.SpellSystemEvents.OnNewSpellSelected -= NewSpellSelected;
         AetherEvents.GameEvents.SpellSystemEvents.OnCastSpell -= StartSpellCast;
     }
 }

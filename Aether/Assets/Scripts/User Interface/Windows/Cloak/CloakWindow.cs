@@ -64,7 +64,7 @@ public class CloakWindow : MonoBehaviour
 
     public void EquipCloak()
     {
-        AetherEvents.GameEvents.CloakEvents.EquipCloak(currentCloakInfo.CloakPrefab);
+        AetherEvents.GameEvents.CloakEvents.EquipCloak(currentCloakInfo);
         CloseWindow();
     }
 

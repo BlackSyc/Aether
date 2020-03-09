@@ -24,12 +24,12 @@ public class Crosshair : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.SpellSystemEvents.OnSelectSpell += SpellSelected;
+        AetherEvents.GameEvents.SpellSystemEvents.OnNewSpellSelected += NewSpellSelected;
     }
 
-    private void SpellSelected(SpellSlot spellSlot, Spell spell)
+    private void NewSpellSelected(Spell spell)
     {
-        if (spellSlot == null || spell == null)
+        if (spell == null)
             return;
 
         if (!crosshairContainer.activeSelf)
@@ -68,6 +68,6 @@ public class Crosshair : MonoBehaviour
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.SpellSystemEvents.OnSelectSpell -= SpellSelected;
+        AetherEvents.GameEvents.SpellSystemEvents.OnNewSpellSelected -= NewSpellSelected;
     }
 }

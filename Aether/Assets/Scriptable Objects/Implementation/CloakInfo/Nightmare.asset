@@ -18,5 +18,5 @@ MonoBehaviour:
   Description: A request from the Aspect of Nightmare. Lorem ipsum dolor sit amet,
     consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
     magna aliqua.
-  CloakPrefab: {fileID: 1511576211006047054, guid: 9fd8a3fd315a3be4a8142d4122d0c2dc,
+  cloakPrefab: {fileID: 1511576211006047054, guid: 9fd8a3fd315a3be4a8142d4122d0c2dc,
     type: 3}

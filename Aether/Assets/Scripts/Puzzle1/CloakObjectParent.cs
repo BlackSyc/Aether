@@ -16,7 +16,7 @@ public class CloakObjectParent : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.Puzzle1Events.OnShowCloaks += Show;
+        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage2 += Show;
         AetherEvents.GameEvents.CloakEvents.OnEquipCloak += CloakEquipped;
         AetherEvents.GameEvents.CloakEvents.OnUnequipCloak += CloakUnequipped;
     }
@@ -26,7 +26,7 @@ public class CloakObjectParent : MonoBehaviour
         CheckEquip();
     }
 
-    private void CloakEquipped(GameObject cloakPrefab)
+    private void CloakEquipped(CloakInfo cloakInfo)
     {
         CheckEquip();
     }
@@ -57,7 +57,7 @@ public class CloakObjectParent : MonoBehaviour
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.Puzzle1Events.OnShowCloaks -= Show;
+        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage2 -= Show;
         AetherEvents.GameEvents.CloakEvents.OnEquipCloak -= CloakEquipped;
         AetherEvents.GameEvents.CloakEvents.OnUnequipCloak -= CloakUnequipped;
     }

@@ -23,6 +23,7 @@ public class SpellSlot : ScriptableObject
 
     public void Initialize()
     {
+        AetherEvents.GameEvents.SpellSystemEvents.OnGrantNewSpell += SelectSpell;
         SelectSpell(prefillSpell);
     }
 
@@ -31,8 +32,11 @@ public class SpellSlot : ScriptableObject
         if (spell == null)
             return;
 
+        if (spell.SpellSlot != this)
+            return;
+
         State.Spell = spell;
-        AetherEvents.GameEvents.SpellSystemEvents.SelectSpell(this, spell);
+        AetherEvents.GameEvents.SpellSystemEvents.NewSpellSelected(spell);
     }
 
     public bool HasActiveSpell { get
@@ -64,5 +68,10 @@ public class SpellSlot : ScriptableObject
     private void SetCoolDown(SpellCast spellCast)
     {
         State.CoolDownUntil = Time.time + spellCast.Spell.CoolDown;
+    }
+
+    private void OnDisable()
+    {
+        AetherEvents.GameEvents.SpellSystemEvents.OnGrantNewSpell -= SelectSpell;
     }
 }

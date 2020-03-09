@@ -42,12 +42,18 @@ public class AetherEvents : MonoBehaviour
 
         public struct SpellSystemEvents 
         {
-            public static event Action<SpellSlot, Spell> OnSelectSpell;
+            public static event Action<Spell> OnGrantNewSpell;
+            public static event Action<Spell> OnNewSpellSelected;
             public static event Action<SpellCast> OnCastSpell;
 
-            public static void SelectSpell(SpellSlot spellSlot, Spell spell)
+            public static void GrantNewSpell(Spell spell)
             {
-                OnSelectSpell?.Invoke(spellSlot, spell);
+                OnGrantNewSpell?.Invoke(spell);
+            }
+
+            public static void NewSpellSelected(Spell spell)
+            {
+                OnNewSpellSelected?.Invoke(spell);
             }
             public static void CastSpell(SpellCast spellCast)
             {
@@ -59,7 +65,7 @@ public class AetherEvents : MonoBehaviour
         {
             public static event Action<CloakInfo> OnShowCloakInfo;
             public static event Action OnHideCloakInfo;
-            public static event Action<GameObject> OnEquipCloak;
+            public static event Action<CloakInfo> OnEquipCloak;
             public static event Action OnUnequipCloak;
             public static event Action<CloakInfo> OnCloakEquipped;
             public static event Action<CloakInfo> OnCloakUnequipped;
@@ -84,9 +90,9 @@ public class AetherEvents : MonoBehaviour
                 OnHideCloakInfo?.Invoke();
             }
 
-            public static void EquipCloak(GameObject cloakPrefab)
+            public static void EquipCloak(CloakInfo cloakInfo)
             {
-                OnEquipCloak?.Invoke(cloakPrefab);
+                OnEquipCloak?.Invoke(cloakInfo);
             }
 
             public static void UnequipCloak()
@@ -97,11 +103,36 @@ public class AetherEvents : MonoBehaviour
     
         public struct Puzzle1Events 
         {
-            public static event Action OnShowCloaks;
+            public static event Action OnPressurePlateTriggered;
+            public static event Action OnCompleteStage1;
+            public static event Action OnAspectOfCreationDialogComplete;
+            public static event Action OnMissileTargetHit;
+            public static event Action OnCompleteStage2;
+            
 
-            public static void ShowCloaks()
+            public static void CompleteStage2()
             {
-                OnShowCloaks?.Invoke();
+                OnCompleteStage2?.Invoke();
+            }
+
+            public static void AspectOfCreationDialogComplete()
+            {
+                OnAspectOfCreationDialogComplete?.Invoke();
+            }
+
+            public static void CompleteStage1()
+            {
+                OnCompleteStage1?.Invoke();
+            }
+
+            public static void PressurePlateTriggered()
+            {
+                OnPressurePlateTriggered?.Invoke();
+            }
+
+            public static void MissileTargetHit()
+            {
+                OnMissileTargetHit?.Invoke();
             }
         }
     }
