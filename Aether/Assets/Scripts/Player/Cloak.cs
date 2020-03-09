@@ -14,7 +14,7 @@ public class Cloak : MonoBehaviour
     {
         Debug.Log("Equipped cloak: " + cloakInfo.Name);
         cloakInfo.Equip();
-        transform.parent.parent.GetComponent<SpellSystem>().SpellSlot1.SelectSpell(missileSpell);
+        transform.parent.GetComponent<Shoulder>().SpellSystem.SpellSlot1.SelectSpell(missileSpell);
 
         // add spells
         // perform spawning animation

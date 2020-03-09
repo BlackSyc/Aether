@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Shoulder : MonoBehaviour
 {
+    public SpellSystem SpellSystem;
 
     private Cloak equippedCloak = null;
 
