@@ -25,7 +25,10 @@ public class Interactor : MonoBehaviour
 
     public void CheckForInteractables()
     {
-        Interactable interactable = Physics.OverlapSphere(this.transform.position, interactionRadius, layers).Select(x => x.GetComponent<Interactable>()).FirstOrDefault(x => x.IsActive);
+        Interactable interactable = Physics.OverlapSphere(this.transform.position, interactionRadius, layers)
+            .Where(x => x.GetComponent<Interactable>() != null)
+            .Select(x => x.GetComponent<Interactable>())
+            .FirstOrDefault(x => x.IsActive);
         if (interactable != null)
         {
             currentInteractable = interactable;
