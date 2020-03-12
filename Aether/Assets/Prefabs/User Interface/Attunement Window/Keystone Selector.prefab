@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2679090983625871520}
   - component: {fileID: 623902443939363059}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Keystone Selector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,8 +90,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _background: {fileID: 1826330371686248827}
-  _selectedColour: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
-  _hoverColour: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
+  _selectedBackgroundColour: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
+  _hoverBackgroundColour: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
+  _activatedTextColour: {r: 0, g: 1, b: 0.1451273, a: 1}
+  _defaultBackgroundColour: {r: 0, g: 0, b: 0, a: 0}
+  _defaultTextColour: {r: 1, g: 1, b: 1, a: 1}
   _buttonLabel: {fileID: 8913258198573489154}
 --- !u!114 &2679090983625871520
 MonoBehaviour:

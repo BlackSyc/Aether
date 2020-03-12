@@ -6,9 +6,14 @@ using UnityEngine;
 public class AttunementDevice : MonoBehaviour
 {
     [SerializeField]
-    private List<Keystone> keyStones;
+    private List<Keystone> _keystones;
+
+    [SerializeField]
+    private GameObject _keystoneObject;
 
     private Keystone _activeKeystone = null;
+
+
 
     private void Start()
     {
@@ -24,6 +29,7 @@ public class AttunementDevice : MonoBehaviour
         if(_activeKeystone != null)
         {
             _activeKeystone.State.IsActivated = false;
+            _keystoneObject.SetActive(false);
             AetherEvents.GameEvents.AttunementEvents.KeystoneDeactivated(_activeKeystone);
         }
 
@@ -36,6 +42,7 @@ public class AttunementDevice : MonoBehaviour
         {
             _activeKeystone = keystone;
             _activeKeystone.State.IsActivated = true;
+            _keystoneObject.SetActive(true);
             Debug.Log(string.Format("Keystone {0} activated!", _activeKeystone.Name));
             AetherEvents.GameEvents.AttunementEvents.KeystoneActivated(_activeKeystone);
         }
@@ -62,10 +69,10 @@ public class AttunementDevice : MonoBehaviour
 
         if(interactorInventory != null)
         {
-            keyStones.AddRange(interactorInventory.Keystones);
+            _keystones.AddRange(interactorInventory.Keystones);
             interactorInventory.ClearKeystones();
         }
 
-        AetherEvents.GameEvents.AttunementEvents.OpenAttunementWindow(keyStones);
+        AetherEvents.GameEvents.AttunementEvents.OpenAttunementWindow(_keystones);
     }
 }

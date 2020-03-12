@@ -15,12 +15,19 @@ public class KeystoneSelector : MonoBehaviour
     private Image _background;
 
     [SerializeField]
-    private Color _selectedColour;
+    private Color _selectedBackgroundColour;
 
     [SerializeField]
-    private Color _hoverColour;
+    private Color _hoverBackgroundColour;
 
-    private Color _defaultColour;
+    [SerializeField]
+    private Color _activatedTextColour;
+
+    [SerializeField]
+    private Color _defaultBackgroundColour;
+
+    [SerializeField]
+    private Color _defaultTextColour;
 
     public Action OnSelect;
 
@@ -31,23 +38,46 @@ public class KeystoneSelector : MonoBehaviour
 
     private bool _selected = false;
 
+    private void Start()
+    {
+        AetherEvents.GameEvents.AttunementEvents.OnKeystoneActivated += KeystoneActivated;
+        AetherEvents.GameEvents.AttunementEvents.OnKeystoneDeactivated += KeystoneDeactivated;
+    }
+
+    private void KeystoneActivated(Keystone keystone)
+    {
+        if (keystone != _keystone)
+            return;
+
+        _buttonLabel.color = _activatedTextColour;
+    }
+
+    private void KeystoneDeactivated(Keystone keystone)
+    {
+        if (keystone != _keystone)
+            return;
+
+        _buttonLabel.color = _defaultTextColour;
+    }
+
     public void SetKeystone(Keystone keystone)
     {
         _keystone = keystone;
-        _buttonLabel.text = keystone.Name;
+        _buttonLabel.text = _keystone.Name;
+        _buttonLabel.color = _keystone.State.IsActivated ? _activatedTextColour : _defaultTextColour;
     }
 
     public void Select()
     {
         GameObject.FindObjectsOfType<KeystoneSelector>().ToList().ForEach(x => x.Deselect());
-        _background.color = _selectedColour;
+        _background.color = _selectedBackgroundColour;
         _selected = true;
         OnSelect?.Invoke();
     }
 
     public void Deselect()
     {
-        _background.color = _defaultColour;
+        _background.color = _defaultBackgroundColour;
         _selected = false;
     }
 
@@ -59,12 +89,18 @@ public class KeystoneSelector : MonoBehaviour
     public void Hover()
     {
         if(!_selected)
-            _background.color = _hoverColour;
+            _background.color = _hoverBackgroundColour;
     }
 
     public void Unhover()
     {
         if(!_selected)
-            _background.color = _defaultColour;
+            _background.color = _defaultBackgroundColour;
+    }
+
+    private void OnDestroy()
+    {
+        AetherEvents.GameEvents.AttunementEvents.OnKeystoneActivated -= KeystoneActivated;
+        AetherEvents.GameEvents.AttunementEvents.OnKeystoneDeactivated -= KeystoneDeactivated;
     }
 }
