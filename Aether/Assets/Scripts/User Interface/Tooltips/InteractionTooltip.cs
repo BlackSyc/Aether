@@ -21,7 +21,7 @@ public class InteractionTooltip : MonoBehaviour
         AetherEvents.UIEvents.ToolTips.OnUnhideAll += Unhide;
     }
 
-    private void Activate(Interactable interactable)
+    private void Activate(Interactable interactable, Interactor _)
     {
         text.text = interactable.ProposeInteractionMessage;
         animator.SetBool("Performed", false);

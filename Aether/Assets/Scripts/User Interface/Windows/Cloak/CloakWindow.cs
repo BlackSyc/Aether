@@ -8,8 +8,6 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class CloakWindow : MonoBehaviour
 {
-    [SerializeField]
-    private ActionMapManager actionMapManager;
 
     [SerializeField]
     private TextMeshProUGUI header;
@@ -35,6 +33,7 @@ public class CloakWindow : MonoBehaviour
     {
         AetherEvents.GameEvents.CloakEvents.OnShowCloakInfo += ShowCloakInfo;
         AetherEvents.GameEvents.CloakEvents.OnHideCloakInfo += CloseWindow;
+        AetherEvents.UIEvents.Windows.OnClosePopups += ClosePopup;
     }
 
     private void ShowCloakInfo(CloakInfo cloakInfo)
@@ -57,7 +56,7 @@ public class CloakWindow : MonoBehaviour
             equipButtonText.text = "Unequip";
         }
 
-        actionMapManager.EnablePopUpActionMap();
+        AetherEvents.GameEvents.InputSystemEvents.EnablePopupActionMap();
         AetherEvents.UIEvents.ToolTips.HideAll();
         window.SetActive(true);
     }
@@ -79,21 +78,20 @@ public class CloakWindow : MonoBehaviour
         equipButton.onClick.RemoveAllListeners();
         window.SetActive(false);
         AetherEvents.UIEvents.ToolTips.UnhideAll();
-        actionMapManager.EnablePlayerActionMap();
+        AetherEvents.GameEvents.InputSystemEvents.EnablePlayerActionMap();
     }
 
-    public void CloseWindow(CallbackContext context)
+    public void ClosePopup()
     {
-        if (!context.performed)
-            return;
-
         currentCloakInfo = null;
-        CloseWindow();
+        if(window.activeSelf)
+            CloseWindow();
     }
 
     private void OnDestroy()
     {
         AetherEvents.GameEvents.CloakEvents.OnShowCloakInfo -= ShowCloakInfo;
         AetherEvents.GameEvents.CloakEvents.OnHideCloakInfo -= CloseWindow;
+        AetherEvents.UIEvents.Windows.OnClosePopups -= ClosePopup;
     }
 }

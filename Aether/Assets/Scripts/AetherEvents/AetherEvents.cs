@@ -10,13 +10,13 @@ public class AetherEvents : MonoBehaviour
     {
         public struct InteractionEvents 
         {
-            public static event Action<Interactable> OnProposeInteraction;
+            public static event Action<Interactable, Interactor> OnProposeInteraction;
             public static event Action OnCancelProposeInteraction;
             public static event Action OnInteract;
 
-            public static void ProposeInteraction(Interactable interactable)
+            public static void ProposeInteraction(Interactable interactable, Interactor interactor)
             {
-                OnProposeInteraction?.Invoke(interactable);
+                OnProposeInteraction?.Invoke(interactable, interactor);
             }
 
             public static void CancelProposeInteraction()
@@ -135,6 +135,66 @@ public class AetherEvents : MonoBehaviour
                 OnMissileTargetHit?.Invoke();
             }
         }
+    
+        public struct AttunementEvents
+        {
+            public static event Action<List<Keystone>> OnOpenAttunementWindow;
+
+            public static event Action<Keystone> OnToggleAttunement;
+
+            public static event Action<Keystone> OnKeystoneActivated;
+            public static event Action<Keystone> OnKeystoneDeactivated;
+
+            public static void OpenAttunementWindow(List<Keystone> newKeyStones)
+            {
+                OnOpenAttunementWindow?.Invoke(newKeyStones);
+            }
+
+            public static void ToggleAttunement(Keystone keystone)
+            {
+                OnToggleAttunement?.Invoke(keystone);
+            }
+
+            public static void KeystoneActivated(Keystone keystone)
+            {
+                OnKeystoneActivated?.Invoke(keystone);
+            }
+
+            public static void KeystoneDeactivated(Keystone keystone)
+            {
+                OnKeystoneDeactivated?.Invoke(keystone);
+            }
+
+
+        }
+
+        public struct InventoryEvents
+        {
+            public static event Action<Keystone> OnPickupKeystone;
+
+            public static void Pickup(Keystone keystone)
+            {
+                OnPickupKeystone?.Invoke(keystone);
+            }
+        }
+        
+        public struct InputSystemEvents
+        {
+            public static event Action OnEnablePopupActionMap;
+
+            public static event Action OnEnablePlayerActionMap;
+            
+            public static void EnablePopupActionMap()
+            {
+                OnEnablePopupActionMap?.Invoke();
+            }
+
+            public static void EnablePlayerActionMap()
+            {
+                OnEnablePlayerActionMap?.Invoke();
+            }
+        }
+    
     }
 
     public struct UIEvents
@@ -152,6 +212,16 @@ public class AetherEvents : MonoBehaviour
             public static void UnhideAll()
             {
                 OnUnhideAll?.Invoke();
+            }
+        }
+   
+        public struct Windows
+        {
+            public static event Action OnClosePopups;
+
+            public static void ClosePopups()
+            {
+                OnClosePopups?.Invoke();
             }
         }
     }

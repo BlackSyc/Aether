@@ -32,7 +32,7 @@ public class Interactor : MonoBehaviour
         if (interactable != null)
         {
             currentInteractable = interactable;
-            AetherEvents.GameEvents.InteractionEvents.ProposeInteraction(currentInteractable);
+            AetherEvents.GameEvents.InteractionEvents.ProposeInteraction(currentInteractable, this);
         }
         else
         {

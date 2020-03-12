@@ -5,11 +5,8 @@ using UnityEngine;
 
 public class Testrunner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        //StartCoroutine(InvokeNextFrame(InvokeCloakSpawn));
-    }
+    [SerializeField]
+    private List<Keystone> keystones;
 
     [ContextMenu("Spawn Cloaks")]
     private void InvokeCloakSpawn()
@@ -17,10 +14,11 @@ public class Testrunner : MonoBehaviour
         AetherEvents.GameEvents.Puzzle1Events.CompleteStage2();
     }
 
-    private IEnumerator InvokeNextFrame(Action action)
+    [ContextMenu("Pick up Keystone")]
+    private void PickupKeystone()
     {
-        yield return null;
-        action.Invoke();
+        keystones.ForEach(x => AetherEvents.GameEvents.InventoryEvents.Pickup(x));
+        
     }
 
 }
