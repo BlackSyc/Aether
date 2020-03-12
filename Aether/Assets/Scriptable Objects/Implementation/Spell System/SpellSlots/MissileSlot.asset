@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MissileSlot
   m_EditorClassIdentifier: 
   Name: MissileSlot
-  prefillSpell: {fileID: 11400000, guid: cf5f1679cd04d6246b731bc7d2c36fed, type: 2}
+  prefillSpell: {fileID: 0}
