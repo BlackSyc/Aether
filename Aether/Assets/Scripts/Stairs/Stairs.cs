@@ -7,12 +7,12 @@ public class Stairs : MonoBehaviour
     [SerializeField]
     private CloakInfo cloakInfo;
 
+    [SerializeField]
     private Interactable interactable;
 
     private Animator animator;
     void Start()
     {
-        interactable = GetComponent<Interactable>();
         animator = GetComponent<Animator>();
 
         AetherEvents.GameEvents.CloakEvents.OnCloakEquipped += CloakEquipped;
