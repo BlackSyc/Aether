@@ -58,6 +58,7 @@ public class CloakWindow : MonoBehaviour
 
         AetherEvents.GameEvents.InputSystemEvents.EnablePopupActionMap();
         AetherEvents.UIEvents.ToolTips.HideAll();
+        AetherEvents.UIEvents.Crosshair.HideCrosshair();
         window.SetActive(true);
     }
 
@@ -77,6 +78,7 @@ public class CloakWindow : MonoBehaviour
     {
         equipButton.onClick.RemoveAllListeners();
         window.SetActive(false);
+        AetherEvents.UIEvents.Crosshair.UnhideCrosshair();
         AetherEvents.UIEvents.ToolTips.UnhideAll();
         AetherEvents.GameEvents.InputSystemEvents.EnablePlayerActionMap();
     }

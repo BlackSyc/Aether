@@ -224,5 +224,21 @@ public class AetherEvents : MonoBehaviour
                 OnClosePopups?.Invoke();
             }
         }
+
+        public struct Crosshair
+        {
+            public static event Action OnHideCrosshair;
+            public static event Action OnUnhideCrosshair;
+
+            public static void HideCrosshair()
+            {
+                OnHideCrosshair?.Invoke();
+            }
+
+            public static void UnhideCrosshair()
+            {
+                OnUnhideCrosshair?.Invoke();
+            }
+        }
     }
 }

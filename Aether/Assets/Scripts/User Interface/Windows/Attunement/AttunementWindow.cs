@@ -54,6 +54,7 @@ public class AttunementWindow : MonoBehaviour
         
         AetherEvents.GameEvents.InputSystemEvents.EnablePopupActionMap();
         AetherEvents.UIEvents.ToolTips.HideAll();
+        AetherEvents.UIEvents.Crosshair.HideCrosshair();
     }
 
     private void ShowInfo(Keystone keystone)
@@ -78,6 +79,7 @@ public class AttunementWindow : MonoBehaviour
 
             AetherEvents.GameEvents.InputSystemEvents.EnablePlayerActionMap();
             AetherEvents.UIEvents.ToolTips.UnhideAll();
+            AetherEvents.UIEvents.Crosshair.UnhideCrosshair();
         }
     }
 
