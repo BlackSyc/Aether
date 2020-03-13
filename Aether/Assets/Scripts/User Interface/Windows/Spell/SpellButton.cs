@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -30,7 +31,16 @@ public class SpellButton : MonoBehaviour
         }
 
         AetherEvents.GameEvents.SpellSystemEvents.OnNewSpellSelected += NewSpellSelected;
+        AetherEvents.GameEvents.SpellSystemEvents.OnRemoveSpell += RemoveSpell;
         AetherEvents.GameEvents.SpellSystemEvents.OnCastSpell += StartSpellCast;
+    }
+
+    private void RemoveSpell(Spell spell)
+    {
+        if (spell.SpellSlot != spellSlot)
+            return;
+
+        mainPanel.SetActive(false);
     }
 
     private void NewSpellSelected(Spell spell)
@@ -93,6 +103,7 @@ public class SpellButton : MonoBehaviour
     private void OnDestroy()
     {
         AetherEvents.GameEvents.SpellSystemEvents.OnNewSpellSelected -= NewSpellSelected;
+        AetherEvents.GameEvents.SpellSystemEvents.OnRemoveSpell -= RemoveSpell;
         AetherEvents.GameEvents.SpellSystemEvents.OnCastSpell -= StartSpellCast;
     }
 }

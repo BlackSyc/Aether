@@ -43,6 +43,7 @@ public class AetherEvents : MonoBehaviour
         public struct SpellSystemEvents 
         {
             public static event Action<Spell> OnGrantNewSpell;
+            public static event Action<Spell> OnRemoveSpell;
             public static event Action<Spell> OnNewSpellSelected;
             public static event Action<SpellCast> OnCastSpell;
 
@@ -58,6 +59,11 @@ public class AetherEvents : MonoBehaviour
             public static void CastSpell(SpellCast spellCast)
             {
                 OnCastSpell?.Invoke(spellCast);
+            }
+
+            internal static void RemoveSpell(Spell spell)
+            {
+                OnRemoveSpell?.Invoke(spell);
             }
         }
 

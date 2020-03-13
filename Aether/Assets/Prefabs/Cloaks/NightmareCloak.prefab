@@ -91,8 +91,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.00000011920929, y: 0.25529504, z: -0.5457434}
-    m_Extent: {x: 0.82884073, y: 0.2923984, z: 0.72445136}
+    m_Center: {x: 0.000000059604645, y: 0.1418306, z: -0.30319083}
+    m_Extent: {x: 0.49730447, y: 0.16244358, z: 0.40247303}
   m_DirtyAABB: 0
 --- !u!183 &7483821050755634241
 Cloth:
@@ -429,4 +429,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloakInfo: {fileID: 11400000, guid: 295d88bd32d50fe4c917a850ff342795, type: 2}
+  arcaneMissile: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
   missileSpell: {fileID: 11400000, guid: b03ca272dc6d5e2448a9d427189b546c, type: 2}
