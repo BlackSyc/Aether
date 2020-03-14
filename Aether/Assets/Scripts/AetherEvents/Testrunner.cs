@@ -8,10 +8,11 @@ public class Testrunner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(InvokeNextFrame(ThrowCloakSpawningEvents));
+        //StartCoroutine(InvokeNextFrame(InvokeCloakSpawn));
     }
 
-    private void ThrowCloakSpawningEvents()
+    [ContextMenu("Spawn Cloaks")]
+    private void InvokeCloakSpawn()
     {
         AetherEvents.GameEvents.Puzzle1Events.CompleteStage2();
     }
