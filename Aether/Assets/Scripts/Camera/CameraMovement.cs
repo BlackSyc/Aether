@@ -38,7 +38,7 @@ public class CameraMovement : MonoBehaviour
         Vector3 to = transform.position;
 
         var pivotCameraDistance = Vector3.Distance(from, to);
-        if (Physics.Raycast(from, to - from, out RaycastHit hit, preferedZoomDistance, ~ignoreRaycastLayerMask) && Vector3.Distance(from, hit.point) < pivotCameraDistance)
+        if (Physics.Raycast(from, to - from, out RaycastHit hit, preferedZoomDistance, ~ignoreRaycastLayerMask) && Vector3.Distance(from, hit.point) < pivotCameraDistance +0.1f)
         {
             Debug.Log(hit.collider.name);
             Debug.DrawLine(from, to, Color.red);
