@@ -34,21 +34,39 @@ public class CameraMovement : MonoBehaviour
             transform.LookAt(cameraPivot);
         }
 
-        Vector3 from = cameraPivot.position;
-        Vector3 to = transform.position;
-
-        var pivotCameraDistance = Vector3.Distance(from, to);
-        if (Physics.Raycast(from, to - from, out RaycastHit hit, preferedZoomDistance, ~ignoreRaycastLayerMask) && Vector3.Distance(from, hit.point) < pivotCameraDistance +0.1f)
+        if (IsVisionObstructed(out Vector3 newPosition))
         {
-            Debug.Log(hit.collider.name);
-            Debug.DrawLine(from, to, Color.red);
-            transform.position = hit.point;
+            transform.position = newPosition;
         }
         else
         {
-            Debug.DrawLine(from, to, Color.green);
             SmoothZoom();
         }
+    }
+
+    private bool IsVisionObstructed(out Vector3 newPosition)
+    {
+        newPosition = transform.position;
+
+        Vector3 pivotPosition = cameraPivot.position;
+        Vector3 cameraPosition = transform.position;
+
+        var cameraDistance = Vector3.Distance(pivotPosition, cameraPosition);
+        var raycastDirection = cameraPosition - pivotPosition;
+
+        if (Physics.Raycast(pivotPosition, raycastDirection, out RaycastHit hit, preferedZoomDistance, ~ignoreRaycastLayerMask))
+        {
+            var hitPointDistance = Vector3.Distance(pivotPosition, hit.point);
+            if (hitPointDistance < cameraDistance + 0.05f)
+            {
+                newPosition = hit.point;
+                Debug.DrawLine(pivotPosition, cameraPosition, Color.red);
+                return true;
+            }
+        }
+
+        Debug.DrawLine(pivotPosition, cameraPosition, Color.green);
+        return false;
     }
 
     public void Zoom(CallbackContext context)
@@ -65,11 +83,11 @@ public class CameraMovement : MonoBehaviour
         float distanceToPreference = Mathf.Abs(preferedZoomDistance - distanceFromPivot);
         float actualZoomSpeed = zoomSpeed * distanceToPreference;
 
-        if (preferedZoomDistance + 0.1f < distanceFromPivot) // zoom in
+        if (preferedZoomDistance + 0.05f < distanceFromPivot) // zoom in
         {
             transform.Translate(transform.forward * actualZoomSpeed * Time.deltaTime, Space.World);
         }
-        else if (preferedZoomDistance - 0.1f > distanceFromPivot) // zoom out 
+        else if (preferedZoomDistance - 0.05f > distanceFromPivot) // zoom out 
         {
             transform.Translate(-transform.forward * actualZoomSpeed * Time.deltaTime, Space.World);
         }

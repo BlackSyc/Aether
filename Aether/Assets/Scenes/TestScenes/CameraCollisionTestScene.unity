@@ -3558,7 +3558,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -3591,7 +3591,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPivot: {fileID: 1886641473}
-  cameraFocus: {fileID: 1886641473}
   ignoreRaycastLayerMask:
     serializedVersion: 2
     m_Bits: 4
