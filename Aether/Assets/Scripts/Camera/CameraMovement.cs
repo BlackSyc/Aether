@@ -54,14 +54,12 @@ public class CameraMovement : MonoBehaviour
         var cameraDistance = Vector3.Distance(pivotPosition, cameraPosition);
         var raycastDirection = cameraPosition - pivotPosition;
 
-        if (Physics.SphereCast(pivotPosition, 0.1f, raycastDirection, out RaycastHit hit, preferedZoomDistance, ~ignoreRaycastLayerMask))
+        if (Physics.Raycast(pivotPosition, raycastDirection, out RaycastHit hit, preferedZoomDistance, ~ignoreRaycastLayerMask))
         {
-            Debug.Log(hit.collider.name);
             var hitPointDistance = Vector3.Distance(pivotPosition, hit.point);
             if (hitPointDistance < cameraDistance + 0.05f)
             {
-                var newDistance = Mathf.Sqrt(Mathf.Pow(hitPointDistance, 2) - Mathf.Pow(0.1f, 2));
-                newPosition = newDistance * raycastDirection.normalized;
+                newPosition = hit.point;
                 Debug.DrawLine(pivotPosition, cameraPosition, Color.red);
                 return true;
             }
