@@ -41,7 +41,6 @@ public class CloakWindow : MonoBehaviour
         currentCloakInfo = cloakInfo;
 
         header.text = cloakInfo.Name;
-        header.color = cloakInfo.Colour;
         keywords.text = cloakInfo.Keywords;
         content.text = cloakInfo.Description;
 
