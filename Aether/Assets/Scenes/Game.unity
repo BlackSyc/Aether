@@ -2524,7 +2524,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9550997, b: 0.86543256, a: 1}
   m_Intensity: 75
   m_Range: 16
   m_SpotAngle: 30
@@ -9882,7 +9882,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9550997, b: 0.86543256, a: 1}
   m_Intensity: 75
   m_Range: 16
   m_SpotAngle: 30
@@ -10030,7 +10030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.098039225, g: 0.098039225, b: 0.10588236, a: 0.87058824}
+  m_Color: {r: 0.19215688, g: 0.19215688, b: 0.2392157, a: 0.5882353}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -10604,7 +10604,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9550997, b: 0.86543256, a: 1}
   m_Intensity: 75
   m_Range: 221.1
   m_SpotAngle: 30
@@ -13988,7 +13988,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9550997, b: 0.86543256, a: 1}
   m_Intensity: 75
   m_Range: 16
   m_SpotAngle: 30
