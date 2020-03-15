@@ -50,6 +50,7 @@ public class KeystoneSelector : MonoBehaviour
             return;
 
         _buttonLabel.color = _activatedTextColour;
+        _buttonLabel.fontStyle = FontStyles.Bold;
     }
 
     private void KeystoneDeactivated(Keystone keystone)
@@ -58,6 +59,7 @@ public class KeystoneSelector : MonoBehaviour
             return;
 
         _buttonLabel.color = _defaultTextColour;
+        _buttonLabel.fontStyle = FontStyles.Normal;
     }
 
     public void SetKeystone(Keystone keystone)
@@ -65,6 +67,7 @@ public class KeystoneSelector : MonoBehaviour
         _keystone = keystone;
         _buttonLabel.text = _keystone.Name;
         _buttonLabel.color = _keystone.State.IsActivated ? _activatedTextColour : _defaultTextColour;
+        _buttonLabel.fontStyle = _keystone.State.IsActivated ? FontStyles.Bold : FontStyles.Normal;
     }
 
     public void Select()
