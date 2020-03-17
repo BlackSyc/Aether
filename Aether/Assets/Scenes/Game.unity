@@ -3863,6 +3863,11 @@ PrefabInstance:
       propertyPath: _keystones.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: triggerConstraint
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579530, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5892,6 +5897,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _keystones.Array.data[2]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: triggerConstraint
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579530, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
@@ -12032,6 +12042,11 @@ PrefabInstance:
       propertyPath: _keystones.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: triggerConstraint
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579530, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17702,6 +17717,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _keystones.Array.data[2]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: triggerConstraint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579530, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}

@@ -11,9 +11,10 @@ public class AttunementDevice : MonoBehaviour
     [SerializeField]
     private GameObject _keystoneObject;
 
+    [SerializeField]
+    private Aspect triggerConstraint;
+
     private Keystone _activeKeystone = null;
-
-
 
     private void Start()
     {
@@ -24,6 +25,9 @@ public class AttunementDevice : MonoBehaviour
     private void ToggleAttunement(Keystone keystone)
     {
         if (keystone == null)
+            return;
+
+        if (!keystone.Aspect.Equals(triggerConstraint))
             return;
 
         if(_activeKeystone != null)
