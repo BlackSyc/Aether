@@ -7,6 +7,8 @@ public class Keystone : ScriptableObject
 {
     public string Name;
 
+    public Aspect Aspect;
+
     public List<string> Labels;
 
     [TextArea]

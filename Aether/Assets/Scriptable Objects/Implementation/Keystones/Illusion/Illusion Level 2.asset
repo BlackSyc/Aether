@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Illusion Level 2
   m_EditorClassIdentifier: 
   Name: Illusion Level 2
-  KeystoneCompleted: 0
-  Description: Expand your mind. Improvise, adapt, overcome.
+  Aspect: 2
   Labels:
   - PvE
   - Tutorial
+  Description: Expand your mind. Improvise, adapt, overcome.
   Sprite: {fileID: 0}
+  KeystoneCompleted: 0

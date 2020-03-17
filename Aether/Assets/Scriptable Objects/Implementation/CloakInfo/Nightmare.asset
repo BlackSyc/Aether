@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Nightmare
   m_EditorClassIdentifier: 
   Name: Shroud of Nightmares
+  Aspect: 3
   Colour: {r: 0.8018868, g: 0.049172327, b: 0.049172327, a: 1}
   Keywords: Forcing - Breaking - Devastating
   Description: A request from the Aspect of Nightmare. Lorem ipsum dolor sit amet,

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Illusion
   m_EditorClassIdentifier: 
   Name: Illusionists' Cloak
+  Aspect: 2
   Colour: {r: 0.34242615, g: 0.8759928, b: 0.8962264, a: 1}
   Keywords: Controlling - Cunning - Confusing
   Description: A trick from The Illusion, Aspect of the Aether. Lorem ipsum dolor

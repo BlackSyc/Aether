@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Nightmare Level 1
   m_EditorClassIdentifier: 
   Name: Nightmare Level 1
-  KeystoneCompleted: 0
+  Aspect: 3
+  Labels:
+  - PvE
+  - Tutorial
   Description: 'Step through the portal and explore what the Aspect of the Nightmare
     knows about your fears...
 
 '
-  Labels:
-  - PvE
-  - Tutorial
   Sprite: {fileID: 0}
+  KeystoneCompleted: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Dream Duel
   m_EditorClassIdentifier: 
   Name: Duel Area
+  Aspect: 1
   Labels:
   - PvP
   - Testing

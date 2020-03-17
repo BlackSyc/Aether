@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Illusion Level 1
   m_EditorClassIdentifier: 
   Name: Illusion Level 1
-  KeystoneCompleted: 0
-  Description: Step through the portal and explore what the Illusion Aspect wants
-    you to see...
+  Aspect: 2
   Labels:
   - PvE
   - Tutorial
+  Description: Step through the portal and explore what the Illusion Aspect wants
+    you to see...
   Sprite: {fileID: 0}
+  KeystoneCompleted: 0

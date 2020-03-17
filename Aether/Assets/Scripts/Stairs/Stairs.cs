@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Stairs : MonoBehaviour
 {
+
     [SerializeField]
-    private CloakInfo cloakInfo;
+    private Aspect aspect;
 
     [SerializeField]
     private Interactable interactable;
@@ -21,7 +22,7 @@ public class Stairs : MonoBehaviour
 
     private void CloakEquipped(CloakInfo cloakInfo)
     {
-        if (cloakInfo == this.cloakInfo)
+        if (cloakInfo.Aspect.Equals(aspect))
         {
             interactable.IsActive = true;
             animator.SetBool("activated", true);
@@ -30,10 +31,11 @@ public class Stairs : MonoBehaviour
 
     private void CloakUnequipped(CloakInfo cloakInfo)
     {
-        if (cloakInfo == this.cloakInfo)
+        if (cloakInfo.Aspect.Equals(aspect))
         {
             interactable.IsActive = false;
             animator.SetBool("activated", false);
+            AetherEvents.GameEvents.HubEvents.CloseStairs(aspect);
         }
     }
 
@@ -41,6 +43,7 @@ public class Stairs : MonoBehaviour
     {
         animator.SetTrigger("move");
         interactable.IsActive = false;
+        AetherEvents.GameEvents.HubEvents.OpenStairs(aspect);
     }
 
 

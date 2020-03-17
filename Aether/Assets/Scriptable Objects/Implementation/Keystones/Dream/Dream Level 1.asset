@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Dream Level 1
   m_EditorClassIdentifier: 
   Name: Dream Level 1
-  KeystoneCompleted: 0
-  Description: Step through the portal and explore what the Aspect of the Dream has
-    granted you access to.
+  Aspect: 1
   Labels:
   - PvE
   - Tutorial
+  Description: Step through the portal and explore what the Aspect of the Dream has
+    granted you access to.
   Sprite: {fileID: 0}
+  KeystoneCompleted: 0

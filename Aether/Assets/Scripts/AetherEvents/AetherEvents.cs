@@ -8,6 +8,22 @@ public class AetherEvents : MonoBehaviour
 
     public struct GameEvents
     {
+        public struct HubEvents
+        {
+            public static event Action<Aspect> OnOpenStairs;
+
+            public static event Action<Aspect> OnCloseStairs;
+
+            public static void OpenStairs(Aspect aspect)
+            {
+                OnOpenStairs?.Invoke(aspect);
+            }
+
+            public static void CloseStairs(Aspect aspect)
+            {
+                OnCloseStairs?.Invoke(aspect);
+            }
+        }
         public struct InteractionEvents 
         {
             public static event Action<Interactable, Interactor> OnProposeInteraction;

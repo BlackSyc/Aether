@@ -8,8 +8,23 @@ public class Testrunner : MonoBehaviour
     [SerializeField]
     private List<Keystone> keystones;
 
+    [SerializeField]
+    private bool spawnCloaks;
+
+    [SerializeField]
+    private bool pickupKeystones;
+
+    private void Start()
+    {
+        if (spawnCloaks)
+            InvokeNextFrame(SpawnCloaks);
+
+        if (pickupKeystones)
+            InvokeNextFrame(PickupKeystone);
+    }
+
     [ContextMenu("Spawn Cloaks")]
-    private void InvokeCloakSpawn()
+    private void SpawnCloaks()
     {
         AetherEvents.GameEvents.Puzzle1Events.CompleteStage2();
     }
@@ -18,7 +33,18 @@ public class Testrunner : MonoBehaviour
     private void PickupKeystone()
     {
         keystones.ForEach(x => AetherEvents.GameEvents.InventoryEvents.Pickup(x));
-        
     }
 
+    #region Invokers
+    private void InvokeNextFrame(Action action)
+    {
+        StartCoroutine(ExecuteNextFrame(action));
+    }
+
+    private IEnumerator ExecuteNextFrame(Action action)
+    {
+        yield return null;
+        action.Invoke();
+    }
+    #endregion
 }
