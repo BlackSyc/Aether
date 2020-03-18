@@ -14,6 +14,8 @@ public class AetherEvents : MonoBehaviour
 
             public static event Action<Aspect> OnCloseStairs;
 
+            public static event Action OnTravelToAccessPoint;
+
             public static void OpenStairs(Aspect aspect)
             {
                 OnOpenStairs?.Invoke(aspect);
@@ -22,6 +24,11 @@ public class AetherEvents : MonoBehaviour
             public static void CloseStairs(Aspect aspect)
             {
                 OnCloseStairs?.Invoke(aspect);
+            }
+
+            public static void TravelToAccessPoint()
+            {
+                OnTravelToAccessPoint?.Invoke();
             }
         }
         public struct InteractionEvents 
@@ -217,6 +224,31 @@ public class AetherEvents : MonoBehaviour
             }
         }
     
+        public struct PlayerEvents
+        {
+            public static event Action<Vector3> OnSetPlayerPosition;
+
+            public static event Action<bool> OnActivateInteractor;
+
+            public static event Action<bool> OnShowModel;
+
+            public static void SetPlayerPosition(Vector3 newPosition)
+            {
+                OnSetPlayerPosition?.Invoke(newPosition);
+            }
+
+            public static void ActivateInteractor(bool flag)
+            {
+                OnActivateInteractor?.Invoke(flag);
+            }
+
+            public static void ShowModel(bool flag)
+            {
+                OnShowModel?.Invoke(flag);
+            }
+
+
+        }
     }
 
     public struct UIEvents
@@ -261,6 +293,23 @@ public class AetherEvents : MonoBehaviour
             {
                 OnUnhideCrosshair?.Invoke();
             }
+        }
+    }
+
+    public struct CameraEvents
+    {
+        public static event Action<Camera> OnEnableCutsceneCamera;
+
+        public static event Action OnEnablePlayercamera;
+
+        public static void EnableCutsceneCamera(Camera camera)
+        {
+            OnEnableCutsceneCamera?.Invoke(camera);
+        }
+
+        public static void EnablePlayerCamera()
+        {
+            OnEnablePlayercamera?.Invoke();
         }
     }
 }

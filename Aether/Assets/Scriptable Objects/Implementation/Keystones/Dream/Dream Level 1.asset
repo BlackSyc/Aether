@@ -21,3 +21,5 @@ MonoBehaviour:
     granted you access to.
   Sprite: {fileID: 0}
   KeystoneCompleted: 0
+  AccessPointPrefab: {fileID: 4294444766046414600, guid: 45d8cff112a697f4ea4e2b0d7773ef72,
+    type: 3}

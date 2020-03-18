@@ -18,6 +18,8 @@ public class Keystone : ScriptableObject
 
     public bool KeystoneCompleted;
 
+    public GameObject AccessPointPrefab;
+
     public KeystoneState State = new KeystoneState();
 
     public struct KeystoneState

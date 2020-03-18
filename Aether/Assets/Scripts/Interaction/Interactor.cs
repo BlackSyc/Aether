@@ -14,6 +14,17 @@ public class Interactor : MonoBehaviour
 
     private Interactable currentInteractable;
 
+    public bool IsActive = true;
+
+    public void CancelCurrentlyProposedInteraction()
+    {
+        if(currentInteractable != null)
+        {
+            currentInteractable = null;
+            AetherEvents.GameEvents.InteractionEvents.CancelProposeInteraction();
+        }
+    }
+
     public void Interact(CallbackContext context)
     {
         if (context.performed)
@@ -43,6 +54,7 @@ public class Interactor : MonoBehaviour
 
     private void Update()
     {
-        CheckForInteractables();
+        if(IsActive)
+            CheckForInteractables();
     }
 }

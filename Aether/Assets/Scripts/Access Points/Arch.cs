@@ -43,6 +43,7 @@ public class Arch : MonoBehaviour
 
     public void StepThrough(Interactor interactor, Interactable interactable)
     {
+        AetherEvents.GameEvents.HubEvents.TravelToAccessPoint();
         Debug.Log(string.Format("Start travel to keystone {0}", activeKeystone.Name));
     }
 
