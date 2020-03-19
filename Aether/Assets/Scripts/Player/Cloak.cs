@@ -8,6 +8,9 @@ public class Cloak : MonoBehaviour
     private CloakInfo cloakInfo;
 
     [SerializeField]
+    private Spell arcaneMissile;
+
+    [SerializeField]
     private Spell missileSpell;
 
     public void Equip()
@@ -21,6 +24,8 @@ public class Cloak : MonoBehaviour
 
     public void Unequip()
     {
+        AetherEvents.GameEvents.SpellSystemEvents.RemoveSpell(missileSpell);
+        AetherEvents.GameEvents.SpellSystemEvents.GrantNewSpell(arcaneMissile);
         cloakInfo.UnEquip();
         // remove spells
         // perform spawning animation

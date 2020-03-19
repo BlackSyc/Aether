@@ -8,9 +8,6 @@ public class SpellSlot : ScriptableObject
     public string Name;
 
     public SpellSlotState State = new SpellSlotState();
-
-    public Spell prefillSpell;
-
     public struct SpellSlotState
     {
         public Spell Spell;
@@ -21,7 +18,6 @@ public class SpellSlot : ScriptableObject
     public void Initialize()
     {
         AetherEvents.GameEvents.SpellSystemEvents.OnGrantNewSpell += SelectSpell;
-        SelectSpell(prefillSpell);
     }
 
     private void SelectSpell(Spell spell)

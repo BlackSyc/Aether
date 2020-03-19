@@ -6,6 +6,7 @@ using UnityEngine;
 public class CloakInfo : ScriptableObject
 {
     public string Name;
+    public Aspect Aspect;
     public Color Colour;
     public string Keywords;
 

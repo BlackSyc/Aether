@@ -10,6 +10,12 @@ public class ActionMapManager : MonoBehaviour
     [SerializeField]
     private PlayerInput playerInput;
 
+    private void Start()
+    {
+        AetherEvents.GameEvents.InputSystemEvents.OnEnablePlayerActionMap += EnablePlayerActionMap;
+        AetherEvents.GameEvents.InputSystemEvents.OnEnablePopupActionMap += EnablePopUpActionMap;
+    }
+
     public void SwapActionMap(CallbackContext context)
     {
         if (context.performed)
@@ -26,13 +32,21 @@ public class ActionMapManager : MonoBehaviour
         }
     }
 
-    public void EnablePopUpActionMap()
+    public void ClosePopups(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        AetherEvents.UIEvents.Windows.ClosePopups();
+    }
+
+    private void EnablePopUpActionMap()
     {
         playerInput.SwitchCurrentActionMap("PopUp");
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void EnablePlayerActionMap()
+    private void EnablePlayerActionMap()
     {
         playerInput.SwitchCurrentActionMap("Player");
         Cursor.lockState = CursorLockMode.Locked;
@@ -42,5 +56,11 @@ public class ActionMapManager : MonoBehaviour
     {
         playerInput.SwitchCurrentActionMap("User Interface");
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void OnDestroy()
+    {
+        AetherEvents.GameEvents.InputSystemEvents.OnEnablePlayerActionMap -= EnablePlayerActionMap;
+        AetherEvents.GameEvents.InputSystemEvents.OnEnablePopupActionMap -= EnablePopUpActionMap;
     }
 }

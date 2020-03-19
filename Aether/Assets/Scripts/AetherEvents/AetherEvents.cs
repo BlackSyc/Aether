@@ -8,15 +8,38 @@ public class AetherEvents : MonoBehaviour
 
     public struct GameEvents
     {
+        public struct HubEvents
+        {
+            public static event Action<Aspect> OnOpenStairs;
+
+            public static event Action<Aspect> OnCloseStairs;
+
+            public static event Action OnTravelToAccessPoint;
+
+            public static void OpenStairs(Aspect aspect)
+            {
+                OnOpenStairs?.Invoke(aspect);
+            }
+
+            public static void CloseStairs(Aspect aspect)
+            {
+                OnCloseStairs?.Invoke(aspect);
+            }
+
+            public static void TravelToAccessPoint()
+            {
+                OnTravelToAccessPoint?.Invoke();
+            }
+        }
         public struct InteractionEvents 
         {
-            public static event Action<Interactable> OnProposeInteraction;
+            public static event Action<Interactable, Interactor> OnProposeInteraction;
             public static event Action OnCancelProposeInteraction;
             public static event Action OnInteract;
 
-            public static void ProposeInteraction(Interactable interactable)
+            public static void ProposeInteraction(Interactable interactable, Interactor interactor)
             {
-                OnProposeInteraction?.Invoke(interactable);
+                OnProposeInteraction?.Invoke(interactable, interactor);
             }
 
             public static void CancelProposeInteraction()
@@ -43,6 +66,7 @@ public class AetherEvents : MonoBehaviour
         public struct SpellSystemEvents 
         {
             public static event Action<Spell> OnGrantNewSpell;
+            public static event Action<Spell> OnRemoveSpell;
             public static event Action<Spell> OnNewSpellSelected;
             public static event Action<SpellCast> OnCastSpell;
 
@@ -58,6 +82,11 @@ public class AetherEvents : MonoBehaviour
             public static void CastSpell(SpellCast spellCast)
             {
                 OnCastSpell?.Invoke(spellCast);
+            }
+
+            internal static void RemoveSpell(Spell spell)
+            {
+                OnRemoveSpell?.Invoke(spell);
             }
         }
 
@@ -135,6 +164,91 @@ public class AetherEvents : MonoBehaviour
                 OnMissileTargetHit?.Invoke();
             }
         }
+    
+        public struct AttunementEvents
+        {
+            public static event Action<List<Keystone>> OnOpenAttunementWindow;
+
+            public static event Action<Keystone> OnToggleAttunement;
+
+            public static event Action<Keystone> OnKeystoneActivated;
+            public static event Action<Keystone> OnKeystoneDeactivated;
+
+            public static void OpenAttunementWindow(List<Keystone> newKeyStones)
+            {
+                OnOpenAttunementWindow?.Invoke(newKeyStones);
+            }
+
+            public static void ToggleAttunement(Keystone keystone)
+            {
+                OnToggleAttunement?.Invoke(keystone);
+            }
+
+            public static void KeystoneActivated(Keystone keystone)
+            {
+                OnKeystoneActivated?.Invoke(keystone);
+            }
+
+            public static void KeystoneDeactivated(Keystone keystone)
+            {
+                OnKeystoneDeactivated?.Invoke(keystone);
+            }
+
+
+        }
+
+        public struct InventoryEvents
+        {
+            public static event Action<Keystone> OnPickupKeystone;
+
+            public static void Pickup(Keystone keystone)
+            {
+                OnPickupKeystone?.Invoke(keystone);
+            }
+        }
+        
+        public struct InputSystemEvents
+        {
+            public static event Action OnEnablePopupActionMap;
+
+            public static event Action OnEnablePlayerActionMap;
+            
+            public static void EnablePopupActionMap()
+            {
+                OnEnablePopupActionMap?.Invoke();
+            }
+
+            public static void EnablePlayerActionMap()
+            {
+                OnEnablePlayerActionMap?.Invoke();
+            }
+        }
+    
+        public struct PlayerEvents
+        {
+            public static event Action<Vector3> OnSetPlayerPosition;
+
+            public static event Action<bool> OnActivateInteractor;
+
+            public static event Action<bool> OnShowModel;
+
+            public static void SetPlayerPosition(Vector3 newPosition)
+            {
+                OnSetPlayerPosition?.Invoke(newPosition);
+            }
+
+            public static void ActivateInteractor(bool flag)
+            {
+                OnActivateInteractor?.Invoke(flag);
+            }
+
+            public static void ShowModel(bool flag)
+            {
+                OnShowModel?.Invoke(flag);
+            }
+
+
+        }
     }
 
     public struct UIEvents
@@ -153,6 +267,49 @@ public class AetherEvents : MonoBehaviour
             {
                 OnUnhideAll?.Invoke();
             }
+        }
+   
+        public struct Windows
+        {
+            public static event Action OnClosePopups;
+
+            public static void ClosePopups()
+            {
+                OnClosePopups?.Invoke();
+            }
+        }
+
+        public struct Crosshair
+        {
+            public static event Action OnHideCrosshair;
+            public static event Action OnUnhideCrosshair;
+
+            public static void HideCrosshair()
+            {
+                OnHideCrosshair?.Invoke();
+            }
+
+            public static void UnhideCrosshair()
+            {
+                OnUnhideCrosshair?.Invoke();
+            }
+        }
+    }
+
+    public struct CameraEvents
+    {
+        public static event Action<Camera> OnEnableCutsceneCamera;
+
+        public static event Action OnEnablePlayercamera;
+
+        public static void EnableCutsceneCamera(Camera camera)
+        {
+            OnEnableCutsceneCamera?.Invoke(camera);
+        }
+
+        public static void EnablePlayerCamera()
+        {
+            OnEnablePlayercamera?.Invoke();
         }
     }
 }

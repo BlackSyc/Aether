@@ -5,22 +5,46 @@ using UnityEngine;
 
 public class Testrunner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private List<Keystone> keystones;
+
+    [SerializeField]
+    private bool spawnCloaks;
+
+    [SerializeField]
+    private bool pickupKeystones;
+
+    private void Start()
     {
-        //StartCoroutine(InvokeNextFrame(InvokeCloakSpawn));
+        if (spawnCloaks)
+            InvokeNextFrame(SpawnCloaks);
+
+        if (pickupKeystones)
+            InvokeNextFrame(PickupKeystone);
     }
 
     [ContextMenu("Spawn Cloaks")]
-    private void InvokeCloakSpawn()
+    private void SpawnCloaks()
     {
         AetherEvents.GameEvents.Puzzle1Events.CompleteStage2();
     }
 
-    private IEnumerator InvokeNextFrame(Action action)
+    [ContextMenu("Pick up Keystone")]
+    private void PickupKeystone()
+    {
+        keystones.ForEach(x => AetherEvents.GameEvents.InventoryEvents.Pickup(x));
+    }
+
+    #region Invokers
+    private void InvokeNextFrame(Action action)
+    {
+        StartCoroutine(ExecuteNextFrame(action));
+    }
+
+    private IEnumerator ExecuteNextFrame(Action action)
     {
         yield return null;
         action.Invoke();
     }
-
+    #endregion
 }

@@ -9,6 +9,8 @@ public class Spell : ScriptableObject
 {
     public string Name;
 
+    public Aspect Aspect;
+
     public SpellSlot SpellSlot;
 
     public float CastDuration;
