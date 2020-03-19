@@ -2388,8 +2388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
-  startPosition: {x: 201.5, y: 125, z: 0}
-  currentPosition: {x: 201.5, y: 125, z: 0}
+  startPosition: {x: 455.5, y: 125, z: 0}
+  currentPosition: {x: 455.5, y: 125, z: 0}
 --- !u!4 &265294019 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7b0a5c52a4eab2e4ba729c02a275064f,
@@ -2964,7 +2964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &322600334
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14219,8 +14219,7 @@ MonoBehaviour:
   m_text: This is the default dialog text line.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7ab61befcd2e464a94392a153628cbb, type: 2}
-  m_sharedMaterial: {fileID: 6274074916431148124, guid: c7ab61befcd2e464a94392a153628cbb,
-    type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 7e29dc1a5be3f1a4798e2403febedf2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17596,8 +17595,7 @@ MonoBehaviour:
   m_text: to interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7ab61befcd2e464a94392a153628cbb, type: 2}
-  m_sharedMaterial: {fileID: 6274074916431148124, guid: c7ab61befcd2e464a94392a153628cbb,
-    type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 7e29dc1a5be3f1a4798e2403febedf2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
