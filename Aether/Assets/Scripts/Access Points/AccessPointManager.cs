@@ -18,6 +18,12 @@ public class AccessPointManager : MonoBehaviour
         if (activeAccessPoint)
                 Destroy(activeAccessPoint.gameObject);
 
+        if (keystone == null)
+            return;
+
+        if (keystone.AccessPointPrefab == null)
+            return;
+
         GameObject accessPoint = Instantiate(keystone.AccessPointPrefab, transform);
         activeAccessPoint = accessPoint.GetComponent<AccessPoint>();
     }
