@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ArcaneMissileTarget : MonoBehaviour
 {
-    [SerializeField]
-    private Puzzle1_Manager puzzle1Manager;
 
     [SerializeField]
     private float resetAfter = 5;
@@ -13,40 +11,57 @@ public class ArcaneMissileTarget : MonoBehaviour
     public bool IsHit { get; private set; }
 
 
-    public void MoveToCloakPosition()
+    private void StopResetTimerAndMoveToCloakPosition()
     {
         GetComponent<Animator>().SetTrigger("MoveToCloakPosition");
+        StopAllCoroutines();
     }
 
-    public void MoveToCenter()
+    private void MoveToCenter()
     {
         GetComponent<Animator>().SetTrigger("MoveToCenter");
     }
 
-    public void MoveToOriginalPosition()
+    private void MoveToOriginalPosition()
     {
         GetComponent<Animator>().SetTrigger("MoveToOriginalPosition");
     }
 
+    private void Start()
+    {
+        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage1 += MoveToCenter;
+        AetherEvents.GameEvents.Puzzle1Events.OnAspectOfCreationDialogComplete += MoveToOriginalPosition;
+        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage2 += StopResetTimerAndMoveToCloakPosition;
+    }
+
     public void Hit()
     {
+        if (IsHit)
+            return;
+
         GetComponent<Animator>().SetBool("Hit", true);
         IsHit = true;
         gameObject.layer = LayerMask.NameToLayer("Obstruction");
         StopAllCoroutines();
 
-        if(!puzzle1Manager.TryCompleteStage2())
-            StartCoroutine(ResetTimer(resetAfter));
+        AetherEvents.GameEvents.Puzzle1Events.MissileTargetHit();
+
+        StartCoroutine(ResetTimer(resetAfter));
     }
 
     private IEnumerator ResetTimer(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        if (puzzle1Manager.Stage2Complete)
-            yield break;
 
         IsHit = false;
         gameObject.layer = LayerMask.NameToLayer("Target");
         GetComponent<Animator>().SetBool("Hit", false);
+    }
+
+    private void OnDestroy()
+    {
+        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage1 -= MoveToCenter;
+        AetherEvents.GameEvents.Puzzle1Events.OnAspectOfCreationDialogComplete -= MoveToOriginalPosition;
+        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage2 -= StopResetTimerAndMoveToCloakPosition;
     }
 }

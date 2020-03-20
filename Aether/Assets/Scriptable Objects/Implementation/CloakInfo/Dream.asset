@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79012654c50abd047ae1b21e8dcb97cd, type: 3}
   m_Name: Dream
   m_EditorClassIdentifier: 
-  Name: The Dreamweave Cloak
+  Name: Dreamweave Mantle
+  Aspect: 1
   Colour: {r: 0.48584908, g: 1, b: 0.56987476, a: 1}
   Keywords: Supporting - Healing - Inspiring
   Description: A gift from the Dream Aspect. Lorem ipsum dolor sit amet, consectetur
     adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  CloakPrefab: {fileID: 1511576211006047054, guid: 172acf02efea7684c8c4a6ab152a413e,
+  cloakPrefab: {fileID: 1511576211006047054, guid: 172acf02efea7684c8c4a6ab152a413e,
     type: 3}

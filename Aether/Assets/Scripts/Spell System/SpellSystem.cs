@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
 public class SpellSystem : MonoBehaviour
@@ -12,14 +10,6 @@ public class SpellSystem : MonoBehaviour
 
     [SerializeField]
     private SpellSlot spellSlot1;
-
-    public SpellSlot SpellSlot1
-    {
-        get
-        {
-            return spellSlot1;
-        }
-    }
 
     [SerializeField]
     private SpellSlot spellSlot2;
@@ -39,13 +29,17 @@ public class SpellSystem : MonoBehaviour
     [SerializeField]
     private SpellSlot spellSlot7;
 
+    private void Start()
+    {
+        spellSlot1.Initialize();
+    }
 
     public void CastMissile(CallbackContext context)
     {
         if (!context.performed)
             return;
 
-        if (!SpellSlot1.HasActiveSpell)
+        if (!spellSlot1.HasActiveSpell)
         {
             Debug.LogWarning("No spell bound!");
             return;
@@ -53,7 +47,7 @@ public class SpellSystem : MonoBehaviour
 
         if (currentSpellCast != null)
         {
-            if (currentSpellCast.Spell == SpellSlot1.State.Spell)
+            if (currentSpellCast.Spell == spellSlot1.State.Spell)
             {
                 UpdateTargetLock();
                 return;
@@ -61,7 +55,7 @@ public class SpellSystem : MonoBehaviour
             currentSpellCast.Cancel();
         }
 
-        currentSpellCast = SpellSlot1.Cast(castParent, this.GetComponent<TargetManager>());
+        currentSpellCast = spellSlot1.Cast(castParent, this.GetComponent<TargetManager>());
         if (currentSpellCast == null)
             return;
 

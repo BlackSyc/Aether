@@ -1,48 +1,88 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Crosshair : MonoBehaviour
 {
     [SerializeField]
-    private TargetManager targetManager;
+    private TargetManager _targetManager;
 
     [SerializeField]
-    private RectTransform targetLock;
+    private RectTransform _targetLock;
 
     [SerializeField]
-    private GameObject targetTracker;
+    private GameObject _targetTracker;
 
     [SerializeField]
-    private Camera camera;
+    private Animator _crosshairAnimator;
+
+    [SerializeField]
+    private GameObject _crosshairContainer;
+
+    [SerializeField]
+    private Camera _camera;
+
+    private void Start()
+    {
+        AetherEvents.GameEvents.SpellSystemEvents.OnNewSpellSelected += NewSpellSelected;
+        AetherEvents.UIEvents.Crosshair.OnHideCrosshair += HideCrosshair;
+        AetherEvents.UIEvents.Crosshair.OnUnhideCrosshair += UnhideCrosshair;
+    }
+
+    private void UnhideCrosshair()
+    {
+        _crosshairContainer.SetActive(true);
+    }
+
+    private void HideCrosshair()
+    {
+        _crosshairContainer.SetActive(false);
+    }
+
+    private void NewSpellSelected(Spell spell)
+    {
+        if (spell == null)
+            return;
+
+        if (!_crosshairContainer.activeSelf)
+            _crosshairContainer.SetActive(true);
+    }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        if(targetManager.GetCurrentTarget().HasTargetTransform)
+        if(_targetManager.GetCurrentTarget().HasTargetTransform)
         {
-            if (targetManager.HasLockedTarget && targetManager.GetCurrentTarget().TargetTransform == targetManager.Target.TargetTransform)
+            if (_targetManager.HasLockedTarget && _targetManager.GetCurrentTarget().TargetTransform == _targetManager.Target.TargetTransform)
             {
-                GetComponent<Animator>().SetBool("HasObjectTarget", false);
+                _crosshairAnimator.SetBool("HasObjectTarget", false);
             }
             else
             {
-                GetComponent<Animator>().SetBool("HasObjectTarget", true);
+                _crosshairAnimator.SetBool("HasObjectTarget", true);
             }
         }
         else
         {
-            GetComponent<Animator>().SetBool("HasObjectTarget", false);
+            _crosshairAnimator.SetBool("HasObjectTarget", false);
         }
 
-        if (targetManager.HasLockedTarget)
+        if (_targetManager.HasLockedTarget)
         {
-            targetTracker.SetActive(true);
-            targetTracker.GetComponent<RectTransform>().position = camera.WorldToScreenPoint(targetManager.Target.Position);
+            _targetTracker.SetActive(true);
+            _targetTracker.GetComponent<RectTransform>().position = _camera.WorldToScreenPoint(_targetManager.Target.Position);
         }
         else
         {
-            targetTracker.SetActive(false);
+            _targetTracker.SetActive(false);
         }
+    }
+
+    private void OnDestroy()
+    {
+        AetherEvents.GameEvents.SpellSystemEvents.OnNewSpellSelected -= NewSpellSelected;
+        AetherEvents.UIEvents.Crosshair.OnHideCrosshair -= HideCrosshair;
+        AetherEvents.UIEvents.Crosshair.OnUnhideCrosshair -= UnhideCrosshair;
     }
 }

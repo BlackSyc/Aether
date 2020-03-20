@@ -49,7 +49,6 @@ MonoBehaviour:
   lifeTime: 10
   movementSpeed: 20
   rotationSpeed: 500
-  TargetPosition: {x: 0, y: 1, z: 10}
 --- !u!95 &2673095067969104084
 Animator:
   serializedVersion: 3

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 using static UnityEngine.InputSystem.InputAction;
 
 public class CloakWindow : MonoBehaviour
 {
-    [SerializeField]
-    private ActionMapManager actionMapManager;
 
     [SerializeField]
     private TextMeshProUGUI header;
@@ -19,6 +19,12 @@ public class CloakWindow : MonoBehaviour
     private TextMeshProUGUI content;
 
     [SerializeField]
+    private Button equipButton;
+
+    [SerializeField]
+    private TextMeshProUGUI equipButtonText;
+
+    [SerializeField]
     private GameObject window;
 
     private CloakInfo currentCloakInfo;
@@ -27,6 +33,7 @@ public class CloakWindow : MonoBehaviour
     {
         AetherEvents.GameEvents.CloakEvents.OnShowCloakInfo += ShowCloakInfo;
         AetherEvents.GameEvents.CloakEvents.OnHideCloakInfo += CloseWindow;
+        AetherEvents.UIEvents.Windows.OnClosePopups += ClosePopup;
     }
 
     private void ShowCloakInfo(CloakInfo cloakInfo)
@@ -34,40 +41,58 @@ public class CloakWindow : MonoBehaviour
         currentCloakInfo = cloakInfo;
 
         header.text = cloakInfo.Name;
-        header.color = cloakInfo.Colour;
         keywords.text = cloakInfo.Keywords;
         content.text = cloakInfo.Description;
 
-        actionMapManager.EnablePopUpActionMap();
+        if (!currentCloakInfo.IsEquipped)
+        {
+            equipButton.onClick.AddListener(() => EquipCloak());
+            equipButtonText.text = "Equip";
+        }
+        else
+        {
+            equipButton.onClick.AddListener(() => UnequipCloak());
+            equipButtonText.text = "Unequip";
+        }
+
+        AetherEvents.GameEvents.InputSystemEvents.EnablePopupActionMap();
         AetherEvents.UIEvents.ToolTips.HideAll();
+        AetherEvents.UIEvents.Crosshair.HideCrosshair();
         window.SetActive(true);
     }
 
     public void EquipCloak()
     {
-        AetherEvents.GameEvents.CloakEvents.EquipCloak(currentCloakInfo.CloakPrefab);
+        AetherEvents.GameEvents.CloakEvents.EquipCloak(currentCloakInfo);
+        CloseWindow();
+    }
+
+    public void UnequipCloak()
+    {
+        AetherEvents.GameEvents.CloakEvents.UnequipCloak();
         CloseWindow();
     }
 
     private void CloseWindow()
     {
+        equipButton.onClick.RemoveAllListeners();
         window.SetActive(false);
+        AetherEvents.UIEvents.Crosshair.UnhideCrosshair();
         AetherEvents.UIEvents.ToolTips.UnhideAll();
-        actionMapManager.EnablePlayerActionMap();
+        AetherEvents.GameEvents.InputSystemEvents.EnablePlayerActionMap();
     }
 
-    public void CloseWindow(CallbackContext context)
+    public void ClosePopup()
     {
-        if (!context.performed)
-            return;
-
         currentCloakInfo = null;
-        CloseWindow();
+        if(window.activeSelf)
+            CloseWindow();
     }
 
     private void OnDestroy()
     {
         AetherEvents.GameEvents.CloakEvents.OnShowCloakInfo -= ShowCloakInfo;
         AetherEvents.GameEvents.CloakEvents.OnHideCloakInfo -= CloseWindow;
+        AetherEvents.UIEvents.Windows.OnClosePopups -= ClosePopup;
     }
 }

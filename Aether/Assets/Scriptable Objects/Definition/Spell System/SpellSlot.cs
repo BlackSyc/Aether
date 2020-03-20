@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Spell System/SpellSlot")]
 [Serializable]
@@ -11,7 +8,6 @@ public class SpellSlot : ScriptableObject
     public string Name;
 
     public SpellSlotState State = new SpellSlotState();
-
     public struct SpellSlotState
     {
         public Spell Spell;
@@ -19,13 +15,21 @@ public class SpellSlot : ScriptableObject
         public float CoolDownUntil;
     }
 
-    public void SelectSpell(Spell spell)
+    public void Initialize()
+    {
+        AetherEvents.GameEvents.SpellSystemEvents.OnGrantNewSpell += SelectSpell;
+    }
+
+    private void SelectSpell(Spell spell)
     {
         if (spell == null)
             return;
 
+        if (spell.SpellSlot != this)
+            return;
+
         State.Spell = spell;
-        AetherEvents.GameEvents.SpellSystemEvents.SelectSpell(this, spell);
+        AetherEvents.GameEvents.SpellSystemEvents.NewSpellSelected(spell);
     }
 
     public bool HasActiveSpell { get
@@ -57,5 +61,10 @@ public class SpellSlot : ScriptableObject
     private void SetCoolDown(SpellCast spellCast)
     {
         State.CoolDownUntil = Time.time + spellCast.Spell.CoolDown;
+    }
+
+    private void OnDisable()
+    {
+        AetherEvents.GameEvents.SpellSystemEvents.OnGrantNewSpell -= SelectSpell;
     }
 }

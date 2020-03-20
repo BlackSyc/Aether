@@ -14,6 +14,17 @@ public class Interactor : MonoBehaviour
 
     private Interactable currentInteractable;
 
+    public bool IsActive = true;
+
+    public void CancelCurrentlyProposedInteraction()
+    {
+        if(currentInteractable != null)
+        {
+            currentInteractable = null;
+            AetherEvents.GameEvents.InteractionEvents.CancelProposeInteraction();
+        }
+    }
+
     public void Interact(CallbackContext context)
     {
         if (context.performed)
@@ -25,11 +36,14 @@ public class Interactor : MonoBehaviour
 
     public void CheckForInteractables()
     {
-        Interactable interactable = Physics.OverlapSphere(this.transform.position, interactionRadius, layers).Select(x => x.GetComponent<Interactable>()).FirstOrDefault(x => x.IsActive);
+        Interactable interactable = Physics.OverlapSphere(this.transform.position, interactionRadius, layers)
+            .Where(x => x.GetComponent<Interactable>() != null)
+            .Select(x => x.GetComponent<Interactable>())
+            .FirstOrDefault(x => x.IsActive);
         if (interactable != null)
         {
             currentInteractable = interactable;
-            AetherEvents.GameEvents.InteractionEvents.ProposeInteraction(currentInteractable);
+            AetherEvents.GameEvents.InteractionEvents.ProposeInteraction(currentInteractable, this);
         }
         else
         {
@@ -40,6 +54,7 @@ public class Interactor : MonoBehaviour
 
     private void Update()
     {
-        CheckForInteractables();
+        if(IsActive)
+            CheckForInteractables();
     }
 }
