@@ -31,16 +31,6 @@ public static partial class AetherEvents
                 OnTravelToAccessPoint?.Invoke();
             }
         }
-    
-        public struct DialogEvents 
-        {
-            public static event Action<Dialog> OnStartDialog;
-
-            public static void StartDialog(Dialog dialog)
-            {
-                OnStartDialog?.Invoke(dialog);
-            }
-        }
 
         public struct SpellSystemEvents 
         {

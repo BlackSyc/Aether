@@ -4,6 +4,20 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
 using System;
+using static AetherEvents;
+
+public static partial class AetherEvents
+{
+    public struct DialogEvents
+    {
+        public static event Action<Dialog> OnStartDialog;
+
+        public static void StartDialog(Dialog dialog)
+        {
+            OnStartDialog?.Invoke(dialog);
+        }
+    }
+}
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Dialog/Dialog")]
 public class Dialog : ScriptableObject
@@ -23,5 +37,10 @@ public class Dialog : ScriptableObject
             return;
 
         OnComplete();
+    }
+
+    public void Start()
+    {
+        DialogEvents.StartDialog(this);
     }
 }

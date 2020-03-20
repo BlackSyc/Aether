@@ -22,8 +22,7 @@ public class AspectOfCreation : MonoBehaviour
     public void Interact(Interactor interactor, Interactable interactable)
     {
         interactable.IsActive = false;
-
-        AetherEvents.GameEvents.DialogEvents.StartDialog(dialog);
+        dialog.Start();
     }
 
     private void ActivateAspect()
