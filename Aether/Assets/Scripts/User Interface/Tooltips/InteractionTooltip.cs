@@ -14,9 +14,9 @@ public class InteractionTooltip : MonoBehaviour
 
     private void Start()
     {
-        InteractionEvents.OnProposeInteraction += Activate;
-        InteractionEvents.OnCancelProposeInteraction += Deactivate;
-        InteractionEvents.OnInteract += PerformAnimation;
+        Interactor.Events.OnProposeInteraction += Activate;
+        Interactor.Events.OnCancelProposeInteraction += Deactivate;
+        Interactor.Events.OnInteract += PerformAnimation;
 
         AetherEvents.UIEvents.ToolTips.OnHideAll += Hide;
         AetherEvents.UIEvents.ToolTips.OnUnhideAll += Unhide;
@@ -51,9 +51,9 @@ public class InteractionTooltip : MonoBehaviour
 
     private void OnDestroy()
     {
-        InteractionEvents.OnProposeInteraction -= Activate;
-       InteractionEvents.OnCancelProposeInteraction -= Deactivate;
-       InteractionEvents.OnInteract -= PerformAnimation;
+        Interactor.Events.OnProposeInteraction -= Activate;
+        Interactor.Events.OnCancelProposeInteraction -= Deactivate;
+        Interactor.Events.OnInteract -= PerformAnimation;
 
         AetherEvents.UIEvents.ToolTips.OnHideAll -= Hide;
         AetherEvents.UIEvents.ToolTips.OnUnhideAll -= Unhide;

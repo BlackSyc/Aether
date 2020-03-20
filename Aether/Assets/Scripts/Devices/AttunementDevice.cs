@@ -6,24 +6,18 @@ using System.Linq;
 using UnityEngine;
 using static AetherEvents;
 
-public static partial class AetherEvents 
-{
-    public struct AttunementEvents
-    {
-        public struct UIRequests
-        {
-            public static event Action<AttunementDevice> OnOpenAttunementWindow;
-
-            public static void OpenAttunementWindow(AttunementDevice attunementDevice)
-            {
-                OnOpenAttunementWindow?.Invoke(attunementDevice);
-            }
-        }
-    }
-}
-
 public class AttunementDevice : MonoBehaviour
 {
+    public readonly struct Events
+    {
+        public static event Action<AttunementDevice> OnOpenAttunementWindow;
+
+        public static void OpenAttunementWindow(AttunementDevice attunementDevice)
+        {
+            OnOpenAttunementWindow?.Invoke(attunementDevice);
+        }
+    }
+
     #region Private Fields
     private Keystone _activeKeystone = null;
     #endregion
@@ -46,12 +40,12 @@ public class AttunementDevice : MonoBehaviour
     #region MonoBehaviour
     private void Start()
     {
-        InteractionEvents.OnProposeInteraction += PrepareInteraction;
+        Interactor.Events.OnProposeInteraction += PrepareInteraction;
     }
 
     private void OnDestroy()
     {
-        InteractionEvents.OnProposeInteraction -= PrepareInteraction;
+        Interactor.Events.OnProposeInteraction -= PrepareInteraction;
     }
     #endregion
 
@@ -77,7 +71,7 @@ public class AttunementDevice : MonoBehaviour
             keystones.AddRange(interactorInventory.ExtractKeystones(x => x.Aspect == aspect));
         }
 
-        AttunementEvents.UIRequests.OpenAttunementWindow(this);
+        Events.OpenAttunementWindow(this);
     }
     #endregion
 

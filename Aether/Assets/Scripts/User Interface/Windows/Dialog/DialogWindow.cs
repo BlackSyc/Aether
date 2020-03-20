@@ -1,9 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
-using static AetherEvents;
 
 public class DialogWindow : MonoBehaviour
 {
@@ -23,7 +20,7 @@ public class DialogWindow : MonoBehaviour
 
     private void Start()
     {
-        DialogEvents.OnStartDialog += StartDialog;
+        Dialog.Events.OnStartDialog += StartDialog;
     }
 
     private void StartDialog(Dialog dialog)
@@ -49,6 +46,6 @@ public class DialogWindow : MonoBehaviour
 
     private void OnDestroy()
     {
-        DialogEvents.OnStartDialog -= StartDialog;
+        Dialog.Events.OnStartDialog -= StartDialog;
     }
 }

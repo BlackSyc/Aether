@@ -1,14 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 using System.Linq;
 using System;
-using static AetherEvents;
 
-public static partial class AetherEvents
+public class Interactor : MonoBehaviour
 {
-    public struct InteractionEvents
+    public readonly struct Events
     {
         public static event Action<Interactable, Interactor> OnProposeInteraction;
         public static event Action OnCancelProposeInteraction;
@@ -29,10 +26,6 @@ public static partial class AetherEvents
             OnInteract?.Invoke();
         }
     }
-}
-
-public class Interactor : MonoBehaviour
-{
     public GameObject Player => transform.parent.gameObject;
 
     [SerializeField]
@@ -50,7 +43,7 @@ public class Interactor : MonoBehaviour
         if(currentInteractable != null)
         {
             currentInteractable = null;
-            InteractionEvents.CancelProposeInteraction();
+            Events.CancelProposeInteraction();
         }
     }
 
@@ -59,7 +52,7 @@ public class Interactor : MonoBehaviour
         if (context.performed)
         {
             currentInteractable?.Interact(with: this);
-            InteractionEvents.Interact();
+            Events.Interact();
         }
     }
 
@@ -72,12 +65,12 @@ public class Interactor : MonoBehaviour
         if (interactable != null)
         {
             currentInteractable = interactable;
-            InteractionEvents.ProposeInteraction(currentInteractable, this);
+            Events.ProposeInteraction(currentInteractable, this);
         }
         else
         {
             currentInteractable = null;
-            InteractionEvents.CancelProposeInteraction();
+            Events.CancelProposeInteraction();
         }
     }
 
