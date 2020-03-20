@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AetherEvents : MonoBehaviour
+public static partial class AetherEvents
 {
 
     public struct GameEvents
     {
-        public struct HubEvents
+        public struct HubEvents 
         {
             public static event Action<Aspect> OnOpenStairs;
 
@@ -29,27 +29,6 @@ public class AetherEvents : MonoBehaviour
             public static void TravelToAccessPoint()
             {
                 OnTravelToAccessPoint?.Invoke();
-            }
-        }
-        public struct InteractionEvents 
-        {
-            public static event Action<Interactable, Interactor> OnProposeInteraction;
-            public static event Action OnCancelProposeInteraction;
-            public static event Action OnInteract;
-
-            public static void ProposeInteraction(Interactable interactable, Interactor interactor)
-            {
-                OnProposeInteraction?.Invoke(interactable, interactor);
-            }
-
-            public static void CancelProposeInteraction()
-            {
-                OnCancelProposeInteraction?.Invoke();
-            }
-
-            public static void Interact()
-            {
-                OnInteract?.Invoke();
             }
         }
     
@@ -162,48 +141,6 @@ public class AetherEvents : MonoBehaviour
             public static void MissileTargetHit()
             {
                 OnMissileTargetHit?.Invoke();
-            }
-        }
-    
-        public struct AttunementEvents
-        {
-            public static event Action<List<Keystone>> OnOpenAttunementWindow;
-
-            public static event Action<Keystone> OnToggleAttunement;
-
-            public static event Action<Keystone> OnKeystoneActivated;
-            public static event Action<Keystone> OnKeystoneDeactivated;
-
-            public static void OpenAttunementWindow(List<Keystone> newKeyStones)
-            {
-                OnOpenAttunementWindow?.Invoke(newKeyStones);
-            }
-
-            public static void ToggleAttunement(Keystone keystone)
-            {
-                OnToggleAttunement?.Invoke(keystone);
-            }
-
-            public static void KeystoneActivated(Keystone keystone)
-            {
-                OnKeystoneActivated?.Invoke(keystone);
-            }
-
-            public static void KeystoneDeactivated(Keystone keystone)
-            {
-                OnKeystoneDeactivated?.Invoke(keystone);
-            }
-
-
-        }
-
-        public struct InventoryEvents
-        {
-            public static event Action<Keystone> OnPickupKeystone;
-
-            public static void Pickup(Keystone keystone)
-            {
-                OnPickupKeystone?.Invoke(keystone);
             }
         }
         

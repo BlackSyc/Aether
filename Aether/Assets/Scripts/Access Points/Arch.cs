@@ -14,8 +14,8 @@ public class Arch : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.AttunementEvents.OnKeystoneActivated += LoadKeystone;
-        AetherEvents.GameEvents.AttunementEvents.OnKeystoneDeactivated += UnloadKeystone;
+        AetherEvents.KeystoneEvents.OnKeystoneActivated += LoadKeystone;
+        AetherEvents.KeystoneEvents.OnKeystoneDeactivated += UnloadKeystone;
     }
 
     private void UnloadKeystone(Keystone keystone)
@@ -49,6 +49,6 @@ public class Arch : MonoBehaviour
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.AttunementEvents.OnKeystoneActivated -= LoadKeystone;
+        AetherEvents.KeystoneEvents.OnKeystoneActivated -= LoadKeystone;
     }
 }

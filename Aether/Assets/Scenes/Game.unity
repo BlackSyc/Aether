@@ -883,7 +883,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 222d2674f6db12949b60edd954988959, type: 2}
   - {fileID: 11400000, guid: 8409b26a4ab3d1e4fb046227e4c13017, type: 2}
   spawnCloaks: 1
-  pickupKeystones: 0
 --- !u!4 &122512648
 Transform:
   m_ObjectHideFlags: 0
@@ -1877,6 +1876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d91402ce37dbe49b3d93fef2166bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keystones:
+  - {fileID: 11400000, guid: ad7b6127d5c95ce49a29770a7e3ffb14, type: 2}
 --- !u!114 &205025363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2008,12 +2009,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b97d301a6db36aa48b268b6033b45b29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attunementWindow: {fileID: 1777710176}
-  _keystoneButtonParent: {fileID: 294576551}
-  _keystoneButtonPrefab: {fileID: 1826330371686248824, guid: cbcc48ab8f997a243b9cc9a0cbd77f12,
+  attunementWindow: {fileID: 1777710176}
+  keystoneSelectorParent: {fileID: 294576551}
+  keystoneSelectorScrollRect: {fileID: 1794431830}
+  keystoneSelectorPrefab: {fileID: 1826330371686248824, guid: cbcc48ab8f997a243b9cc9a0cbd77f12,
     type: 3}
-  _infoPanel: {fileID: 951528328}
-  _scrollRect: {fileID: 1794431830}
+  keystoneInfoPanel: {fileID: 951528328}
 --- !u!1 &229893615
 GameObject:
   m_ObjectHideFlags: 0
@@ -3909,6 +3910,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
+      propertyPath: keystones.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
       propertyPath: _keystones.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: a9059e1183ec8cc4ea2e49180fcab870,
@@ -3929,6 +3935,28 @@ PrefabInstance:
       propertyPath: triggerConstraint
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: aspect
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: keystoneObject
+      value: 
+      objectReference: {fileID: 1903216089}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: keystones.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a9059e1183ec8cc4ea2e49180fcab870,
+        type: 2}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: keystones.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8409b26a4ab3d1e4fb046227e4c13017,
+        type: 2}
     - target: {fileID: 4417447441142579530, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5825,6 +5853,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630823153}
   m_Mesh: {fileID: -4944773283459485054, guid: 2acfc10b1ba25d7409c888bca4be5afa, type: 3}
+--- !u!1 &634497744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4417447442426439750, guid: 7c44200e7d6ffb449b36428877eb5969,
+    type: 3}
+  m_PrefabInstance: {fileID: 1987002767}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &638543733
 GameObject:
   m_ObjectHideFlags: 0
@@ -5944,6 +5978,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
+      propertyPath: keystones.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
       propertyPath: _keystones.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: efe0d3f49b33b5f4fbe7debc8e945753,
@@ -5964,6 +6003,28 @@ PrefabInstance:
       propertyPath: triggerConstraint
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: aspect
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: keystoneObject
+      value: 
+      objectReference: {fileID: 1992325333}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: keystones.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: efe0d3f49b33b5f4fbe7debc8e945753,
+        type: 2}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: keystones.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 222d2674f6db12949b60edd954988959,
+        type: 2}
     - target: {fileID: 4417447441142579530, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7918,13 +7979,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015b611d3c93ca0478d678e105c20b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 229893617}
-  _nameText: {fileID: 2090604026}
-  _descriptionText: {fileID: 473263183}
-  _labelPanel: {fileID: 761885461}
-  _labelPrefab: {fileID: 3897555710919595930, guid: 5a4ed11a4fc20a948b45a0c982ba9348,
+  keystoneSprite: {fileID: 229893617}
+  keystoneNameText: {fileID: 2090604026}
+  keystoneDescriptionText: {fileID: 473263183}
+  activateButton: {fileID: 1603198855}
+  activateButtonText: {fileID: 1923515438}
+  keystoneLabelParent: {fileID: 761885461}
+  keystoneLabelPrefab: {fileID: 3897555710919595930, guid: 5a4ed11a4fc20a948b45a0c982ba9348,
     type: 3}
-  _activateButtonText: {fileID: 1923515438}
 --- !u!114 &951528329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17091,6 +17153,12 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   IsActive: 0
+--- !u!1 &1903216089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4417447442426439750, guid: 7c44200e7d6ffb449b36428877eb5969,
+    type: 3}
+  m_PrefabInstance: {fileID: 479859614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1904928862
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17869,6 +17937,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
+      propertyPath: Keystones.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: keystones.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
       propertyPath: _keystones.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: f9b1f51a5cdb7ae4985768a2ae505c78,
@@ -17887,6 +17965,51 @@ PrefabInstance:
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
       propertyPath: triggerConstraint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: Keystones.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: f9b1f51a5cdb7ae4985768a2ae505c78,
+        type: 2}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: Keystones.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ae3adb8218fbad48b0f311fa4f23a1c,
+        type: 2}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: Keystones.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: ad7b6127d5c95ce49a29770a7e3ffb14,
+        type: 2}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: keystones.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: f9b1f51a5cdb7ae4985768a2ae505c78,
+        type: 2}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: keystones.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ae3adb8218fbad48b0f311fa4f23a1c,
+        type: 2}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: keystones.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: keystoneObject
+      value: 
+      objectReference: {fileID: 634497744}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: aspect
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579530, guid: 7c44200e7d6ffb449b36428877eb5969,
@@ -17946,6 +18069,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c44200e7d6ffb449b36428877eb5969, type: 3}
+--- !u!1 &1992325333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4417447442426439750, guid: 7c44200e7d6ffb449b36428877eb5969,
+    type: 3}
+  m_PrefabInstance: {fileID: 646326446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1995773545
 GameObject:
   m_ObjectHideFlags: 0

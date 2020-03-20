@@ -1,48 +1,54 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static UnityEngine.InputSystem.InputAction;
+using static AetherEvents;
 
 public class AttunementWindow : MonoBehaviour
 {
+    #region Serialized Fields
     [SerializeField]
-    private GameObject _attunementWindow;
-
-    [SerializeField]
-    private RectTransform _keystoneButtonParent;
+    private GameObject attunementWindow;
 
     [SerializeField]
-    private GameObject _keystoneButtonPrefab;
+    private RectTransform keystoneSelectorParent;
 
     [SerializeField]
-    private KeystoneInfoPanel _infoPanel;
+    private ScrollRect keystoneSelectorScrollRect;
 
     [SerializeField]
-    private ScrollRect _scrollRect;
+    private GameObject keystoneSelectorPrefab;
 
+    [SerializeField]
+    private KeystoneInfoPanel keystoneInfoPanel;
+    #endregion
 
-    // Start is called before the first frame update
+    #region MonoBehaviour
     void Start()
     {
-        AetherEvents.GameEvents.AttunementEvents.OnOpenAttunementWindow += OpenWindow;
-        AetherEvents.UIEvents.Windows.OnClosePopups += CloseWindow;
+        AttunementEvents.UIRequests.OnOpenAttunementWindow += OpenWindow;
+        UIEvents.Windows.OnClosePopups += CloseWindow;
     }
 
-    private void OpenWindow(List<Keystone> keystones)
+    private void OnDestroy()
     {
-        _attunementWindow.SetActive(true);
+        AttunementEvents.UIRequests.OnOpenAttunementWindow -= OpenWindow;
+        UIEvents.Windows.OnClosePopups -= CloseWindow;
+    }
+    #endregion
+
+    #region EventHandlers
+    private void OpenWindow(AttunementDevice attunementDevice)
+    {
+        attunementWindow.SetActive(true);
 
         bool selectionMade = false;
 
-        foreach(Keystone keystone in keystones)
+        foreach (Keystone keystone in attunementDevice.Keystones)
         {
-            GameObject keystoneSelectorObject = GameObject.Instantiate(_keystoneButtonPrefab, _keystoneButtonParent);
+            GameObject keystoneSelectorObject = GameObject.Instantiate(keystoneSelectorPrefab, keystoneSelectorParent);
             KeystoneSelector keystoneSelector = keystoneSelectorObject.GetComponent<KeystoneSelector>();
             keystoneSelector.SetKeystone(keystone);
-            keystoneSelector.OnSelect = () => ShowInfo(keystone);
+            keystoneSelector.OnSelect = () => keystoneInfoPanel.Show(keystone, attunementDevice);
             keystoneSelector.OnScroll = Scroll;
 
             if (!selectionMade)
@@ -51,28 +57,18 @@ public class AttunementWindow : MonoBehaviour
                 keystoneSelector.Select();
             }
         }
-        
+
         AetherEvents.GameEvents.InputSystemEvents.EnablePopupActionMap();
         AetherEvents.UIEvents.ToolTips.HideAll();
         AetherEvents.UIEvents.Crosshair.HideCrosshair();
     }
 
-    private void ShowInfo(Keystone keystone)
+    private void CloseWindow()
     {
-        _infoPanel.SetInfo(keystone);
-    }
-
-    private void Scroll(PointerEventData pointerEventData)
-    {
-        _scrollRect.OnScroll(pointerEventData);
-    }
-
-    public void CloseWindow()
-    {
-        if (_attunementWindow.activeSelf)
+        if (attunementWindow.activeSelf)
         {
-            _attunementWindow.SetActive(false);
-            foreach(Transform child in _keystoneButtonParent)
+            attunementWindow.SetActive(false);
+            foreach (Transform child in keystoneSelectorParent)
             {
                 Destroy(child.gameObject);
             }
@@ -82,10 +78,12 @@ public class AttunementWindow : MonoBehaviour
             AetherEvents.UIEvents.Crosshair.UnhideCrosshair();
         }
     }
+    #endregion
 
-    private void OnDestroy()
+    #region Private Methods
+    private void Scroll(PointerEventData pointerEventData)
     {
-        AetherEvents.GameEvents.AttunementEvents.OnOpenAttunementWindow -= OpenWindow;
-        AetherEvents.UIEvents.Windows.OnClosePopups -= CloseWindow;
+        keystoneSelectorScrollRect.OnScroll(pointerEventData);
     }
+    #endregion
 }

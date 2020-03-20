@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.EventSystems;
+using static AetherEvents;
 
 public class KeystoneSelector : MonoBehaviour
 {
@@ -40,8 +41,8 @@ public class KeystoneSelector : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.AttunementEvents.OnKeystoneActivated += KeystoneActivated;
-        AetherEvents.GameEvents.AttunementEvents.OnKeystoneDeactivated += KeystoneDeactivated;
+        KeystoneEvents.OnKeystoneActivated += KeystoneActivated;
+        KeystoneEvents.OnKeystoneDeactivated += KeystoneDeactivated;
     }
 
     private void KeystoneActivated(Keystone keystone)
@@ -66,8 +67,8 @@ public class KeystoneSelector : MonoBehaviour
     {
         _keystone = keystone;
         _buttonLabel.text = _keystone.Name;
-        _buttonLabel.color = _keystone.State.IsActivated ? _activatedTextColour : _defaultTextColour;
-        _buttonLabel.fontStyle = _keystone.State.IsActivated ? FontStyles.Bold : FontStyles.Normal;
+        _buttonLabel.color = _keystone.IsActivated ? _activatedTextColour : _defaultTextColour;
+        _buttonLabel.fontStyle = _keystone.IsActivated ? FontStyles.Bold : FontStyles.Normal;
     }
 
     public void Select()
@@ -103,7 +104,7 @@ public class KeystoneSelector : MonoBehaviour
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.AttunementEvents.OnKeystoneActivated -= KeystoneActivated;
-        AetherEvents.GameEvents.AttunementEvents.OnKeystoneDeactivated -= KeystoneDeactivated;
+        KeystoneEvents.OnKeystoneActivated -= KeystoneActivated;
+        KeystoneEvents.OnKeystoneDeactivated -= KeystoneDeactivated;
     }
 }

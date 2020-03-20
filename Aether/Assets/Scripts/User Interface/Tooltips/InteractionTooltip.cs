@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static AetherEvents;
 
 public class InteractionTooltip : MonoBehaviour
 {
@@ -13,9 +14,9 @@ public class InteractionTooltip : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.InteractionEvents.OnProposeInteraction += Activate;
-        AetherEvents.GameEvents.InteractionEvents.OnCancelProposeInteraction += Deactivate;
-        AetherEvents.GameEvents.InteractionEvents.OnInteract += PerformAnimation;
+        InteractionEvents.OnProposeInteraction += Activate;
+        InteractionEvents.OnCancelProposeInteraction += Deactivate;
+        InteractionEvents.OnInteract += PerformAnimation;
 
         AetherEvents.UIEvents.ToolTips.OnHideAll += Hide;
         AetherEvents.UIEvents.ToolTips.OnUnhideAll += Unhide;
@@ -50,9 +51,9 @@ public class InteractionTooltip : MonoBehaviour
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.InteractionEvents.OnProposeInteraction -= Activate;
-        AetherEvents.GameEvents.InteractionEvents.OnCancelProposeInteraction -= Deactivate;
-        AetherEvents.GameEvents.InteractionEvents.OnInteract -= PerformAnimation;
+        InteractionEvents.OnProposeInteraction -= Activate;
+       InteractionEvents.OnCancelProposeInteraction -= Deactivate;
+       InteractionEvents.OnInteract -= PerformAnimation;
 
         AetherEvents.UIEvents.ToolTips.OnHideAll -= Hide;
         AetherEvents.UIEvents.ToolTips.OnUnhideAll -= Unhide;

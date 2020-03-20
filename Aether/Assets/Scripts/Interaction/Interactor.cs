@@ -3,9 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 using System.Linq;
+using System;
+using static AetherEvents;
+
+public static partial class AetherEvents
+{
+    public struct InteractionEvents
+    {
+        public static event Action<Interactable, Interactor> OnProposeInteraction;
+        public static event Action OnCancelProposeInteraction;
+        public static event Action OnInteract;
+
+        public static void ProposeInteraction(Interactable interactable, Interactor interactor)
+        {
+            OnProposeInteraction?.Invoke(interactable, interactor);
+        }
+
+        public static void CancelProposeInteraction()
+        {
+            OnCancelProposeInteraction?.Invoke();
+        }
+
+        public static void Interact()
+        {
+            OnInteract?.Invoke();
+        }
+    }
+}
 
 public class Interactor : MonoBehaviour
 {
+    public GameObject Player => transform.parent.gameObject;
+
     [SerializeField]
     private float interactionRadius = 1;
 
@@ -21,7 +50,7 @@ public class Interactor : MonoBehaviour
         if(currentInteractable != null)
         {
             currentInteractable = null;
-            AetherEvents.GameEvents.InteractionEvents.CancelProposeInteraction();
+            InteractionEvents.CancelProposeInteraction();
         }
     }
 
@@ -30,7 +59,7 @@ public class Interactor : MonoBehaviour
         if (context.performed)
         {
             currentInteractable?.Interact(with: this);
-            AetherEvents.GameEvents.InteractionEvents.Interact();
+            InteractionEvents.Interact();
         }
     }
 
@@ -43,12 +72,12 @@ public class Interactor : MonoBehaviour
         if (interactable != null)
         {
             currentInteractable = interactable;
-            AetherEvents.GameEvents.InteractionEvents.ProposeInteraction(currentInteractable, this);
+            InteractionEvents.ProposeInteraction(currentInteractable, this);
         }
         else
         {
             currentInteractable = null;
-            AetherEvents.GameEvents.InteractionEvents.CancelProposeInteraction();
+            InteractionEvents.CancelProposeInteraction();
         }
     }
 
