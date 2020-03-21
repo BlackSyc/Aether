@@ -7,18 +7,18 @@ public class Interactor : MonoBehaviour
 {
     public readonly struct Events
     {
-        public static event Action<Interactable, Interactor> OnProposeInteraction;
-        public static event Action OnCancelProposeInteraction;
+        public static event Action<Interactable, Interactor> OnProposedInteraction;
+        public static event Action OnCancelProposedInteraction;
         public static event Action OnInteract;
 
-        public static void ProposeInteraction(Interactable interactable, Interactor interactor)
+        public static void ProposedInteraction(Interactable interactable, Interactor interactor)
         {
-            OnProposeInteraction?.Invoke(interactable, interactor);
+            OnProposedInteraction?.Invoke(interactable, interactor);
         }
 
-        public static void CancelProposeInteraction()
+        public static void CancelProposedInteraction()
         {
-            OnCancelProposeInteraction?.Invoke();
+            OnCancelProposedInteraction?.Invoke();
         }
 
         public static void Interact()
@@ -43,7 +43,7 @@ public class Interactor : MonoBehaviour
         if(currentInteractable != null)
         {
             currentInteractable = null;
-            Events.CancelProposeInteraction();
+            Events.CancelProposedInteraction();
         }
     }
 
@@ -62,15 +62,17 @@ public class Interactor : MonoBehaviour
             .Where(x => x.GetComponent<Interactable>() != null)
             .Select(x => x.GetComponent<Interactable>())
             .FirstOrDefault(x => x.IsActive);
+
         if (interactable != null)
         {
             currentInteractable = interactable;
-            Events.ProposeInteraction(currentInteractable, this);
+            currentInteractable.ProposeInteraction(with: this);
+            Events.ProposedInteraction(currentInteractable, this);
         }
         else
         {
             currentInteractable = null;
-            Events.CancelProposeInteraction();
+            Events.CancelProposedInteraction();
         }
     }
 

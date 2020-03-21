@@ -63,6 +63,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  InteractionProposition:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4417447441142579529}
+        m_MethodName: PrepareForInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   IsActive: 1
 --- !u!136 &4417447441142579528
 CapsuleCollider:
@@ -90,10 +104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aebcef4432159d489222e4816c609ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keystones:
-  - {fileID: 11400000, guid: efe0d3f49b33b5f4fbe7debc8e945753, type: 2}
-  - {fileID: 11400000, guid: 222d2674f6db12949b60edd954988959, type: 2}
-  _keystoneObject: {fileID: 4417447442426439750}
+  keystones: []
+  aspect: 0
+  keystoneObject: {fileID: 0}
 --- !u!1 &4417447441570713620
 GameObject:
   m_ObjectHideFlags: 0

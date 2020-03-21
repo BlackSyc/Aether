@@ -37,18 +37,6 @@ public class AttunementDevice : MonoBehaviour
     public ReadOnlyCollection<Keystone> Keystones => new ReadOnlyCollection<Keystone>(keystones);
     #endregion
 
-    #region MonoBehaviour
-    private void Start()
-    {
-        Interactor.Events.OnProposeInteraction += PrepareInteraction;
-    }
-
-    private void OnDestroy()
-    {
-        Interactor.Events.OnProposeInteraction -= PrepareInteraction;
-    }
-    #endregion
-
     #region Public Methods
     public void Toggle(Keystone keystone)
     {
@@ -73,6 +61,21 @@ public class AttunementDevice : MonoBehaviour
 
         Events.OpenAttunementWindow(this);
     }
+
+    public void PrepareForInteraction(Interactor interactor, Interactable interactable)
+    {
+        if (interactable != GetComponent<Interactable>())
+            return;
+
+        if (interactor.GetComponentInParent<Inventory>().Keystones.Count > 0)
+        {
+            interactable.ProposeInteractionMessage = "to place keystones";
+        }
+        else
+        {
+            interactable.ProposeInteractionMessage = "to activate a keystone";
+        }
+    }
     #endregion
 
     #region Private Methods
@@ -95,21 +98,6 @@ public class AttunementDevice : MonoBehaviour
         _activeKeystone = null;
         keystoneObject.SetActive(false);
         keystone.Deactivate();
-    }
-
-    private void PrepareInteraction(Interactable interactable, Interactor interactor)
-    {
-        if (interactable != GetComponent<Interactable>())
-            return;
-
-        if(interactor.GetComponentInParent<Inventory>().Keystones.Count > 0)
-        {
-            interactable.ProposeInteractionMessage = "to place keystones";
-        }
-        else
-        {
-            interactable.ProposeInteractionMessage = "to activate a keystone";
-        }
     }
     #endregion
 }

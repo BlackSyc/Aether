@@ -1550,6 +1550,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  InteractionProposition:
+    m_PersistentCalls:
+      m_Calls: []
   IsActive: 0
 --- !u!64 &166853695
 MeshCollider:
@@ -1653,6 +1656,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  InteractionProposition:
+    m_PersistentCalls:
+      m_Calls: []
   IsActive: 0
 --- !u!65 &169073594
 BoxCollider:
@@ -8618,6 +8624,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  InteractionProposition:
+    m_PersistentCalls:
+      m_Calls: []
   IsActive: 0
 --- !u!4 &1029857552 stripped
 Transform:
@@ -10750,6 +10759,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  InteractionProposition:
+    m_PersistentCalls:
+      m_Calls: []
   IsActive: 0
 --- !u!64 &1145111864
 MeshCollider:
@@ -11327,6 +11339,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  InteractionProposition:
+    m_PersistentCalls:
+      m_Calls: []
   IsActive: 0
 --- !u!64 &1183359036
 MeshCollider:
@@ -12630,6 +12645,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  InteractionProposition:
+    m_PersistentCalls:
+      m_Calls: []
   IsActive: 0
 --- !u!1 &1391093069
 GameObject:
@@ -17152,6 +17170,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  InteractionProposition:
+    m_PersistentCalls:
+      m_Calls: []
   IsActive: 0
 --- !u!1 &1903216089 stripped
 GameObject:
@@ -17604,6 +17625,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  InteractionProposition:
+    m_PersistentCalls:
+      m_Calls: []
   IsActive: 0
 --- !u!1 &1948141723
 GameObject:
