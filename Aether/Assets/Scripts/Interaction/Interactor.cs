@@ -37,15 +37,25 @@ public class Interactor : MonoBehaviour
 
     private Interactable currentInteractable;
 
-    public bool IsActive = true;
+    [SerializeField]
+    private bool isActive = true;
 
-    public void CancelCurrentlyProposedInteraction()
+    public bool IsActive => isActive;
+
+    public void Deactivate()
     {
-        if(currentInteractable != null)
+        if (currentInteractable != null)
         {
             currentInteractable = null;
             Events.CancelProposedInteraction();
         }
+
+        isActive = false;
+    }
+
+    public void Activate()
+    {
+        isActive = true;
     }
 
     public void Interact(CallbackContext context)
@@ -79,7 +89,7 @@ public class Interactor : MonoBehaviour
 
     private void Update()
     {
-        if(IsActive)
+        if(isActive)
             CheckForInteractables();
     }
 }

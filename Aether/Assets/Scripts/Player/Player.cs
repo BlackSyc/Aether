@@ -7,11 +7,17 @@ public class Player : MonoBehaviour
 {
     public static Player Instance;
 
+    public CharacterController CharacterController;
+
     public Shoulder Shoulder;
 
     public Inventory Inventory;
 
     public SpellSystem SpellSystem;
+
+    public Interactor Interactor;
+
+    public SkinnedMeshRenderer Mesh;
 
     private void Awake()
     {

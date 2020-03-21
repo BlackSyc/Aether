@@ -48,32 +48,6 @@ public static partial class AetherEvents
                 OnEnablePlayerActionMap?.Invoke();
             }
         }
-    
-        public struct PlayerEvents
-        {
-            public static event Action<Vector3> OnSetPlayerPosition;
-
-            public static event Action<bool> OnActivateInteractor;
-
-            public static event Action<bool> OnShowModel;
-
-            public static void SetPlayerPosition(Vector3 newPosition)
-            {
-                OnSetPlayerPosition?.Invoke(newPosition);
-            }
-
-            public static void ActivateInteractor(bool flag)
-            {
-                OnActivateInteractor?.Invoke(flag);
-            }
-
-            public static void ShowModel(bool flag)
-            {
-                OnShowModel?.Invoke(flag);
-            }
-
-
-        }
     }
 
     public struct UIEvents

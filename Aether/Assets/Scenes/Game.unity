@@ -883,7 +883,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8ae3adb8218fbad48b0f311fa4f23a1c, type: 2}
   - {fileID: 11400000, guid: 222d2674f6db12949b60edd954988959, type: 2}
   - {fileID: 11400000, guid: 8409b26a4ab3d1e4fb046227e4c13017, type: 2}
-  spawnCloaks: 0
+  spawnCloaks: 1
 --- !u!4 &122512648
 Transform:
   m_ObjectHideFlags: 0
@@ -1729,6 +1729,12 @@ MonoBehaviour:
   equipButton: {fileID: 106336058}
   equipButtonText: {fileID: 234444635}
   window: {fileID: 1911329723}
+--- !u!137 &186529282 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1651062367082650294, guid: 5caeaa64724edcf41bbdcdd957b24b5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1125553935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &190045525
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1772,7 +1778,6 @@ GameObject:
   - component: {fileID: 205025360}
   - component: {fileID: 205025361}
   - component: {fileID: 205025362}
-  - component: {fileID: 205025363}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -1885,21 +1890,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keystones:
   - {fileID: 11400000, guid: ad7b6127d5c95ce49a29770a7e3ffb14, type: 2}
---- !u!114 &205025363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205025356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72446caf63e0c664b820d75f9799932c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactor: {fileID: 370576933}
-  modelObject: {fileID: 1592079282}
-  characterController: {fileID: 205025358}
 --- !u!114 &205025364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1912,9 +1902,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ff33ff5433419479d826e82a3325d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharacterController: {fileID: 205025358}
   Shoulder: {fileID: 102965017}
   Inventory: {fileID: 205025362}
   SpellSystem: {fileID: 205025360}
+  Interactor: {fileID: 370576933}
+  Mesh: {fileID: 186529282}
 --- !u!64 &205697926
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3317,7 +3310,7 @@ MonoBehaviour:
   layers:
     serializedVersion: 2
     m_Bits: 256
-  IsActive: 1
+  isActive: 1
 --- !u!1 &376897094
 GameObject:
   m_ObjectHideFlags: 0
