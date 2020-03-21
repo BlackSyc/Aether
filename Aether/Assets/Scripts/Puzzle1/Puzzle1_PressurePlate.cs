@@ -21,10 +21,10 @@ public class Puzzle1_PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Puzzle1_Trigger") && !IsTriggered)
+        if (other.CompareTag("Player") && !IsTriggered)
         {
             IsTriggered = true;
-            GetComponent<MeshRenderer>().material = GlowingMaterial;
+            transform.parent.GetComponent<MeshRenderer>().material = GlowingMaterial;
 
             Events.Triggered();
         }
