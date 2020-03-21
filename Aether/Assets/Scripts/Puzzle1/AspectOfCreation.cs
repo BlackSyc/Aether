@@ -41,7 +41,7 @@ public class AspectOfCreation : MonoBehaviour
 
     private void GrantArcaneMissile()
     {
-        AetherEvents.GameEvents.SpellSystemEvents.GrantNewSpell(reward);
+        Player.Instance.SpellSystem.AddSpell(reward);
     }
 
     private void OnDestroy()

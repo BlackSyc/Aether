@@ -31,49 +31,6 @@ public static partial class AetherEvents
                 OnTravelToAccessPoint?.Invoke();
             }
         }
-
-        public struct SpellSystemEvents 
-        {
-            public static event Action<Spell> OnGrantNewSpell;
-            public static event Action<Spell> OnRemoveSpell;
-            public static event Action<Spell> OnNewSpellSelected;
-            public static event Action<SpellCast> OnCastSpell;
-
-            public static void GrantNewSpell(Spell spell)
-            {
-                OnGrantNewSpell?.Invoke(spell);
-            }
-
-            public static void NewSpellSelected(Spell spell)
-            {
-                OnNewSpellSelected?.Invoke(spell);
-            }
-            public static void CastSpell(SpellCast spellCast)
-            {
-                OnCastSpell?.Invoke(spellCast);
-            }
-
-            internal static void RemoveSpell(Spell spell)
-            {
-                OnRemoveSpell?.Invoke(spell);
-            }
-        }
-
-        public struct CloakEvents 
-        {
-            public static event Action<CloakInfo> OnCloakEquipped;
-            public static event Action<CloakInfo> OnCloakUnequipped;
-
-            public static void CloakUnequipped(CloakInfo cloakInfo)
-            {
-                OnCloakUnequipped?.Invoke(cloakInfo);
-            }
-
-            public static void CloakEquipped(CloakInfo cloakInfo)
-            {
-                OnCloakEquipped?.Invoke(cloakInfo);
-            }
-        }
     
         public struct Puzzle1Events 
         {

@@ -25,7 +25,8 @@ public class Crosshair : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.SpellSystemEvents.OnNewSpellSelected += NewSpellSelected;
+        SpellSystem.Events.OnSpellAdded += UpdateCrosshairState;
+        SpellSystem.Events.OnSpellRemoved += UpdateCrosshairState;
         AetherEvents.UIEvents.Crosshair.OnHideCrosshair += HideCrosshair;
         AetherEvents.UIEvents.Crosshair.OnUnhideCrosshair += UnhideCrosshair;
     }
@@ -40,13 +41,9 @@ public class Crosshair : MonoBehaviour
         _crosshairContainer.SetActive(false);
     }
 
-    private void NewSpellSelected(Spell spell)
+    private void UpdateCrosshairState(Spell spell)
     {
-        if (spell == null)
-            return;
-
-        if (!_crosshairContainer.activeSelf)
-            _crosshairContainer.SetActive(true);
+        _crosshairContainer.SetActive(Player.Instance.SpellSystem.HasSpells);
     }
 
     // Update is called once per frame
@@ -81,7 +78,8 @@ public class Crosshair : MonoBehaviour
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.SpellSystemEvents.OnNewSpellSelected -= NewSpellSelected;
+        SpellSystem.Events.OnSpellAdded -= UpdateCrosshairState;
+        SpellSystem.Events.OnSpellRemoved -= UpdateCrosshairState;
         AetherEvents.UIEvents.Crosshair.OnHideCrosshair -= HideCrosshair;
         AetherEvents.UIEvents.Crosshair.OnUnhideCrosshair -= UnhideCrosshair;
     }

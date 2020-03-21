@@ -5,6 +5,13 @@ using UnityEngine;
 [Serializable]
 public class SpellSlot : ScriptableObject
 {
+    public event Action<Spell> OnSpellChanged;
+
+    public void SpellChanged(Spell newSpell)
+    {
+        OnSpellChanged?.Invoke(newSpell);
+    }
+
     public string Name;
 
     public SpellSlotState State = new SpellSlotState();
@@ -15,21 +22,25 @@ public class SpellSlot : ScriptableObject
         public float CoolDownUntil;
     }
 
-    public void Initialize()
-    {
-        AetherEvents.GameEvents.SpellSystemEvents.OnGrantNewSpell += SelectSpell;
-    }
-
-    private void SelectSpell(Spell spell)
+    public void SelectSpell(Spell spell)
     {
         if (spell == null)
+        {
+            RemoveSpell();
             return;
+        }
 
-        if (spell.SpellSlot != this)
+        if (spell.PreferredSpellSlot != this)
             return;
 
         State.Spell = spell;
-        AetherEvents.GameEvents.SpellSystemEvents.NewSpellSelected(spell);
+        SpellChanged(spell);
+    }
+
+    public void RemoveSpell()
+    {
+        State.Spell = null;
+        SpellChanged(null);
     }
 
     public bool HasActiveSpell { get
@@ -61,10 +72,5 @@ public class SpellSlot : ScriptableObject
     private void SetCoolDown(SpellCast spellCast)
     {
         State.CoolDownUntil = Time.time + spellCast.Spell.CoolDown;
-    }
-
-    private void OnDisable()
-    {
-        AetherEvents.GameEvents.SpellSystemEvents.OnGrantNewSpell -= SelectSpell;
     }
 }

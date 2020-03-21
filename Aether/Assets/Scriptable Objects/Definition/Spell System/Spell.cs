@@ -11,7 +11,7 @@ public class Spell : ScriptableObject
 
     public Aspect Aspect;
 
-    public SpellSlot SpellSlot;
+    public SpellSlot PreferredSpellSlot;
 
     public float CastDuration;
 

@@ -1914,6 +1914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shoulder: {fileID: 102965017}
   Inventory: {fileID: 205025362}
+  SpellSystem: {fileID: 0}
 --- !u!64 &205697926
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8598,7 +8599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDelay: 4
   cloakObject: {fileID: 8296172668811736711}
-  cloakInfo: {fileID: 11400000, guid: 295d88bd32d50fe4c917a850ff342795, type: 2}
+  cloak: {fileID: 11400000, guid: 295d88bd32d50fe4c917a850ff342795, type: 2}
 --- !u!135 &984577804
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12619,7 +12620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDelay: 4
   cloakObject: {fileID: 8296172667479919017}
-  cloakInfo: {fileID: 11400000, guid: 1909c5330ac9b544aaba2db58c6e728f, type: 2}
+  cloak: {fileID: 11400000, guid: 1909c5330ac9b544aaba2db58c6e728f, type: 2}
 --- !u!135 &1383274265
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17144,7 +17145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDelay: 4
   cloakObject: {fileID: 8296172668577484685}
-  cloakInfo: {fileID: 11400000, guid: 4480b7999006e7341a7ebdd21e95d8ed, type: 2}
+  cloak: {fileID: 11400000, guid: 4480b7999006e7341a7ebdd21e95d8ed, type: 2}
 --- !u!135 &1897496758
 SphereCollider:
   m_ObjectHideFlags: 0

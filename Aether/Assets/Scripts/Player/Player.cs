@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     public Inventory Inventory;
 
+    public SpellSystem SpellSystem;
+
     private void Awake()
     {
         Instance = this;

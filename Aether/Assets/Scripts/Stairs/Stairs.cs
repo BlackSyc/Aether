@@ -16,11 +16,11 @@ public class Stairs : MonoBehaviour
     {
         animator = GetComponent<Animator>();
 
-        AetherEvents.GameEvents.CloakEvents.OnCloakEquipped += CloakEquipped;
-        AetherEvents.GameEvents.CloakEvents.OnCloakUnequipped += CloakUnequipped;
+        Cloak.Events.OnCloakEquipped += CloakEquipped;
+        Cloak.Events.OnCloakUnequipped += CloakUnequipped;
     }
 
-    private void CloakEquipped(CloakInfo cloakInfo)
+    private void CloakEquipped(Cloak cloakInfo)
     {
         if (cloakInfo.Aspect.Equals(aspect))
         {
@@ -29,7 +29,7 @@ public class Stairs : MonoBehaviour
         }
     }
 
-    private void CloakUnequipped(CloakInfo cloakInfo)
+    private void CloakUnequipped(Cloak cloakInfo)
     {
         if (cloakInfo.Aspect.Equals(aspect))
         {
@@ -51,7 +51,7 @@ public class Stairs : MonoBehaviour
     // Update is called once per frame
     void OnDestroy()
     {
-        AetherEvents.GameEvents.CloakEvents.OnCloakEquipped -= CloakEquipped;
-        AetherEvents.GameEvents.CloakEvents.OnCloakUnequipped -= CloakUnequipped;
+        Cloak.Events.OnCloakEquipped -= CloakEquipped;
+        Cloak.Events.OnCloakUnequipped -= CloakUnequipped;
     }
 }

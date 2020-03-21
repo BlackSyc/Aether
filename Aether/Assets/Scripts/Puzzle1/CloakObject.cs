@@ -22,14 +22,14 @@ public class CloakObject : MonoBehaviour
     private GameObject cloakObject;
 
     [SerializeField]
-    private CloakInfo cloakInfo;
+    private Cloak cloak;
 
-    public CloakInfo CloakInfo => cloakInfo;
+    public Cloak Cloak => cloak;
 
     public void Equip()
     {
-        Player.Instance.Shoulder.EquipCloak(cloakInfo);
-        CheckEquip(cloakInfo);
+        Player.Instance.Shoulder.EquipCloak(cloak);
+        CheckEquip(cloak);
     }
 
     public void Interact(Interactor interactor, Interactable interactable)
@@ -40,16 +40,16 @@ public class CloakObject : MonoBehaviour
     public void Unequip()
     {
         Player.Instance.Shoulder.UnequipCloak();
-        CheckEquip(cloakInfo);
+        CheckEquip(cloak);
     }
 
     private void Start()
     {
         AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage2 += Show;
-        AetherEvents.GameEvents.CloakEvents.OnCloakUnequipped += CheckEquip;
+        Cloak.Events.OnCloakUnequipped += CheckEquip;
     }
 
-    private void CheckEquip(CloakInfo cloakInfo)
+    private void CheckEquip(Cloak cloakInfo)
     {
         if (cloakInfo.IsEquipped)
         {
@@ -76,7 +76,7 @@ public class CloakObject : MonoBehaviour
     private void OnDestroy()
     {
         AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage2 -= Show;
-        AetherEvents.GameEvents.CloakEvents.OnCloakUnequipped -= CheckEquip;
+        Cloak.Events.OnCloakUnequipped -= CheckEquip;
     }
 
 

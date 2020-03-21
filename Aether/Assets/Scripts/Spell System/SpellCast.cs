@@ -6,6 +6,16 @@ using UnityEngine.Events;
 
 public class SpellCast
 {
+    public struct Events
+    {
+        public static event Action<SpellCast> OnCastSpell;
+
+        public static void CastSpell(SpellCast spellCast)
+        {
+            OnCastSpell?.Invoke(spellCast);
+        }
+    }
+
     public event Action<SpellCast> CastStarted;
     public event Action<float> CastProgress;
     public event Action<SpellCast> CastCancelled;
@@ -49,7 +59,7 @@ public class SpellCast
 
         spellObject.GetComponent<SpellObject>().Spell = Spell;
         spellObject.GetComponent<SpellObject>().CastStarted();
-        AetherEvents.GameEvents.SpellSystemEvents.CastSpell(this);
+        Events.CastSpell(this);
         CastStarted?.Invoke(this);
 
         if (targetManager.GetCurrentTarget().HasTargetTransform)

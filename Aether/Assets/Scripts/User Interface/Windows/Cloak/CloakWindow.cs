@@ -23,8 +23,6 @@ public class CloakWindow : MonoBehaviour
     [SerializeField]
     private GameObject window;
 
-    private CloakInfo currentCloakInfo;
-
     private void Start()
     {
         CloakObject.Events.OnInteract += ShowCloakWindow;
@@ -33,13 +31,11 @@ public class CloakWindow : MonoBehaviour
 
     private void ShowCloakWindow(CloakObject cloakObject)
     {
-        currentCloakInfo = cloakObject.CloakInfo;
+        header.text = cloakObject.Cloak.Name;
+        keywords.text = cloakObject.Cloak.Keywords;
+        content.text = cloakObject.Cloak.Description;
 
-        header.text = currentCloakInfo.Name;
-        keywords.text = currentCloakInfo.Keywords;
-        content.text = currentCloakInfo.Description;
-
-        if (!currentCloakInfo.IsEquipped)
+        if (!cloakObject.Cloak.IsEquipped)
         {
             equipButton.onClick.AddListener(() => {
                 cloakObject.Equip();
@@ -62,11 +58,6 @@ public class CloakWindow : MonoBehaviour
         window.SetActive(true);
     }
 
-    private void EquipButtonPressed()
-    {
-
-    }
-
     private void CloseWindow()
     {
         equipButton.onClick.RemoveAllListeners();
@@ -78,7 +69,6 @@ public class CloakWindow : MonoBehaviour
 
     public void ClosePopup()
     {
-        currentCloakInfo = null;
         if(window.activeSelf)
             CloseWindow();
     }
