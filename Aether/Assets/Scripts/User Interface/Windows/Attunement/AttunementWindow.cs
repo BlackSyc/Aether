@@ -25,13 +25,13 @@ public class AttunementWindow : MonoBehaviour
     #region MonoBehaviour
     void Start()
     {
-        AttunementDevice.Events.OnOpenAttunementWindow += OpenWindow;
+        AttunementDevice.Events.OnInteract += OpenWindow;
         UIEvents.Windows.OnClosePopups += CloseWindow;
     }
 
     private void OnDestroy()
     {
-        AttunementDevice.Events.OnOpenAttunementWindow -= OpenWindow;
+        AttunementDevice.Events.OnInteract -= OpenWindow;
         UIEvents.Windows.OnClosePopups -= CloseWindow;
     }
     #endregion

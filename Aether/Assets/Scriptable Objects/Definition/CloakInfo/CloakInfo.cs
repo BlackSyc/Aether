@@ -45,9 +45,4 @@ public class CloakInfo : ScriptableObject
         State.Equipped = false;
         AetherEvents.GameEvents.CloakEvents.CloakUnequipped(this);
     }
-
-    public void Show()
-    {
-        AetherEvents.GameEvents.CloakEvents.ShowCloakInfo(this);
-    }
 }

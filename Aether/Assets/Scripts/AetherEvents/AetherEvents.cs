@@ -61,10 +61,6 @@ public static partial class AetherEvents
 
         public struct CloakEvents 
         {
-            public static event Action<CloakInfo> OnShowCloakInfo;
-            public static event Action OnHideCloakInfo;
-            public static event Action<CloakInfo> OnEquipCloak;
-            public static event Action OnUnequipCloak;
             public static event Action<CloakInfo> OnCloakEquipped;
             public static event Action<CloakInfo> OnCloakUnequipped;
 
@@ -76,26 +72,6 @@ public static partial class AetherEvents
             public static void CloakEquipped(CloakInfo cloakInfo)
             {
                 OnCloakEquipped?.Invoke(cloakInfo);
-            }
-
-            public static void ShowCloakInfo(CloakInfo cloakInfo)
-            {
-                OnShowCloakInfo?.Invoke(cloakInfo);
-            }
-
-            public static void HideCloakInfo()
-            {
-                OnHideCloakInfo?.Invoke();
-            }
-
-            public static void EquipCloak(CloakInfo cloakInfo)
-            {
-                OnEquipCloak?.Invoke(cloakInfo);
-            }
-
-            public static void UnequipCloak()
-            {
-                OnUnequipCloak?.Invoke();
             }
         }
     

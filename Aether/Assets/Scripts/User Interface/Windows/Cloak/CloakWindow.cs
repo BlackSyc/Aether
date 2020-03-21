@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
-using static UnityEngine.InputSystem.InputAction;
 
 public class CloakWindow : MonoBehaviour
 {
@@ -31,27 +27,32 @@ public class CloakWindow : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.CloakEvents.OnShowCloakInfo += ShowCloakInfo;
-        AetherEvents.GameEvents.CloakEvents.OnHideCloakInfo += CloseWindow;
+        CloakObject.Events.OnInteract += ShowCloakWindow;
         AetherEvents.UIEvents.Windows.OnClosePopups += ClosePopup;
     }
 
-    private void ShowCloakInfo(CloakInfo cloakInfo)
+    private void ShowCloakWindow(CloakObject cloakObject)
     {
-        currentCloakInfo = cloakInfo;
+        currentCloakInfo = cloakObject.CloakInfo;
 
-        header.text = cloakInfo.Name;
-        keywords.text = cloakInfo.Keywords;
-        content.text = cloakInfo.Description;
+        header.text = currentCloakInfo.Name;
+        keywords.text = currentCloakInfo.Keywords;
+        content.text = currentCloakInfo.Description;
 
         if (!currentCloakInfo.IsEquipped)
         {
-            equipButton.onClick.AddListener(() => EquipCloak());
+            equipButton.onClick.AddListener(() => {
+                cloakObject.Equip();
+                CloseWindow();
+            });
             equipButtonText.text = "Equip";
         }
         else
         {
-            equipButton.onClick.AddListener(() => UnequipCloak());
+            equipButton.onClick.AddListener(() => {
+                cloakObject.Unequip();
+                CloseWindow();
+            });
             equipButtonText.text = "Unequip";
         }
 
@@ -61,16 +62,9 @@ public class CloakWindow : MonoBehaviour
         window.SetActive(true);
     }
 
-    public void EquipCloak()
+    private void EquipButtonPressed()
     {
-        AetherEvents.GameEvents.CloakEvents.EquipCloak(currentCloakInfo);
-        CloseWindow();
-    }
 
-    public void UnequipCloak()
-    {
-        AetherEvents.GameEvents.CloakEvents.UnequipCloak();
-        CloseWindow();
     }
 
     private void CloseWindow()
@@ -91,8 +85,6 @@ public class CloakWindow : MonoBehaviour
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.CloakEvents.OnShowCloakInfo -= ShowCloakInfo;
-        AetherEvents.GameEvents.CloakEvents.OnHideCloakInfo -= CloseWindow;
         AetherEvents.UIEvents.Windows.OnClosePopups -= ClosePopup;
     }
 }

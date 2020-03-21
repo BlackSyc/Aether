@@ -882,7 +882,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8ae3adb8218fbad48b0f311fa4f23a1c, type: 2}
   - {fileID: 11400000, guid: 222d2674f6db12949b60edd954988959, type: 2}
   - {fileID: 11400000, guid: 8409b26a4ab3d1e4fb046227e4c13017, type: 2}
-  spawnCloaks: 0
+  spawnCloaks: 1
 --- !u!4 &122512648
 Transform:
   m_ObjectHideFlags: 0
@@ -1767,6 +1767,7 @@ GameObject:
   - component: {fileID: 205025359}
   - component: {fileID: 205025358}
   - component: {fileID: 205025357}
+  - component: {fileID: 205025364}
   - component: {fileID: 205025360}
   - component: {fileID: 205025361}
   - component: {fileID: 205025362}
@@ -1899,6 +1900,20 @@ MonoBehaviour:
   interactor: {fileID: 370576933}
   modelObject: {fileID: 1592079282}
   characterController: {fileID: 205025358}
+--- !u!114 &205025364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205025356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ff33ff5433419479d826e82a3325d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shoulder: {fileID: 102965017}
+  Inventory: {fileID: 205025362}
 --- !u!64 &205697926
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8613,9 +8628,9 @@ MonoBehaviour:
   Interaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 295d88bd32d50fe4c917a850ff342795, type: 2}
-        m_MethodName: Show
-        m_Mode: 1
+      - m_Target: {fileID: 984577803}
+        m_MethodName: Interact
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12634,9 +12649,9 @@ MonoBehaviour:
   Interaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 1909c5330ac9b544aaba2db58c6e728f, type: 2}
-        m_MethodName: Show
-        m_Mode: 1
+      - m_Target: {fileID: 1383274264}
+        m_MethodName: Interact
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17159,9 +17174,9 @@ MonoBehaviour:
   Interaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 4480b7999006e7341a7ebdd21e95d8ed, type: 2}
-        m_MethodName: Show
-        m_Mode: 1
+      - m_Target: {fileID: 1897496757}
+        m_MethodName: Interact
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

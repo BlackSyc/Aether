@@ -26,6 +26,7 @@ public class Interactor : MonoBehaviour
             OnInteract?.Invoke();
         }
     }
+    
     public GameObject Player => transform.parent.gameObject;
 
     [SerializeField]

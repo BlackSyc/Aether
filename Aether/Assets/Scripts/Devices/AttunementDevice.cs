@@ -10,11 +10,11 @@ public class AttunementDevice : MonoBehaviour
 {
     public readonly struct Events
     {
-        public static event Action<AttunementDevice> OnOpenAttunementWindow;
+        public static event Action<AttunementDevice> OnInteract;
 
-        public static void OpenAttunementWindow(AttunementDevice attunementDevice)
+        public static void Interact(AttunementDevice attunementDevice)
         {
-            OnOpenAttunementWindow?.Invoke(attunementDevice);
+            OnInteract?.Invoke(attunementDevice);
         }
     }
 
@@ -59,7 +59,7 @@ public class AttunementDevice : MonoBehaviour
             keystones.AddRange(interactorInventory.ExtractKeystones(x => x.Aspect == aspect));
         }
 
-        Events.OpenAttunementWindow(this);
+        Events.Interact(this);
     }
 
     public void PrepareForInteraction(Interactor interactor, Interactable interactable)

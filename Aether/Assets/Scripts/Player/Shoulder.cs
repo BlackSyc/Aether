@@ -9,13 +9,7 @@ public class Shoulder : MonoBehaviour
 
     private Cloak equippedCloak = null;
 
-    private void Start()
-    {
-        AetherEvents.GameEvents.CloakEvents.OnEquipCloak += EquipCloak;
-        AetherEvents.GameEvents.CloakEvents.OnUnequipCloak += UnequipCloak;
-    }
-
-    private void EquipCloak(CloakInfo cloakInfo)
+    public void EquipCloak(CloakInfo cloakInfo)
     {
         if(equippedCloak != null)
             UnequipCloak();
@@ -26,16 +20,10 @@ public class Shoulder : MonoBehaviour
         equippedCloak.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[] { GetComponent<CapsuleCollider>() };
     }
 
-    private void UnequipCloak()
+    public void UnequipCloak()
     {
         equippedCloak?.Unequip();
         Destroy(equippedCloak.gameObject);
         equippedCloak = null;
-    }
-
-    private void OnDestroy()
-    {
-        AetherEvents.GameEvents.CloakEvents.OnEquipCloak -= EquipCloak;
-        AetherEvents.GameEvents.CloakEvents.OnUnequipCloak -= UnequipCloak;
     }
 }
