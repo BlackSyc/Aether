@@ -1902,12 +1902,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ff33ff5433419479d826e82a3325d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterController: {fileID: 205025358}
-  Shoulder: {fileID: 102965017}
-  Inventory: {fileID: 205025362}
-  SpellSystem: {fileID: 205025360}
-  Interactor: {fileID: 370576933}
-  Mesh: {fileID: 186529282}
+  characterController: {fileID: 205025358}
+  shoulder: {fileID: 102965017}
+  inventory: {fileID: 205025362}
+  spellSystem: {fileID: 205025360}
+  interactor: {fileID: 370576933}
+  mesh: {fileID: 186529282}
 --- !u!64 &205697926
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -5,30 +5,50 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static Player Instance;
+    private static Player instance;
 
-    public CharacterController CharacterController;
+    public static Player Instance => instance;
 
-    public Shoulder Shoulder;
+    [SerializeField]
+    private CharacterController characterController;
 
-    public Inventory Inventory;
+    public CharacterController CharacterController => characterController;
 
-    public SpellSystem SpellSystem;
+    [SerializeField]
+    private Shoulder shoulder;
 
-    public Interactor Interactor;
+    public Shoulder Shoulder => shoulder;
 
-    public SkinnedMeshRenderer Mesh;
+    [SerializeField]
+    private Inventory inventory;
+
+    public Inventory Inventory => inventory;
+
+    [SerializeField]
+    private SpellSystem spellSystem;
+
+    public SpellSystem SpellSystem => spellSystem;
+
+    [SerializeField]
+    private Interactor interactor;
+
+    public Interactor Interactor => interactor;
+
+    [SerializeField]
+    private SkinnedMeshRenderer mesh;
+
+    public SkinnedMeshRenderer Mesh => mesh;
 
     private void Awake()
     {
         if (Instance)
             throw new Exception("There is more than one Player object in the scene!");
 
-        Instance = this;
+        instance = this;
     }
 
     private void OnDestroy()
     {
-        Instance = null;
+        instance = null;
     }
 }
