@@ -45,7 +45,7 @@ public class CloakObject : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage2 += Show;
+        Puzzle1_Manager.Events.OnStage2Completed += Show;
         Cloak.Events.OnCloakUnequipped += CheckEquip;
     }
 
@@ -75,7 +75,7 @@ public class CloakObject : MonoBehaviour
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage2 -= Show;
+        Puzzle1_Manager.Events.OnStage2Completed -= Show;
         Cloak.Events.OnCloakUnequipped -= CheckEquip;
     }
 

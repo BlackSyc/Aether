@@ -20,7 +20,7 @@ public class Testrunner : MonoBehaviour
     [ContextMenu("Spawn Cloaks")]
     private void SpawnCloaks()
     {
-        AetherEvents.GameEvents.Puzzle1Events.CompleteStage2();
+        Puzzle1_Manager.Events.Stage2Completed();
     }
 
     #region Invokers

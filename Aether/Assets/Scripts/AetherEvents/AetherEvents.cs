@@ -31,41 +31,6 @@ public static partial class AetherEvents
                 OnTravelToAccessPoint?.Invoke();
             }
         }
-    
-        public struct Puzzle1Events 
-        {
-            public static event Action OnPressurePlateTriggered;
-            public static event Action OnCompleteStage1;
-            public static event Action OnAspectOfCreationDialogComplete;
-            public static event Action OnMissileTargetHit;
-            public static event Action OnCompleteStage2;
-            
-
-            public static void CompleteStage2()
-            {
-                OnCompleteStage2?.Invoke();
-            }
-
-            public static void AspectOfCreationDialogComplete()
-            {
-                OnAspectOfCreationDialogComplete?.Invoke();
-            }
-
-            public static void CompleteStage1()
-            {
-                OnCompleteStage1?.Invoke();
-            }
-
-            public static void PressurePlateTriggered()
-            {
-                OnPressurePlateTriggered?.Invoke();
-            }
-
-            public static void MissileTargetHit()
-            {
-                OnMissileTargetHit?.Invoke();
-            }
-        }
         
         public struct InputSystemEvents
         {

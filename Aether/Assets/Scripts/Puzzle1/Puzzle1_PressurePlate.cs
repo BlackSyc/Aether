@@ -1,9 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Puzzle1_PressurePlate : MonoBehaviour
 {
+    public struct Events
+    {
+        public static event Action OnTriggered;
+
+        public static void Triggered()
+        {
+            OnTriggered?.Invoke();
+        }
+    }
+
     public bool IsTriggered { get; set; }
 
     public Material GlowingMaterial;
@@ -15,7 +26,7 @@ public class Puzzle1_PressurePlate : MonoBehaviour
             IsTriggered = true;
             GetComponent<MeshRenderer>().material = GlowingMaterial;
 
-            AetherEvents.GameEvents.Puzzle1Events.PressurePlateTriggered();
+            Events.Triggered();
         }
     }
 }

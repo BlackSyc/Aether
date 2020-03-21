@@ -52,7 +52,7 @@ public class ArcaneMissile : SpellObject
         Collider[] colliders = Physics.OverlapSphere(transform.position, .5f, Spell.layerMask);
         if (colliders.Length > 0)
         {
-            colliders[0].GetComponent<ArcaneMissileTarget>()?.Hit();
+            colliders[0].GetComponent<Puzzle1_MissileTarget>()?.Hit();
 
             GetComponent<Animator>().SetTrigger("CastHit");
             return true;

@@ -1,9 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AspectOfCreation : MonoBehaviour
 {
+    public struct Events
+    {
+        public static event Action OnDialogComplete;
+
+        public static void CompleteDialog()
+        {
+            OnDialogComplete?.Invoke();
+        }
+    }
+
 
     [SerializeField]
     private Dialog dialog = null;
@@ -14,7 +25,7 @@ public class AspectOfCreation : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage1 += ActivateAspect;
+        Puzzle1_Manager.Events.OnStage1Completed += ActivateAspect;
         dialog.GetDialogLine("Never mind").OnComplete += GrantArcaneMissile;
         dialog.OnComplete += AspectOfCreationDialogComplete;
     }
@@ -35,7 +46,7 @@ public class AspectOfCreation : MonoBehaviour
 
     private void AspectOfCreationDialogComplete()
     {
-        AetherEvents.GameEvents.Puzzle1Events.AspectOfCreationDialogComplete();
+        Events.CompleteDialog();
         Destroy(this.gameObject);
     }
 
@@ -46,7 +57,7 @@ public class AspectOfCreation : MonoBehaviour
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage1 -= ActivateAspect;
+        Puzzle1_Manager.Events.OnStage1Completed -= ActivateAspect;
         dialog.GetDialogLine("Never mind").OnComplete -= GrantArcaneMissile;
         dialog.OnComplete -= AspectOfCreationDialogComplete;
     }
