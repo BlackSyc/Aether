@@ -697,6 +697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpellSystem: {fileID: 205025360}
+  defaultSpell: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
 --- !u!1 &104048104 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5927594307720207232, guid: 7b0a5c52a4eab2e4ba729c02a275064f,
@@ -1914,7 +1915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shoulder: {fileID: 102965017}
   Inventory: {fileID: 205025362}
-  SpellSystem: {fileID: 0}
+  SpellSystem: {fileID: 205025360}
 --- !u!64 &205697926
 MeshCollider:
   m_ObjectHideFlags: 0
