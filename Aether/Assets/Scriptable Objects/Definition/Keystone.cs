@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Items/Keystone")]
@@ -18,7 +17,7 @@ public class Keystone : ScriptableObject
 
     public bool KeystoneCompleted;
 
-    public GameObject AccessPointPrefab;
+    public GameObject AccessPoint;
 
     public KeystoneState State = new KeystoneState();
 

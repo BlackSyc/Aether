@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,8 +13,6 @@ public class AetherEvents : MonoBehaviour
 
             public static event Action<Aspect> OnCloseStairs;
 
-            public static event Action OnTravelToAccessPoint;
-
             public static void OpenStairs(Aspect aspect)
             {
                 OnOpenStairs?.Invoke(aspect);
@@ -24,11 +21,6 @@ public class AetherEvents : MonoBehaviour
             public static void CloseStairs(Aspect aspect)
             {
                 OnCloseStairs?.Invoke(aspect);
-            }
-
-            public static void TravelToAccessPoint()
-            {
-                OnTravelToAccessPoint?.Invoke();
             }
         }
         public struct InteractionEvents 
@@ -228,6 +220,8 @@ public class AetherEvents : MonoBehaviour
         {
             public static event Action<Vector3> OnSetPlayerPosition;
 
+            public static event Action<Vector3> OnTravelToPosition;
+
             public static event Action<bool> OnActivateInteractor;
 
             public static event Action<bool> OnShowModel;
@@ -235,6 +229,11 @@ public class AetherEvents : MonoBehaviour
             public static void SetPlayerPosition(Vector3 newPosition)
             {
                 OnSetPlayerPosition?.Invoke(newPosition);
+            }
+
+            public static void TravelToPosition(Vector3 position)
+            {
+                OnTravelToPosition?.Invoke(position);
             }
 
             public static void ActivateInteractor(bool flag)
@@ -246,8 +245,6 @@ public class AetherEvents : MonoBehaviour
             {
                 OnShowModel?.Invoke(flag);
             }
-
-
         }
     }
 
