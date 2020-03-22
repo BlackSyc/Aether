@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class AttunementDevice : MonoBehaviour
@@ -13,6 +11,12 @@ public class AttunementDevice : MonoBehaviour
 
     [SerializeField]
     private Aspect triggerConstraint;
+
+    [SerializeField]
+    private TravellerPlatform _travellerPlatform;
+
+    [SerializeField]
+    private Traveller _traveller;
 
     private Keystone _activeKeystone = null;
 
@@ -34,6 +38,9 @@ public class AttunementDevice : MonoBehaviour
         {
             _activeKeystone.State.IsActivated = false;
             _keystoneObject.SetActive(false);
+            _travellerPlatform.gameObject.SetActive(false);
+            _traveller.gameObject.SetActive(false);
+            _travellerPlatform.Traveller.TravelAnimation = null;
             AetherEvents.GameEvents.AttunementEvents.KeystoneDeactivated(_activeKeystone);
         }
 
@@ -47,6 +54,9 @@ public class AttunementDevice : MonoBehaviour
             _activeKeystone = keystone;
             _activeKeystone.State.IsActivated = true;
             _keystoneObject.SetActive(true);
+            _travellerPlatform.gameObject.SetActive(true);
+            _traveller.gameObject.SetActive(true);
+            _travellerPlatform.Traveller.TravelAnimation = _activeKeystone.TravelAnimation;
             Debug.Log(string.Format("Keystone {0} activated!", _activeKeystone.Name));
             AetherEvents.GameEvents.AttunementEvents.KeystoneActivated(_activeKeystone);
         }

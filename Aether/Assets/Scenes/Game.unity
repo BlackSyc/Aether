@@ -1797,7 +1797,6 @@ GameObject:
   - component: {fileID: 205025361}
   - component: {fileID: 205025362}
   - component: {fileID: 205025363}
-  - component: {fileID: 205025364}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -1918,25 +1917,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 205025356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72446caf63e0c664b820d75f9799932c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1908c3f3302379049850d72b149d4b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactor: {fileID: 370576933}
-  modelObject: {fileID: 1592079282}
   characterController: {fileID: 205025358}
   playerMovement: {fileID: 205025357}
---- !u!114 &205025364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205025356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62adc75f1ac223848a261547990baca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  shoulder: {fileID: 102965017}
+  inventory: {fileID: 205025362}
+  spellSystem: {fileID: 205025360}
+  interactor: {fileID: 370576933}
+  mesh: {fileID: 600298600}
 --- !u!64 &205697926
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3445,6 +3435,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335254730}
   m_Mesh: {fileID: -2190849074190461940, guid: 2acfc10b1ba25d7409c888bca4be5afa, type: 3}
+--- !u!114 &342307708 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6983215119953956421, guid: ddb6273d61b7297498c3233a187fb53d,
+    type: 3}
+  m_PrefabInstance: {fileID: 23892600726312739}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8f4095ca1f7f141948189121a33912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &363738079 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7901623080965309205, guid: 7b0a5c52a4eab2e4ba729c02a275064f,
@@ -6017,6 +6019,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!137 &600298600 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1651062367082650294, guid: 5caeaa64724edcf41bbdcdd957b24b5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1125553935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &600622256
 GameObject:
   m_ObjectHideFlags: 0
@@ -7290,9 +7298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8f4095ca1f7f141948189121a33912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerConstraint: 4
-  interactable: {fileID: 532009451}
-  targetLocation: {fileID: 0}
+  Traveller: {fileID: 0}
+  travelReverse: 0
 --- !u!1 &777560727
 GameObject:
   m_ObjectHideFlags: 0
@@ -10981,7 +10988,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2068457039}
   m_Father: {fileID: 205025359}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13508,9 +13516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8f4095ca1f7f141948189121a33912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerConstraint: 3
-  interactable: {fileID: 1666507162}
-  targetLocation: {fileID: 0}
+  Traveller: {fileID: 0}
+  travelReverse: 0
 --- !u!64 &1496652783
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14608,18 +14615,27 @@ PrefabInstance:
         type: 3}
       propertyPath: targetLocation
       value: 
-      objectReference: {fileID: 23892600726312740}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983215119953956421, guid: ddb6273d61b7297498c3233a187fb53d,
+        type: 3}
+      propertyPath: TravelAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: eed8f5dbc9d006243ae63acfa13c2a37, type: 2}
+    - target: {fileID: 6983215119953956421, guid: ddb6273d61b7297498c3233a187fb53d,
+        type: 3}
+      propertyPath: Traveller
+      value: 
+      objectReference: {fileID: 1990001321}
+    - target: {fileID: 6983215119953956421, guid: ddb6273d61b7297498c3233a187fb53d,
+        type: 3}
+      propertyPath: travelReverse
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddb6273d61b7297498c3233a187fb53d, type: 3}
 --- !u!4 &1601922467 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 23892601214395590, guid: ddb6273d61b7297498c3233a187fb53d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1601922466}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1601922468 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5166022052078448520, guid: ddb6273d61b7297498c3233a187fb53d,
     type: 3}
   m_PrefabInstance: {fileID: 1601922466}
   m_PrefabAsset: {fileID: 0}
@@ -18741,6 +18757,16 @@ PrefabInstance:
       propertyPath: triggerConstraint
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: _travellerPlatform
+      value: 
+      objectReference: {fileID: 342307708}
+    - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
+        type: 3}
+      propertyPath: _traveller
+      value: 
+      objectReference: {fileID: 1990001321}
     - target: {fileID: 4417447441142579530, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18798,6 +18824,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c44200e7d6ffb449b36428877eb5969, type: 3}
+--- !u!1 &1990001319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990001320}
+  - component: {fileID: 1990001321}
+  - component: {fileID: 1990001325}
+  m_Layer: 8
+  m_Name: Traveller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1990001320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990001319}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.550001, y: 0.6419999, z: 0}
+  m_LocalScale: {x: 0.11328, y: 0.11327999, z: 0.11328}
+  m_Children: []
+  m_Father: {fileID: 5255582980723974437}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1990001321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990001319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f94666d63421c4c9aa4aa505f9f017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TravelAnimation: {fileID: 0}
+--- !u!95 &1990001325
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990001319}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 39894947c100d24469abd29463ba0231, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1995387650
 GameObject:
   m_ObjectHideFlags: 0
@@ -18829,9 +18919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8f4095ca1f7f141948189121a33912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerConstraint: 2
-  interactable: {fileID: 1679869390}
-  targetLocation: {fileID: 0}
+  Traveller: {fileID: 0}
+  travelReverse: 0
 --- !u!1 &1995773545
 GameObject:
   m_ObjectHideFlags: 0
@@ -19403,11 +19492,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068457034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8, y: 1.5, z: -2.45}
+  m_LocalPosition: {x: 0, y: 0, z: -2.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 1138305640}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2090604024
 GameObject:
@@ -20002,19 +20091,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: TravellerPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 23892601214395591, guid: ddb6273d61b7297498c3233a187fb53d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6983215119953956421, guid: ddb6273d61b7297498c3233a187fb53d,
         type: 3}
       propertyPath: targetLocation
       value: 
-      objectReference: {fileID: 1601922468}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983215119953956421, guid: ddb6273d61b7297498c3233a187fb53d,
+        type: 3}
+      propertyPath: Traveller
+      value: 
+      objectReference: {fileID: 1990001321}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddb6273d61b7297498c3233a187fb53d, type: 3}
---- !u!4 &23892600726312740 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5166022052078448520, guid: ddb6273d61b7297498c3233a187fb53d,
-    type: 3}
-  m_PrefabInstance: {fileID: 23892600726312739}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &64037983504638148
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22571,6 +22664,7 @@ Transform:
   - {fileID: 767450163}
   - {fileID: 1065079774}
   - {fileID: 589935589}
+  - {fileID: 1990001320}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -17,7 +17,7 @@ public class Keystone : ScriptableObject
 
     public bool KeystoneCompleted;
 
-    public GameObject AccessPoint;
+    public AnimationClip TravelAnimation;
 
     public KeystoneState State = new KeystoneState();
 
