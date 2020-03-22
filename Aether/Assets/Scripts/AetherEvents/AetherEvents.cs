@@ -10,21 +10,8 @@ public static partial class AetherEvents
     {
         public struct HubEvents 
         {
-            public static event Action<Aspect> OnOpenStairs;
-
-            public static event Action<Aspect> OnCloseStairs;
 
             public static event Action OnTravelToAccessPoint;
-
-            public static void OpenStairs(Aspect aspect)
-            {
-                OnOpenStairs?.Invoke(aspect);
-            }
-
-            public static void CloseStairs(Aspect aspect)
-            {
-                OnCloseStairs?.Invoke(aspect);
-            }
 
             public static void TravelToAccessPoint()
             {

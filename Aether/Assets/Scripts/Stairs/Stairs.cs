@@ -1,12 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Stairs : MonoBehaviour
 {
-
     [SerializeField]
     private Aspect aspect;
+
+    [SerializeField]
+    private Leaf leaf;
+
+    public Aspect Aspect => aspect;
 
     [SerializeField]
     private Interactable interactable;
@@ -35,7 +40,7 @@ public class Stairs : MonoBehaviour
         {
             interactable.IsActive = false;
             animator.SetBool("activated", false);
-            AetherEvents.GameEvents.HubEvents.CloseStairs(aspect);
+            leaf.DespawnPlatform();
         }
     }
 
@@ -43,7 +48,7 @@ public class Stairs : MonoBehaviour
     {
         animator.SetTrigger("move");
         interactable.IsActive = false;
-        AetherEvents.GameEvents.HubEvents.OpenStairs(aspect);
+        leaf.SpawnPlatform();
     }
 
 
