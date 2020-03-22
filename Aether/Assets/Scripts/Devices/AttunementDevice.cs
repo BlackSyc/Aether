@@ -1,63 +1,73 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using UnityEngine;
+using static AetherEvents;
 
 public class AttunementDevice : MonoBehaviour
 {
-    [SerializeField]
-    private List<Keystone> _keystones;
-
-    [SerializeField]
-    private GameObject _keystoneObject;
-
-    [SerializeField]
-    private Aspect triggerConstraint;
-
-    private Keystone _activeKeystone = null;
-
-    private void Start()
+    public readonly struct Events
     {
-        AetherEvents.GameEvents.InteractionEvents.OnProposeInteraction += PrepareInteraction;
-        AetherEvents.GameEvents.AttunementEvents.OnToggleAttunement += ToggleAttunement;
+        public static event Action<AttunementDevice> OnInteract;
+
+        public static void Interact(AttunementDevice attunementDevice)
+        {
+            OnInteract?.Invoke(attunementDevice);
+        }
     }
 
-    private void ToggleAttunement(Keystone keystone)
+    #region Private Fields
+    private Keystone _activeKeystone = null;
+    #endregion
+
+    #region Serialized Fields
+    [SerializeField]
+    private List<Keystone> keystones;
+
+    [SerializeField]
+    private Aspect aspect;
+
+    [SerializeField]
+    private GameObject keystoneObject;
+    #endregion
+
+    #region Getters
+    public ReadOnlyCollection<Keystone> Keystones => new ReadOnlyCollection<Keystone>(keystones);
+    #endregion
+
+    #region Public Methods
+    public void Toggle(Keystone keystone)
     {
         if (keystone == null)
             return;
 
-        if (!keystone.Aspect.Equals(triggerConstraint))
-            return;
-
-        if(_activeKeystone != null)
-        {
-            _activeKeystone.State.IsActivated = false;
-            _keystoneObject.SetActive(false);
-            AetherEvents.GameEvents.AttunementEvents.KeystoneDeactivated(_activeKeystone);
-        }
-
-        if (keystone == _activeKeystone)
-        {
-            _activeKeystone = null;
-            return;
-        }
+        if (keystone.IsActivated)
+            Deactivate(keystone);
         else
-        {
-            _activeKeystone = keystone;
-            _activeKeystone.State.IsActivated = true;
-            _keystoneObject.SetActive(true);
-            Debug.Log(string.Format("Keystone {0} activated!", _activeKeystone.Name));
-            AetherEvents.GameEvents.AttunementEvents.KeystoneActivated(_activeKeystone);
-        }
+            Activate(keystone);
     }
 
-    private void PrepareInteraction(Interactable interactable, Interactor interactor)
+    // Interaction Handler
+    public void Interact(Interactor interactor, Interactable _)
     {
-        if (interactable != this.GetComponent<Interactable>())
+        Inventory interactorInventory = interactor.GetComponentInParent<Inventory>();
+
+        if (interactorInventory != null)
+        {
+            keystones.AddRange(interactorInventory.ExtractKeystones(x => x.Aspect == aspect));
+        }
+
+        Events.Interact(this);
+    }
+
+    public void PrepareForInteraction(Interactor interactor, Interactable interactable)
+    {
+        if (interactable != GetComponent<Interactable>())
             return;
 
-        if(interactor.GetComponentInParent<Inventory>().Keystones.Count > 0)
+        if (interactor.GetComponentInParent<Inventory>().Keystones.Count > 0)
         {
             interactable.ProposeInteractionMessage = "to place keystones";
         }
@@ -66,17 +76,28 @@ public class AttunementDevice : MonoBehaviour
             interactable.ProposeInteractionMessage = "to activate a keystone";
         }
     }
+    #endregion
 
-    public void Interact(Interactor interactor, Interactable _)
+    #region Private Methods
+    private void Activate(Keystone keystone)
     {
-        Inventory interactorInventory = interactor.GetComponentInParent<Inventory>();
-
-        if(interactorInventory != null)
+        if(_activeKeystone != keystone)
         {
-            _keystones.AddRange(interactorInventory.Keystones);
-            interactorInventory.ClearKeystones();
+            if(_activeKeystone != null)
+                _activeKeystone.Deactivate();
+
+            _activeKeystone = keystone;
         }
 
-        AetherEvents.GameEvents.AttunementEvents.OpenAttunementWindow(_keystones);
+        keystoneObject.SetActive(true);
+        _activeKeystone.Activate();
     }
+
+    private void Deactivate(Keystone keystone)
+    {
+        _activeKeystone = null;
+        keystoneObject.SetActive(false);
+        keystone.Deactivate();
+    }
+    #endregion
 }

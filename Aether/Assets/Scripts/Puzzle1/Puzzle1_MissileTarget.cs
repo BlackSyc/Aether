@@ -1,9 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcaneMissileTarget : MonoBehaviour
+public class Puzzle1_MissileTarget : MonoBehaviour
 {
+    public struct Events
+    {
+        public static event Action OnMissileTargetHit;
+
+        public static void MissileTargetHit()
+        {
+            OnMissileTargetHit?.Invoke();
+        }
+    }
 
     [SerializeField]
     private float resetAfter = 5;
@@ -29,9 +39,9 @@ public class ArcaneMissileTarget : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage1 += MoveToCenter;
-        AetherEvents.GameEvents.Puzzle1Events.OnAspectOfCreationDialogComplete += MoveToOriginalPosition;
-        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage2 += StopResetTimerAndMoveToCloakPosition;
+        Puzzle1_Manager.Events.OnStage1Completed += MoveToCenter;
+        AspectOfCreation.Events.OnDialogComplete += MoveToOriginalPosition;
+        Puzzle1_Manager.Events.OnStage2Completed += StopResetTimerAndMoveToCloakPosition;
     }
 
     public void Hit()
@@ -44,7 +54,7 @@ public class ArcaneMissileTarget : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("Obstruction");
         StopAllCoroutines();
 
-        AetherEvents.GameEvents.Puzzle1Events.MissileTargetHit();
+        Events.MissileTargetHit();
 
         StartCoroutine(ResetTimer(resetAfter));
     }
@@ -60,8 +70,8 @@ public class ArcaneMissileTarget : MonoBehaviour
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage1 -= MoveToCenter;
-        AetherEvents.GameEvents.Puzzle1Events.OnAspectOfCreationDialogComplete -= MoveToOriginalPosition;
-        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage2 -= StopResetTimerAndMoveToCloakPosition;
+        Puzzle1_Manager.Events.OnStage1Completed -= MoveToCenter;
+        AspectOfCreation.Events.OnDialogComplete -= MoveToOriginalPosition;
+        Puzzle1_Manager.Events.OnStage2Completed -= StopResetTimerAndMoveToCloakPosition;
     }
 }

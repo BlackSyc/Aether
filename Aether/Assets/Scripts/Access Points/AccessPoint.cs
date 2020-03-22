@@ -30,8 +30,8 @@ public class AccessPoint : MonoBehaviour
 
     private void StartTravel()
     {
-        AetherEvents.GameEvents.PlayerEvents.ActivateInteractor(false);
-        AetherEvents.GameEvents.PlayerEvents.ShowModel(false);
+        Player.Instance.Interactor.Deactivate();
+        Player.Instance.Mesh.enabled = false;
         AetherEvents.CameraEvents.EnableCutsceneCamera(traveller.Camera);
 
         //AsyncOperation loadSceneOperation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(scene);
@@ -41,8 +41,8 @@ public class AccessPoint : MonoBehaviour
 
     public void StartTravelBack()
     {
-        AetherEvents.GameEvents.PlayerEvents.ActivateInteractor(false);
-        AetherEvents.GameEvents.PlayerEvents.ShowModel(false);
+        Player.Instance.Interactor.Deactivate();
+        Player.Instance.Mesh.enabled = false;
         AetherEvents.CameraEvents.EnableCutsceneCamera(traveller.Camera);
         //AsyncOperation unloadSceneOperation = UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(scene);
         AsyncOperation unloadSceneOperation = null;
@@ -62,9 +62,11 @@ public class AccessPoint : MonoBehaviour
         }
 
         traveller.TravelBack(1);
-        AetherEvents.GameEvents.PlayerEvents.SetPlayerPosition(origin.position);
-        AetherEvents.GameEvents.PlayerEvents.ShowModel(true);
-        AetherEvents.GameEvents.PlayerEvents.ActivateInteractor(true);
+
+        Player.Instance.CharacterController.Move(origin.position - Player.Instance.transform.position);
+        Player.Instance.Mesh.enabled = true;
+        Player.Instance.Interactor.Activate();
+
         AetherEvents.CameraEvents.EnablePlayerCamera();
     }
 
@@ -81,9 +83,10 @@ public class AccessPoint : MonoBehaviour
         }
 
         traveller.Travel(1);
-        AetherEvents.GameEvents.PlayerEvents.SetPlayerPosition(destination.position);
-        AetherEvents.GameEvents.PlayerEvents.ShowModel(true);
-        AetherEvents.GameEvents.PlayerEvents.ActivateInteractor(true);
+        Player.Instance.CharacterController.Move(destination.position - Player.Instance.transform.position);
+        Player.Instance.Mesh.enabled = true;
+        Player.Instance.Interactor.Activate();
+
         AetherEvents.CameraEvents.EnablePlayerCamera();
     }
 

@@ -4,33 +4,13 @@ using UnityEngine;
 
 public class Leaf : MonoBehaviour
 {
-    [SerializeField]
-    private Aspect triggerConstraint;
-    void Start()
+    public void DespawnPlatform()
     {
-        AetherEvents.GameEvents.HubEvents.OnOpenStairs += SpawnPlatform;
-        AetherEvents.GameEvents.HubEvents.OnCloseStairs += DespawnPlatform;
-    }
-
-    private void DespawnPlatform(Aspect aspect)
-    {
-        if (!aspect.Equals(triggerConstraint))
-            return;
-
         GetComponent<Animator>().SetBool("Spawn", false);
     }
 
-    private void SpawnPlatform(Aspect aspect)
+    public void SpawnPlatform()
     {
-        if (!aspect.Equals(triggerConstraint))
-            return;
-
         GetComponent<Animator>().SetBool("Spawn", true);
-    }
-
-    private void OnDestroy()
-    {
-        AetherEvents.GameEvents.HubEvents.OnOpenStairs -= SpawnPlatform;
-        AetherEvents.GameEvents.HubEvents.OnCloseStairs -= DespawnPlatform;
     }
 }

@@ -1,8 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
+
 public class DialogWindow : MonoBehaviour
 {
     [SerializeField]
@@ -21,7 +20,7 @@ public class DialogWindow : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.DialogEvents.OnStartDialog += StartDialog;
+        Dialog.Events.OnStartDialog += StartDialog;
     }
 
     private void StartDialog(Dialog dialog)
@@ -40,13 +39,13 @@ public class DialogWindow : MonoBehaviour
             animator.SetBool("ShowText", false);
             yield return new WaitForSeconds(dialogLineTransitionDuration);
             dialogLine.Complete();
-
         }
+
         dialog.Complete();
     }
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.DialogEvents.OnStartDialog -= StartDialog;
+        Dialog.Events.OnStartDialog -= StartDialog;
     }
 }

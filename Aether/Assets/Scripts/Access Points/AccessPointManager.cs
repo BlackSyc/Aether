@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static AetherEvents;
 
 public class AccessPointManager : MonoBehaviour
 {
@@ -9,8 +10,8 @@ public class AccessPointManager : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.AttunementEvents.OnKeystoneActivated += CreateAccessPoint;
-        AetherEvents.GameEvents.AttunementEvents.OnKeystoneDeactivated += DestroyAccessPoint;
+        KeystoneEvents.OnKeystoneActivated += CreateAccessPoint;
+        KeystoneEvents.OnKeystoneDeactivated += DestroyAccessPoint;
     }
 
     private void CreateAccessPoint(Keystone keystone)
@@ -43,7 +44,7 @@ public class AccessPointManager : MonoBehaviour
     // Update is called once per frame
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.AttunementEvents.OnKeystoneActivated -= CreateAccessPoint;
-        AetherEvents.GameEvents.AttunementEvents.OnKeystoneDeactivated -= DestroyAccessPoint;
+        KeystoneEvents.OnKeystoneActivated -= CreateAccessPoint;
+        KeystoneEvents.OnKeystoneDeactivated -= DestroyAccessPoint;
     }
 }
