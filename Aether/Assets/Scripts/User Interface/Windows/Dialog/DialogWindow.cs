@@ -5,7 +5,10 @@ using UnityEngine;
 public class DialogWindow : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI dialogText;
+    private TextMeshProUGUI dialogSpeakerText;
+
+    [SerializeField]
+    private TextMeshProUGUI dialogContentText;
 
     [SerializeField]
     [Min(1f)]
@@ -32,7 +35,8 @@ public class DialogWindow : MonoBehaviour
     {
         foreach(DialogLine dialogLine in dialog.dialogLines)
         {
-            dialogText.text = dialogLine.Content;
+            dialogSpeakerText.text = dialogLine.Speaker + ": ";
+            dialogContentText.text = dialogLine.Content;
             animator.SetBool("ShowText", true);
             yield return new WaitForSeconds(dialogLineDuration);
 
