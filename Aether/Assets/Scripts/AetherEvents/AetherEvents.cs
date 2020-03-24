@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public static partial class AetherEvents
@@ -10,7 +8,6 @@ public static partial class AetherEvents
     {
         public struct HubEvents 
         {
-
             public static event Action OnTravelToAccessPoint;
 
             public static void TravelToAccessPoint()

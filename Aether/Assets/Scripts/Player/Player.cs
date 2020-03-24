@@ -1,18 +1,19 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private static Player instance;
-
-    public static Player Instance => instance;
+    public static Player Instance { get; private set; }
 
     [SerializeField]
     private CharacterController characterController;
 
     public CharacterController CharacterController => characterController;
+
+    [SerializeField]
+    private PlayerMovement playerMovement;
+
+    public PlayerMovement PlayerMovement => playerMovement;
 
     [SerializeField]
     private Shoulder shoulder;
@@ -44,11 +45,11 @@ public class Player : MonoBehaviour
         if (Instance)
             throw new Exception("There is more than one Player object in the scene!");
 
-        instance = this;
+        Instance = this;
     }
 
     private void OnDestroy()
     {
-        instance = null;
+        Instance = null;
     }
 }

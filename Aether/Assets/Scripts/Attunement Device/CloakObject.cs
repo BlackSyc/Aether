@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CloakObject : MonoBehaviour
@@ -78,6 +77,4 @@ public class CloakObject : MonoBehaviour
         Puzzle1_Manager.Events.OnStage2Completed -= Show;
         Cloak.Events.OnCloakUnequipped -= CheckEquip;
     }
-
-
 }

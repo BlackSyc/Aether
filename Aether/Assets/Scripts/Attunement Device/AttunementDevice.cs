@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using UnityEngine;
-using static AetherEvents;
 
 public class AttunementDevice : MonoBehaviour
 {
@@ -19,10 +16,13 @@ public class AttunementDevice : MonoBehaviour
     }
 
     #region Private Fields
+
     private Keystone _activeKeystone = null;
+
     #endregion
 
     #region Serialized Fields
+
     [SerializeField]
     private List<Keystone> keystones;
 
@@ -30,7 +30,14 @@ public class AttunementDevice : MonoBehaviour
     private Aspect aspect;
 
     [SerializeField]
+    private TravellerPlatform _travellerPlatform;
+
+    [SerializeField]
+    private Traveller _traveller;
+
+    [SerializeField]
     private GameObject keystoneObject;
+
     #endregion
 
     #region Getters
@@ -76,9 +83,11 @@ public class AttunementDevice : MonoBehaviour
             interactable.ProposeInteractionMessage = "to activate a keystone";
         }
     }
+
     #endregion
 
     #region Private Methods
+
     private void Activate(Keystone keystone)
     {
         if(_activeKeystone != keystone)
@@ -86,7 +95,11 @@ public class AttunementDevice : MonoBehaviour
             if(_activeKeystone != null)
                 _activeKeystone.Deactivate();
 
+            _travellerPlatform.gameObject.SetActive(true);
+            _traveller.gameObject.SetActive(true);
             _activeKeystone = keystone;
+            _travellerPlatform.Traveller.TravelAnimation = _activeKeystone.TravelAnimation;
+            
         }
 
         keystoneObject.SetActive(true);
@@ -95,9 +108,14 @@ public class AttunementDevice : MonoBehaviour
 
     private void Deactivate(Keystone keystone)
     {
+        _travellerPlatform.gameObject.SetActive(false);
+        _traveller.gameObject.SetActive(false);
+        _travellerPlatform.Traveller.TravelAnimation = null;
+
         _activeKeystone = null;
         keystoneObject.SetActive(false);
         keystone.Deactivate();
     }
+
     #endregion
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,7 +37,7 @@ public class Keystone : ScriptableObject
 
     public bool KeystoneCompleted;
 
-    public GameObject AccessPointPrefab;
+    public AnimationClip TravelAnimation;
 
     private KeystoneState state = new KeystoneState();
 
