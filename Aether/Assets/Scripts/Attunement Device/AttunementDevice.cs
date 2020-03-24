@@ -97,8 +97,9 @@ public class AttunementDevice : MonoBehaviour
 
             _travellerPlatform.gameObject.SetActive(true);
             _traveller.gameObject.SetActive(true);
-            _travellerPlatform.Traveller.TravelAnimation = _activeKeystone.TravelAnimation;
             _activeKeystone = keystone;
+            _travellerPlatform.Traveller.TravelAnimation = _activeKeystone.TravelAnimation;
+            
         }
 
         keystoneObject.SetActive(true);
