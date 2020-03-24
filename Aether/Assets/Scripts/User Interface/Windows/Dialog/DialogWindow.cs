@@ -1,12 +1,14 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
+
 public class DialogWindow : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI dialogText;
+    private TextMeshProUGUI dialogSpeakerText;
+
+    [SerializeField]
+    private TextMeshProUGUI dialogContentText;
 
     [SerializeField]
     [Min(1f)]
@@ -21,7 +23,7 @@ public class DialogWindow : MonoBehaviour
 
     private void Start()
     {
-        AetherEvents.GameEvents.DialogEvents.OnStartDialog += StartDialog;
+        Dialog.Events.OnStartDialog += StartDialog;
     }
 
     private void StartDialog(Dialog dialog)
@@ -33,20 +35,21 @@ public class DialogWindow : MonoBehaviour
     {
         foreach(DialogLine dialogLine in dialog.dialogLines)
         {
-            dialogText.text = dialogLine.Content;
+            dialogSpeakerText.text = dialogLine.Speaker + ": ";
+            dialogContentText.text = dialogLine.Content;
             animator.SetBool("ShowText", true);
             yield return new WaitForSeconds(dialogLineDuration);
 
             animator.SetBool("ShowText", false);
             yield return new WaitForSeconds(dialogLineTransitionDuration);
             dialogLine.Complete();
-
         }
+
         dialog.Complete();
     }
 
     private void OnDestroy()
     {
-        AetherEvents.GameEvents.DialogEvents.OnStartDialog -= StartDialog;
+        Dialog.Events.OnStartDialog -= StartDialog;
     }
 }

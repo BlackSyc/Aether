@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Line1
   m_EditorClassIdentifier: 
   Name: Greetings
+  Speaker: Aspect Of Creation
   Content: Greetings, Scryer.

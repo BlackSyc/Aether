@@ -1,16 +1,33 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
 public class AttunementDevice : MonoBehaviour
 {
-    [SerializeField]
-    private List<Keystone> _keystones;
+    public readonly struct Events
+    {
+        public static event Action<AttunementDevice> OnInteract;
+
+        public static void Interact(AttunementDevice attunementDevice)
+        {
+            OnInteract?.Invoke(attunementDevice);
+        }
+    }
+
+    #region Private Fields
+
+    private Keystone _activeKeystone = null;
+
+    #endregion
+
+    #region Serialized Fields
 
     [SerializeField]
-    private GameObject _keystoneObject;
+    private List<Keystone> keystones;
 
     [SerializeField]
-    private Aspect triggerConstraint;
+    private Aspect aspect;
 
     [SerializeField]
     private TravellerPlatform _travellerPlatform;
@@ -18,56 +35,46 @@ public class AttunementDevice : MonoBehaviour
     [SerializeField]
     private Traveller _traveller;
 
-    private Keystone _activeKeystone = null;
+    [SerializeField]
+    private GameObject keystoneObject;
 
-    private void Start()
-    {
-        AetherEvents.GameEvents.InteractionEvents.OnProposeInteraction += PrepareInteraction;
-        AetherEvents.GameEvents.AttunementEvents.OnToggleAttunement += ToggleAttunement;
-    }
+    #endregion
 
-    private void ToggleAttunement(Keystone keystone)
+    #region Getters
+    public ReadOnlyCollection<Keystone> Keystones => new ReadOnlyCollection<Keystone>(keystones);
+    #endregion
+
+    #region Public Methods
+    public void Toggle(Keystone keystone)
     {
         if (keystone == null)
             return;
 
-        if (!keystone.Aspect.Equals(triggerConstraint))
-            return;
-
-        if(_activeKeystone != null)
-        {
-            _activeKeystone.State.IsActivated = false;
-            _keystoneObject.SetActive(false);
-            _travellerPlatform.gameObject.SetActive(false);
-            _traveller.gameObject.SetActive(false);
-            _travellerPlatform.Traveller.TravelAnimation = null;
-            AetherEvents.GameEvents.AttunementEvents.KeystoneDeactivated(_activeKeystone);
-        }
-
-        if (keystone == _activeKeystone)
-        {
-            _activeKeystone = null;
-            return;
-        }
+        if (keystone.IsActivated)
+            Deactivate(keystone);
         else
-        {
-            _activeKeystone = keystone;
-            _activeKeystone.State.IsActivated = true;
-            _keystoneObject.SetActive(true);
-            _travellerPlatform.gameObject.SetActive(true);
-            _traveller.gameObject.SetActive(true);
-            _travellerPlatform.Traveller.TravelAnimation = _activeKeystone.TravelAnimation;
-            Debug.Log(string.Format("Keystone {0} activated!", _activeKeystone.Name));
-            AetherEvents.GameEvents.AttunementEvents.KeystoneActivated(_activeKeystone);
-        }
+            Activate(keystone);
     }
 
-    private void PrepareInteraction(Interactable interactable, Interactor interactor)
+    // Interaction Handler
+    public void Interact(Interactor interactor, Interactable _)
     {
-        if (interactable != this.GetComponent<Interactable>())
+        Inventory interactorInventory = interactor.GetComponentInParent<Inventory>();
+
+        if (interactorInventory != null)
+        {
+            keystones.AddRange(interactorInventory.ExtractKeystones(x => x.Aspect == aspect));
+        }
+
+        Events.Interact(this);
+    }
+
+    public void PrepareForInteraction(Interactor interactor, Interactable interactable)
+    {
+        if (interactable != GetComponent<Interactable>())
             return;
 
-        if(interactor.GetComponentInParent<Inventory>().Keystones.Count > 0)
+        if (interactor.GetComponentInParent<Inventory>().Keystones.Count > 0)
         {
             interactable.ProposeInteractionMessage = "to place keystones";
         }
@@ -77,16 +84,37 @@ public class AttunementDevice : MonoBehaviour
         }
     }
 
-    public void Interact(Interactor interactor, Interactable _)
-    {
-        Inventory interactorInventory = interactor.GetComponentInParent<Inventory>();
+    #endregion
 
-        if(interactorInventory != null)
+    #region Private Methods
+
+    private void Activate(Keystone keystone)
+    {
+        if(_activeKeystone != keystone)
         {
-            _keystones.AddRange(interactorInventory.Keystones);
-            interactorInventory.ClearKeystones();
+            if(_activeKeystone != null)
+                _activeKeystone.Deactivate();
+
+            _travellerPlatform.gameObject.SetActive(true);
+            _traveller.gameObject.SetActive(true);
+            _travellerPlatform.Traveller.TravelAnimation = _activeKeystone.TravelAnimation;
+            _activeKeystone = keystone;
         }
 
-        AetherEvents.GameEvents.AttunementEvents.OpenAttunementWindow(_keystones);
+        keystoneObject.SetActive(true);
+        _activeKeystone.Activate();
     }
+
+    private void Deactivate(Keystone keystone)
+    {
+        _travellerPlatform.gameObject.SetActive(false);
+        _traveller.gameObject.SetActive(false);
+        _travellerPlatform.Traveller.TravelAnimation = null;
+
+        _activeKeystone = null;
+        keystoneObject.SetActive(false);
+        keystone.Deactivate();
+    }
+
+    #endregion
 }

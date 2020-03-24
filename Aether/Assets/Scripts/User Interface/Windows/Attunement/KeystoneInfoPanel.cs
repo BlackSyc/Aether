@@ -1,84 +1,95 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static AetherEvents;
 
 public class KeystoneInfoPanel : MonoBehaviour
 {
-    [SerializeField]
-    private Image _sprite;
+    #region Private Fields
+    private Keystone currentKeystone;
 
-    [SerializeField]
-    private TextMeshProUGUI _nameText;
+    private AttunementDevice attunementDevice;
+    #endregion
 
+    #region Serialized Fields
     [SerializeField]
-    private TextMeshProUGUI _descriptionText;
-
-    [SerializeField]
-    private RectTransform _labelPanel;
+    private Image keystoneSprite;
 
     [SerializeField]
-    private GameObject _labelPrefab;
+    private TextMeshProUGUI keystoneNameText;
 
     [SerializeField]
-    private TextMeshProUGUI _activateButtonText;
+    private TextMeshProUGUI keystoneDescriptionText;
 
-    private Keystone _keystone;
+    [SerializeField]
+    private Button activateButton;
 
-    private void Start()
-    {
-        AetherEvents.GameEvents.AttunementEvents.OnKeystoneActivated += KeystoneActivated;
-        AetherEvents.GameEvents.AttunementEvents.OnKeystoneDeactivated += KeystoneDeactivated;
-    }
+    [SerializeField]
+    private TextMeshProUGUI activateButtonText;
 
-    private void KeystoneDeactivated(Keystone keystone)
-    {
-        if (keystone != _keystone)
-            return;
+    [SerializeField]
+    private RectTransform keystoneLabelParent;
 
-        _activateButtonText.text = "Activate";
-    }
+    [SerializeField]
+    private GameObject keystoneLabelPrefab;
+    #endregion
 
-    private void KeystoneActivated(Keystone keystone)
-    {
-        if (keystone != _keystone)
-            return;
-
-        _activateButtonText.text = "Deactivate";
-    }
-    public void SetInfo(Keystone keystone)
+    #region Public Methods
+    public void Show(Keystone keystone, AttunementDevice attunementDevice)
     {
         CleanPanel();
 
-        _keystone = keystone;
-        
-        _nameText.text = _keystone.Name;
+        this.currentKeystone = keystone;
 
-        _keystone.Labels.ForEach(x =>
+        keystoneNameText.text = this.currentKeystone.Name;
+
+        this.currentKeystone.Labels.ForEach(x =>
         {
-            GameObject label = GameObject.Instantiate(_labelPrefab, _labelPanel);
+            GameObject label = GameObject.Instantiate(keystoneLabelPrefab, keystoneLabelParent);
             label.GetComponent<KeystoneLabel>().SetText(x);
         });
 
-        _descriptionText.text = _keystone.Description;
+        keystoneDescriptionText.text = this.currentKeystone.Description;
 
-        _sprite.sprite = _keystone.Sprite ? _keystone.Sprite : null;
+        keystoneSprite.sprite = this.currentKeystone.Sprite ? this.currentKeystone.Sprite : null;
 
-        _activateButtonText.text = _keystone.State.IsActivated ? "Deactivate" : "Activate";
+        activateButton.onClick.AddListener(() => attunementDevice.Toggle(keystone));
+        activateButtonText.text = this.currentKeystone.IsActivated ? "Deactivate" : "Activate";
+    }
+    #endregion
+
+    #region MonoBehaviour
+    private void Start()
+    {
+        KeystoneEvents.OnKeystoneActivated += UpdateButtonLabel;
+        KeystoneEvents.OnKeystoneDeactivated += UpdateButtonLabel;
     }
 
+    private void OnDestroy()
+    {
+        KeystoneEvents.OnKeystoneActivated -= UpdateButtonLabel;
+        KeystoneEvents.OnKeystoneDeactivated -= UpdateButtonLabel;
+    }
+
+    #endregion
+
+    #region EventHandlers
+    private void UpdateButtonLabel(Keystone keystone)
+    {
+        if (keystone != currentKeystone)
+            return;
+
+        activateButtonText.text = currentKeystone.IsActivated ? "Deactivate" : "Activate";
+    }
+    #endregion
+
+    #region Private Methods
     private void CleanPanel()
     {
-        foreach (Transform label in _labelPanel)
+        foreach (Transform label in keystoneLabelParent)
         {
             Destroy(label.gameObject);
         }
     }
-
-    public void ToggleActivateKeystone()
-    {
-        AetherEvents.GameEvents.AttunementEvents.ToggleAttunement(_keystone);
-    }
+    #endregion
 }

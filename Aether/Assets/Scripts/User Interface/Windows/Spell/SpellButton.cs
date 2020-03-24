@@ -30,22 +30,19 @@ public class SpellButton : MonoBehaviour
             text.text = spellSlot.State.Spell.Name;
         }
 
-        AetherEvents.GameEvents.SpellSystemEvents.OnNewSpellSelected += NewSpellSelected;
-        AetherEvents.GameEvents.SpellSystemEvents.OnRemoveSpell += RemoveSpell;
-        AetherEvents.GameEvents.SpellSystemEvents.OnCastSpell += StartSpellCast;
+        spellSlot.OnSpellChanged += ChangeSpell;
+        SpellCast.Events.OnCastSpell += StartSpellCast;
     }
 
-    private void RemoveSpell(Spell spell)
+    private void ChangeSpell(Spell spell)
     {
-        if (spell.SpellSlot != spellSlot)
+        if(spell == null)
+        {
+            mainPanel.SetActive(false);
             return;
+        }
 
-        mainPanel.SetActive(false);
-    }
-
-    private void NewSpellSelected(Spell spell)
-    {
-        if (spell.SpellSlot == this.spellSlot)
+        if (spell.PreferredSpellSlot == this.spellSlot)
         {
             mainPanel.SetActive(true);
             text.text = spell.Name;
@@ -101,9 +98,10 @@ public class SpellButton : MonoBehaviour
     }
 
     private void OnDestroy()
-    {
-        AetherEvents.GameEvents.SpellSystemEvents.OnNewSpellSelected -= NewSpellSelected;
-        AetherEvents.GameEvents.SpellSystemEvents.OnRemoveSpell -= RemoveSpell;
-        AetherEvents.GameEvents.SpellSystemEvents.OnCastSpell -= StartSpellCast;
+    { 
+        if(spellSlot != null)
+            spellSlot.OnSpellChanged -= ChangeSpell;
+
+        SpellCast.Events.OnCastSpell -= StartSpellCast;
     }
 }

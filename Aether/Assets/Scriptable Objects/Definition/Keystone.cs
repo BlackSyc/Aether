@@ -1,5 +1,25 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+
+public static partial class AetherEvents
+{
+    public struct KeystoneEvents
+    {
+        public static event Action<Keystone> OnKeystoneActivated;
+        public static event Action<Keystone> OnKeystoneDeactivated;
+
+        public static void KeystoneActivated(Keystone keystone)
+        {
+            OnKeystoneActivated?.Invoke(keystone);
+        }
+
+        public static void KeystoneDeactivated(Keystone keystone)
+        {
+            OnKeystoneDeactivated?.Invoke(keystone);
+        }
+    }
+}
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Items/Keystone")]
 public class Keystone : ScriptableObject
@@ -19,10 +39,24 @@ public class Keystone : ScriptableObject
 
     public AnimationClip TravelAnimation;
 
-    public KeystoneState State = new KeystoneState();
+    private KeystoneState state = new KeystoneState();
 
-    public struct KeystoneState
+    private struct KeystoneState
     {
         public bool IsActivated;
+    }
+
+    public bool IsActivated => state.IsActivated;
+
+    public void Activate()
+    {
+        state.IsActivated = true;
+        AetherEvents.KeystoneEvents.KeystoneActivated(this);
+    }
+
+    public void Deactivate()
+    {
+        state.IsActivated = false;
+        AetherEvents.KeystoneEvents.KeystoneDeactivated(this);
     }
 }

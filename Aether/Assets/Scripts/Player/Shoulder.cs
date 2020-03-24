@@ -9,33 +9,22 @@ public class Shoulder : MonoBehaviour
 
     private Cloak equippedCloak = null;
 
-    private void Start()
-    {
-        AetherEvents.GameEvents.CloakEvents.OnEquipCloak += EquipCloak;
-        AetherEvents.GameEvents.CloakEvents.OnUnequipCloak += UnequipCloak;
-    }
+    [SerializeField]
+    private Spell defaultSpell;
 
-    private void EquipCloak(CloakInfo cloakInfo)
+    public void EquipCloak(Cloak cloak)
     {
         if(equippedCloak != null)
             UnequipCloak();
 
-        equippedCloak = cloakInfo.InstantiateCloak(transform);
-        equippedCloak.Equip();
-
-        equippedCloak.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[] { GetComponent<CapsuleCollider>() };
+        cloak.Equip(transform);
+        equippedCloak = cloak;
     }
 
-    private void UnequipCloak()
+    public void UnequipCloak()
     {
         equippedCloak?.Unequip();
-        Destroy(equippedCloak.gameObject);
         equippedCloak = null;
-    }
-
-    private void OnDestroy()
-    {
-        AetherEvents.GameEvents.CloakEvents.OnEquipCloak -= EquipCloak;
-        AetherEvents.GameEvents.CloakEvents.OnUnequipCloak -= UnequipCloak;
+        SpellSystem.AddSpell(defaultSpell);
     }
 }

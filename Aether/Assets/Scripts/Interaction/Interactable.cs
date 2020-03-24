@@ -7,16 +7,25 @@ using UnityEngine.Events;
 [Serializable]
 public class Interaction : UnityEvent<Interactor, Interactable>{}
 
+[Serializable]
+public class InteractionProposition : UnityEvent<Interactor, Interactable> { }
+
 public class Interactable : MonoBehaviour
 {
     public string ProposeInteractionMessage = "to interact";
 
     public Interaction Interaction;
+    public InteractionProposition InteractionProposition;
 
     public bool IsActive = true;
 
     public void Interact(Interactor with)
     {
         Interaction.Invoke(with, this);
+    }
+
+    public void ProposeInteraction(Interactor with)
+    {
+        InteractionProposition.Invoke(with, this);
     }
 }
