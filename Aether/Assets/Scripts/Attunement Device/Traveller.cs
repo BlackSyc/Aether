@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Traveller : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class Traveller : MonoBehaviour
         yield return new WaitForSeconds(TravelAnimation.length);
 
         Player.Instance.gameObject.transform.parent = null;
+        SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneManager.GetSceneByName("PlayerScene"));
         Player.Instance.PlayerMovement.enabled = true;
         Debug.Log("End travel");
     }
