@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         if (Instance)
-            throw new Exception("There is more than one Player object in the scene!");
+            throw new Exception("There is more than one Player object in the game!");
 
         Instance = this;
     }

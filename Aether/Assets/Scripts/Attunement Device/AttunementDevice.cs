@@ -92,13 +92,14 @@ public class AttunementDevice : MonoBehaviour
     {
         if(_activeKeystone != keystone)
         {
-            if(_activeKeystone != null)
-                _activeKeystone.Deactivate();
+            if (_activeKeystone != null)
+                Deactivate(_activeKeystone);
 
             _travellerPlatform.gameObject.SetActive(true);
             _traveller.gameObject.SetActive(true);
             _activeKeystone = keystone;
             _travellerPlatform.Traveller.TravelAnimation = _activeKeystone.TravelAnimation;
+            _travellerPlatform.Traveller.SceneAsset = _activeKeystone.SceneAsset;
             
         }
 
@@ -115,6 +116,8 @@ public class AttunementDevice : MonoBehaviour
         _activeKeystone = null;
         keystoneObject.SetActive(false);
         keystone.Deactivate();
+
+        SceneController.Instance.UnloadLevel(keystone.SceneAsset);
     }
 
     #endregion
