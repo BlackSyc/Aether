@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using SceneAsset = UnityEngine.Object;
 
 public static partial class AetherEvents
 {
@@ -38,6 +39,8 @@ public class Keystone : ScriptableObject
     public bool KeystoneCompleted;
 
     public AnimationClip TravelAnimation;
+
+    public SceneAsset SceneAsset;
 
     private KeystoneState state = new KeystoneState();
 

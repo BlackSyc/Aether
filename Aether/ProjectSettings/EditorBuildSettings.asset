@@ -4,7 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Base.unity
+    guid: 1ff6bd5f4dd6f77449e67b5136f738c6
+  - enabled: 1
+    path: Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity
+    guid: 05c77ece28dd53546996290c4ef4c8aa
+  - enabled: 1
+    path: Assets/Scenes/Environments/Dream/Level 1/Dream Level 1.unity
+    guid: 4cd2caf4ab779e44e99a22758ff64ae5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2ed15c64c38707b499de3b107986144d,
       type: 2}

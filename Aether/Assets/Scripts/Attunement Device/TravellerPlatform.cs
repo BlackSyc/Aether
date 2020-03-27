@@ -9,6 +9,6 @@ public class TravellerPlatform : MonoBehaviour
 
     public void Travel(Interactor _, Interactable __)
     {
-        StartCoroutine(Traveller.PlayAnimation(travelReverse));
+        Traveller.StartTravel(travelReverse);
     }
 }

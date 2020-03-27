@@ -90,6 +90,8 @@ public class KeystoneInfoPanel : MonoBehaviour
         {
             Destroy(label.gameObject);
         }
+
+        activateButton.onClick.RemoveAllListeners();
     }
     #endregion
 }
