@@ -48,18 +48,13 @@ public class Traveller : MonoBehaviour
     {
         Debug.Log("Start travel (scene was already loaded)");
         Player.Instance.gameObject.transform.parent = gameObject.transform;
+        Player.Instance.gameObject.transform.localPosition = Vector3.zero;
         Player.Instance.PlayerMovement.enabled = false;
 
-        float startTime = Time.time;
-        float maximumAnimationProgress = 0;
-        while (maximumAnimationProgress < 1)
-        {
-            maximumAnimationProgress = (Time.time - startTime) / TravelAnimation.length;
-            animator.Play(reverse ? $"{TravelAnimation.name}Reverse" : TravelAnimation.name, -1, maximumAnimationProgress);
-            yield return null;
-        }
+        animator.Play(reverse ? $"{TravelAnimation.name}Reverse" : TravelAnimation.name);
+        yield return new WaitForSeconds(TravelAnimation.length);
 
-        Player.Instance.gameObject.transform.parent = null;
+        Player.Instance.gameObject.transform.SetParent(null, true);
         SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneController.Instance.BaseScene);
         Player.Instance.PlayerMovement.enabled = true;
         Debug.Log("End travel");
@@ -69,6 +64,7 @@ public class Traveller : MonoBehaviour
     {
         Debug.Log("Start travel and load scene");
         Player.Instance.gameObject.transform.parent = gameObject.transform;
+        Player.Instance.gameObject.transform.localPosition = Vector3.zero;
         Player.Instance.PlayerMovement.enabled = false;
 
         while (levelLoadingOperation == null)
@@ -88,7 +84,7 @@ public class Traveller : MonoBehaviour
 
         animator.Play(TravelAnimation.name, -1, 1f);
 
-        Player.Instance.gameObject.transform.parent = null;
+        Player.Instance.gameObject.transform.SetParent(null, true);
         SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneController.Instance.BaseScene);
         Player.Instance.PlayerMovement.enabled = true;
         Debug.Log("End travel");
