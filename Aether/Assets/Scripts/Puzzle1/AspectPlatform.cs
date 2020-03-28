@@ -14,8 +14,8 @@ public class AspectPlatform : MonoBehaviour
     {
         defaultMaterial = GetComponent<MeshRenderer>().material;
 
-        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage1 += ChangeToGlowingMaterial;
-        AetherEvents.GameEvents.Puzzle1Events.OnAspectOfCreationDialogComplete += ChangeToDefaultMaterial;
+        Puzzle1_Manager.Events.OnStage1Completed += ChangeToGlowingMaterial;
+        AspectOfCreation.Events.OnDialogComplete += ChangeToDefaultMaterial;
     }
 
     private void ChangeToGlowingMaterial()
@@ -30,7 +30,7 @@ public class AspectPlatform : MonoBehaviour
 
     void OnDestroy()
     {
-        AetherEvents.GameEvents.Puzzle1Events.OnCompleteStage1 -= ChangeToGlowingMaterial;
-        AetherEvents.GameEvents.Puzzle1Events.OnAspectOfCreationDialogComplete -= ChangeToDefaultMaterial;
+        Puzzle1_Manager.Events.OnStage1Completed -= ChangeToGlowingMaterial;
+        AspectOfCreation.Events.OnDialogComplete -= ChangeToDefaultMaterial;
     }
 }

@@ -1,8 +1,29 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
 public class SpellSystem : MonoBehaviour
 {
+    public struct Events
+    {
+        public static event Action<Spell> OnSpellAdded;
+        public static event Action<Spell> OnSpellRemoved;
+        public static event Action<SpellCast> OnCastSpell;
+
+        public static void SpellAdded(Spell spell)
+        {
+            OnSpellAdded?.Invoke(spell);
+        }
+        public static void CastSpell(SpellCast spellCast)
+        {
+            OnCastSpell?.Invoke(spellCast);
+        }
+
+        internal static void SpellRemoved(Spell spell)
+        {
+            OnSpellRemoved?.Invoke(spell);
+        }
+    }
     [SerializeField]
     private Transform castParent;
 
@@ -29,10 +50,23 @@ public class SpellSystem : MonoBehaviour
     [SerializeField]
     private SpellSlot spellSlot7;
 
-    private void Start()
+
+    public void AddSpell(Spell spell)
     {
-        spellSlot1.Initialize();
+        spell.PreferredSpellSlot.SelectSpell(spell);
+        Events.SpellAdded(spell);
     }
+
+    public void ClearAllSpells()
+    {
+        Spell spell1 = spellSlot1.State.Spell;
+        spellSlot1.RemoveSpell();
+        Events.SpellRemoved(spell1);
+
+        // Todo: all other spellslots.
+    }
+
+    public bool HasSpells => spellSlot1.HasActiveSpell || spellSlot2.HasActiveSpell || spellSlot3.HasActiveSpell || spellSlot4.HasActiveSpell || spellSlot5.HasActiveSpell || spellSlot6.HasActiveSpell || spellSlot7.HasActiveSpell;
 
     public void CastMissile(CallbackContext context)
     {

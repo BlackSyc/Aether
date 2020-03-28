@@ -1,12 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Stairs : MonoBehaviour
 {
-
     [SerializeField]
     private Aspect aspect;
+
+    [SerializeField]
+    private Leaf leaf;
+
+    public Aspect Aspect => aspect;
 
     [SerializeField]
     private Interactable interactable;
@@ -15,12 +20,13 @@ public class Stairs : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        animator.keepAnimatorControllerStateOnDisable = true;
 
-        AetherEvents.GameEvents.CloakEvents.OnCloakEquipped += CloakEquipped;
-        AetherEvents.GameEvents.CloakEvents.OnCloakUnequipped += CloakUnequipped;
+        Cloak.Events.OnCloakEquipped += CloakEquipped;
+        Cloak.Events.OnCloakUnequipped += CloakUnequipped;
     }
 
-    private void CloakEquipped(CloakInfo cloakInfo)
+    private void CloakEquipped(Cloak cloakInfo)
     {
         if (cloakInfo.Aspect.Equals(aspect))
         {
@@ -29,13 +35,13 @@ public class Stairs : MonoBehaviour
         }
     }
 
-    private void CloakUnequipped(CloakInfo cloakInfo)
+    private void CloakUnequipped(Cloak cloakInfo)
     {
         if (cloakInfo.Aspect.Equals(aspect))
         {
             interactable.IsActive = false;
             animator.SetBool("activated", false);
-            AetherEvents.GameEvents.HubEvents.CloseStairs(aspect);
+            leaf.DespawnPlatform();
         }
     }
 
@@ -43,7 +49,7 @@ public class Stairs : MonoBehaviour
     {
         animator.SetTrigger("move");
         interactable.IsActive = false;
-        AetherEvents.GameEvents.HubEvents.OpenStairs(aspect);
+        leaf.SpawnPlatform();
     }
 
 
@@ -51,7 +57,7 @@ public class Stairs : MonoBehaviour
     // Update is called once per frame
     void OnDestroy()
     {
-        AetherEvents.GameEvents.CloakEvents.OnCloakEquipped -= CloakEquipped;
-        AetherEvents.GameEvents.CloakEvents.OnCloakUnequipped -= CloakUnequipped;
+        Cloak.Events.OnCloakEquipped -= CloakEquipped;
+        Cloak.Events.OnCloakUnequipped -= CloakUnequipped;
     }
 }

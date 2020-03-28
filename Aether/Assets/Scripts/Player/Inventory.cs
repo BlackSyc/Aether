@@ -1,34 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<Keystone> Keystones { get; private set; }
+    [SerializeField]
+    private List<Keystone> keystones;
 
-    private void Start()
-    {
-        Keystones = new List<Keystone>();
-        AetherEvents.GameEvents.InventoryEvents.OnPickupKeystone += PickupKeystone;  
-    }
+    public ReadOnlyCollection<Keystone> Keystones => new ReadOnlyCollection<Keystone>(keystones);
 
     public void PickupKeystone(Keystone keyStone)
     {
-        Keystones.Add(keyStone);
+        keystones.Add(keyStone);
     }
 
-    public void ClearKeystones()
+    public List<Keystone> ExtractKeystones(Func<Keystone, bool> predicate)
     {
-        Keystones.Clear();
+        IEnumerable<Keystone> keystonesToExtract = keystones.Where(predicate);
+        List<Keystone> keystoneList = keystonesToExtract.ToList();
+        keystones.RemoveAll(new Predicate<Keystone>(predicate));
+        return keystoneList;
     }
-
-    private void OnDestroy()
-    {
-        AetherEvents.GameEvents.InventoryEvents.OnPickupKeystone -= PickupKeystone;
-    }
-
-
-
-
-
 }

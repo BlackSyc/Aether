@@ -9,6 +9,7 @@ public class DialogLine : ScriptableObject
 {
     public string Name;
 
+    public string Speaker;
     public string Content;
 
     public event Action OnComplete;

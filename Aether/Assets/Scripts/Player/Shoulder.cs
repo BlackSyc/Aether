@@ -9,33 +9,38 @@ public class Shoulder : MonoBehaviour
 
     private Cloak equippedCloak = null;
 
-    private void Start()
+    [SerializeField]
+    private Spell defaultSpell;
+
+    public void EnableCloakPhysics()
     {
-        AetherEvents.GameEvents.CloakEvents.OnEquipCloak += EquipCloak;
-        AetherEvents.GameEvents.CloakEvents.OnUnequipCloak += UnequipCloak;
+        if (transform.GetChild(0) == null)
+            return;
+
+        transform.GetChild(0).GetComponent<Cloth>().enabled = true;
     }
 
-    private void EquipCloak(CloakInfo cloakInfo)
+    public void DisableCloakPhysics()
+    {
+        if (transform.GetChild(0) == null)
+            return;
+
+        transform.GetChild(0).GetComponent<Cloth>().enabled = false;
+    }
+
+    public void EquipCloak(Cloak cloak)
     {
         if(equippedCloak != null)
             UnequipCloak();
 
-        equippedCloak = cloakInfo.InstantiateCloak(transform);
-        equippedCloak.Equip();
-
-        equippedCloak.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[] { GetComponent<CapsuleCollider>() };
+        cloak.Equip(transform);
+        equippedCloak = cloak;
     }
 
-    private void UnequipCloak()
+    public void UnequipCloak()
     {
         equippedCloak?.Unequip();
-        Destroy(equippedCloak.gameObject);
         equippedCloak = null;
-    }
-
-    private void OnDestroy()
-    {
-        AetherEvents.GameEvents.CloakEvents.OnEquipCloak -= EquipCloak;
-        AetherEvents.GameEvents.CloakEvents.OnUnequipCloak -= UnequipCloak;
+        SpellSystem.AddSpell(defaultSpell);
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Dream Missile
   Aspect: 1
-  SpellSlot: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
+  PreferredSpellSlot: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
   CastDuration: 2
   CoolDown: 2
   CastWhileMoving: 1

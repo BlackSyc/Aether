@@ -1,11 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 using System.Linq;
+using System;
 
 public class Interactor : MonoBehaviour
 {
+    public readonly struct Events
+    {
+        public static event Action<Interactable, Interactor> OnProposedInteraction;
+        public static event Action OnCancelProposedInteraction;
+        public static event Action OnInteract;
+
+        public static void ProposedInteraction(Interactable interactable, Interactor interactor)
+        {
+            OnProposedInteraction?.Invoke(interactable, interactor);
+        }
+
+        public static void CancelProposedInteraction()
+        {
+            OnCancelProposedInteraction?.Invoke();
+        }
+
+        public static void Interact()
+        {
+            OnInteract?.Invoke();
+        }
+    }
+    
+    public GameObject Player => transform.parent.gameObject;
+
     [SerializeField]
     private float interactionRadius = 1;
 
@@ -14,15 +37,25 @@ public class Interactor : MonoBehaviour
 
     private Interactable currentInteractable;
 
-    public bool IsActive = true;
+    [SerializeField]
+    private bool isActive = true;
 
-    public void CancelCurrentlyProposedInteraction()
+    public bool IsActive => isActive;
+
+    public void Deactivate()
     {
-        if(currentInteractable != null)
+        if (currentInteractable != null)
         {
             currentInteractable = null;
-            AetherEvents.GameEvents.InteractionEvents.CancelProposeInteraction();
+            Events.CancelProposedInteraction();
         }
+
+        isActive = false;
+    }
+
+    public void Activate()
+    {
+        isActive = true;
     }
 
     public void Interact(CallbackContext context)
@@ -30,7 +63,7 @@ public class Interactor : MonoBehaviour
         if (context.performed)
         {
             currentInteractable?.Interact(with: this);
-            AetherEvents.GameEvents.InteractionEvents.Interact();
+            Events.Interact();
         }
     }
 
@@ -40,21 +73,23 @@ public class Interactor : MonoBehaviour
             .Where(x => x.GetComponent<Interactable>() != null)
             .Select(x => x.GetComponent<Interactable>())
             .FirstOrDefault(x => x.IsActive);
+
         if (interactable != null)
         {
             currentInteractable = interactable;
-            AetherEvents.GameEvents.InteractionEvents.ProposeInteraction(currentInteractable, this);
+            currentInteractable.ProposeInteraction(with: this);
+            Events.ProposedInteraction(currentInteractable, this);
         }
         else
         {
             currentInteractable = null;
-            AetherEvents.GameEvents.InteractionEvents.CancelProposeInteraction();
+            Events.CancelProposedInteraction();
         }
     }
 
     private void Update()
     {
-        if(IsActive)
+        if(isActive)
             CheckForInteractables();
     }
 }

@@ -21,5 +21,5 @@ MonoBehaviour:
     granted you access to.
   Sprite: {fileID: 0}
   KeystoneCompleted: 0
-  AccessPointPrefab: {fileID: 4294444766046414600, guid: 45d8cff112a697f4ea4e2b0d7773ef72,
-    type: 3}
+  TravelAnimation: {fileID: 7400000, guid: 2859d09fb17c3c84ca4996300bf53649, type: 2}
+  SceneAsset: {fileID: 102900000, guid: 4cd2caf4ab779e44e99a22758ff64ae5, type: 3}
