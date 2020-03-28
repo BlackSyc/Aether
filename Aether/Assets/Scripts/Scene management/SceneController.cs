@@ -29,7 +29,10 @@ public class SceneController : MonoBehaviour
     [SerializeField]
     private SceneAsset startPlatformScene;
 
-    private SceneAsset loadedLevel;
+    [HideInInspector]
+    public StartPlatformController StartPlatformLevelController;
+
+    public (SceneAsset scene, ILevelController levelController) LoadedLevel;
 
     private AsyncOperation loadLevelOperation;
 
@@ -39,7 +42,7 @@ public class SceneController : MonoBehaviour
     public void LoadLevel(SceneAsset sceneAsset)
     {
         // Check if the currently loaded level is the same as the one requested, in that case: throw an exception.
-        if (loadedLevel == sceneAsset)
+        if (LoadedLevel.scene == sceneAsset)
             throw new Exception($"Level {sceneAsset.name} is already loaded.");
 
         // Check if a level is currently being loaded, in that case: wait for it to complete, then request LoadLevel again.
@@ -51,7 +54,7 @@ public class SceneController : MonoBehaviour
         }
 
         // Check if there is a level currently loaded (not equal to the one requested, see above), in that case: Unload the current level, and when that is complete, request LoadLevel again.
-        if(loadedLevel != null)
+        if(LoadedLevel.scene != null)
         {
             UnloadCurrentLevel();
             unloadLevelOperation.completed += _ => LoadLevel(sceneAsset);
@@ -61,29 +64,30 @@ public class SceneController : MonoBehaviour
         // Load the requested level, on complete set the loaded level field.
         loadLevelOperation = SceneManager.LoadSceneAsync(sceneAsset.name, LoadSceneMode.Additive);
         Events.LevelStartedLoading(sceneAsset, loadLevelOperation);
-        loadLevelOperation.completed += _ => loadedLevel = sceneAsset;
+        loadLevelOperation.completed += _ => LoadedLevel.scene = sceneAsset;
     }
 
     // returns whether the provided scene asset is currently loaded.
     public bool IsLevelLoaded(SceneAsset sceneAsset)
     {
-        return loadedLevel == sceneAsset;
+        return LoadedLevel.scene == sceneAsset;
     }
 
     public void UnloadLevel(SceneAsset sceneAsset)
     {
-        if(loadedLevel == sceneAsset)
+        if(LoadedLevel.scene == sceneAsset)
         {
-            loadedLevel = null;
+            LoadedLevel.scene = null;
+            LoadedLevel.levelController = null;
             Events.LevelStartedUnloading(sceneAsset, SceneManager.UnloadSceneAsync(sceneAsset.name));
         }
     }
 
     private void UnloadCurrentLevel()
     {
-        unloadLevelOperation = SceneManager.UnloadSceneAsync(loadedLevel.name);
-        Events.LevelStartedUnloading(loadedLevel, unloadLevelOperation);
-        unloadLevelOperation.completed += _ => loadedLevel = null;
+        unloadLevelOperation = SceneManager.UnloadSceneAsync(LoadedLevel.scene.name);
+        Events.LevelStartedUnloading(LoadedLevel.scene, unloadLevelOperation);
+        unloadLevelOperation.completed += _ => LoadedLevel.scene = null;
     }
 
     private void Awake()
@@ -93,12 +97,6 @@ public class SceneController : MonoBehaviour
 
         Instance = this;
         BaseScene = gameObject.scene;
-
-        // Checks if the starting scene was already loaded. If not: load it.
-        if (!SceneManager.GetSceneByName(startPlatformScene.name).IsValid())
-        {
-            SceneManager.LoadScene(startPlatformScene.name, LoadSceneMode.Additive);
-        }
     }
 
     private void OnDestroy()

@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LevelEntry : MonoBehaviour
+{
+    public struct Events
+    {
+        public static event Action OnEnteringLevel;
+
+        public static void EnteringLevel()
+        {
+            OnEnteringLevel?.Invoke();
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag.Equals("Player"))
+        {
+            TeleportToLevelOrigin();
+        }
+    }
+
+    public void TeleportToLevelOrigin()
+    {
+        Events.EnteringLevel();
+        SceneController.Instance.LoadedLevel.levelController.Enable();
+
+        Player.Instance.Shoulder.DisableCloakPhysics();
+        Player.Instance.CharacterController.enabled = false;
+        Player.Instance.transform.position = SceneController.Instance.LoadedLevel.levelController.GetEntryPoint().position;
+        Player.Instance.CharacterController.enabled = true;
+        Player.Instance.Shoulder.EnableCloakPhysics();
+
+        SceneController.Instance.StartPlatformLevelController.Disable();
+    }
+}
