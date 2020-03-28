@@ -20,6 +20,7 @@ public class Stairs : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        animator.keepAnimatorControllerStateOnDisable = true;
 
         Cloak.Events.OnCloakEquipped += CloakEquipped;
         Cloak.Events.OnCloakUnequipped += CloakUnequipped;

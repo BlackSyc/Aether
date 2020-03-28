@@ -5,10 +5,12 @@ using SceneAsset = UnityEngine.Object;
 
 public class Traveller : MonoBehaviour
 {
+    [HideInInspector]
     public AnimationClip TravelAnimation;
 
     private Animator animator;
 
+    [HideInInspector]
     public SceneAsset SceneAsset;
 
     private AsyncOperation levelLoadingOperation;

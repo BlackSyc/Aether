@@ -12,6 +12,22 @@ public class Shoulder : MonoBehaviour
     [SerializeField]
     private Spell defaultSpell;
 
+    public void EnableCloakPhysics()
+    {
+        if (transform.GetChild(0) == null)
+            return;
+
+        transform.GetChild(0).GetComponent<Cloth>().enabled = true;
+    }
+
+    public void DisableCloakPhysics()
+    {
+        if (transform.GetChild(0) == null)
+            return;
+
+        transform.GetChild(0).GetComponent<Cloth>().enabled = false;
+    }
+
     public void EquipCloak(Cloak cloak)
     {
         if(equippedCloak != null)

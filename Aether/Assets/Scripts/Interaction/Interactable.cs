@@ -10,6 +10,7 @@ public class Interaction : UnityEvent<Interactor, Interactable>{}
 [Serializable]
 public class InteractionProposition : UnityEvent<Interactor, Interactable> { }
 
+[RequireComponent(typeof(Collider))]
 public class Interactable : MonoBehaviour
 {
     public string ProposeInteractionMessage = "to interact";
