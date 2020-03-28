@@ -1570,7 +1570,7 @@ PrefabInstance:
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
       propertyPath: keystones.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
@@ -2822,7 +2822,7 @@ PrefabInstance:
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
       propertyPath: keystones.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}

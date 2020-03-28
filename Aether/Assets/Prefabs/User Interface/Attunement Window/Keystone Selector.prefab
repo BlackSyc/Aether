@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5589072757068812323}
   - component: {fileID: 2679090983625871520}
   - component: {fileID: 623902443939363059}
+  - component: {fileID: 2093192515}
   m_Layer: 0
   m_Name: Keystone Selector
   m_TagString: Untagged
@@ -92,7 +93,7 @@ MonoBehaviour:
   _background: {fileID: 1826330371686248827}
   _selectedBackgroundColour: {r: 0.25490198, g: 0.2509804, b: 0.3529412, a: 1}
   _hoverBackgroundColour: {r: 0.13333334, g: 0.12941177, b: 0.23529413, a: 1}
-  _activatedTextColour: {r: 0.9811321, g: 0.9550997, b: 0.86543256, a: 1}
+  _activatedTextColour: {r: 0.24129683, g: 0.071021706, b: 0.26415092, a: 1}
   _defaultBackgroundColour: {r: 0.098039225, g: 0.098039225, b: 0.10588236, a: 0}
   _defaultTextColour: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
   _buttonLabel: {fileID: 8913258198573489154}
@@ -109,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
-  m_MinWidth: -1
+  m_MinWidth: 250
   m_MinHeight: 50
   m_PreferredWidth: -1
   m_PreferredHeight: -1
@@ -189,6 +190,25 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!95 &2093192515
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826330371686248824}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 095d2cec7da00f848a4bb7a945e9f21f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4565009238239627596
 GameObject:
   m_ObjectHideFlags: 0

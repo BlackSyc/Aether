@@ -26,6 +26,8 @@ public class AttunementDevice : MonoBehaviour
     [SerializeField]
     private List<Keystone> keystones;
 
+    private List<Keystone> newKeystones = new List<Keystone>();
+
     [SerializeField]
     private Aspect aspect;
 
@@ -41,10 +43,18 @@ public class AttunementDevice : MonoBehaviour
     #endregion
 
     #region Getters
-    public ReadOnlyCollection<Keystone> Keystones => new ReadOnlyCollection<Keystone>(keystones);
+    public ReadOnlyCollection<Keystone> Keystones => keystones.AsReadOnly();
+
+    public ReadOnlyCollection<Keystone> NewKeystones => newKeystones.AsReadOnly();
     #endregion
 
     #region Public Methods
+    public void ApplyNewKeystones()
+    {
+        keystones.AddRange(newKeystones);
+        newKeystones.Clear();
+    }
+
     public void Toggle(Keystone keystone)
     {
         if (keystone == null)
@@ -63,7 +73,7 @@ public class AttunementDevice : MonoBehaviour
 
         if (interactorInventory != null)
         {
-            keystones.AddRange(interactorInventory.ExtractKeystones(x => x.Aspect == aspect));
+            newKeystones.AddRange(interactorInventory.ExtractKeystones(x => x.Aspect == aspect));
         }
 
         Events.Interact(this);

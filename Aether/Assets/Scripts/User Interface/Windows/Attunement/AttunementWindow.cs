@@ -58,9 +58,28 @@ public class AttunementWindow : MonoBehaviour
             }
         }
 
+        foreach (Keystone newKeystone in attunementDevice.NewKeystones)
+        {
+            GameObject keystoneSelectorObject = GameObject.Instantiate(keystoneSelectorPrefab, keystoneSelectorParent);
+            KeystoneSelector keystoneSelector = keystoneSelectorObject.GetComponent<KeystoneSelector>();
+            keystoneSelector.SetKeystone(newKeystone);
+            keystoneSelector.OnSelect = () => keystoneInfoPanel.Show(newKeystone, attunementDevice);
+            keystoneSelector.OnScroll = Scroll;
+            keystoneSelector.PlayNewlyAddedAnimation();
+
+            if (!selectionMade)
+            {
+                selectionMade = true;
+                keystoneSelector.Select();
+            }
+        }
+
+        attunementDevice.ApplyNewKeystones();
+
         AetherEvents.GameEvents.InputSystemEvents.EnablePopupActionMap();
         AetherEvents.UIEvents.ToolTips.HideAll();
         AetherEvents.UIEvents.Crosshair.HideCrosshair();
+
     }
 
     private void CloseWindow()
