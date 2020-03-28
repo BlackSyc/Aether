@@ -13,6 +13,8 @@ public class InventoryWindow : MonoBehaviour
     {
         Inventory.Events.OnPickedUpKeystone += UpdateKeystoneImage;
         Inventory.Events.OnExtractedKeystone += UpdateKeystoneImage;
+        Cloak.Events.OnCloakUnequipped += _ => UpdateKeystoneImage();
+        Cloak.Events.OnCloakEquipped += _ => UpdateKeystoneImage();
         UpdateKeystoneImage();
     }
 
@@ -20,11 +22,15 @@ public class InventoryWindow : MonoBehaviour
     {
         if(Player.Instance.Shoulder.EquippedCloak != null)
             keystoneImageAnimator.SetBool("Show", Player.Instance.Inventory.ContainsKeystone(x => Player.Instance.Shoulder.EquippedCloak.Aspect == x.Aspect));
+        else
+            keystoneImageAnimator.SetBool("Show", false);
     }
 
     private void OnDestroy()
     {
         Inventory.Events.OnPickedUpKeystone -= UpdateKeystoneImage;
         Inventory.Events.OnExtractedKeystone -= UpdateKeystoneImage;
+        Cloak.Events.OnCloakUnequipped -= _ => UpdateKeystoneImage();
+        Cloak.Events.OnCloakEquipped -= _ => UpdateKeystoneImage();
     }
 }
