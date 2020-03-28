@@ -416,6 +416,7 @@ MonoBehaviour:
   aspect: 3
   leaf: {fileID: 1837385323}
   interactable: {fileID: 1946092055}
+  grantKeystone: {fileID: 11400000, guid: a9059e1183ec8cc4ea2e49180fcab870, type: 2}
 --- !u!95 &22901392
 Animator:
   serializedVersion: 3
@@ -1569,7 +1570,7 @@ PrefabInstance:
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
       propertyPath: keystones.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
@@ -2061,6 +2062,7 @@ MonoBehaviour:
   aspect: 1
   leaf: {fileID: 9130147988246811448}
   interactable: {fileID: 1183359035}
+  grantKeystone: {fileID: 11400000, guid: f9b1f51a5cdb7ae4985768a2ae505c78, type: 2}
 --- !u!64 &546802959
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2481,6 +2483,7 @@ MonoBehaviour:
   aspect: 2
   leaf: {fileID: 800934960}
   interactable: {fileID: 1145111863}
+  grantKeystone: {fileID: 11400000, guid: efe0d3f49b33b5f4fbe7debc8e945753, type: 2}
 --- !u!64 &598217752
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2819,7 +2822,7 @@ PrefabInstance:
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
       propertyPath: keystones.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
@@ -9317,7 +9320,7 @@ PrefabInstance:
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
       propertyPath: keystones.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
@@ -9363,14 +9366,12 @@ PrefabInstance:
         type: 3}
       propertyPath: keystones.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: f9b1f51a5cdb7ae4985768a2ae505c78,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
       propertyPath: keystones.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 8ae3adb8218fbad48b0f311fa4f23a1c,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4417447441142579529, guid: 7c44200e7d6ffb449b36428877eb5969,
         type: 3}
       propertyPath: keystones.Array.data[2]

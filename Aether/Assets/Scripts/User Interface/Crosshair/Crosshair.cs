@@ -25,6 +25,7 @@ public class Crosshair : MonoBehaviour
 
     private void Start()
     {
+        _crosshairAnimator.keepAnimatorControllerStateOnDisable = true;
         SpellSystem.Events.OnSpellAdded += UpdateCrosshairState;
         SpellSystem.Events.OnSpellRemoved += UpdateCrosshairState;
         AetherEvents.UIEvents.Crosshair.OnHideCrosshair += HideCrosshair;

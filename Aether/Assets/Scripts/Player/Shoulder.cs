@@ -9,6 +9,8 @@ public class Shoulder : MonoBehaviour
 
     private Cloak equippedCloak = null;
 
+    public Cloak EquippedCloak => equippedCloak;
+
     [SerializeField]
     private Spell defaultSpell;
 
@@ -33,14 +35,15 @@ public class Shoulder : MonoBehaviour
         if(equippedCloak != null)
             UnequipCloak();
 
-        cloak.Equip(transform);
         equippedCloak = cloak;
+        cloak.Equip(transform);
     }
 
     public void UnequipCloak()
     {
-        equippedCloak?.Unequip();
+        var cloak = equippedCloak;
         equippedCloak = null;
+        cloak?.Unequip();
         SpellSystem.AddSpell(defaultSpell);
     }
 }

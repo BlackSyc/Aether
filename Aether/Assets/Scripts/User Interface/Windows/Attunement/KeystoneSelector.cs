@@ -39,6 +39,11 @@ public class KeystoneSelector : MonoBehaviour
 
     private bool _selected = false;
 
+    public void PlayNewlyAddedAnimation()
+    {
+        GetComponent<Animator>().SetTrigger("New");
+    }
+
     private void Start()
     {
         KeystoneEvents.OnKeystoneActivated += KeystoneActivated;
@@ -73,15 +78,17 @@ public class KeystoneSelector : MonoBehaviour
 
     public void Select()
     {
-        GameObject.FindObjectsOfType<KeystoneSelector>().ToList().ForEach(x => x.Deselect());
-        _background.color = _selectedBackgroundColour;
+        GameObject.FindObjectsOfType<KeystoneSelector>().Where(x => x != this).ToList().ForEach(x => x.Deselect());
+        GetComponent<Animator>().SetTrigger("Click");
+        //_background.color = _selectedBackgroundColour;
         _selected = true;
         OnSelect?.Invoke();
     }
 
     public void Deselect()
     {
-        _background.color = _defaultBackgroundColour;
+        GetComponent<Animator>().SetTrigger("Deselect");
+        //_background.color = _defaultBackgroundColour;
         _selected = false;
     }
 
@@ -92,14 +99,16 @@ public class KeystoneSelector : MonoBehaviour
 
     public void Hover()
     {
-        if(!_selected)
-            _background.color = _hoverBackgroundColour;
+        GetComponent<Animator>().SetBool("Hover", true);
+        //if(!_selected)
+        //    _background.color = _hoverBackgroundColour;
     }
 
     public void Unhover()
     {
-        if(!_selected)
-            _background.color = _defaultBackgroundColour;
+        GetComponent<Animator>().SetBool("Hover", false);
+        //if (!_selected)
+        //    _background.color = _defaultBackgroundColour;
     }
 
     private void OnDestroy()
