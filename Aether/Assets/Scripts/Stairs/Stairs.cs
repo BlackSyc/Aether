@@ -17,6 +17,9 @@ public class Stairs : MonoBehaviour
     private Interactable interactable;
 
     private Animator animator;
+
+    [SerializeField]
+    private Keystone grantKeystone;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -50,6 +53,17 @@ public class Stairs : MonoBehaviour
         animator.SetTrigger("move");
         interactable.IsActive = false;
         leaf.SpawnPlatform();
+
+        GrantKeystone();
+    }
+
+    private void GrantKeystone()
+    {
+        if(grantKeystone != null)
+        {
+            Player.Instance.Inventory.PickupKeystone(grantKeystone);
+            grantKeystone = null;
+        }
     }
 
 

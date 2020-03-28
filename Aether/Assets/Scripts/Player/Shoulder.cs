@@ -9,6 +9,8 @@ public class Shoulder : MonoBehaviour
 
     private Cloak equippedCloak = null;
 
+    public Cloak EquippedCloak => equippedCloak;
+
     [SerializeField]
     private Spell defaultSpell;
 
