@@ -50,6 +50,7 @@ public class Stairs : MonoBehaviour
 
     public void MoveStairs()
     {
+        Hint.Get("Cursor").Activate();
         animator.SetTrigger("move");
         interactable.IsActive = false;
         leaf.SpawnPlatform();
