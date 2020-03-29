@@ -12,6 +12,7 @@ public class ActionMapManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
         AetherEvents.GameEvents.InputSystemEvents.OnEnablePlayerActionMap += EnablePlayerActionMap;
         AetherEvents.GameEvents.InputSystemEvents.OnEnablePopupActionMap += EnablePopUpActionMap;
     }
@@ -44,6 +45,7 @@ public class ActionMapManager : MonoBehaviour
     {
         playerInput.SwitchCurrentActionMap("PopUp");
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
     }
 
     private void EnablePlayerActionMap()
@@ -56,6 +58,7 @@ public class ActionMapManager : MonoBehaviour
     {
         playerInput.SwitchCurrentActionMap("User Interface");
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
     }
 
     private void OnDestroy()
