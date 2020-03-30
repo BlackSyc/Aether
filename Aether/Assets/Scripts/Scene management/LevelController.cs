@@ -12,7 +12,7 @@ public class LevelController : MonoBehaviour, ILevelController
 
     void Start()
     {
-        if (gameObject.scene.name.Equals(SceneController.Instance.LoadedLevel.scene.name))
+        if (gameObject.scene.buildIndex.Equals(SceneController.Instance.LoadedLevel.buildIndex))
         {
             SceneController.Instance.LoadedLevel.levelController = this;
         }

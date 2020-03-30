@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98cba6879111bc548b546ca12354bc43, type: 3}
   m_Name: Dream Level 2
   m_EditorClassIdentifier: 
-  Name: Dream Level 2
+  Name: The Bridge
   Aspect: 1
   Labels:
   - PvE
@@ -21,4 +21,4 @@ MonoBehaviour:
   Sprite: {fileID: 0}
   KeystoneCompleted: 0
   TravelAnimation: {fileID: 7400000, guid: 9650366489e31b046aac384bda48e78d, type: 2}
-  SceneAsset: {fileID: 102900000, guid: b06efb384abfe9e45ae667fccd777b77, type: 3}
+  SceneBuildIndex: 3

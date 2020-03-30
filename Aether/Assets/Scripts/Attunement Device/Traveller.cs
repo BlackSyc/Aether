@@ -11,11 +11,11 @@ public class Traveller : MonoBehaviour
     private Animator animator;
 
     [HideInInspector]
-    public SceneAsset SceneAsset;
+    public int SceneBuildIndex;
 
     private AsyncOperation levelLoadingOperation;
 
-    private bool levelIsLoaded => SceneController.Instance.IsLevelLoaded(SceneAsset);
+    private bool levelIsLoaded => SceneController.Instance.IsLevelLoaded(SceneBuildIndex);
 
     private void Awake()
     {
@@ -23,9 +23,9 @@ public class Traveller : MonoBehaviour
         SceneController.Events.OnLevelStartedLoading += LevelStartedLoading;
     }
 
-    private void LevelStartedLoading(SceneAsset sceneAsset, AsyncOperation asyncOperation)
+    private void LevelStartedLoading(int buildIndex, AsyncOperation asyncOperation)
     {
-        if (sceneAsset != this.SceneAsset)
+        if (buildIndex != this.SceneBuildIndex)
             return;
 
         levelLoadingOperation = asyncOperation;
@@ -41,7 +41,7 @@ public class Traveller : MonoBehaviour
         }
 
         levelLoadingOperation = null;
-        SceneController.Instance.LoadLevel(SceneAsset);
+        SceneController.Instance.LoadLevel(SceneBuildIndex);
 
         StartCoroutine(TravelUsingLoadingProgress());
     }
