@@ -15,8 +15,19 @@ MonoBehaviour:
   Name: Nightmare Missile
   Aspect: 3
   PreferredSpellSlot: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
-  Description: No info yet.
-  Damage: 0
+  Description: 'Shoot a Nightmare Missile towards a target.
+
+
+    On impact with
+    an enemy target, the target will take minor damage.
+
+
+    Secondary effect:
+
+    On
+    impact with some arcane entities, the target will be infused with The Nightmare,
+    destroying the entity in the process.'
+  Damage: 10
   CastDuration: 0.5
   CoolDown: 0.5
   CastWhileMoving: 1
