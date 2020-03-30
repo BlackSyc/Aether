@@ -15,6 +15,8 @@ MonoBehaviour:
   Name: Nightmare Missile
   Aspect: 3
   PreferredSpellSlot: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
+  Description: No info yet.
+  Damage: 0
   CastDuration: 0.5
   CoolDown: 0.5
   CastWhileMoving: 1

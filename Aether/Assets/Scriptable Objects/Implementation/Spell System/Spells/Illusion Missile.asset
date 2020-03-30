@@ -15,6 +15,8 @@ MonoBehaviour:
   Name: Illusion Missile
   Aspect: 2
   PreferredSpellSlot: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
+  Description: No info yet.
+  Damage: 0
   CastDuration: 1
   CoolDown: 2
   CastWhileMoving: 1

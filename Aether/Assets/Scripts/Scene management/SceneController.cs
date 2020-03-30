@@ -102,6 +102,9 @@ public class SceneController : MonoBehaviour
         Debug.Log($"startingplatformscene name: {startPlatformSceneBuildIndex}");
         BaseScene = gameObject.scene;
 
+        if (SceneManager.GetSceneAt(1).buildIndex == startPlatformSceneBuildIndex)
+            return;
+
         SceneManager.LoadScene(startPlatformSceneBuildIndex, LoadSceneMode.Additive);
     }
 

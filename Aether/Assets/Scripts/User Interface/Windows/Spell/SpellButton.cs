@@ -19,6 +19,19 @@ public class SpellButton : MonoBehaviour
     [SerializeField]
     private Animator castBar;
 
+    [SerializeField]
+    private SpellTooltip spellTooltip;
+
+    public void ShowTooltip()
+    {
+        spellTooltip.Show(spellSlot.State.Spell);
+    }
+
+    public void HideTooltip()
+    {
+        spellTooltip.Hide();
+    }
+
     private void Start()
     {
         if (spellSlot == null)

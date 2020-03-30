@@ -13,6 +13,11 @@ public class Spell : ScriptableObject
 
     public SpellSlot PreferredSpellSlot;
 
+    [TextArea(0,10)]
+    public string Description;
+
+    public float Damage;
+
     public float CastDuration;
 
     public float CoolDown;

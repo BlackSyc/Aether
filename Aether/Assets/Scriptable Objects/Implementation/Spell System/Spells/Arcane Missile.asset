@@ -15,6 +15,10 @@ MonoBehaviour:
   Name: Arcane Missile
   Aspect: 0
   PreferredSpellSlot: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
+  Description: "Shoot an arcane projectile at the target. \n\nThis projectile does
+    not deal any damage, instead it can be used to interact with many arcane entities
+    in the Aether."
+  Damage: 0
   CastDuration: 1.5
   CoolDown: 2
   CastWhileMoving: 1
