@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HintWindow : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject hintContainerPrefab;
 
     [SerializeField]
     private RectTransform content;
@@ -17,8 +15,7 @@ public class HintWindow : MonoBehaviour
 
     public void ShowHint(Hint hint)
     {
-        GameObject hintContainer = GameObject.Instantiate(hintContainerPrefab, content);
-        GameObject.Instantiate(hint.HintPrefab, hintContainer.transform); ;
+        GameObject hintObject = GameObject.Instantiate(hint.HintPrefab, content);
     }
 
     private void OnDestroy()

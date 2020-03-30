@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cursor
   m_EditorClassIdentifier: 
   Name: Cursor
-  HintPrefab: {fileID: 4274007761580201880, guid: 5381ef740bf685847ae11f3356a1e38c,
+  HintPrefab: {fileID: 4514980665645665725, guid: 67ca7924fcbb6e64ea0c78acefc56139,
     type: 3}

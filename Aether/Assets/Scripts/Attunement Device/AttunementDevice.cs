@@ -69,7 +69,6 @@ public class AttunementDevice : MonoBehaviour
     // Interaction Handler
     public void Interact(Interactor interactor, Interactable _)
     {
-        Hint.Custom("This is a custom hint!").Activate();
         Inventory interactorInventory = interactor.GetComponentInParent<Inventory>();
 
         if (interactorInventory != null)

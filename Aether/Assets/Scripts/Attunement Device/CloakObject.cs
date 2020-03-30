@@ -33,7 +33,6 @@ public class CloakObject : MonoBehaviour
 
     public void Interact(Interactor interactor, Interactable interactable)
     {
-        Hint.Get("Movement").Activate();
         Events.Interact(this);
     }
 

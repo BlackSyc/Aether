@@ -245,8 +245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ebbb9d016a2074c958fcf335da2e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintContainerPrefab: {fileID: 7353445625721791945, guid: d2fc3c9b5b68e5b47be5991743c48bd5,
-    type: 3}
   content: {fileID: 1486531363}
 --- !u!1 &102965014
 GameObject:
@@ -459,7 +457,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8ae3adb8218fbad48b0f311fa4f23a1c, type: 2}
   - {fileID: 11400000, guid: 222d2674f6db12949b60edd954988959, type: 2}
   - {fileID: 11400000, guid: 8409b26a4ab3d1e4fb046227e4c13017, type: 2}
-  spawnCloaks: 1
+  spawnCloaks: 0
 --- !u!4 &122512648
 Transform:
   m_ObjectHideFlags: 0
@@ -7607,7 +7605,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 7
-  m_Spacing: 0
+  m_Spacing: 25
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0

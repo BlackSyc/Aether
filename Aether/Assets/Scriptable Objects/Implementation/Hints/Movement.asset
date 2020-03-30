@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Movement
   m_EditorClassIdentifier: 
   Name: Movement
-  HintPrefab: {fileID: 5464304022766573486, guid: c6b6f646da109f646ace43d08b60fc2b,
+  HintPrefab: {fileID: 5070907278158363301, guid: 2403a91748f26584182b460d0e893f4c,
     type: 3}

@@ -25,10 +25,11 @@ public class Hint : ScriptableObject
         return Hints.SingleOrDefault(x => name.Equals(x.Name));
     }
 
-    public static Hint Custom(string message)
+    public static Hint Custom(string title, string message)
     {
-        Hint defaultHint = Hints.SingleOrDefault(x => "Default".Equals(x.Name));
-        defaultHint.HintPrefab.GetComponent<TextMeshProUGUI>().text = message;
+        Hint defaultHint = Hints.SingleOrDefault(x => "Custom".Equals(x.Name));
+        defaultHint.HintPrefab.GetComponent<CustomHint>().HeaderText.text = title;
+        defaultHint.HintPrefab.GetComponent<CustomHint>().ContentText.text = message;
         return defaultHint;
     }
 

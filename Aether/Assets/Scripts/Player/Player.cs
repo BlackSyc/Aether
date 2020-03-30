@@ -48,6 +48,11 @@ public class Player : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        Hint.Get("Movement").Activate();
+    }
+
     private void OnDestroy()
     {
         Instance = null;
