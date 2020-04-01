@@ -70,7 +70,7 @@ public class MovementHint : HintObject
 
     private void Delay(Action action)
     {
-        StartCoroutine(InvokeDelayed(action, 2));
+        StartCoroutine(InvokeDelayed(action, 1));
     }
 
     private IEnumerator InvokeDelayed(Action action, float delay)

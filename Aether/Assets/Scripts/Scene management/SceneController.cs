@@ -99,7 +99,6 @@ public class SceneController : MonoBehaviour
             throw new Exception("There is more than one SceneController object in the game!");
 
         Instance = this;
-        Debug.Log($"startingplatformscene name: {startPlatformSceneBuildIndex}");
         BaseScene = gameObject.scene;
 
         if (SceneManager.GetSceneAt(1).buildIndex == startPlatformSceneBuildIndex)

@@ -69,7 +69,6 @@ public class SpellCast
         {
             if(!Spell.CastWhileMoving && Player.Instance.PlayerMovement.IsMoving)
             {
-                Debug.Log("PlayerIsMoving!");
                 Cancel();
             }
 
