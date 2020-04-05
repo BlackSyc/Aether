@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Tiles
+  m_Name: Tiles 1
   m_Shader: {fileID: -6465566751694194690, guid: 538fcf1ffa9d5654b94e0336f3bd3ee2,
     type: 3}
   m_ShaderKeywords: _NORMALMAP _NORMALMAP_TANGENT_SPACE
@@ -264,7 +264,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - Vector2_65DCA072: {r: 3, g: 3, b: 3, a: 0}
+    - Vector2_65DCA072: {r: 20, g: 20, b: 20, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

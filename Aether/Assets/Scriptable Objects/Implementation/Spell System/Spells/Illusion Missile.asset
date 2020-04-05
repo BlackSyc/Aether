@@ -28,7 +28,7 @@ MonoBehaviour:
     On impact with some arcane entities,
     the target will be infused with The Illusion, granting the caster the ability
     to move it.'
-  Damage: 0
+  HealthDelta: 0
   CastDuration: 1
   CoolDown: 2
   CastWhileMoving: 1

@@ -27,7 +27,7 @@ MonoBehaviour:
     On
     impact with some arcane entities, the target will be infused with The Dream,
     causing the target to grow.'
-  Damage: -20
+  HealthDelta: 100
   CastDuration: 2
   CoolDown: 2
   CastWhileMoving: 0

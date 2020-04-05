@@ -101,8 +101,11 @@ public class SceneController : MonoBehaviour
         Instance = this;
         BaseScene = gameObject.scene;
 
-        if (SceneManager.GetSceneAt(1).buildIndex == startPlatformSceneBuildIndex)
-            return;
+        if (SceneManager.sceneCount > 1)
+        {
+            if (SceneManager.GetSceneAt(1).buildIndex == startPlatformSceneBuildIndex)
+                return;
+        }
 
         SceneManager.LoadScene(startPlatformSceneBuildIndex, LoadSceneMode.Additive);
     }

@@ -7,9 +7,11 @@ public class SpellTooltip : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI title;
 
+    [SerializeField]
+    private TextMeshProUGUI healthDeltaLabel;
 
     [SerializeField]
-    private TextMeshProUGUI damage;
+    private TextMeshProUGUI healthDelta;
 
 
     [SerializeField]
@@ -31,7 +33,8 @@ public class SpellTooltip : MonoBehaviour
     public void Show(Spell spell)
     {
         title.text = spell.Name;
-        damage.text = spell.Damage.ToString();
+        healthDeltaLabel.text = spell.HealthDelta > 0 ? "Heal:" : "Damage:";
+        healthDelta.text = spell.HealthDelta < 0 ? (spell.HealthDelta * -1).ToString() : spell.HealthDelta.ToString();
         casttime.text = spell.CastDuration.ToString();
         cooldown.text = spell.CoolDown.ToString();
         description.text = spell.Description;

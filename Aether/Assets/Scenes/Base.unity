@@ -764,7 +764,7 @@ GameObject:
   - component: {fileID: 129245234}
   - component: {fileID: 129245233}
   m_Layer: 0
-  m_Name: DamageLabel
+  m_Name: HealthDeltaLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1436,6 +1436,7 @@ GameObject:
   - component: {fileID: 205025360}
   - component: {fileID: 205025361}
   - component: {fileID: 205025362}
+  - component: {fileID: 205025363}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -1547,6 +1548,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keystones: []
+--- !u!114 &205025363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205025356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f6119820856f04684f2fa39e7e3e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 1000
+  maxHealth: 1000
 --- !u!114 &205025364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1566,6 +1581,7 @@ MonoBehaviour:
   spellSystem: {fileID: 205025360}
   interactor: {fileID: 370576933}
   mesh: {fileID: 186529282}
+  targetManager: {fileID: 205025361}
 --- !u!1 &219592343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,6 +2184,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262925229}
   m_CullTransparentMesh: 0
+--- !u!1 &272252534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272252535}
+  - component: {fileID: 272252536}
+  m_Layer: 0
+  m_Name: HealthTooltips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &272252535
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272252534}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1285250355}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &272252536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272252534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aecdde240dce6d489dc27eae3564335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthTooltipPrefab: {fileID: 9187810559606905210, guid: 22880e1452644be468a0e55c7af8bac7,
+    type: 3}
 --- !u!1 &294576550
 GameObject:
   m_ObjectHideFlags: 0
@@ -6072,10 +6138,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetManager: {fileID: 205025361}
-  _targetLock: {fileID: 563600126}
-  _targetTracker: {fileID: 1550781591}
+  targetTracker: {fileID: 1550781592}
   _crosshairAnimator: {fileID: 296477068}
   _crosshairContainer: {fileID: 296477066}
+  defaultTooltipOffset: {x: 0, y: 1, z: 0}
   _camera: {fileID: 2068457038}
 --- !u!1 &1119549343
 GameObject:
@@ -8415,7 +8481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 1730270553}
-  damage: {fileID: 1494164406}
+  healthDeltaLabel: {fileID: 129245233}
+  healthDelta: {fileID: 1494164406}
   casttime: {fileID: 1142504619}
   cooldown: {fileID: 654452176}
   description: {fileID: 1305495227}
@@ -8705,6 +8772,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 334378987}
+  - {fileID: 272252535}
   m_Father: {fileID: 755391421}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9322,7 +9390,7 @@ GameObject:
   - component: {fileID: 1494164407}
   - component: {fileID: 1494164406}
   m_Layer: 0
-  m_Name: Damage
+  m_Name: HealthDelta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

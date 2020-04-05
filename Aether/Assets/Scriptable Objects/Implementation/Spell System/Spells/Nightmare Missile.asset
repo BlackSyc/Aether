@@ -27,7 +27,7 @@ MonoBehaviour:
     On
     impact with some arcane entities, the target will be infused with The Nightmare,
     destroying the entity in the process.'
-  Damage: 10
+  HealthDelta: -100
   CastDuration: 0.5
   CoolDown: 0.5
   CastWhileMoving: 1
