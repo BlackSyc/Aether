@@ -40,12 +40,22 @@ public class Player : MonoBehaviour
 
     public SkinnedMeshRenderer Mesh => mesh;
 
+    [SerializeField]
+    private TargetManager targetManager;
+
+    public TargetManager TargetManager => targetManager;
+
     private void Awake()
     {
         if (Instance)
             throw new Exception("There is more than one Player object in the game!");
 
         Instance = this;
+    }
+
+    private void Start()
+    {
+        Hint.Get("Movement").Activate();
     }
 
     private void OnDestroy()

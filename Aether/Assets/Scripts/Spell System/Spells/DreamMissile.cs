@@ -9,7 +9,10 @@ public class DreamMissile : ArcaneMissile
         Collider[] colliders = Physics.OverlapSphere(transform.position, .5f, Spell.layerMask);
         if (colliders.Length > 0)
         {
-            // Add healing and spawning logic
+            if(colliders[0].GetComponent<Health>() != null)
+            {
+                colliders[0].GetComponent<Health>().ChangeHealth(Spell.HealthDelta);
+            }
 
             GetComponent<Animator>().SetTrigger("CastHit");
             return true;

@@ -19,6 +19,19 @@ public class SpellButton : MonoBehaviour
     [SerializeField]
     private Animator castBar;
 
+    [SerializeField]
+    private SpellTooltip spellTooltip;
+
+    public void ShowTooltip()
+    {
+        spellTooltip.Show(spellSlot.State.Spell);
+    }
+
+    public void HideTooltip()
+    {
+        spellTooltip.Hide();
+    }
+
     private void Start()
     {
         if (spellSlot == null)
@@ -63,13 +76,13 @@ public class SpellButton : MonoBehaviour
 
     private void CancelCast(SpellCast spellCast)
     {
-        castBar.Play("CastCancelled", -1);
+        castBar.SetTrigger("CastCancelled");
         UnSubscribeFromSpellCast(spellCast);
     }
 
     private void CompleteCast(SpellCast spellCast)
     {
-        castBar.Play("CastComplete", -1, 0f);
+        castBar.SetTrigger("CastComplete");
         StartCoroutine(CoolDown(spellCast.Spell.CoolDown + Time.time));
         UnSubscribeFromSpellCast(spellCast);
     }

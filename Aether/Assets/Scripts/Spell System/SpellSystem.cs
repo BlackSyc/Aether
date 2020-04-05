@@ -126,20 +126,6 @@ public class SpellSystem : MonoBehaviour
         }
     }
 
-    public void MovementInterrupt(CallbackContext context)
-    {
-        if (context.performed || context.started)
-        {
-            if (currentSpellCast != null)
-            {
-                if (!currentSpellCast.Spell.CastWhileMoving)
-                {
-                    currentSpellCast.Cancel();
-                }
-            }
-        }
-    }
-
     public void CancelCast(CallbackContext context)
     {
         if (!context.performed)

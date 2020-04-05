@@ -9,16 +9,16 @@ public class Crosshair : MonoBehaviour
     private TargetManager _targetManager;
 
     [SerializeField]
-    private RectTransform _targetLock;
-
-    [SerializeField]
-    private GameObject _targetTracker;
+    private RectTransform targetTracker;
 
     [SerializeField]
     private Animator _crosshairAnimator;
 
     [SerializeField]
     private GameObject _crosshairContainer;
+
+    [SerializeField]
+    private Vector3 defaultTooltipOffset;
 
     [SerializeField]
     private Camera _camera;
@@ -68,13 +68,32 @@ public class Crosshair : MonoBehaviour
 
         if (_targetManager.HasLockedTarget)
         {
-            _targetTracker.SetActive(true);
-            _targetTracker.GetComponent<RectTransform>().position = _camera.WorldToScreenPoint(_targetManager.Target.Position);
+            targetTracker.gameObject.SetActive(true);
+            ShowTargetTrackerOn(_targetManager.Target);
         }
         else
         {
-            _targetTracker.SetActive(false);
+            targetTracker.gameObject.SetActive(false);
         }
+    }
+
+    private void ShowTargetTrackerOn(Target target)
+    {
+        if (!target.HasTargetTransform)
+        {
+            targetTracker.position = _camera.WorldToScreenPoint(target.Position + defaultTooltipOffset);
+        }
+
+        else if (target.TargetTransform.GetComponent<TooltipOffset>() != null)
+        {
+            targetTracker.position = _camera.WorldToScreenPoint(target.Position + target.TargetTransform.GetComponent<TooltipOffset>().Offset);
+        }
+        else
+        {
+            targetTracker.position = _camera.WorldToScreenPoint(target.Position + defaultTooltipOffset);
+        }
+
+        targetTracker.gameObject.SetActive(targetTracker.GetComponent<RectTransform>().position.z > 0);
     }
 
     private void OnDestroy()

@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 movementInput;
     private float upwardsMovement = 0;
 
+    public bool IsMoving => movementInput.magnitude > 0;
+
     private CharacterController characterController;
 
     public void Awake()

@@ -40,7 +40,7 @@ public class Keystone : ScriptableObject
 
     public AnimationClip TravelAnimation;
 
-    public SceneAsset SceneAsset;
+    public int SceneBuildIndex;
 
     private KeystoneState state = new KeystoneState();
 

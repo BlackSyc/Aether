@@ -67,6 +67,11 @@ public class SpellCast
 
         while(castTime < Spell.CastDuration)
         {
+            if(!Spell.CastWhileMoving && Player.Instance.PlayerMovement.IsMoving)
+            {
+                Cancel();
+            }
+
             castTime = Time.time - beginCast;
             if (castCancelled)
             {

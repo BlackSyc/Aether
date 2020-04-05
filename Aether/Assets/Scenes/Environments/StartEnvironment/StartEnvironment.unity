@@ -5444,7 +5444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TravelAnimation: {fileID: 0}
-  SceneAsset: {fileID: 0}
+  SceneBuildIndex: 0
 --- !u!95 &1237410383
 Animator:
   serializedVersion: 3
@@ -5805,7 +5805,7 @@ GameObject:
   - component: {fileID: 1330574800}
   - component: {fileID: 1330574802}
   - component: {fileID: 1330574801}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7285,7 +7285,7 @@ GameObject:
   - component: {fileID: 1673347810}
   - component: {fileID: 1673347812}
   - component: {fileID: 1673347811}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8192,7 +8192,7 @@ GameObject:
   - component: {fileID: 1857963840}
   - component: {fileID: 1857963842}
   - component: {fileID: 1857963841}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9243,7 +9243,7 @@ GameObject:
   - component: {fileID: 1983836791}
   - component: {fileID: 1983836793}
   - component: {fileID: 1983836792}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

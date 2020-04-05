@@ -15,9 +15,22 @@ MonoBehaviour:
   Name: Dream Missile
   Aspect: 1
   PreferredSpellSlot: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
+  Description: 'Shoot a Dream Missile towards a target.
+
+
+    On impact with a friendly
+    target, the target will recieve a minor heal.
+
+
+    Secondary effect:
+
+    On
+    impact with some arcane entities, the target will be infused with The Dream,
+    causing the target to grow.'
+  HealthDelta: 100
   CastDuration: 2
   CoolDown: 2
-  CastWhileMoving: 1
+  CastWhileMoving: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 1536
