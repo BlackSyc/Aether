@@ -44,7 +44,7 @@ public class Cloak : ScriptableObject
 
     public void Equip(Transform parent)
     {
-        State.CloakObject = Instantiate(cloakPrefab, parent);
+        State.CloakObject = GameObject.Instantiate(cloakPrefab, parent);
         State.CloakObject.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[] { parent.GetComponent<CapsuleCollider>() };
 
         Spells.ForEach(x =>

@@ -117,7 +117,7 @@ public class SpellSystem : MonoBehaviour
         {
             if (currentSpellCast.Spell == spellSlot1.State.Spell)
             {
-                UpdateTargetLock();
+                UpdateTargetLock(currentSpellCast.Spell.layerMask);
                 return;
             }
             currentSpellCast.Cancel();
@@ -139,24 +139,16 @@ public class SpellSystem : MonoBehaviour
         this.currentSpellCast = null;
     }
 
-    private void UpdateTargetLock()
+    private void UpdateTargetLock(LayerMask layerMask)
     {
-        if (!GetComponent<TargetManager>().HasLockedTarget && !GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
-            return;
+        TargetManager targetManager = GetComponent<TargetManager>();
 
-        if (GetComponent<TargetManager>().HasLockedTarget && !GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
-            return;
+        if (targetManager.GetCurrentTarget().HasTargetTransform && layerMask.Contains(targetManager.GetCurrentTarget().TargetTransform.gameObject))
+        {
+            if (targetManager.HasLockedTarget)
+                targetManager.UnlockTarget();
 
-        if (!GetComponent<TargetManager>().HasLockedTarget && GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
-        {
-            GetComponent<TargetManager>().LockTarget();
-            return;
-        }
-        if (GetComponent<TargetManager>().HasLockedTarget && GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
-        {
-            GetComponent<TargetManager>().UnlockTarget();
-            GetComponent<TargetManager>().LockTarget();
-            return;
+            targetManager.LockTarget();
         }
     }
 
