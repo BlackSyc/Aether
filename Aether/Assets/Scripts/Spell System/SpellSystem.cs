@@ -125,7 +125,7 @@ public class SpellSystem : MonoBehaviour
             currentSpellCast.Cancel();
         }
 
-        if (!spellLibraries[index].Cast(out currentSpellCast, castParent, GetComponent<TargetManager>()))
+        if (!spellLibraries[index].Cast(out currentSpellCast, castParent, gameObject, GetComponent<TargetManager>()))
             return;
 
         currentSpellCast.CastCancelled += ClearCurrentCast;

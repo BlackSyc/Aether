@@ -30,18 +30,20 @@ public class AggroTable : MonoBehaviour
     public void AddAggroTrigger(AggroTrigger aggroTrigger)
     {
         if (!contentMask.Contains(aggroTrigger.gameObject))
-        {
-            Debug.LogWarning("Layer is incorrect!");
             return;
-        }
 
-        RemoveAggroTrigger(aggroTrigger);
+        if (Contains(aggroTrigger))
+            return;
+
         aggroTriggers.Add((aggroTrigger.Bias, aggroTrigger));
+        aggroTrigger.GlobalAggroRaised += x => IncreaseAggro(aggroTrigger, x);
+
         Debug.Log($"{aggroTrigger.gameObject.name} added to {gameObject.name}'s aggro table with a bias of {aggroTrigger.Bias}");
     }
 
     public void RemoveAggroTrigger(AggroTrigger aggroTrigger)
     {
+        aggroTrigger.GlobalAggroRaised -= x => IncreaseAggro(aggroTrigger, x);
         aggroTriggers.RemoveAll(x => x.trigger == aggroTrigger);
     }
 

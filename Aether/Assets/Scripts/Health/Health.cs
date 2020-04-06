@@ -53,6 +53,16 @@ public class Health : MonoBehaviour
         Events.HealthActivated(this);
     }
 
+    public void Damage(float damage)
+    {
+        ChangeHealth(-damage);
+    }
+
+    public void Heal(float heal)
+    {
+        ChangeHealth(heal);
+    }
+
 
     public void ChangeHealth(float delta)
     {

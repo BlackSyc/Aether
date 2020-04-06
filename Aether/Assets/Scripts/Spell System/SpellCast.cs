@@ -30,7 +30,9 @@ public class SpellCast
 
     public Transform CastParent { get; private set; }
 
-    private GameObject spellObject;
+    public GameObject Caster { get; private set; }
+
+    private SpellObject spellObject;
 
     public Spell Spell { get; private set; }
 
@@ -44,10 +46,11 @@ public class SpellCast
 
 
 
-    public SpellCast(Spell spell, Transform castParent, TargetManager targetManager)
+    public SpellCast(Spell spell, Transform castParent, GameObject caster, TargetManager targetManager)
     {
         Spell = spell;
         CastParent = castParent;
+        Caster = caster;
         this.targetManager = targetManager;
     }
 
@@ -55,10 +58,12 @@ public class SpellCast
     {
         beginCast = Time.time;
         castTime = Time.time - beginCast;
-        spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, CastParent);
+        spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, CastParent).GetComponent<SpellObject>();
 
-        spellObject.GetComponent<SpellObject>().Spell = Spell;
-        spellObject.GetComponent<SpellObject>().CastStarted();
+        spellObject.Spell = Spell;
+        spellObject.Caster = Caster;
+
+        spellObject.CastStarted();
         Events.CastSpell(this);
         CastStarted?.Invoke(this);
 
@@ -83,21 +88,21 @@ public class SpellCast
             yield return null;
         }
 
-        spellObject.GetComponent<SpellObject>().CastFired(targetManager.Target);
+        spellObject.CastFired(targetManager.Target);
         targetManager.UnlockTarget();
         CastComplete?.Invoke(this);
     }
 
     public void Cancel()
     {
-        spellObject.GetComponent<SpellObject>().CastCanceled();
+        spellObject.CastCanceled();
         CastCancelled?.Invoke(this);
         castCancelled = true;
     }
 
     public void Interrupt()
     {
-        spellObject.GetComponent<SpellObject>().CastInterrupted();
+        spellObject.CastInterrupted();
         CastInterrupted?.Invoke(this);
         Cancel();
     }

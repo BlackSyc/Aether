@@ -28,7 +28,7 @@ public class DreamMissile : ArcaneMissile
         Health targetHealth = collider.GetComponent<Health>();
         if (targetHealth != null)
         {
-            targetHealth.ChangeHealth(Spell.HealthDelta);
+            targetHealth.Heal(Spell.Heal);
         }
 
         GetComponent<Animator>().SetTrigger("CastHit");

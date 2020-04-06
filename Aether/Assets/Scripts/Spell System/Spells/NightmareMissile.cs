@@ -27,7 +27,7 @@ public class NightmareMissile : ArcaneMissile
         Health targetHealth = collider.GetComponent<Health>();
         if (targetHealth != null)
         {
-            targetHealth.ChangeHealth(Spell.HealthDelta);
+            targetHealth.Damage(Spell.Damage);
         }
 
 
