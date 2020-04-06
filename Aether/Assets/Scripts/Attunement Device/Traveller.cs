@@ -48,7 +48,6 @@ public class Traveller : MonoBehaviour
 
     private IEnumerator TravelDefault(bool reverse)
     {
-        Debug.Log("Start travel (scene was already loaded)");
         Player.Instance.gameObject.transform.parent = gameObject.transform;
         Player.Instance.gameObject.transform.localPosition = Vector3.zero;
         Player.Instance.PlayerMovement.enabled = false;
@@ -59,12 +58,10 @@ public class Traveller : MonoBehaviour
         Player.Instance.gameObject.transform.SetParent(null, true);
         SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneController.Instance.BaseScene);
         Player.Instance.PlayerMovement.enabled = true;
-        Debug.Log("End travel");
     }
 
     private IEnumerator TravelUsingLoadingProgress()
     {
-        Debug.Log("Start travel and load scene");
         Player.Instance.gameObject.transform.parent = gameObject.transform;
         Player.Instance.gameObject.transform.localPosition = Vector3.zero;
         Player.Instance.PlayerMovement.enabled = false;
@@ -89,6 +86,5 @@ public class Traveller : MonoBehaviour
         Player.Instance.gameObject.transform.SetParent(null, true);
         SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneController.Instance.BaseScene);
         Player.Instance.PlayerMovement.enabled = true;
-        Debug.Log("End travel");
     }
 }

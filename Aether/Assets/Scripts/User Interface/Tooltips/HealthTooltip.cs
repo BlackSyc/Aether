@@ -29,6 +29,14 @@ public class HealthTooltip : MonoBehaviour
     {
         this.health = health;
         health.OnHealthChanged += HealthChanged;
+        health.OnHealthObjectDestroyed += Destroy;
+
+    }
+
+    private void Destroy()
+    {
+        if(gameObject)
+            Destroy(gameObject);
     }
 
     private void HealthChanged(float delta)
@@ -52,8 +60,21 @@ public class HealthTooltip : MonoBehaviour
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
+    private void OnDestroy()
+    {
+        if (health != null)
+        {
+            health.OnHealthChanged -= HealthChanged;
+            health.OnHealthObjectDestroyed -= Destroy;
+        }
+    }
+
     private void Update()
     {
+        if(health == null) {
+            Destroy(gameObject);
+        }
+
         UpdateHealthBar();
 
         UpdateTooltipPosition();

@@ -18,7 +18,6 @@ public class HealthTooltipManager : MonoBehaviour
         if (health.CompareTag("Player"))
             return;
 
-        Debug.Log("Creating HealthTooltip!");
         GameObject newHealthTooltipObject = GameObject.Instantiate(healthTooltipPrefab, transform);
         HealthTooltip newHealthTooltip = newHealthTooltipObject.GetComponent<HealthTooltip>();
         newHealthTooltip.SetHealth(health);

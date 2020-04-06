@@ -6,6 +6,8 @@ public abstract class SpellObject : MonoBehaviour
 {
     public Spell Spell;
 
+    public bool CastOnSelf = false;
+
     public abstract void CastStarted();
 
     public abstract void CastInterrupted();

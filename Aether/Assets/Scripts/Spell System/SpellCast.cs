@@ -62,7 +62,7 @@ public class SpellCast
         Events.CastSpell(this);
         CastStarted?.Invoke(this);
 
-        if (targetManager.GetCurrentTarget().HasTargetTransform)
+        if (targetManager.GetCurrentTarget().HasTargetTransform && Spell.layerMask.Contains(targetManager.GetCurrentTarget().TargetTransform.gameObject))
             targetManager.LockTarget();
 
         while(castTime < Spell.CastDuration)
@@ -101,8 +101,4 @@ public class SpellCast
         CastInterrupted?.Invoke(this);
         Cancel();
     }
-
-
-
-
 }
