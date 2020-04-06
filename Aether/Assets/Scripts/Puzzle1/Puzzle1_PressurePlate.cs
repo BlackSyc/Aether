@@ -1,24 +1,32 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Puzzle1_PressurePlate : MonoBehaviour
 {
+    public struct Events
+    {
+        public static event Action OnTriggered;
+
+        public static void Triggered()
+        {
+            OnTriggered?.Invoke();
+        }
+    }
+
     public bool IsTriggered { get; set; }
 
-    [SerializeField]
-    private Puzzle1_Manager puzzleManager;
-
-
+    public Material GlowingMaterial;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Puzzle1_Trigger") && !IsTriggered)
+        if (other.CompareTag("Player") && !IsTriggered)
         {
             IsTriggered = true;
-            GetComponent<MeshRenderer>().material = puzzleManager.GlowingMaterial;
+            transform.parent.GetComponent<MeshRenderer>().material = GlowingMaterial;
 
-            puzzleManager.TryCompleteStage1();
+            Events.Triggered();
         }
     }
 }

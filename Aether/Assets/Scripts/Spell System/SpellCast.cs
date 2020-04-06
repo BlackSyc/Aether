@@ -6,6 +6,16 @@ using UnityEngine.Events;
 
 public class SpellCast
 {
+    public struct Events
+    {
+        public static event Action<SpellCast> OnCastSpell;
+
+        public static void CastSpell(SpellCast spellCast)
+        {
+            OnCastSpell?.Invoke(spellCast);
+        }
+    }
+
     public event Action<SpellCast> CastStarted;
     public event Action<float> CastProgress;
     public event Action<SpellCast> CastCancelled;
@@ -49,14 +59,19 @@ public class SpellCast
 
         spellObject.GetComponent<SpellObject>().Spell = Spell;
         spellObject.GetComponent<SpellObject>().CastStarted();
-        AetherEvents.GameEvents.SpellSystemEvents.CastSpell(this);
+        Events.CastSpell(this);
         CastStarted?.Invoke(this);
 
-        if (targetManager.GetCurrentTarget().HasTargetTransform)
+        if (targetManager.GetCurrentTarget().HasTargetTransform && Spell.layerMask.Contains(targetManager.GetCurrentTarget().TargetTransform.gameObject))
             targetManager.LockTarget();
 
         while(castTime < Spell.CastDuration)
         {
+            if(!Spell.CastWhileMoving && Player.Instance.PlayerMovement.IsMoving)
+            {
+                Cancel();
+            }
+
             castTime = Time.time - beginCast;
             if (castCancelled)
             {
@@ -86,8 +101,4 @@ public class SpellCast
         CastInterrupted?.Invoke(this);
         Cancel();
     }
-
-
-
-
 }

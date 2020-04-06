@@ -49,15 +49,37 @@ public class ArcaneMissile : SpellObject
 
     protected virtual bool Hit()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, .5f, Spell.layerMask);
-        if (colliders.Length > 0)
+        Collider[] colliders = Physics.OverlapSphere(transform.position, .5f, Spell.layerMask | Layers.ObstructionLayer);
+        foreach(Collider collider in colliders)
         {
-            colliders[0].GetComponent<ArcaneMissileTarget>()?.Hit();
-
-            GetComponent<Animator>().SetTrigger("CastHit");
-            return true;
+            if(Target.TargetTransform == collider.transform)
+            {
+                return TargetHit(collider);
+            }
+            else if (Layers.ObstructionLayer.Contains(collider.gameObject))
+            {
+                return ObstructionHit(collider);
+            }
         }
         return false;
+    }
+
+    private bool TargetHit(Collider collider)
+    {
+        Puzzle1_MissileTarget missileTarget = collider.GetComponent<Puzzle1_MissileTarget>();
+        if (missileTarget != null)
+        {
+            missileTarget.Hit();
+        }
+
+        GetComponent<Animator>().SetTrigger("CastHit");
+        return true;
+    }
+
+    private bool ObstructionHit(Collider collider)
+    {
+        GetComponent<Animator>().SetTrigger("CastHit");
+        return true;
     }
 
     private void FixedUpdate()

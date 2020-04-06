@@ -1,95 +1,35 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AetherEvents : MonoBehaviour
+public static partial class AetherEvents
 {
 
     public struct GameEvents
     {
-        public struct InteractionEvents 
+        public struct HubEvents 
         {
-            public static event Action<Interactable> OnProposeInteraction;
-            public static event Action OnCancelProposeInteraction;
-            public static event Action OnInteract;
+            public static event Action OnTravelToAccessPoint;
 
-            public static void ProposeInteraction(Interactable interactable)
+            public static void TravelToAccessPoint()
             {
-                OnProposeInteraction?.Invoke(interactable);
-            }
-
-            public static void CancelProposeInteraction()
-            {
-                OnCancelProposeInteraction?.Invoke();
-            }
-
-            public static void Interact()
-            {
-                OnInteract?.Invoke();
+                OnTravelToAccessPoint?.Invoke();
             }
         }
-    
-        public struct DialogEvents 
+        
+        public struct InputSystemEvents
         {
-            public static event Action<Dialog> OnStartDialog;
+            public static event Action OnEnablePopupActionMap;
 
-            public static void StartDialog(Dialog dialog)
+            public static event Action OnEnablePlayerActionMap;
+            
+            public static void EnablePopupActionMap()
             {
-                OnStartDialog?.Invoke(dialog);
-            }
-        }
-
-        public struct SpellSystemEvents 
-        {
-            public static event Action<SpellSlot, Spell> OnSelectSpell;
-            public static event Action<SpellCast> OnCastSpell;
-
-            public static void SelectSpell(SpellSlot spellSlot, Spell spell)
-            {
-                OnSelectSpell?.Invoke(spellSlot, spell);
-            }
-            public static void CastSpell(SpellCast spellCast)
-            {
-                OnCastSpell?.Invoke(spellCast);
-            }
-        }
-
-        public struct CloakEvents 
-        {
-            public static event Action<CloakInfo> OnShowCloakInfo;
-            public static event Action OnHideCloakInfo;
-            public static event Action<GameObject> OnEquipCloak;
-            public static event Action OnUnequipCloak;
-
-            public static void ShowCloakInfo(CloakInfo cloakInfo)
-            {
-                OnShowCloakInfo?.Invoke(cloakInfo);
+                OnEnablePopupActionMap?.Invoke();
             }
 
-            public static void HideCloakInfo()
+            public static void EnablePlayerActionMap()
             {
-                OnHideCloakInfo?.Invoke();
-            }
-
-            public static void EquipCloak(GameObject cloakPrefab)
-            {
-                OnEquipCloak?.Invoke(cloakPrefab);
-            }
-
-            public static void UnequipCloak()
-            {
-                OnUnequipCloak?.Invoke();
-            }
-        }
-    
-        public struct Puzzle1Events 
-        {
-            public static event Action OnShowCloaks;
-
-            public static void ShowCloaks()
-            {
-                OnShowCloaks?.Invoke();
+                OnEnablePlayerActionMap?.Invoke();
             }
         }
     }
@@ -110,6 +50,49 @@ public class AetherEvents : MonoBehaviour
             {
                 OnUnhideAll?.Invoke();
             }
+        }
+   
+        public struct Windows
+        {
+            public static event Action OnClosePopups;
+
+            public static void ClosePopups()
+            {
+                OnClosePopups?.Invoke();
+            }
+        }
+
+        public struct Crosshair
+        {
+            public static event Action OnHideCrosshair;
+            public static event Action OnUnhideCrosshair;
+
+            public static void HideCrosshair()
+            {
+                OnHideCrosshair?.Invoke();
+            }
+
+            public static void UnhideCrosshair()
+            {
+                OnUnhideCrosshair?.Invoke();
+            }
+        }
+    }
+
+    public struct CameraEvents
+    {
+        public static event Action<Camera> OnEnableCutsceneCamera;
+
+        public static event Action OnEnablePlayercamera;
+
+        public static void EnableCutsceneCamera(Camera camera)
+        {
+            OnEnableCutsceneCamera?.Invoke(camera);
+        }
+
+        public static void EnablePlayerCamera()
+        {
+            OnEnablePlayercamera?.Invoke();
         }
     }
 }

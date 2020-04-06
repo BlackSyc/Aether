@@ -8,6 +8,16 @@ using System;
 [CreateAssetMenu(menuName = "Scriptable Objects/Dialog/Dialog")]
 public class Dialog : ScriptableObject
 {
+    public readonly struct Events 
+    {
+        public static event Action<Dialog> OnStartDialog;
+
+        public static void StartDialog(Dialog dialog)
+        {
+            OnStartDialog?.Invoke(dialog);
+        }
+    }
+
     public List<DialogLine> dialogLines;
 
     public event Action OnComplete;
@@ -23,5 +33,10 @@ public class Dialog : ScriptableObject
             return;
 
         OnComplete();
+    }
+
+    public void Start()
+    {
+        Events.StartDialog(this);
     }
 }

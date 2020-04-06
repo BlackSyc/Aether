@@ -1,47 +1,65 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AspectOfCreation : MonoBehaviour
 {
-    [SerializeField]
-    private Puzzle1_Manager puzzleManager;
+    public struct Events
+    {
+        public static event Action OnDialogComplete;
+
+        public static void CompleteDialog()
+        {
+            OnDialogComplete?.Invoke();
+        }
+    }
+
 
     [SerializeField]
-    private Dialog dialog;
-
-    [SerializeField]
-    private GameObject crosshair;
+    private Dialog dialog = null;
 
 
     [SerializeField]
-    private Spell reward;
-
-    private Interactor interactor;
+    private Spell reward = null;
 
     private void Start()
     {
+        Puzzle1_Manager.Events.OnStage1Completed += ActivateAspect;
         dialog.GetDialogLine("Never mind").OnComplete += GrantArcaneMissile;
-        dialog.OnComplete += puzzleManager.StartStage2;
+        dialog.OnComplete += AspectOfCreationDialogComplete;
     }
 
     public void Interact(Interactor interactor, Interactable interactable)
     {
-        this.interactor = interactor;
         interactable.IsActive = false;
+        dialog.Start();
+    }
 
-        AetherEvents.GameEvents.DialogEvents.StartDialog(dialog);
+    private void ActivateAspect()
+    {
+        GetComponent<Interactable>().IsActive = true;
+
+        // To do: Spawn Aspect model
+        // Instantiate(this.aspectPrefab, this.transform);
+    }
+
+    private void AspectOfCreationDialogComplete()
+    {
+        Events.CompleteDialog();
+        Destroy(this.gameObject);
     }
 
     private void GrantArcaneMissile()
     {
-        interactor.transform.parent.GetComponent<SpellSystem>().SpellSlot1.SelectSpell(reward);
-        crosshair.SetActive(true);
+        Hint.Get("Cursor").Activate();
+        Player.Instance.SpellSystem.AddSpell(reward);
     }
 
     private void OnDestroy()
     {
+        Puzzle1_Manager.Events.OnStage1Completed -= ActivateAspect;
         dialog.GetDialogLine("Never mind").OnComplete -= GrantArcaneMissile;
-        dialog.OnComplete -= puzzleManager.StartStage2;
+        dialog.OnComplete -= AspectOfCreationDialogComplete;
     }
 }

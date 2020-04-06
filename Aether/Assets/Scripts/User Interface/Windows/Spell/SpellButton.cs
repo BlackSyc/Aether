@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -18,6 +19,19 @@ public class SpellButton : MonoBehaviour
     [SerializeField]
     private Animator castBar;
 
+    [SerializeField]
+    private SpellTooltip spellTooltip;
+
+    public void ShowTooltip()
+    {
+        spellTooltip.Show(spellSlot.State.Spell);
+    }
+
+    public void HideTooltip()
+    {
+        spellTooltip.Hide();
+    }
+
     private void Start()
     {
         if (spellSlot == null)
@@ -29,13 +43,19 @@ public class SpellButton : MonoBehaviour
             text.text = spellSlot.State.Spell.Name;
         }
 
-        AetherEvents.GameEvents.SpellSystemEvents.OnSelectSpell += SelectSpell;
-        AetherEvents.GameEvents.SpellSystemEvents.OnCastSpell += StartSpellCast;
+        spellSlot.OnSpellChanged += ChangeSpell;
+        SpellCast.Events.OnCastSpell += StartSpellCast;
     }
 
-    private void SelectSpell(SpellSlot spellSlot, Spell spell)
+    private void ChangeSpell(Spell spell)
     {
-        if (spellSlot == this.spellSlot)
+        if(spell == null)
+        {
+            mainPanel.SetActive(false);
+            return;
+        }
+
+        if (spell.PreferredSpellSlot == this.spellSlot)
         {
             mainPanel.SetActive(true);
             text.text = spell.Name;
@@ -56,13 +76,13 @@ public class SpellButton : MonoBehaviour
 
     private void CancelCast(SpellCast spellCast)
     {
-        castBar.Play("CastCancelled", -1);
+        castBar.SetTrigger("CastCancelled");
         UnSubscribeFromSpellCast(spellCast);
     }
 
     private void CompleteCast(SpellCast spellCast)
     {
-        castBar.Play("CastComplete", -1, 0f);
+        castBar.SetTrigger("CastComplete");
         StartCoroutine(CoolDown(spellCast.Spell.CoolDown + Time.time));
         UnSubscribeFromSpellCast(spellCast);
     }
@@ -91,8 +111,10 @@ public class SpellButton : MonoBehaviour
     }
 
     private void OnDestroy()
-    {
-        AetherEvents.GameEvents.SpellSystemEvents.OnSelectSpell -= SelectSpell;
-        AetherEvents.GameEvents.SpellSystemEvents.OnCastSpell -= StartSpellCast;
+    { 
+        if(spellSlot != null)
+            spellSlot.OnSpellChanged -= ChangeSpell;
+
+        SpellCast.Events.OnCastSpell -= StartSpellCast;
     }
 }

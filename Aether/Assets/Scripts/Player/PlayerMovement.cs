@@ -5,13 +5,17 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float movementSpeed = 5;
+
     [SerializeField]
     private float rotationSpeed = 10;
+
     [SerializeField]
     private float jumpPower = 5;
 
     private Vector3 movementInput;
     private float upwardsMovement = 0;
+
+    public bool IsMoving => movementInput.magnitude > 0;
 
     private CharacterController characterController;
 

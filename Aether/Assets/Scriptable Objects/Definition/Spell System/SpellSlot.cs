@@ -1,17 +1,20 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Spell System/SpellSlot")]
 [Serializable]
 public class SpellSlot : ScriptableObject
 {
+    public event Action<Spell> OnSpellChanged;
+
+    public void SpellChanged(Spell newSpell)
+    {
+        OnSpellChanged?.Invoke(newSpell);
+    }
+
     public string Name;
 
     public SpellSlotState State = new SpellSlotState();
-
     public struct SpellSlotState
     {
         public Spell Spell;
@@ -22,10 +25,22 @@ public class SpellSlot : ScriptableObject
     public void SelectSpell(Spell spell)
     {
         if (spell == null)
+        {
+            RemoveSpell();
+            return;
+        }
+
+        if (spell.PreferredSpellSlot != this)
             return;
 
         State.Spell = spell;
-        AetherEvents.GameEvents.SpellSystemEvents.SelectSpell(this, spell);
+        SpellChanged(spell);
+    }
+
+    public void RemoveSpell()
+    {
+        State.Spell = null;
+        SpellChanged(null);
     }
 
     public bool HasActiveSpell { get
@@ -35,23 +50,17 @@ public class SpellSlot : ScriptableObject
 
     public SpellCast Cast(Transform parent, TargetManager targetManager)
     {
-        if (State.Spell != null)
-        {
-            if (Time.time < State.CoolDownUntil)
-            {
-                Debug.Log("Spell is still on cooldown!");
-                return null;
-            }
+        if (State.Spell == null)
+            return null;
 
-            SpellCast spellCast = new SpellCast(State.Spell, parent, targetManager);
-            spellCast.CastComplete += SetCoolDown;
-            return spellCast;
-        }
-        else
+        if (Time.time < State.CoolDownUntil)
         {
-            Debug.LogWarning("No spell bound to this spell slot!");
             return null;
         }
+
+        SpellCast spellCast = new SpellCast(State.Spell, parent, targetManager);
+        spellCast.CastComplete += SetCoolDown;
+        return spellCast;
     }
 
     private void SetCoolDown(SpellCast spellCast)

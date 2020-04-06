@@ -1,20 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Puzzle1_Manager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject puzzle1_Trigger;
-
-    [SerializeField]
-    private Material glowingMaterial;
-
-    public Material GlowingMaterial
+    public struct Events
     {
-        get
+        public static event Action OnStage1Completed;
+        public static event Action OnStage2Completed;
+
+        public static void Stage2Completed()
         {
-            return glowingMaterial;
+            OnStage2Completed?.Invoke();
+        }
+
+        public static void Stage1Completed()
+        {
+            OnStage1Completed?.Invoke();
         }
     }
 
@@ -22,64 +25,30 @@ public class Puzzle1_Manager : MonoBehaviour
     private List<Puzzle1_PressurePlate> pressurePlates;
 
     [SerializeField]
-    private List<ArcaneMissileTarget> missileTargets;
+    private List<Puzzle1_MissileTarget> missileTargets;
 
-    [SerializeField]
-    private GameObject aspectOfCreation;
 
-    private Material defaultMaterial;
-
-    public bool Stage1Complete { get; private set; }
-
-    public bool Stage2Complete { get; private set; }
-
-    public void Start()
+    private void Start()
     {
-        defaultMaterial = GetComponent<MeshRenderer>().material;
+        Puzzle1_PressurePlate.Events.OnTriggered += CheckForStage1Completion;
+        Puzzle1_MissileTarget.Events.OnMissileTargetHit += CheckForStage2Completion;
     }
 
-    public bool TryCompleteStage1()
+    private void CheckForStage1Completion()
     {
         if (pressurePlates.TrueForAll(x => x.IsTriggered))
-        {
-            CompleteStage1();
-            return true;
-        }
-        return false;
+             Events.Stage1Completed();
     }
 
-    public bool TryCompleteStage2()
+    private void CheckForStage2Completion()
     {
         if (missileTargets.TrueForAll(x => x.IsHit))
-        {
-            CompleteStage2();
-            return true;
-        }
-        return false;
-
+            Events.Stage2Completed();
     }
 
-    private void CompleteStage2()
+    private void OnDestroy()
     {
-        Debug.Log("Completed Stage 2!");
-        Stage2Complete = true;
-        AetherEvents.GameEvents.Puzzle1Events.ShowCloaks();
-        missileTargets.ForEach(x => x.MoveToCloakPosition());
-    }
-
-    private void CompleteStage1()
-    {
-        GetComponent<MeshRenderer>().material = GlowingMaterial;
-        missileTargets.ForEach(x => x.MoveToCenter());
-        Destroy(puzzle1_Trigger);
-        aspectOfCreation.SetActive(true);
-        Stage1Complete = true;
-    }
-
-    public void StartStage2()
-    {
-        Destroy(aspectOfCreation);
-        GetComponent<MeshRenderer>().material = defaultMaterial;
-        missileTargets.ForEach(x => x.MoveToOriginalPosition());
+        Puzzle1_PressurePlate.Events.OnTriggered -= CheckForStage1Completion;
+        Puzzle1_MissileTarget.Events.OnMissileTargetHit -= CheckForStage2Completion;
     }
 }

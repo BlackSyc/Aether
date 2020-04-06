@@ -1,48 +1,106 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Crosshair : MonoBehaviour
 {
     [SerializeField]
-    private TargetManager targetManager;
+    private TargetManager _targetManager;
 
     [SerializeField]
-    private RectTransform targetLock;
+    private RectTransform targetTracker;
 
     [SerializeField]
-    private GameObject targetTracker;
+    private Animator _crosshairAnimator;
 
     [SerializeField]
-    private Camera camera;
+    private GameObject _crosshairContainer;
+
+    [SerializeField]
+    private Vector3 defaultTooltipOffset;
+
+    [SerializeField]
+    private Camera _camera;
+
+    private void Start()
+    {
+        _crosshairAnimator.keepAnimatorControllerStateOnDisable = true;
+        SpellSystem.Events.OnSpellAdded += UpdateCrosshairState;
+        SpellSystem.Events.OnSpellRemoved += UpdateCrosshairState;
+        AetherEvents.UIEvents.Crosshair.OnHideCrosshair += HideCrosshair;
+        AetherEvents.UIEvents.Crosshair.OnUnhideCrosshair += UnhideCrosshair;
+    }
+
+    private void UnhideCrosshair()
+    {
+        _crosshairContainer.SetActive(true);
+    }
+
+    private void HideCrosshair()
+    {
+        _crosshairContainer.SetActive(false);
+    }
+
+    private void UpdateCrosshairState(Spell spell)
+    {
+        _crosshairContainer.SetActive(Player.Instance.SpellSystem.HasSpells);
+    }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        if(targetManager.GetCurrentTarget().HasTargetTransform)
+        if(_targetManager.GetCurrentTarget().HasTargetTransform)
         {
-            if (targetManager.HasLockedTarget && targetManager.GetCurrentTarget().TargetTransform == targetManager.Target.TargetTransform)
+            if (_targetManager.HasLockedTarget && _targetManager.GetCurrentTarget().TargetTransform == _targetManager.Target.TargetTransform)
             {
-                GetComponent<Animator>().SetBool("HasObjectTarget", false);
+                _crosshairAnimator.SetBool("HasObjectTarget", false);
             }
             else
             {
-                GetComponent<Animator>().SetBool("HasObjectTarget", true);
+                _crosshairAnimator.SetBool("HasObjectTarget", true);
             }
         }
         else
         {
-            GetComponent<Animator>().SetBool("HasObjectTarget", false);
+            _crosshairAnimator.SetBool("HasObjectTarget", false);
         }
 
-        if (targetManager.HasLockedTarget)
+        if (_targetManager.HasLockedTarget)
         {
-            targetTracker.SetActive(true);
-            targetTracker.GetComponent<RectTransform>().position = camera.WorldToScreenPoint(targetManager.Target.Position);
+            targetTracker.gameObject.SetActive(true);
+            ShowTargetTrackerOn(_targetManager.Target);
         }
         else
         {
-            targetTracker.SetActive(false);
+            targetTracker.gameObject.SetActive(false);
         }
+    }
+
+    private void ShowTargetTrackerOn(Target target)
+    {
+        if (!target.HasTargetTransform)
+        {
+            targetTracker.position = _camera.WorldToScreenPoint(target.Position + defaultTooltipOffset);
+        }
+
+        else if (target.TargetTransform.GetComponent<TooltipOffset>() != null)
+        {
+            targetTracker.position = _camera.WorldToScreenPoint(target.Position + target.TargetTransform.GetComponent<TooltipOffset>().Offset);
+        }
+        else
+        {
+            targetTracker.position = _camera.WorldToScreenPoint(target.Position + defaultTooltipOffset);
+        }
+
+        targetTracker.gameObject.SetActive(targetTracker.GetComponent<RectTransform>().position.z > 0);
+    }
+
+    private void OnDestroy()
+    {
+        SpellSystem.Events.OnSpellAdded -= UpdateCrosshairState;
+        SpellSystem.Events.OnSpellRemoved -= UpdateCrosshairState;
+        AetherEvents.UIEvents.Crosshair.OnHideCrosshair -= HideCrosshair;
+        AetherEvents.UIEvents.Crosshair.OnUnhideCrosshair -= UnhideCrosshair;
     }
 }
