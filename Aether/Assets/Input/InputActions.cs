@@ -75,6 +75,54 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""CastSpell2"",
+                    ""type"": ""Button"",
+                    ""id"": ""861e5585-0caf-4339-883e-b1e8060dac2d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CastSpell3"",
+                    ""type"": ""Button"",
+                    ""id"": ""97b0a94d-2299-4225-b365-3f48168ff487"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CastSpell4"",
+                    ""type"": ""Button"",
+                    ""id"": ""6ea75935-eaf3-4b69-bac5-6f97d9a54197"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CastSpell5"",
+                    ""type"": ""Button"",
+                    ""id"": ""11967b57-fdf7-4a7c-adf9-089a85e3db28"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CastSpell6"",
+                    ""type"": ""Button"",
+                    ""id"": ""77f7b94e-a0c3-40f2-b8ea-f73519145b68"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CastSpell7"",
+                    ""type"": ""Button"",
+                    ""id"": ""f998bf93-a146-4136-b121-a6a0c3dce72e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""CancelCast"",
                     ""type"": ""Button"",
                     ""id"": ""9330279e-0330-413c-8fb1-bd9046fba5c8"",
@@ -215,6 +263,72 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""action"": ""CancelCast"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c6bab15-f26f-4503-8821-0db14df6a6d9"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CastSpell2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5968dec2-b5e1-4543-a44c-3f6191bce869"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CastSpell3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33b201eb-a914-4427-8690-9948696fa1d1"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CastSpell4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""92e03fe5-bf3b-4e10-8c50-a4923c095d9b"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CastSpell5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c78fda47-9721-4be5-bba9-c55d7aea68c1"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CastSpell6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9c7d1707-a7b7-4797-bb0f-a8a56846e9d8"",
+                    ""path"": ""<Keyboard>/v"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CastSpell7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -322,6 +436,12 @@ public class @InputActions : IInputActionCollection, IDisposable
         m_Player_Zoom = m_Player.FindAction("Zoom", throwIfNotFound: true);
         m_Player_SwapActionMap = m_Player.FindAction("SwapActionMap", throwIfNotFound: true);
         m_Player_CastSpell1 = m_Player.FindAction("CastSpell1", throwIfNotFound: true);
+        m_Player_CastSpell2 = m_Player.FindAction("CastSpell2", throwIfNotFound: true);
+        m_Player_CastSpell3 = m_Player.FindAction("CastSpell3", throwIfNotFound: true);
+        m_Player_CastSpell4 = m_Player.FindAction("CastSpell4", throwIfNotFound: true);
+        m_Player_CastSpell5 = m_Player.FindAction("CastSpell5", throwIfNotFound: true);
+        m_Player_CastSpell6 = m_Player.FindAction("CastSpell6", throwIfNotFound: true);
+        m_Player_CastSpell7 = m_Player.FindAction("CastSpell7", throwIfNotFound: true);
         m_Player_CancelCast = m_Player.FindAction("CancelCast", throwIfNotFound: true);
         // User Interface
         m_UserInterface = asset.FindActionMap("User Interface", throwIfNotFound: true);
@@ -387,6 +507,12 @@ public class @InputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Zoom;
     private readonly InputAction m_Player_SwapActionMap;
     private readonly InputAction m_Player_CastSpell1;
+    private readonly InputAction m_Player_CastSpell2;
+    private readonly InputAction m_Player_CastSpell3;
+    private readonly InputAction m_Player_CastSpell4;
+    private readonly InputAction m_Player_CastSpell5;
+    private readonly InputAction m_Player_CastSpell6;
+    private readonly InputAction m_Player_CastSpell7;
     private readonly InputAction m_Player_CancelCast;
     public struct PlayerActions
     {
@@ -399,6 +525,12 @@ public class @InputActions : IInputActionCollection, IDisposable
         public InputAction @Zoom => m_Wrapper.m_Player_Zoom;
         public InputAction @SwapActionMap => m_Wrapper.m_Player_SwapActionMap;
         public InputAction @CastSpell1 => m_Wrapper.m_Player_CastSpell1;
+        public InputAction @CastSpell2 => m_Wrapper.m_Player_CastSpell2;
+        public InputAction @CastSpell3 => m_Wrapper.m_Player_CastSpell3;
+        public InputAction @CastSpell4 => m_Wrapper.m_Player_CastSpell4;
+        public InputAction @CastSpell5 => m_Wrapper.m_Player_CastSpell5;
+        public InputAction @CastSpell6 => m_Wrapper.m_Player_CastSpell6;
+        public InputAction @CastSpell7 => m_Wrapper.m_Player_CastSpell7;
         public InputAction @CancelCast => m_Wrapper.m_Player_CancelCast;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -430,6 +562,24 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @CastSpell1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell1;
                 @CastSpell1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell1;
                 @CastSpell1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell1;
+                @CastSpell2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell2;
+                @CastSpell2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell2;
+                @CastSpell2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell2;
+                @CastSpell3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell3;
+                @CastSpell3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell3;
+                @CastSpell3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell3;
+                @CastSpell4.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell4;
+                @CastSpell4.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell4;
+                @CastSpell4.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell4;
+                @CastSpell5.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell5;
+                @CastSpell5.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell5;
+                @CastSpell5.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell5;
+                @CastSpell6.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell6;
+                @CastSpell6.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell6;
+                @CastSpell6.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell6;
+                @CastSpell7.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell7;
+                @CastSpell7.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell7;
+                @CastSpell7.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastSpell7;
                 @CancelCast.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancelCast;
                 @CancelCast.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancelCast;
                 @CancelCast.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancelCast;
@@ -458,6 +608,24 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @CastSpell1.started += instance.OnCastSpell1;
                 @CastSpell1.performed += instance.OnCastSpell1;
                 @CastSpell1.canceled += instance.OnCastSpell1;
+                @CastSpell2.started += instance.OnCastSpell2;
+                @CastSpell2.performed += instance.OnCastSpell2;
+                @CastSpell2.canceled += instance.OnCastSpell2;
+                @CastSpell3.started += instance.OnCastSpell3;
+                @CastSpell3.performed += instance.OnCastSpell3;
+                @CastSpell3.canceled += instance.OnCastSpell3;
+                @CastSpell4.started += instance.OnCastSpell4;
+                @CastSpell4.performed += instance.OnCastSpell4;
+                @CastSpell4.canceled += instance.OnCastSpell4;
+                @CastSpell5.started += instance.OnCastSpell5;
+                @CastSpell5.performed += instance.OnCastSpell5;
+                @CastSpell5.canceled += instance.OnCastSpell5;
+                @CastSpell6.started += instance.OnCastSpell6;
+                @CastSpell6.performed += instance.OnCastSpell6;
+                @CastSpell6.canceled += instance.OnCastSpell6;
+                @CastSpell7.started += instance.OnCastSpell7;
+                @CastSpell7.performed += instance.OnCastSpell7;
+                @CastSpell7.canceled += instance.OnCastSpell7;
                 @CancelCast.started += instance.OnCancelCast;
                 @CancelCast.performed += instance.OnCancelCast;
                 @CancelCast.canceled += instance.OnCancelCast;
@@ -556,6 +724,12 @@ public class @InputActions : IInputActionCollection, IDisposable
         void OnZoom(InputAction.CallbackContext context);
         void OnSwapActionMap(InputAction.CallbackContext context);
         void OnCastSpell1(InputAction.CallbackContext context);
+        void OnCastSpell2(InputAction.CallbackContext context);
+        void OnCastSpell3(InputAction.CallbackContext context);
+        void OnCastSpell4(InputAction.CallbackContext context);
+        void OnCastSpell5(InputAction.CallbackContext context);
+        void OnCastSpell6(InputAction.CallbackContext context);
+        void OnCastSpell7(InputAction.CallbackContext context);
         void OnCancelCast(InputAction.CallbackContext context);
     }
     public interface IUserInterfaceActions

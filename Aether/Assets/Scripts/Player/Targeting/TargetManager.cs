@@ -15,7 +15,7 @@ public class TargetManager : MonoBehaviour
 
     private void Start()
     {
-        SpellSystem.Events.OnSpellAdded += _ => UpdateLayerMask();
+        SpellSystem.Events.OnActiveSpellChanged += _ => UpdateLayerMask();
     }
 
     private void UpdateLayerMask()
@@ -25,7 +25,7 @@ public class TargetManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        SpellSystem.Events.OnSpellAdded -= _ => UpdateLayerMask();
+        SpellSystem.Events.OnActiveSpellChanged -= _ => UpdateLayerMask();
     }
 
     public bool HasLockedTarget { get
