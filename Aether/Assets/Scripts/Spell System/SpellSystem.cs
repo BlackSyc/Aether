@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
@@ -6,22 +8,18 @@ public class SpellSystem : MonoBehaviour
 {
     public struct Events
     {
-        public static event Action<Spell> OnSpellAdded;
-        public static event Action<Spell> OnSpellRemoved;
         public static event Action<SpellCast> OnCastSpell;
 
-        public static void SpellAdded(Spell spell)
-        {
-            OnSpellAdded?.Invoke(spell);
-        }
+        public static event Action<SpellLibrary> OnActiveSpellChanged;
+
         public static void CastSpell(SpellCast spellCast)
         {
             OnCastSpell?.Invoke(spellCast);
         }
 
-        internal static void SpellRemoved(Spell spell)
+        public static void ActiveSpellChanged(SpellLibrary spellLibrary)
         {
-            OnSpellRemoved?.Invoke(spell);
+            OnActiveSpellChanged?.Invoke(spellLibrary);
         }
     }
     [SerializeField]
@@ -30,92 +28,96 @@ public class SpellSystem : MonoBehaviour
     private SpellCast currentSpellCast;
 
     [SerializeField]
-    private SpellSlot spellSlot1;
+    private SpellLibrary[] spellLibraries;
 
-    [SerializeField]
-    private SpellSlot spellSlot2;
+    public SpellLibrary[] SpellLibraries => spellLibraries;
 
-    [SerializeField]
-    private SpellSlot spellSlot3;
 
-    [SerializeField]
-    private SpellSlot spellSlot4;
+    private void Start()
+    {
+        spellLibraries.ForEach(x => x.OnActiveSpellChanged += _ => Events.ActiveSpellChanged(x));
+    }
 
-    [SerializeField]
-    private SpellSlot spellSlot5;
-
-    [SerializeField]
-    private SpellSlot spellSlot6;
-
-    [SerializeField]
-    private SpellSlot spellSlot7;
+    private void OnDestroy()
+    {
+        spellLibraries.ForEach(x => x.OnActiveSpellChanged -= _ => Events.ActiveSpellChanged(x));
+    }
 
     public LayerMask GetCombinedLayerMask()
     {
         LayerMask layerMask = new LayerMask();
 
-        if (spellSlot1 != null && spellSlot1.HasActiveSpell)
-        {
-            layerMask = layerMask | spellSlot1.State.Spell.layerMask;
-        }
-        if (spellSlot2 != null && spellSlot2.HasActiveSpell)
-        {
-            layerMask = layerMask | spellSlot2.State.Spell.layerMask;
-        }
-        if (spellSlot3 != null && spellSlot3.HasActiveSpell)
-        {
-            layerMask = layerMask | spellSlot3.State.Spell.layerMask;
-        }
-        if (spellSlot4 != null && spellSlot4.HasActiveSpell)
-        {
-            layerMask = layerMask | spellSlot4.State.Spell.layerMask;
-        }
-        if (spellSlot5 != null && spellSlot5.HasActiveSpell)
-        {
-            layerMask = layerMask | spellSlot5.State.Spell.layerMask;
-        }
-        if (spellSlot6 != null && spellSlot6.HasActiveSpell)
-        {
-            layerMask = layerMask | spellSlot6.State.Spell.layerMask;
-        }
-        if (spellSlot7 != null && spellSlot7.HasActiveSpell)
-        {
-            layerMask = layerMask | spellSlot7.State.Spell.layerMask;
-        }
+        spellLibraries
+            .Where(x => x.HasActiveSpell)
+            .Select(x => x.ActiveSpell.layerMask)
+            .ForEach(x => layerMask = layerMask | x);
+
         return layerMask;
     }
 
-    public void AddSpell(Spell spell)
-    {
-        spell.PreferredSpellSlot.SelectSpell(spell);
-        Events.SpellAdded(spell);
-    }
+    public bool HasActiveSpells => spellLibraries.Any(x => x.HasActiveSpell);
 
-    public void ClearAllSpells()
-    {
-        Spell spell1 = spellSlot1.State.Spell;
-        spellSlot1.RemoveSpell();
-        Events.SpellRemoved(spell1);
-
-        // Todo: all other spellslots.
-    }
-
-    public bool HasSpells => spellSlot1.HasActiveSpell || spellSlot2.HasActiveSpell || spellSlot3.HasActiveSpell || spellSlot4.HasActiveSpell || spellSlot5.HasActiveSpell || spellSlot6.HasActiveSpell || spellSlot7.HasActiveSpell;
-
-    public void CastMissile(CallbackContext context)
+    public void CastSpell1(CallbackContext context)
     {
         if (!context.performed)
             return;
 
-        if (!spellSlot1.HasActiveSpell)
-        {
-            Debug.LogWarning("No spell bound!");
-            return;
-        }
+        CastSpell(0);
+    }
 
+    public void CastSpell2(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        CastSpell(1);
+    }
+
+    public void CastSpell3(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        CastSpell(2);
+    }
+
+    public void CastSpell4(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        CastSpell(3);
+    }
+
+    public void CastSpell5(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        CastSpell(4);
+    }
+
+    public void CastSpell6(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        CastSpell(5);
+    }
+
+    public void CastSpell7(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        CastSpell(6);
+    }
+
+    public void CastSpell(int index)
+    {
         if (currentSpellCast != null)
         {
-            if (currentSpellCast.Spell == spellSlot1.State.Spell)
+            if (currentSpellCast.Spell == spellLibraries[index].ActiveSpell)
             {
                 UpdateTargetLock(currentSpellCast.Spell.layerMask);
                 return;
@@ -123,8 +125,7 @@ public class SpellSystem : MonoBehaviour
             currentSpellCast.Cancel();
         }
 
-        currentSpellCast = spellSlot1.Cast(castParent, this.GetComponent<TargetManager>());
-        if (currentSpellCast == null)
+        if (!spellLibraries[index].Cast(out currentSpellCast, castParent, GetComponent<TargetManager>()))
             return;
 
         currentSpellCast.CastCancelled += ClearCurrentCast;

@@ -11,8 +11,6 @@ public class Spell : ScriptableObject
 
     public Aspect Aspect;
 
-    public SpellSlot PreferredSpellSlot;
-
     [TextArea(0,10)]
     public string Description;
 
