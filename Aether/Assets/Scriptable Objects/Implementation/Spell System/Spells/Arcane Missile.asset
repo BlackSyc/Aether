@@ -18,12 +18,12 @@ MonoBehaviour:
   Description: "Shoot an arcane projectile at the target. \n\nThis projectile does
     not deal any damage, instead it can be used to interact with many arcane entities
     in the Aether."
-  Damage: 0
+  HealthDelta: 0
   CastDuration: 1.5
   CoolDown: 2
   CastWhileMoving: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 512
   SpellObject: {fileID: 1244014788113687684, guid: 9fee57749fb9ba245a40c411a6a4ece1,
     type: 3}

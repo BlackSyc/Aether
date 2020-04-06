@@ -50,23 +50,18 @@ public class SpellSlot : ScriptableObject
 
     public SpellCast Cast(Transform parent, TargetManager targetManager)
     {
-        if (State.Spell != null)
-        {
-            if (Time.time < State.CoolDownUntil)
-            {
-                Debug.Log("Spell is still on cooldown!");
-                return null;
-            }
+        if (State.Spell == null)
+            return null;
 
-            SpellCast spellCast = new SpellCast(State.Spell, parent, targetManager);
-            spellCast.CastComplete += SetCoolDown;
-            return spellCast;
-        }
-        else
+        if (Time.time < State.CoolDownUntil)
         {
-            Debug.LogWarning("No spell bound to this spell slot!");
+            Debug.Log("Spell is still on cooldown!");
             return null;
         }
+
+        SpellCast spellCast = new SpellCast(State.Spell, parent, targetManager);
+        spellCast.CastComplete += SetCoolDown;
+        return spellCast;
     }
 
     private void SetCoolDown(SpellCast spellCast)
