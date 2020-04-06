@@ -5,5 +5,8 @@ using UnityEngine;
 public class ScriptableObjectLoader : MonoBehaviour
 {
     [SerializeField]
-    private HintLoader hintLoader;
+    private Hints hints;
+
+    [SerializeField]
+    private Layers layers;
 }

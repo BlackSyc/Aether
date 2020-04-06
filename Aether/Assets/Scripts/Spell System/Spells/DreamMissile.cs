@@ -7,27 +7,37 @@ public class DreamMissile : ArcaneMissile
 {
     protected override bool Hit()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, .5f, Spell.layerMask | Player.Instance.TargetManager.ObstructionLayer);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, .5f, Spell.layerMask | Layers.ObstructionLayer);
 
         foreach (Collider collider in colliders)
         {
             if(Target.TargetTransform == collider.transform)
             {
-                if (collider.GetComponent<Health>() != null)
-                {
-                    collider.GetComponent<Health>().ChangeHealth(Spell.HealthDelta);
-                }
-
-                GetComponent<Animator>().SetTrigger("CastHit");
-                return true;
+                return TargetHit(collider);
             }
-            else if (Player.Instance.TargetManager.ObstructionLayer.Contains(collider.gameObject))
+            else if (Layers.ObstructionLayer.Contains(collider.gameObject))
             {
-                Debug.Log("Hit obstruction!");
-                GetComponent<Animator>().SetTrigger("CastHit");
-                return true;
+                return ObstructionHit(collider);
             }
         }
         return false;
+    }
+
+    private bool TargetHit(Collider collider)
+    {
+        Health targetHealth = collider.GetComponent<Health>();
+        if (targetHealth != null)
+        {
+            targetHealth.ChangeHealth(Spell.HealthDelta);
+        }
+
+        GetComponent<Animator>().SetTrigger("CastHit");
+        return true;
+    }
+
+    private bool ObstructionHit(Collider collider)
+    {
+        GetComponent<Animator>().SetTrigger("CastHit");
+        return true;
     }
 }

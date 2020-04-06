@@ -11,23 +11,21 @@ public class TargetManager : MonoBehaviour
     [SerializeField] 
     private float maxRange = 100f;
 
-    public LayerMask TargetLayerMask;
-
-    public LayerMask ObstructionLayer;
+    private LayerMask layerMask;
 
     private void Start()
     {
-        SpellSystem.Events.OnSpellAdded += AddTargetLayers;
+        SpellSystem.Events.OnSpellAdded += _ => UpdateLayerMask();
     }
 
-    private void AddTargetLayers(Spell spell)
+    private void UpdateLayerMask()
     {
-        TargetLayerMask = TargetLayerMask | spell.layerMask;
+        layerMask = Player.Instance.SpellSystem.GetCombinedLayerMask();
     }
 
     private void OnDestroy()
     {
-        SpellSystem.Events.OnSpellAdded -= AddTargetLayers;
+        SpellSystem.Events.OnSpellAdded -= _ => UpdateLayerMask();
     }
 
     public bool HasLockedTarget { get
@@ -46,15 +44,13 @@ public class TargetManager : MonoBehaviour
 
     private Target lockedTarget;
 
-
-
     public Target GetCurrentTarget()
     {
         RaycastHit obstructionHit;
-        bool obstructionHitFound = Physics.Raycast(camera.position, camera.forward, out obstructionHit, maxRange, ObstructionLayer);
+        bool obstructionHitFound = Physics.Raycast(camera.position, camera.forward, out obstructionHit, maxRange, Layers.ObstructionLayer);
 
         RaycastHit targetHit;
-        bool targetHitFound = Physics.Raycast(camera.position, camera.forward, out targetHit, maxRange, TargetLayerMask);
+        bool targetHitFound = Physics.Raycast(camera.position, camera.forward, out targetHit, maxRange, layerMask);
 
         if (targetHitFound)
         {

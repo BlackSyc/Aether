@@ -21,7 +21,7 @@ MonoBehaviour:
   HealthDelta: 0
   CastDuration: 1.5
   CoolDown: 2
-  CastWhileMoving: 1
+  CastWhileMoving: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 512

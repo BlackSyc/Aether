@@ -101,8 +101,4 @@ public class SpellCast
         CastInterrupted?.Invoke(this);
         Cancel();
     }
-
-
-
-
 }

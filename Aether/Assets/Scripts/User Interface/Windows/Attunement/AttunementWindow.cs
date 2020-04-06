@@ -43,7 +43,7 @@ public class AttunementWindow : MonoBehaviour
 
         bool selectionMade = false;
 
-        foreach (Keystone keystone in attunementDevice.Keystones)
+        attunementDevice.Keystones.ForEach(keystone =>
         {
             GameObject keystoneSelectorObject = GameObject.Instantiate(keystoneSelectorPrefab, keystoneSelectorParent);
             KeystoneSelector keystoneSelector = keystoneSelectorObject.GetComponent<KeystoneSelector>();
@@ -56,9 +56,9 @@ public class AttunementWindow : MonoBehaviour
                 selectionMade = true;
                 keystoneSelector.Select();
             }
-        }
+        });
 
-        foreach (Keystone newKeystone in attunementDevice.NewKeystones)
+        attunementDevice.NewKeystones.ForEach(newKeystone =>
         {
             GameObject keystoneSelectorObject = GameObject.Instantiate(keystoneSelectorPrefab, keystoneSelectorParent);
             KeystoneSelector keystoneSelector = keystoneSelectorObject.GetComponent<KeystoneSelector>();
@@ -72,7 +72,7 @@ public class AttunementWindow : MonoBehaviour
                 selectionMade = true;
                 keystoneSelector.Select();
             }
-        }
+        });
 
         attunementDevice.ApplyNewKeystones();
 
@@ -87,6 +87,7 @@ public class AttunementWindow : MonoBehaviour
         if (attunementWindow.activeSelf)
         {
             attunementWindow.SetActive(false);
+
             foreach (Transform child in keystoneSelectorParent)
             {
                 Destroy(child.gameObject);

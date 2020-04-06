@@ -50,6 +50,40 @@ public class SpellSystem : MonoBehaviour
     [SerializeField]
     private SpellSlot spellSlot7;
 
+    public LayerMask GetCombinedLayerMask()
+    {
+        LayerMask layerMask = new LayerMask();
+
+        if (spellSlot1 != null && spellSlot1.HasActiveSpell)
+        {
+            layerMask = layerMask | spellSlot1.State.Spell.layerMask;
+        }
+        if (spellSlot2 != null && spellSlot2.HasActiveSpell)
+        {
+            layerMask = layerMask | spellSlot2.State.Spell.layerMask;
+        }
+        if (spellSlot3 != null && spellSlot3.HasActiveSpell)
+        {
+            layerMask = layerMask | spellSlot3.State.Spell.layerMask;
+        }
+        if (spellSlot4 != null && spellSlot4.HasActiveSpell)
+        {
+            layerMask = layerMask | spellSlot4.State.Spell.layerMask;
+        }
+        if (spellSlot5 != null && spellSlot5.HasActiveSpell)
+        {
+            layerMask = layerMask | spellSlot5.State.Spell.layerMask;
+        }
+        if (spellSlot6 != null && spellSlot6.HasActiveSpell)
+        {
+            layerMask = layerMask | spellSlot6.State.Spell.layerMask;
+        }
+        if (spellSlot7 != null && spellSlot7.HasActiveSpell)
+        {
+            layerMask = layerMask | spellSlot7.State.Spell.layerMask;
+        }
+        return layerMask;
+    }
 
     public void AddSpell(Spell spell)
     {

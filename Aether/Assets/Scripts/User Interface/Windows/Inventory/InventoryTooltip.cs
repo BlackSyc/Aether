@@ -13,15 +13,10 @@ public class InventoryTooltip : MonoBehaviour
     public void Show()
     {
         contentText.text = string.Empty;
-        foreach (Keystone keystone in Player.Instance.Inventory.Keystones
-            .Where(x => x.Aspect == Player.Instance.Shoulder.EquippedCloak.Aspect))
-        {
-            if (!contentText.text.Equals(string.Empty))
-            {
-                contentText.text += "\n";
-            }
-            contentText.text += $"'{keystone.Name}' Keystone";
-        }
+        Player.Instance.Inventory.Keystones
+             .Where(x => x.Aspect == Player.Instance.Shoulder.EquippedCloak.Aspect)
+             .ForEach(keystone => contentText.text += $"\n'{keystone.Name}' Keystone");
+
         gameObject.SetActive(true);
     }
 

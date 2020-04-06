@@ -37,7 +37,7 @@ public class AggroTable : MonoBehaviour
 
         RemoveAggroTrigger(aggroTrigger);
         aggroTriggers.Add((aggroTrigger.Bias, aggroTrigger));
-        Debug.Log($"{aggroTrigger.gameObject.name} added to {gameObject.name}'s Aggro Table with a bias of {aggroTrigger.Bias}");
+        Debug.Log($"{aggroTrigger.gameObject.name} added to {gameObject.name}'s aggro table with a bias of {aggroTrigger.Bias}");
     }
 
     public void RemoveAggroTrigger(AggroTrigger aggroTrigger)

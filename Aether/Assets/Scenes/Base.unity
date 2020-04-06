@@ -6689,7 +6689,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a64539311426cd4f915dd8d33529c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintLoader: {fileID: 11400000, guid: 8a8a685412bba5c49843f096120cf122, type: 2}
+  hints: {fileID: 11400000, guid: 8a8a685412bba5c49843f096120cf122, type: 2}
+  layers: {fileID: 11400000, guid: 703a911aef55aa14bb6f8de03a7c2ea1, type: 2}
 --- !u!4 &1213455653
 Transform:
   m_ObjectHideFlags: 0
