@@ -7,8 +7,10 @@ using UnityEngine.UI;
 
 public class SpellButton : MonoBehaviour
 {
+    private SpellLibrary spellLibrary;
+
     [SerializeField]
-    private SpellSlot spellSlot;
+    private int spellLibraryIndex;
 
     [SerializeField]
     private GameObject mainPanel;
@@ -24,7 +26,7 @@ public class SpellButton : MonoBehaviour
 
     public void ShowTooltip()
     {
-        spellTooltip.Show(spellSlot.State.Spell);
+        spellTooltip.Show(spellLibrary.ActiveSpell);
     }
 
     public void HideTooltip()
@@ -34,16 +36,18 @@ public class SpellButton : MonoBehaviour
 
     private void Start()
     {
-        if (spellSlot == null)
+        spellLibrary = Player.Instance.SpellSystem.SpellLibraries[spellLibraryIndex];
+
+        if (spellLibrary == null)
             return;
 
-        if (spellSlot.HasActiveSpell)
+        if (spellLibrary.HasActiveSpell)
         {
             mainPanel.SetActive(true);
-            text.text = spellSlot.State.Spell.Name;
+            text.text = spellLibrary.ActiveSpell.Name;
         }
 
-        spellSlot.OnSpellChanged += ChangeSpell;
+        spellLibrary.OnActiveSpellChanged += ChangeSpell;
         SpellCast.Events.OnCastSpell += StartSpellCast;
     }
 
@@ -55,16 +59,16 @@ public class SpellButton : MonoBehaviour
             return;
         }
 
-        if (spell.PreferredSpellSlot == this.spellSlot)
-        {
             mainPanel.SetActive(true);
             text.text = spell.Name;
             //TODO: Change button icon like: icon.sprite = linkedSpellSlot.Spell.Icon;
-        }
     }
 
     private void StartSpellCast(SpellCast spellCast)
     {
+        if (spellCast.Spell != spellLibrary.ActiveSpell)
+            return;
+
         castBar.Play("Cast", -1, 0f);
         SubscribeToSpellCast(spellCast);
     }
@@ -107,13 +111,13 @@ public class SpellButton : MonoBehaviour
             text.text = ((int)(until - Time.time) + 1).ToString();
             yield return null;
         }
-        text.text = spellSlot.State.Spell.Name;
+        text.text = spellLibrary.ActiveSpell.Name;
     }
 
     private void OnDestroy()
     { 
-        if(spellSlot != null)
-            spellSlot.OnSpellChanged -= ChangeSpell;
+        if(spellLibrary != null)
+            spellLibrary.OnActiveSpellChanged -= ChangeSpell;
 
         SpellCast.Events.OnCastSpell -= StartSpellCast;
     }

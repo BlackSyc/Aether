@@ -44,6 +44,6 @@ public class Shoulder : MonoBehaviour
         var cloak = equippedCloak;
         equippedCloak = null;
         cloak?.Unequip();
-        SpellSystem.AddSpell(defaultSpell);
+        SpellSystem.SpellLibraries[0].SetActiveSpell(defaultSpell);
     }
 }
