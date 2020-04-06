@@ -55,7 +55,6 @@ public class SpellSlot : ScriptableObject
 
         if (Time.time < State.CoolDownUntil)
         {
-            Debug.Log("Spell is still on cooldown!");
             return null;
         }
 

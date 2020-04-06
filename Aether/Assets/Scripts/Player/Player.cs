@@ -45,6 +45,11 @@ public class Player : MonoBehaviour
 
     public TargetManager TargetManager => targetManager;
 
+    [SerializeField]
+    private Transform companionParent;
+
+    public Transform CompanionParent => companionParent;
+
     private void Awake()
     {
         if (Instance)

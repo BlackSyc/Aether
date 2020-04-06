@@ -8,5 +8,9 @@ public abstract class AIState : ScriptableObject
     [SerializeField]
     private string name;
 
-    public abstract void UpdateState(AIStateMachine stateMachine);
+    public virtual void FixedUpdateState(AIStateMachine stateMachine) { }
+
+    public virtual void Create(AIStateMachine stateMachine) { }
+
+    public virtual void Destroy(AIStateMachine stateMachine) { }
 }

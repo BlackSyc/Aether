@@ -17,11 +17,18 @@ public class Health : MonoBehaviour
 
     public event Action<float> OnHealthChanged;
 
+    public event Action OnHealthObjectDestroyed;
+
     public event Action OnDied;
 
     public void HealthChanged(float delta)
     {
         OnHealthChanged?.Invoke(delta);
+    }
+
+    public void HealthObjectDestroyed()
+    {
+        OnHealthObjectDestroyed?.Invoke();
     }
 
     public void Died()
@@ -39,10 +46,13 @@ public class Health : MonoBehaviour
 
     public float MaxHealth => maxHealth;
 
+    public bool IsFullHealth => CurrentHealth == MaxHealth;
+
     private void Start()
     {
         Events.HealthActivated(this);
     }
+
 
     public void ChangeHealth(float delta)
     {
@@ -54,5 +64,10 @@ public class Health : MonoBehaviour
         {
             Died();
         }
+    }
+
+    private void OnDestroy()
+    {
+        HealthObjectDestroyed();
     }
 }
