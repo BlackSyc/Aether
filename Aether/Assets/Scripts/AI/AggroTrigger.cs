@@ -7,6 +7,8 @@ public class AggroTrigger : MonoBehaviour
 {
     public event Action<int> GlobalAggroRaised;
 
+    public bool IsActive = true;
+
     [SerializeField]
     private int bias = 0;
 

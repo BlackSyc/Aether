@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Nightmare Missile
   Aspect: 3
-  PreferredSpellSlot: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
   Description: 'Shoot a Nightmare Missile towards a target.
 
 
@@ -27,9 +26,12 @@ MonoBehaviour:
     On
     impact with some arcane entities, the target will be infused with The Nightmare,
     destroying the entity in the process.'
-  HealthDelta: -100
-  CastDuration: 0.5
-  CoolDown: 0.5
+  Damage: 100
+  Heal: 0
+  GlobalAggro: 0
+  LocalAggro: 10
+  CastDuration: 1
+  CoolDown: 1
   CastWhileMoving: 1
   layerMask:
     serializedVersion: 2

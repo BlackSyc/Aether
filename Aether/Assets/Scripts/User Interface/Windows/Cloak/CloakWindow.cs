@@ -25,20 +25,20 @@ public class CloakWindow : MonoBehaviour
 
     private void Start()
     {
-        CloakObject.Events.OnInteract += ShowCloakWindow;
+        CloakProvider.Events.OnInteract += ShowCloakWindow;
         AetherEvents.UIEvents.Windows.OnClosePopups += ClosePopup;
     }
 
-    private void ShowCloakWindow(CloakObject cloakObject)
+    private void ShowCloakWindow(CloakProvider cloakProvider)
     {
-        header.text = cloakObject.Cloak.Name;
-        keywords.text = cloakObject.Cloak.Keywords;
-        content.text = cloakObject.Cloak.Description;
+        header.text = cloakProvider.Cloak.Name;
+        keywords.text = cloakProvider.Cloak.Keywords;
+        content.text = cloakProvider.Cloak.Description;
 
-        if (!cloakObject.Cloak.IsEquipped)
+        if (!cloakProvider.Cloak.IsEquipped)
         {
             equipButton.onClick.AddListener(() => {
-                cloakObject.Equip();
+                cloakProvider.Equip();
                 CloseWindow();
             });
             equipButtonText.text = "Equip";
@@ -46,7 +46,7 @@ public class CloakWindow : MonoBehaviour
         else
         {
             equipButton.onClick.AddListener(() => {
-                cloakObject.Unequip();
+                cloakProvider.Unequip();
                 CloseWindow();
             });
             equipButtonText.text = "Unequip";

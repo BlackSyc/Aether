@@ -30,6 +30,7 @@ public class Inventory : MonoBehaviour
 
     public void PickupKeystone(Keystone keyStone)
     {
+        keyStone.Found();
         keystones.Add(keyStone);
         Events.PickedUpKeystone();
     }

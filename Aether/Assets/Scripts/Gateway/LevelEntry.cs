@@ -27,11 +27,12 @@ public class LevelEntry : MonoBehaviour
         Events.EnteringLevel();
         SceneController.Instance.LoadedLevel.levelController.Enable();
 
-        Player.Instance.Shoulder.DisableCloakPhysics();
+        Cloak equippedCloak = Player.Instance.Shoulder.EquippedCloak;
+        Player.Instance.Shoulder.UnequipCloak();
         Player.Instance.CharacterController.enabled = false;
         Player.Instance.transform.position = SceneController.Instance.LoadedLevel.levelController.GetEntryPoint().position;
         Player.Instance.CharacterController.enabled = true;
-        Player.Instance.Shoulder.EnableCloakPhysics();
+        Player.Instance.Shoulder.EquipCloak(equippedCloak);
 
         SceneController.Instance.StartPlatformLevelController.Disable();
     }

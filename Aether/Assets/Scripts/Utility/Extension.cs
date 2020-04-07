@@ -17,4 +17,14 @@ public static class Extension
     {
         return layerMask == (layerMask | (1 << gameObject.layer));
     }
+
+    public static bool IsFriendly(this GameObject gameObject)
+    {
+        return Layers.FriendlyLayer.Contains(gameObject);
+    }
+
+    public static bool IsEnemy(this GameObject gameObject)
+    {
+        return Layers.EnemyLayer.Contains(gameObject);
+    }
 }

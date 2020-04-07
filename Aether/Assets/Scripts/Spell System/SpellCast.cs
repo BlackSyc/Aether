@@ -6,16 +6,6 @@ using UnityEngine.Events;
 
 public class SpellCast
 {
-    public struct Events
-    {
-        public static event Action<SpellCast> OnCastSpell;
-
-        public static void CastSpell(SpellCast spellCast)
-        {
-            OnCastSpell?.Invoke(spellCast);
-        }
-    }
-
     public event Action<SpellCast> CastStarted;
     public event Action<float> CastProgress;
     public event Action<SpellCast> CastCancelled;
@@ -64,7 +54,6 @@ public class SpellCast
         spellObject.Caster = Caster;
 
         spellObject.CastStarted();
-        Events.CastSpell(this);
         CastStarted?.Invoke(this);
 
         if (targetManager.GetCurrentTarget().HasTargetTransform && Spell.layerMask.Contains(targetManager.GetCurrentTarget().TargetTransform.gameObject))

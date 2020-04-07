@@ -815,7 +815,7 @@ MonoBehaviour:
   damageText: {fileID: 3261676961562188448}
   healText: {fileID: 8815159758839729490}
   extraOffset: {x: 0, y: 1, z: 0}
-  fadeAt: 25
+  fadeAt: 50
 --- !u!225 &8471357923148173333
 CanvasGroup:
   m_ObjectHideFlags: 0

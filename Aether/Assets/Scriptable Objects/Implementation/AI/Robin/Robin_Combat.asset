@@ -9,15 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 572774ed9686b364b848f49c64adb7d1, type: 3}
-  m_Name: Layers
+  m_Script: {fileID: 11500000, guid: 71d3125c005777c4489e128b84c43a92, type: 3}
+  m_Name: Robin_Combat
   m_EditorClassIdentifier: 
-  obstructionLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  friendlyLayer:
-    serializedVersion: 2
-    m_Bits: 2048
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 4096
+  name: Robin_Combat
+  minimumAggro: 10
+  lowAggroState: {fileID: 11400000, guid: da3cfc39f38ff034d80755e919263892, type: 2}

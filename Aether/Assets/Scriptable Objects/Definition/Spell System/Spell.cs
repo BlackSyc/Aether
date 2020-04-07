@@ -20,7 +20,7 @@ public class Spell : ScriptableObject
 
     public int GlobalAggro;
 
-    public float LocalAggro;
+    public int LocalAggro;
 
     public float CastDuration;
 

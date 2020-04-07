@@ -10,6 +10,12 @@ public class WaitForFullHealth : AIState
 
     public override void Create(AIStateMachine stateMachine)
     {
+        if (Player.Instance.Companion != null)
+        {
+            Destroy(stateMachine.gameObject);
+            return;
+        }
+
         Health healthComponent = stateMachine.GetComponent<Health>();
         if (healthComponent != null)
         {
@@ -29,8 +35,22 @@ public class WaitForFullHealth : AIState
             healthComponent.OnHealthChanged -= _ =>
             {
                 if (healthComponent.IsFullHealth)
+                {
+                    stateMachine.gameObject.AddComponent<Companion>();
+                    Player.Instance.Companion = stateMachine.GetComponent<Companion>();
                     stateMachine.TransitionTo(nextState);
+                }
             };
+        }
+    }
+
+    public override void UpdateState(AIStateMachine stateMachine)
+    {
+        Health health = stateMachine.GetComponent<Health>();
+
+        if (health && health.IsDead)
+        {
+            Destroy(stateMachine.gameObject);
         }
     }
 }

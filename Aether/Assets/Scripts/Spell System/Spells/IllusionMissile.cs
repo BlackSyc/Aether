@@ -24,6 +24,14 @@ public class IllusionMissile : ArcaneMissile
 
     private bool TargetHit(Collider collider)
     {
+
+        AggroManager enemyAggroManager = collider.GetComponent<AggroManager>();
+        AggroTrigger casterAggroTrigger = Caster.GetComponent<AggroTrigger>();
+
+        if (enemyAggroManager != null && casterAggroTrigger)
+        {
+            enemyAggroManager.IncreaseAggro(casterAggroTrigger, Spell.LocalAggro);
+        }
         // add knockback logic
         GetComponent<Animator>().SetTrigger("CastHit");
         return true;

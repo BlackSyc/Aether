@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Illusion Missile
   Aspect: 2
-  PreferredSpellSlot: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
   Description: 'Shoot an Illusion Missile towards a target.
 
 
@@ -28,7 +27,10 @@ MonoBehaviour:
     On impact with some arcane entities,
     the target will be infused with The Illusion, granting the caster the ability
     to move it.'
-  HealthDelta: 0
+  Damage: 0
+  Heal: 0
+  GlobalAggro: 0
+  LocalAggro: 0
   CastDuration: 1
   CoolDown: 2
   CastWhileMoving: 1

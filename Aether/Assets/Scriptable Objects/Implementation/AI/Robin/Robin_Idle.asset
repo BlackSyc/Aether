@@ -9,15 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 572774ed9686b364b848f49c64adb7d1, type: 3}
-  m_Name: Layers
+  m_Script: {fileID: 11500000, guid: f4f4d895afb1bfa46af3b3e5d0a73856, type: 3}
+  m_Name: Robin_Idle
   m_EditorClassIdentifier: 
-  obstructionLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  friendlyLayer:
-    serializedVersion: 2
-    m_Bits: 2048
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 4096
+  name: Robin_FollowPlayer
+  aggroLimit: 10
+  aggroState: {fileID: 11400000, guid: 4635816bf8ef29f4ca2cec688d6875f2, type: 2}
+  movementSpeed: 10
+  rotationSpeed: 180

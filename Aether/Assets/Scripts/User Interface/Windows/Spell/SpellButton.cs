@@ -48,7 +48,7 @@ public class SpellButton : MonoBehaviour
         }
 
         spellLibrary.OnActiveSpellChanged += ChangeSpell;
-        SpellCast.Events.OnCastSpell += StartSpellCast;
+        Player.Instance.SpellSystem.OnCastSpell += StartSpellCast;
     }
 
     private void ChangeSpell(Spell spell)
@@ -119,6 +119,7 @@ public class SpellButton : MonoBehaviour
         if(spellLibrary != null)
             spellLibrary.OnActiveSpellChanged -= ChangeSpell;
 
-        SpellCast.Events.OnCastSpell -= StartSpellCast;
+        if(Player.Instance.SpellSystem)
+            Player.Instance.SpellSystem.OnCastSpell -= StartSpellCast;
     }
 }
