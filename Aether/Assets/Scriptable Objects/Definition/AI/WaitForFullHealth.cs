@@ -22,7 +22,11 @@ public class WaitForFullHealth : AIState
             healthComponent.OnHealthChanged += _ =>
             {
                 if (healthComponent.IsFullHealth)
+                {
+                    stateMachine.gameObject.AddComponent<Companion>();
+                    Player.Instance.Companion = stateMachine.gameObject.GetComponent<Companion>();
                     stateMachine.TransitionTo(nextState);
+                }
             };
         }
     }
