@@ -15,3 +15,9 @@ MonoBehaviour:
   obstructionLayer:
     serializedVersion: 2
     m_Bits: 1024
+  friendlyLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 4096

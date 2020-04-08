@@ -31,12 +31,30 @@ public class LevelExit : MonoBehaviour
         Events.ExitingLevel();
         SceneController.Instance.StartPlatformLevelController.Enable();
 
-        Player.Instance.Shoulder.DisableCloakPhysics();
+        Cloak equippedCloak = Player.Instance.Shoulder.EquippedCloak;
+        Player.Instance.Shoulder.UnequipCloak();
         Player.Instance.CharacterController.enabled = false;
         Player.Instance.transform.position = exitPoint.position;
         Player.Instance.CharacterController.enabled = true;
-        Player.Instance.Shoulder.EnableCloakPhysics();
+        Player.Instance.Shoulder.EquipCloak(equippedCloak);
 
         SceneController.Instance.LoadedLevel.levelController.Disable();
+
+
+        SceneController.Events.OnLevelStartedUnloading += LevelStartedUnloading;
+        SceneController.Instance.UnloadLevel(SceneController.Instance.LoadedLevel.buildIndex.Value);
+    }
+    private void LevelStartedUnloading(int buildIndex, AsyncOperation unloadingLevelOperation)
+    {
+        unloadingLevelOperation.completed += x =>
+            {
+                ReloadLevel(buildIndex);
+                SceneController.Events.OnLevelStartedUnloading -= LevelStartedUnloading;
+            };
+    }
+
+    private void ReloadLevel(int buildIndex)
+    {
+        SceneController.Instance.LoadLevel(buildIndex);
     }
 }

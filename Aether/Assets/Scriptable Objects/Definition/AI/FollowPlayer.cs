@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/AI/Follow player")]
-public class FollowPlayer : AIState
+public class FollowPlayer : Idle
 {
     [SerializeField]
     private float movementSpeed = 20;
@@ -17,6 +17,12 @@ public class FollowPlayer : AIState
     {
         stateMachine.transform.SetParent(null, true);
         SceneManager.MoveGameObjectToScene(stateMachine.gameObject, SceneController.Instance.BaseScene);
+        Player.Instance.AggroRelay.AggroManager = stateMachine.GetComponent<AggroTable>();
+    }
+
+    public override void Destroy(AIStateMachine stateMachine)
+    {
+        Player.Instance.AggroRelay.AggroManager = null;
     }
 
     public override void FixedUpdateState(AIStateMachine stateMachine) {

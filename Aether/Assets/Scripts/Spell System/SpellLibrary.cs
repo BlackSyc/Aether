@@ -45,7 +45,7 @@ public class SpellLibrary
 
     public bool HasActiveSpell => ActiveSpell != null;
 
-    public bool Cast(out SpellCast spellCast, Transform parent, TargetManager targetManager)
+    public bool Cast(out SpellCast spellCast, Transform castParent, GameObject caster, TargetManager targetManager)
     {
         spellCast = null;
 
@@ -55,7 +55,7 @@ public class SpellLibrary
         if (Time.time < coolDownUntil)
             return false;
 
-        SpellCast newSpellCast = new SpellCast(ActiveSpell, parent, targetManager);
+        SpellCast newSpellCast = new SpellCast(ActiveSpell, castParent, caster, targetManager);
         newSpellCast.CastComplete += SetCoolDown;
         spellCast = newSpellCast;
         return true;

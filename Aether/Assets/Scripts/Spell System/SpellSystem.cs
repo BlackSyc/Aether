@@ -6,26 +6,26 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class SpellSystem : MonoBehaviour
 {
-    public struct Events
+    public event Action<SpellLibrary> OnActiveSpellChanged;
+
+    public void ActiveSpellChanged(SpellLibrary spellLibrary)
     {
-        public static event Action<SpellCast> OnCastSpell;
-
-        public static event Action<SpellLibrary> OnActiveSpellChanged;
-
-        public static void CastSpell(SpellCast spellCast)
-        {
-            OnCastSpell?.Invoke(spellCast);
-        }
-
-        public static void ActiveSpellChanged(SpellLibrary spellLibrary)
-        {
-            OnActiveSpellChanged?.Invoke(spellLibrary);
-        }
+        OnActiveSpellChanged?.Invoke(spellLibrary);
     }
+
+    public event Action<SpellCast> OnCastSpell;
+
+    public void CastSpell(SpellCast spellCast)
+    {
+        OnCastSpell?.Invoke(spellCast);
+    }
+
     [SerializeField]
     private Transform castParent;
 
     private SpellCast currentSpellCast;
+
+    public bool IsCasting => currentSpellCast != null;
 
     [SerializeField]
     private SpellLibrary[] spellLibraries;
@@ -35,12 +35,12 @@ public class SpellSystem : MonoBehaviour
 
     private void Start()
     {
-        spellLibraries.ForEach(x => x.OnActiveSpellChanged += _ => Events.ActiveSpellChanged(x));
+        spellLibraries.ForEach(x => x.OnActiveSpellChanged += _ => ActiveSpellChanged(x));
     }
 
     private void OnDestroy()
     {
-        spellLibraries.ForEach(x => x.OnActiveSpellChanged -= _ => Events.ActiveSpellChanged(x));
+        spellLibraries.ForEach(x => x.OnActiveSpellChanged -= _ => ActiveSpellChanged(x));
     }
 
     public LayerMask GetCombinedLayerMask()
@@ -113,24 +113,26 @@ public class SpellSystem : MonoBehaviour
         CastSpell(6);
     }
 
-    public void CastSpell(int index)
+    public SpellCast CastSpell(int index)
     {
         if (currentSpellCast != null)
         {
             if (currentSpellCast.Spell == spellLibraries[index].ActiveSpell)
             {
                 UpdateTargetLock(currentSpellCast.Spell.layerMask);
-                return;
+                return currentSpellCast;
             }
             currentSpellCast.Cancel();
         }
 
-        if (!spellLibraries[index].Cast(out currentSpellCast, castParent, GetComponent<TargetManager>()))
-            return;
+        if (!spellLibraries[index].Cast(out currentSpellCast, castParent, gameObject, GetComponent<TargetManager>()))
+            return null;
 
         currentSpellCast.CastCancelled += ClearCurrentCast;
         currentSpellCast.CastComplete += ClearCurrentCast;
         StartCoroutine(currentSpellCast.Start());
+        CastSpell(currentSpellCast);
+        return currentSpellCast;
     }
 
     private void ClearCurrentCast(SpellCast spellCast)
@@ -142,7 +144,7 @@ public class SpellSystem : MonoBehaviour
 
     private void UpdateTargetLock(LayerMask layerMask)
     {
-        TargetManager targetManager = GetComponent<TargetManager>();
+        PlayerTargetManager targetManager = GetComponent<PlayerTargetManager>();
 
         if (targetManager.GetCurrentTarget().HasTargetTransform && layerMask.Contains(targetManager.GetCurrentTarget().TargetTransform.gameObject))
         {

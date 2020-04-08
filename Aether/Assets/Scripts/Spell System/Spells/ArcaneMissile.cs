@@ -34,6 +34,8 @@ public class ArcaneMissile : SpellObject
 
     public override void CastFired(Target target)
     {
+        base.CastFired(target);
+
         Target = target;
         GetComponent<Animator>().SetTrigger("CastFired");
         transform.SetParent(null, true);

@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class AggroTable : MonoBehaviour
+public class AggroTable : TargetManager, AggroManager
 {
     [SerializeField]
-    private LayerMask contentMask;
-
-    [SerializeField]
     private float aggroRange;
-
-    public LayerMask LayerMask => contentMask;
 
     private List<(int aggro, AggroTrigger trigger)> aggroTriggers = new List<(int, AggroTrigger)>();
 
@@ -20,28 +15,29 @@ public class AggroTable : MonoBehaviour
         return aggroTriggers.Any(x => x.trigger == trigger);
     }
 
-    public AggroTrigger GetHighestAggroTrigger()
+    public (int aggro, AggroTrigger trigger) GetHighestAggroTrigger()
     {
         return aggroTriggers
-            .Single(x => x.aggro == aggroTriggers
-                .Max(y => y.aggro)).trigger;
+            .FirstOrDefault(x => x.aggro == aggroTriggers
+                .Max(y => y.aggro));
     }
 
     public void AddAggroTrigger(AggroTrigger aggroTrigger)
     {
-        if (!contentMask.Contains(aggroTrigger.gameObject))
-        {
-            Debug.LogWarning("Layer is incorrect!");
+        if (gameObject.IsFriendly() ? aggroTrigger.gameObject.IsFriendly() : aggroTrigger.gameObject.IsEnemy())
             return;
-        }
 
-        RemoveAggroTrigger(aggroTrigger);
+        if (Contains(aggroTrigger))
+            return;
+
         aggroTriggers.Add((aggroTrigger.Bias, aggroTrigger));
-        Debug.Log($"{aggroTrigger.gameObject.name} added to {gameObject.name}'s aggro table with a bias of {aggroTrigger.Bias}");
+        aggroTrigger.GlobalAggroRaised += x => IncreaseAggro(aggroTrigger, x);
+
     }
 
     public void RemoveAggroTrigger(AggroTrigger aggroTrigger)
     {
+        aggroTrigger.GlobalAggroRaised -= x => IncreaseAggro(aggroTrigger, x);
         aggroTriggers.RemoveAll(x => x.trigger == aggroTrigger);
     }
 
@@ -76,10 +72,22 @@ public class AggroTable : MonoBehaviour
 
     private void LookForNewTriggers()
     {
-        Physics.OverlapSphere(transform.position, aggroRange, contentMask)
+        Physics.OverlapSphere(transform.position, aggroRange, gameObject.IsFriendly() ? Layers.EnemyLayer : Layers.FriendlyLayer)
             .Select(x => x.GetComponent<AggroTrigger>())
             .Where(x => x != null)
+            .Where(x => x.IsActive)
             .Where(x => !Contains(x))
             .ForEach(x => AddAggroTrigger(x));
+    }
+
+    public override Target GetCurrentTarget()
+    {
+        (int aggro, AggroTrigger trigger) highestAggroTrigger = GetHighestAggroTrigger();
+        if (highestAggroTrigger.trigger)
+        {
+            return new Target(highestAggroTrigger.trigger.transform);
+        }
+
+        return new Target(Vector3.zero);
     }
 }

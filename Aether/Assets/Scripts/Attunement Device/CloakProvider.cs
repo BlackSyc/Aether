@@ -2,13 +2,13 @@
 using System.Collections;
 using UnityEngine;
 
-public class CloakObject : MonoBehaviour
+public class CloakProvider : MonoBehaviour
 {
     public readonly struct Events
     {
-        public static event Action<CloakObject> OnInteract;
+        public static event Action<CloakProvider> OnInteract;
 
-        public static void Interact(CloakObject cloakObject)
+        public static void Interact(CloakProvider cloakObject)
         {
             OnInteract?.Invoke(cloakObject);
         }
@@ -45,12 +45,16 @@ public class CloakObject : MonoBehaviour
     private void Start()
     {
         Puzzle1_Manager.Events.OnStage2Completed += Show;
+        Cloak.Events.OnCloakEquipped += CheckEquip;
         Cloak.Events.OnCloakUnequipped += CheckEquip;
     }
 
-    private void CheckEquip(Cloak cloakInfo)
+    private void CheckEquip(Cloak cloak)
     {
-        if (cloakInfo.IsEquipped)
+        if (cloak != Cloak)
+            return;
+
+        if (Cloak.IsEquipped)
         {
             cloakObject.SetActive(false);
         }
@@ -75,6 +79,7 @@ public class CloakObject : MonoBehaviour
     private void OnDestroy()
     {
         Puzzle1_Manager.Events.OnStage2Completed -= Show;
+        Cloak.Events.OnCloakEquipped -= CheckEquip;
         Cloak.Events.OnCloakUnequipped -= CheckEquip;
     }
 }

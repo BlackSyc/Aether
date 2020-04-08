@@ -10,7 +10,7 @@ public class LevelController : MonoBehaviour, ILevelController
     [SerializeField]
     private bool DisableOnStart = true;
 
-    void Start()
+    protected virtual void Start()
     {
         if (gameObject.scene.buildIndex.Equals(SceneController.Instance.LoadedLevel.buildIndex))
         {
@@ -23,12 +23,12 @@ public class LevelController : MonoBehaviour, ILevelController
         }
     }
 
-    public void Enable()
+    public virtual void Enable()
     {
         gameObject.SetActive(true);
     }
 
-    public void Disable()
+    public virtual void Disable()
     {
         gameObject.SetActive(false);
     }

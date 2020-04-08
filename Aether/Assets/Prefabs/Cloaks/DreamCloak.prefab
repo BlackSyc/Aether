@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6915961028944300907}
   - component: {fileID: 7483821050755634254}
   - component: {fileID: 7483821050755634241}
+  - component: {fileID: 3314559484283310178}
   m_Layer: 8
   m_Name: DreamCloak
   m_TagString: Untagged
@@ -416,3 +417,18 @@ Cloth:
   - {x: 0.6666667, y: 0.16666667, z: 0.16666667}
   - {x: 0.5, y: 0.5, z: 0}
   m_VirtualParticleIndices: 
+--- !u!114 &3314559484283310178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511576211006047054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6df4b3ac910e904b956c85c32338846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robinPrefab: {fileID: 7963561394396373555, guid: 69b3c24c1a2f06b4e84a9537f8565d87,
+    type: 3}
+  spawnRobinIfFound: {fileID: 11400000, guid: 8ae3adb8218fbad48b0f311fa4f23a1c, type: 2}

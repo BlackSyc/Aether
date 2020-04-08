@@ -47,9 +47,18 @@ public class Keystone : ScriptableObject
     private struct KeystoneState
     {
         public bool IsActivated;
+
+        public bool IsFound;
     }
 
     public bool IsActivated => state.IsActivated;
+
+    public bool IsFound => state.IsFound;
+
+    public void Found()
+    {
+        state.IsFound = true;
+    }
 
     public void Activate()
     {

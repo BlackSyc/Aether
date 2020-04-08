@@ -10,29 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac4dc81a40112cf49a4fcb8f2fa35033, type: 3}
-  m_Name: Dream Missile
+  m_Name: AI_Nightmare Missile
   m_EditorClassIdentifier: 
-  Name: Dream Missile
-  Aspect: 1
-  PreferredSpellSlot: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
-  Description: 'Shoot a Dream Missile towards a target.
+  Name: Nightmare Missile
+  Aspect: 3
+  Description: 'Shoot a Nightmare Missile towards a target.
 
 
-    On impact with a friendly
-    target, the target will recieve a minor heal.
+    On impact with
+    an enemy target, the target will take minor damage.
 
 
     Secondary effect:
 
     On
-    impact with some arcane entities, the target will be infused with The Dream,
-    causing the target to grow.'
-  HealthDelta: 500
+    impact with some arcane entities, the target will be infused with The Nightmare,
+    destroying the entity in the process.'
+  Damage: 200
+  Heal: 0
+  GlobalAggro: 0
+  LocalAggro: 10
   CastDuration: 1
   CoolDown: 1
   CastWhileMoving: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
-  SpellObject: {fileID: 1332817021308259537, guid: 386382b1f5c709c4fbbfb726211b1183,
+  SpellObject: {fileID: -3352121741852126580, guid: 17be367dc260f7e4d824f20d781c420e,
     type: 3}

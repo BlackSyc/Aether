@@ -6,14 +6,15 @@ public class AIStateMachine : MonoBehaviour
 {
     [SerializeField]
     private AIState currentState;
-    private void Start()
+
+    private void OnEnable()
     {
         currentState.Create(this);
     }
 
     private void Update()
     {
-         
+        currentState.UpdateState(this);
     }
 
     private void FixedUpdate()
