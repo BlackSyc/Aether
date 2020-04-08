@@ -205,6 +205,8 @@ MonoBehaviour:
   mesh: {fileID: 1186115056013624410}
   targetManager: {fileID: 0}
   companionParent: {fileID: 4040295016492543555}
+  aggroRelay: {fileID: 0}
+  Companion: {fileID: 0}
 --- !u!114 &476305285128632755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +220,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castParent: {fileID: 476305285402853955}
-  spellLibraries: []
+  spellLibraries:
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
 --- !u!114 &3165938278399014691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 229d92b44dd956240ba8f6bf071f0fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
   bias: 10
 --- !u!1 &476305285402854012
 GameObject:

@@ -573,7 +573,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8ae3adb8218fbad48b0f311fa4f23a1c, type: 2}
   - {fileID: 11400000, guid: 222d2674f6db12949b60edd954988959, type: 2}
   - {fileID: 11400000, guid: 8409b26a4ab3d1e4fb046227e4c13017, type: 2}
-  spawnCloaks: 1
+  spawnCloaks: 0
 --- !u!4 &122512648
 Transform:
   m_ObjectHideFlags: 0
@@ -13158,28 +13158,6 @@ PrefabInstance:
       propertyPath: spellSystem
       value: 
       objectReference: {fileID: 205025360}
-    - target: {fileID: 476305285128632755, guid: 95de18f87247a4a42b1fb474a0bcf609,
-        type: 3}
-      propertyPath: spellLibraries.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 476305285128632755, guid: 95de18f87247a4a42b1fb474a0bcf609,
-        type: 3}
-      propertyPath: spellLibraries.Array.data[0].library.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 476305285128632755, guid: 95de18f87247a4a42b1fb474a0bcf609,
-        type: 3}
-      propertyPath: spellLibraries.Array.data[0].activeSpell
-      value: 
-      objectReference: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309,
-        type: 2}
-    - target: {fileID: 476305285128632755, guid: 95de18f87247a4a42b1fb474a0bcf609,
-        type: 3}
-      propertyPath: spellLibraries.Array.data[0].library.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309,
-        type: 2}
     - target: {fileID: 476305285128632759, guid: 95de18f87247a4a42b1fb474a0bcf609,
         type: 3}
       propertyPath: targetManager
