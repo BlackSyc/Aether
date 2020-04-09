@@ -41,9 +41,21 @@ public class Player : MonoBehaviour
     public SkinnedMeshRenderer Mesh => mesh;
 
     [SerializeField]
-    private TargetManager targetManager;
+    private PlayerTargetManager targetManager;
 
-    public TargetManager TargetManager => targetManager;
+    public PlayerTargetManager TargetManager => targetManager;
+
+    [SerializeField]
+    private Transform companionParent;
+
+    public Transform CompanionParent => companionParent;
+
+    [SerializeField]
+    private AggroRelay aggroRelay;
+
+    public AggroRelay AggroRelay => aggroRelay;
+
+    public Companion Companion;
 
     private void Awake()
     {
@@ -56,10 +68,5 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Hint.Get("Movement").Activate();
-    }
-
-    private void OnDestroy()
-    {
-        Instance = null;
     }
 }

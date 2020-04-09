@@ -6,7 +6,7 @@ using UnityEngine;
 public class Crosshair : MonoBehaviour
 {
     [SerializeField]
-    private TargetManager _targetManager;
+    private PlayerTargetManager _targetManager;
 
     [SerializeField]
     private RectTransform targetTracker;
@@ -26,8 +26,7 @@ public class Crosshair : MonoBehaviour
     private void Start()
     {
         _crosshairAnimator.keepAnimatorControllerStateOnDisable = true;
-        SpellSystem.Events.OnSpellAdded += UpdateCrosshairState;
-        SpellSystem.Events.OnSpellRemoved += UpdateCrosshairState;
+        AspectOfCreation.Events.OnDialogComplete += UpdateCrosshairState;
         AetherEvents.UIEvents.Crosshair.OnHideCrosshair += HideCrosshair;
         AetherEvents.UIEvents.Crosshair.OnUnhideCrosshair += UnhideCrosshair;
     }
@@ -42,9 +41,9 @@ public class Crosshair : MonoBehaviour
         _crosshairContainer.SetActive(false);
     }
 
-    private void UpdateCrosshairState(Spell spell)
+    private void UpdateCrosshairState()
     {
-        _crosshairContainer.SetActive(Player.Instance.SpellSystem.HasSpells);
+        _crosshairContainer.SetActive(Player.Instance.SpellSystem.HasActiveSpells);
     }
 
     // Update is called once per frame
@@ -98,8 +97,7 @@ public class Crosshair : MonoBehaviour
 
     private void OnDestroy()
     {
-        SpellSystem.Events.OnSpellAdded -= UpdateCrosshairState;
-        SpellSystem.Events.OnSpellRemoved -= UpdateCrosshairState;
+        AspectOfCreation.Events.OnDialogComplete -= UpdateCrosshairState;
         AetherEvents.UIEvents.Crosshair.OnHideCrosshair -= HideCrosshair;
         AetherEvents.UIEvents.Crosshair.OnUnhideCrosshair -= UnhideCrosshair;
     }

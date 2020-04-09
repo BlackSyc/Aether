@@ -5,8 +5,10 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float movementSpeed = 5;
+
     [SerializeField]
     private float rotationSpeed = 10;
+
     [SerializeField]
     private float jumpPower = 5;
 

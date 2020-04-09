@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4dc81a40112cf49a4fcb8f2fa35033, type: 3}
+  m_Name: Illusion Missile
+  m_EditorClassIdentifier: 
+  Name: Illusion Missile
+  Aspect: 2
+  Description: 'Shoot an Illusion Missile towards a target.
+
+
+    On impact with
+    an enemy target, the target will be knocked back slightly, interrupting their
+    spell cast.
+
+
+    Secondary effect:
+
+    On impact with some arcane entities,
+    the target will be infused with The Illusion, granting the caster the ability
+    to move it.'
+  Damage: 0
+  Heal: 0
+  GlobalAggro: 0
+  LocalAggro: 0
+  CastDuration: 1
+  CoolDown: 2
+  CastWhileMoving: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  SpellObject: {fileID: -5214996593726541444, guid: 38c26c4334d4d1c418c052a6c3e25e89,
+    type: 3}

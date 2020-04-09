@@ -30,7 +30,7 @@ public class Cloak : ScriptableObject
     [TextArea]
     public string Description;
 
-    public List<Spell> Spells;
+    public Spell[] Spells;
 
     [SerializeField]
     private GameObject cloakPrefab;
@@ -44,13 +44,18 @@ public class Cloak : ScriptableObject
 
     public void Equip(Transform parent)
     {
-        State.CloakObject = Instantiate(cloakPrefab, parent);
+        State.CloakObject = GameObject.Instantiate(cloakPrefab, parent);
         State.CloakObject.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[] { parent.GetComponent<CapsuleCollider>() };
 
-        Spells.ForEach(x =>
+        for(int i = 0; i < Player.Instance.SpellSystem.SpellLibraries.Length; i++)
         {
-            Player.Instance.SpellSystem.AddSpell(x);
-        });
+            if (i >= Spells.Length)
+                break;
+
+            Player.Instance.SpellSystem.SpellLibraries[i].SetActiveSpell(Spells[i]);
+
+        }
+
         Events.CloakEquipped(this);
     }
 

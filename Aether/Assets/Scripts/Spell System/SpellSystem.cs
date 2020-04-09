@@ -1,101 +1,138 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
 public class SpellSystem : MonoBehaviour
 {
-    public struct Events
+    public event Action<SpellLibrary> OnActiveSpellChanged;
+
+    public void ActiveSpellChanged(SpellLibrary spellLibrary)
     {
-        public static event Action<Spell> OnSpellAdded;
-        public static event Action<Spell> OnSpellRemoved;
-        public static event Action<SpellCast> OnCastSpell;
-
-        public static void SpellAdded(Spell spell)
-        {
-            OnSpellAdded?.Invoke(spell);
-        }
-        public static void CastSpell(SpellCast spellCast)
-        {
-            OnCastSpell?.Invoke(spellCast);
-        }
-
-        internal static void SpellRemoved(Spell spell)
-        {
-            OnSpellRemoved?.Invoke(spell);
-        }
+        OnActiveSpellChanged?.Invoke(spellLibrary);
     }
+
+    public event Action<SpellCast> OnCastSpell;
+
+    public void CastSpell(SpellCast spellCast)
+    {
+        OnCastSpell?.Invoke(spellCast);
+    }
+
     [SerializeField]
     private Transform castParent;
 
     private SpellCast currentSpellCast;
 
-    [SerializeField]
-    private SpellSlot spellSlot1;
+    public bool IsCasting => currentSpellCast != null;
 
     [SerializeField]
-    private SpellSlot spellSlot2;
+    private SpellLibrary[] spellLibraries;
 
-    [SerializeField]
-    private SpellSlot spellSlot3;
-
-    [SerializeField]
-    private SpellSlot spellSlot4;
-
-    [SerializeField]
-    private SpellSlot spellSlot5;
-
-    [SerializeField]
-    private SpellSlot spellSlot6;
-
-    [SerializeField]
-    private SpellSlot spellSlot7;
+    public SpellLibrary[] SpellLibraries => spellLibraries;
 
 
-    public void AddSpell(Spell spell)
+    private void Start()
     {
-        spell.PreferredSpellSlot.SelectSpell(spell);
-        Events.SpellAdded(spell);
+        spellLibraries.ForEach(x => x.OnActiveSpellChanged += _ => ActiveSpellChanged(x));
     }
 
-    public void ClearAllSpells()
+    private void OnDestroy()
     {
-        Spell spell1 = spellSlot1.State.Spell;
-        spellSlot1.RemoveSpell();
-        Events.SpellRemoved(spell1);
-
-        // Todo: all other spellslots.
+        spellLibraries.ForEach(x => x.OnActiveSpellChanged -= _ => ActiveSpellChanged(x));
     }
 
-    public bool HasSpells => spellSlot1.HasActiveSpell || spellSlot2.HasActiveSpell || spellSlot3.HasActiveSpell || spellSlot4.HasActiveSpell || spellSlot5.HasActiveSpell || spellSlot6.HasActiveSpell || spellSlot7.HasActiveSpell;
+    public LayerMask GetCombinedLayerMask()
+    {
+        LayerMask layerMask = new LayerMask();
 
-    public void CastMissile(CallbackContext context)
+        spellLibraries
+            .Where(x => x.HasActiveSpell)
+            .Select(x => x.ActiveSpell.layerMask)
+            .ForEach(x => layerMask = layerMask | x);
+
+        return layerMask;
+    }
+
+    public bool HasActiveSpells => spellLibraries.Any(x => x.HasActiveSpell);
+
+    public void CastSpell1(CallbackContext context)
     {
         if (!context.performed)
             return;
 
-        if (!spellSlot1.HasActiveSpell)
-        {
-            Debug.LogWarning("No spell bound!");
-            return;
-        }
+        CastSpell(0);
+    }
 
+    public void CastSpell2(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        CastSpell(1);
+    }
+
+    public void CastSpell3(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        CastSpell(2);
+    }
+
+    public void CastSpell4(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        CastSpell(3);
+    }
+
+    public void CastSpell5(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        CastSpell(4);
+    }
+
+    public void CastSpell6(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        CastSpell(5);
+    }
+
+    public void CastSpell7(CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        CastSpell(6);
+    }
+
+    public SpellCast CastSpell(int index)
+    {
         if (currentSpellCast != null)
         {
-            if (currentSpellCast.Spell == spellSlot1.State.Spell)
+            if (currentSpellCast.Spell == spellLibraries[index].ActiveSpell)
             {
-                UpdateTargetLock();
-                return;
+                UpdateTargetLock(currentSpellCast.Spell.layerMask);
+                return currentSpellCast;
             }
             currentSpellCast.Cancel();
         }
 
-        currentSpellCast = spellSlot1.Cast(castParent, this.GetComponent<TargetManager>());
-        if (currentSpellCast == null)
-            return;
+        if (!spellLibraries[index].Cast(out currentSpellCast, castParent, gameObject, GetComponent<TargetManager>()))
+            return null;
 
         currentSpellCast.CastCancelled += ClearCurrentCast;
         currentSpellCast.CastComplete += ClearCurrentCast;
         StartCoroutine(currentSpellCast.Start());
+        CastSpell(currentSpellCast);
+        return currentSpellCast;
     }
 
     private void ClearCurrentCast(SpellCast spellCast)
@@ -105,24 +142,16 @@ public class SpellSystem : MonoBehaviour
         this.currentSpellCast = null;
     }
 
-    private void UpdateTargetLock()
+    private void UpdateTargetLock(LayerMask layerMask)
     {
-        if (!GetComponent<TargetManager>().HasLockedTarget && !GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
-            return;
+        PlayerTargetManager targetManager = GetComponent<PlayerTargetManager>();
 
-        if (GetComponent<TargetManager>().HasLockedTarget && !GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
-            return;
+        if (targetManager.GetCurrentTarget().HasTargetTransform && layerMask.Contains(targetManager.GetCurrentTarget().TargetTransform.gameObject))
+        {
+            if (targetManager.HasLockedTarget)
+                targetManager.UnlockTarget();
 
-        if (!GetComponent<TargetManager>().HasLockedTarget && GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
-        {
-            GetComponent<TargetManager>().LockTarget();
-            return;
-        }
-        if (GetComponent<TargetManager>().HasLockedTarget && GetComponent<TargetManager>().GetCurrentTarget().HasTargetTransform)
-        {
-            GetComponent<TargetManager>().UnlockTarget();
-            GetComponent<TargetManager>().LockTarget();
-            return;
+            targetManager.LockTarget();
         }
     }
 
