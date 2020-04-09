@@ -69,7 +69,7 @@ public class SpellButton : MonoBehaviour
 
     private void StartSpellCast(SpellCast spellCast)
     {
-        if (spellCast.Spell != spellLibrary.ActiveSpell)
+        if (spellCast == null || spellCast.Spell != spellLibrary.ActiveSpell)
             return;
 
         keybindAnimation.Play();
