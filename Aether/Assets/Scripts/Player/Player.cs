@@ -55,6 +55,11 @@ public class Player : MonoBehaviour
 
     public AggroRelay AggroRelay => aggroRelay;
 
+    [SerializeField]
+    private Health health;
+
+    public Health Health => health;
+
     public Companion Companion;
 
     private void Awake()
@@ -63,6 +68,23 @@ public class Player : MonoBehaviour
             throw new Exception("There is more than one Player object in the game!");
 
         Instance = this;
+    }
+
+    public void Respawn()
+    {
+        if(SceneController.Instance.LoadedLevel.buildIndex != null)
+        {
+            ILevelController levelController = SceneController.Instance.LoadedLevel.levelController;
+            levelController.GetLevelExit().TeleportToStartPlatform();
+            Health.SetFullHealth();
+            GetComponent<AggroTrigger>().IsActive = true;
+        }
+        else
+        {
+            transform.position = new Vector3(0, 1, 0);
+            Health.SetFullHealth();
+            GetComponent<AggroTrigger>().IsActive = true;
+        }
     }
 
     private void Start()

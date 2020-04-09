@@ -15,8 +15,7 @@ public class LevelExit : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    private Transform exitPoint;
+    public Transform ExitPoint;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,9 +33,10 @@ public class LevelExit : MonoBehaviour
         Cloak equippedCloak = Player.Instance.Shoulder.EquippedCloak;
         Player.Instance.Shoulder.UnequipCloak();
         Player.Instance.CharacterController.enabled = false;
-        Player.Instance.transform.position = exitPoint.position;
+        Player.Instance.transform.position = ExitPoint.position;
         Player.Instance.CharacterController.enabled = true;
         Player.Instance.Shoulder.EquipCloak(equippedCloak);
+        Player.Instance.Health.SetFullHealth();
 
         SceneController.Instance.LoadedLevel.levelController.Disable();
 

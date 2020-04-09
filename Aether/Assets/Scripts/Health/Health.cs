@@ -66,6 +66,13 @@ public class Health : MonoBehaviour
         ChangeHealth(heal);
     }
 
+    public void SetFullHealth()
+    {
+        float healthDelta = maxHealth - currentHealth;
+        currentHealth = maxHealth;
+        HealthChanged(healthDelta);
+    }
+
 
     public void ChangeHealth(float delta)
     {
