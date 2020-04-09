@@ -23,9 +23,12 @@ MonoBehaviour:
 
     Secondary effect:
 
-    On
-    impact with some arcane entities, the target will be infused with The Dream,
-    causing the target to grow.'
+    Some
+    Arcane entities might start to grow when they get hit by a Dream Missile.
+
+
+    Hold
+    Ctrl to cast on yourself.'
   Damage: 0
   Heal: 500
   GlobalAggro: 0

@@ -10830,6 +10830,51 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f998bf93-a146-4136-b121-a6a0c3dce72e
     m_ActionName: Player/CastSpell7[/Keyboard/v]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 205025360}
+        m_MethodName: ToggleCastOnSelf
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 442a755a-eb4e-49e9-9a82-ee942c0c1a98
+    m_ActionName: Player/CastOnSelf[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 205025360}
+        m_MethodName: ToggleCastOnSelf
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1325e7cc-d894-40cc-baad-71d6973b1de8
+    m_ActionName: User Interface/CastOnSelf[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 205025360}
+        m_MethodName: ToggleCastOnSelf
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8334e7ac-0db1-4c96-9fb3-d6d662a90169
+    m_ActionName: PopUp/CastOnSelf[/Keyboard/ctrl]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: User Interface

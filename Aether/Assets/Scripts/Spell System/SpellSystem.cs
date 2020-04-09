@@ -13,11 +13,11 @@ public class SpellSystem : MonoBehaviour
         OnActiveSpellChanged?.Invoke(spellLibrary);
     }
 
-    public event Action<SpellCast> OnCastSpell;
+    public event Action<SpellCast> OnSpellIsCast;
 
-    public void CastSpell(SpellCast spellCast)
+    public void SpellIsCast(SpellCast spellCast)
     {
-        OnCastSpell?.Invoke(spellCast);
+        OnSpellIsCast?.Invoke(spellCast);
     }
 
     [SerializeField]
@@ -31,6 +31,8 @@ public class SpellSystem : MonoBehaviour
     private SpellLibrary[] spellLibraries;
 
     public SpellLibrary[] SpellLibraries => spellLibraries;
+
+    private bool castOnSelf = false;
 
 
     private void Start()
@@ -56,6 +58,12 @@ public class SpellSystem : MonoBehaviour
     }
 
     public bool HasActiveSpells => spellLibraries.Any(x => x.HasActiveSpell);
+
+    public void ToggleCastOnSelf(CallbackContext context)
+    {
+        castOnSelf = !context.canceled;
+        Debug.Log($"cast on self = {castOnSelf}");
+    }
 
     public void CastSpell1(CallbackContext context)
     {
@@ -119,19 +127,31 @@ public class SpellSystem : MonoBehaviour
         {
             if (currentSpellCast.Spell == spellLibraries[index].ActiveSpell)
             {
-                UpdateTargetLock(currentSpellCast.Spell.layerMask);
+                if (castOnSelf && !currentSpellCast.OnSelf)
+                {
+                    Debug.Log("Cast was on target, but will now be on self!");
+                    currentSpellCast.OnSelf = true;
+                    GetComponent<TargetManager>().UnlockTarget();
+                }
+                if(!castOnSelf && currentSpellCast.OnSelf)
+                {
+                    Debug.Log("Cast was on self, but will now be on target!");
+                    currentSpellCast.OnSelf = false;
+                    UpdateTargetLock(currentSpellCast.Spell.layerMask);
+                }
+
                 return currentSpellCast;
             }
             currentSpellCast.Cancel();
         }
 
-        if (!spellLibraries[index].Cast(out currentSpellCast, castParent, gameObject, GetComponent<TargetManager>()))
+        if (!spellLibraries[index].Cast(out currentSpellCast, castParent, gameObject, GetComponent<TargetManager>(), castOnSelf))
             return null;
 
         currentSpellCast.CastCancelled += ClearCurrentCast;
         currentSpellCast.CastComplete += ClearCurrentCast;
         StartCoroutine(currentSpellCast.Start());
-        CastSpell(currentSpellCast);
+        SpellIsCast(currentSpellCast);
         return currentSpellCast;
     }
 
@@ -151,7 +171,7 @@ public class SpellSystem : MonoBehaviour
             if (targetManager.HasLockedTarget)
                 targetManager.UnlockTarget();
 
-            targetManager.LockTarget();
+            targetManager.LockCurrentTarget();
         }
     }
 

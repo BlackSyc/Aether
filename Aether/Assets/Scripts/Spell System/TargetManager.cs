@@ -36,9 +36,14 @@ public abstract class TargetManager : MonoBehaviour
         layerMask = Player.Instance.SpellSystem.GetCombinedLayerMask();
     }
 
-    public void LockTarget()
+    public void LockCurrentTarget()
     {
         lockedTarget = GetCurrentTarget();
+    }
+
+    public void LockTarget(Transform targetTransform)
+    {
+        lockedTarget = new Target(targetTransform);
     }
 
     public void UnlockTarget()
