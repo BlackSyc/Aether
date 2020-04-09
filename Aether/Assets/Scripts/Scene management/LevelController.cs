@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour, ILevelController
 {
+
+    [SerializeField]
+    private bool DisableOnStart = true;
+
     [SerializeField]
     private Transform entryPoint;
 
     [SerializeField]
-    private bool DisableOnStart = true;
+    private LevelExit levelExit;
 
     protected virtual void Start()
     {
@@ -36,6 +40,11 @@ public class LevelController : MonoBehaviour, ILevelController
     public Transform GetEntryPoint()
     {
         return entryPoint;
+    }
+
+    public LevelExit GetLevelExit()
+    {
+        return levelExit;
     }
 }
 

@@ -9,6 +9,11 @@ public class KeystoneObject : MonoBehaviour
 
     public void PickUp()
     {
+        if (keystone.IsFound)
+        {
+            Hint.Get("Keystone_AlreadyPickedUp").Activate();
+            return;
+        }
         Player.Instance.Inventory.PickupKeystone(keystone);
         Destroy(gameObject);
     }

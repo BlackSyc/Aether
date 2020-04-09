@@ -22,6 +22,9 @@ public class SpellButton : MonoBehaviour
     private Animator castBar;
 
     [SerializeField]
+    private Animation keybindAnimation;
+
+    [SerializeField]
     private SpellTooltip spellTooltip;
 
     public void ShowTooltip()
@@ -66,9 +69,10 @@ public class SpellButton : MonoBehaviour
 
     private void StartSpellCast(SpellCast spellCast)
     {
-        if (spellCast.Spell != spellLibrary.ActiveSpell)
+        if (spellCast == null || spellCast.Spell != spellLibrary.ActiveSpell)
             return;
 
+        keybindAnimation.Play();
         castBar.Play("Cast", -1, 0f);
         SubscribeToSpellCast(spellCast);
     }

@@ -533,8 +533,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36a9bc3373e9e54588dbd09f53b3985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entryPoint: {fileID: 759016554}
   DisableOnStart: 1
+  entryPoint: {fileID: 759016554}
+  levelExit: {fileID: 1775818669}
 --- !u!1 &1775818666
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec157c77c6692c47ab1f594cf8bcac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitPoint: {fileID: 617085078}
+  ExitPoint: {fileID: 617085078}
 --- !u!65 &1775818670
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1911,6 +1912,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1269736597}
     m_Modifications:
+    - target: {fileID: 621186106332817321, guid: 1dede26e8c534ad44ba40ba542f78e8c,
+        type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 0.06507849
+      objectReference: {fileID: 0}
+    - target: {fileID: 621186106332817321, guid: 1dede26e8c534ad44ba40ba542f78e8c,
+        type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: -0.13911797
+      objectReference: {fileID: 0}
+    - target: {fileID: 621186106332817321, guid: 1dede26e8c534ad44ba40ba542f78e8c,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.22818622
+      objectReference: {fileID: 0}
+    - target: {fileID: 621186106332817321, guid: 1dede26e8c534ad44ba40ba542f78e8c,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.07453669
+      objectReference: {fileID: 0}
+    - target: {fileID: 621186106332817321, guid: 1dede26e8c534ad44ba40ba542f78e8c,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.18467323
+      objectReference: {fileID: 0}
     - target: {fileID: 4900859028391352488, guid: 1dede26e8c534ad44ba40ba542f78e8c,
         type: 3}
       propertyPath: m_Name

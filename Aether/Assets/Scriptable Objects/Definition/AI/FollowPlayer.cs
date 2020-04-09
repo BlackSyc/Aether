@@ -39,6 +39,9 @@ public class FollowPlayer : Idle
         }
         else
         {
+            if(!stateMachine.GetComponent<Health>().IsFullHealth)
+                stateMachine.GetComponent<Health>().SetFullHealth();
+
             Quaternion lookRotation = Quaternion.LookRotation(Player.Instance.transform.forward);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
             transform.position = Vector3.MoveTowards(transform.position, Player.Instance.CompanionParent.position, Mathf.Pow((3 * distanceToCompanionParent), 2) * movementSpeed * Time.deltaTime);

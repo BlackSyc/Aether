@@ -14,8 +14,7 @@ public class DreamCloak : MonoBehaviour
     {
         if(spawnRobinIfFound.IsFound && !Player.Instance.Companion)
         {
-            Companion companion = GameObject.Instantiate(robinPrefab, Player.Instance.transform.position + new Vector3(0, 5, 0), Quaternion.identity).GetComponent<Companion>();
-            Player.Instance.Companion = companion;
+            Instantiate(robinPrefab, Player.Instance.transform.position + new Vector3(0, 5, 0), Quaternion.identity);
         }
     }
 }

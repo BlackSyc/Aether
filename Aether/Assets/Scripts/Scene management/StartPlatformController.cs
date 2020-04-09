@@ -32,4 +32,9 @@ public class StartPlatformController : MonoBehaviour, ILevelController
     {
         return null;
     }
+
+    public LevelExit GetLevelExit()
+    {
+        return null;
+    }
 }

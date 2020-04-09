@@ -7,6 +7,7 @@ public class HintObject : MonoBehaviour
     public void Destroy()
     {
         GetComponent<Animation>().Play("HintDespawn");
-        Destroy(gameObject, 2.5f);
+        StopAllCoroutines();
+        Destroy(gameObject, .5f);
     }
 }
