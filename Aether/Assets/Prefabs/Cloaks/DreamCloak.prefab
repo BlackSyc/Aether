@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7483821050755634254}
   - component: {fileID: 7483821050755634241}
   - component: {fileID: 3314559484283310178}
+  - component: {fileID: 8559372015780846427}
   m_Layer: 8
   m_Name: DreamCloak
   m_TagString: Untagged
@@ -432,3 +433,17 @@ MonoBehaviour:
   robinPrefab: {fileID: 7963561394396373555, guid: 69b3c24c1a2f06b4e84a9537f8565d87,
     type: 3}
   spawnRobinIfFound: {fileID: 11400000, guid: 8ae3adb8218fbad48b0f311fa4f23a1c, type: 2}
+--- !u!64 &8559372015780846427
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511576211006047054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -462981019419857548, guid: 6eabe9828d4ba4e4b8f6186d64ac77a6, type: 3}
