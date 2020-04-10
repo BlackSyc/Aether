@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class HealthTooltip : MonoBehaviour
 {
+    [SerializeField]
+    private TextMeshProUGUI nameText;
+
     private Health health;
 
     private Camera camera;
@@ -28,6 +31,7 @@ public class HealthTooltip : MonoBehaviour
     public void SetHealth(Health health)
     {
         this.health = health;
+        nameText.text = health.gameObject.name;
         health.OnHealthChanged += HealthChanged;
         health.OnHealthObjectDestroyed += Destroy;
 
