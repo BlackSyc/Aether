@@ -62,7 +62,6 @@ public class SpellSystem : MonoBehaviour
     public void ToggleCastOnSelf(CallbackContext context)
     {
         castOnSelf = !context.canceled;
-        Debug.Log($"cast on self = {castOnSelf}");
     }
 
     public void CastSpell1(CallbackContext context)
