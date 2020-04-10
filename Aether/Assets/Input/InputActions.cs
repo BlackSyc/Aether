@@ -129,6 +129,14 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""CastOnSelf"",
+                    ""type"": ""Button"",
+                    ""id"": ""442a755a-eb4e-49e9-9a82-ee942c0c1a98"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -329,6 +337,17 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""action"": ""CastSpell7"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""555df98b-6de3-4ebd-8531-8cfad80860ea"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CastOnSelf"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -340,6 +359,14 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""name"": ""SwapActionMap"",
                     ""type"": ""Button"",
                     ""id"": ""0f0bab17-3dc9-4edc-9979-0769e0cdba7c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CastOnSelf"",
+                    ""type"": ""Button"",
+                    ""id"": ""1325e7cc-d894-40cc-baad-71d6973b1de8"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
@@ -375,6 +402,17 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""action"": ""MoveCursor"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e67a0343-602e-4b36-985e-4ee22807a066"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CastOnSelf"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -386,6 +424,14 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""name"": ""Cancel"",
                     ""type"": ""Button"",
                     ""id"": ""54d4911f-079c-4648-9ceb-6fd399c8044d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CastOnSelf"",
+                    ""type"": ""Button"",
+                    ""id"": ""8334e7ac-0db1-4c96-9fb3-d6d662a90169"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
@@ -421,6 +467,17 @@ public class @InputActions : IInputActionCollection, IDisposable
                     ""action"": ""MoveCursor"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6e3f711a-4b0f-454a-ab29-95eb446023d3"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CastOnSelf"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -443,13 +500,16 @@ public class @InputActions : IInputActionCollection, IDisposable
         m_Player_CastSpell6 = m_Player.FindAction("CastSpell6", throwIfNotFound: true);
         m_Player_CastSpell7 = m_Player.FindAction("CastSpell7", throwIfNotFound: true);
         m_Player_CancelCast = m_Player.FindAction("CancelCast", throwIfNotFound: true);
+        m_Player_CastOnSelf = m_Player.FindAction("CastOnSelf", throwIfNotFound: true);
         // User Interface
         m_UserInterface = asset.FindActionMap("User Interface", throwIfNotFound: true);
         m_UserInterface_SwapActionMap = m_UserInterface.FindAction("SwapActionMap", throwIfNotFound: true);
+        m_UserInterface_CastOnSelf = m_UserInterface.FindAction("CastOnSelf", throwIfNotFound: true);
         m_UserInterface_MoveCursor = m_UserInterface.FindAction("MoveCursor", throwIfNotFound: true);
         // PopUp
         m_PopUp = asset.FindActionMap("PopUp", throwIfNotFound: true);
         m_PopUp_Cancel = m_PopUp.FindAction("Cancel", throwIfNotFound: true);
+        m_PopUp_CastOnSelf = m_PopUp.FindAction("CastOnSelf", throwIfNotFound: true);
         m_PopUp_MoveCursor = m_PopUp.FindAction("MoveCursor", throwIfNotFound: true);
     }
 
@@ -514,6 +574,7 @@ public class @InputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_CastSpell6;
     private readonly InputAction m_Player_CastSpell7;
     private readonly InputAction m_Player_CancelCast;
+    private readonly InputAction m_Player_CastOnSelf;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -532,6 +593,7 @@ public class @InputActions : IInputActionCollection, IDisposable
         public InputAction @CastSpell6 => m_Wrapper.m_Player_CastSpell6;
         public InputAction @CastSpell7 => m_Wrapper.m_Player_CastSpell7;
         public InputAction @CancelCast => m_Wrapper.m_Player_CancelCast;
+        public InputAction @CastOnSelf => m_Wrapper.m_Player_CastOnSelf;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -583,6 +645,9 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @CancelCast.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancelCast;
                 @CancelCast.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancelCast;
                 @CancelCast.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCancelCast;
+                @CastOnSelf.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOnSelf;
+                @CastOnSelf.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOnSelf;
+                @CastOnSelf.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOnSelf;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -629,6 +694,9 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @CancelCast.started += instance.OnCancelCast;
                 @CancelCast.performed += instance.OnCancelCast;
                 @CancelCast.canceled += instance.OnCancelCast;
+                @CastOnSelf.started += instance.OnCastOnSelf;
+                @CastOnSelf.performed += instance.OnCastOnSelf;
+                @CastOnSelf.canceled += instance.OnCastOnSelf;
             }
         }
     }
@@ -638,12 +706,14 @@ public class @InputActions : IInputActionCollection, IDisposable
     private readonly InputActionMap m_UserInterface;
     private IUserInterfaceActions m_UserInterfaceActionsCallbackInterface;
     private readonly InputAction m_UserInterface_SwapActionMap;
+    private readonly InputAction m_UserInterface_CastOnSelf;
     private readonly InputAction m_UserInterface_MoveCursor;
     public struct UserInterfaceActions
     {
         private @InputActions m_Wrapper;
         public UserInterfaceActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @SwapActionMap => m_Wrapper.m_UserInterface_SwapActionMap;
+        public InputAction @CastOnSelf => m_Wrapper.m_UserInterface_CastOnSelf;
         public InputAction @MoveCursor => m_Wrapper.m_UserInterface_MoveCursor;
         public InputActionMap Get() { return m_Wrapper.m_UserInterface; }
         public void Enable() { Get().Enable(); }
@@ -657,6 +727,9 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @SwapActionMap.started -= m_Wrapper.m_UserInterfaceActionsCallbackInterface.OnSwapActionMap;
                 @SwapActionMap.performed -= m_Wrapper.m_UserInterfaceActionsCallbackInterface.OnSwapActionMap;
                 @SwapActionMap.canceled -= m_Wrapper.m_UserInterfaceActionsCallbackInterface.OnSwapActionMap;
+                @CastOnSelf.started -= m_Wrapper.m_UserInterfaceActionsCallbackInterface.OnCastOnSelf;
+                @CastOnSelf.performed -= m_Wrapper.m_UserInterfaceActionsCallbackInterface.OnCastOnSelf;
+                @CastOnSelf.canceled -= m_Wrapper.m_UserInterfaceActionsCallbackInterface.OnCastOnSelf;
                 @MoveCursor.started -= m_Wrapper.m_UserInterfaceActionsCallbackInterface.OnMoveCursor;
                 @MoveCursor.performed -= m_Wrapper.m_UserInterfaceActionsCallbackInterface.OnMoveCursor;
                 @MoveCursor.canceled -= m_Wrapper.m_UserInterfaceActionsCallbackInterface.OnMoveCursor;
@@ -667,6 +740,9 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @SwapActionMap.started += instance.OnSwapActionMap;
                 @SwapActionMap.performed += instance.OnSwapActionMap;
                 @SwapActionMap.canceled += instance.OnSwapActionMap;
+                @CastOnSelf.started += instance.OnCastOnSelf;
+                @CastOnSelf.performed += instance.OnCastOnSelf;
+                @CastOnSelf.canceled += instance.OnCastOnSelf;
                 @MoveCursor.started += instance.OnMoveCursor;
                 @MoveCursor.performed += instance.OnMoveCursor;
                 @MoveCursor.canceled += instance.OnMoveCursor;
@@ -679,12 +755,14 @@ public class @InputActions : IInputActionCollection, IDisposable
     private readonly InputActionMap m_PopUp;
     private IPopUpActions m_PopUpActionsCallbackInterface;
     private readonly InputAction m_PopUp_Cancel;
+    private readonly InputAction m_PopUp_CastOnSelf;
     private readonly InputAction m_PopUp_MoveCursor;
     public struct PopUpActions
     {
         private @InputActions m_Wrapper;
         public PopUpActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Cancel => m_Wrapper.m_PopUp_Cancel;
+        public InputAction @CastOnSelf => m_Wrapper.m_PopUp_CastOnSelf;
         public InputAction @MoveCursor => m_Wrapper.m_PopUp_MoveCursor;
         public InputActionMap Get() { return m_Wrapper.m_PopUp; }
         public void Enable() { Get().Enable(); }
@@ -698,6 +776,9 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @Cancel.started -= m_Wrapper.m_PopUpActionsCallbackInterface.OnCancel;
                 @Cancel.performed -= m_Wrapper.m_PopUpActionsCallbackInterface.OnCancel;
                 @Cancel.canceled -= m_Wrapper.m_PopUpActionsCallbackInterface.OnCancel;
+                @CastOnSelf.started -= m_Wrapper.m_PopUpActionsCallbackInterface.OnCastOnSelf;
+                @CastOnSelf.performed -= m_Wrapper.m_PopUpActionsCallbackInterface.OnCastOnSelf;
+                @CastOnSelf.canceled -= m_Wrapper.m_PopUpActionsCallbackInterface.OnCastOnSelf;
                 @MoveCursor.started -= m_Wrapper.m_PopUpActionsCallbackInterface.OnMoveCursor;
                 @MoveCursor.performed -= m_Wrapper.m_PopUpActionsCallbackInterface.OnMoveCursor;
                 @MoveCursor.canceled -= m_Wrapper.m_PopUpActionsCallbackInterface.OnMoveCursor;
@@ -708,6 +789,9 @@ public class @InputActions : IInputActionCollection, IDisposable
                 @Cancel.started += instance.OnCancel;
                 @Cancel.performed += instance.OnCancel;
                 @Cancel.canceled += instance.OnCancel;
+                @CastOnSelf.started += instance.OnCastOnSelf;
+                @CastOnSelf.performed += instance.OnCastOnSelf;
+                @CastOnSelf.canceled += instance.OnCastOnSelf;
                 @MoveCursor.started += instance.OnMoveCursor;
                 @MoveCursor.performed += instance.OnMoveCursor;
                 @MoveCursor.canceled += instance.OnMoveCursor;
@@ -731,15 +815,18 @@ public class @InputActions : IInputActionCollection, IDisposable
         void OnCastSpell6(InputAction.CallbackContext context);
         void OnCastSpell7(InputAction.CallbackContext context);
         void OnCancelCast(InputAction.CallbackContext context);
+        void OnCastOnSelf(InputAction.CallbackContext context);
     }
     public interface IUserInterfaceActions
     {
         void OnSwapActionMap(InputAction.CallbackContext context);
+        void OnCastOnSelf(InputAction.CallbackContext context);
         void OnMoveCursor(InputAction.CallbackContext context);
     }
     public interface IPopUpActions
     {
         void OnCancel(InputAction.CallbackContext context);
+        void OnCastOnSelf(InputAction.CallbackContext context);
         void OnMoveCursor(InputAction.CallbackContext context);
     }
 }

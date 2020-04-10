@@ -32,9 +32,9 @@ public class ArcaneMissile : SpellObject
         GetComponent<Animator>().SetTrigger("CastStarted");
     }
 
-    public override void CastFired(Target target)
+    public override void CastFired(Target target, bool onSelf)
     {
-        base.CastFired(target);
+        base.CastFired(target, onSelf);
 
         Target = target;
         GetComponent<Animator>().SetTrigger("CastFired");

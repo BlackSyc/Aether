@@ -16,8 +16,9 @@ public abstract class SpellObject : MonoBehaviour
 
     public abstract void CastCanceled();
 
-    public virtual void CastFired(Target target)
+    public virtual void CastFired(Target target, bool onSelf)
     {
+        CastOnSelf = onSelf;
         AggroTrigger aggroTrigger = Caster.GetComponent<AggroTrigger>();
         if (aggroTrigger != null)
             aggroTrigger.RaiseGlobalAggro(Spell.GlobalAggro);
