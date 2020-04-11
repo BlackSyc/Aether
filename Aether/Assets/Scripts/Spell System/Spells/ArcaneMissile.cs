@@ -47,6 +47,7 @@ public class ArcaneMissile : SpellObject
     public override void CastInterrupted()
     {
         Debug.Log("Missile Interrupted!");
+        Destroy(this.gameObject);
     }
 
     protected virtual bool Hit()
