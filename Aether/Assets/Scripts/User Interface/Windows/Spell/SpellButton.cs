@@ -22,6 +22,9 @@ public class SpellButton : MonoBehaviour
     private Animator castBar;
 
     [SerializeField]
+    private Animation keybindAnimation;
+
+    [SerializeField]
     private SpellTooltip spellTooltip;
 
     public void ShowTooltip()
@@ -48,7 +51,7 @@ public class SpellButton : MonoBehaviour
         }
 
         spellLibrary.OnActiveSpellChanged += ChangeSpell;
-        SpellCast.Events.OnCastSpell += StartSpellCast;
+        Player.Instance.SpellSystem.OnSpellIsCast += StartSpellCast;
     }
 
     private void ChangeSpell(Spell spell)
@@ -66,9 +69,10 @@ public class SpellButton : MonoBehaviour
 
     private void StartSpellCast(SpellCast spellCast)
     {
-        if (spellCast.Spell != spellLibrary.ActiveSpell)
+        if (spellCast == null || spellCast.Spell != spellLibrary.ActiveSpell)
             return;
 
+        keybindAnimation.Play();
         castBar.Play("Cast", -1, 0f);
         SubscribeToSpellCast(spellCast);
     }
@@ -119,6 +123,7 @@ public class SpellButton : MonoBehaviour
         if(spellLibrary != null)
             spellLibrary.OnActiveSpellChanged -= ChangeSpell;
 
-        SpellCast.Events.OnCastSpell -= StartSpellCast;
+        if(Player.Instance.SpellSystem)
+            Player.Instance.SpellSystem.OnSpellIsCast -= StartSpellCast;
     }
 }

@@ -10,6 +10,8 @@ public abstract class AIState : ScriptableObject
 
     public virtual void FixedUpdateState(AIStateMachine stateMachine) { }
 
+    public virtual void UpdateState(AIStateMachine stateMachine) { }
+
     public virtual void Create(AIStateMachine stateMachine) { }
 
     public virtual void Destroy(AIStateMachine stateMachine) { }

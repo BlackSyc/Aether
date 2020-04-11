@@ -6,41 +6,43 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class SpellSystem : MonoBehaviour
 {
-    public struct Events
+    public event Action<SpellLibrary> OnActiveSpellChanged;
+
+    public void ActiveSpellChanged(SpellLibrary spellLibrary)
     {
-        public static event Action<SpellCast> OnCastSpell;
-
-        public static event Action<SpellLibrary> OnActiveSpellChanged;
-
-        public static void CastSpell(SpellCast spellCast)
-        {
-            OnCastSpell?.Invoke(spellCast);
-        }
-
-        public static void ActiveSpellChanged(SpellLibrary spellLibrary)
-        {
-            OnActiveSpellChanged?.Invoke(spellLibrary);
-        }
+        OnActiveSpellChanged?.Invoke(spellLibrary);
     }
+
+    public event Action<SpellCast> OnSpellIsCast;
+
+    public void SpellIsCast(SpellCast spellCast)
+    {
+        OnSpellIsCast?.Invoke(spellCast);
+    }
+
     [SerializeField]
     private Transform castParent;
 
     private SpellCast currentSpellCast;
+
+    public bool IsCasting => currentSpellCast != null;
 
     [SerializeField]
     private SpellLibrary[] spellLibraries;
 
     public SpellLibrary[] SpellLibraries => spellLibraries;
 
+    private bool castOnSelf = false;
+
 
     private void Start()
     {
-        spellLibraries.ForEach(x => x.OnActiveSpellChanged += _ => Events.ActiveSpellChanged(x));
+        spellLibraries.ForEach(x => x.OnActiveSpellChanged += _ => ActiveSpellChanged(x));
     }
 
     private void OnDestroy()
     {
-        spellLibraries.ForEach(x => x.OnActiveSpellChanged -= _ => Events.ActiveSpellChanged(x));
+        spellLibraries.ForEach(x => x.OnActiveSpellChanged -= _ => ActiveSpellChanged(x));
     }
 
     public LayerMask GetCombinedLayerMask()
@@ -56,6 +58,11 @@ public class SpellSystem : MonoBehaviour
     }
 
     public bool HasActiveSpells => spellLibraries.Any(x => x.HasActiveSpell);
+
+    public void ToggleCastOnSelf(CallbackContext context)
+    {
+        castOnSelf = !context.canceled;
+    }
 
     public void CastSpell1(CallbackContext context)
     {
@@ -113,24 +120,38 @@ public class SpellSystem : MonoBehaviour
         CastSpell(6);
     }
 
-    public void CastSpell(int index)
+    public SpellCast CastSpell(int index)
     {
         if (currentSpellCast != null)
         {
             if (currentSpellCast.Spell == spellLibraries[index].ActiveSpell)
             {
-                UpdateTargetLock(currentSpellCast.Spell.layerMask);
-                return;
+                if (castOnSelf && !currentSpellCast.OnSelf)
+                {
+                    Debug.Log("Cast was on target, but will now be on self!");
+                    currentSpellCast.OnSelf = true;
+                    GetComponent<TargetManager>().UnlockTarget();
+                }
+                if(!castOnSelf && currentSpellCast.OnSelf)
+                {
+                    Debug.Log("Cast was on self, but will now be on target!");
+                    currentSpellCast.OnSelf = false;
+                    UpdateTargetLock(currentSpellCast.Spell.layerMask);
+                }
+
+                return currentSpellCast;
             }
             currentSpellCast.Cancel();
         }
 
-        if (!spellLibraries[index].Cast(out currentSpellCast, castParent, GetComponent<TargetManager>()))
-            return;
+        if (!spellLibraries[index].Cast(out currentSpellCast, castParent, gameObject, GetComponent<TargetManager>(), castOnSelf))
+            return null;
 
         currentSpellCast.CastCancelled += ClearCurrentCast;
         currentSpellCast.CastComplete += ClearCurrentCast;
         StartCoroutine(currentSpellCast.Start());
+        SpellIsCast(currentSpellCast);
+        return currentSpellCast;
     }
 
     private void ClearCurrentCast(SpellCast spellCast)
@@ -142,14 +163,14 @@ public class SpellSystem : MonoBehaviour
 
     private void UpdateTargetLock(LayerMask layerMask)
     {
-        TargetManager targetManager = GetComponent<TargetManager>();
+        PlayerTargetManager targetManager = GetComponent<PlayerTargetManager>();
 
         if (targetManager.GetCurrentTarget().HasTargetTransform && layerMask.Contains(targetManager.GetCurrentTarget().TargetTransform.gameObject))
         {
             if (targetManager.HasLockedTarget)
                 targetManager.UnlockTarget();
 
-            targetManager.LockTarget();
+            targetManager.LockCurrentTarget();
         }
     }
 

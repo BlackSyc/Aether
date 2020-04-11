@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4f4d895afb1bfa46af3b3e5d0a73856, type: 3}
-  m_Name: Robin_FollowPlayer
+  m_Script: {fileID: 11500000, guid: 20be98ba6621a2d43bd5e1ae3e5084ce, type: 3}
+  m_Name: Idle
   m_EditorClassIdentifier: 
-  name: Robin_FollowPlayer
-  movementSpeed: 10
-  rotationSpeed: 180
+  name: Idle
+  aggroLimit: 10
+  aggroState: {fileID: 11400000, guid: ff05f8683a651d440831058be8ddbe19, type: 2}

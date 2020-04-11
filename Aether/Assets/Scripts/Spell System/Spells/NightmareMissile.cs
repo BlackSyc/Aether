@@ -25,11 +25,21 @@ public class NightmareMissile : ArcaneMissile
     private bool TargetHit(Collider collider)
     {
         Health targetHealth = collider.GetComponent<Health>();
-        if (targetHealth != null)
+        if (targetHealth)
         {
-            targetHealth.ChangeHealth(Spell.HealthDelta);
+            targetHealth.Damage(Spell.Damage);
         }
 
+        AggroManager enemyAggroManager = collider.GetComponent<AggroManager>();
+        if(Caster != null)
+        {
+            AggroTrigger casterAggroTrigger = Caster.GetComponent<AggroTrigger>();
+
+            if (enemyAggroManager != null && casterAggroTrigger)
+            {
+                enemyAggroManager.IncreaseAggro(casterAggroTrigger, Spell.LocalAggro);
+            }
+        }
 
         GetComponent<Animator>().SetTrigger("CastHit");
         return true;

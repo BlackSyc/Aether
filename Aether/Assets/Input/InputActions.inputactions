@@ -116,6 +116,14 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "CastOnSelf",
+                    "type": "Button",
+                    "id": "442a755a-eb4e-49e9-9a82-ee942c0c1a98",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -316,6 +324,17 @@
                     "action": "CastSpell7",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "555df98b-6de3-4ebd-8531-8cfad80860ea",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CastOnSelf",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -327,6 +346,14 @@
                     "name": "SwapActionMap",
                     "type": "Button",
                     "id": "0f0bab17-3dc9-4edc-9979-0769e0cdba7c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CastOnSelf",
+                    "type": "Button",
+                    "id": "1325e7cc-d894-40cc-baad-71d6973b1de8",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
@@ -362,6 +389,17 @@
                     "action": "MoveCursor",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e67a0343-602e-4b36-985e-4ee22807a066",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CastOnSelf",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -373,6 +411,14 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "54d4911f-079c-4648-9ceb-6fd399c8044d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CastOnSelf",
+                    "type": "Button",
+                    "id": "8334e7ac-0db1-4c96-9fb3-d6d662a90169",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
@@ -406,6 +452,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "MoveCursor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e3f711a-4b0f-454a-ab29-95eb446023d3",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CastOnSelf",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -14,7 +14,13 @@ public class Spell : ScriptableObject
     [TextArea(0,10)]
     public string Description;
 
-    public float HealthDelta;
+    public float Damage;
+
+    public float Heal;
+
+    public int GlobalAggro;
+
+    public int LocalAggro;
 
     public float CastDuration;
 

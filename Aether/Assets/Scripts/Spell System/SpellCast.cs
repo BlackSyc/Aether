@@ -6,16 +6,6 @@ using UnityEngine.Events;
 
 public class SpellCast
 {
-    public struct Events
-    {
-        public static event Action<SpellCast> OnCastSpell;
-
-        public static void CastSpell(SpellCast spellCast)
-        {
-            OnCastSpell?.Invoke(spellCast);
-        }
-    }
-
     public event Action<SpellCast> CastStarted;
     public event Action<float> CastProgress;
     public event Action<SpellCast> CastCancelled;
@@ -30,7 +20,9 @@ public class SpellCast
 
     public Transform CastParent { get; private set; }
 
-    private GameObject spellObject;
+    public GameObject Caster { get; private set; }
+
+    private SpellObject spellObject;
 
     public Spell Spell { get; private set; }
 
@@ -42,28 +34,33 @@ public class SpellCast
 
     private bool castCancelled = false;
 
+    public bool OnSelf = false;
 
 
-    public SpellCast(Spell spell, Transform castParent, TargetManager targetManager)
+
+    public SpellCast(Spell spell, Transform castParent, GameObject caster, TargetManager targetManager, bool onSelf)
     {
         Spell = spell;
         CastParent = castParent;
+        Caster = caster;
         this.targetManager = targetManager;
+        this.OnSelf = onSelf;
     }
 
     public IEnumerator Start()
     {
         beginCast = Time.time;
         castTime = Time.time - beginCast;
-        spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, CastParent);
+        spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, CastParent).GetComponent<SpellObject>();
 
-        spellObject.GetComponent<SpellObject>().Spell = Spell;
-        spellObject.GetComponent<SpellObject>().CastStarted();
-        Events.CastSpell(this);
+        spellObject.Spell = Spell;
+        spellObject.Caster = Caster;
+
+        spellObject.CastStarted();
         CastStarted?.Invoke(this);
 
-        if (targetManager.GetCurrentTarget().HasTargetTransform && Spell.layerMask.Contains(targetManager.GetCurrentTarget().TargetTransform.gameObject))
-            targetManager.LockTarget();
+        if (!OnSelf && targetManager.GetCurrentTarget().HasTargetTransform && Spell.layerMask.Contains(targetManager.GetCurrentTarget().TargetTransform.gameObject))
+            targetManager.LockCurrentTarget();
 
         while(castTime < Spell.CastDuration)
         {
@@ -73,7 +70,7 @@ public class SpellCast
             }
 
             castTime = Time.time - beginCast;
-            if (castCancelled)
+            if (castCancelled && !OnSelf)
             {
                 targetManager.UnlockTarget();
                 yield break;
@@ -83,21 +80,26 @@ public class SpellCast
             yield return null;
         }
 
-        spellObject.GetComponent<SpellObject>().CastFired(targetManager.Target);
-        targetManager.UnlockTarget();
+
+        spellObject.CastFired(targetManager.Target, OnSelf);
+
+        if (!OnSelf)
+            targetManager.UnlockTarget();
+
+
         CastComplete?.Invoke(this);
     }
 
     public void Cancel()
     {
-        spellObject.GetComponent<SpellObject>().CastCanceled();
+        spellObject.CastCanceled();
         CastCancelled?.Invoke(this);
         castCancelled = true;
     }
 
     public void Interrupt()
     {
-        spellObject.GetComponent<SpellObject>().CastInterrupted();
+        spellObject.CastInterrupted();
         CastInterrupted?.Invoke(this);
         Cancel();
     }

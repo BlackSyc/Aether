@@ -6,7 +6,7 @@ using UnityEngine;
 public class Crosshair : MonoBehaviour
 {
     [SerializeField]
-    private TargetManager _targetManager;
+    private PlayerTargetManager _targetManager;
 
     [SerializeField]
     private RectTransform targetTracker;

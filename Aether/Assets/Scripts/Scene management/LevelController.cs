@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour, ILevelController
 {
-    [SerializeField]
-    private Transform entryPoint;
 
     [SerializeField]
     private bool DisableOnStart = true;
 
-    void Start()
+    [SerializeField]
+    private Transform entryPoint;
+
+    [SerializeField]
+    private LevelExit levelExit;
+
+    protected virtual void Start()
     {
         if (gameObject.scene.buildIndex.Equals(SceneController.Instance.LoadedLevel.buildIndex))
         {
@@ -23,12 +27,12 @@ public class LevelController : MonoBehaviour, ILevelController
         }
     }
 
-    public void Enable()
+    public virtual void Enable()
     {
         gameObject.SetActive(true);
     }
 
-    public void Disable()
+    public virtual void Disable()
     {
         gameObject.SetActive(false);
     }
@@ -36,6 +40,11 @@ public class LevelController : MonoBehaviour, ILevelController
     public Transform GetEntryPoint()
     {
         return entryPoint;
+    }
+
+    public LevelExit GetLevelExit()
+    {
+        return levelExit;
     }
 }
 

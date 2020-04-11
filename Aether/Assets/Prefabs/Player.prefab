@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 476305285128632750}
   - component: {fileID: 476305285128632759}
   - component: {fileID: 476305285128632755}
-  - component: {fileID: 476305285128632754}
+  - component: {fileID: 3165938278399014691}
   - component: {fileID: 476305285128632753}
   - component: {fileID: 476305285128632752}
   - component: {fileID: 476305285128632758}
@@ -203,8 +203,10 @@ MonoBehaviour:
   spellSystem: {fileID: 476305285128632755}
   interactor: {fileID: 476305284757014470}
   mesh: {fileID: 1186115056013624410}
-  targetManager: {fileID: 476305285128632754}
+  targetManager: {fileID: 0}
   companionParent: {fileID: 4040295016492543555}
+  aggroRelay: {fileID: 0}
+  Companion: {fileID: 0}
 --- !u!114 &476305285128632755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,14 +220,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castParent: {fileID: 476305285402853955}
-  spellSlot1: {fileID: 11400000, guid: 74cc222f8518e714a9a5c7b003db7d3f, type: 2}
-  spellSlot2: {fileID: 0}
-  spellSlot3: {fileID: 0}
-  spellSlot4: {fileID: 0}
-  spellSlot5: {fileID: 0}
-  spellSlot6: {fileID: 0}
-  spellSlot7: {fileID: 0}
---- !u!114 &476305285128632754
+  spellLibraries:
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+--- !u!114 &3165938278399014691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,9 +244,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 476305285128632751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba8b4986d1e7e5743b87176800159281, type: 3}
+  m_Script: {fileID: 11500000, guid: 76f00076aa6809b45813b924bff437e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellSystem: {fileID: 476305285128632755}
   camera: {fileID: 476305286454964140}
   maxRange: 100
 --- !u!114 &476305285128632753
@@ -278,6 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 229d92b44dd956240ba8f6bf071f0fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsActive: 1
   bias: 10
 --- !u!1 &476305285402854012
 GameObject:

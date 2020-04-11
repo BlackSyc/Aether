@@ -24,7 +24,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 22fcc23e417832f40884282f43f5fbdb, type: 2}
-  - {fileID: 11400000, guid: b03ca272dc6d5e2448a9d427189b546c, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   cloakPrefab: {fileID: 1511576211006047054, guid: 172acf02efea7684c8c4a6ab152a413e,
     type: 3}
