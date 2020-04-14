@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NightmareMissile : ArcaneMissile
 {
+
     protected override bool Hit()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, .5f, Spell.layerMask | Layers.ObstructionLayer);

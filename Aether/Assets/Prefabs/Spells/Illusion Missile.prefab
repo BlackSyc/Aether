@@ -65,6 +65,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spell: {fileID: 0}
+  Caster: {fileID: 0}
+  CastOnSelf: 0
+  muzzleFlashPrefab: {fileID: 1746341381902864788, guid: 166265a9ba620ad4da1db7bb4736fb63,
+    type: 3}
+  hitPrefab: {fileID: 1746341381902864788, guid: 4a65f991ed88b1c4ca30dfff3e67bc12,
+    type: 3}
   lifeTime: 10
   movementSpeed: 20
   rotationSpeed: 500

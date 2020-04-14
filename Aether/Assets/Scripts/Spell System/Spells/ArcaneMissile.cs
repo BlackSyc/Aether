@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ArcaneMissile : SpellObject
 {
+    [SerializeField]
+    private GameObject muzzleFlashPrefab;
+
+    [SerializeField]
+    protected GameObject hitPrefab;
 
     [SerializeField]
     private float lifeTime = 10;
@@ -42,6 +47,10 @@ public class ArcaneMissile : SpellObject
         initialRotation = transform.rotation;
         travelling = true;
         despawnTime = Time.time + lifeTime;
+
+        GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, transform);
+        muzzleFlash.transform.SetParent(null, true);
+        Destroy(muzzleFlash, muzzleFlash.GetComponent<ParticleSystem>().main.duration);
     }
 
     public override void CastInterrupted()

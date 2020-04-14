@@ -10,7 +10,7 @@ public class DreamMissile : ArcaneMissile
         if (CastOnSelf)
             return TargetHit(Caster);
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, .5f, Spell.layerMask | Layers.ObstructionLayer);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, .1f, Spell.layerMask | Layers.ObstructionLayer);
 
         foreach (Collider collider in colliders)
         {
@@ -34,12 +34,20 @@ public class DreamMissile : ArcaneMissile
             targetHealth.Heal(Spell.Heal);
         }
 
+        GameObject hitFlash = Instantiate(base.hitPrefab, transform);
+        hitFlash.transform.SetParent(null, true);
+        Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
+
         GetComponent<Animator>().SetTrigger("CastHit");
         return true;
     }
 
     private bool ObstructionHit(GameObject gameObject)
     {
+
+        GameObject hitFlash = Instantiate(base.hitPrefab, transform);
+        hitFlash.transform.SetParent(null, true);
+        Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
         GetComponent<Animator>().SetTrigger("CastHit");
         return true;
     }
