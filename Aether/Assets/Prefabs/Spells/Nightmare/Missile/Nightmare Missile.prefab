@@ -104,8 +104,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.26783264, g: 1, b: 0, a: 0.7058824}
-      key1: {r: 0.11069181, g: 0.41509432, b: 0, a: 0}
+      key0: {r: 1, g: 0.00000011523565, b: 0, a: 0.7058824}
+      key1: {r: 0.41568628, g: 0.06121249, b: 0, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -440,9 +440,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2868120797459138798}
   - component: {fileID: 2673095067969104084}
-  - component: {fileID: 1332817021308259537}
+  - component: {fileID: 7103763123758175158}
   m_Layer: 0
-  m_Name: Dream Missile
+  m_Name: Nightmare Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -456,7 +456,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3282706551129572718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.044}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8573737935505128546}
@@ -485,7 +485,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1332817021308259537
+--- !u!114 &7103763123758175158
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -494,15 +494,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3282706551129572718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfc63db5915d7904ea8b0e283bdc1fb8, type: 3}
+  m_Script: {fileID: 11500000, guid: bf546563a27bc7644ad926def4932036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spell: {fileID: 0}
+  Spell: {fileID: 11400000, guid: b03ca272dc6d5e2448a9d427189b546c, type: 2}
   Caster: {fileID: 0}
   CastOnSelf: 0
-  muzzleFlashPrefab: {fileID: 1746341381902864788, guid: 166265a9ba620ad4da1db7bb4736fb63,
+  muzzleFlashPrefab: {fileID: 1746341381902864788, guid: 2b8b562bbfd00174fb08d9b70616a0c6,
     type: 3}
-  hitPrefab: {fileID: 1746341381902864788, guid: 4a65f991ed88b1c4ca30dfff3e67bc12,
+  hitPrefab: {fileID: 1746341381902864788, guid: d844bce2236b1744ba25ac8bbf3b29c5,
     type: 3}
   lifeTime: 10
   movementSpeed: 20
@@ -5216,8 +5216,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dbe395885bde2d84eb76ed94dbffa8d8, type: 2}
-  - {fileID: 2100000, guid: dbe395885bde2d84eb76ed94dbffa8d8, type: 2}
+  - {fileID: 2100000, guid: f87c7de0f5b146446a8a6a80e028aa07, type: 2}
+  - {fileID: 2100000, guid: f87c7de0f5b146446a8a6a80e028aa07, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5304,7 +5304,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.3488048, g: 1, b: 0.2971698, a: 1}
+  m_Color: {r: 1, g: 0.18017924, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -5681,8 +5681,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.28773582, g: 1, b: 0.56287336, a: 1}
-      maxColor: {r: 0.26783264, g: 1, b: 0, a: 1}
+      minColor: {r: 1, g: 0.39354932, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.079807915, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

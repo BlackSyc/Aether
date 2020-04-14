@@ -34,20 +34,12 @@ public class DreamMissile : ArcaneMissile
             targetHealth.Heal(Spell.Heal);
         }
 
-        GameObject hitFlash = Instantiate(base.hitPrefab, transform);
-        hitFlash.transform.SetParent(null, true);
-        Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
-
         GetComponent<Animator>().SetTrigger("CastHit");
         return true;
     }
 
     private bool ObstructionHit(GameObject gameObject)
     {
-
-        GameObject hitFlash = Instantiate(base.hitPrefab, transform);
-        hitFlash.transform.SetParent(null, true);
-        Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
         GetComponent<Animator>().SetTrigger("CastHit");
         return true;
     }

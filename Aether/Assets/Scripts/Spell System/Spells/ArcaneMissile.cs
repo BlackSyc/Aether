@@ -61,7 +61,7 @@ public class ArcaneMissile : SpellObject
 
     protected virtual bool Hit()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, .5f, Spell.layerMask | Layers.ObstructionLayer);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, .1f, Spell.layerMask | Layers.ObstructionLayer);
         foreach(Collider collider in colliders)
         {
             if(Target.TargetTransform == collider.transform)
@@ -83,7 +83,6 @@ public class ArcaneMissile : SpellObject
         {
             missileTarget.Hit();
         }
-
         GetComponent<Animator>().SetTrigger("CastHit");
         return true;
     }
@@ -104,7 +103,10 @@ public class ArcaneMissile : SpellObject
             if (Hit())
             {
                 travelling = false;
-                Destroy(this.gameObject, 1);
+                GameObject hitFlash = Instantiate(hitPrefab, transform);
+                hitFlash.transform.SetParent(null, true);
+                Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
+                Destroy(gameObject);
                 return;
             }
 

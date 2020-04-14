@@ -7,7 +7,7 @@ public class NightmareMissile : ArcaneMissile
 
     protected override bool Hit()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, .5f, Spell.layerMask | Layers.ObstructionLayer);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, .1f, Spell.layerMask | Layers.ObstructionLayer);
 
         foreach (Collider collider in colliders)
         {
