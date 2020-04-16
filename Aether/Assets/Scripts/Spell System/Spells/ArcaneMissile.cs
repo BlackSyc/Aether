@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class ArcaneMissile : SpellObject
 {
+    [SerializeField]
+    private GameObject muzzleFlashPrefab;
+
+    [SerializeField]
+    protected GameObject hitPrefab;
+
+    [SerializeField]
+    private float hitRadius = 0.1f;
 
     [SerializeField]
     private float lifeTime = 10;
 
-    private bool travelling = false;
-    private float despawnTime;
+    protected bool travelling = false;
+
+    protected float despawnTime;
+
+    public float DespawnTime => despawnTime;
 
     [SerializeField]
-    private float movementSpeed = 20;
+    protected float movementSpeed = 20;
 
     [SerializeField]
-    private float rotationSpeed = 500;
+    protected float rotationSpeed = 500;
 
     private Quaternion initialRotation;
 
@@ -42,6 +53,10 @@ public class ArcaneMissile : SpellObject
         initialRotation = transform.rotation;
         travelling = true;
         despawnTime = Time.time + lifeTime;
+
+        GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, transform);
+        muzzleFlash.transform.SetParent(null, true);
+        Destroy(muzzleFlash, muzzleFlash.GetComponent<ParticleSystem>().main.duration);
     }
 
     public override void CastInterrupted()
@@ -50,42 +65,44 @@ public class ArcaneMissile : SpellObject
         Destroy(this.gameObject);
     }
 
-    protected virtual bool Hit()
+    protected bool Hit()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, .5f, Spell.layerMask | Layers.ObstructionLayer);
+        if (CastOnSelf)
+            return ObjectHit(Caster);
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position, hitRadius, Spell.layerMask | Layers.ObstructionLayer);
         foreach(Collider collider in colliders)
         {
             if(Target.TargetTransform == collider.transform)
             {
-                return TargetHit(collider);
+                return ObjectHit(collider.gameObject);
             }
             else if (Layers.ObstructionLayer.Contains(collider.gameObject))
             {
-                return ObstructionHit(collider);
+                return ObstructionHit(collider.gameObject);
             }
         }
         return false;
     }
 
-    private bool TargetHit(Collider collider)
+    public virtual bool ObjectHit(GameObject hitObject)
     {
-        Puzzle1_MissileTarget missileTarget = collider.GetComponent<Puzzle1_MissileTarget>();
+        Puzzle1_MissileTarget missileTarget = hitObject.GetComponent<Puzzle1_MissileTarget>();
         if (missileTarget != null)
         {
             missileTarget.Hit();
         }
-
         GetComponent<Animator>().SetTrigger("CastHit");
         return true;
     }
 
-    private bool ObstructionHit(Collider collider)
+    public virtual bool ObstructionHit(GameObject hitObject)
     {
         GetComponent<Animator>().SetTrigger("CastHit");
         return true;
     }
 
-    private void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         if (travelling)
         {
@@ -95,7 +112,10 @@ public class ArcaneMissile : SpellObject
             if (Hit())
             {
                 travelling = false;
-                Destroy(this.gameObject, 1);
+                GameObject hitFlash = Instantiate(hitPrefab, transform);
+                hitFlash.transform.SetParent(null, true);
+                Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
+                Destroy(gameObject);
                 return;
             }
 

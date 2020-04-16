@@ -14,18 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Nightmare Missile
   Aspect: 3
-  Description: 'Shoot a Nightmare Missile towards a target.
-
-
-    On impact with
-    an enemy target, the target will take minor damage.
-
-
-    Secondary effect:
-
-    On
-    impact with some arcane entities, the target will be infused with The Nightmare,
-    destroying the entity in the process.'
+  Description: AI_Spell, should not be used by players!
   Damage: 200
   Heal: 0
   GlobalAggro: 0
@@ -36,5 +25,5 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
-  SpellObject: {fileID: -3352121741852126580, guid: 17be367dc260f7e4d824f20d781c420e,
+  SpellObject: {fileID: 7103763123758175158, guid: 00c8c5ec88fa5aa48ae42b8479d5af7b,
     type: 3}

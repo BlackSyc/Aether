@@ -29,5 +29,5 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
-  SpellObject: {fileID: 4503165926130559463, guid: 1e74e87b83147db4b829cd215f7bb4e9,
+  SpellObject: {fileID: 7868633660527159973, guid: f21ee5918dffd5647a32d1648f4cdc87,
     type: 3}
