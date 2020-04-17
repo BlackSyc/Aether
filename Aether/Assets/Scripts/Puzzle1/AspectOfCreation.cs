@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Aether.Spells.ScriptableObjects;
+using ScriptableObjects;
+using System;
 using UnityEngine;
 
 public class AspectOfCreation : MonoBehaviour
@@ -53,7 +53,7 @@ public class AspectOfCreation : MonoBehaviour
     private void GrantArcaneMissile()
     {
         Hint.Get("Cursor").Activate();
-        Player.Instance.SpellSystem.SpellLibraries[0].SetActiveSpell(reward);
+        Player.Instance.SpellSystem.AddSpell(0, reward);
     }
 
     private void OnDestroy()

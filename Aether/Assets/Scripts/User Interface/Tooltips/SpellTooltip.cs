@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Aether.Spells.ScriptableObjects;
 using TMPro;
 using UnityEngine;
 

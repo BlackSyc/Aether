@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.EventSystems;
 using static AetherEvents;
+using ScriptableObjects;
 
 public class KeystoneSelector : MonoBehaviour
 {

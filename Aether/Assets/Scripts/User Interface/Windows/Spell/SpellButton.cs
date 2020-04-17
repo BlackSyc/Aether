@@ -1,13 +1,12 @@
-﻿using System;
+﻿using Aether.Spells;
+using Aether.Spells.ScriptableObjects;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SpellButton : MonoBehaviour
 {
-    private SpellLibrary spellLibrary;
+    private ISpellLibrary spellLibrary;
 
     [SerializeField]
     private int spellLibraryIndex;
@@ -123,7 +122,7 @@ public class SpellButton : MonoBehaviour
         if(spellLibrary != null)
             spellLibrary.OnActiveSpellChanged -= ChangeSpell;
 
-        if(Player.Instance.SpellSystem)
+        if(Player.Instance.SpellSystem != null)
             Player.Instance.SpellSystem.OnSpellIsCast -= StartSpellCast;
     }
 }

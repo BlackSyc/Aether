@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Aether.Spells;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public abstract class TargetManager : MonoBehaviour
     public Target Target => lockedTarget != null ? lockedTarget : GetCurrentTarget();
 
     [SerializeField]
-    private SpellSystem spellSystem;
+    private ISpellSystem spellSystem;
 
     private Target lockedTarget;
 

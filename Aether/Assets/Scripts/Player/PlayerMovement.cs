@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]

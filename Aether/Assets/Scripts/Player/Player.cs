@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Aether.Spells;
+using ScriptableObjects;
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -26,9 +28,9 @@ public class Player : MonoBehaviour
     public Inventory Inventory => inventory;
 
     [SerializeField]
-    private SpellSystem spellSystem;
+    private ISpellSystem spellSystem;
 
-    public SpellSystem SpellSystem => spellSystem;
+    public ISpellSystem SpellSystem => spellSystem;
 
     [SerializeField]
     private Interactor interactor;

@@ -1,68 +1,88 @@
-﻿using System;
+﻿using Aether.Spells.ScriptableObjects;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class SpellLibrary
+namespace Aether.Spells
 {
-    public event Action<Spell> OnActiveSpellChanged;
-
-    [SerializeField]
-    private Spell activeSpell;
-
-    public Spell ActiveSpell => activeSpell;
-
-    [SerializeField]
-    private List<Spell> library;
-
-
-    private float coolDownUntil;
-
-    public float CoolDownUntil => coolDownUntil;
-
-    public void SetActiveSpell(Spell spell)
+    [Serializable]
+    public class SpellLibrary : ISpellLibrary
     {
-        if (spell == null)
-            return;
 
-        if (!library.Contains(spell))
-            library.Add(spell);
+        #region Private Fields
+        [SerializeField]
+        private Spell activeSpell = null;
 
-        activeSpell = spell;
-        OnActiveSpellChanged?.Invoke(ActiveSpell);
-    }
+        [SerializeField]
+        private List<Spell> library = new List<Spell>();
+        #endregion
 
-    public void Remove(Spell spell)
-    {
-        library.Remove(spell);
+        #region Public Properties
+        public event Action<Spell> OnActiveSpellChanged;
 
-        if (ActiveSpell.Equals(spell))
+        public bool HasActiveSpell => ActiveSpell != null;
+
+        public float CoolDownUntil { get; private set; }
+
+        public Spell ActiveSpell => activeSpell;
+        #endregion
+
+        #region Public Methods
+        public void Add(Spell spell, bool makeActive = true)
         {
-            activeSpell = null;
-            OnActiveSpellChanged?.Invoke(null);
+            if (spell != null && !Contains(spell))
+                library.Add(spell);
+
+            if (makeActive)
+            {
+                MakeSpellActive(spell);
+            }
         }
-    }
 
-    public bool HasActiveSpell => ActiveSpell != null;
+        public bool Contains(Spell spell)
+        {
+            return library.Contains(spell);
+        }
 
-    public bool Cast(out SpellCast spellCast, Transform castParent, GameObject caster, TargetManager targetManager, bool onSelf)
-    {
-        spellCast = null;
+        public void Remove(Spell spell)
+        {
+            library.Remove(spell);
 
-        if (ActiveSpell == null)
-            return false;
+            if (ActiveSpell.Equals(spell))
+            {
+                activeSpell = null;
+                OnActiveSpellChanged?.Invoke(null);
+            }
+        }
 
-        if (Time.time < coolDownUntil)
-            return false;
+        public bool TryCast(out SpellCast spellCast, Transform castParent, ISpellSystem caster, TargetManager targetManager, bool onSelf)
+        {
+            spellCast = null;
 
-        SpellCast newSpellCast = new SpellCast(ActiveSpell, castParent, caster, targetManager, onSelf);
-        newSpellCast.CastComplete += SetCoolDown;
-        spellCast = newSpellCast;
-        return true;
-    }
+            if (ActiveSpell == null)
+                return false;
 
-    private void SetCoolDown(SpellCast spellCast)
-    {
-        coolDownUntil = Time.time + spellCast.Spell.CoolDown;
+            if (Time.time < CoolDownUntil)
+                return false;
+
+            SpellCast newSpellCast = new SpellCast(ActiveSpell, castParent, caster, targetManager, onSelf);
+            newSpellCast.CastComplete += SetCoolDown;
+            spellCast = newSpellCast;
+            return true;
+        }
+        #endregion
+
+        #region Private Methods
+        private void SetCoolDown(SpellCast spellCast)
+        {
+            CoolDownUntil = Time.time + spellCast.Spell.CoolDown;
+        }
+
+        private void MakeSpellActive(Spell spell)
+        {
+            activeSpell = spell;
+            OnActiveSpellChanged?.Invoke(ActiveSpell);
+        }
+        #endregion
     }
 }
