@@ -26,7 +26,11 @@ namespace Aether.Spells
 
         void RemoveSpell(int libraryIndex, Spell spell);
 
-        SpellCast CastSpell(int index);
+        void CastSpell(int index);
+
+        void CancelSpellCast();
+
+        void InterruptSpellCast();
 
         LayerMask GetCombinedLayerMask();
         #endregion

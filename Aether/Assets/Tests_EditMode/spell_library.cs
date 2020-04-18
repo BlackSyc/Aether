@@ -159,8 +159,7 @@ namespace Tests
         public void cast_fails_when_library_is_on_cooldown()
         {
             // ARRANGE
-            ISpellLibrary spellLibrary = Substitute.For<ISpellLibrary>();
-            spellLibrary.CoolDownUntil.Returns(Time.time + 10);
+            ISpellLibrary spellLibrary = new SpellLibrary(10f);
             Spell spell = ScriptableObject.CreateInstance<Spell>();
             spellLibrary.Add(spell);
 

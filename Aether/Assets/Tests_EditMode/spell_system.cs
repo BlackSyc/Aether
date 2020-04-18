@@ -1,12 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Aether.Spells;
+﻿using Aether.Spells;
 using Aether.Spells.ScriptableObjects;
-using NSubstitute;
 using NUnit.Framework;
 using ScriptableObjects;
 using UnityEngine;
-using UnityEngine.TestTools;
 
 namespace Tests
 {
@@ -196,39 +192,6 @@ namespace Tests
             // ASSERT
             Assert.AreEqual(combinedLayerMask.value , result.value);
         }
-        #endregion
-
-        #region CastSpell
-        [Test]
-        public void cast_spell_succeeds()
-        {
-            //// ARRANGE
-            //GameObject testObject = new GameObject();
-            //testObject.AddComponent<PlayerTargetManager>();
-            //SpellSystem spellSystem = testObject.AddComponent<SpellSystem>();
-
-            //Spell spell = ScriptableObject.CreateInstance<Spell>();
-            //GameObject testSpellObject = new GameObject();
-            //SpellObject spellObject = testSpellObject.AddComponent<SpellObject>();
-
-
-            //spell.SpellObject = spellObject;
-            //spellSystem.AddSpell(0, spell);
-
-            //SpellCast eventResult = null;
-            //spellSystem.OnSpellIsCast += x => eventResult = x;
-
-            
-            //// ACT
-            //SpellCast spellCast = spellSystem.CastSpell(0);
-
-
-            //// ASSERT
-            //Assert.IsNotNull(spellCast);
-            //Assert.IsNotNull(eventResult);
-            //Assert.AreEqual(spellCast, eventResult);
-        }
-        
         #endregion
     }
 }

@@ -122,6 +122,7 @@ namespace Aether.Spells
         #endregion
 
         #region Public Methods
+        // Tested in Editmode Tests
         public void AddSpell(int libraryIndex, Spell spell, bool makeActive = true)
         {
             EnsureSize(libraryIndex);
@@ -135,6 +136,7 @@ namespace Aether.Spells
             SpellLibraries[libraryIndex].Add(spell, makeActive);
         }
 
+        // Tested in Editmode Tests
         public void RemoveSpell(int libraryIndex, Spell spell)
         {
             if (SpellLibraries.Length < libraryIndex - 1 || SpellLibraries[libraryIndex] == null)
@@ -143,6 +145,7 @@ namespace Aether.Spells
             SpellLibraries[libraryIndex].Remove(spell);
         }
 
+        // Tested in Editmode Tests
         public LayerMask GetCombinedLayerMask()
         {
             LayerMask layerMask = new LayerMask();
@@ -158,7 +161,8 @@ namespace Aether.Spells
             return layerMask;
         }
 
-        public SpellCast CastSpell(int index)
+        // NOT YET: Tested in Playmode Tests
+        public void CastSpell(int index)
         {
             if (currentSpellCast != null)
             {
@@ -177,19 +181,31 @@ namespace Aether.Spells
                         UpdateTargetLock(currentSpellCast.Spell.LayerMask);
                     }
 
-                    return currentSpellCast;
+                    return;
                 }
                 currentSpellCast.Cancel();
             }
 
             if (!SpellLibraries[index].TryCast(out currentSpellCast, castParent, this, targetManager, castOnSelf))
-                return null;
+                return;
 
             currentSpellCast.CastCancelled += ClearCurrentCast;
             currentSpellCast.CastComplete += ClearCurrentCast;
             StartCoroutine(currentSpellCast.Start());
             OnSpellIsCast?.Invoke(currentSpellCast);
-            return currentSpellCast;
+            return;
+        }
+
+        // NOT YET: Tested in Playmode Tests
+        public void CancelSpellCast()
+        {
+
+        }
+
+        // NOT YET: Tested in Playmode Tests
+        public void InterruptSpellCast()
+        {
+
         }
         #endregion
 

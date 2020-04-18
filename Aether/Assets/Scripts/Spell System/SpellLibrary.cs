@@ -27,7 +27,20 @@ namespace Aether.Spells
         public Spell ActiveSpell => activeSpell;
         #endregion
 
+        #region Constructors
+        public SpellLibrary()
+        {
+
+        }
+
+        public SpellLibrary(float initialCooldown)
+        {
+            CoolDownUntil = Time.time + initialCooldown;
+        }
+        #endregion
+
         #region Public Methods
+        // Tested in Editmode Tests
         public void Add(Spell spell, bool makeActive = true)
         {
             if (spell != null && !Contains(spell))
@@ -39,11 +52,13 @@ namespace Aether.Spells
             }
         }
 
+        // Tested in Editmode Tests
         public bool Contains(Spell spell)
         {
             return library.Contains(spell);
         }
 
+        // Tested in Editmode Tests
         public void Remove(Spell spell)
         {
             library.Remove(spell);
@@ -55,6 +70,7 @@ namespace Aether.Spells
             }
         }
 
+        // Tested in Editmode Tests
         public bool TryCast(out SpellCast spellCast, Transform castParent, ISpellSystem caster, TargetManager targetManager, bool onSelf)
         {
             spellCast = null;
