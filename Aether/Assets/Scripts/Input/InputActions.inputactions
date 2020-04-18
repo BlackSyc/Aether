@@ -469,5 +469,11 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "BaseControlScheme",
+            "bindingGroup": "BaseControlScheme",
+            "devices": []
+        }
+    ]
 }

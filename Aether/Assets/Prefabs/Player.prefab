@@ -106,7 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a1dd5ec9749354f833da9ecd179b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpellSystem: {fileID: 476305285128632755}
   defaultSpell: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
 --- !u!1 &476305285128632751
 GameObject:
@@ -120,11 +119,12 @@ GameObject:
   - component: {fileID: 476305285128632749}
   - component: {fileID: 476305285128632750}
   - component: {fileID: 476305285128632759}
-  - component: {fileID: 476305285128632755}
-  - component: {fileID: 3165938278399014691}
   - component: {fileID: 476305285128632753}
   - component: {fileID: 476305285128632752}
   - component: {fileID: 476305285128632758}
+  - component: {fileID: 1423441207}
+  - component: {fileID: 476305284923640294}
+  - component: {fileID: 8931568597856155357}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -200,56 +200,14 @@ MonoBehaviour:
   playerMovement: {fileID: 476305285128632750}
   shoulder: {fileID: 476305285026207482}
   inventory: {fileID: 476305285128632753}
-  spellSystem: {fileID: 476305285128632755}
+  spellSystem: {fileID: 0}
   interactor: {fileID: 476305284757014470}
   mesh: {fileID: 1186115056013624410}
-  targetManager: {fileID: 0}
+  targetManager: {fileID: 476305284923640294}
   companionParent: {fileID: 4040295016492543555}
-  aggroRelay: {fileID: 0}
+  aggroRelay: {fileID: 1423441207}
+  health: {fileID: 476305285128632752}
   Companion: {fileID: 0}
---- !u!114 &476305285128632755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476305285128632751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d564d1875df1e8a418319885fba4d5a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castParent: {fileID: 476305285402853955}
-  spellLibraries:
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
---- !u!114 &3165938278399014691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476305285128632751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76f00076aa6809b45813b924bff437e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spellSystem: {fileID: 476305285128632755}
-  camera: {fileID: 476305286454964140}
-  maxRange: 100
 --- !u!114 &476305285128632753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f6119820856f04684f2fa39e7e3e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 1000
+  currentHealth: 700
   maxHealth: 1000
 --- !u!114 &476305285128632758
 MonoBehaviour:
@@ -291,6 +249,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsActive: 1
   bias: 10
+--- !u!114 &1423441207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476305285128632751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ab7fc916fcf2845ac7044e69068dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &476305284923640294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476305285128632751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f42a106bb7fe3f41b4c5d0c5fabacf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 476305286454964140}
+  maxRange: 100
+--- !u!114 &8931568597856155357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476305285128632751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046f1a73255080f4cad7465ed46cf416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castParent: {fileID: 476305285402853955}
+  preFillOnAwake:
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
 --- !u!1 &476305285402854012
 GameObject:
   m_ObjectHideFlags: 0

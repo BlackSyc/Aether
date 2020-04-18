@@ -1,12 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Aether.Spells;
-using Aether.Spells.ScriptableObjects;
-using NSubstitute;
+﻿using Aether.SpellSystem;
+using Aether.SpellSystem.ScriptableObjects;
+using Aether.TargetSystem;
 using NUnit.Framework;
-using ScriptableObjects;
 using UnityEngine;
-using UnityEngine.TestTools;
 
 namespace Tests
 {
@@ -134,7 +130,7 @@ namespace Tests
             spellLibrary.Add(spell);
 
             // ACT
-            bool castSuccess = spellLibrary.TryCast(out var spellCast, null, null, null, false);
+            bool castSuccess = spellLibrary.TryCast(out var spellCast, null, null, new Target(null));
 
             // ASSERT
             Assert.IsTrue(castSuccess);
@@ -148,7 +144,7 @@ namespace Tests
             SpellLibrary spellLibrary = new SpellLibrary();
 
             // ACT
-            bool castSuccess = spellLibrary.TryCast(out var spellCast, null, null, null, false);
+            bool castSuccess = spellLibrary.TryCast(out var spellCast, null, null, new Target(null));
 
             // ASSERT
             Assert.IsFalse(castSuccess);
@@ -164,7 +160,7 @@ namespace Tests
             spellLibrary.Add(spell);
 
             // ACT
-            bool castSuccess = spellLibrary.TryCast(out var spellCast, null, null, null, false);
+            bool castSuccess = spellLibrary.TryCast(out var spellCast, null, null, new Target(null));
 
             // ASSERT
             Assert.IsFalse(castSuccess);

@@ -1,5 +1,5 @@
-﻿using Aether.Spells;
-using Aether.Spells.ScriptableObjects;
+﻿using Aether.SpellSystem;
+using Aether.SpellSystem.ScriptableObjects;
 using ScriptableObjects;
 using UnityEngine;
 

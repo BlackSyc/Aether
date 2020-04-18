@@ -1,9 +1,8 @@
-﻿using ScriptableObjects;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Aether.TargetSystem;
+using ScriptableObjects;
 using UnityEngine;
 
-namespace Aether.Spells
+namespace Aether.SpellSystem
 {
     public class ArcaneMissile : SpellObject
     {
@@ -46,11 +45,10 @@ namespace Aether.Spells
             GetComponent<Animator>().SetTrigger("CastStarted");
         }
 
-        public override void CastFired(Target target, bool onSelf)
+        public override void CastFired()
         {
-            base.CastFired(target, onSelf);
+            base.CastFired();
 
-            Target = target;
             GetComponent<Animator>().SetTrigger("CastFired");
             transform.SetParent(null, true);
             initialRotation = transform.rotation;
@@ -70,7 +68,7 @@ namespace Aether.Spells
 
         protected bool Hit()
         {
-            if (CastOnSelf)
+            if (Target.TargetTransform == Caster.gameObject.transform)
                 return ObjectHit(Caster.gameObject);
 
             Collider[] colliders = Physics.OverlapSphere(transform.position, hitRadius, Spell.LayerMask | Layers.ObstructionLayer);

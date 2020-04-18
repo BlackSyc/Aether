@@ -1,8 +1,9 @@
-﻿using Aether.Spells.ScriptableObjects;
+﻿using Aether.SpellSystem.ScriptableObjects;
+using Aether.TargetSystem;
 using System;
 using UnityEngine;
 
-namespace Aether.Spells
+namespace Aether.SpellSystem
 {
     public interface ISpellLibrary
     {
@@ -23,7 +24,7 @@ namespace Aether.Spells
 
         void Add(Spell spell, bool makeActive = true);
 
-        bool TryCast(out SpellCast spellCast, Transform castParent, ISpellSystem caster, TargetManager targetManager, bool onSelf);
+        bool TryCast(out SpellCast spellCast, Transform castParent, ISpellSystem caster, Target target);
         #endregion
     }
 }

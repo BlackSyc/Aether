@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Aether.Spells.ScriptableObjects
+namespace Aether.SpellSystem.ScriptableObjects
 {
     [CreateAssetMenu(menuName = "Scriptable Objects/Spell System/Spell")]
     [Serializable]

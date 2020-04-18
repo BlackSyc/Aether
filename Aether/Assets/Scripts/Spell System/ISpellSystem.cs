@@ -1,8 +1,8 @@
-﻿using Aether.Spells.ScriptableObjects;
+﻿using Aether.SpellSystem.ScriptableObjects;
 using System;
 using UnityEngine;
 
-namespace Aether.Spells
+namespace Aether.SpellSystem
 {
     public interface ISpellSystem
     {

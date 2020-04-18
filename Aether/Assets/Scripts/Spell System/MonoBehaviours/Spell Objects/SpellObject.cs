@@ -1,11 +1,8 @@
-﻿using Aether.Spells.ScriptableObjects;
-using ScriptableObjects;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Aether.SpellSystem.ScriptableObjects;
+using Aether.TargetSystem;
 using UnityEngine;
-using UnityEngine.Events;
 
-namespace Aether.Spells
+namespace Aether.SpellSystem
 {
     public class SpellObject : MonoBehaviour
     {
@@ -13,7 +10,7 @@ namespace Aether.Spells
 
         public ISpellSystem Caster;
 
-        public bool CastOnSelf = false;
+        public Target Target;
 
         public virtual void CastStarted() { }
 
@@ -21,9 +18,8 @@ namespace Aether.Spells
 
         public virtual void CastCanceled() { }
 
-        public virtual void CastFired(Target target, bool onSelf)
+        public virtual void CastFired()
         {
-            CastOnSelf = onSelf;
             AggroTrigger aggroTrigger = Caster.gameObject.GetComponent<AggroTrigger>();
             if (aggroTrigger != null)
                 aggroTrigger.RaiseGlobalAggro(Spell.GlobalAggro);

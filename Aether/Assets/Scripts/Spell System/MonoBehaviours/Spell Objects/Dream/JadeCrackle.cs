@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Aether.TargetSystem;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-namespace Aether.Spells
+namespace Aether.SpellSystem
 {
     public class JadeCrackle : ArcaneMissile
     {
@@ -13,9 +13,9 @@ namespace Aether.Spells
         [SerializeField]
         private GameObject trailRenderer;
 
-        public override void CastFired(Target target, bool onSelf)
+        public override void CastFired()
         {
-            base.CastFired(target, onSelf);
+            base.CastFired();
             trailRenderer.SetActive(true);
         }
 
@@ -48,20 +48,14 @@ namespace Aether.Spells
 
         private IEnumerator Travel(Target target)
         {
-            Transform targetTransform = target.TargetTransform;
-
-            if (CastOnSelf)
-                targetTransform = Caster.gameObject.transform;
-
-
             // Heal target if any
-            if (!targetTransform)
+            if (!target.HasTargetTransform)
             {
                 Destroy(gameObject);
                 yield break;
             }
 
-            Health health = targetTransform.GetComponent<Health>();
+            Health health = target.TargetTransform.GetComponent<Health>();
             if (health)
             {
                 float maximumHeal = health.MaxHealth - health.CurrentHealth;
@@ -72,7 +66,7 @@ namespace Aether.Spells
                 if (leftOverHeal > 0)
                 {
                     yield return new WaitForSeconds(bounceDelay);
-                    Health closestEnemyHealth = FindEnemeyNearestTo(targetTransform);
+                    Health closestEnemyHealth = FindEnemeyNearestTo(target.TargetTransform);
                     if (closestEnemyHealth)
                         closestEnemyHealth.Damage(leftOverHeal);
                 }

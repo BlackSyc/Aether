@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Aether.Spells
+namespace Aether.SpellSystem
 {
     public class IllusionMissile : ArcaneMissile
     {

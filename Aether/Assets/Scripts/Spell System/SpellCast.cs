@@ -1,89 +1,85 @@
-﻿using Aether.Spells.ScriptableObjects;
+﻿using Aether.SpellSystem.ScriptableObjects;
+using Aether.TargetSystem;
 using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Aether.Spells
+namespace Aether.SpellSystem
 {
     public class SpellCast
     {
+        #region Private Fields
+        private bool castCancelled = false;
+
+        private ISpellSystem caster;
+
+        private Target target;
+
+        private Transform castOrigin;
+
+        private SpellObject spellObject;
+        #endregion
+
+        #region Public Properties
         public event Action<SpellCast> CastStarted;
         public event Action<float> CastProgress;
         public event Action<SpellCast> CastCancelled;
         public event Action<SpellCast> CastInterrupted;
         public event Action<SpellCast> CastComplete;
 
-
-        public float Progress => castTime / Spell.CastDuration;
-
-        public Transform CastParent { get; private set; }
-
-        public ISpellSystem Caster { get; private set; }
-
-        private SpellObject spellObject;
+        public float Progress { get; private set; } = 0f;
 
         public Spell Spell { get; private set; }
-
-        private TargetManager targetManager;
-
-        private float beginCast;
-
-        private float castTime = 0;
-
-        private bool castCancelled = false;
-
-        public bool OnSelf = false;
+        #endregion
 
 
 
-        public SpellCast(Spell spell, Transform castParent, ISpellSystem caster, TargetManager targetManager, bool onSelf)
+        public SpellCast(Spell spell, Transform castOrigin, ISpellSystem caster, Target target)
         {
             Spell = spell;
-            CastParent = castParent;
-            Caster = caster;
-            this.targetManager = targetManager;
-            this.OnSelf = onSelf;
+            this.castOrigin = castOrigin;
+            this.caster = caster;
+            this.target = target;
+        }
+
+        public void UpdateTarget(Target newTarget)
+        {
+            this.target = newTarget;
+            if (spellObject)
+            {
+                spellObject.Target = this.target;
+            }
         }
 
         public IEnumerator Start()
         {
-            beginCast = Time.time;
-            castTime = Time.time - beginCast;
-            spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, CastParent).GetComponent<SpellObject>();
+            spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, castOrigin).GetComponent<SpellObject>();
 
             spellObject.Spell = Spell;
-            spellObject.Caster = Caster;
+            spellObject.Caster = caster;
+            spellObject.Target = target;
 
             spellObject.CastStarted();
             CastStarted?.Invoke(this);
 
-            if (!OnSelf && targetManager.GetCurrentTarget().HasTargetTransform && Spell.LayerMask.Contains(targetManager.GetCurrentTarget().TargetTransform.gameObject))
-                targetManager.LockCurrentTarget();
-
-            while (castTime < Spell.CastDuration)
+            while (Progress < 1f)
             {
+                if (castCancelled)
+                    yield break;
+
                 if (!Spell.CastWhileMoving && Player.Instance.PlayerMovement.IsMoving)
                 {
                     Cancel();
-                }
-
-                castTime = Time.time - beginCast;
-                if (castCancelled && !OnSelf)
-                {
-                    targetManager.UnlockTarget();
                     yield break;
                 }
+
+                Progress += Time.deltaTime / Spell.CastDuration;
 
                 CastProgress?.Invoke(Progress);
                 yield return null;
             }
 
-
-            spellObject.CastFired(targetManager.Target, OnSelf);
-
-            if (!OnSelf)
-                targetManager.UnlockTarget();
-
+            spellObject.CastFired();
 
             CastComplete?.Invoke(this);
         }

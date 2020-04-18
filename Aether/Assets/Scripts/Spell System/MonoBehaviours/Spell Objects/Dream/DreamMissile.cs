@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-namespace Aether.Spells
+namespace Aether.SpellSystem
 {
     public class DreamMissile : ArcaneMissile
     {

@@ -1,10 +1,11 @@
-﻿using ScriptableObjects;
+﻿using Aether.TargetSystem;
+using ScriptableObjects;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class AggroTable : TargetManager, AggroManager
+public class AggroTable : MonoBehaviour, ITargetSystem, AggroManager
 {
     [SerializeField]
     private float aggroRange;
@@ -81,7 +82,7 @@ public class AggroTable : TargetManager, AggroManager
             .ForEach(x => AddAggroTrigger(x));
     }
 
-    public override Target GetCurrentTarget()
+    public Target GetCurrentTarget()
     {
         (int aggro, AggroTrigger trigger) highestAggroTrigger = GetHighestAggroTrigger();
         if (highestAggroTrigger.trigger)
@@ -90,5 +91,10 @@ public class AggroTable : TargetManager, AggroManager
         }
 
         return new Target(Vector3.zero);
+    }
+
+    public Target GetCurrentTarget(LayerMask layerMask)
+    {
+        throw new System.NotImplementedException();
     }
 }

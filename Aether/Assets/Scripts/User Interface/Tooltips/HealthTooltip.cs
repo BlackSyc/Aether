@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Aether.TargetSystem;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -107,7 +108,7 @@ public class HealthTooltip : MonoBehaviour
         }
 
         // If the current target of the targetmanager (locked or not) is the same as the health transform, set alpha to 1.
-        Target target = Player.Instance.TargetManager.Target;
+        Target target = Player.Instance.TargetManager.GetCurrentTarget(Player.Instance.SpellSystem.GetCombinedLayerMask());
         if (target.HasTargetTransform)
         {
             if (target.TargetTransform == health.transform)

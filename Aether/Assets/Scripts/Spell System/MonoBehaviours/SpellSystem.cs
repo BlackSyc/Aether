@@ -1,12 +1,13 @@
-﻿using Aether.Spells.ScriptableObjects;
+﻿using Aether.SpellSystem.ScriptableObjects;
+using Aether.TargetSystem;
 using System;
 using System.Linq;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
-namespace Aether.Spells
+namespace Aether.SpellSystem
 {
-    [RequireComponent(typeof(TargetManager))]
+    [RequireComponent(typeof(ITargetSystem))]
     public class SpellSystem : MonoBehaviour, ISpellSystem
     {
         #region Private Fields
@@ -18,9 +19,7 @@ namespace Aether.Spells
 
         private SpellCast currentSpellCast;
 
-        private bool castOnSelf = false;
-
-        private TargetManager targetManager;
+        private TargetSystem.ITargetSystem targetSystem;
         #endregion
 
         #region Public Properties
@@ -38,7 +37,7 @@ namespace Aether.Spells
         #region MonoBehaviour
         private void Awake()
         {
-            targetManager = GetComponent<TargetManager>();
+            targetSystem = GetComponent<ITargetSystem>();
             SpellLibraries = new ISpellLibrary[preFillOnAwake.Length];
             Array.Copy(preFillOnAwake, 0, SpellLibraries, 0, preFillOnAwake.Length);
             SpellLibraries.ForEach(x => x.OnActiveSpellChanged += _ => OnActiveSpellChanged?.Invoke(x));
@@ -47,77 +46,6 @@ namespace Aether.Spells
         private void OnDestroy()
         {
             SpellLibraries.ForEach(x => x.OnActiveSpellChanged -= _ => OnActiveSpellChanged?.Invoke(x));
-        }
-        #endregion
-
-        #region Input Methods
-        public void ToggleCastOnSelf(CallbackContext context)
-        {
-            castOnSelf = !context.canceled;
-        }
-
-        public void CastSpell1(CallbackContext context)
-        {
-            if (!context.performed)
-                return;
-
-            CastSpell(0);
-        }
-
-        public void CastSpell2(CallbackContext context)
-        {
-            if (!context.performed)
-                return;
-
-            CastSpell(1);
-        }
-
-        public void CastSpell3(CallbackContext context)
-        {
-            if (!context.performed)
-                return;
-
-            CastSpell(2);
-        }
-
-        public void CastSpell4(CallbackContext context)
-        {
-            if (!context.performed)
-                return;
-
-            CastSpell(3);
-        }
-
-        public void CastSpell5(CallbackContext context)
-        {
-            if (!context.performed)
-                return;
-
-            CastSpell(4);
-        }
-
-        public void CastSpell6(CallbackContext context)
-        {
-            if (!context.performed)
-                return;
-
-            CastSpell(5);
-        }
-
-        public void CastSpell7(CallbackContext context)
-        {
-            if (!context.performed)
-                return;
-
-            CastSpell(6);
-        }
-
-        public void CancelCast(CallbackContext context)
-        {
-            if (!context.performed)
-                return;
-
-            currentSpellCast?.Cancel();
         }
         #endregion
 
@@ -164,29 +92,19 @@ namespace Aether.Spells
         // NOT YET: Tested in Playmode Tests
         public void CastSpell(int index)
         {
-            if (currentSpellCast != null)
-            {
-                if (currentSpellCast.Spell == SpellLibraries[index].ActiveSpell)
-                {
-                    if (castOnSelf && !currentSpellCast.OnSelf)
-                    {
-                        Debug.Log("Cast was on target, but will now be on self!");
-                        currentSpellCast.OnSelf = true;
-                        targetManager.UnlockTarget();
-                    }
-                    if (!castOnSelf && currentSpellCast.OnSelf)
-                    {
-                        Debug.Log("Cast was on self, but will now be on target!");
-                        currentSpellCast.OnSelf = false;
-                        UpdateTargetLock(currentSpellCast.Spell.LayerMask);
-                    }
+            Spell requestedSpell = SpellLibraries[index].ActiveSpell;
 
+            if (IsCasting)
+            {
+                if (currentSpellCast.Spell == requestedSpell)
+                {
+                    currentSpellCast.UpdateTarget(targetSystem.GetCurrentTarget(requestedSpell.LayerMask));
                     return;
                 }
-                currentSpellCast.Cancel();
+                CancelSpellCast();
             }
 
-            if (!SpellLibraries[index].TryCast(out currentSpellCast, castParent, this, targetManager, castOnSelf))
+            if (!SpellLibraries[index].TryCast(out currentSpellCast, castParent, this, targetSystem.GetCurrentTarget(requestedSpell.LayerMask)))
                 return;
 
             currentSpellCast.CastCancelled += ClearCurrentCast;
@@ -199,7 +117,8 @@ namespace Aether.Spells
         // NOT YET: Tested in Playmode Tests
         public void CancelSpellCast()
         {
-
+            if (IsCasting)
+                currentSpellCast.Cancel();
         }
 
         // NOT YET: Tested in Playmode Tests
@@ -230,17 +149,6 @@ namespace Aether.Spells
             currentSpellCast.CastCancelled -= ClearCurrentCast;
             currentSpellCast.CastComplete -= ClearCurrentCast;
             this.currentSpellCast = null;
-        }
-
-        private void UpdateTargetLock(LayerMask layerMask)
-        {
-            if (targetManager.GetCurrentTarget().HasTargetTransform && layerMask.Contains(targetManager.GetCurrentTarget().TargetTransform.gameObject))
-            {
-                if (targetManager.HasLockedTarget)
-                    targetManager.UnlockTarget();
-
-                targetManager.LockCurrentTarget();
-            }
         }
         #endregion
     }

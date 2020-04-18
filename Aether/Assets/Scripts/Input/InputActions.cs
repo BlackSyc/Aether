@@ -482,7 +482,13 @@ public class @InputActions : IInputActionCollection, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""BaseControlScheme"",
+            ""bindingGroup"": ""BaseControlScheme"",
+            ""devices"": []
+        }
+    ]
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
@@ -799,6 +805,15 @@ public class @InputActions : IInputActionCollection, IDisposable
         }
     }
     public PopUpActions @PopUp => new PopUpActions(this);
+    private int m_BaseControlSchemeSchemeIndex = -1;
+    public InputControlScheme BaseControlSchemeScheme
+    {
+        get
+        {
+            if (m_BaseControlSchemeSchemeIndex == -1) m_BaseControlSchemeSchemeIndex = asset.FindControlSchemeIndex("BaseControlScheme");
+            return asset.controlSchemes[m_BaseControlSchemeSchemeIndex];
+        }
+    }
     public interface IPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);

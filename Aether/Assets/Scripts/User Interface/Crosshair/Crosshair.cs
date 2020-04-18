@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aether.TargetSystem;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine;
 public class Crosshair : MonoBehaviour
 {
     [SerializeField]
-    private PlayerTargetManager _targetManager;
+    private PlayerTargetSystem _targetManager;
 
     [SerializeField]
     private RectTransform targetTracker;
@@ -49,31 +50,31 @@ public class Crosshair : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if(_targetManager.GetCurrentTarget().HasTargetTransform)
-        {
-            if (_targetManager.HasLockedTarget && _targetManager.GetCurrentTarget().TargetTransform == _targetManager.Target.TargetTransform)
-            {
-                _crosshairAnimator.SetBool("HasObjectTarget", false);
-            }
-            else
-            {
-                _crosshairAnimator.SetBool("HasObjectTarget", true);
-            }
-        }
-        else
-        {
-            _crosshairAnimator.SetBool("HasObjectTarget", false);
-        }
+        //if(_targetManager.GetCurrentTarget().HasTargetTransform)
+        //{
+        //    if (_targetManager.HasLockedTarget && _targetManager.GetCurrentTarget().TargetTransform == _targetManager.Target.TargetTransform)
+        //    {
+        //        _crosshairAnimator.SetBool("HasObjectTarget", false);
+        //    }
+        //    else
+        //    {
+        //        _crosshairAnimator.SetBool("HasObjectTarget", true);
+        //    }
+        //}
+        //else
+        //{
+        //    _crosshairAnimator.SetBool("HasObjectTarget", false);
+        //}
 
-        if (_targetManager.HasLockedTarget)
-        {
-            targetTracker.gameObject.SetActive(true);
-            ShowTargetTrackerOn(_targetManager.Target);
-        }
-        else
-        {
-            targetTracker.gameObject.SetActive(false);
-        }
+        //if (_targetManager.HasLockedTarget)
+        //{
+        //    targetTracker.gameObject.SetActive(true);
+        //    ShowTargetTrackerOn(_targetManager.Target);
+        //}
+        //else
+        //{
+        //    targetTracker.gameObject.SetActive(false);
+        //}
     }
 
     private void ShowTargetTrackerOn(Target target)

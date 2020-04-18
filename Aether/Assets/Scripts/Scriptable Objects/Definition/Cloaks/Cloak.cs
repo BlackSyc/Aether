@@ -1,4 +1,4 @@
-﻿using Aether.Spells.ScriptableObjects;
+﻿using Aether.SpellSystem.ScriptableObjects;
 using System;
 using UnityEngine;
 

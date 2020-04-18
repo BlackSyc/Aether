@@ -1,4 +1,4 @@
-﻿using Aether.Spells;
+﻿using Aether.SpellSystem;
 using UnityEngine;
 
 namespace ScriptableObjects

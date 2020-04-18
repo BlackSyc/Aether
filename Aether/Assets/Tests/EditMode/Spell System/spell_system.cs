@@ -1,5 +1,6 @@
-﻿using Aether.Spells;
-using Aether.Spells.ScriptableObjects;
+﻿using Aether.SpellSystem;
+using Aether.SpellSystem.ScriptableObjects;
+using Aether.TargetSystem;
 using NUnit.Framework;
 using ScriptableObjects;
 using UnityEngine;
@@ -14,7 +15,7 @@ namespace Tests
         {
             // ARRANGE
             GameObject testObject = new GameObject();
-            testObject.AddComponent<PlayerTargetManager>();
+            testObject.AddComponent<PlayerTargetSystem>();
             SpellSystem spellSystem = testObject.AddComponent<SpellSystem>();
 
             Spell spell10 = ScriptableObject.CreateInstance<Spell>();
@@ -39,7 +40,7 @@ namespace Tests
         {
             // ARRANGE
             GameObject testObject = new GameObject();
-            testObject.AddComponent<PlayerTargetManager>();
+            testObject.AddComponent<PlayerTargetSystem>();
             SpellSystem spellSystem = testObject.AddComponent<SpellSystem>();
 
             Spell spell1 = ScriptableObject.CreateInstance<Spell>();
@@ -66,7 +67,7 @@ namespace Tests
         {
             // ARRANGE
             GameObject testObject = new GameObject();
-            testObject.AddComponent<PlayerTargetManager>();
+            testObject.AddComponent<PlayerTargetSystem>();
             SpellSystem spellSystem = testObject.AddComponent<SpellSystem>();
 
             Spell spell = ScriptableObject.CreateInstance<Spell>();
@@ -90,7 +91,7 @@ namespace Tests
         {
             // ARRANGE
             GameObject testObject = new GameObject();
-            testObject.AddComponent<PlayerTargetManager>();
+            testObject.AddComponent<PlayerTargetSystem>();
             SpellSystem spellSystem = testObject.AddComponent<SpellSystem>();
 
             Spell spell = ScriptableObject.CreateInstance<Spell>();
@@ -118,7 +119,7 @@ namespace Tests
         {
             // ARRANGE
             GameObject testObject = new GameObject();
-            testObject.AddComponent<PlayerTargetManager>();
+            testObject.AddComponent<PlayerTargetSystem>();
             SpellSystem spellSystem = testObject.AddComponent<SpellSystem>();
 
 
@@ -136,7 +137,7 @@ namespace Tests
         {
             // ARRANGE
             GameObject testObject = new GameObject();
-            testObject.AddComponent<PlayerTargetManager>();
+            testObject.AddComponent<PlayerTargetSystem>();
             SpellSystem spellSystem = testObject.AddComponent<SpellSystem>();
 
 
@@ -160,7 +161,7 @@ namespace Tests
         {
             // ARRANGE
             GameObject testObject = new GameObject();
-            testObject.AddComponent<PlayerTargetManager>();
+            testObject.AddComponent<PlayerTargetSystem>();
             SpellSystem spellSystem = testObject.AddComponent<SpellSystem>();
 
 

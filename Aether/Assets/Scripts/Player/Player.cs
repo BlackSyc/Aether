@@ -1,4 +1,5 @@
-﻿using Aether.Spells;
+﻿using Aether.SpellSystem;
+using Aether.TargetSystem;
 using ScriptableObjects;
 using System;
 using UnityEngine;
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour
     public Inventory Inventory => inventory;
 
     [SerializeField]
-    private ISpellSystem spellSystem;
+    private SpellSystem spellSystem;
 
     public ISpellSystem SpellSystem => spellSystem;
 
@@ -43,9 +44,9 @@ public class Player : MonoBehaviour
     public SkinnedMeshRenderer Mesh => mesh;
 
     [SerializeField]
-    private PlayerTargetManager targetManager;
+    private PlayerTargetSystem targetManager;
 
-    public PlayerTargetManager TargetManager => targetManager;
+    public ITargetSystem TargetManager => targetManager;
 
     [SerializeField]
     private Transform companionParent;

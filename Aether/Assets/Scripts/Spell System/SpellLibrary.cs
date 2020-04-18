@@ -1,9 +1,10 @@
-﻿using Aether.Spells.ScriptableObjects;
+﻿using Aether.SpellSystem.ScriptableObjects;
+using Aether.TargetSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Aether.Spells
+namespace Aether.SpellSystem
 {
     [Serializable]
     public class SpellLibrary : ISpellLibrary
@@ -71,7 +72,7 @@ namespace Aether.Spells
         }
 
         // Tested in Editmode Tests
-        public bool TryCast(out SpellCast spellCast, Transform castParent, ISpellSystem caster, TargetManager targetManager, bool onSelf)
+        public bool TryCast(out SpellCast spellCast, Transform castParent, ISpellSystem caster, Target target)
         {
             spellCast = null;
 
@@ -81,7 +82,7 @@ namespace Aether.Spells
             if (Time.time < CoolDownUntil)
                 return false;
 
-            SpellCast newSpellCast = new SpellCast(ActiveSpell, castParent, caster, targetManager, onSelf);
+            SpellCast newSpellCast = new SpellCast(ActiveSpell, castParent, caster, target);
             newSpellCast.CastComplete += SetCoolDown;
             spellCast = newSpellCast;
             return true;
