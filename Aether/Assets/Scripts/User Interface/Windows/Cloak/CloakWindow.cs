@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Aether.InputSystem;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,9 +53,7 @@ public class CloakWindow : MonoBehaviour
             equipButtonText.text = "Unequip";
         }
 
-        AetherEvents.GameEvents.InputSystemEvents.EnablePopupActionMap();
-        AetherEvents.UIEvents.ToolTips.HideAll();
-        AetherEvents.UIEvents.Crosshair.HideCrosshair();
+        GameInputSystem.SwitchToActionMap(ActionMap.PopUp);
         window.SetActive(true);
     }
 
@@ -64,7 +63,7 @@ public class CloakWindow : MonoBehaviour
         window.SetActive(false);
         AetherEvents.UIEvents.Crosshair.UnhideCrosshair();
         AetherEvents.UIEvents.ToolTips.UnhideAll();
-        AetherEvents.GameEvents.InputSystemEvents.EnablePlayerActionMap();
+        GameInputSystem.SwitchToActionMap(ActionMap.Player);
     }
 
     public void ClosePopup()

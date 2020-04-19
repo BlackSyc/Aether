@@ -1,4 +1,6 @@
-﻿using ScriptableObjects;
+﻿using static Aether.InputSystem.GameInputSystem;
+using ScriptableObjects;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,34 +16,32 @@ namespace Aether.TargetSystem
         [SerializeField]
         private float maxRange = 100f;
 
-        private InputActions inputActions;
-
         private bool targetSelf = false;
         #endregion
 
         #region MonoBehaviour
         private void Awake()
         {
-            inputActions = new InputActions();
             SubscribeToInput();
         }
 
-        private void OnEnable()
+        private void OnDestroy()
         {
-            inputActions.Player.CastOnSelf.Enable();
-        }
-
-        private void OnDisable()
-        {
-            inputActions.Player.CastOnSelf.Disable();
+            UnsubscribeFromInput();
         }
         #endregion
 
         #region Input
         private void SubscribeToInput()
         {
-            inputActions.Player.CastOnSelf.started += _ => targetSelf = true;
-            inputActions.Player.CastOnSelf.canceled += _ => targetSelf = false;
+            InputSystem.GameInputSystem.PlayerInput.Player.CastOnSelf.started += _ => targetSelf = true;
+            InputSystem.GameInputSystem.PlayerInput.Player.CastOnSelf.canceled += _ => targetSelf = false;
+        }
+
+        private void UnsubscribeFromInput()
+        {
+            InputSystem.GameInputSystem.PlayerInput.Player.CastOnSelf.started -= _ => targetSelf = true;
+            InputSystem.GameInputSystem.PlayerInput.Player.CastOnSelf.canceled -= _ => targetSelf = false;
         }
         #endregion
 

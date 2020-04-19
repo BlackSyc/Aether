@@ -32,7 +32,6 @@ namespace Aether.SpellSystem
 
         private Quaternion initialRotation;
 
-        public Target Target;
 
         public override void CastCanceled()
         {

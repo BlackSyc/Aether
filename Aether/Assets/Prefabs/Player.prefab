@@ -47,7 +47,6 @@ MonoBehaviour:
   layers:
     serializedVersion: 2
     m_Bits: 256
-  isActive: 1
 --- !u!1 &476305285026207477
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a1dd5ec9749354f833da9ecd179b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpellSystem: {fileID: 8931568597856155357}
   defaultSpell: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
 --- !u!1 &476305285128632751
 GameObject:
@@ -118,13 +118,13 @@ GameObject:
   - component: {fileID: 476305285128632748}
   - component: {fileID: 476305285128632749}
   - component: {fileID: 476305285128632750}
+  - component: {fileID: 476305284923640294}
+  - component: {fileID: 8931568597856155357}
   - component: {fileID: 476305285128632759}
   - component: {fileID: 476305285128632753}
   - component: {fileID: 476305285128632752}
   - component: {fileID: 476305285128632758}
   - component: {fileID: 1423441207}
-  - component: {fileID: 476305284923640294}
-  - component: {fileID: 8931568597856155357}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -184,6 +184,50 @@ MonoBehaviour:
   movementSpeed: 10
   rotationSpeed: 5
   jumpPower: 5
+  IsMoving: 0
+  cameraPivot: {fileID: 476305286045033354}
+--- !u!114 &476305284923640294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476305285128632751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f42a106bb7fe3f41b4c5d0c5fabacf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 476305286454964140}
+  maxRange: 100
+--- !u!114 &8931568597856155357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476305285128632751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046f1a73255080f4cad7465ed46cf416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castParent: {fileID: 476305285402853955}
+  preFillOnAwake:
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
+  - activeSpell: {fileID: 0}
+    library: []
 --- !u!114 &476305285128632759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +244,7 @@ MonoBehaviour:
   playerMovement: {fileID: 476305285128632750}
   shoulder: {fileID: 476305285026207482}
   inventory: {fileID: 476305285128632753}
-  spellSystem: {fileID: 0}
+  spellSystem: {fileID: 8931568597856155357}
   interactor: {fileID: 476305284757014470}
   mesh: {fileID: 1186115056013624410}
   targetManager: {fileID: 476305284923640294}
@@ -261,48 +305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ab7fc916fcf2845ac7044e69068dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &476305284923640294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476305285128632751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f42a106bb7fe3f41b4c5d0c5fabacf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 476305286454964140}
-  maxRange: 100
---- !u!114 &8931568597856155357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476305285128632751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 046f1a73255080f4cad7465ed46cf416, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castParent: {fileID: 476305285402853955}
-  preFillOnAwake:
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
 --- !u!1 &476305285402854012
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f40f82bcae77f4f9d1be29046b8b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 5
   minXRotation: -45
   maxXRotation: 45
 --- !u!1 &476305286454964137

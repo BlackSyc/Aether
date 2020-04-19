@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
+[RequireComponent(typeof(Camera))]
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField]

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Aether.InputSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,13 +8,13 @@ public class HintCloseButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ActionMapManager.Events.OnActionMapSwapped += ActionMapSwapped;
+        GameInputSystem.OnActionMapSwitched += ActionMapSwapped;
         gameObject.SetActive(false);
     }
 
-    private void ActionMapSwapped(string newActionMapName)
+    private void ActionMapSwapped(ActionMap newActionMap)
     {
-        if(newActionMapName.Equals("User Interface"))
+        if(newActionMap.Equals(ActionMap.UserInterface))
         {
             gameObject.SetActive(true);
         }
@@ -25,6 +26,6 @@ public class HintCloseButton : MonoBehaviour
 
     private void OnDestroy()
     {
-        ActionMapManager.Events.OnActionMapSwapped -= ActionMapSwapped;
+        GameInputSystem.OnActionMapSwitched -= ActionMapSwapped;
     }
 }

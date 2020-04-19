@@ -15,23 +15,6 @@ public static partial class AetherEvents
                 OnTravelToAccessPoint?.Invoke();
             }
         }
-        
-        public struct InputSystemEvents
-        {
-            public static event Action OnEnablePopupActionMap;
-
-            public static event Action OnEnablePlayerActionMap;
-            
-            public static void EnablePopupActionMap()
-            {
-                OnEnablePopupActionMap?.Invoke();
-            }
-
-            public static void EnablePlayerActionMap()
-            {
-                OnEnablePlayerActionMap?.Invoke();
-            }
-        }
     }
 
     public struct UIEvents

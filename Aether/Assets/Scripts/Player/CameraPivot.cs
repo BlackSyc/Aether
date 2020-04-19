@@ -3,26 +3,24 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class CameraPivot : MonoBehaviour
 {
-    [SerializeField]
-    private float rotationSpeed = 5;
-
+    #region Private Fields
     [SerializeField]
     private float minXRotation = -45;
     [SerializeField]
     private float maxXRotation = 45;
 
     private float xRotation = 0;
+    #endregion
 
-    public void Rotate(CallbackContext context)
+    #region Public Methods
+    public void Rotate(Vector2 rotationInput, float rotationSpeed)
     {
-        if (Cursor.lockState == CursorLockMode.Locked)
-        {
-            Vector2 lookInput = context.ReadValue<Vector2>() * rotationSpeed * Time.deltaTime;
+        Vector2 lookInput = rotationInput * rotationSpeed * Time.deltaTime;
 
-            xRotation -= lookInput.y;
-            xRotation = Mathf.Clamp(xRotation, minXRotation, maxXRotation);
+        xRotation -= lookInput.y;
+        xRotation = Mathf.Clamp(xRotation, minXRotation, maxXRotation);
 
-            transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        }
+        transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
     }
+    #endregion
 }

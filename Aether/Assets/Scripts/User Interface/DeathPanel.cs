@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Aether.InputSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,16 +15,14 @@ public class DeathPanel : MonoBehaviour
     private void Show()
     {
         gameObject.SetActive(true);
-        AetherEvents.GameEvents.InputSystemEvents.EnablePopupActionMap();
-        AetherEvents.UIEvents.ToolTips.HideAll();
-        AetherEvents.UIEvents.Crosshair.HideCrosshair();
+        GameInputSystem.SwitchToActionMap(ActionMap.PopUp);
     }
 
     public void Respawn()
     {
         Player.Instance.Respawn();
         gameObject.SetActive(false);
-        AetherEvents.GameEvents.InputSystemEvents.EnablePlayerActionMap();
+        GameInputSystem.SwitchToActionMap(ActionMap.Player);
         AetherEvents.UIEvents.ToolTips.UnhideAll();
         AetherEvents.UIEvents.Crosshair.UnhideCrosshair();
     }

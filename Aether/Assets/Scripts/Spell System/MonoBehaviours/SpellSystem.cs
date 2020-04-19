@@ -2,6 +2,7 @@
 using Aether.TargetSystem;
 using System;
 using System.Linq;
+using System.Runtime.Serialization;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
@@ -35,7 +36,7 @@ namespace Aether.SpellSystem
         #endregion
 
         #region MonoBehaviour
-        private void Awake()
+        protected virtual void Awake()
         {
             targetSystem = GetComponent<ITargetSystem>();
             SpellLibraries = new ISpellLibrary[preFillOnAwake.Length];
@@ -93,6 +94,9 @@ namespace Aether.SpellSystem
         public void CastSpell(int index)
         {
             Spell requestedSpell = SpellLibraries[index].ActiveSpell;
+
+            if (!requestedSpell)
+                return;
 
             if (IsCasting)
             {

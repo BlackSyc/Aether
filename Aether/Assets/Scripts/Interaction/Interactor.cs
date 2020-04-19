@@ -2,6 +2,8 @@
 using static UnityEngine.InputSystem.InputAction;
 using System.Linq;
 using System;
+using static Aether.InputSystem.GameInputSystem;
+
 
 public class Interactor : MonoBehaviour
 {
@@ -37,34 +39,21 @@ public class Interactor : MonoBehaviour
 
     private Interactable currentInteractable;
 
-    [SerializeField]
-    private bool isActive = true;
-
-    public bool IsActive => isActive;
-
-    public void Deactivate()
+    private void OnEnable()
     {
-        if (currentInteractable != null)
-        {
-            currentInteractable = null;
-            Events.CancelProposedInteraction();
-        }
-
-        isActive = false;
+        PlayerInput.Player.Interact.performed += _ => Interact();
     }
 
-    public void Activate()
+    private void OnDisable()
     {
-        isActive = true;
+        PlayerInput.Player.Interact.performed -= _ => Interact();
     }
 
-    public void Interact(CallbackContext context)
+
+    public void Interact()
     {
-        if (context.performed)
-        {
-            currentInteractable?.Interact(with: this);
-            Events.Interact();
-        }
+        currentInteractable?.Interact(with: this);
+        Events.Interact();
     }
 
     public void CheckForInteractables()
@@ -89,7 +78,6 @@ public class Interactor : MonoBehaviour
 
     private void Update()
     {
-        if(isActive)
-            CheckForInteractables();
+        CheckForInteractables();
     }
 }

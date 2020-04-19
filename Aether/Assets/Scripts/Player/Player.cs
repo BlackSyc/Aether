@@ -14,9 +14,9 @@ public class Player : MonoBehaviour
     public CharacterController CharacterController => characterController;
 
     [SerializeField]
-    private PlayerMovement playerMovement;
+    private PlayerMovementSystem playerMovement;
 
-    public PlayerMovement PlayerMovement => playerMovement;
+    public PlayerMovementSystem PlayerMovement => playerMovement;
 
     [SerializeField]
     private Shoulder shoulder;

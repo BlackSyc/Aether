@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Aether.InputSystem;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static AetherEvents;
@@ -76,9 +77,7 @@ public class AttunementWindow : MonoBehaviour
 
         attunementDevice.ApplyNewKeystones();
 
-        AetherEvents.GameEvents.InputSystemEvents.EnablePopupActionMap();
-        AetherEvents.UIEvents.ToolTips.HideAll();
-        AetherEvents.UIEvents.Crosshair.HideCrosshair();
+        GameInputSystem.SwitchToActionMap(ActionMap.PopUp);
 
     }
 
@@ -93,7 +92,7 @@ public class AttunementWindow : MonoBehaviour
                 Destroy(child.gameObject);
             }
 
-            AetherEvents.GameEvents.InputSystemEvents.EnablePlayerActionMap();
+            GameInputSystem.SwitchToActionMap(ActionMap.Player);
             AetherEvents.UIEvents.ToolTips.UnhideAll();
             AetherEvents.UIEvents.Crosshair.UnhideCrosshair();
         }

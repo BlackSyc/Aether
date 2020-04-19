@@ -1,57 +1,46 @@
-﻿namespace Aether.SpellSystem
+﻿using static Aether.InputSystem.GameInputSystem;
+using System;
+
+namespace Aether.SpellSystem
 {
     public class PlayerSpellSystem : SpellSystem
     {
-        #region Private Fields
-        private InputActions inputActions;
-        #endregion
 
         #region MonoBehaviour
-        private void Start()
+        protected override void Awake()
         {
-            inputActions = new InputActions();
-            SubscribeToInputActions();
+            base.Awake();
+            SubscribeToInput();
         }
 
-        private void OnEnable()
+        private void OnDestroy()
         {
-            inputActions.Player.CastSpell1.Enable();
-            inputActions.Player.CastSpell2.Enable();
-            inputActions.Player.CastSpell3.Enable();
-            inputActions.Player.CastSpell4.Enable();
-            inputActions.Player.CastSpell5.Enable();
-            inputActions.Player.CastSpell6.Enable();
-            inputActions.Player.CastSpell7.Enable();
-
-            inputActions.Player.CancelCast.Enable();
-        }
-
-        private void OnDisable()
-        {
-            inputActions.Player.CastSpell1.Disable();
-            inputActions.Player.CastSpell2.Disable();
-            inputActions.Player.CastSpell3.Disable();
-            inputActions.Player.CastSpell4.Disable();
-            inputActions.Player.CastSpell5.Disable();
-            inputActions.Player.CastSpell6.Disable();
-            inputActions.Player.CastSpell7.Disable();
-
-            inputActions.Player.CancelCast.Disable();
-
+            UnsubscribeFromInput();
         }
         #endregion
 
         #region Input
-        private void SubscribeToInputActions()
+        private void SubscribeToInput()
         {
-            inputActions.Player.CastSpell1.performed += _ => base.CastSpell(0);
-            inputActions.Player.CastSpell2.performed += _ => base.CastSpell(1);
-            inputActions.Player.CastSpell3.performed += _ => base.CastSpell(2);
-            inputActions.Player.CastSpell4.performed += _ => base.CastSpell(3);
-            inputActions.Player.CastSpell5.performed += _ => base.CastSpell(4);
-            inputActions.Player.CastSpell6.performed += _ => base.CastSpell(5);
-            inputActions.Player.CastSpell7.performed += _ => base.CastSpell(6);
-            inputActions.Player.CancelCast.performed += _ => base.CancelSpellCast();
+            PlayerInput.Player.CastSpell1.performed += _ => CastSpell(0);
+            PlayerInput.Player.CastSpell2.performed += _ => CastSpell(1);
+            PlayerInput.Player.CastSpell3.performed += _ => CastSpell(2);
+            PlayerInput.Player.CastSpell4.performed += _ => CastSpell(3);
+            PlayerInput.Player.CastSpell5.performed += _ => CastSpell(4);
+            PlayerInput.Player.CastSpell6.performed += _ => CastSpell(5);
+            PlayerInput.Player.CastSpell7.performed += _ => CastSpell(6);
+            PlayerInput.Player.CancelCast.performed += _ => CancelSpellCast();
+        }
+        private void UnsubscribeFromInput()
+        {
+            PlayerInput.Player.CastSpell1.performed -= _ => CastSpell(0);
+            PlayerInput.Player.CastSpell2.performed -= _ => CastSpell(1);
+            PlayerInput.Player.CastSpell3.performed -= _ => CastSpell(2);
+            PlayerInput.Player.CastSpell4.performed -= _ => CastSpell(3);
+            PlayerInput.Player.CastSpell5.performed -= _ => CastSpell(4);
+            PlayerInput.Player.CastSpell6.performed -= _ => CastSpell(5);
+            PlayerInput.Player.CastSpell7.performed -= _ => CastSpell(6);
+            PlayerInput.Player.CancelCast.performed -= _ => CancelSpellCast();
         }
         #endregion
     }

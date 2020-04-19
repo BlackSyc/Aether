@@ -1,5 +1,6 @@
 ﻿using Aether.SpellSystem.ScriptableObjects;
 using System;
+using System.Runtime.Serialization;
 using UnityEngine;
 
 namespace Aether.SpellSystem
