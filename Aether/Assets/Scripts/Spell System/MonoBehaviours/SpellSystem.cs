@@ -2,9 +2,7 @@
 using Aether.TargetSystem;
 using System;
 using System.Linq;
-using System.Runtime.Serialization;
 using UnityEngine;
-using static UnityEngine.InputSystem.InputAction;
 
 namespace Aether.SpellSystem
 {
@@ -16,11 +14,11 @@ namespace Aether.SpellSystem
         private Transform castParent = null;
 
         [SerializeField]
-        private SpellLibrary[] preFillOnAwake;
+        private SpellLibrary[] preFillOnAwake = new SpellLibrary[0];
 
         private SpellCast currentSpellCast;
 
-        private TargetSystem.ITargetSystem targetSystem;
+        public ITargetSystem TargetSystem;
         #endregion
 
         #region Public Properties
@@ -38,7 +36,7 @@ namespace Aether.SpellSystem
         #region MonoBehaviour
         protected virtual void Awake()
         {
-            targetSystem = GetComponent<ITargetSystem>();
+            TargetSystem = GetComponent<ITargetSystem>();
             SpellLibraries = new ISpellLibrary[preFillOnAwake.Length];
             Array.Copy(preFillOnAwake, 0, SpellLibraries, 0, preFillOnAwake.Length);
             SpellLibraries.ForEach(x => x.OnActiveSpellChanged += _ => OnActiveSpellChanged?.Invoke(x));
@@ -110,13 +108,13 @@ namespace Aether.SpellSystem
             {
                 if (currentSpellCast.Spell == requestedSpell)
                 {
-                    currentSpellCast.UpdateTarget(targetSystem.GetCurrentTarget(requestedSpell.LayerMask));
+                    currentSpellCast.UpdateTarget(TargetSystem.GetCurrentTarget(requestedSpell.LayerMask));
                     return;
                 }
                 CancelSpellCast();
             }
 
-            if (!SpellLibraries[index].TryCast(out currentSpellCast, castParent, this, targetSystem.GetCurrentTarget(requestedSpell.LayerMask)))
+            if (!SpellLibraries[index].TryCast(out currentSpellCast, castParent, this, TargetSystem.GetCurrentTarget(requestedSpell.LayerMask)))
                 return;
 
             currentSpellCast.CastCancelled += ClearCurrentCast;
