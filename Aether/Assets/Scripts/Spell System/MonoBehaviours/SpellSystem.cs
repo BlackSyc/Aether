@@ -48,6 +48,14 @@ namespace Aether.SpellSystem
         {
             SpellLibraries.ForEach(x => x.OnActiveSpellChanged -= _ => OnActiveSpellChanged?.Invoke(x));
         }
+
+        private void Update()
+        {
+            if (currentSpellCast == null)
+                return;
+
+            currentSpellCast.Update();
+        }
         #endregion
 
         #region Public Methods
@@ -113,7 +121,7 @@ namespace Aether.SpellSystem
 
             currentSpellCast.CastCancelled += ClearCurrentCast;
             currentSpellCast.CastComplete += ClearCurrentCast;
-            StartCoroutine(currentSpellCast.Start());
+            currentSpellCast.Start();
             OnSpellIsCast?.Invoke(currentSpellCast);
             return;
         }
