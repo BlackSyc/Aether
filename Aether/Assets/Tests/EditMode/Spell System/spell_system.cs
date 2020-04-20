@@ -224,7 +224,6 @@ namespace Tests
             // ASSERT
             Assert.IsNotNull(result);
             Assert.AreEqual(spell, result.Spell);
-
         }
         #endregion
     }

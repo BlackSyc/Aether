@@ -1,5 +1,4 @@
 ﻿using static Aether.InputSystem.InputSystem;
-using System;
 
 namespace Aether.SpellSystem
 {
@@ -7,9 +6,8 @@ namespace Aether.SpellSystem
     {
 
         #region MonoBehaviour
-        protected override void Awake()
+        private void Start()
         {
-            base.Awake();
             SubscribeToInput();
         }
 
@@ -22,6 +20,7 @@ namespace Aether.SpellSystem
         #region Input
         private void SubscribeToInput()
         {
+            InputActions inputActions = Input;
             Input.Player.CastSpell1.performed += _ => CastSpell(0);
             Input.Player.CastSpell2.performed += _ => CastSpell(1);
             Input.Player.CastSpell3.performed += _ => CastSpell(2);

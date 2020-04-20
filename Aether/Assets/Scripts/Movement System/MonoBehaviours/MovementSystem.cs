@@ -31,7 +31,7 @@ public class MovementSystem : MonoBehaviour, IMovementSystem
     #endregion
 
     #region MonoBehaviour
-    protected virtual void Awake()
+    private void Awake()
     {
         characterController = GetComponent<CharacterController>();
     }

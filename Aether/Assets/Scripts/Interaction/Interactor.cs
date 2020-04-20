@@ -39,7 +39,7 @@ public class Interactor : MonoBehaviour
 
     private Interactable currentInteractable;
 
-    private void OnEnable()
+    private void Start()
     {
         Aether.InputSystem.InputSystem.Input.Player.Interact.performed += _ => Interact();
     }
