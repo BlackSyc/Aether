@@ -9,7 +9,8 @@ namespace Aether.SpellSystem
     public class SpellCast
     {
         #region Private Fields
-        private bool castCancelled = false;
+
+        private bool casting = false;
 
         private ISpellSystem caster;
 
@@ -53,7 +54,47 @@ namespace Aether.SpellSystem
             }
         }
 
-        public IEnumerator Start()
+        internal void Update()
+        {
+            if (!casting)
+                return;
+
+            if (Progress < 1f)
+            {
+                if (!Spell.CastWhileMoving && Player.Instance.PlayerMovement.IsMoving)
+                {
+                    Cancel();
+                    return;
+                }
+
+                Progress += Time.deltaTime / Spell.CastDuration;
+
+                CastProgress?.Invoke(Progress);
+            }
+            else
+            {
+                casting = false;
+
+                spellObject.CastFired();
+                CastComplete?.Invoke(this);
+            }
+        }
+
+        public void Cancel()
+        {
+            spellObject.CastCanceled();
+            CastCancelled?.Invoke(this);
+            casting = false;
+        }
+
+        public void Interrupt()
+        {
+            spellObject.CastInterrupted();
+            CastInterrupted?.Invoke(this);
+            Cancel();
+        }
+
+        internal void Start()
         {
             spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, castOrigin).GetComponent<SpellObject>();
 
@@ -64,40 +105,7 @@ namespace Aether.SpellSystem
             spellObject.CastStarted();
             CastStarted?.Invoke(this);
 
-            while (Progress < 1f)
-            {
-                if (castCancelled)
-                    yield break;
-
-                if (!Spell.CastWhileMoving && Player.Instance.PlayerMovement.IsMoving)
-                {
-                    Cancel();
-                    yield break;
-                }
-
-                Progress += Time.deltaTime / Spell.CastDuration;
-
-                CastProgress?.Invoke(Progress);
-                yield return null;
-            }
-
-            spellObject.CastFired();
-
-            CastComplete?.Invoke(this);
-        }
-
-        public void Cancel()
-        {
-            spellObject.CastCanceled();
-            CastCancelled?.Invoke(this);
-            castCancelled = true;
-        }
-
-        public void Interrupt()
-        {
-            spellObject.CastInterrupted();
-            CastInterrupted?.Invoke(this);
-            Cancel();
+            casting = true;
         }
     }
 }

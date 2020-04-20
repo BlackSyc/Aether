@@ -19,26 +19,32 @@ public class TargetTracker : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         image = GetComponent<Image>();
 
-        SpellCast.CastCancelled += _ => Destroy(gameObject);
-        SpellCast.CastComplete += _ => Destroy(gameObject);
-        SpellCast.CastInterrupted += _ => Destroy(gameObject);
+        SpellCast.CastCancelled += _ => Destroy();
+        SpellCast.CastComplete += _ => Destroy();
+        SpellCast.CastInterrupted += _ => Destroy();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (!SpellCast.Target.HasTargetTransform)
-            Destroy(gameObject);
-
-        rectTransform.position = Camera.WorldToScreenPoint(SpellCast.Target.TargetTransform.position + Offset);
-        image.enabled = rectTransform.position.z > 0;
+        if (SpellCast.Target.HasTargetTransform)
+        {
+            rectTransform.position = Camera.WorldToScreenPoint(SpellCast.Target.TargetTransform.position + Offset);
+            image.enabled = rectTransform.position.z > 0;
+        }
+        else
+        {
+            rectTransform.position = Camera.WorldToScreenPoint(SpellCast.Target.Position + Offset);
+            image.enabled = false;
+        }
     }
 
-    private void OnDestroy()
+    private void Destroy()
     {
-        SpellCast.CastCancelled -= _ => Destroy(gameObject);
-        SpellCast.CastComplete -= _ => Destroy(gameObject);
-        SpellCast.CastInterrupted -= _ => Destroy(gameObject);
-    }
+        SpellCast.CastCancelled -= _ => Destroy();
+        SpellCast.CastComplete -= _ => Destroy();
+        SpellCast.CastInterrupted -= _ => Destroy();
 
+        Destroy(gameObject);
+    }
 }

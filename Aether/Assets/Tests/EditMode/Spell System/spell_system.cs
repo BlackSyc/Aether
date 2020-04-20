@@ -1,6 +1,7 @@
 ﻿using Aether.SpellSystem;
 using Aether.SpellSystem.ScriptableObjects;
 using Aether.TargetSystem;
+using NSubstitute;
 using NUnit.Framework;
 using ScriptableObjects;
 using UnityEngine;
@@ -192,6 +193,38 @@ namespace Tests
 
             // ASSERT
             Assert.AreEqual(combinedLayerMask.value , result.value);
+        }
+        #endregion
+
+        #region CastSpell
+        [Test]
+        public void cast_spell_succeeds_in_a_new_isntance_of_spellcast()
+        {
+            // ARRANGE
+            GameObject testObject = new GameObject();
+            SpellSystem spellSystem = testObject.AddComponent<SpellSystem>();
+            spellSystem.TargetSystem = Substitute.For<ITargetSystem>();
+            spellSystem.TargetSystem.GetCurrentTarget(new LayerMask()).Returns(new Target(Vector3.zero));
+
+
+            Spell spell = ScriptableObject.CreateInstance<Spell>();
+
+            spellSystem.AddSpell(0, spell);
+
+            SpellCast result = null;
+
+            spellSystem.OnSpellIsCast += x => result = x;
+
+            // ASSERT
+            Assert.IsNull(result);
+
+            // ACT
+            spellSystem.CastSpell(0);
+
+            // ASSERT
+            Assert.IsNotNull(result);
+            Assert.AreEqual(spell, result.Spell);
+
         }
         #endregion
     }
