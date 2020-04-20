@@ -12,9 +12,8 @@ public class PlayerMovementSystem : MovementSystem
     #endregion
 
     #region MonoBehaviour
-    protected override void Awake()
+    private void Start()
     {
-        base.Awake();
         SubscribeToInput();
     }
 

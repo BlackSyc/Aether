@@ -36,7 +36,7 @@ namespace Aether.SpellSystem
         #endregion
 
         #region MonoBehaviour
-        protected virtual void Awake()
+        private void Awake()
         {
             targetSystem = GetComponent<ITargetSystem>();
             SpellLibraries = new ISpellLibrary[preFillOnAwake.Length];
