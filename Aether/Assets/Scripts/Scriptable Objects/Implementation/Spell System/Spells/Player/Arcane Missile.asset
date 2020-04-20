@@ -24,7 +24,7 @@ MonoBehaviour:
   CastDuration: 1.5
   CoolDown: 2
   CastWhileMoving: 0
-  layerMask:
+  LayerMask:
     serializedVersion: 2
     m_Bits: 512
   SpellObject: {fileID: 7392092985330359393, guid: 1c293ccebb5dd0c41b19e23051e3443c,

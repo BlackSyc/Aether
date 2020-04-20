@@ -15,16 +15,15 @@ public class DeathPanel : MonoBehaviour
     private void Show()
     {
         gameObject.SetActive(true);
-        GameInputSystem.SwitchToActionMap(ActionMap.PopUp);
+        InputSystem.SwitchToActionMap(ActionMap.PopUp);
     }
 
     public void Respawn()
     {
         Player.Instance.Respawn();
         gameObject.SetActive(false);
-        GameInputSystem.SwitchToActionMap(ActionMap.Player);
+        InputSystem.SwitchToActionMap(ActionMap.Player);
         AetherEvents.UIEvents.ToolTips.UnhideAll();
-        AetherEvents.UIEvents.Crosshair.UnhideCrosshair();
     }
 
     private void OnDestroy()

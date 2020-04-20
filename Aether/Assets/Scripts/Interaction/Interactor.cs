@@ -2,7 +2,7 @@
 using static UnityEngine.InputSystem.InputAction;
 using System.Linq;
 using System;
-using static Aether.InputSystem.GameInputSystem;
+using static Aether.InputSystem.InputSystem;
 
 
 public class Interactor : MonoBehaviour
@@ -41,12 +41,12 @@ public class Interactor : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerInput.Player.Interact.performed += _ => Interact();
+        Aether.InputSystem.InputSystem.Input.Player.Interact.performed += _ => Interact();
     }
 
     private void OnDisable()
     {
-        PlayerInput.Player.Interact.performed -= _ => Interact();
+        Aether.InputSystem.InputSystem.Input.Player.Interact.performed -= _ => Interact();
     }
 
 

@@ -8,7 +8,7 @@ public class HintCloseButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameInputSystem.OnActionMapSwitched += ActionMapSwapped;
+        InputSystem.OnActionMapSwitched += ActionMapSwapped;
         gameObject.SetActive(false);
     }
 
@@ -26,6 +26,6 @@ public class HintCloseButton : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameInputSystem.OnActionMapSwitched -= ActionMapSwapped;
+        InputSystem.OnActionMapSwitched -= ActionMapSwapped;
     }
 }

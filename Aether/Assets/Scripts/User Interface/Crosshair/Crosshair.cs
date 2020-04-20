@@ -1,4 +1,6 @@
-﻿using Aether.TargetSystem;
+﻿using Aether.InputSystem;
+using Aether.SpellSystem;
+using Aether.TargetSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,10 +9,7 @@ using UnityEngine;
 public class Crosshair : MonoBehaviour
 {
     [SerializeField]
-    private PlayerTargetSystem _targetManager;
-
-    [SerializeField]
-    private RectTransform targetTracker;
+    private GameObject targetTrackerPrefab;
 
     [SerializeField]
     private Animator _crosshairAnimator;
@@ -19,7 +18,7 @@ public class Crosshair : MonoBehaviour
     private GameObject _crosshairContainer;
 
     [SerializeField]
-    private Vector3 defaultTooltipOffset;
+    private Vector3 defaultTrackerOffset;
 
     [SerializeField]
     private Camera _camera;
@@ -27,79 +26,43 @@ public class Crosshair : MonoBehaviour
     private void Start()
     {
         _crosshairAnimator.keepAnimatorControllerStateOnDisable = true;
-        AspectOfCreation.Events.OnDialogComplete += UpdateCrosshairState;
-        AetherEvents.UIEvents.Crosshair.OnHideCrosshair += HideCrosshair;
-        AetherEvents.UIEvents.Crosshair.OnUnhideCrosshair += UnhideCrosshair;
-    }
-
-    private void UnhideCrosshair()
-    {
-        _crosshairContainer.SetActive(true);
-    }
-
-    private void HideCrosshair()
-    {
         _crosshairContainer.SetActive(false);
+        InputSystem.OnActionMapSwitched += InputSystem_OnActionMapSwitched;
+        Player.Instance.SpellSystem.OnSpellIsCast += CreateTargetTracker;
     }
 
-    private void UpdateCrosshairState()
+    private void OnDestroy()
     {
-        _crosshairContainer.SetActive(Player.Instance.SpellSystem.HasActiveSpells);
+        InputSystem.OnActionMapSwitched -= InputSystem_OnActionMapSwitched;
+        Player.Instance.SpellSystem.OnSpellIsCast -= CreateTargetTracker;
+    }
+
+    private void InputSystem_OnActionMapSwitched(ActionMap newActionMap)
+    {
+        _crosshairContainer.SetActive(newActionMap == ActionMap.Player && Player.Instance.SpellSystem.HasActiveSpells);
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        //if(_targetManager.GetCurrentTarget().HasTargetTransform)
-        //{
-        //    if (_targetManager.HasLockedTarget && _targetManager.GetCurrentTarget().TargetTransform == _targetManager.Target.TargetTransform)
-        //    {
-        //        _crosshairAnimator.SetBool("HasObjectTarget", false);
-        //    }
-        //    else
-        //    {
-        //        _crosshairAnimator.SetBool("HasObjectTarget", true);
-        //    }
-        //}
-        //else
-        //{
-        //    _crosshairAnimator.SetBool("HasObjectTarget", false);
-        //}
+        LayerMask layerMask = Player.Instance.SpellSystem.GetCombinedLayerMask();
 
-        //if (_targetManager.HasLockedTarget)
-        //{
-        //    targetTracker.gameObject.SetActive(true);
-        //    ShowTargetTrackerOn(_targetManager.Target);
-        //}
-        //else
-        //{
-        //    targetTracker.gameObject.SetActive(false);
-        //}
-    }
-
-    private void ShowTargetTrackerOn(Target target)
-    {
-        if (!target.HasTargetTransform)
+        if (Player.Instance.TargetManager.GetCurrentTarget(layerMask).HasTargetTransform)
         {
-            targetTracker.position = _camera.WorldToScreenPoint(target.Position + defaultTooltipOffset);
-        }
-
-        else if (target.TargetTransform.GetComponent<TooltipOffset>() != null)
-        {
-            targetTracker.position = _camera.WorldToScreenPoint(target.Position + target.TargetTransform.GetComponent<TooltipOffset>().Offset);
+            _crosshairAnimator.SetBool("HasObjectTarget", true);
         }
         else
         {
-            targetTracker.position = _camera.WorldToScreenPoint(target.Position + defaultTooltipOffset);
+            _crosshairAnimator.SetBool("HasObjectTarget", false);
         }
-
-        targetTracker.gameObject.SetActive(targetTracker.GetComponent<RectTransform>().position.z > 0);
     }
 
-    private void OnDestroy()
+    private void CreateTargetTracker(SpellCast spellCast)
     {
-        AspectOfCreation.Events.OnDialogComplete -= UpdateCrosshairState;
-        AetherEvents.UIEvents.Crosshair.OnHideCrosshair -= HideCrosshair;
-        AetherEvents.UIEvents.Crosshair.OnUnhideCrosshair -= UnhideCrosshair;
+        GameObject targetTrackerObject = Instantiate(targetTrackerPrefab, transform);
+        TargetTracker targetTracker = targetTrackerObject.GetComponent<TargetTracker>();
+        targetTracker.SpellCast = spellCast;
+        targetTracker.Offset = defaultTrackerOffset;
+        targetTracker.Camera = _camera;
     }
 }

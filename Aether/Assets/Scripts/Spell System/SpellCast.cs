@@ -13,8 +13,6 @@ namespace Aether.SpellSystem
 
         private ISpellSystem caster;
 
-        private Target target;
-
         private Transform castOrigin;
 
         private SpellObject spellObject;
@@ -27,9 +25,13 @@ namespace Aether.SpellSystem
         public event Action<SpellCast> CastInterrupted;
         public event Action<SpellCast> CastComplete;
 
+        public Target Target { get; private set; }
+
         public float Progress { get; private set; } = 0f;
 
         public Spell Spell { get; private set; }
+
+        public bool CastOnSelf => Target.TargetTransform == caster.gameObject.transform;
         #endregion
 
 
@@ -39,15 +41,15 @@ namespace Aether.SpellSystem
             Spell = spell;
             this.castOrigin = castOrigin;
             this.caster = caster;
-            this.target = target;
+            this.Target = target;
         }
 
         public void UpdateTarget(Target newTarget)
         {
-            this.target = newTarget;
+            this.Target = newTarget;
             if (spellObject)
             {
-                spellObject.Target = this.target;
+                spellObject.Target = this.Target;
             }
         }
 
@@ -57,7 +59,7 @@ namespace Aether.SpellSystem
 
             spellObject.Spell = Spell;
             spellObject.Caster = caster;
-            spellObject.Target = target;
+            spellObject.Target = Target;
 
             spellObject.CastStarted();
             CastStarted?.Invoke(this);

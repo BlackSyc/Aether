@@ -53,7 +53,7 @@ public class CloakWindow : MonoBehaviour
             equipButtonText.text = "Unequip";
         }
 
-        GameInputSystem.SwitchToActionMap(ActionMap.PopUp);
+        InputSystem.SwitchToActionMap(ActionMap.PopUp);
         window.SetActive(true);
     }
 
@@ -61,9 +61,8 @@ public class CloakWindow : MonoBehaviour
     {
         equipButton.onClick.RemoveAllListeners();
         window.SetActive(false);
-        AetherEvents.UIEvents.Crosshair.UnhideCrosshair();
         AetherEvents.UIEvents.ToolTips.UnhideAll();
-        GameInputSystem.SwitchToActionMap(ActionMap.Player);
+        InputSystem.SwitchToActionMap(ActionMap.Player);
     }
 
     public void ClosePopup()

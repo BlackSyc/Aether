@@ -1,4 +1,4 @@
-﻿using static Aether.InputSystem.GameInputSystem;
+﻿using static Aether.InputSystem.InputSystem;
 using ScriptableObjects;
 using System;
 using UnityEngine;
@@ -34,14 +34,14 @@ namespace Aether.TargetSystem
         #region Input
         private void SubscribeToInput()
         {
-            InputSystem.GameInputSystem.PlayerInput.Player.CastOnSelf.started += _ => targetSelf = true;
-            InputSystem.GameInputSystem.PlayerInput.Player.CastOnSelf.canceled += _ => targetSelf = false;
+            InputSystem.InputSystem.Input.Player.CastOnSelf.started += _ => targetSelf = true;
+            InputSystem.InputSystem.Input.Player.CastOnSelf.canceled += _ => targetSelf = false;
         }
 
         private void UnsubscribeFromInput()
         {
-            InputSystem.GameInputSystem.PlayerInput.Player.CastOnSelf.started -= _ => targetSelf = true;
-            InputSystem.GameInputSystem.PlayerInput.Player.CastOnSelf.canceled -= _ => targetSelf = false;
+            InputSystem.InputSystem.Input.Player.CastOnSelf.started -= _ => targetSelf = true;
+            InputSystem.InputSystem.Input.Player.CastOnSelf.canceled -= _ => targetSelf = false;
         }
         #endregion
 

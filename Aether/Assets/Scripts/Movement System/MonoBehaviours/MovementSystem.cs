@@ -41,17 +41,17 @@ public class MovementSystem : MonoBehaviour, IMovementSystem
     public void Move(Vector2 movementInput)
     {
         Vector3 localMovement = (transform.right * movementInput.x + transform.forward * movementInput.y) * MovementSpeed;
+        IsMoving = localMovement.magnitude > 0.01f;
+
         localMovement.y = upwardsMovement;
 
         if (!characterController.isGrounded)
-        {
-            // Add our gravity Vector
             localMovement += Physics.gravity * Time.fixedDeltaTime;
-        }
 
         upwardsMovement = localMovement.y;
 
         characterController.Move(localMovement * Time.fixedDeltaTime);
+
     }
 
     public void Jump()

@@ -77,7 +77,7 @@ public class AttunementWindow : MonoBehaviour
 
         attunementDevice.ApplyNewKeystones();
 
-        GameInputSystem.SwitchToActionMap(ActionMap.PopUp);
+        InputSystem.SwitchToActionMap(ActionMap.PopUp);
 
     }
 
@@ -92,9 +92,8 @@ public class AttunementWindow : MonoBehaviour
                 Destroy(child.gameObject);
             }
 
-            GameInputSystem.SwitchToActionMap(ActionMap.Player);
+            InputSystem.SwitchToActionMap(ActionMap.Player);
             AetherEvents.UIEvents.ToolTips.UnhideAll();
-            AetherEvents.UIEvents.Crosshair.UnhideCrosshair();
         }
     }
     #endregion

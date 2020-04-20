@@ -1,4 +1,5 @@
-﻿using Aether.SpellSystem.ScriptableObjects;
+﻿using Aether.InputSystem;
+using Aether.SpellSystem.ScriptableObjects;
 using ScriptableObjects;
 using System;
 using UnityEngine;
@@ -54,6 +55,7 @@ public class AspectOfCreation : MonoBehaviour
     {
         Hint.Get("Cursor").Activate();
         Player.Instance.SpellSystem.AddSpell(0, reward);
+        InputSystem.SwitchToActionMap(ActionMap.UserInterface);
     }
 
     private void OnDestroy()

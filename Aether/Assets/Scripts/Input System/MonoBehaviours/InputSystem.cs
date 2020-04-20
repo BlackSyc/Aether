@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Aether.InputSystem
 {
-    public class GameInputSystem : MonoBehaviour
+    public class InputSystem : MonoBehaviour
     {
         #region Static
-        public static InputActions PlayerInput { get; private set; }
+        public static InputActions Input { get; private set; }
 
         public static event Action<ActionMap> OnActionMapSwitched;
         public static ActionMap CurrentActionMap { get; private set; }
@@ -25,13 +22,13 @@ namespace Aether.InputSystem
         #region MonoBehaviour
         private void Awake()
         {
-            if(PlayerInput != null)
+            if(Input != null)
             {
                 Debug.LogWarning("There can only be 1 instance of Input Actions active!");
                 Destroy(gameObject);
                 return;
             }
-            PlayerInput = new InputActions();
+            Input = new InputActions();
         }
 
         private void Start()
@@ -44,8 +41,8 @@ namespace Aether.InputSystem
         #region Input
         private void SubscribeToInputActions()
         {
-            PlayerInput.Player.SwapActionMap.performed += _ => SwitchToActionMap(ActionMap.UserInterface);
-            PlayerInput.UserInterface.SwapActionMap.performed += _ => SwitchToActionMap(ActionMap.Player);
+            Input.Player.SwapActionMap.performed += _ => SwitchToActionMap(ActionMap.UserInterface);
+            Input.UserInterface.SwapActionMap.performed += _ => SwitchToActionMap(ActionMap.Player);
         }
         #endregion
 
@@ -55,23 +52,23 @@ namespace Aether.InputSystem
             switch (actionMap)
             {
                 case ActionMap.Player:
-                    PlayerInput.Player.Enable();
-                    PlayerInput.UserInterface.Disable();
-                    PlayerInput.PopUp.Disable();
+                    Input.Player.Enable();
+                    Input.UserInterface.Disable();
+                    Input.PopUp.Disable();
                     CurrentActionMap = actionMap;
                     OnActionMapSwitched?.Invoke(actionMap);
                     break;
                 case ActionMap.UserInterface:
-                    PlayerInput.Player.Disable();
-                    PlayerInput.UserInterface.Enable();
-                    PlayerInput.PopUp.Disable();
+                    Input.Player.Disable();
+                    Input.UserInterface.Enable();
+                    Input.PopUp.Disable();
                     CurrentActionMap = actionMap;
                     OnActionMapSwitched?.Invoke(actionMap);
                     break;
                 case ActionMap.PopUp:
-                    PlayerInput.Player.Disable();
-                    PlayerInput.UserInterface.Disable();
-                    PlayerInput.PopUp.Enable();
+                    Input.Player.Disable();
+                    Input.UserInterface.Disable();
+                    Input.PopUp.Enable();
                     CurrentActionMap = actionMap;
                     OnActionMapSwitched?.Invoke(actionMap);
                     break;
