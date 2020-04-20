@@ -75,7 +75,9 @@ namespace Aether.SpellSystem
             {
                 casting = false;
 
-                spellObject.CastFired();
+                if(spellObject != null)
+                    spellObject.CastFired();
+
                 CastComplete?.Invoke(this);
             }
         }
@@ -96,15 +98,18 @@ namespace Aether.SpellSystem
 
         internal void Start()
         {
-            spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, castOrigin).GetComponent<SpellObject>();
+            if (Spell.SpellObject != null)
+            {
+                spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, castOrigin).GetComponent<SpellObject>();
 
-            spellObject.Spell = Spell;
-            spellObject.Caster = caster;
-            spellObject.Target = Target;
+                spellObject.Spell = Spell;
+                spellObject.Caster = caster;
+                spellObject.Target = Target;
 
-            spellObject.CastStarted();
+                spellObject.CastStarted();
+            }
+
             CastStarted?.Invoke(this);
-
             casting = true;
         }
     }

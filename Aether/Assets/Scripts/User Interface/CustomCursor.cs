@@ -10,12 +10,12 @@ public class CustomCursor : MonoBehaviour
     #region MonoBehaviour
     private void Awake()
     {
-        Cursor.visible = false;
         Aether.InputSystem.InputSystem.OnActionMapSwitched += ActionMapSwitched;
     }
 
     private void Update()
     {
+        Cursor.visible = false;
         if (Aether.InputSystem.InputSystem.CurrentActionMap == ActionMap.UserInterface)
             transform.position = Aether.InputSystem.InputSystem.Input.UserInterface.MoveCursor.ReadValue<Vector2>();
 
