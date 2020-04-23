@@ -23,7 +23,6 @@ public class DeathPanel : MonoBehaviour
         Player.Instance.Respawn();
         gameObject.SetActive(false);
         InputSystem.SwitchToActionMap(ActionMap.Player);
-        AetherEvents.UIEvents.ToolTips.UnhideAll();
     }
 
     private void OnDestroy()

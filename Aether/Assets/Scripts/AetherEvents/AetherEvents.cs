@@ -18,23 +18,7 @@ public static partial class AetherEvents
     }
 
     public struct UIEvents
-    {
-        public struct ToolTips 
-        {
-            public static event Action OnHideAll;
-            public static event Action OnUnhideAll;
-
-            public static void HideAll()
-            {
-                OnHideAll?.Invoke();
-            }
-
-            public static void UnhideAll()
-            {
-                OnUnhideAll?.Invoke();
-            }
-        }
-   
+    {   
         public struct Windows
         {
             public static event Action OnClosePopups;

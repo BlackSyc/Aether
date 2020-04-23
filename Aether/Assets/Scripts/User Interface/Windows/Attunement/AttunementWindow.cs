@@ -93,7 +93,6 @@ public class AttunementWindow : MonoBehaviour
             }
 
             InputSystem.SwitchToActionMap(ActionMap.Player);
-            AetherEvents.UIEvents.ToolTips.UnhideAll();
         }
     }
     #endregion

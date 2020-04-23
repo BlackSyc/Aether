@@ -96,7 +96,7 @@ namespace Aether.SpellSystem
             return layerMask;
         }
 
-        // NOT YET: Tested in Playmode Tests
+        // Tested in Editmode Tests
         public void CastSpell(int index)
         {
             Spell requestedSpell = SpellLibraries[index].ActiveSpell;

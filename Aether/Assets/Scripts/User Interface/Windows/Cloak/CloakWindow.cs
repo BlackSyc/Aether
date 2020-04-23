@@ -61,7 +61,6 @@ public class CloakWindow : MonoBehaviour
     {
         equipButton.onClick.RemoveAllListeners();
         window.SetActive(false);
-        AetherEvents.UIEvents.ToolTips.UnhideAll();
         InputSystem.SwitchToActionMap(ActionMap.Player);
     }
 

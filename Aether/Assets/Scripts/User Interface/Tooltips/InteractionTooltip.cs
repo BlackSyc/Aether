@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Aether.InputSystem;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -18,8 +19,12 @@ public class InteractionTooltip : MonoBehaviour
         Interactor.Events.OnCancelProposedInteraction += Deactivate;
         Interactor.Events.OnInteract += PerformAnimation;
 
-        AetherEvents.UIEvents.ToolTips.OnHideAll += Hide;
-        AetherEvents.UIEvents.ToolTips.OnUnhideAll += Unhide;
+        InputSystem.OnActionMapSwitched += InputSystem_OnActionMapSwitched;
+    }
+
+    private void InputSystem_OnActionMapSwitched(ActionMap newActionMap)
+    {
+        gameObject.SetActive(newActionMap == ActionMap.Player);
     }
 
     private void Activate(Interactable interactable, Interactor _)
@@ -39,23 +44,12 @@ public class InteractionTooltip : MonoBehaviour
         animator.SetBool("Performed", true);
     }
 
-    private void Hide()
-    {
-        gameObject.SetActive(false);
-    }
-
-    private void Unhide()
-    {
-        gameObject.SetActive(true);
-    }
-
     private void OnDestroy()
     {
         Interactor.Events.OnProposedInteraction -= Activate;
         Interactor.Events.OnCancelProposedInteraction -= Deactivate;
         Interactor.Events.OnInteract -= PerformAnimation;
 
-        AetherEvents.UIEvents.ToolTips.OnHideAll -= Hide;
-        AetherEvents.UIEvents.ToolTips.OnUnhideAll -= Unhide;
+        InputSystem.OnActionMapSwitched -= InputSystem_OnActionMapSwitched;
     }
 }
