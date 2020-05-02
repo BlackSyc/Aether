@@ -1531,6 +1531,7 @@ GameObject:
   - component: {fileID: 3972936027181875620}
   - component: {fileID: 3972936027181875626}
   - component: {fileID: 3972936027181875625}
+  - component: {fileID: 8222674980685172601}
   m_Layer: 11
   m_Name: Robin
   m_TagString: Untagged
@@ -1580,7 +1581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c62ce03e9cde924e8775af8246d2010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellSystem: {fileID: 3972936027181875626}
   aggroRange: 20
 --- !u!114 &3972936027181875621
 MonoBehaviour:
@@ -1622,10 +1622,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castParent: {fileID: 3972936026576544792}
-  spellLibraries:
+  preFillOnAwake:
   - activeSpell: {fileID: 11400000, guid: b03ca272dc6d5e2448a9d427189b546c, type: 2}
-    library:
-    - {fileID: 11400000, guid: b03ca272dc6d5e2448a9d427189b546c, type: 2}
+    library: []
 --- !u!114 &3972936027181875625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1640,6 +1639,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsActive: 1
   bias: 0
+--- !u!114 &8222674980685172601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900859028391352488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69446ef5dec958746874349fbe3421c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumTargetAggro: 5
 --- !u!1 &4975835866279485364
 GameObject:
   m_ObjectHideFlags: 0

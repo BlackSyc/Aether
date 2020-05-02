@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Aether.TargetSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,15 +9,13 @@ namespace ScriptableObjects
     [CreateAssetMenu(menuName = "Scriptable Objects/AI/Idle")]
     public class Idle : AIState
     {
-        [SerializeField]
-        private int aggroLimit;
 
         [SerializeField]
         private AIState aggroState;
 
         public override void UpdateState(AIStateMachine stateMachine)
         {
-            AggroTable aggroTable = stateMachine.GetComponent<AggroTable>();
+            ITargetSystem targetSystem = stateMachine.GetComponent<ITargetSystem>();
             Health health = stateMachine.GetComponent<Health>();
 
             if (health && health.IsDead)
@@ -24,11 +23,10 @@ namespace ScriptableObjects
                 Destroy(stateMachine.gameObject);
             }
 
-            if (aggroTable == null)
+            if (targetSystem == null)
                 return;
 
-            (int aggro, AggroTrigger trigger) highestAggroTrigger = aggroTable.GetHighestAggroTrigger();
-            if (highestAggroTrigger.trigger && highestAggroTrigger.aggro >= aggroLimit)
+            if (targetSystem.GetCurrentTarget(stateMachine.gameObject.EnemyLayer()) != null)
             {
                 stateMachine.TransitionTo(aggroState);
             }

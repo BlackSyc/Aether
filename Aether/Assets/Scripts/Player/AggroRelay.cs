@@ -30,12 +30,12 @@ public class AggroRelay : MonoBehaviour, AggroManager
         AggroManager.DecreaseAggro(aggroTrigger, amount);
     }
 
-    public (int aggro, AggroTrigger trigger) GetHighestAggroTrigger()
+    public (int aggro, AggroTrigger trigger) GetHighestAggroTrigger(LayerMask layerMask)
     {
         if (AggroManager == null)
             return (0, null);
 
-        return AggroManager.GetHighestAggroTrigger();
+        return AggroManager.GetHighestAggroTrigger(layerMask);
     }
 
     public void IncreaseAggro(AggroTrigger aggroTrigger, int amount)

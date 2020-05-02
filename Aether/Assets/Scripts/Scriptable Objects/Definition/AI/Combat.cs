@@ -1,4 +1,5 @@
 ﻿using Aether.SpellSystem;
+using Aether.TargetSystem;
 using UnityEngine;
 
 namespace ScriptableObjects
@@ -6,25 +7,27 @@ namespace ScriptableObjects
     [CreateAssetMenu(menuName = "Scriptable Objects/AI/Combat")]
     public class Combat : AIState
     {
-        [SerializeField]
-        private int minimumAggro;
 
         [SerializeField]
         private AIState lowAggroState;
 
+        private ITargetSystem targetSystem;
+
+        private ISpellSystem spellSystem;
+
+        private Health healthSystem;
+
         public override void Create(AIStateMachine stateMachine)
         {
-            if (stateMachine.GetComponent<SpellSystem>())
-            {
-                stateMachine.TransitionTo(lowAggroState);
-                return;
-            }
+            targetSystem = stateMachine.GetComponent<ITargetSystem>();
+            spellSystem = stateMachine.GetComponent<ISpellSystem>();
+            healthSystem = stateMachine.GetComponent<Health>();
         }
 
         private void Attack(AIStateMachine stateMachine, AggroTrigger enemy)
         {
             AggroTable ownAggroTable = stateMachine.GetComponent<AggroTable>();
-            SpellSystem ownSpellSystem = stateMachine.GetComponent<SpellSystem>();
+            ISpellSystem ownSpellSystem = stateMachine.GetComponent<ISpellSystem>();
             Health enemyHealth = enemy.GetComponent<Health>();
 
             if (!enemyHealth || enemyHealth.IsDead)
@@ -43,20 +46,20 @@ namespace ScriptableObjects
 
         public override void UpdateState(AIStateMachine stateMachine)
         {
-            AggroTable aggroTable = stateMachine.GetComponent<AggroTable>();
-            SpellSystem spellSystem = stateMachine.GetComponent<SpellSystem>();
-            Health health = stateMachine.GetComponent<Health>();
-
-            if (spellSystem && aggroTable && health)
+            if (targetSystem != null && spellSystem != null && healthSystem != null)
             {
-                if (health.IsDead)
+                if (healthSystem.IsDead)
                 {
                     Destroy(stateMachine.gameObject);
                     return;
                 }
 
-                if (aggroTable.GetHighestAggroTrigger().aggro >= minimumAggro)
-                    Attack(stateMachine, aggroTable.GetHighestAggroTrigger().trigger);
+                if (spellSystem.IsCasting)
+                    return;
+
+
+                if (targetSystem.GetCurrentTarget(stateMachine.gameObject.EnemyLayer()) != null)
+                    spellSystem.CastSpell(0);
                 else
                     stateMachine.TransitionTo(lowAggroState);
             }

@@ -2795,7 +2795,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c62ce03e9cde924e8775af8246d2010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellSystem: {fileID: 2136304858822474545}
   aggroRange: 20
 --- !u!114 &2136304858822474558
 MonoBehaviour:
@@ -2837,10 +2836,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castParent: {fileID: 2136304859441831555}
-  spellLibraries:
+  preFillOnAwake:
   - activeSpell: {fileID: 11400000, guid: b03ca272dc6d5e2448a9d427189b546c, type: 2}
-    library:
-    - {fileID: 11400000, guid: b03ca272dc6d5e2448a9d427189b546c, type: 2}
+    library: []
 --- !u!114 &2136304858822474546
 MonoBehaviour:
   m_ObjectHideFlags: 0

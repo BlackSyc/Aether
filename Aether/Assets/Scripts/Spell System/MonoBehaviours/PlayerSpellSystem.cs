@@ -6,15 +6,10 @@ namespace Aether.SpellSystem
     {
 
         #region MonoBehaviour
-        private void Start()
-        {
-            SubscribeToInput();
-        }
+        private void Start() => SubscribeToInput();
+        
 
-        private void OnDestroy()
-        {
-            UnsubscribeFromInput();
-        }
+        private void OnDestroy() => UnsubscribeFromInput();
         #endregion
 
         #region Input

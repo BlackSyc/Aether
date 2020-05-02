@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class AggroTable : MonoBehaviour, ITargetSystem, AggroManager
+public class AggroTable : MonoBehaviour, AggroManager
 {
     [SerializeField]
     private float aggroRange;
@@ -17,9 +17,10 @@ public class AggroTable : MonoBehaviour, ITargetSystem, AggroManager
         return aggroTriggers.Any(x => x.trigger == trigger);
     }
 
-    public (int aggro, AggroTrigger trigger) GetHighestAggroTrigger()
+    public (int aggro, AggroTrigger trigger) GetHighestAggroTrigger(LayerMask layerMask)
     {
         return aggroTriggers
+            .Where(x => layerMask.Contains(x.trigger.gameObject))
             .FirstOrDefault(x => x.aggro == aggroTriggers
                 .Max(y => y.aggro));
     }
@@ -32,6 +33,7 @@ public class AggroTable : MonoBehaviour, ITargetSystem, AggroManager
         if (Contains(aggroTrigger))
             return;
 
+        Debug.Log($"Aggro Trigger '{aggroTrigger.name}' added to Aggro Table '{gameObject.name}'!");
         aggroTriggers.Add((aggroTrigger.Bias, aggroTrigger));
         aggroTrigger.GlobalAggroRaised += x => IncreaseAggro(aggroTrigger, x);
 
@@ -69,12 +71,18 @@ public class AggroTable : MonoBehaviour, ITargetSystem, AggroManager
 
     private void Update()
     {
+        RemoveDeadTriggers();
         LookForNewTriggers();
+    }
+
+    private void RemoveDeadTriggers()
+    {
+        aggroTriggers.RemoveAll(x => !x.trigger || x.trigger.GetComponent<Health>().IsDead);
     }
 
     private void LookForNewTriggers()
     {
-        Physics.OverlapSphere(transform.position, aggroRange, gameObject.IsFriendly() ? Layers.EnemyLayer : Layers.FriendlyLayer)
+        Physics.OverlapSphere(transform.position, aggroRange, gameObject.EnemyLayer())
             .Select(x => x.GetComponent<AggroTrigger>())
             .Where(x => x != null)
             .Where(x => x.IsActive)
@@ -82,19 +90,14 @@ public class AggroTable : MonoBehaviour, ITargetSystem, AggroManager
             .ForEach(x => AddAggroTrigger(x));
     }
 
-    public Target GetCurrentTarget()
+    public Target GetCurrentTarget(LayerMask layerMask)
     {
-        (int aggro, AggroTrigger trigger) highestAggroTrigger = GetHighestAggroTrigger();
+        (int aggro, AggroTrigger trigger) highestAggroTrigger = GetHighestAggroTrigger(layerMask);
         if (highestAggroTrigger.trigger)
         {
             return new Target(highestAggroTrigger.trigger.transform);
         }
 
         return new Target(Vector3.zero);
-    }
-
-    public Target GetCurrentTarget(LayerMask layerMask)
-    {
-        throw new System.NotImplementedException();
     }
 }

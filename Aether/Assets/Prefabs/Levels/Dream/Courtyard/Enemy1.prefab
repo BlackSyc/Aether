@@ -2259,6 +2259,7 @@ GameObject:
   - component: {fileID: 261539165327757650}
   - component: {fileID: 261539165327757660}
   - component: {fileID: 261539165327757663}
+  - component: {fileID: 3332461205478709192}
   m_Layer: 12
   m_Name: Enemy1
   m_TagString: Untagged
@@ -2308,7 +2309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c62ce03e9cde924e8775af8246d2010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellSystem: {fileID: 261539165327757660}
   aggroRange: 20
 --- !u!114 &261539165327757651
 MonoBehaviour:
@@ -2350,10 +2350,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castParent: {fileID: 261539164733043950}
-  spellLibraries:
+  preFillOnAwake:
   - activeSpell: {fileID: 11400000, guid: ad6afaec30308574b918e927c8ef0d5c, type: 2}
-    library:
-    - {fileID: 11400000, guid: ad6afaec30308574b918e927c8ef0d5c, type: 2}
+    library: []
 --- !u!114 &261539165327757663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2368,6 +2367,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsActive: 1
   bias: 0
+--- !u!114 &3332461205478709192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8106691991791323230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69446ef5dec958746874349fbe3421c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumTargetAggro: 5
 --- !u!1 &8154078449382606344
 GameObject:
   m_ObjectHideFlags: 0

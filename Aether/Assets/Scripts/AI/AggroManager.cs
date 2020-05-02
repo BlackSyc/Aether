@@ -6,7 +6,7 @@ public interface AggroManager
 {
     bool Contains(AggroTrigger trigger);
 
-    (int aggro, AggroTrigger trigger) GetHighestAggroTrigger();
+    (int aggro, AggroTrigger trigger) GetHighestAggroTrigger(LayerMask layerMask);
 
     void AddAggroTrigger(AggroTrigger aggroTrigger);
 

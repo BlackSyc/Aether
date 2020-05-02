@@ -28,4 +28,9 @@ public static class Extension
     {
         return Layers.EnemyLayer.Contains(gameObject);
     }
+
+    public static LayerMask EnemyLayer(this GameObject gameObject)
+    {
+        return gameObject.IsFriendly() ? Layers.EnemyLayer : Layers.FriendlyLayer;
+    }
 }

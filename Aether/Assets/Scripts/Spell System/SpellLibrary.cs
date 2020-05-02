@@ -79,6 +79,9 @@ namespace Aether.SpellSystem
             if (ActiveSpell == null)
                 return false;
 
+            if (target == null)
+                return false;
+
             if (Time.time < CoolDownUntil)
                 return false;
 
