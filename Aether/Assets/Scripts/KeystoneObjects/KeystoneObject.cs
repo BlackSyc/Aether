@@ -12,7 +12,7 @@ public class KeystoneObject : MonoBehaviour
     {
         if (keystone.IsFound)
         {
-            Hint.Get("Keystone_AlreadyPickedUp").Activate();
+            Hints.Get("Keystone_AlreadyPickedUp").Activate();
             return;
         }
         Player.Instance.Inventory.PickupKeystone(keystone);

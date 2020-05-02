@@ -92,6 +92,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Hint.Get("Movement").Activate();
+        Hints.Get("Movement").Activate();
     }
 }

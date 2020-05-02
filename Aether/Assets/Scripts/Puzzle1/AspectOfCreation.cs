@@ -53,7 +53,7 @@ public class AspectOfCreation : MonoBehaviour
 
     private void GrantArcaneMissile()
     {
-        Hint.Get("Cursor").Activate();
+        Hints.Get("Cursor").Activate();
         Player.Instance.SpellSystem.AddSpell(0, reward);
         InputSystem.SwitchToActionMap(ActionMap.UserInterface);
     }

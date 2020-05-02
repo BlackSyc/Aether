@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ebbb9d016a2074c958fcf335da2e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  content: {fileID: 1486531363}
+  hintParent: {fileID: 1486531363}
 --- !u!1 &91564808
 GameObject:
   m_ObjectHideFlags: 0

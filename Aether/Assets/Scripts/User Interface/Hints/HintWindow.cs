@@ -5,22 +5,12 @@ using UnityEngine;
 
 public class HintWindow : MonoBehaviour
 {
-
     [SerializeField]
-    private RectTransform content;
+    private RectTransform hintParent;
 
-    private void Start()
-    {
-        Hint.Events.OnActivated += ShowHint;
-    }
+    private void Awake() => Hint.Events.OnActivated += ShowHint;
+    private void OnDestroy() => Hint.Events.OnActivated -= ShowHint;
 
-    public void ShowHint(Hint hint)
-    {
-        GameObject hintObject = GameObject.Instantiate(hint.HintPrefab, content);
-    }
+    public void ShowHint(Hint hint) => Instantiate(hint.HintPrefab, hintParent);
 
-    private void OnDestroy()
-    {
-        Hint.Events.OnActivated -= ShowHint;
-    }
 }
