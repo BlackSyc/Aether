@@ -4,25 +4,23 @@ using UnityEngine;
 
 namespace Aether.SpellSystem
 {
-    public class SpellObject : MonoBehaviour
+    public abstract class SpellObject : MonoBehaviour
     {
+        [HideInInspector]
         public Spell Spell;
 
+        [HideInInspector]
         public ISpellSystem Caster;
 
+        [HideInInspector]
         public Target Target;
 
-        public virtual void CastStarted() { }
+        public abstract void CastStarted();
 
-        public virtual void CastInterrupted() { }
+        public abstract void CastInterrupted();
 
-        public virtual void CastCanceled() { }
+        public abstract void CastCanceled();
 
-        public virtual void CastFired()
-        {
-            AggroTrigger aggroTrigger = Caster.gameObject.GetComponent<AggroTrigger>();
-            if (aggroTrigger != null)
-                aggroTrigger.RaiseGlobalAggro(Spell.GlobalAggro);
-        }
+        public abstract void CastFired();
     }
 }

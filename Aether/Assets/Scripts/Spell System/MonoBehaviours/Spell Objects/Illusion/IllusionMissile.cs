@@ -5,19 +5,28 @@ namespace Aether.SpellSystem
     public class IllusionMissile : ArcaneMissile
     {
 
-        public override bool ObjectHit(GameObject hitObject)
+        public override void OnTargetHit(GameObject targetObject)
         {
+            ExecuteTargetHitBehaviour(targetObject);
 
-            AggroManager enemyAggroManager = hitObject.GetComponent<AggroManager>();
+            PlayMissileHitAnimation();
+
+            Destroy(gameObject);
+        }
+
+        private void ExecuteTargetHitBehaviour(GameObject targetObject)
+        {
+            AggroManager enemyAggroManager = targetObject.GetComponent<AggroManager>();
             AggroTrigger casterAggroTrigger = Caster.gameObject.GetComponent<AggroTrigger>();
 
-            if (enemyAggroManager != null && casterAggroTrigger)
-            {
-                enemyAggroManager.IncreaseAggro(casterAggroTrigger, Spell.LocalAggro);
-            }
-            // add knockback logic
-            GetComponent<Animator>().SetTrigger("CastHit");
-            return true;
+            if (enemyAggroManager == null || !casterAggroTrigger)
+                return;
+
+            
+            enemyAggroManager.IncreaseAggro(casterAggroTrigger, Spell.LocalAggro);
+            
+
+            // to do: add knockback logic
         }
     }
 }

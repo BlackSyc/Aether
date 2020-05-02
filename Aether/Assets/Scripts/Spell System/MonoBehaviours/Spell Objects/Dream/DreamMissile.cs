@@ -7,16 +7,22 @@ namespace Aether.SpellSystem
 {
     public class DreamMissile : ArcaneMissile
     {
-        public override bool ObjectHit(GameObject hitObject)
+        public override void OnTargetHit(GameObject targetObject)
         {
-            Health targetHealth = hitObject.GetComponent<Health>();
-            if (targetHealth != null)
-            {
-                targetHealth.Heal(Spell.Heal);
-            }
+            ExecuteTargetHitBehaviour(targetObject);
 
-            GetComponent<Animator>().SetTrigger("CastHit");
-            return true;
+            PlayMissileHitAnimation();
+
+            Destroy(gameObject);
+        }
+
+        private void ExecuteTargetHitBehaviour(GameObject targetObject)
+        {
+            Health targetHealth = targetObject.GetComponent<Health>();
+            if (targetHealth == null)
+                return;
+
+            targetHealth.Heal(Spell.Heal);
         }
     }
 }

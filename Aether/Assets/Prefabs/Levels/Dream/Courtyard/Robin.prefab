@@ -1564,7 +1564,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4900859028391352488}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 4.7
@@ -1625,6 +1625,7 @@ MonoBehaviour:
   preFillOnAwake:
   - activeSpell: {fileID: 11400000, guid: b03ca272dc6d5e2448a9d427189b546c, type: 2}
     library: []
+  aggroTrigger: {fileID: 0}
 --- !u!114 &3972936027181875625
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,27 +5,34 @@ namespace Aether.SpellSystem
     public class NightmareMissile : ArcaneMissile
     {
 
-        public override bool ObjectHit(GameObject hitObject)
+        public override void OnTargetHit(GameObject targetObject)
         {
-            Health targetHealth = hitObject.GetComponent<Health>();
+            ExecuteTargetHitBehaviour(targetObject);
+
+            PlayMissileHitAnimation();
+
+            Destroy(gameObject);
+        }
+
+        private void ExecuteTargetHitBehaviour(GameObject targetObject)
+        {
+            Health targetHealth = targetObject.GetComponent<Health>();
             if (targetHealth)
             {
                 targetHealth.Damage(Spell.Damage);
             }
 
-            AggroManager enemyAggroManager = hitObject.GetComponent<AggroManager>();
-            if (Caster != null)
-            {
-                AggroTrigger casterAggroTrigger = Caster.gameObject.GetComponent<AggroTrigger>();
 
-                if (enemyAggroManager != null && casterAggroTrigger)
-                {
-                    enemyAggroManager.IncreaseAggro(casterAggroTrigger, Spell.LocalAggro);
-                }
-            }
+            if (Caster == null)
+                return;
 
-            GetComponent<Animator>().SetTrigger("CastHit");
-            return true;
+            AggroManager enemyAggroManager = targetObject.GetComponent<AggroManager>();
+            AggroTrigger casterAggroTrigger = Caster.gameObject.GetComponent<AggroTrigger>();
+
+            if (enemyAggroManager == null || !casterAggroTrigger)
+                return;
+
+            enemyAggroManager.IncreaseAggro(casterAggroTrigger, Spell.LocalAggro);
         }
     }
 }

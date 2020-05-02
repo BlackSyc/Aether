@@ -8,6 +8,8 @@ public interface IMovementSystem
     float RotationSpeed { get; }
 
     float JumpPower { get; }
+
+    bool IsMoving { get; }
     #endregion
 
     #region Public Methods

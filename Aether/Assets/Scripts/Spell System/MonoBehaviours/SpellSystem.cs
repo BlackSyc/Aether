@@ -16,6 +16,7 @@ namespace Aether.SpellSystem
         [SerializeField]
         private SpellLibrary[] preFillOnAwake = new SpellLibrary[0];
 
+
         private SpellCast currentSpellCast;
 
         public ITargetSystem TargetSystem;

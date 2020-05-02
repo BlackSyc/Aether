@@ -441,6 +441,8 @@ GameObject:
   - component: {fileID: 2868120797459138798}
   - component: {fileID: 2673095067969104084}
   - component: {fileID: 1332817021308259537}
+  - component: {fileID: 6688408730264888434}
+  - component: {fileID: 9141536734902928725}
   m_Layer: 0
   m_Name: Dream Missile
   m_TagString: Untagged
@@ -498,15 +500,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spell: {fileID: 0}
-  Caster: {fileID: 0}
-  CastOnSelf: 0
-  muzzleFlashPrefab: {fileID: 1746341381902864788, guid: 166265a9ba620ad4da1db7bb4736fb63,
-    type: 3}
-  hitPrefab: {fileID: 1746341381902864788, guid: 4a65f991ed88b1c4ca30dfff3e67bc12,
-    type: 3}
-  lifeTime: 10
   movementSpeed: 20
   rotationSpeed: 500
+  maxLifeTime: 10
+  muzzleFlashPrefab: {fileID: 1746341381902864788, guid: 166265a9ba620ad4da1db7bb4736fb63,
+    type: 3}
+  hitFlashPrefab: {fileID: 1746341381902864788, guid: 4a65f991ed88b1c4ca30dfff3e67bc12,
+    type: 3}
+--- !u!135 &6688408730264888434
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282706551129572718}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &9141536734902928725
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282706551129572718}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3579406333838031550
 GameObject:
   m_ObjectHideFlags: 0

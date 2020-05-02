@@ -4,34 +4,13 @@ using UnityEngine;
 
 namespace Aether.SpellSystem
 {
-    public class ArcaneMissile : SpellObject
+    public class ArcaneMissile : Projectile
     {
         [SerializeField]
         private GameObject muzzleFlashPrefab;
 
         [SerializeField]
-        protected GameObject hitPrefab;
-
-        [SerializeField]
-        private float hitRadius = 0.1f;
-
-        [SerializeField]
-        private float lifeTime = 10;
-
-        protected bool travelling = false;
-
-        protected float despawnTime;
-
-        public float DespawnTime => despawnTime;
-
-        [SerializeField]
-        protected float movementSpeed = 20;
-
-        [SerializeField]
-        protected float rotationSpeed = 500;
-
-        private Quaternion initialRotation;
-
+        protected GameObject hitFlashPrefab;
 
         public override void CastCanceled()
         {
@@ -48,15 +27,7 @@ namespace Aether.SpellSystem
         {
             base.CastFired();
 
-            GetComponent<Animator>().SetTrigger("CastFired");
-            transform.SetParent(null, true);
-            initialRotation = transform.rotation;
-            travelling = true;
-            despawnTime = Time.time + lifeTime;
-
-            GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, transform);
-            muzzleFlash.transform.SetParent(null, true);
-            Destroy(muzzleFlash, muzzleFlash.GetComponent<ParticleSystem>().main.duration);
+            PlayMissileFiredAnimation();
         }
 
         public override void CastInterrupted()
@@ -65,67 +36,45 @@ namespace Aether.SpellSystem
             Destroy(this.gameObject);
         }
 
-        protected bool Hit()
+        public override void OnObstructionHit(GameObject obstructionObject)
         {
-            if (Target.TargetTransform == Caster.gameObject.transform)
-                return ObjectHit(Caster.gameObject);
+            PlayMissileHitAnimation();
 
-            Collider[] colliders = Physics.OverlapSphere(transform.position, hitRadius, Spell.LayerMask | Layers.ObstructionLayer);
-            foreach (Collider collider in colliders)
-            {
-                if (Target.TargetTransform == collider.transform)
-                {
-                    return ObjectHit(collider.gameObject);
-                }
-                else if (Layers.ObstructionLayer.Contains(collider.gameObject))
-                {
-                    return ObstructionHit(collider.gameObject);
-                }
-            }
-            return false;
+            Destroy(gameObject);
         }
 
-        public virtual bool ObjectHit(GameObject hitObject)
+        public override void OnTargetHit(GameObject targetObject)
         {
-            Puzzle1_MissileTarget missileTarget = hitObject.GetComponent<Puzzle1_MissileTarget>();
-            if (missileTarget != null)
-            {
-                missileTarget.Hit();
-            }
-            GetComponent<Animator>().SetTrigger("CastHit");
-            return true;
+            ExecuteTargetHitBehaviour(targetObject);
+
+            PlayMissileHitAnimation();
+
+            Destroy(gameObject);
         }
 
-        public virtual bool ObstructionHit(GameObject hitObject)
+        private void ExecuteTargetHitBehaviour(GameObject targetObject)
         {
-            GetComponent<Animator>().SetTrigger("CastHit");
-            return true;
+            Puzzle1_MissileTarget missileTarget = targetObject.GetComponent<Puzzle1_MissileTarget>();
+            if (missileTarget == null)
+                return;
+
+            missileTarget.Hit();
         }
 
-        public virtual void FixedUpdate()
+        public void PlayMissileHitAnimation()
         {
-            if (travelling)
-            {
-                if (despawnTime < Time.time)
-                    Destroy(this.gameObject);
+            GameObject hitFlash = Instantiate(hitFlashPrefab, transform);
+            hitFlash.transform.SetParent(null, true);
+            Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
+        }
 
-                if (Hit())
-                {
-                    travelling = false;
-                    GameObject hitFlash = Instantiate(hitPrefab, transform);
-                    hitFlash.transform.SetParent(null, true);
-                    Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
-                    Destroy(gameObject);
-                    return;
-                }
+        public void PlayMissileFiredAnimation()
+        {
+            GetComponent<Animator>().SetTrigger("CastFired");
 
-
-
-                transform.Translate(new Vector3(0, 0, movementSpeed * Time.fixedDeltaTime), Space.Self);
-
-                Quaternion desiredRotation = Quaternion.LookRotation(Target.Position - transform.position, transform.up);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.fixedDeltaTime);
-            }
+            GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, transform);
+            muzzleFlash.transform.SetParent(null, true);
+            Destroy(muzzleFlash, muzzleFlash.GetComponent<ParticleSystem>().main.duration);
         }
     }
 }

@@ -14,7 +14,7 @@ public class AggroTrigger : MonoBehaviour
 
     public int Bias => bias;
 
-    public void RaiseGlobalAggro(int amount)
+    public void TriggerGlobalAggro(int amount)
     {
         GlobalAggroRaised?.Invoke(amount);
     }

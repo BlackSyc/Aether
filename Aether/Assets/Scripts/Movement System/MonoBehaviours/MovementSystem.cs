@@ -21,7 +21,7 @@ public class MovementSystem : MonoBehaviour, IMovementSystem
     #endregion
 
     #region Public Properties
-    public bool IsMoving = false;
+    public bool IsMoving { get; private set; } = false;
 
     public float MovementSpeed => movementSpeed;
 

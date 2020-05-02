@@ -12,10 +12,6 @@ namespace Aether.SpellSystem
 
         private bool casting = false;
 
-        private ISpellSystem caster;
-
-        private Transform castOrigin;
-
         private SpellObject spellObject;
         #endregion
 
@@ -32,16 +28,20 @@ namespace Aether.SpellSystem
 
         public Spell Spell { get; private set; }
 
-        public bool CastOnSelf => Target.TargetTransform == caster.gameObject.transform;
+        public ISpellSystem Caster { get; private set; }
+
+        public bool CastOnSelf => Target.TargetTransform == Caster.gameObject.transform;
+
+        public Transform CastOrigin { get; private set; }
         #endregion
 
 
 
         public SpellCast(Spell spell, Transform castOrigin, ISpellSystem caster, Target target)
         {
-            Spell = spell;
-            this.castOrigin = castOrigin;
-            this.caster = caster;
+            this.Spell = spell;
+            this.CastOrigin = castOrigin;
+            this.Caster = caster;
             this.Target = target;
         }
 
@@ -61,7 +61,7 @@ namespace Aether.SpellSystem
 
             if (Progress < 1f)
             {
-                if (!Spell.CastWhileMoving && Player.Instance.PlayerMovement.IsMoving)
+                if (!Spell.CastWhileMoving && Caster.gameObject.GetComponent<IMovementSystem>().IsMoving)
                 {
                     Cancel();
                     return;
@@ -73,11 +73,10 @@ namespace Aether.SpellSystem
             }
             else
             {
+                spellObject.CastFired();
+                TriggerGlobalAggro();
+
                 casting = false;
-
-                if(spellObject != null)
-                    spellObject.CastFired();
-
                 CastComplete?.Invoke(this);
             }
         }
@@ -98,19 +97,27 @@ namespace Aether.SpellSystem
 
         internal void Start()
         {
-            if (Spell.SpellObject != null)
-            {
-                spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, castOrigin).GetComponent<SpellObject>();
+            spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, CastOrigin).GetComponent<SpellObject>();
 
-                spellObject.Spell = Spell;
-                spellObject.Caster = caster;
-                spellObject.Target = Target;
+            spellObject.Spell = Spell;
+            spellObject.Caster = Caster;
+            spellObject.Target = Target;
 
-                spellObject.CastStarted();
-            }
+            spellObject.CastStarted();
 
             CastStarted?.Invoke(this);
             casting = true;
+        }
+
+        private void TriggerGlobalAggro()
+        {
+            AggroTrigger aggroTrigger = Caster.gameObject.GetComponent<AggroTrigger>();
+
+            if (aggroTrigger == null)
+                return;
+
+            aggroTrigger.TriggerGlobalAggro(Spell.GlobalAggro);
+
         }
     }
 }
