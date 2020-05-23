@@ -3,6 +3,7 @@ using ScriptableObjects;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Linq;
 
 namespace Aether.TargetSystem
 {
@@ -46,21 +47,17 @@ namespace Aether.TargetSystem
         #endregion
 
         #region Public Methods
-        public Target GetCurrentTarget(LayerMask layerMask)
+        public ITarget GetCurrentTarget(LayerMask layerMask)
         {
             if (targetSelf && layerMask.Contains(gameObject))
-                return new Target(transform);
+                return GetComponent<ITarget>();
 
-
-            bool hitFound = Physics.Raycast(playerCamera.position, playerCamera.forward, out RaycastHit raycastHit, maxRange, Layers.ObstructionLayer | layerMask);
-
-            if (!hitFound)
-                return new Target(playerCamera.position + playerCamera.forward * maxRange);
-
-            if (Layers.ObstructionLayer.Contains(raycastHit.collider.gameObject))
-                return new Target(raycastHit.point);
-
-            return new Target(raycastHit.transform);
+            return Physics.RaycastAll(playerCamera.position, playerCamera.forward, maxRange)
+                .Where(x => x.transform != transform)
+                .Select(x => (x, x.transform.GetComponent<ITarget>()))
+                .Where(x => x.Item2 != null)
+                .Select(x => x.Item2)
+                .SingleOrDefault();
         }
         #endregion
     }

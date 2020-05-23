@@ -2,27 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Aether.TargetSystem;
 
 namespace Aether.SpellSystem
 {
     public class DreamMissile : ArcaneMissile
     {
-        public override void OnTargetHit(GameObject targetObject)
+        public override void OnTargetHit(ITarget target)
         {
-            ExecuteTargetHitBehaviour(targetObject);
+            ExecuteTargetHitBehaviour(target);
 
             PlayMissileHitAnimation();
 
             Destroy(gameObject);
         }
 
-        private void ExecuteTargetHitBehaviour(GameObject targetObject)
+        private void ExecuteTargetHitBehaviour(ITarget target)
         {
-            Health targetHealth = targetObject.GetComponent<Health>();
-            if (targetHealth == null)
-                return;
-
-            targetHealth.Heal(Spell.Heal);
+            if (target.Has<IHealth>(out var targetHealth))
+                targetHealth.Heal(Spell.Heal);
         }
     }
 }

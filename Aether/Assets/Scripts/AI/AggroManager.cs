@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Aether.TargetSystem;
 using UnityEngine;
 
 public interface AggroManager
 {
-    bool Contains(AggroTrigger trigger);
+    bool Contains(ITarget target);
 
-    (int aggro, AggroTrigger trigger) GetHighestAggroTrigger(LayerMask layerMask);
+    (int aggro, ITarget target) GetHighestAggroTarget(LayerMask layerMask);
 
-    void AddAggroTrigger(AggroTrigger aggroTrigger);
+    void AddAggroTarget(ITarget target);
 
-    void RemoveAggroTrigger(AggroTrigger aggroTrigger);
-    void IncreaseAggro(AggroTrigger aggroTrigger, int amount);
+    void RemoveAggroTarget(ITarget target);
+    void IncreaseAggro(ITarget target, int amount);
 
-    void DecreaseAggro(AggroTrigger aggroTrigger, int amount);
+    void DecreaseAggro(ITarget target, int amount);
 
 }

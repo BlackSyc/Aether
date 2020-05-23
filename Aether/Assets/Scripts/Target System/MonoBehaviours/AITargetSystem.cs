@@ -11,12 +11,12 @@ namespace Aether.TargetSystem
         
         private AggroManager aggroManager;
 
-        public Target GetCurrentTarget(LayerMask layerMask)
+        public ITarget GetCurrentTarget(LayerMask layerMask)
         {
-            (int aggro, AggroTrigger trigger) highestAggroTrigger = aggroManager.GetHighestAggroTrigger(layerMask);
-            if(highestAggroTrigger.aggro >= minimumTargetAggro)
+            (int aggro, ITarget target) highestAggroTarget = aggroManager.GetHighestAggroTarget(layerMask);
+            if(highestAggroTarget.aggro >= minimumTargetAggro)
             {
-                return new Target(highestAggroTrigger.trigger.transform);
+                return highestAggroTarget.target;
             }
 
             return null;

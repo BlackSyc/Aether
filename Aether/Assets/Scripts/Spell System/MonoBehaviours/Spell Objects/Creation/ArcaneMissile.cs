@@ -43,22 +43,21 @@ namespace Aether.SpellSystem
             Destroy(gameObject);
         }
 
-        public override void OnTargetHit(GameObject targetObject)
+        public override void OnTargetHit(ITarget target)
         {
-            ExecuteTargetHitBehaviour(targetObject);
+            ExecuteTargetHitBehaviour(target);
 
             PlayMissileHitAnimation();
 
             Destroy(gameObject);
         }
 
-        private void ExecuteTargetHitBehaviour(GameObject targetObject)
+        private void ExecuteTargetHitBehaviour(ITarget target)
         {
-            Puzzle1_MissileTarget missileTarget = targetObject.GetComponent<Puzzle1_MissileTarget>();
-            if (missileTarget == null)
-                return;
-
-            missileTarget.Hit();
+            if(target.Has(out Puzzle1_MissileTarget missileTarget))
+            {
+                missileTarget.Hit();
+            }
         }
 
         public void PlayMissileHitAnimation()

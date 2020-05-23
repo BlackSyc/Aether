@@ -72,7 +72,7 @@ namespace Aether.SpellSystem
         }
 
         // Tested in Editmode Tests
-        public bool TryCast(out SpellCast spellCast, Transform castParent, ISpellSystem caster, Target target)
+        public bool TryCast(out SpellCast spellCast, Transform castParent, ISpellSystem caster, ITarget target)
         {
             spellCast = null;
 

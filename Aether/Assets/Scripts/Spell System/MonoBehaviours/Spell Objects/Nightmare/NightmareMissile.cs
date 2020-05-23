@@ -1,40 +1,27 @@
-﻿using UnityEngine;
+﻿using Aether.TargetSystem;
+using UnityEngine;
 
 namespace Aether.SpellSystem
 {
     public class NightmareMissile : ArcaneMissile
     {
 
-        public override void OnTargetHit(GameObject targetObject)
+        public override void OnTargetHit(ITarget target)
         {
-            ExecuteTargetHitBehaviour(targetObject);
+            ExecuteTargetHitBehaviour(target);
 
             PlayMissileHitAnimation();
 
             Destroy(gameObject);
         }
 
-        private void ExecuteTargetHitBehaviour(GameObject targetObject)
+        private void ExecuteTargetHitBehaviour(ITarget target)
         {
-            Health targetHealth = targetObject.GetComponent<Health>();
-            if (targetHealth)
-            {
-                targetHealth.Damage(Spell.Damage);
-            }
+            if (target.Has(out IHealth health))
+                health.Damage(Spell.Damage);
 
-
-            if (Caster == null)
-                return;
-
-            GameObject testObj = Caster.gameObject;
-
-            AggroManager enemyAggroManager = targetObject.GetComponent<AggroManager>();
-            AggroTrigger casterAggroTrigger = testObj.GetComponent<AggroTrigger>();
-
-            if (enemyAggroManager == null || !casterAggroTrigger)
-                return;
-
-            enemyAggroManager.IncreaseAggro(casterAggroTrigger, Spell.LocalAggro);
+            if (target.Has(out AggroManager aggroManager))
+                aggroManager.IncreaseAggro(Caster.gameObject.GetComponent<ITarget>(), Spell.LocalAggro);
         }
     }
 }

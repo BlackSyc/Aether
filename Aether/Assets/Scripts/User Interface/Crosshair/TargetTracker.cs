@@ -27,16 +27,14 @@ public class TargetTracker : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (SpellCast.Target.HasTargetTransform)
+        if (SpellCast.Target == null)
         {
-            rectTransform.position = Camera.WorldToScreenPoint(SpellCast.Target.TargetTransform.position + Offset);
-            image.enabled = rectTransform.position.z > 0;
+            Destroy();
+            return;
         }
-        else
-        {
-            rectTransform.position = Camera.WorldToScreenPoint(SpellCast.Target.Position + Offset);
-            image.enabled = false;
-        }
+
+        rectTransform.position = Camera.WorldToScreenPoint(SpellCast.Target.Transform.Position + Offset);
+        image.enabled = rectTransform.position.z > 0;
     }
 
     private void Destroy()

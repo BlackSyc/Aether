@@ -13,7 +13,7 @@ namespace Aether.SpellSystem
         public ISpellSystem Caster;
 
         [HideInInspector]
-        public Target Target;
+        public ITarget Target;
 
         public abstract void CastStarted();
 

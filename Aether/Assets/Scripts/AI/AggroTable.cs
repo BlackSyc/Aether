@@ -10,94 +10,93 @@ public class AggroTable : MonoBehaviour, AggroManager
     [SerializeField]
     private float aggroRange;
 
-    private List<(int aggro, AggroTrigger trigger)> aggroTriggers = new List<(int, AggroTrigger)>();
+    private List<(int aggro, ITarget target)> aggroTargets = new List<(int, ITarget)>();
 
-    public bool Contains(AggroTrigger trigger)
+    public bool Contains(ITarget target)
     {
-        return aggroTriggers.Any(x => x.trigger == trigger);
+        return aggroTargets.Any(x => x.target == target);
     }
 
-    public (int aggro, AggroTrigger trigger) GetHighestAggroTrigger(LayerMask layerMask)
+    public (int aggro, ITarget target) GetHighestAggroTarget(LayerMask layerMask)
     {
-        return aggroTriggers
-            .Where(x => layerMask.Contains(x.trigger.gameObject))
-            .FirstOrDefault(x => x.aggro == aggroTriggers
+        return aggroTargets
+            .Where(x => x.target.IsIn(layerMask))
+            .FirstOrDefault(x => x.aggro == aggroTargets
                 .Max(y => y.aggro));
     }
 
-    public void AddAggroTrigger(AggroTrigger aggroTrigger)
+    public void AddAggroTarget(ITarget target)
     {
-        if (gameObject.IsFriendly() ? aggroTrigger.gameObject.IsFriendly() : aggroTrigger.gameObject.IsEnemy())
+        if (gameObject.IsFriendly() ? target.IsFriendly : target.IsEnemy)
             return;
 
-        if (Contains(aggroTrigger))
+        if (Contains(target))
             return;
 
-        Debug.Log($"Aggro Trigger '{aggroTrigger.name}' added to Aggro Table '{gameObject.name}'!");
-        aggroTriggers.Add((aggroTrigger.Bias, aggroTrigger));
-        aggroTrigger.GlobalAggroRaised += x => IncreaseAggro(aggroTrigger, x);
+        Debug.Log($"Aggro Target '{target.Name}' added to Aggro Table '{gameObject.name}'!");
 
+
+        aggroTargets.Add((target.AggroBias, target));
     }
 
-    public void RemoveAggroTrigger(AggroTrigger aggroTrigger)
+    public void RemoveAggroTarget(ITarget target)
     {
-        aggroTrigger.GlobalAggroRaised -= x => IncreaseAggro(aggroTrigger, x);
-        aggroTriggers.RemoveAll(x => x.trigger == aggroTrigger);
+        aggroTargets.RemoveAll(x => x.target == target);
     }
 
-    public void IncreaseAggro(AggroTrigger aggroTrigger, int amount)
+    public void IncreaseAggro(ITarget target, int amount)
     {
-        if (!aggroTriggers.Any(x => x.trigger == aggroTrigger))
+        if (!aggroTargets.Any(x => x.target == target))
             return;
 
 
-        (int aggro, AggroTrigger trigger) currentEntry = aggroTriggers.Single(x => x.trigger == aggroTrigger);
+        (int aggro, ITarget target) currentEntry = aggroTargets.Single(x => x.target == target);
 
-        aggroTriggers.Remove(currentEntry);
-        aggroTriggers.Add((currentEntry.aggro + amount, aggroTrigger));
+        aggroTargets.Remove(currentEntry);
+        aggroTargets.Add((currentEntry.aggro + amount, target));
     }
 
-    public void DecreaseAggro(AggroTrigger aggroTrigger, int amount)
+    public void DecreaseAggro(ITarget target, int amount)
     {
-        if (!aggroTriggers.Any(x => x.trigger == aggroTrigger))
+        if (!aggroTargets.Any(x => x.target == target))
             return;
 
 
-        (int aggro, AggroTrigger trigger) currentEntry = aggroTriggers.Single(x => x.trigger == aggroTrigger);
+        (int aggro, ITarget trigger) currentEntry = aggroTargets.Single(x => x.target == target);
 
-        aggroTriggers.Remove(currentEntry);
-        aggroTriggers.Add((currentEntry.aggro - amount, aggroTrigger));
+        aggroTargets.Remove(currentEntry);
+        aggroTargets.Add((currentEntry.aggro - amount, target));
     }
 
     private void Update()
     {
-        RemoveDeadTriggers();
-        LookForNewTriggers();
+        RemoveDeadTargets();
+        LookForNewTargets();
     }
 
-    private void RemoveDeadTriggers()
+    private void RemoveDeadTargets()
     {
-        aggroTriggers.RemoveAll(x => !x.trigger || x.trigger.GetComponent<Health>().IsDead);
+        aggroTargets.RemoveAll(x => x.target == null || x.target.Get<IHealth>().IsDead);
     }
 
-    private void LookForNewTriggers()
+    private void LookForNewTargets()
     {
         Physics.OverlapSphere(transform.position, aggroRange, gameObject.EnemyLayer())
-            .Select(x => x.GetComponent<AggroTrigger>())
+            .Select(x => x.GetComponent<ITarget>())
             .Where(x => x != null)
-            .Where(x => x.IsActive)
             .Where(x => !Contains(x))
-            .ForEach(x => AddAggroTrigger(x));
+            .ForEach(x => AddAggroTarget(x));
     }
 
-    public Target GetCurrentTarget(LayerMask layerMask)
+    public ITarget GetCurrentTarget(LayerMask layerMask)
     {
-        (int aggro, AggroTrigger trigger) highestAggroTrigger = GetHighestAggroTrigger(layerMask);
-        if (highestAggroTrigger.trigger)
+        (int aggro, ITarget target) highestAggroTarget = GetHighestAggroTarget(layerMask);
+
+        if (highestAggroTarget.target != null)
         {
-            return new Target(highestAggroTrigger.trigger.transform);
+            return highestAggroTarget.target;
         }
 
-        return new Target(Vector3.zero);
+        return null;
     }
 }

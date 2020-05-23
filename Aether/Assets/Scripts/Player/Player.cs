@@ -80,13 +80,11 @@ public class Player : MonoBehaviour
             ILevelController levelController = SceneController.Instance.LoadedLevel.levelController;
             levelController.GetLevelExit().TeleportToStartPlatform();
             Health.SetFullHealth();
-            GetComponent<AggroTrigger>().IsActive = true;
         }
         else
         {
             transform.position = new Vector3(0, 1, 0);
             Health.SetFullHealth();
-            GetComponent<AggroTrigger>().IsActive = true;
         }
     }
 

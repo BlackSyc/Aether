@@ -1,29 +1,24 @@
-﻿using UnityEngine;
+﻿using Aether.TargetSystem;
+using System.Linq;
+using UnityEngine;
 
 namespace Aether.SpellSystem
 {
     public class IllusionMissile : ArcaneMissile
     {
 
-        public override void OnTargetHit(GameObject targetObject)
+        public override void OnTargetHit(ITarget target)
         {
-            ExecuteTargetHitBehaviour(targetObject);
+            ExecuteTargetHitBehaviour(target);
 
             PlayMissileHitAnimation();
 
             Destroy(gameObject);
         }
 
-        private void ExecuteTargetHitBehaviour(GameObject targetObject)
+        private void ExecuteTargetHitBehaviour(ITarget target)
         {
-            AggroManager enemyAggroManager = targetObject.GetComponent<AggroManager>();
-            AggroTrigger casterAggroTrigger = Caster.gameObject.GetComponent<AggroTrigger>();
-
-            if (enemyAggroManager == null || !casterAggroTrigger)
-                return;
-
-            
-            enemyAggroManager.IncreaseAggro(casterAggroTrigger, Spell.LocalAggro);
+            target.Get<AggroManager>()?.IncreaseAggro(target, Spell.LocalAggro);
             
 
             // to do: add knockback logic

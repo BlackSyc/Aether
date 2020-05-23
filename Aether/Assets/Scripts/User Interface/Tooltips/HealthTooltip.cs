@@ -9,7 +9,7 @@ public class HealthTooltip : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI nameText;
 
-    private Health health;
+    private IHealth health;
 
     private Camera camera;
 
@@ -29,10 +29,10 @@ public class HealthTooltip : MonoBehaviour
     [SerializeField]
     private float fadeAt = 25;
 
-    public void SetHealth(Health health)
+    public void SetHealth(IHealth health)
     {
         this.health = health;
-        nameText.text = health.gameObject.name;
+        nameText.text = health.transform.name;
         health.OnHealthChanged += HealthChanged;
         health.OnHealthObjectDestroyed += Destroy;
 
@@ -108,10 +108,10 @@ public class HealthTooltip : MonoBehaviour
         }
 
         // If the current target of the targetmanager (locked or not) is the same as the health transform, set alpha to 1.
-        Target target = Player.Instance.TargetManager.GetCurrentTarget(Player.Instance.SpellSystem.GetCombinedLayerMask());
-        if (target.HasTargetTransform)
+        ITarget target = Player.Instance.TargetManager.GetCurrentTarget(Player.Instance.SpellSystem.GetCombinedLayerMask());
+        if (target != null && target.Has<IHealth>(out var targetHealth))
         {
-            if (target.TargetTransform == health.transform)
+            if (targetHealth == health)
             {
                 canvasGroup.alpha = 1;
                 return;

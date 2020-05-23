@@ -130,7 +130,7 @@ namespace Tests
             spellLibrary.Add(spell);
 
             // ACT
-            bool castSuccess = spellLibrary.TryCast(out var spellCast, null, null, new Target(null));
+            bool castSuccess = spellLibrary.TryCast(out var spellCast, null, null, null);
 
             // ASSERT
             Assert.IsTrue(castSuccess);
@@ -144,7 +144,7 @@ namespace Tests
             SpellLibrary spellLibrary = new SpellLibrary();
 
             // ACT
-            bool castSuccess = spellLibrary.TryCast(out var spellCast, null, null, new Target(null));
+            bool castSuccess = spellLibrary.TryCast(out var spellCast, null, null, null);
 
             // ASSERT
             Assert.IsFalse(castSuccess);
@@ -160,7 +160,7 @@ namespace Tests
             spellLibrary.Add(spell);
 
             // ACT
-            bool castSuccess = spellLibrary.TryCast(out var spellCast, null, null, new Target(null));
+            bool castSuccess = spellLibrary.TryCast(out var spellCast, null, null, null);
 
             // ASSERT
             Assert.IsFalse(castSuccess);

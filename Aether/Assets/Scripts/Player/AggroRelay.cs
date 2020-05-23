@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Aether.TargetSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,51 +7,51 @@ public class AggroRelay : MonoBehaviour, AggroManager
 {
     public AggroManager AggroManager;
 
-    public void AddAggroTrigger(AggroTrigger aggroTrigger)
+    public void AddAggroTarget(ITarget target)
     {
         if (AggroManager == null)
             return;
 
-        AggroManager.AddAggroTrigger(aggroTrigger);
+        AggroManager.AddAggroTarget(target);
     }
 
-    public bool Contains(AggroTrigger trigger)
+    public bool Contains(ITarget target)
     {
         if (AggroManager == null)
             return false;
 
-        return AggroManager.Contains(trigger);
+        return AggroManager.Contains(target);
     }
 
-    public void DecreaseAggro(AggroTrigger aggroTrigger, int amount)
+    public void DecreaseAggro(ITarget target, int amount)
     {
         if (AggroManager == null)
             return;
 
-        AggroManager.DecreaseAggro(aggroTrigger, amount);
+        AggroManager.DecreaseAggro(target, amount);
     }
 
-    public (int aggro, AggroTrigger trigger) GetHighestAggroTrigger(LayerMask layerMask)
+    public (int aggro, ITarget target) GetHighestAggroTarget(LayerMask layerMask)
     {
         if (AggroManager == null)
             return (0, null);
 
-        return AggroManager.GetHighestAggroTrigger(layerMask);
+        return AggroManager.GetHighestAggroTarget(layerMask);
     }
 
-    public void IncreaseAggro(AggroTrigger aggroTrigger, int amount)
+    public void IncreaseAggro(ITarget target, int amount)
     {
         if (AggroManager == null)
             return;
 
-        AggroManager.IncreaseAggro(aggroTrigger, amount);
+        AggroManager.IncreaseAggro(target, amount);
     }
 
-    public void RemoveAggroTrigger(AggroTrigger aggroTrigger)
+    public void RemoveAggroTarget(ITarget target)
     {
         if (AggroManager == null)
             return;
 
-        AggroManager.RemoveAggroTrigger(aggroTrigger);
+        AggroManager.RemoveAggroTarget(target);
     }
 }

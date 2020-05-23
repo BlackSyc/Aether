@@ -1,4 +1,5 @@
-﻿using ScriptableObjects;
+﻿using Aether.TargetSystem;
+using ScriptableObjects;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -32,5 +33,17 @@ public static class Extension
     public static LayerMask EnemyLayer(this GameObject gameObject)
     {
         return gameObject.IsFriendly() ? Layers.EnemyLayer : Layers.FriendlyLayer;
+    }
+
+    public static bool HasComponent<T>(this GameObject gameObject, out T component)
+    {
+        component = gameObject.GetComponent<T>();
+        return component != null;
+    }
+
+    public static bool IsTarget(this GameObject gameObject, out ITarget target)
+    {
+        bool result = gameObject.HasComponent(out target);
+        return result;
     }
 }

@@ -4,6 +4,6 @@ namespace Aether.TargetSystem
 {
     public interface ITargetSystem
     {
-        Target GetCurrentTarget(LayerMask layerMask);
+        ITarget GetCurrentTarget(LayerMask layerMask);
     }
 }

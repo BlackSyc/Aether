@@ -22,7 +22,7 @@ namespace Aether.SpellSystem
         public event Action<SpellCast> CastInterrupted;
         public event Action<SpellCast> CastComplete;
 
-        public Target Target { get; private set; }
+        public ITarget Target { get; private set; }
 
         public float Progress { get; private set; } = 0f;
 
@@ -30,14 +30,14 @@ namespace Aether.SpellSystem
 
         public ISpellSystem Caster { get; private set; }
 
-        public bool CastOnSelf => Target.TargetTransform == Caster.gameObject.transform;
+        public bool CastOnSelf => Target == Caster.gameObject.GetComponent<ITarget>();
 
         public Transform CastOrigin { get; private set; }
         #endregion
 
 
 
-        public SpellCast(Spell spell, Transform castOrigin, ISpellSystem caster, Target target)
+        public SpellCast(Spell spell, Transform castOrigin, ISpellSystem caster, ITarget target)
         {
             this.Spell = spell;
             this.CastOrigin = castOrigin;
@@ -45,7 +45,7 @@ namespace Aether.SpellSystem
             this.Target = target;
         }
 
-        public void UpdateTarget(Target newTarget)
+        public void UpdateTarget(ITarget newTarget)
         {
             this.Target = newTarget;
             if (spellObject)
@@ -111,13 +111,8 @@ namespace Aether.SpellSystem
 
         private void TriggerGlobalAggro()
         {
-            AggroTrigger aggroTrigger = Caster.gameObject.GetComponent<AggroTrigger>();
-
-            if (aggroTrigger == null)
-                return;
-
-            aggroTrigger.TriggerGlobalAggro(Spell.GlobalAggro);
-
+            if (Caster.gameObject.IsTarget(out var target))
+                target.TriggerGlobalAggro(Spell.GlobalAggro);
         }
     }
 }

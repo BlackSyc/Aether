@@ -47,7 +47,7 @@ public class Crosshair : MonoBehaviour
     {
         LayerMask layerMask = Player.Instance.SpellSystem.GetCombinedLayerMask();
 
-        if (Player.Instance.TargetManager.GetCurrentTarget(layerMask).HasTargetTransform)
+        if (Player.Instance.TargetManager.GetCurrentTarget(layerMask) != null)
         {
             _crosshairAnimator.SetBool("HasObjectTarget", true);
         }

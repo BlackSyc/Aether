@@ -1,4 +1,5 @@
 ﻿using Aether.TargetSystem;
+using ICSharpCode.NRefactory.Ast;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -45,17 +46,15 @@ namespace Aether.SpellSystem
         //}
 
 
-        private IEnumerator Travel(Target target)
+        private IEnumerator Travel(ITarget target)
         {
-            // Heal target if any
-            if (!target.HasTargetTransform)
+            if (target == null)
             {
                 Destroy(gameObject);
                 yield break;
             }
 
-            Health health = target.TargetTransform.GetComponent<Health>();
-            if (health)
+            if (target.Has(out IHealth health))
             {
                 float maximumHeal = health.MaxHealth - health.CurrentHealth;
                 float leftOverHeal = maximumHeal < Spell.Heal ? Spell.Heal - maximumHeal : 0;
@@ -65,7 +64,7 @@ namespace Aether.SpellSystem
                 if (leftOverHeal > 0)
                 {
                     yield return new WaitForSeconds(bounceDelay);
-                    Health closestEnemyHealth = FindEnemeyNearestTo(target.TargetTransform);
+                    Health closestEnemyHealth = FindEnemeyNearestTo(target.Get<Transform>());
                     if (closestEnemyHealth)
                         closestEnemyHealth.Damage(leftOverHeal);
                 }
@@ -78,7 +77,7 @@ namespace Aether.SpellSystem
         private Health FindEnemeyNearestTo(Transform friendlyTarget)
         {
             return FindObjectsOfType<AggroTable>()
-                .Where(x => x.Contains(Caster.gameObject.GetComponent<AggroTrigger>()))
+                .Where(x => x.Contains(Caster.gameObject.GetComponent<ITarget>()))
                 .Where(x => x.GetComponent<Health>())
                 .OrderBy(x => Vector3.Distance(friendlyTarget.position, x.transform.position))
                 .Select(x => x.GetComponent<Health>())

@@ -1,4 +1,5 @@
-﻿using ScriptableObjects;
+﻿using Aether.TargetSystem;
+using ScriptableObjects;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,22 +27,17 @@ namespace Aether.SpellSystem
             if (!travelling)
                 return;
 
-            if (Layers.ObstructionLayer.Contains(collision.gameObject))
+            if (collision.gameObject.IsTarget(out var target))
             {
-                travelling = false;
-                OnObstructionHit(collision.gameObject);
+                OnTargetHit(target);
             }
-
-            if (collision.transform == Target.TargetTransform)
-            {
-                travelling = false;
-                OnTargetHit(collision.gameObject);
-            }
+            
+            OnObstructionHit(collision.gameObject);
         }
 
-        public abstract void OnObstructionHit(GameObject obstructionObject);
+        public abstract void OnTargetHit(ITarget target);
 
-        public abstract void OnTargetHit(GameObject targetObject);
+        public abstract void OnObstructionHit(GameObject obstructionObject);
 
         public override void CastFired()
         {
@@ -60,7 +56,7 @@ namespace Aether.SpellSystem
 
             transform.Translate(new Vector3(0, 0, movementSpeed * Time.fixedDeltaTime), Space.Self);
 
-            Quaternion desiredRotation = Quaternion.LookRotation(Target.Position - transform.position, transform.up);
+            Quaternion desiredRotation = Quaternion.LookRotation(Target.Transform.Position - transform.position, transform.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.fixedDeltaTime);
         }
     }
