@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Aether.TargetSystem
 {
-    public class Target : MonoBehaviour, ITarget
+    public class CombatComponent : MonoBehaviour, ICombatComponent
     {
 
         private void Awake()

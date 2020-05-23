@@ -108,7 +108,7 @@ public class HealthTooltip : MonoBehaviour
         }
 
         // If the current target of the targetmanager (locked or not) is the same as the health transform, set alpha to 1.
-        ITarget target = Player.Instance.TargetManager.GetCurrentTarget(Player.Instance.SpellSystem.GetCombinedLayerMask());
+        ICombatComponent target = Player.Instance.TargetManager.GetCurrentTarget(Player.Instance.SpellSystem.GetCombinedLayerMask());
         if (target != null && target.Has<IHealth>(out var targetHealth))
         {
             if (targetHealth == health)

@@ -7,7 +7,7 @@ public class AggroRelay : MonoBehaviour, AggroManager
 {
     public AggroManager AggroManager;
 
-    public void AddAggroTarget(ITarget target)
+    public void AddAggroTarget(ICombatComponent target)
     {
         if (AggroManager == null)
             return;
@@ -15,7 +15,7 @@ public class AggroRelay : MonoBehaviour, AggroManager
         AggroManager.AddAggroTarget(target);
     }
 
-    public bool Contains(ITarget target)
+    public bool Contains(ICombatComponent target)
     {
         if (AggroManager == null)
             return false;
@@ -23,7 +23,7 @@ public class AggroRelay : MonoBehaviour, AggroManager
         return AggroManager.Contains(target);
     }
 
-    public void DecreaseAggro(ITarget target, int amount)
+    public void DecreaseAggro(ICombatComponent target, int amount)
     {
         if (AggroManager == null)
             return;
@@ -31,7 +31,7 @@ public class AggroRelay : MonoBehaviour, AggroManager
         AggroManager.DecreaseAggro(target, amount);
     }
 
-    public (int aggro, ITarget target) GetHighestAggroTarget(LayerMask layerMask)
+    public (int aggro, ICombatComponent target) GetHighestAggroTarget(LayerMask layerMask)
     {
         if (AggroManager == null)
             return (0, null);
@@ -39,7 +39,7 @@ public class AggroRelay : MonoBehaviour, AggroManager
         return AggroManager.GetHighestAggroTarget(layerMask);
     }
 
-    public void IncreaseAggro(ITarget target, int amount)
+    public void IncreaseAggro(ICombatComponent target, int amount)
     {
         if (AggroManager == null)
             return;
@@ -47,7 +47,7 @@ public class AggroRelay : MonoBehaviour, AggroManager
         AggroManager.IncreaseAggro(target, amount);
     }
 
-    public void RemoveAggroTarget(ITarget target)
+    public void RemoveAggroTarget(ICombatComponent target)
     {
         if (AggroManager == null)
             return;

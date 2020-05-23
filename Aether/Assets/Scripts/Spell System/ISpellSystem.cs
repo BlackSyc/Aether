@@ -1,4 +1,5 @@
 ﻿using Aether.SpellSystem.ScriptableObjects;
+using Aether.TargetSystem;
 using System;
 using System.Runtime.Serialization;
 using UnityEngine;
@@ -19,7 +20,9 @@ namespace Aether.SpellSystem
 
         Transform CastParent { get; }
 
-        GameObject gameObject { get; }
+        bool MovementInterrupt { get; }
+
+        ICombatComponent CombatComponent { get; }
         #endregion
 
         #region Methods

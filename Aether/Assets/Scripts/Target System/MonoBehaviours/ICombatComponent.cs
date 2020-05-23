@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Aether.TargetSystem
 {
-    public interface ITarget
+    public interface ICombatComponent
     {
         int AggroBias { get; }
 

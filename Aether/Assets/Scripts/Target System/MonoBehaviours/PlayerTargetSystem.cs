@@ -47,14 +47,14 @@ namespace Aether.TargetSystem
         #endregion
 
         #region Public Methods
-        public ITarget GetCurrentTarget(LayerMask layerMask)
+        public ICombatComponent GetCurrentTarget(LayerMask layerMask)
         {
             if (targetSelf && layerMask.Contains(gameObject))
-                return GetComponent<ITarget>();
+                return GetComponent<ICombatComponent>();
 
             return Physics.RaycastAll(playerCamera.position, playerCamera.forward, maxRange)
                 .Where(x => x.transform != transform)
-                .Select(x => (x, x.transform.GetComponent<ITarget>()))
+                .Select(x => (x, x.transform.GetComponent<ICombatComponent>()))
                 .Where(x => x.Item2 != null)
                 .Select(x => x.Item2)
                 .SingleOrDefault();

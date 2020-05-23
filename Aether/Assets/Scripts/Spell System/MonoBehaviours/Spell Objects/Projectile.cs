@@ -35,7 +35,7 @@ namespace Aether.SpellSystem
             OnObstructionHit(collision.gameObject);
         }
 
-        public abstract void OnTargetHit(ITarget target);
+        public abstract void OnTargetHit(ICombatComponent target);
 
         public abstract void OnObstructionHit(GameObject obstructionObject);
 

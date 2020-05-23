@@ -22,7 +22,7 @@ namespace Aether.SpellSystem
         public event Action<SpellCast> CastInterrupted;
         public event Action<SpellCast> CastComplete;
 
-        public ITarget Target { get; private set; }
+        public ICombatComponent Target { get; private set; }
 
         public float Progress { get; private set; } = 0f;
 
@@ -30,14 +30,14 @@ namespace Aether.SpellSystem
 
         public ISpellSystem Caster { get; private set; }
 
-        public bool CastOnSelf => Target == Caster.gameObject.GetComponent<ITarget>();
+        public bool CastOnSelf => Target == Caster.CombatComponent;
 
         public Transform CastOrigin { get; private set; }
         #endregion
 
 
 
-        public SpellCast(Spell spell, Transform castOrigin, ISpellSystem caster, ITarget target)
+        public SpellCast(Spell spell, Transform castOrigin, ISpellSystem caster, ICombatComponent target)
         {
             this.Spell = spell;
             this.CastOrigin = castOrigin;
@@ -45,7 +45,7 @@ namespace Aether.SpellSystem
             this.Target = target;
         }
 
-        public void UpdateTarget(ITarget newTarget)
+        public void UpdateTarget(ICombatComponent newTarget)
         {
             this.Target = newTarget;
             if (spellObject)
@@ -61,7 +61,7 @@ namespace Aether.SpellSystem
 
             if (Progress < 1f)
             {
-                if (!Spell.CastWhileMoving && Caster.gameObject.GetComponent<IMovementSystem>().IsMoving)
+                if (!Spell.CastWhileMoving && Caster.MovementInterrupt)
                 {
                     Cancel();
                     return;
@@ -111,8 +111,7 @@ namespace Aether.SpellSystem
 
         private void TriggerGlobalAggro()
         {
-            if (Caster.gameObject.IsTarget(out var target))
-                target.TriggerGlobalAggro(Spell.GlobalAggro);
+            Caster.CombatComponent.TriggerGlobalAggro(Spell.GlobalAggro);
         }
     }
 }

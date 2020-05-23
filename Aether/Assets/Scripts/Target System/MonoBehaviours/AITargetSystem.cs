@@ -11,9 +11,9 @@ namespace Aether.TargetSystem
         
         private AggroManager aggroManager;
 
-        public ITarget GetCurrentTarget(LayerMask layerMask)
+        public ICombatComponent GetCurrentTarget(LayerMask layerMask)
         {
-            (int aggro, ITarget target) highestAggroTarget = aggroManager.GetHighestAggroTarget(layerMask);
+            (int aggro, ICombatComponent target) highestAggroTarget = aggroManager.GetHighestAggroTarget(layerMask);
             if(highestAggroTarget.aggro >= minimumTargetAggro)
             {
                 return highestAggroTarget.target;
