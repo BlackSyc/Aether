@@ -14,6 +14,8 @@ namespace Aether.SpellSystem
 
         float CoolDownUntil { get; }
 
+        bool IsOnCoolDown { get; }
+
         bool HasActiveSpell { get; }
         #endregion
 

@@ -15407,6 +15407,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8931568597856155357, guid: 95de18f87247a4a42b1fb474a0bcf609,
+        type: 3}
+      propertyPath: preFillOnAwake.Array.data[0].activeSpell
+      value: 
+      objectReference: {fileID: 11400000, guid: ce24bd7d267544b478698e3874a1749a,
+        type: 2}
+    - target: {fileID: 8931568597856155357, guid: 95de18f87247a4a42b1fb474a0bcf609,
+        type: 3}
+      propertyPath: preFillOnAwake.Array.data[1].activeSpell
+      value: 
+      objectReference: {fileID: 11400000, guid: ce24bd7d267544b478698e3874a1749a,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 476305285128632758, guid: 95de18f87247a4a42b1fb474a0bcf609, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 95de18f87247a4a42b1fb474a0bcf609, type: 3}

@@ -25,6 +25,8 @@ namespace Aether.SpellSystem
 
         public float CoolDownUntil { get; private set; }
 
+        public bool IsOnCoolDown => Time.time < CoolDownUntil;
+
         public Spell ActiveSpell => activeSpell;
         #endregion
 
@@ -82,7 +84,7 @@ namespace Aether.SpellSystem
             if (target == null)
                 return false;
 
-            if (Time.time < CoolDownUntil)
+            if (IsOnCoolDown)
                 return false;
 
             SpellCast newSpellCast = new SpellCast(ActiveSpell, castParent, caster, target);

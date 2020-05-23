@@ -123,7 +123,11 @@ namespace Aether.SpellSystem
                     currentSpellCast.UpdateTarget(TargetSystem.GetCurrentTarget(requestedSpell.LayerMask));
                     return;
                 }
-                CancelSpellCast();
+
+                if(!SpellLibraries[index].IsOnCoolDown)
+                    CancelSpellCast();
+                else
+                    return;
             }
 
             if (!SpellLibraries[index].TryCast(out currentSpellCast, castParent, this, TargetSystem.GetCurrentTarget(requestedSpell.LayerMask)))
