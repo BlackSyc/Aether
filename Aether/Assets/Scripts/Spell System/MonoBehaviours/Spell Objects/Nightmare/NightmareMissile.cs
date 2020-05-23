@@ -26,8 +26,10 @@ namespace Aether.SpellSystem
             if (Caster == null)
                 return;
 
+            GameObject testObj = Caster.gameObject;
+
             AggroManager enemyAggroManager = targetObject.GetComponent<AggroManager>();
-            AggroTrigger casterAggroTrigger = Caster.gameObject.GetComponent<AggroTrigger>();
+            AggroTrigger casterAggroTrigger = testObj.GetComponent<AggroTrigger>();
 
             if (enemyAggroManager == null || !casterAggroTrigger)
                 return;
