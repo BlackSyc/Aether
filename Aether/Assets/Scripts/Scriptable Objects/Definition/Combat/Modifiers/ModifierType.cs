@@ -15,6 +15,8 @@ public abstract class ModifierType : ScriptableObject
 
     public Sprite Icon;
 
-    public virtual IEnumerator modifierCoroutine(ICombatSystem combatSystem) { yield break; }
+    public abstract IEnumerator modifierCoroutine(ICombatSystem combatSystem);
+
+    public virtual void Stop(ICombatSystem combatSystem) { }
 
 }

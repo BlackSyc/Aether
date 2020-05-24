@@ -39,6 +39,7 @@ public class ModifierSlots : MonoBehaviour, IModifierSlots
     {
         activeModifiers.Remove(modifier);
 
+        modifier.Stop(CombatSystem);
         StopCoroutine(modifier.Coroutine);
         OnModifierRemoved?.Invoke(modifier);
     }
@@ -49,7 +50,11 @@ public class ModifierSlots : MonoBehaviour, IModifierSlots
         {
             if (x.FallOffTime < Time.time)
             {
-                StopCoroutine(x.Coroutine);
+                x.Stop(CombatSystem);
+
+                if(x.Coroutine != null)
+                    StopCoroutine(x.Coroutine);
+
                 OnModifierRemoved?.Invoke(x);
                 return true;
             }

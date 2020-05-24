@@ -12,6 +12,8 @@ namespace Aether.SpellSystem.ScriptableObjects
 
         public Aspect Aspect;
 
+        public bool OnlyCastOnSelf;
+
         [TextArea(0, 10)]
         public string Description;
 
@@ -33,5 +35,6 @@ namespace Aether.SpellSystem.ScriptableObjects
 
         public SpellObject SpellObject;
 
+        public ModifierType[] Modifiers;
     }
 }

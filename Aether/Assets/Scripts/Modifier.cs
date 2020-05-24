@@ -20,4 +20,9 @@ public class Modifier
         FallOffTime = Time.time + ModifierType.Duration;
         return ModifierType.modifierCoroutine(combatSystem);
     }
+
+    public void Stop(ICombatSystem combatSystem)
+    {
+        ModifierType.Stop(combatSystem);
+    }
 }

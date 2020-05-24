@@ -120,7 +120,7 @@ namespace Aether.SpellSystem
             {
                 if (currentSpellCast.Spell == requestedSpell)
                 {
-                    currentSpellCast.UpdateTarget(TargetSystem.GetCurrentTarget(requestedSpell.LayerMask));
+                    currentSpellCast.UpdateTarget(requestedSpell.OnlyCastOnSelf ? CombatSystem : TargetSystem.GetCurrentTarget(requestedSpell.LayerMask));
                     return;
                 }
 
@@ -130,7 +130,7 @@ namespace Aether.SpellSystem
                     return;
             }
 
-            if (!SpellLibraries[index].TryCast(out currentSpellCast, castOrigin, this, TargetSystem.GetCurrentTarget(requestedSpell.LayerMask)))
+            if (!SpellLibraries[index].TryCast(out currentSpellCast, castOrigin, this, requestedSpell.OnlyCastOnSelf ? CombatSystem : TargetSystem.GetCurrentTarget(requestedSpell.LayerMask)))
                 return;
 
             currentSpellCast.CastCancelled += ClearCurrentCast;

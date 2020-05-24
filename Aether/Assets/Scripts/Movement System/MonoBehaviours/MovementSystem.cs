@@ -7,14 +7,9 @@ using UnityEngine;
 public class MovementSystem : MonoBehaviour, IMovementSystem, ICombatComponent
 {
     #region Private Fields
-    [SerializeField]
-    private float movementSpeed = 5;
 
     [SerializeField]
     private float rotationSpeed = 10;
-
-    [SerializeField]
-    private float jumpPower = 5;
 
     private CharacterController characterController;
 
@@ -24,11 +19,11 @@ public class MovementSystem : MonoBehaviour, IMovementSystem, ICombatComponent
     #region Public Properties
     public bool IsMoving { get; private set; } = false;
 
-    public float MovementSpeed => movementSpeed;
+    public float MovementSpeed { get; set; }  = 10;
 
     public float RotationSpeed => rotationSpeed;
 
-    public float JumpPower => jumpPower;
+    public float JumpPower { get; set; } = 5;
 
     public ICombatSystem CombatSystem { get; set; }
     #endregion

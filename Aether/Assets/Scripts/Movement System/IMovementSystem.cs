@@ -3,11 +3,11 @@
 public interface IMovementSystem
 {
     #region Public Properties
-    float MovementSpeed { get; }
+    float MovementSpeed { get; set; }
 
     float RotationSpeed { get; }
 
-    float JumpPower { get; }
+    float JumpPower { get; set; }
 
     bool IsMoving { get; }
     #endregion
