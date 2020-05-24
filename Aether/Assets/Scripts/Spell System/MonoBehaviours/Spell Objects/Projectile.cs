@@ -18,7 +18,7 @@ namespace Aether.SpellSystem
         [SerializeField]
         private float maxLifeTime = 10;
 
-        private Vector3 targetOffset;
+        protected Vector3 targetOffset;
 
         private bool travelling = false;
 

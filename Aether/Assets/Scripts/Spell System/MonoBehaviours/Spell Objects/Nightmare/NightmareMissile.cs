@@ -24,7 +24,7 @@ namespace Aether.SpellSystem
                 aggroManager.IncreaseAggro(Caster.CombatComponent, Spell.LocalAggro);
 
             if (target.Has(out IImpactHandler impactHandler))
-                impactHandler.HandleImpact(transform.forward * Spell.Damage * 25);
+                impactHandler.HandleImpactAtPosition(transform.forward * Spell.Damage * 25, Target.Transform.Position + targetOffset);
         }
     }
 }

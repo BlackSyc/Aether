@@ -62,6 +62,11 @@ namespace Aether.SpellSystem
 
         public void PlayMissileHitAnimation()
         {
+            Vector3 hitPosition = transform.position;
+
+            if(Caster.CombatComponent.Has(out ITargetSystem targetSystem))
+                hitPosition = targetSystem.GetCurrentTargetExact(Spell.LayerMask);
+
             GameObject hitFlash = Instantiate(hitFlashPrefab, transform);
             hitFlash.transform.SetParent(null, true);
             Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
