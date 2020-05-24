@@ -56,6 +56,7 @@ public class NightmareBlast : SpellObject
 
         if (Target.Has(out IImpactHandler impactHandler))
             impactHandler.HandleImpactAtPosition(transform.forward * 3000, hitFlash.transform.position);
+
         Destroy(gameObject);
     }
 

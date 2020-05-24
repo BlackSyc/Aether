@@ -1,7 +1,6 @@
 ﻿using Aether.TargetSystem;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Modifiers/FlameShock")]
@@ -19,9 +18,13 @@ public class FlameShock : ModifierType
         while (true)
         {
             if (combatSystem.Has(out IHealth health))
-            {
                 health.Damage(damageTickAmount);
-            }
+
+            var rng = new UnityEngine.Random();
+
+            if (combatSystem.Has(out IImpactHandler impactHandler))
+                impactHandler.HandleImpact(new Vector3(UnityEngine.Random.Range(-1000, 1000), UnityEngine.Random.Range(800,1000), UnityEngine.Random.Range(-1000, 1000)));
+
             yield return new WaitForSeconds(tickDelay);
         }
     }
