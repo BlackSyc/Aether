@@ -21,7 +21,7 @@ MonoBehaviour:
   GlobalAggro: 0
   LocalAggro: 0
   CastDuration: 0
-  CoolDown: 0
+  CoolDown: 10
   CastWhileMoving: 1
   LayerMask:
     serializedVersion: 2

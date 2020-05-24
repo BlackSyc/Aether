@@ -1,36 +1,55 @@
 ﻿using Aether.TargetSystem;
+using TMPro;
 using UnityEngine;
 
 public class CombatPanel : MonoBehaviour
 {
-    private ICombatSystem combatSystem;
-    private Transform cameraTransform;
+    protected ICombatSystem combatSystem;
+    protected Transform cameraTransform;
 
     [SerializeField]
-    private HealthBar healthBar;
+    protected TextMeshProUGUI nameText;
 
     [SerializeField]
-    private ModifiersBar modifiersBar;
+    protected HealthBar healthBar;
 
-    private void Start()
+    [SerializeField]
+    protected ModifiersBar modifiersBar;
+
+    protected virtual void Start()
     {
         cameraTransform = Camera.main.transform;
         combatSystem = transform.parent.GetComponent<ICombatSystem>();
 
+        if (nameText != null)
+            nameText.text = combatSystem.Name;
+
+        if (healthBar != null)
+            LinkHealthBar();
+
+        if (modifiersBar != null)
+            LinkModifiersBar();
+    }
+
+    protected void LinkHealthBar()
+    {
         if (combatSystem.Has(out IHealth health))
             healthBar.SetHealth(health);
         else
             healthBar.enabled = false;
+    }
 
+    protected void LinkModifiersBar()
+    {
         if (combatSystem.Has(out IModifierSlots modifierSlots))
             modifiersBar.SetModifierSlots(modifierSlots);
         else
             modifiersBar.enabled = false;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
-        transform.position = transform.parent.position + combatSystem.PanelOffset;
+        transform.localPosition = combatSystem.PanelOffset;
         transform.LookAt(cameraTransform, Vector3.up);
     }
 }

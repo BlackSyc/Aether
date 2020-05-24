@@ -9,6 +9,11 @@ public class Player : MonoBehaviour
     public static Player Instance { get; private set; }
 
     [SerializeField]
+    private CombatSystem combatSystem;
+
+    public ICombatSystem CombatSystem => combatSystem;
+
+    [SerializeField]
     private CharacterController characterController;
 
     public CharacterController CharacterController => characterController;

@@ -11,6 +11,9 @@ public class ModifiersBar : MonoBehaviour
 
     private IModifierSlots modifierSlots;
 
+    [SerializeField]
+    private float iconScale = 1;
+
     private void Start()
     {
         modifierIcons = new List<ModifierIcon>();
@@ -45,6 +48,7 @@ public class ModifiersBar : MonoBehaviour
     private void AddModifierIcon(Modifier modifier)
     {
         var newIcon = Instantiate(modifierIconPrefab, transform).GetComponent<ModifierIcon>();
+        newIcon.transform.localScale = new Vector3(iconScale, iconScale, iconScale);
         newIcon.SetModifier(modifier);
         modifierIcons.Add(newIcon);
     }
