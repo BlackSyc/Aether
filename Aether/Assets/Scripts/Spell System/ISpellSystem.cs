@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Aether.SpellSystem
 {
-    public interface ISpellSystem
+    public interface ISpellSystem : ICombatComponent
     {
         #region Properties
         event Action<ISpellLibrary> OnActiveSpellChanged;
@@ -21,8 +21,6 @@ namespace Aether.SpellSystem
         Transform CastOrigin { get; }
 
         bool MovementInterrupt { get; }
-
-        ICombatSystem CombatSystem { get; }
         #endregion
 
         #region Methods

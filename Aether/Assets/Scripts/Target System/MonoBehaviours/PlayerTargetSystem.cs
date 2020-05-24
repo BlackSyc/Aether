@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Aether.TargetSystem
 {
-    public class PlayerTargetSystem : MonoBehaviour, ITargetSystem
+    public class PlayerTargetSystem : MonoBehaviour, ITargetSystem, ICombatComponent
     {
         #region Private Fields
 
@@ -18,6 +18,8 @@ namespace Aether.TargetSystem
         private float maxRange = 100f;
 
         private bool targetSelf = false;
+
+        public ICombatSystem CombatSystem { get; set; }
         #endregion
 
         #region MonoBehaviour

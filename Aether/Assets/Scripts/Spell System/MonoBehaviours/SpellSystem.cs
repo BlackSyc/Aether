@@ -36,7 +36,7 @@ namespace Aether.SpellSystem
 
         public bool MovementInterrupt => movementSystem.IsMoving;
 
-        public ICombatSystem CombatSystem { get; private set; }
+        public ICombatSystem CombatSystem { get; set; }
 
         public ITargetSystem TargetSystem { get; private set; }
 

@@ -26,7 +26,7 @@ MonoBehaviour:
     On
     impact with some arcane entities, the target will be infused with The Nightmare,
     destroying the entity in the process.'
-  Damage: 100
+  Damage: 50
   Heal: 0
   GlobalAggro: 0
   LocalAggro: 10

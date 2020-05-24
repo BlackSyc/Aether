@@ -12,6 +12,10 @@ public class NightmareBlast : SpellObject
 
     [SerializeField]
     private GameObject hitFlashPrefab;
+
+    [SerializeField]
+    private ModifierType modifierToApply;
+
     public override void CastCanceled()
     {
         //throw new System.NotImplementedException();
@@ -43,6 +47,9 @@ public class NightmareBlast : SpellObject
 
         hitFlash.transform.LookAt(Caster.CastOrigin);
         Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
+
+        if (Target.Has(out IModifierSlots modifierSlots))
+            modifierSlots.AddModifier(new Modifier(modifierToApply));
 
         if (Target.Has(out IHealth health))
             health.Damage(Spell.Damage);

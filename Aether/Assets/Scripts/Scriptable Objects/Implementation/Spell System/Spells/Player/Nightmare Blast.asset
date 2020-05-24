@@ -14,19 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Nightmare Blast
   Aspect: 3
-  Description: 'Shoot a Nightmare Missile towards a target.
+  Description: 'Instantly blast an enemy target with 100 damage.
 
 
-    On impact with
-    an enemy target, the target will take minor damage.
+    Secondary
+    effect:
 
-
-    Secondary effect:
-
-    On
-    impact with some arcane entities, the target will be infused with The Nightmare,
-    destroying the entity in the process.'
-  Damage: 300
+    Leaves a Flame Shock on the target, dealing 20 damage every second
+    for 5 seconds.'
+  Damage: 100
   Heal: 0
   GlobalAggro: 0
   LocalAggro: 10

@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿using Aether.TargetSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class ImpactHandler : MonoBehaviour, IImpactHandler
+public class ImpactHandler : MonoBehaviour, IImpactHandler, ICombatComponent
 {
     private Rigidbody rigidBody;
+
+    public ICombatSystem CombatSystem { get; set; }
 
     // Start is called before the first frame update
     void Awake()

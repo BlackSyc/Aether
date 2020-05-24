@@ -48,3 +48,4 @@ MonoBehaviour:
     type: 3}
   hitFlashPrefab: {fileID: 1746341381902864788, guid: 4652396aa27fc4644b4c82e1a677beac,
     type: 3}
+  modifierToApply: {fileID: 11400000, guid: 9361b6d568d05664eb0846334bf91862, type: 2}

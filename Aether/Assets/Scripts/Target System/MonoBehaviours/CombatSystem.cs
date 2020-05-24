@@ -1,7 +1,9 @@
 ﻿using ScriptableObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Aether.TargetSystem
 {
@@ -26,7 +28,6 @@ namespace Aether.TargetSystem
         private CombatPanel combatPanel;
         #endregion
 
-
         #region Public Properties
         public string Name => gameObject.name;
 
@@ -46,6 +47,7 @@ namespace Aether.TargetSystem
         #region MonoBehaviour
         private void Awake()
         {
+            EnsureCombatComponents();
             Transform = new ITransform(base.transform);
         }
 
@@ -83,6 +85,25 @@ namespace Aether.TargetSystem
         public void TriggerGlobalAggro(int globalAggro)
         {
             //throw new System.NotImplementedException();
+        }
+        #endregion
+
+        #region
+        private void EnsureCombatComponents()
+        {
+            combatComponents.Select(x =>
+            {
+                try
+                {
+                    var temp = (ICombatComponent) x;
+                    temp.CombatSystem = this;
+                }
+                catch (InvalidCastException e)
+                {
+                    Debug.LogError($"{x} is not an {nameof(ICombatComponent)}");
+                }
+                return x;
+            }).Count();
         }
         #endregion
     }

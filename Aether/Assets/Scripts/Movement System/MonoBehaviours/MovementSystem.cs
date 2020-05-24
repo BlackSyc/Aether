@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using Aether.TargetSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class MovementSystem : MonoBehaviour, IMovementSystem
+public class MovementSystem : MonoBehaviour, IMovementSystem, ICombatComponent
 {
     #region Private Fields
     [SerializeField]
@@ -28,6 +29,8 @@ public class MovementSystem : MonoBehaviour, IMovementSystem
     public float RotationSpeed => rotationSpeed;
 
     public float JumpPower => jumpPower;
+
+    public ICombatSystem CombatSystem { get; set; }
     #endregion
 
     #region MonoBehaviour

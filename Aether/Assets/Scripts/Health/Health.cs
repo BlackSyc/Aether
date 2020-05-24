@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Aether.TargetSystem;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Health : MonoBehaviour, IHealth
+public class Health : MonoBehaviour, IHealth, ICombatComponent
 {
     public struct Events
     {
@@ -50,6 +51,8 @@ public class Health : MonoBehaviour, IHealth
     public bool IsFullHealth => CurrentHealth == MaxHealth;
 
     public bool IsDead => CurrentHealth == 0;
+
+    public ICombatSystem CombatSystem { get; set; }
 
     private void Start()
     {
