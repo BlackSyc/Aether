@@ -71,7 +71,7 @@ namespace Aether.SpellSystem
         {
             GetComponent<Animator>().SetTrigger("CastFired");
 
-            GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, Caster.CastParent);
+            GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, Caster.CastOrigin);
             Destroy(muzzleFlash, muzzleFlash.GetComponent<ParticleSystem>().main.duration);
         }
     }

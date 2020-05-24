@@ -57,7 +57,23 @@ namespace Aether.TargetSystem
                 .Select(x => (x, x.transform.GetComponent<ICombatComponent>()))
                 .Where(x => x.Item2 != null)
                 .Select(x => x.Item2)
-                .SingleOrDefault();
+                .FirstOrDefault();
+        }
+
+        public Vector3 GetCurrentTargetExact(LayerMask layerMask)
+        {
+            var combatTargetPoint =  Physics.RaycastAll(playerCamera.position, playerCamera.forward, maxRange)
+                .Where(x => x.transform != transform)
+                .Select(x => (x, x.transform.GetComponent<ICombatComponent>()))
+                .Where(x => x.Item2 != null)
+                .Select(x => x.x.point)
+                .FirstOrDefault();
+
+            if (combatTargetPoint != null)
+                return combatTargetPoint;
+
+            return transform.position + (transform.forward.normalized * maxRange);
+
         }
         #endregion
     }

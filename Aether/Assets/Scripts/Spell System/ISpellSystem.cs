@@ -18,7 +18,7 @@ namespace Aether.SpellSystem
 
         ISpellLibrary[] SpellLibraries { get; }
 
-        Transform CastParent { get; }
+        Transform CastOrigin { get; }
 
         bool MovementInterrupt { get; }
 

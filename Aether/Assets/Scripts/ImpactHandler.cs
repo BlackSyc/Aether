@@ -18,5 +18,10 @@ public class ImpactHandler : MonoBehaviour, IImpactHandler
         rigidBody.AddForce(impact);
     }
 
+    public void HandleImpactAtPosition(Vector3 impact, Vector3 position)
+    {
+        rigidBody.AddForceAtPosition(impact, position);
+    }
+
 
 }

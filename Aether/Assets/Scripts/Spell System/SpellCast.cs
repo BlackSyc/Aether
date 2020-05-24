@@ -50,7 +50,7 @@ namespace Aether.SpellSystem
             this.Target = newTarget;
             if (spellObject)
             {
-                spellObject.Target = this.Target;
+                spellObject.SetTarget(this.Target);
             }
         }
 
@@ -101,7 +101,7 @@ namespace Aether.SpellSystem
 
             spellObject.Spell = Spell;
             spellObject.Caster = Caster;
-            spellObject.Target = Target;
+            spellObject.SetTarget(Target);
 
             spellObject.CastStarted();
 

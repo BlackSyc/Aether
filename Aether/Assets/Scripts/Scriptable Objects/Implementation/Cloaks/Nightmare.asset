@@ -21,6 +21,6 @@ MonoBehaviour:
     magna aliqua.
   Spells:
   - {fileID: 11400000, guid: b03ca272dc6d5e2448a9d427189b546c, type: 2}
+  - {fileID: 11400000, guid: ce24bd7d267544b478698e3874a1749a, type: 2}
   cloakPrefab: {fileID: 1511576211006047054, guid: 9fd8a3fd315a3be4a8142d4122d0c2dc,
     type: 3}
-  defaultSpell: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}

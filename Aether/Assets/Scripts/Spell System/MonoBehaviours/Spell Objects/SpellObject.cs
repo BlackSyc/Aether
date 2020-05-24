@@ -13,7 +13,12 @@ namespace Aether.SpellSystem
         public ISpellSystem Caster;
 
         [HideInInspector]
-        public ICombatComponent Target;
+        public ICombatComponent Target { get; protected set; }
+
+        public virtual void SetTarget(ICombatComponent newTarget)
+        {
+            Target = newTarget;
+        }
 
         public abstract void CastStarted();
 

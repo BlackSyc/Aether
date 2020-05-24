@@ -18,6 +18,8 @@ namespace Aether.SpellSystem
         [SerializeField]
         private float maxLifeTime = 10;
 
+        private Vector3 targetOffset;
+
         private bool travelling = false;
 
         private float despawnTime;
@@ -33,6 +35,21 @@ namespace Aether.SpellSystem
             }
             
             OnObstructionHit(collision.gameObject);
+        }
+
+        public override void SetTarget(ICombatComponent newTarget)
+        {
+            base.SetTarget(newTarget);
+
+            if (Caster.CombatComponent.Has(out ITargetSystem targetSystem))
+                targetOffset = targetSystem.GetCurrentTargetExact(Spell.LayerMask) - newTarget.Transform.Position;
+            else
+                targetOffset = Vector3.zero;
+        }
+
+        public override void CastStarted()
+        {
+            throw new System.NotImplementedException();
         }
 
         public abstract void OnTargetHit(ICombatComponent target);
@@ -54,9 +71,11 @@ namespace Aether.SpellSystem
             if (despawnTime < Time.time)
                 Destroy(this.gameObject);
 
+            Vector3 destination = Target.Transform.Position + targetOffset;
+
             transform.Translate(new Vector3(0, 0, movementSpeed * Time.fixedDeltaTime), Space.Self);
 
-            Quaternion desiredRotation = Quaternion.LookRotation(Target.Transform.Position - transform.position, transform.up);
+            Quaternion desiredRotation = Quaternion.LookRotation(destination - transform.position, transform.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.fixedDeltaTime);
         }
     }

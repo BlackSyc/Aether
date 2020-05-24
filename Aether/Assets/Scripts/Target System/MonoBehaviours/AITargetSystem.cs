@@ -22,6 +22,11 @@ namespace Aether.TargetSystem
             return null;
         }
 
+        public Vector3 GetCurrentTargetExact(LayerMask layerMask)
+        {
+            throw new System.NotImplementedException();
+        }
+
         // Start is called before the first frame update
         void Start()
         {

@@ -13,7 +13,7 @@ namespace Aether.SpellSystem
     {
         #region Private Fields
         [SerializeField]
-        private Transform castParent = null;
+        private Transform castOrigin = null;
 
         [SerializeField]
         private SpellLibrary[] preFillOnAwake = new SpellLibrary[0];
@@ -29,7 +29,7 @@ namespace Aether.SpellSystem
         public event Action<SpellCast> OnSpellIsCast;
 
         public ISpellLibrary[] SpellLibraries { get; private set; }
-        public Transform CastParent => castParent;
+        public Transform CastOrigin => castOrigin;
 
         public bool IsCasting => currentSpellCast != null;
         public bool HasActiveSpells => SpellLibraries.Any(x => x.HasActiveSpell);
@@ -130,7 +130,7 @@ namespace Aether.SpellSystem
                     return;
             }
 
-            if (!SpellLibraries[index].TryCast(out currentSpellCast, castParent, this, TargetSystem.GetCurrentTarget(requestedSpell.LayerMask)))
+            if (!SpellLibraries[index].TryCast(out currentSpellCast, castOrigin, this, TargetSystem.GetCurrentTarget(requestedSpell.LayerMask)))
                 return;
 
             currentSpellCast.CastCancelled += ClearCurrentCast;

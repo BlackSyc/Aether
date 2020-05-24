@@ -24,28 +24,31 @@ public class NightmareBlast : SpellObject
 
     private IEnumerator Fire()
     {
-        GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, Caster.CastParent);
+        GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, Caster.CastOrigin);
         Destroy(muzzleFlash, muzzleFlash.GetComponent<ParticleSystem>().main.duration);
 
         yield return new WaitForSeconds(0.1f);
 
-        var allHits = Physics.RaycastAll(transform.position, Target.Transform.Position - transform.position, Spell.LayerMask);
-
-        var hitPoint = allHits
-            .Single(x => x.collider.GetComponent<ICombatComponent>() == Target)
-            .point;
-
 
         var hitFlash = Instantiate(hitFlashPrefab, null);
-        hitFlash.transform.position = hitPoint;
-        hitFlash.transform.LookAt(Caster.CastParent);
+
+
+        if (Caster.CombatComponent.Has(out ITargetSystem targetSystem))
+            hitFlash.transform.position = targetSystem.GetCurrentTargetExact(Spell.LayerMask);
+        else
+            hitFlash.transform.position = Target.Transform.Position;
+
+
+
+
+        hitFlash.transform.LookAt(Caster.CastOrigin);
         Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
 
         if (Target.Has(out IHealth health))
             health.Damage(Spell.Damage);
 
         if (Target.Has(out IImpactHandler impactHandler))
-            impactHandler.HandleImpact(transform.forward * 3000);
+            impactHandler.HandleImpactAtPosition(transform.forward * 3000, hitFlash.transform.position);
         Destroy(gameObject);
     }
 
