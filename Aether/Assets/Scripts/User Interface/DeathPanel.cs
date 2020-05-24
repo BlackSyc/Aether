@@ -7,7 +7,7 @@ public class DeathPanel : MonoBehaviour
 {
     private void Start()
     {
-        Player.Instance.Health.OnDied += Show;
+        Player.Instance.CombatSystem.Get<IHealth>().OnDied += Show;
         gameObject.SetActive(false);
         GetComponent<CanvasGroup>().alpha = 1;
     }
@@ -27,6 +27,6 @@ public class DeathPanel : MonoBehaviour
 
     private void OnDestroy()
     {
-        Player.Instance.Health.OnDied -= Show;
+        Player.Instance.CombatSystem.Get<IHealth>().OnDied -= Show;
     }
 }

@@ -37,7 +37,6 @@ public class LevelExit : MonoBehaviour
         Player.Instance.transform.position = ExitPoint.position;
         Player.Instance.CharacterController.enabled = true;
         Player.Instance.Shoulder.EquipCloak(equippedCloak);
-        Player.Instance.Health.SetFullHealth();
 
         SceneController.Instance.LoadedLevel.levelController.Disable();
 

@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
     private void UpdateHealthBar()
     {
         healthBar["Health"].speed = 0;
-        healthBar["Health"].time = Player.Instance.Health.CurrentHealth / Player.Instance.Health.MaxHealth;
+        healthBar["Health"].time = Player.Instance.CombatSystem.Get<IHealth>().CurrentHealth / Player.Instance.CombatSystem.Get<IHealth>().MaxHealth;
     }
 
     private void Update()

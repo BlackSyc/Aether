@@ -1,4 +1,5 @@
 ﻿using Aether.InputSystem;
+using Aether.SpellSystem;
 using Aether.SpellSystem.ScriptableObjects;
 using ScriptableObjects;
 using System;
@@ -54,7 +55,7 @@ public class AspectOfCreation : MonoBehaviour
     private void GrantArcaneMissile()
     {
         Hints.Get("Cursor").Activate();
-        Player.Instance.SpellSystem.AddSpell(0, reward);
+        Player.Instance.CombatSystem.Get<ISpellSystem>().AddSpell(0, reward);
         InputSystem.SwitchToActionMap(ActionMap.UserInterface);
     }
 

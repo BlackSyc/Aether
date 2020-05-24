@@ -34,11 +34,6 @@ public class Player : MonoBehaviour
     public Inventory Inventory => inventory;
 
     [SerializeField]
-    private SpellSystem spellSystem;
-
-    public ISpellSystem SpellSystem => spellSystem;
-
-    [SerializeField]
     private Interactor interactor;
 
     public Interactor Interactor => interactor;
@@ -49,11 +44,6 @@ public class Player : MonoBehaviour
     public SkinnedMeshRenderer Mesh => mesh;
 
     [SerializeField]
-    private PlayerTargetSystem targetManager;
-
-    public ITargetSystem TargetManager => targetManager;
-
-    [SerializeField]
     private Transform companionParent;
 
     public Transform CompanionParent => companionParent;
@@ -62,11 +52,6 @@ public class Player : MonoBehaviour
     private AggroRelay aggroRelay;
 
     public AggroRelay AggroRelay => aggroRelay;
-
-    [SerializeField]
-    private Health health;
-
-    public Health Health => health;
 
     public Companion Companion;
 
@@ -84,12 +69,12 @@ public class Player : MonoBehaviour
         {
             ILevelController levelController = SceneController.Instance.LoadedLevel.levelController;
             levelController.GetLevelExit().TeleportToStartPlatform();
-            Health.SetFullHealth();
+            CombatSystem.Get<Health>().SetFullHealth();
         }
         else
         {
             transform.position = new Vector3(0, 1, 0);
-            Health.SetFullHealth();
+            CombatSystem.Get<Health>().SetFullHealth();
         }
     }
 

@@ -32,15 +32,15 @@ public class Crosshair : MonoBehaviour
 
     private void InputSystem_OnActionMapSwitched(ActionMap newActionMap)
     {
-        _crosshairContainer.SetActive(newActionMap == ActionMap.Player && Player.Instance.SpellSystem.HasActiveSpells);
+        _crosshairContainer.SetActive(newActionMap == ActionMap.Player && Player.Instance.CombatSystem.Get<ISpellSystem>().HasActiveSpells);
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        LayerMask layerMask = Player.Instance.SpellSystem.GetCombinedLayerMask();
+        LayerMask layerMask = Player.Instance.CombatSystem.Get<ISpellSystem>().GetCombinedLayerMask();
 
-        if (Player.Instance.TargetManager.GetCurrentTarget(layerMask) != null)
+        if (Player.Instance.CombatSystem.Get<ITargetSystem>().GetCurrentTarget(layerMask) != null)
         {
             _crosshairAnimator.SetBool("HasObjectTarget", true);
         }

@@ -1,4 +1,5 @@
-﻿using Aether.SpellSystem.ScriptableObjects;
+﻿using Aether.SpellSystem;
+using Aether.SpellSystem.ScriptableObjects;
 using System;
 using UnityEngine;
 
@@ -52,8 +53,7 @@ namespace ScriptableObjects
             for (int i = 0; i < Spells.Length; i++)
             {
 
-                Player.Instance.SpellSystem.AddSpell(i, Spells[i]);
-
+                Player.Instance.CombatSystem.Get<ISpellSystem>().AddSpell(i, Spells[i]);
             }
 
             Events.CloakEquipped(this);
