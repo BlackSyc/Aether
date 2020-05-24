@@ -1,5 +1,5 @@
-﻿using Aether.SpellSystem;
-using Aether.TargetSystem;
+﻿using Aether.Combat;
+using Aether.Combat.Health.Private;
 using ScriptableObjects;
 using System;
 using UnityEngine;
@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private CombatSystem combatSystem;
 
-    public ICombatSystem CombatSystem => combatSystem;
+    public ICombatSystem CombatSystem => (ICombatSystem) combatSystem;
 
     [SerializeField]
     private CharacterController characterController;

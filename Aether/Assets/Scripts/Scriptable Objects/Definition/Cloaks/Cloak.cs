@@ -1,5 +1,4 @@
-﻿using Aether.SpellSystem;
-using Aether.SpellSystem.ScriptableObjects;
+﻿using Aether.Combat.SpellSystem;
 using System;
 using UnityEngine;
 

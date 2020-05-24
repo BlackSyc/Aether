@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Aether.TargetSystem
+namespace Aether.Combat.TargetSystem
 {
     [RequireComponent(typeof(AggroManager))]
     public class AITargetSystem : MonoBehaviour, ITargetSystem

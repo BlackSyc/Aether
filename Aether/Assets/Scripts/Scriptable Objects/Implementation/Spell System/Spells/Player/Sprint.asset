@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4dc81a40112cf49a4fcb8f2fa35033, type: 3}
+  m_Script: {fileID: 11500000, guid: 130831832e22fec44a4a8d8e14e96258, type: 3}
   m_Name: Sprint
   m_EditorClassIdentifier: 
-  Name: Sprint
+  Name: Nightmare Haste
   Aspect: 3
   OnlyCastOnSelf: 1
-  Description: Increases your movement speed by 5 for 5 seconds.
+  Description: Increases your movement speed by 10 for 5 seconds.
   Damage: 0
   Heal: 0
   GlobalAggro: 0

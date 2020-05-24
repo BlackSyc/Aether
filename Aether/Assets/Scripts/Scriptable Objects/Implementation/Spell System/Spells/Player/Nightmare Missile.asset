@@ -9,32 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4dc81a40112cf49a4fcb8f2fa35033, type: 3}
+  m_Script: {fileID: 11500000, guid: 130831832e22fec44a4a8d8e14e96258, type: 3}
   m_Name: Nightmare Missile
   m_EditorClassIdentifier: 
   Name: Nightmare Missile
   Aspect: 3
-  Description: 'Shoot a Nightmare Missile towards a target.
-
-
-    On impact with
-    an enemy target, the target will take minor damage.
-
-
-    Secondary effect:
-
-    On
-    impact with some arcane entities, the target will be infused with The Nightmare,
-    destroying the entity in the process.'
+  OnlyCastOnSelf: 0
+  Description: Cast a nightmarish missile that will deal 50 damage on impact.
   Damage: 50
   Heal: 0
   GlobalAggro: 0
-  LocalAggro: 10
-  CastDuration: 1
-  CoolDown: 1
+  LocalAggro: 0
+  CastDuration: 1.5
+  CoolDown: 2
   CastWhileMoving: 1
   LayerMask:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 6144
   SpellObject: {fileID: 7103763123758175158, guid: 00c8c5ec88fa5aa48ae42b8479d5af7b,
     type: 3}
+  Modifiers: []

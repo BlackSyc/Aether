@@ -1,30 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Aether.Combat.Modifiers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ModifierIcon : MonoBehaviour
+namespace Aether.Combat.Panels
 {
-    public Modifier Modifier { get; private set; }
-
-    [SerializeField]
-    private Image image;
-
-    [SerializeField]
-    private TextMeshProUGUI durationText;
-
-    public void SetModifier(Modifier modifier)
+    public class ModifierIcon : MonoBehaviour
     {
-        Modifier = modifier;
-        image.sprite = modifier.ModifierType.Icon;
+        public Modifier Modifier { get; private set; }
+
+        [SerializeField]
+        private Image image;
+
+        [SerializeField]
+        private TextMeshProUGUI durationText;
+
+        public void SetModifier(Modifier modifier)
+        {
+            Modifier = modifier;
+            image.sprite = modifier.ModifierType.Icon;
+        }
+
+        public void Update()
+        {
+            if (Modifier != null)
+                durationText.text = ((int)(Modifier.FallOffTime - Time.time)).ToString();
+        }
     }
-
-    public void Update()
-    {
-        if (Modifier != null)
-            durationText.text = ((int) (Modifier.FallOffTime - Time.time)).ToString();
-    }
-
-
 }

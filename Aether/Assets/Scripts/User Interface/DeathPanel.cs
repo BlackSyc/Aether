@@ -1,6 +1,5 @@
-﻿using Aether.InputSystem;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Aether.Combat.Health;
+using Aether.InputSystem;
 using UnityEngine;
 
 public class DeathPanel : MonoBehaviour

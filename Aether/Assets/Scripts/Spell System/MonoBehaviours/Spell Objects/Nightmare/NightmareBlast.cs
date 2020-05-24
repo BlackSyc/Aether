@@ -1,8 +1,8 @@
-﻿using Aether.SpellSystem;
-using Aether.TargetSystem;
+﻿using Aether.Combat.Health;
+using Aether.Combat.Modifiers;
+using Aether.Combat.SpellSystem;
+using Aether.Combat.TargetSystem;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class NightmareBlast : SpellObject

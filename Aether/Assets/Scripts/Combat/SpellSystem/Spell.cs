@@ -1,0 +1,41 @@
+﻿using Aether.Combat.Modifiers;
+using System;
+using UnityEngine;
+
+
+namespace Aether.Combat.SpellSystem
+{
+    [CreateAssetMenu(menuName = "Scriptable Objects/Spell System/Spell")]
+    [Serializable]
+    public class Spell : ScriptableObject
+    {
+        public string Name;
+
+        public Aspect Aspect;
+
+        public bool OnlyCastOnSelf;
+
+        [TextArea(0, 10)]
+        public string Description;
+
+        public float Damage;
+
+        public float Heal;
+
+        public int GlobalAggro;
+
+        public int LocalAggro;
+
+        public float CastDuration;
+
+        public float CoolDown;
+
+        public bool CastWhileMoving;
+
+        public LayerMask LayerMask;
+
+        public SpellObject SpellObject;
+
+        public ModifierType[] Modifiers;
+    }
+}

@@ -1,9 +1,6 @@
-﻿using Aether.InputSystem;
-using Aether.SpellSystem;
-using Aether.TargetSystem;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Aether.Combat.SpellSystem;
+using Aether.Combat.TargetSystem;
+using Aether.InputSystem;
 using UnityEngine;
 
 public class Crosshair : MonoBehaviour

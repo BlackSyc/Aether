@@ -1,5 +1,6 @@
-﻿using Aether.TargetSystem;
-using ScriptableObjects;
+﻿using Aether.Combat;
+using Aether.Combat.SpellSystem.SpellObjects;
+using Aether.Combat.TargetSystem;
 using UnityEngine;
 
 namespace Aether.SpellSystem

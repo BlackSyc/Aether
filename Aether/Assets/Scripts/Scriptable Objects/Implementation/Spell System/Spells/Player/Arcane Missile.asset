@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4dc81a40112cf49a4fcb8f2fa35033, type: 3}
+  m_Script: {fileID: 11500000, guid: 130831832e22fec44a4a8d8e14e96258, type: 3}
   m_Name: Arcane Missile
   m_EditorClassIdentifier: 
   Name: Arcane Missile
   Aspect: 0
+  OnlyCastOnSelf: 0
   Description: "Shoot an arcane projectile at the target. \n\nThis projectile does
     not deal any damage, instead it can be used to interact with many arcane entities
     in the Aether."
@@ -29,3 +30,4 @@ MonoBehaviour:
     m_Bits: 512
   SpellObject: {fileID: 7392092985330359393, guid: 1c293ccebb5dd0c41b19e23051e3443c,
     type: 3}
+  Modifiers: []

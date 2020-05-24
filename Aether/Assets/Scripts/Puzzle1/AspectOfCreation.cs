@@ -1,6 +1,5 @@
-﻿using Aether.InputSystem;
-using Aether.SpellSystem;
-using Aether.SpellSystem.ScriptableObjects;
+﻿using Aether.Combat.SpellSystem;
+using Aether.InputSystem;
 using ScriptableObjects;
 using System;
 using UnityEngine;

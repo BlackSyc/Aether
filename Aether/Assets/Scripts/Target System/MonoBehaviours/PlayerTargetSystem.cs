@@ -1,11 +1,7 @@
-﻿using static Aether.InputSystem.InputSystem;
-using ScriptableObjects;
-using System;
-using UnityEngine;
-using UnityEngine.InputSystem;
+﻿using UnityEngine;
 using System.Linq;
 
-namespace Aether.TargetSystem
+namespace Aether.Combat.TargetSystem
 {
     public class PlayerTargetSystem : MonoBehaviour, ITargetSystem, ICombatComponent
     {

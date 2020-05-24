@@ -1,4 +1,6 @@
-﻿using Aether.TargetSystem;
+﻿using Aether.Combat;
+using Aether.Combat.Health;
+using Aether.Combat.Modifiers;
 using System;
 using System.Collections;
 using UnityEngine;

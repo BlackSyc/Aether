@@ -1,4 +1,4 @@
-﻿using Aether.TargetSystem;
+﻿using Aether.Combat;
 using UnityEngine;
 
 public interface AggroManager

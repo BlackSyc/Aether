@@ -1,5 +1,5 @@
-﻿using Aether.TargetSystem;
-using UnityEngine;
+﻿using Aether.Combat;
+using Aether.Combat.Health;
 
 namespace Aether.SpellSystem
 {

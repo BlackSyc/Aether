@@ -1,6 +1,5 @@
-﻿using Aether.TargetSystem;
-using ScriptableObjects;
-using System.Collections;
+﻿using Aether.Combat;
+using Aether.Combat.Health;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;

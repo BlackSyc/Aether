@@ -1,6 +1,4 @@
-﻿using Aether.TargetSystem;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Aether.Combat;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]

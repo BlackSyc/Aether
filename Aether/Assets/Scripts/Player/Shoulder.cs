@@ -1,11 +1,11 @@
-﻿using Aether.SpellSystem;
-using Aether.SpellSystem.ScriptableObjects;
+﻿using Aether.Combat;
+using Aether.Combat.SpellSystem;
 using ScriptableObjects;
 using UnityEngine;
 
 public class Shoulder : MonoBehaviour
 {
-    public SpellSystem SpellSystem;
+    public CombatSystem CombatSystem;
 
     private Cloak equippedCloak = null;
 
@@ -44,6 +44,6 @@ public class Shoulder : MonoBehaviour
         var cloak = equippedCloak;
         equippedCloak = null;
         cloak?.Unequip();
-        SpellSystem.AddSpell(0, defaultSpell);
+        CombatSystem.Get<ISpellSystem>().AddSpell(0, defaultSpell);
     }
 }

@@ -1,7 +1,5 @@
-﻿using Aether.SpellSystem;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using Aether.Combat.Modifiers;
+using Aether.Combat.SpellSystem;
 
 public class Sprint : SpellObject
 {

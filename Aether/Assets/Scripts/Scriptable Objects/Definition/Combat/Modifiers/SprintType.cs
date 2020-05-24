@@ -1,7 +1,7 @@
-﻿using Aether.TargetSystem;
+﻿using Aether.Combat;
+using Aether.Combat.Modifiers;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Modifiers/Sprint")]
