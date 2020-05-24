@@ -8,7 +8,7 @@ namespace Aether.SpellSystem
 {
     [RequireComponent(typeof(ITargetSystem))]
     [RequireComponent(typeof(IMovementSystem))]
-    [RequireComponent(typeof(ICombatComponent))]
+    [RequireComponent(typeof(ICombatSystem))]
     public class SpellSystem : MonoBehaviour, ISpellSystem
     {
         #region Private Fields
@@ -36,7 +36,7 @@ namespace Aether.SpellSystem
 
         public bool MovementInterrupt => movementSystem.IsMoving;
 
-        public ICombatComponent CombatComponent { get; private set; }
+        public ICombatSystem CombatSystem { get; private set; }
 
         public ITargetSystem TargetSystem { get; private set; }
 
@@ -46,7 +46,7 @@ namespace Aether.SpellSystem
         private void Awake()
         {
             TargetSystem = GetComponent<ITargetSystem>();
-            CombatComponent = GetComponent<ICombatComponent>();
+            CombatSystem = GetComponent<ICombatSystem>();
             movementSystem = GetComponent<IMovementSystem>();
 
             SpellLibraries = new ISpellLibrary[preFillOnAwake.Length];

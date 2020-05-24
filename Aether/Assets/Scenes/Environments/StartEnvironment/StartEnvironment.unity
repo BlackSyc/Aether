@@ -1581,8 +1581,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatPanelPrefab: {fileID: 3174951708391038906, guid: 7b61c34880bad024392bbe28fd68e5f5,
+    type: 3}
+  panelOffset: {x: 0, y: 2, z: 0}
+  showCombatPanelOnStart: 1
   aggroBias: 0
-  objects:
+  combatComponents:
   - {fileID: 317726140}
   - {fileID: 470227018}
 --- !u!54 &470227017
@@ -7193,10 +7197,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatPanelPrefab: {fileID: 3174951708391038906, guid: 7b61c34880bad024392bbe28fd68e5f5,
+    type: 3}
+  panelOffset: {x: 0, y: 2, z: 0}
+  showCombatPanelOnStart: 1
   aggroBias: 0
-  objects:
+  combatComponents:
   - {fileID: 543217671}
-  - {fileID: 0}
   - {fileID: 1521816068}
 --- !u!65 &1521816064
 BoxCollider:

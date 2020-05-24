@@ -26,7 +26,7 @@ namespace Aether.SpellSystem
 
         void Add(Spell spell, bool makeActive = true);
 
-        bool TryCast(out SpellCast spellCast, Transform castParent, ISpellSystem caster, ICombatComponent target);
+        bool TryCast(out SpellCast spellCast, Transform castParent, ISpellSystem caster, ICombatSystem target);
         #endregion
     }
 }

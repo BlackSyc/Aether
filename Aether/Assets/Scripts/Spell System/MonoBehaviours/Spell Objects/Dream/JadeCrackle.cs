@@ -46,7 +46,7 @@ namespace Aether.SpellSystem
         //}
 
 
-        private IEnumerator Travel(ICombatComponent target)
+        private IEnumerator Travel(ICombatSystem target)
         {
             if (target == null)
             {
@@ -77,7 +77,7 @@ namespace Aether.SpellSystem
         private Health FindEnemeyNearestTo(Transform friendlyTarget)
         {
             return FindObjectsOfType<AggroTable>()
-                .Where(x => x.Contains(Caster.CombatComponent))
+                .Where(x => x.Contains(Caster.CombatSystem))
                 .Where(x => x.GetComponent<Health>())
                 .OrderBy(x => Vector3.Distance(friendlyTarget.position, x.transform.position))
                 .Select(x => x.GetComponent<Health>())

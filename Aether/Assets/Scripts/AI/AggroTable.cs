@@ -10,14 +10,14 @@ public class AggroTable : MonoBehaviour, AggroManager
     [SerializeField]
     private float aggroRange;
 
-    private List<(int aggro, ICombatComponent target)> aggroTargets = new List<(int, ICombatComponent)>();
+    private List<(int aggro, ICombatSystem target)> aggroTargets = new List<(int, ICombatSystem)>();
 
-    public bool Contains(ICombatComponent target)
+    public bool Contains(ICombatSystem target)
     {
         return aggroTargets.Any(x => x.target == target);
     }
 
-    public (int aggro, ICombatComponent target) GetHighestAggroTarget(LayerMask layerMask)
+    public (int aggro, ICombatSystem target) GetHighestAggroTarget(LayerMask layerMask)
     {
         return aggroTargets
             .Where(x => x.target.IsIn(layerMask))
@@ -25,7 +25,7 @@ public class AggroTable : MonoBehaviour, AggroManager
                 .Max(y => y.aggro));
     }
 
-    public void AddAggroTarget(ICombatComponent target)
+    public void AddAggroTarget(ICombatSystem target)
     {
         if (gameObject.IsFriendly() ? target.IsFriendly : target.IsEnemy)
             return;
@@ -39,30 +39,30 @@ public class AggroTable : MonoBehaviour, AggroManager
         aggroTargets.Add((target.AggroBias, target));
     }
 
-    public void RemoveAggroTarget(ICombatComponent target)
+    public void RemoveAggroTarget(ICombatSystem target)
     {
         aggroTargets.RemoveAll(x => x.target == target);
     }
 
-    public void IncreaseAggro(ICombatComponent target, int amount)
+    public void IncreaseAggro(ICombatSystem target, int amount)
     {
         if (!aggroTargets.Any(x => x.target == target))
             return;
 
 
-        (int aggro, ICombatComponent target) currentEntry = aggroTargets.Single(x => x.target == target);
+        (int aggro, ICombatSystem target) currentEntry = aggroTargets.Single(x => x.target == target);
 
         aggroTargets.Remove(currentEntry);
         aggroTargets.Add((currentEntry.aggro + amount, target));
     }
 
-    public void DecreaseAggro(ICombatComponent target, int amount)
+    public void DecreaseAggro(ICombatSystem target, int amount)
     {
         if (!aggroTargets.Any(x => x.target == target))
             return;
 
 
-        (int aggro, ICombatComponent trigger) currentEntry = aggroTargets.Single(x => x.target == target);
+        (int aggro, ICombatSystem trigger) currentEntry = aggroTargets.Single(x => x.target == target);
 
         aggroTargets.Remove(currentEntry);
         aggroTargets.Add((currentEntry.aggro - amount, target));
@@ -82,15 +82,15 @@ public class AggroTable : MonoBehaviour, AggroManager
     private void LookForNewTargets()
     {
         Physics.OverlapSphere(transform.position, aggroRange, gameObject.EnemyLayer())
-            .Select(x => x.GetComponent<ICombatComponent>())
+            .Select(x => x.GetComponent<ICombatSystem>())
             .Where(x => x != null)
             .Where(x => !Contains(x))
             .ForEach(x => AddAggroTarget(x));
     }
 
-    public ICombatComponent GetCurrentTarget(LayerMask layerMask)
+    public ICombatSystem GetCurrentTarget(LayerMask layerMask)
     {
-        (int aggro, ICombatComponent target) highestAggroTarget = GetHighestAggroTarget(layerMask);
+        (int aggro, ICombatSystem target) highestAggroTarget = GetHighestAggroTarget(layerMask);
 
         if (highestAggroTarget.target != null)
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Aether.TargetSystem
 {
-    public interface ICombatComponent
+    public interface ICombatSystem
     {
         int AggroBias { get; }
 
@@ -19,6 +19,7 @@ namespace Aether.TargetSystem
         bool IsEnemy { get; }
 
         ITransform Transform { get; }
+        Vector3 PanelOffset { get; }
 
         bool IsIn(LayerMask layerMask);
         void TriggerGlobalAggro(int globalAggro);

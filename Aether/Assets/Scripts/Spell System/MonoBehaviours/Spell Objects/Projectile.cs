@@ -37,11 +37,11 @@ namespace Aether.SpellSystem
             OnObstructionHit(collision.gameObject);
         }
 
-        public override void SetTarget(ICombatComponent newTarget)
+        public override void SetTarget(ICombatSystem newTarget)
         {
             base.SetTarget(newTarget);
 
-            if (Caster.CombatComponent.Has(out ITargetSystem targetSystem))
+            if (Caster.CombatSystem.Has(out ITargetSystem targetSystem))
                 targetOffset = targetSystem.GetCurrentTargetExact(Spell.LayerMask) - newTarget.Transform.Position;
             else
                 targetOffset = Vector3.zero;
@@ -52,7 +52,7 @@ namespace Aether.SpellSystem
             throw new System.NotImplementedException();
         }
 
-        public abstract void OnTargetHit(ICombatComponent target);
+        public abstract void OnTargetHit(ICombatSystem target);
 
         public abstract void OnObstructionHit(GameObject obstructionObject);
 

@@ -8,17 +8,12 @@ using UnityEngine;
 
 public class Crosshair : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject targetTrackerPrefab;
 
     [SerializeField]
     private Animator _crosshairAnimator;
 
     [SerializeField]
     private GameObject _crosshairContainer;
-
-    [SerializeField]
-    private Vector3 defaultTrackerOffset;
 
     [SerializeField]
     private Camera _camera;
@@ -28,13 +23,11 @@ public class Crosshair : MonoBehaviour
         _crosshairAnimator.keepAnimatorControllerStateOnDisable = true;
         _crosshairContainer.SetActive(false);
         InputSystem.OnActionMapSwitched += InputSystem_OnActionMapSwitched;
-        Player.Instance.SpellSystem.OnSpellIsCast += CreateTargetTracker;
     }
 
     private void OnDestroy()
     {
         InputSystem.OnActionMapSwitched -= InputSystem_OnActionMapSwitched;
-        Player.Instance.SpellSystem.OnSpellIsCast -= CreateTargetTracker;
     }
 
     private void InputSystem_OnActionMapSwitched(ActionMap newActionMap)
@@ -55,14 +48,5 @@ public class Crosshair : MonoBehaviour
         {
             _crosshairAnimator.SetBool("HasObjectTarget", false);
         }
-    }
-
-    private void CreateTargetTracker(SpellCast spellCast)
-    {
-        GameObject targetTrackerObject = Instantiate(targetTrackerPrefab, transform);
-        TargetTracker targetTracker = targetTrackerObject.GetComponent<TargetTracker>();
-        targetTracker.SpellCast = spellCast;
-        targetTracker.Offset = defaultTrackerOffset;
-        targetTracker.Camera = _camera;
     }
 }

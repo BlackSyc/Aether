@@ -41,7 +41,7 @@ public static class Extension
         return component != null;
     }
 
-    public static bool IsTarget(this GameObject gameObject, out ICombatComponent target)
+    public static bool IsTarget(this GameObject gameObject, out ICombatSystem target)
     {
         bool result = gameObject.HasComponent(out target);
         return result;

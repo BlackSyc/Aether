@@ -4,7 +4,7 @@ namespace Aether.TargetSystem
 {
     public interface ITargetSystem
     {
-        ICombatComponent GetCurrentTarget(LayerMask layerMask);
+        ICombatSystem GetCurrentTarget(LayerMask layerMask);
 
         Vector3 GetCurrentTargetExact(LayerMask layerMask);
     }

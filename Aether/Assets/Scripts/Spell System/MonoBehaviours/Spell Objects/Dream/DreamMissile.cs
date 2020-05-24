@@ -8,7 +8,7 @@ namespace Aether.SpellSystem
 {
     public class DreamMissile : ArcaneMissile
     {
-        public override void OnTargetHit(ICombatComponent target)
+        public override void OnTargetHit(ICombatSystem target)
         {
             ExecuteTargetHitBehaviour(target);
 
@@ -17,7 +17,7 @@ namespace Aether.SpellSystem
             Destroy(gameObject);
         }
 
-        private void ExecuteTargetHitBehaviour(ICombatComponent target)
+        private void ExecuteTargetHitBehaviour(ICombatSystem target)
         {
             if (target.Has<IHealth>(out var targetHealth))
                 targetHealth.Heal(Spell.Heal);

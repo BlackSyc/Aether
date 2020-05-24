@@ -7,7 +7,7 @@ namespace Aether.SpellSystem
     public class IllusionMissile : ArcaneMissile
     {
 
-        public override void OnTargetHit(ICombatComponent target)
+        public override void OnTargetHit(ICombatSystem target)
         {
             ExecuteTargetHitBehaviour(target);
 
@@ -16,7 +16,7 @@ namespace Aether.SpellSystem
             Destroy(gameObject);
         }
 
-        private void ExecuteTargetHitBehaviour(ICombatComponent target)
+        private void ExecuteTargetHitBehaviour(ICombatSystem target)
         {
             target.Get<AggroManager>()?.IncreaseAggro(target, Spell.LocalAggro);
             

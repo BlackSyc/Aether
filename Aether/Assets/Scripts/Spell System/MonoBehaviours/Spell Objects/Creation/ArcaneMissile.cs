@@ -43,7 +43,7 @@ namespace Aether.SpellSystem
             Destroy(gameObject);
         }
 
-        public override void OnTargetHit(ICombatComponent target)
+        public override void OnTargetHit(ICombatSystem target)
         {
             ExecuteTargetHitBehaviour(target);
 
@@ -52,7 +52,7 @@ namespace Aether.SpellSystem
             Destroy(gameObject);
         }
 
-        private void ExecuteTargetHitBehaviour(ICombatComponent target)
+        private void ExecuteTargetHitBehaviour(ICombatSystem target)
         {
             if(target.Has(out Puzzle1_MissileTarget missileTarget))
             {
@@ -64,7 +64,7 @@ namespace Aether.SpellSystem
         {
             Vector3 hitPosition = transform.position;
 
-            if(Caster.CombatComponent.Has(out ITargetSystem targetSystem))
+            if(Caster.CombatSystem.Has(out ITargetSystem targetSystem))
                 hitPosition = targetSystem.GetCurrentTargetExact(Spell.LayerMask);
 
             GameObject hitFlash = Instantiate(hitFlashPrefab, transform);

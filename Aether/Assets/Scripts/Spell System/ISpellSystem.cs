@@ -22,7 +22,7 @@ namespace Aether.SpellSystem
 
         bool MovementInterrupt { get; }
 
-        ICombatComponent CombatComponent { get; }
+        ICombatSystem CombatSystem { get; }
         #endregion
 
         #region Methods

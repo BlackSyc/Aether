@@ -13,9 +13,9 @@ namespace Aether.SpellSystem
         public ISpellSystem Caster;
 
         [HideInInspector]
-        public ICombatComponent Target { get; protected set; }
+        public ICombatSystem Target { get; protected set; }
 
-        public virtual void SetTarget(ICombatComponent newTarget)
+        public virtual void SetTarget(ICombatSystem newTarget)
         {
             Target = newTarget;
         }

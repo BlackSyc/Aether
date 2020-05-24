@@ -3,15 +3,15 @@ using UnityEngine;
 
 public interface AggroManager
 {
-    bool Contains(ICombatComponent target);
+    bool Contains(ICombatSystem target);
 
-    (int aggro, ICombatComponent target) GetHighestAggroTarget(LayerMask layerMask);
+    (int aggro, ICombatSystem target) GetHighestAggroTarget(LayerMask layerMask);
 
-    void AddAggroTarget(ICombatComponent target);
+    void AddAggroTarget(ICombatSystem target);
 
-    void RemoveAggroTarget(ICombatComponent target);
-    void IncreaseAggro(ICombatComponent target, int amount);
+    void RemoveAggroTarget(ICombatSystem target);
+    void IncreaseAggro(ICombatSystem target, int amount);
 
-    void DecreaseAggro(ICombatComponent target, int amount);
+    void DecreaseAggro(ICombatSystem target, int amount);
 
 }

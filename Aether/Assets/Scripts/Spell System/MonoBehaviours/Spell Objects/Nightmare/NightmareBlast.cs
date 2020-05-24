@@ -33,7 +33,7 @@ public class NightmareBlast : SpellObject
         var hitFlash = Instantiate(hitFlashPrefab, null);
 
 
-        if (Caster.CombatComponent.Has(out ITargetSystem targetSystem))
+        if (Caster.CombatSystem.Has(out ITargetSystem targetSystem))
             hitFlash.transform.position = targetSystem.GetCurrentTargetExact(Spell.LayerMask);
         else
             hitFlash.transform.position = Target.Transform.Position;
