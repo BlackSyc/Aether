@@ -49,7 +49,7 @@ public class CombatPanel : MonoBehaviour
 
     protected virtual void Update()
     {
-        transform.localPosition = combatSystem.PanelOffset;
+        transform.position = transform.parent.position + combatSystem.PanelOffset;
         transform.LookAt(cameraTransform, Vector3.up);
     }
 }

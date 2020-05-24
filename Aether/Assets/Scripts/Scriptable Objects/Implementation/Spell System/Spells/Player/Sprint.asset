@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Sprint
   Aspect: 3
   OnlyCastOnSelf: 1
-  Description: Increases your movement speed by 100
+  Description: Increases your movement speed by 5 for 5 seconds.
   Damage: 0
   Heal: 0
   GlobalAggro: 0

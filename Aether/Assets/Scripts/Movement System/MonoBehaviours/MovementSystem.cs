@@ -19,7 +19,7 @@ public class MovementSystem : MonoBehaviour, IMovementSystem, ICombatComponent
     #region Public Properties
     public bool IsMoving { get; private set; } = false;
 
-    public float MovementSpeed { get; set; }  = 10;
+    public float MovementSpeed { get; set; }  = 8;
 
     public float RotationSpeed => rotationSpeed;
 
