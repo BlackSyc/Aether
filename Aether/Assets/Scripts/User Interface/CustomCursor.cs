@@ -1,9 +1,4 @@
-﻿using Aether.InputSystem;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.InputSystem;
-using static UnityEngine.InputSystem.InputAction;
+﻿using UnityEngine;
 
 public class CustomCursor : MonoBehaviour
 {
