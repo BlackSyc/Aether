@@ -2,7 +2,7 @@
 
 namespace Aether.Combat.Impact
 {
-    internal interface IImpactHandler
+    internal interface IImpactHandler : Core.Combat.IImpactHandler
     {
         void HandleImpact(Vector3 impact);
 

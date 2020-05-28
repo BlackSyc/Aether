@@ -13,7 +13,6 @@ namespace Aether.Assets.Assemblies.Core.Items
 
         ReadOnlyCollection<Keystone> Keystones { get; }
 
-
-
+        void PickupKeystone(Keystone keyStone);
     }
 }

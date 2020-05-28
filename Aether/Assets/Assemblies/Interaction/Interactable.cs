@@ -14,12 +14,13 @@ namespace Aether.Interaction
     [RequireComponent(typeof(Collider))]
     internal class Interactable : MonoBehaviour, IInteractable
     {
-        public string ProposeInteractionMessage = "to interact";
 
         public Interaction Interaction;
         public InteractionProposition InteractionProposition;
 
         public bool IsActive { get; set; } = true;
+
+        public string InteractionMessage { get; set; } = "to interact";
 
         public void Interact(Interactor with)
         {

@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using ScriptableObjects;
 using UnityEngine;
 
 namespace Tests

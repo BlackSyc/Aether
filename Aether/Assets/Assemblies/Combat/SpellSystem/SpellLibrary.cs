@@ -94,7 +94,7 @@ namespace Aether.Combat.SpellSystem
         #endregion
 
         #region Private Methods
-        private void SetCoolDown(ISpellCast spellCast)
+        private void SetCoolDown(Core.Combat.ISpellCast spellCast)
         {
             CoolDownUntil = Time.time + spellCast.Spell.CoolDown;
         }

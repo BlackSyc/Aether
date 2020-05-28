@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Aether.Combat.SpellSystem
 {
-    [RequireComponent(typeof(ITargetSystem))]
+    [RequireComponent(typeof(TargetSystem.ITargetSystem))]
     [RequireComponent(typeof(IMovementSystem))]
     [RequireComponent(typeof(ICombatSystem))]
     internal class SpellSystem : MonoBehaviour, ISpellSystem
@@ -27,8 +27,8 @@ namespace Aether.Combat.SpellSystem
         #endregion
 
         #region Public Properties
-        public event Action<ISpellLibrary> OnActiveSpellChanged;
-        public event Action<ISpellCast> OnSpellIsCast;
+        public event Action<Core.Combat.ISpellLibrary> OnActiveSpellChanged;
+        public event Action<Core.Combat.ISpellCast> OnSpellIsCast;
 
         public ISpellLibrary[] SpellLibraries { get; private set; }
         public Transform CastOrigin => castOrigin;
@@ -40,14 +40,14 @@ namespace Aether.Combat.SpellSystem
 
         public ICombatSystem CombatSystem { get; set; }
 
-        public ITargetSystem TargetSystem { get; private set; }
+        public TargetSystem.ITargetSystem TargetSystem { get; private set; }
 
         #endregion
 
         #region MonoBehaviour
         private void Awake()
         {
-            TargetSystem = GetComponent<ITargetSystem>();
+            TargetSystem = GetComponent<TargetSystem.ITargetSystem>();
             CombatSystem = GetComponent<ICombatSystem>();
             movementSystem = GetComponent<IMovementSystem>();
 
@@ -172,11 +172,16 @@ namespace Aether.Combat.SpellSystem
             }
         }
 
-        private void ClearCurrentCast(ISpellCast spellCast)
+        private void ClearCurrentCast(Core.Combat.ISpellCast spellCast)
         {
             currentSpellCast.CastCancelled -= ClearCurrentCast;
             currentSpellCast.CastComplete -= ClearCurrentCast;
             this.currentSpellCast = null;
+        }
+
+        public Core.Combat.ISpellLibrary GetSpellLibrary(int index)
+        {
+            return SpellLibraries[index];
         }
         #endregion
     }

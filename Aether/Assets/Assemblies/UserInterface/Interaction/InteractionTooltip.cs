@@ -1,4 +1,5 @@
-﻿using Aether.Input;
+﻿using Aether.Core.Interaction;
+using Aether.Input;
 using TMPro;
 using UnityEngine;
 
@@ -14,9 +15,9 @@ namespace Aether.UserInterface.Interaction
 
         private void Start()
         {
-            Events.OnProposedInteraction += Activate;
-            Interactor.Events.OnCancelProposedInteraction += Deactivate;
-            Interactor.Events.OnInteract += PerformAnimation;
+            Events.OnInteractionProposed += Activate;
+            Events.OnProposedInteractionCancelled += Deactivate;
+            Events.OnInteracted += PerformAnimation;
 
             InputSystem.OnActionMapSwitched += InputSystem_OnActionMapSwitched;
         }
@@ -26,9 +27,9 @@ namespace Aether.UserInterface.Interaction
             gameObject.SetActive(newActionMap == ActionMap.Player);
         }
 
-        private void Activate(Interactable interactable, Interactor _)
+        private void Activate(IInteractable interactable, IInteractor _)
         {
-            text.text = interactable.ProposeInteractionMessage;
+            text.text = interactable.InteractionMessage;
             animator.SetBool("Performed", false);
             animator.SetBool("Shown", true);
         }
@@ -45,9 +46,9 @@ namespace Aether.UserInterface.Interaction
 
         private void OnDestroy()
         {
-            Interactor.Events.OnProposedInteraction -= Activate;
-            Interactor.Events.OnCancelProposedInteraction -= Deactivate;
-            Interactor.Events.OnInteract -= PerformAnimation;
+            Events.OnInteractionProposed -= Activate;
+            Events.OnProposedInteractionCancelled -= Deactivate;
+            Events.OnInteracted -= PerformAnimation;
 
             InputSystem.OnActionMapSwitched -= InputSystem_OnActionMapSwitched;
         }

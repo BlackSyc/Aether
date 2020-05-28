@@ -5,8 +5,6 @@ namespace Aether.Combat.SpellSystem {
     internal interface ISpellSystem : Core.Combat.ISpellSystem
     {
         #region Properties
-        event Action<ISpellLibrary> OnActiveSpellChanged;
-        event Action<ISpellCast> OnSpellIsCast;
 
         bool IsCasting { get; }
 

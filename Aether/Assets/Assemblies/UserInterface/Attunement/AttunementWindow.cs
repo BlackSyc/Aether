@@ -1,4 +1,6 @@
 ﻿using Aether.Core.Attunement;
+using Aether.Core.Extensions;
+using Aether.Input;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -28,13 +30,11 @@ namespace Aether.UserInterface.Attunement
         void Start()
         {
             Events.OnInteract += OpenWindow;
-            UIEvents.Windows.OnClosePopups += CloseWindow;
         }
 
         private void OnDestroy()
         {
             Events.OnInteract -= OpenWindow;
-            UIEvents.Windows.OnClosePopups -= CloseWindow;
         }
         #endregion
 

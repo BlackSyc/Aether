@@ -1,4 +1,5 @@
 ﻿using Aether.Core.Combat.ScriptableObjects;
+using System;
 using UnityEngine;
 
 namespace Aether.Core.Combat { 
@@ -9,6 +10,10 @@ namespace Aether.Core.Combat {
 
         void RemoveSpell(int libraryIndex, Spell spell);
 
+        ISpellLibrary GetSpellLibrary(int index);
+
         LayerMask GetCombinedLayerMask();
+
+        event Action<ISpellCast> OnSpellIsCast;
     }
 }

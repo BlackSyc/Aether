@@ -61,7 +61,7 @@ namespace Aether.Interaction
         private void CancelProposedInteraction()
         {
             currentInteractable = null;
-            Events.ProposedInterctionCancelled();
+            Events.ProposedInteractionCancelled();
         }
 
         private void Update()

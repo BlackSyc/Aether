@@ -10,22 +10,6 @@ namespace Aether.Items
 {
     public class Inventory : MonoBehaviour, IInventory
     {
-        public struct Events
-        {
-            public static event Action OnPickedUpKeystone;
-
-            public static void PickedUpKeystone()
-            {
-                OnPickedUpKeystone?.Invoke();
-            }
-
-            public static event Action OnExtractedKeystone;
-
-            public static void ExtractedKeystone()
-            {
-                OnExtractedKeystone?.Invoke();
-            }
-        }
         [SerializeField]
         private List<Keystone> keystones;
 
@@ -35,7 +19,7 @@ namespace Aether.Items
         {
             keyStone.Found();
             keystones.Add(keyStone);
-            Events.PickedUpKeystone();
+            Core.Items.Events.PickedUpKeystone();
         }
 
         public List<Keystone> ExtractKeystones(Func<Keystone, bool> predicate)
@@ -46,7 +30,7 @@ namespace Aether.Items
 
             if (keystoneList.Count > 0)
             {
-                Events.ExtractedKeystone();
+                Core.Items.Events.ExtractedKeystone();
             }
 
             return keystoneList;

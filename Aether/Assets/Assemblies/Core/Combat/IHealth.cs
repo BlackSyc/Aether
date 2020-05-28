@@ -12,6 +12,8 @@ namespace Aether.Core.Combat
 
         void Heal(float heal);
 
+        void Damage(float damage);
+
         float CurrentHealth { get; }
 
         float MaxHealth { get; }

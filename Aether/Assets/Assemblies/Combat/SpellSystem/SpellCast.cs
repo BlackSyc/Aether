@@ -14,11 +14,11 @@ namespace Aether.Combat.SpellSystem
         #endregion
 
         #region Public Properties
-        public event Action<ISpellCast> CastStarted;
+        public event Action<Core.Combat.ISpellCast> CastStarted;
         public event Action<float> CastProgress;
-        public event Action<ISpellCast> CastCancelled;
-        public event Action<ISpellCast> CastInterrupted;
-        public event Action<ISpellCast> CastComplete;
+        public event Action<Core.Combat.ISpellCast> CastCancelled;
+        public event Action<Core.Combat.ISpellCast> CastInterrupted;
+        public event Action<Core.Combat.ISpellCast> CastComplete;
 
         public ICombatSystem Target { get; private set; }
 
@@ -40,6 +40,7 @@ namespace Aether.Combat.SpellSystem
             this.Caster = caster;
             this.Target = target;
         }
+
 
         public void UpdateTarget(ICombatSystem newTarget)
         {

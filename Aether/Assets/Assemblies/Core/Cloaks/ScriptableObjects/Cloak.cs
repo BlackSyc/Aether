@@ -10,21 +10,6 @@ namespace Aether.Core.Cloaks.ScriptableObjects
     [CreateAssetMenu(menuName = "Scriptable Objects/Cloaks/Cloak")]
     public class Cloak : ScriptableObject
     {
-        public struct Events
-        {
-            public static event Action<Cloak> OnCloakEquipped;
-            public static event Action<Cloak> OnCloakUnequipped;
-
-            public static void CloakUnequipped(Cloak cloakInfo)
-            {
-                OnCloakUnequipped?.Invoke(cloakInfo);
-            }
-
-            public static void CloakEquipped(Cloak cloakInfo)
-            {
-                OnCloakEquipped?.Invoke(cloakInfo);
-            }
-        }
 
         public string Name;
         public Aspect Aspect;

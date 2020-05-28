@@ -2,7 +2,6 @@
 using Aether.Core.Cloaks;
 using Aether.Core.Cloaks.ScriptableObjects;
 using Aether.Core.Interaction;
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -27,7 +26,7 @@ internal class CloakProvider : MonoBehaviour, ICloakProvider
 
     public void Interact(IInteractor interactor, IInteractable interactable)
     {
-        Events.Interact(this);
+        Aether.Core.Cloaks.Events.Interact(this);
     }
 
     public void Unequip()
@@ -38,8 +37,8 @@ internal class CloakProvider : MonoBehaviour, ICloakProvider
 
     private void Start()
     {
-        Cloak.Events.OnCloakEquipped += CheckEquip;
-        Cloak.Events.OnCloakUnequipped += CheckEquip;
+        Aether.Core.Cloaks.Events.OnCloakEquipped += CheckEquip;
+        Aether.Core.Cloaks.Events.OnCloakUnequipped += CheckEquip;
         StartCoroutine(ShowAfter(showDelay));
     }
 
@@ -67,7 +66,7 @@ internal class CloakProvider : MonoBehaviour, ICloakProvider
 
     private void OnDestroy()
     {
-        Cloak.Events.OnCloakEquipped -= CheckEquip;
-        Cloak.Events.OnCloakUnequipped -= CheckEquip;
+        Aether.Core.Cloaks.Events.OnCloakEquipped -= CheckEquip;
+        Aether.Core.Cloaks.Events.OnCloakUnequipped -= CheckEquip;
     }
 }

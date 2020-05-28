@@ -64,14 +64,14 @@ namespace Aether.UserInterface.Attunement
         #region MonoBehaviour
         private void Start()
         {
-            KeystoneEvents.OnKeystoneActivated += UpdateButtonLabel;
-            KeystoneEvents.OnKeystoneDeactivated += UpdateButtonLabel;
+            Core.Items.Events.OnKeystoneActivated += UpdateButtonLabel;
+            Core.Items.Events.OnKeystoneDeactivated += UpdateButtonLabel;
         }
 
         private void OnDestroy()
         {
-            KeystoneEvents.OnKeystoneActivated -= UpdateButtonLabel;
-            KeystoneEvents.OnKeystoneDeactivated -= UpdateButtonLabel;
+            Core.Items.Events.OnKeystoneActivated -= UpdateButtonLabel;
+            Core.Items.Events.OnKeystoneDeactivated -= UpdateButtonLabel;
         }
 
         #endregion

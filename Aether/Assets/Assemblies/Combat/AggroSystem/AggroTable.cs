@@ -47,14 +47,7 @@ namespace Aether.Combat.AggroSystem
 
         public void IncreaseAggro(ICombatSystem target, int amount)
         {
-            if (!aggroTargets.Any(x => x.target == target))
-                return;
-
-
-            (int aggro, ICombatSystem target) currentEntry = aggroTargets.Single(x => x.target == target);
-
-            aggroTargets.Remove(currentEntry);
-            aggroTargets.Add((currentEntry.aggro + amount, target));
+            IncreaseAggro(target, amount);
         }
 
         public void DecreaseAggro(ICombatSystem target, int amount)
@@ -77,7 +70,7 @@ namespace Aether.Combat.AggroSystem
 
         private void RemoveDeadTargets()
         {
-            aggroTargets.RemoveAll(x => x.target == null || x.target.Get<IHealth>().IsDead);
+            aggroTargets.RemoveAll(x => x.target == null || x.target.Get<Health.IHealth>().IsDead);
         }
 
         private void LookForNewTargets()
@@ -99,6 +92,18 @@ namespace Aether.Combat.AggroSystem
             }
 
             return null;
+        }
+
+        public void IncreaseAggro(Core.Combat.ICombatSystem target, int amount)
+        {
+            if (!aggroTargets.Any(x => x.target == target))
+                return;
+
+
+            (int aggro, ICombatSystem target) currentEntry = aggroTargets.Single(x => x.target == target);
+
+            aggroTargets.Remove(currentEntry);
+            //aggroTargets.Add((currentEntry.aggro + amount, target));
         }
     }
 }

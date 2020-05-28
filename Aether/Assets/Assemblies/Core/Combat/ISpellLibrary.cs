@@ -13,5 +13,7 @@ namespace Aether.Core.Combat
         void Remove(Spell spell);
 
         void Add(Spell spell, bool makeActive = true);
+
+        bool HasActiveSpell { get; }
     }
 }

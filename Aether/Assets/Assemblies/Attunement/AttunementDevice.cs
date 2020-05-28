@@ -2,6 +2,7 @@ using Aether.Assets.Assemblies.Core.Items;
 using Aether.Core.Attunement;
 using Aether.Core.Interaction;
 using Aether.Core.Items.ScriptableObjects;
+using Aether.Core.SceneManagement;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UnityEngine;
@@ -81,11 +82,11 @@ namespace Aether.Attunement
 
             if (interactor.Get<IInventory>().Keystones.Count > 0)
             {
-                interactable.ProposeInteractionMessage = "to place keystones";
+                interactable.InteractionMessage = "to place keystones";
             }
             else
             {
-                interactable.ProposeInteractionMessage = "to activate a keystone";
+                interactable.InteractionMessage = "to activate a keystone";
             }
         }
 
