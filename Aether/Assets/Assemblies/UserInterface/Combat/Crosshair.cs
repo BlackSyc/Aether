@@ -1,4 +1,6 @@
-﻿using Aether.Input;
+﻿using Aether.Core;
+using Aether.Core.Combat;
+using Aether.Input;
 using UnityEngine;
 
 namespace Aether.UserInterface.Combat

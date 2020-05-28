@@ -75,6 +75,11 @@ namespace Aether.Combat.TargetSystem
             return transform.position + (transform.forward.normalized * maxRange);
 
         }
+
+        Core.Combat.ICombatSystem Core.Combat.ITargetSystem.GetCurrentTarget(LayerMask layerMask)
+        {
+            return GetCurrentTarget(layerMask);
+        }
         #endregion
     }
 }

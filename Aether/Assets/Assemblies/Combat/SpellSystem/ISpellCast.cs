@@ -7,34 +7,34 @@ namespace Aether.Combat.SpellSystem
     internal interface ISpellCast : Core.Combat.ISpellCast
     {
         #region Public Properties
-        public event Action<ISpellCast> CastStarted;
-        public event Action<float> CastProgress;
-        public event Action<ISpellCast> CastCancelled;
-        public event Action<ISpellCast> CastInterrupted;
-        public event Action<ISpellCast> CastComplete;
+        event Action<ISpellCast> CastStarted;
+        event Action<float> CastProgress;
+        event Action<ISpellCast> CastCancelled;
+        event Action<ISpellCast> CastInterrupted;
+        event Action<ISpellCast> CastComplete;
 
-        public ICombatSystem Target { get; }
+        ICombatSystem Target { get; }
 
-        public float Progress { get; }
+        float Progress { get; }
 
-        public Spell Spell { get; }
+        Spell Spell { get; }
 
-        public ISpellSystem Caster { get; }
+        ISpellSystem Caster { get; }
 
-        public bool CastOnSelf { get; }
+        bool CastOnSelf { get; }
 
-        public Transform CastOrigin { get; }
+        Transform CastOrigin { get; }
         #endregion
 
 
-        public void UpdateTarget(ICombatSystem newTarget);
+        void UpdateTarget(ICombatSystem newTarget);
 
-        public void Cancel();
+        void Cancel();
 
-        public void Interrupt();
+        void Interrupt();
 
-        public void Update();
+        void Update();
 
-        public void Start();
+        void Start();
     }
 }

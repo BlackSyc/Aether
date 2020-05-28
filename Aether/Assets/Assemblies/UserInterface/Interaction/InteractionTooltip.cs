@@ -14,7 +14,7 @@ namespace Aether.UserInterface.Interaction
 
         private void Start()
         {
-            Interactor.Events.OnProposedInteraction += Activate;
+            Events.OnProposedInteraction += Activate;
             Interactor.Events.OnCancelProposedInteraction += Deactivate;
             Interactor.Events.OnInteract += PerformAnimation;
 

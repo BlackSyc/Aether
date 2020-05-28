@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Aether.Core.Attunement;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -26,19 +27,19 @@ namespace Aether.UserInterface.Attunement
         #region MonoBehaviour
         void Start()
         {
-            AttunementDevice.Events.OnInteract += OpenWindow;
+            Events.OnInteract += OpenWindow;
             UIEvents.Windows.OnClosePopups += CloseWindow;
         }
 
         private void OnDestroy()
         {
-            AttunementDevice.Events.OnInteract -= OpenWindow;
+            Events.OnInteract -= OpenWindow;
             UIEvents.Windows.OnClosePopups -= CloseWindow;
         }
         #endregion
 
         #region EventHandlers
-        private void OpenWindow(AttunementDevice attunementDevice)
+        private void OpenWindow(IAttunementDevice attunementDevice)
         {
             attunementWindow.SetActive(true);
 

@@ -1,5 +1,4 @@
-﻿using Aether.Combat;
-using Aether.Combat.Health;
+﻿using Aether.Combat.Health;
 using Aether.Core.Extensions;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +6,7 @@ using UnityEngine;
 
 namespace Aether.Combat.AggroSystem
 {
-    internal class AggroTable : MonoBehaviour, IAggroManager
+    internal class AggroTable : MonoBehaviour, IAggroManager, Core.Combat.IAggroManager
     {
         [SerializeField]
         private float aggroRange;

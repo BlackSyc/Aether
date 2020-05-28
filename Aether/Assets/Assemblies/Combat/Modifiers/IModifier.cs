@@ -6,9 +6,9 @@ namespace Aether.Combat.Modifiers
 {
     internal interface IModifier : Core.Combat.IModifier
     {
-        ModifierType ModifierType { get; }
+        new ModifierType ModifierType { get; }
 
-        float FallOffTime { get; set; }
+        new float FallOffTime { get; set; }
 
         Coroutine Coroutine { get; set; }
 

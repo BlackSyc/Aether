@@ -1,6 +1,8 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Aether.Core.Cloaks;
+using Aether.Input;
 
 namespace Aether.UserInterface.Cloaks
 {
@@ -27,11 +29,10 @@ namespace Aether.UserInterface.Cloaks
 
         private void Start()
         {
-            CloakProvider.Events.OnInteract += ShowCloakWindow;
-            AetherEvents.UIEvents.Windows.OnClosePopups += ClosePopup;
+            Events.OnInteract += ShowCloakWindow;
         }
 
-        private void ShowCloakWindow(CloakProvider cloakProvider)
+        private void ShowCloakWindow(ICloakProvider cloakProvider)
         {
             header.text = cloakProvider.Cloak.Name;
             keywords.text = cloakProvider.Cloak.Keywords;
@@ -71,11 +72,6 @@ namespace Aether.UserInterface.Cloaks
         {
             if (window.activeSelf)
                 CloseWindow();
-        }
-
-        private void OnDestroy()
-        {
-            AetherEvents.UIEvents.Windows.OnClosePopups -= ClosePopup;
         }
     }
 }

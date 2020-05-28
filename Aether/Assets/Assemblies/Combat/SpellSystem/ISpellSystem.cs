@@ -8,8 +8,6 @@ namespace Aether.Combat.SpellSystem {
         event Action<ISpellLibrary> OnActiveSpellChanged;
         event Action<ISpellCast> OnSpellIsCast;
 
-        bool HasActiveSpells { get; }
-
         bool IsCasting { get; }
 
         ISpellLibrary[] SpellLibraries { get; }
@@ -28,8 +26,6 @@ namespace Aether.Combat.SpellSystem {
         void CancelSpellCast();
 
         void InterruptSpellCast();
-
-        LayerMask GetCombinedLayerMask();
         #endregion
     }
 }

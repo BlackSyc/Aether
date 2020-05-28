@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Aether.Combat
 {
-    public class CombatSystem : MonoBehaviour, ICombatSystem
+    public class CombatSystem : CoreSystemBehaviour, ICombatSystem
     {
         #region Private Fields
         [SerializeField]
@@ -20,9 +20,6 @@ namespace Aether.Combat
 
         [SerializeField]
         private int aggroBias;
-
-        [SerializeField]
-        private List<MonoBehaviour> combatComponents;
 
         private GameObject combatPanel;
         #endregion
@@ -57,10 +54,6 @@ namespace Aether.Combat
         #endregion
 
         #region Public Methods
-        public T Get<T>()
-        {
-            return combatComponents.OfType<T>().SingleOrDefault();
-        }
 
         public void CreateCombatPanel()
         {
@@ -71,12 +64,6 @@ namespace Aether.Combat
         {
             Destroy(combatPanel);
             combatPanel = null;
-        }
-
-        public bool Has<T>(out T t)
-        {
-            t = Get<T>();
-            return t != null;
         }
 
         public void TriggerGlobalAggro(int globalAggro)

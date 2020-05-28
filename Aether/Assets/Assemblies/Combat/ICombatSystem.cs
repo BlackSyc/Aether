@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Aether.Combat
 {
-    internal  interface ICombatSystem : Core.Combat.ICombatSystem
+    internal interface ICombatSystem : Core.Combat.ICombatSystem
     {
         int AggroBias { get; }
 

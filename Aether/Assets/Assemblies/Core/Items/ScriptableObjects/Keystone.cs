@@ -45,13 +45,13 @@ namespace Aether.Core.Items.ScriptableObjects
         public void Activate()
         {
             state.IsActivated = true;
-            AetherEvents.KeystoneEvents.KeystoneActivated(this);
+            Events.KeystoneEvents.KeystoneActivated(this);
         }
 
         public void Deactivate()
         {
             state.IsActivated = false;
-            AetherEvents.KeystoneEvents.KeystoneDeactivated(this);
+            Events.KeystoneEvents.KeystoneDeactivated(this);
         }
     }
 }

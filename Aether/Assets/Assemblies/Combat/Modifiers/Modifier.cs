@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Aether.Combat.Modifiers
 {
-    internal class Modifier : IModifier
+    internal class Modifier : IModifier, Core.Combat.IModifier
     {
         public ModifierType ModifierType { get; private set; }
 

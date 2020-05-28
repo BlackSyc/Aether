@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Aether.Combat.Modifiers
 {
-    internal class ModifierSlots : MonoBehaviour, IModifierSlots
+    internal class ModifierSlots : MonoBehaviour, IModifierSlots, Core.Combat.IModifierSlots
     {
-        public event Action<IModifier> OnModifierAdded;
+        public event Action<Core.Combat.IModifier> OnModifierAdded;
 
-        public event Action<IModifier> OnModifierRemoved;
+        public event Action<Core.Combat.IModifier> OnModifierRemoved;
 
         private List<IModifier> activeModifiers;
         public ICombatSystem CombatSystem { get; set; }
