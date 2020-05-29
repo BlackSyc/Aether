@@ -10,26 +10,13 @@ namespace Aether.Combat
     {
         #region Private Fields
         [SerializeField]
-        private GameObject combatPanelPrefab;
-
-        [SerializeField]
-        private Vector3 panelOffset;
-
-        [SerializeField]
-        private bool showCombatPanelOnStart = true;
-
-        [SerializeField]
         private int aggroBias;
-
-        private GameObject combatPanel;
         #endregion
 
         #region Public Properties
         public string Name => gameObject.name;
 
         public ITransform Transform { get; private set; }
-
-        public Vector3 PanelOffset => panelOffset;
 
         public int AggroBias => aggroBias;
 
@@ -45,26 +32,9 @@ namespace Aether.Combat
         {
             Transform = new ITransform(base.transform);
         }
-
-        private void Start()
-        {
-            if (showCombatPanelOnStart)
-                CreateCombatPanel();
-        }
         #endregion
 
         #region Public Methods
-
-        public void CreateCombatPanel()
-        {
-            combatPanel = Instantiate(combatPanelPrefab, transform);
-        }
-
-        public void HideCombatPanel()
-        {
-            Destroy(combatPanel);
-            combatPanel = null;
-        }
 
         public void TriggerGlobalAggro(int globalAggro)
         {

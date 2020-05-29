@@ -1,4 +1,5 @@
-﻿using Aether.Core;
+﻿using Aether.Assets.Assemblies.Core.Items;
+using Aether.Core;
 using Aether.Core.Cloaks.ScriptableObjects;
 using Aether.Core.Interaction;
 using Aether.Core.Items.ScriptableObjects;
@@ -64,7 +65,7 @@ namespace Aether.StartPlatform
         {
             if (grantKeystone != null)
             {
-                Player.Instance.Inventory.PickupKeystone(grantKeystone);
+                Player.Instance.Get<IInventory>().PickupKeystone(grantKeystone);
                 grantKeystone = null;
             }
         }

@@ -448,10 +448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6316fac18dfa040bb35eb3898fb66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aspect: 3
-  leaf: {fileID: 1837385323}
-  interactable: {fileID: 1946092055}
-  grantKeystone: {fileID: 11400000, guid: a9059e1183ec8cc4ea2e49180fcab870, type: 2}
 --- !u!95 &22901392
 Animator:
   serializedVersion: 3
@@ -698,7 +694,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProposeInteractionMessage: to open
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -716,7 +711,6 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
-  IsActive: 0
 --- !u!64 &166853695
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -791,7 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: d4070c8a5f59d98459cdad6974956379, type: 2}
-  reward: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
+  reward: {fileID: 0}
 --- !u!114 &169073593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -804,7 +798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProposeInteractionMessage: to interact
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -822,7 +815,6 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
-  IsActive: 0
 --- !u!65 &169073594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1431,8 +1423,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8f4095ca1f7f141948189121a33912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Traveller: {fileID: 0}
-  travelReverse: 0
 --- !u!1 &376897094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,6 +1538,7 @@ GameObject:
   - component: {fileID: 470227016}
   - component: {fileID: 470227018}
   - component: {fileID: 470227022}
+  - component: {fileID: 470227023}
   m_Layer: 11
   m_Name: Friendly Target Dummy
   m_TagString: Untagged
@@ -1582,15 +1573,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatPanelPrefab: {fileID: 3174951708391038906, guid: 7b61c34880bad024392bbe28fd68e5f5,
-    type: 3}
-  panelOffset: {x: 0, y: 2, z: 0}
-  showCombatPanelOnStart: 1
+  exposedObjects: []
   aggroBias: 0
-  combatComponents:
-  - {fileID: 317726140}
-  - {fileID: 470227018}
-  - {fileID: 470227022}
 --- !u!54 &470227017
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1691,6 +1675,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468ffe0b57999d049b18098943388a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &470227023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470227014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatPanelPrefab: {fileID: 3174951708391038906, guid: 7b61c34880bad024392bbe28fd68e5f5,
+    type: 3}
+  showCombatPanelOnStart: 1
+  PanelOffset: {x: 0, y: 1, z: 0}
 --- !u!1 &470688061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,7 +1979,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProposeInteractionMessage: to step through
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -1997,7 +1996,6 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
-  IsActive: 0
 --- !u!1 &543217669
 GameObject:
   m_ObjectHideFlags: 0
@@ -2378,10 +2376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6316fac18dfa040bb35eb3898fb66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aspect: 1
-  leaf: {fileID: 9130147988246811448}
-  interactable: {fileID: 1183359035}
-  grantKeystone: {fileID: 11400000, guid: f9b1f51a5cdb7ae4985768a2ae505c78, type: 2}
 --- !u!64 &546802959
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2834,10 +2828,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6316fac18dfa040bb35eb3898fb66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aspect: 2
-  leaf: {fileID: 800934960}
-  interactable: {fileID: 1145111863}
-  grantKeystone: {fileID: 11400000, guid: efe0d3f49b33b5f4fbe7debc8e945753, type: 2}
 --- !u!64 &598217752
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4553,8 +4543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8f4095ca1f7f141948189121a33912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Traveller: {fileID: 0}
-  travelReverse: 0
 --- !u!64 &968346317
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4615,9 +4603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bad72725fbd77c4f946626501b07354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showDelay: 4
-  cloakObject: {fileID: 8296172668811736711}
-  cloak: {fileID: 11400000, guid: 295d88bd32d50fe4c917a850ff342795, type: 2}
 --- !u!135 &984577804
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4643,7 +4628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProposeInteractionMessage: to interact
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -4661,7 +4645,6 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
-  IsActive: 0
 --- !u!1 &1023740290
 GameObject:
   m_ObjectHideFlags: 0
@@ -5189,7 +5172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProposeInteractionMessage: to open
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -5207,7 +5189,6 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
-  IsActive: 0
 --- !u!64 &1145111864
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5359,7 +5340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProposeInteractionMessage: to open
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -5377,7 +5357,6 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
-  IsActive: 0
 --- !u!64 &1183359036
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5670,8 +5649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8f4095ca1f7f141948189121a33912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Traveller: {fileID: 0}
-  travelReverse: 0
 --- !u!1 &1236075211
 GameObject:
   m_ObjectHideFlags: 0
@@ -5791,8 +5768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19f94666d63421c4c9aa4aa505f9f017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TravelAnimation: {fileID: 0}
-  SceneBuildIndex: 0
 --- !u!95 &1237410383
 Animator:
   serializedVersion: 3
@@ -5968,7 +5943,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProposeInteractionMessage: to step through
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -5986,7 +5960,6 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
-  IsActive: 0
 --- !u!1001 &1310688951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6677,9 +6650,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bad72725fbd77c4f946626501b07354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showDelay: 4
-  cloakObject: {fileID: 8296172667479919017}
-  cloak: {fileID: 11400000, guid: 1909c5330ac9b544aaba2db58c6e728f, type: 2}
 --- !u!135 &1383274265
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6705,7 +6675,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProposeInteractionMessage: to interact
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -6723,7 +6692,6 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
-  IsActive: 0
 --- !u!1 &1391093069
 GameObject:
   m_ObjectHideFlags: 0
@@ -7178,6 +7146,7 @@ GameObject:
   - component: {fileID: 1521816062}
   - component: {fileID: 1521816068}
   - component: {fileID: 1521816063}
+  - component: {fileID: 1521816069}
   m_Layer: 12
   m_Name: Target Dummy
   m_TagString: Untagged
@@ -7212,15 +7181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatPanelPrefab: {fileID: 3174951708391038906, guid: 7b61c34880bad024392bbe28fd68e5f5,
-    type: 3}
-  panelOffset: {x: 0, y: 2, z: 0}
-  showCombatPanelOnStart: 1
+  exposedObjects: []
   aggroBias: 0
-  combatComponents:
-  - {fileID: 543217671}
-  - {fileID: 1521816068}
-  - {fileID: 1521816063}
 --- !u!114 &1521816063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7321,6 +7283,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e80a6d193b37a5b489fae2b6aa6ceec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1521816069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521816060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatPanelPrefab: {fileID: 3174951708391038906, guid: 7b61c34880bad024392bbe28fd68e5f5,
+    type: 3}
+  showCombatPanelOnStart: 1
+  PanelOffset: {x: 0, y: 1, z: 0}
 --- !u!1 &1531830433 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1429307341168804661, guid: 7b0a5c52a4eab2e4ba729c02a275064f,
@@ -9514,9 +9492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bad72725fbd77c4f946626501b07354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showDelay: 4
-  cloakObject: {fileID: 8296172668577484685}
-  cloak: {fileID: 11400000, guid: 4480b7999006e7341a7ebdd21e95d8ed, type: 2}
 --- !u!135 &1897496758
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9542,7 +9517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProposeInteractionMessage: to interact
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -9560,7 +9534,6 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
-  IsActive: 0
 --- !u!1 &1903216089 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4417447442426439750, guid: 7c44200e7d6ffb449b36428877eb5969,
@@ -9747,7 +9720,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProposeInteractionMessage: to open
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -9765,7 +9737,6 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
-  IsActive: 0
 --- !u!1 &1955008806
 GameObject:
   m_ObjectHideFlags: 0
@@ -9827,7 +9798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProposeInteractionMessage: to step through
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -9845,7 +9815,6 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
-  IsActive: 0
 --- !u!1 &1970733420
 GameObject:
   m_ObjectHideFlags: 0
@@ -10694,7 +10663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProposeInteractionMessage: to travel
   Interaction:
     m_PersistentCalls:
       m_Calls:
@@ -10712,7 +10680,6 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
-  IsActive: 1
 --- !u!23 &64037983504638148
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13435,75 +13402,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1001 &5937119899048868941
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1518896999022840769, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
-        type: 3}
-      propertyPath: m_Name
-      value: Nightmare Blast
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424513571646174538, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 53.390156
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424513571646174538, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.89264
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424513571646174538, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.021653
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424513571646174538, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424513571646174538, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424513571646174538, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424513571646174538, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424513571646174538, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424513571646174538, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424513571646174538, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424513571646174538, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e8c029c6ed3dc3e469faf40686b6cd2d, type: 3}
 --- !u!33 &5948555683981463426
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13849,8 +13747,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8f4095ca1f7f141948189121a33912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Traveller: {fileID: 1237410382}
-  travelReverse: 0
 --- !u!33 &6996080491641185969
 MeshFilter:
   m_ObjectHideFlags: 0

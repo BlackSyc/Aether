@@ -1,4 +1,6 @@
-﻿using Aether.Core;
+﻿using Aether.Assets.Assemblies.Core.Items;
+using Aether.Core;
+using Aether.Core.Cloaks;
 using UnityEngine;
 
 public class InventoryWindow : MonoBehaviour
@@ -17,8 +19,11 @@ public class InventoryWindow : MonoBehaviour
 
     private void UpdateKeystoneImage()
     {
-        if(Player.Instance.Shoulder.EquippedCloak != null)
-            keystoneImageAnimator.SetBool("Show", Player.Instance.Inventory.ContainsKeystone(x => Player.Instance.Shoulder.EquippedCloak.Aspect == x.Aspect));
+        if (!Player.Instance.Has(out IShoulder shoulder) || !Player.Instance.Has(out IInventory inventory))
+            return;
+
+        if(shoulder.EquippedCloak != null)
+            keystoneImageAnimator.SetBool("Show", inventory.ContainsKeystone(x => shoulder.EquippedCloak.Aspect == x.Aspect));
         else
             keystoneImageAnimator.SetBool("Show", false);
     }

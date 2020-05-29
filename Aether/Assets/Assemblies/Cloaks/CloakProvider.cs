@@ -20,7 +20,7 @@ internal class CloakProvider : MonoBehaviour, ICloakProvider
 
     public void Equip()
     {
-        Player.Instance.Shoulder.EquipCloak(cloak);
+        Player.Instance.Get<IShoulder>().EquipCloak(cloak);
         CheckEquip(cloak);
     }
 
@@ -31,7 +31,7 @@ internal class CloakProvider : MonoBehaviour, ICloakProvider
 
     public void Unequip()
     {
-        Player.Instance.Shoulder.UnequipCloak();
+        Player.Instance.Get<IShoulder>().UnequipCloak();
         CheckEquip(cloak);
     }
 

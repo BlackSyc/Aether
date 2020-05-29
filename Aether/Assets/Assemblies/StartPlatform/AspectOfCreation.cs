@@ -60,7 +60,7 @@ namespace Aether.StartPlatform
         private void GrantArcaneMissile()
         {
             Hints.Get("Cursor").Activate();
-            Player.Instance.CombatSystem.Get<ISpellSystem>().AddSpell(0, reward);
+            Player.Instance.Get<ICombatSystem>().Get<ISpellSystem>().AddSpell(0, reward);
             InputSystem.SwitchToActionMap(ActionMap.UserInterface);
         }
 

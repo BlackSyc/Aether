@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85996575d3a20a44fb14d8a314707368, type: 3}
+  m_Script: {fileID: 11500000, guid: cfb82a4bd645f9247b3fb44c3aaef85d, type: 3}
   m_Name: Line4
   m_EditorClassIdentifier: 
-  Name: Never mind
+  Name: 
   Speaker: Aspect Of Creation
-  Content: -Never mind... Let's get you going.
+  Content: nearlyend

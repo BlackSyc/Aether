@@ -17,8 +17,16 @@ namespace Aether.UserInterface.Combat
         [SerializeField]
         private Camera _camera;
 
+        private ISpellSystem playerSpellSystem;
+
+        private ITargetSystem playerTargetSystem;
+
         private void Start()
         {
+            var playerCombatSystem = Player.Instance.Get<ICombatSystem>();
+            playerSpellSystem = playerCombatSystem.Get<ISpellSystem>();
+            playerTargetSystem = playerCombatSystem.Get<ITargetSystem>();
+
             _crosshairAnimator.keepAnimatorControllerStateOnDisable = true;
             _crosshairContainer.SetActive(false);
             InputSystem.OnActionMapSwitched += InputSystem_OnActionMapSwitched;
@@ -31,15 +39,15 @@ namespace Aether.UserInterface.Combat
 
         private void InputSystem_OnActionMapSwitched(ActionMap newActionMap)
         {
-            _crosshairContainer.SetActive(newActionMap == ActionMap.Player && Player.Instance.CombatSystem.Get<ISpellSystem>().HasActiveSpells);
+            _crosshairContainer.SetActive(newActionMap == ActionMap.Player && playerSpellSystem.HasActiveSpells);
         }
 
         // Update is called once per frame
         void LateUpdate()
         {
-            LayerMask layerMask = Player.Instance.CombatSystem.Get<ISpellSystem>().GetCombinedLayerMask();
+            LayerMask layerMask = playerSpellSystem.GetCombinedLayerMask();
 
-            if (Player.Instance.CombatSystem.Get<ITargetSystem>().GetCurrentTarget(layerMask) != null)
+            if (playerTargetSystem.GetCurrentTarget(layerMask) != null)
             {
                 _crosshairAnimator.SetBool("HasObjectTarget", true);
             }

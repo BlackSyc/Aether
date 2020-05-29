@@ -9,7 +9,7 @@ namespace Aether.UserInterface.Combat
     {
         private void Start()
         {
-            Player.Instance.CombatSystem.Get<IHealth>().OnDied += Show;
+            Player.Instance.Get<ICombatSystem>().Get<IHealth>().OnDied += Show;
             gameObject.SetActive(false);
             GetComponent<CanvasGroup>().alpha = 1;
         }
@@ -29,7 +29,7 @@ namespace Aether.UserInterface.Combat
 
         private void OnDestroy()
         {
-            Player.Instance.CombatSystem.Get<IHealth>().OnDied -= Show;
+            Player.Instance.Get<ICombatSystem>().Get<IHealth>().OnDied -= Show;
         }
     }
 }

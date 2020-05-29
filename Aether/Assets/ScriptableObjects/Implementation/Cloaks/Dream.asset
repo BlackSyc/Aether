@@ -19,8 +19,8 @@ MonoBehaviour:
   Description: A gift from the Dream Aspect. Lorem ipsum dolor sit amet, consectetur
     adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   Spells:
-  - {fileID: 11400000, guid: cf5f1679cd04d6246b731bc7d2c36fed, type: 2}
-  - {fileID: 11400000, guid: e8d2351f4a625f74b81c24965dce0eab, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

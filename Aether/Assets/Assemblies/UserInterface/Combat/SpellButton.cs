@@ -40,7 +40,9 @@ namespace Aether.UserInterface.Combat {
 
         private void Start()
         {
-            spellLibrary = Player.Instance.CombatSystem.Get<ISpellSystem>().GetSpellLibrary(spellLibraryIndex);
+            var playerSpellSystem = Player.Instance.Get<ICombatSystem>().Get<ISpellSystem>();
+
+            spellLibrary = playerSpellSystem.GetSpellLibrary(spellLibraryIndex);
 
             if (spellLibrary == null)
                 return;
@@ -52,7 +54,7 @@ namespace Aether.UserInterface.Combat {
             }
 
             spellLibrary.OnActiveSpellChanged += ChangeSpell;
-            Player.Instance.CombatSystem.Get<ISpellSystem>().OnSpellIsCast += StartSpellCast;
+            playerSpellSystem.OnSpellIsCast += StartSpellCast;
         }
 
         private void ChangeSpell(Spell spell)
@@ -124,7 +126,7 @@ namespace Aether.UserInterface.Combat {
             if (spellLibrary != null)
                 spellLibrary.OnActiveSpellChanged -= ChangeSpell;
 
-                Player.Instance.CombatSystem.Get<ISpellSystem>().OnSpellIsCast -= StartSpellCast;
+                Player.Instance.Get<ICombatSystem>().Get<ISpellSystem>().OnSpellIsCast -= StartSpellCast;
         }
     }
 }

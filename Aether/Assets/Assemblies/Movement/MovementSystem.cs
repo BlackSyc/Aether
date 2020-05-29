@@ -26,7 +26,7 @@ namespace Aether.Movement
         public float JumpPower { get; set; } = 5;
 
         public ICombatSystem CombatSystem { get; set; }
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
         #endregion
 
         #region MonoBehaviour

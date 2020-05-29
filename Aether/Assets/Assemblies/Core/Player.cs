@@ -1,9 +1,4 @@
-﻿using Aether.Assets.Assemblies.Core.Items;
-using Aether.Core.Cloaks;
-using Aether.Core.Combat;
-using Aether.Core.Companion;
-using Aether.Core.Interaction;
-using Aether.Core.Movement;
+﻿using Aether.Core.Combat;
 using Aether.Core.SceneManagement;
 using Aether.Core.Tutorial;
 using System;
@@ -11,56 +6,9 @@ using UnityEngine;
 
 namespace Aether.Core
 {
-    public class Player : MonoBehaviour
+    public class Player : CoreSystemBehaviour
     {
         public static Player Instance { get; private set; }
-
-        [SerializeField]
-        private ICombatSystem combatSystem;
-
-        public ICombatSystem CombatSystem => (ICombatSystem)combatSystem;
-
-        [SerializeField]
-        private CharacterController characterController;
-
-        public CharacterController CharacterController => characterController;
-
-        [SerializeField]
-        private IMovementSystem playerMovement;
-
-        public IMovementSystem PlayerMovement => playerMovement;
-
-        [SerializeField]
-        private IShoulder shoulder;
-
-        public IShoulder Shoulder => shoulder;
-
-        [SerializeField]
-        private IInventory inventory;
-
-        public IInventory Inventory => inventory;
-
-        [SerializeField]
-        private IInteractor interactor;
-
-        public IInteractor Interactor => interactor;
-
-        [SerializeField]
-        private SkinnedMeshRenderer mesh;
-
-        public SkinnedMeshRenderer Mesh => mesh;
-
-        [SerializeField]
-        private Transform companionParent;
-
-        public Transform CompanionParent => companionParent;
-
-        [SerializeField]
-        private IAggroManager aggroRelay;
-
-        public IAggroManager AggroRelay => aggroRelay;
-
-        public ICompanion Companion;
 
         private void Awake()
         {
@@ -76,12 +24,17 @@ namespace Aether.Core
             {
                 ILevelController levelController = SceneController.Instance.LoadedLevel.levelController;
                 levelController.GetLevelExit().TeleportToStartPlatform();
-                CombatSystem.Get<IHealth>().Heal(CombatSystem.Get<IHealth>().MaxHealth);
+
+                if (base.Has(out ICombatSystem combatSystem) && combatSystem.Has(out IHealth health))
+                    health.Heal(health.MaxHealth);
+
             }
             else
             {
                 transform.position = new Vector3(0, 1, 0);
-                CombatSystem.Get<IHealth>().Heal(CombatSystem.Get<IHealth>().MaxHealth);
+
+                if (base.Has(out ICombatSystem combatSystem) && combatSystem.Has(out IHealth health))
+                    health.Heal(health.MaxHealth);
             }
         }
 

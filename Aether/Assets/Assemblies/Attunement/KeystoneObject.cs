@@ -1,4 +1,5 @@
-﻿using Aether.Core;
+﻿using Aether.Assets.Assemblies.Core.Items;
+using Aether.Core;
 using Aether.Core.Items.ScriptableObjects;
 using Aether.Core.Tutorial;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace Aether.Attunement
                 Hints.Get("Keystone_AlreadyPickedUp").Activate();
                 return;
             }
-            Player.Instance.Inventory.PickupKeystone(keystone);
+            Player.Instance.Get<IInventory>().PickupKeystone(keystone);
             Destroy(gameObject);
         }
     }

@@ -9,29 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 130831832e22fec44a4a8d8e14e96258, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d96818dbabae504c95b59b457801f5c, type: 3}
   m_Name: Nightmare Blast
   m_EditorClassIdentifier: 
-  Name: Nightmare Blast
-  Aspect: 3
+  Name: 
+  Aspect: 0
   OnlyCastOnSelf: 0
-  Description: 'Instantly blast a target with 100 damage.
-
-
-    Secondary effect:
-    Applies Flame Shock to the target, dealing another 20 damage every second for
-    5 seconds.'
-  Damage: 100
+  Description: 
+  Damage: 0
   Heal: 0
   GlobalAggro: 0
   LocalAggro: 0
   CastDuration: 0
-  CoolDown: 4
-  CastWhileMoving: 1
+  CoolDown: 0
+  CastWhileMoving: 0
   LayerMask:
     serializedVersion: 2
-    m_Bits: 4096
-  SpellObject: {fileID: 6562824864854931729, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
-    type: 3}
-  Modifiers:
-  - {fileID: 11400000, guid: 9361b6d568d05664eb0846334bf91862, type: 2}
+    m_Bits: 0
+  Modifiers: []

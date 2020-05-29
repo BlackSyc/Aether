@@ -9,7 +9,5 @@ namespace Aether.Core.Combat
         bool Has<T>(out T t);
 
         string Name { get; }
-
-        Vector3 PanelOffset { get; }
     }
 }

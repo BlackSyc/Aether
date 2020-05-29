@@ -1,4 +1,6 @@
-﻿using Aether.Core;
+﻿using Aether.Assets.Assemblies.Core.Items;
+using Aether.Core;
+using Aether.Core.Cloaks;
 using Aether.Core.Extensions;
 using System.Linq;
 using TMPro;
@@ -14,9 +16,13 @@ namespace Aether.UserInterface.Inventory
 
         public void Show()
         {
+            var playerShoulder = Player.Instance.Get<IShoulder>();
+            
             contentText.text = string.Empty;
-            Player.Instance.Inventory.Keystones
-                 .Where(x => x.Aspect == Player.Instance.Shoulder.EquippedCloak.Aspect)
+
+
+            Player.Instance.Get<IInventory>().Keystones
+                 .Where(x => x.Aspect == playerShoulder.EquippedCloak.Aspect)
                  .ForEach(keystone => contentText.text += $"\n'{keystone.Name}' Keystone");
 
             gameObject.SetActive(true);

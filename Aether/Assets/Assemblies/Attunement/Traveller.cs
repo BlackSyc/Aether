@@ -1,4 +1,5 @@
 ﻿using Aether.Core;
+using Aether.Core.Movement;
 using Aether.Core.SceneManagement;
 using System.Collections;
 using UnityEngine;
@@ -55,21 +56,21 @@ namespace Aether.Attunement
             Player.Instance.gameObject.transform.parent = gameObject.transform;
             Player.Instance.gameObject.transform.localPosition = Vector3.zero;
             
-            Player.Instance.PlayerMovement.IsActive = false;
+            Player.Instance.Get<IMovementSystem>().IsActive = false;
 
             animator.Play(reverse ? $"{TravelAnimation.name}Reverse" : TravelAnimation.name);
             yield return new WaitForSeconds(TravelAnimation.length);
 
             Player.Instance.gameObject.transform.SetParent(null, true);
             SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneController.Instance.BaseScene);
-            Player.Instance.PlayerMovement.IsActive = true;
+            Player.Instance.Get<IMovementSystem>().IsActive = true;
         }
 
         private IEnumerator TravelUsingLoadingProgress()
         {
             Player.Instance.gameObject.transform.parent = gameObject.transform;
             Player.Instance.gameObject.transform.localPosition = Vector3.zero;
-            Player.Instance.PlayerMovement.IsActive = false;
+            Player.Instance.Get<IMovementSystem>().IsActive = false;
 
             while (levelLoadingOperation == null)
             {
@@ -90,7 +91,7 @@ namespace Aether.Attunement
 
             Player.Instance.gameObject.transform.SetParent(null, true);
             SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneController.Instance.BaseScene);
-            Player.Instance.PlayerMovement.IsActive = true;
+            Player.Instance.Get<IMovementSystem>().IsActive = true;
         }
     }
 }

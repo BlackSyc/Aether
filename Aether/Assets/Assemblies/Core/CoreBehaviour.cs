@@ -9,7 +9,7 @@ namespace Aether.Core
     public abstract class CoreSystemBehaviour : MonoBehaviour
     {
         [SerializeField]
-        protected List<MonoBehaviour> exposedObjects;
+        protected List<UnityEngine.Object> exposedObjects;
 
         public T Get<T>()
         {
@@ -20,6 +20,11 @@ namespace Aether.Core
         {
             t = Get<T>();
             return t != null;
+        }
+
+        public bool Has<T>()
+        {
+            return exposedObjects.OfType<T>().Any();
         }
     }
 }

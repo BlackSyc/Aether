@@ -1,4 +1,5 @@
-﻿using Aether.Core.Cloaks.ScriptableObjects;
+﻿using Aether.Core.Cloaks;
+using Aether.Core.Cloaks.ScriptableObjects;
 using System;
 using UnityEngine;
 
@@ -31,12 +32,15 @@ namespace Aether.Core.SceneManagement
             Events.ExitingLevel();
             SceneController.Instance.StartPlatformLevelController.Enable();
 
-            Cloak equippedCloak = Player.Instance.Shoulder.EquippedCloak;
-            Player.Instance.Shoulder.UnequipCloak();
-            Player.Instance.CharacterController.enabled = false;
+            IShoulder playerShoulder = Player.Instance.Get<IShoulder>();
+            CharacterController playerCharController = Player.Instance.Get<CharacterController>();
+
+            Cloak equippedCloak = playerShoulder.EquippedCloak;
+            playerShoulder.UnequipCloak();
+            playerCharController.enabled = false;
             Player.Instance.transform.position = ExitPoint.position;
-            Player.Instance.CharacterController.enabled = true;
-            Player.Instance.Shoulder.EquipCloak(equippedCloak);
+            playerCharController.enabled = true;
+            playerShoulder.EquipCloak(equippedCloak);
 
             SceneController.Instance.LoadedLevel.levelController.Disable();
 

@@ -4,16 +4,10 @@ namespace Aether.UserInterface.Combat
 {
     public class PlayerCombatPanel : CombatPanel
     {
-        // Start is called before the first frame update
+
         protected override void Start()
         {
-            combatSystem = Player.Instance.CombatSystem;
-
-            if (healthBar != null)
-                LinkHealthBar();
-
-            if (modifiersBar != null)
-                LinkModifiersBar();
+            base.Start();
         }
 
         // Update is called once per frame

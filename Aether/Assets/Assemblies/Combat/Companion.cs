@@ -1,4 +1,5 @@
 ﻿using Aether.Core;
+using Aether.Core.Cloaks;
 using Aether.Core.Cloaks.ScriptableObjects;
 using Aether.Core.Companion;
 using System;
@@ -28,8 +29,8 @@ namespace Aether.Combat
 
         private void Start()
         {
-            equippedCloak = Player.Instance.Shoulder.EquippedCloak;
-            Player.Instance.Companion = this;
+            equippedCloak = Player.Instance.Get<IShoulder>().EquippedCloak;
+            //Player.Instance.Companion = this; I don't want a setter on exposed objects
             Events.CompanionAdded(this);
             Aether.Core.Cloaks.Events.OnCloakUnequipped += CloakUnequipped;
         }
@@ -38,7 +39,7 @@ namespace Aether.Combat
         {
             if (cloak == equippedCloak)
             {
-                Player.Instance.Companion = null;
+                //Player.Instance.Companion = null;
                 Destroy(gameObject);
                 Events.CompanionRemoved();
             }

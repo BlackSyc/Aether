@@ -1,4 +1,5 @@
-﻿using Aether.Core.Combat;
+﻿using Aether.Core;
+using Aether.Core.Combat;
 using TMPro;
 using UnityEngine;
 
@@ -7,8 +8,7 @@ namespace Aether.UserInterface.Combat
 
     public class CombatPanel : MonoBehaviour
     {
-        protected ICombatSystem combatSystem;
-        protected Transform cameraTransform;
+        private CombatPanelInfo combatPanelInfo;
 
         [SerializeField]
         protected TextMeshProUGUI nameText;
@@ -19,13 +19,16 @@ namespace Aether.UserInterface.Combat
         [SerializeField]
         protected ModifiersBar modifiersBar;
 
+        public CombatPanel SetInfo(CombatPanelInfo info)
+        {
+            this.combatPanelInfo = info;
+            return this;
+        }
+
         protected virtual void Start()
         {
-            cameraTransform = Camera.main.transform;
-            combatSystem = transform.parent.GetComponent<ICombatSystem>();
-
             if (nameText != null)
-                nameText.text = combatSystem.Name;
+                nameText.text = combatPanelInfo.CombatSystem.Name;
 
             if (healthBar != null)
                 LinkHealthBar();
@@ -36,7 +39,7 @@ namespace Aether.UserInterface.Combat
 
         protected void LinkHealthBar()
         {
-            if (combatSystem.Has(out IHealth health))
+            if (combatPanelInfo.CombatSystem.Has(out IHealth health))
                 healthBar.SetHealth(health);
             else
                 healthBar.enabled = false;
@@ -44,7 +47,7 @@ namespace Aether.UserInterface.Combat
 
         protected void LinkModifiersBar()
         {
-            if (combatSystem.Has(out IModifierSlots modifierSlots))
+            if (combatPanelInfo.CombatSystem.Has(out IModifierSlots modifierSlots))
                 modifiersBar.SetModifierSlots(modifierSlots);
             else
                 modifiersBar.enabled = false;
@@ -52,8 +55,8 @@ namespace Aether.UserInterface.Combat
 
         protected virtual void Update()
         {
-            transform.position = transform.parent.position + combatSystem.PanelOffset;
-            transform.LookAt(cameraTransform, Vector3.up);
+            transform.position = transform.parent.position + combatPanelInfo.PanelOffset;
+            transform.rotation.SetLookRotation(-Player.Instance.Get<Camera>().transform.forward);
         }
     }
 }
