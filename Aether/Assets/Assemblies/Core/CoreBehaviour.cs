@@ -9,7 +9,7 @@ namespace Aether.Core
     public abstract class CoreSystemBehaviour : MonoBehaviour
     {
         [SerializeField]
-        protected List<object> exposedObjects;
+        protected List<MonoBehaviour> exposedObjects;
 
         public T Get<T>()
         {
