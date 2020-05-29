@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98cba6879111bc548b546ca12354bc43, type: 3}
+  m_Name: Dream Level 1
+  m_EditorClassIdentifier: 
+  Name: Courtyard
+  Aspect: 1
+  Labels:
+  - PvE
+  - Tutorial
+  Description: Step through the portal and explore what the Aspect of the Dream has
+    granted you access to.
+  Sprite: {fileID: 0}
+  KeystoneCompleted: 0
+  TravelAnimation: {fileID: 7400000, guid: 2859d09fb17c3c84ca4996300bf53649, type: 2}
+  SceneBuildIndex: 2

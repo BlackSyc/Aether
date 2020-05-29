@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130831832e22fec44a4a8d8e14e96258, type: 3}
+  m_Name: Arcane Missile
+  m_EditorClassIdentifier: 
+  Name: Arcane Missile
+  Aspect: 0
+  OnlyCastOnSelf: 0
+  Description: "Shoot an arcane projectile at the target. \n\nThis projectile does
+    not deal any damage, instead it can be used to interact with many arcane entities
+    in the Aether."
+  Damage: 0
+  Heal: 0
+  GlobalAggro: 0
+  LocalAggro: 0
+  CastDuration: 1.5
+  CoolDown: 2
+  CastWhileMoving: 0
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  SpellObject: {fileID: 7392092985330359393, guid: 1c293ccebb5dd0c41b19e23051e3443c,
+    type: 3}
+  Modifiers: []
