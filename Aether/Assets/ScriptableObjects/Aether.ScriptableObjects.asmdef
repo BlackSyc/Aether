@@ -1,0 +1,15 @@
+{
+    "name": "Aether.ScriptableObjects",
+    "references": [
+        "GUID:e9b0bf49a2fcfcc4daef70665e54d9b1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
