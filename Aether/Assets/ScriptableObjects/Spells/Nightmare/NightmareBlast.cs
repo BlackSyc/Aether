@@ -1,13 +1,9 @@
-﻿using Aether.Combat.Health;
-using Aether.Combat.Impact;
-using Aether.Combat.Modifiers;
-using Aether.Combat.SpellSystem;
-using Aether.Combat.TargetSystem;
-using Aether.Core.Combat.ScriptableObjects;
+﻿using Aether.Core.Combat;
+using Aether.ScriptableObjects.Modifiers;
 using System.Collections;
 using UnityEngine;
 
-namespace Aether.Combat.SpellSystem
+namespace Aether.ScriptableObjects.Spells
 {
     internal class NightmareBlast : SpellObject
     {
@@ -32,7 +28,7 @@ namespace Aether.Combat.SpellSystem
 
         private IEnumerator Fire()
         {
-            GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, Caster.CastOrigin);
+            GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, Caster.Get<ISpellSystem>().CastOrigin);
             Destroy(muzzleFlash, muzzleFlash.GetComponent<ParticleSystem>().main.duration);
 
             yield return new WaitForSeconds(0.1f);
@@ -41,7 +37,7 @@ namespace Aether.Combat.SpellSystem
             var hitFlash = Instantiate(hitFlashPrefab, null);
 
 
-            if (Caster.CombatSystem.Has(out ITargetSystem targetSystem))
+            if (Caster.Has(out ITargetSystem targetSystem))
                 hitFlash.transform.position = targetSystem.GetCurrentTargetExact(Spell.LayerMask);
             else
                 hitFlash.transform.position = Target.Transform.Position;
@@ -49,14 +45,14 @@ namespace Aether.Combat.SpellSystem
 
 
 
-            hitFlash.transform.LookAt(Caster.CastOrigin);
+            hitFlash.transform.LookAt(Caster.Get<ISpellSystem>().CastOrigin);
             Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
 
             if (Target.Has(out IModifierSlots modifierSlots))
                 modifierSlots.AddModifier(new Modifier(modifierToApply));
 
             if (Target.Has(out IHealth health))
-                health.Damage(Spell.Damage);
+                health.ChangeHealth(Spell.HealthDelta);
 
             if (Target.Has(out IImpactHandler impactHandler))
                 impactHandler.HandleImpactAtPosition(transform.forward * 3000, hitFlash.transform.position);

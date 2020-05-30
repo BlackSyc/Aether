@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Aether.Core.Combat;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 namespace Aether.Combat.Modifiers
 {
-    internal class ModifierSlots : MonoBehaviour, IModifierSlots, Core.Combat.IModifierSlots
+    internal class ModifierSlots : MonoBehaviour, Core.Combat.IModifierSlots
     {
         public event Action<Core.Combat.IModifier> OnModifierAdded;
 

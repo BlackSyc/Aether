@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Aether.Core.Combat;
+using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Aether.Core.Combat.ScriptableObjects
+namespace Aether.ScriptableObjects.Modifiers
 {
     [CreateAssetMenu(menuName = "Scriptable Objects/Modifiers/FlameShock")]
     [Serializable]
@@ -19,9 +20,7 @@ namespace Aether.Core.Combat.ScriptableObjects
             while (true)
             {
                 if (combatSystem.Has(out IHealth health))
-                    health.Damage(damageTickAmount);
-
-                var rng = new UnityEngine.Random();
+                    health.ChangeHealth(damageTickAmount);
 
                 if (combatSystem.Has(out IImpactHandler impactHandler))
                     impactHandler.HandleImpact(new Vector3(UnityEngine.Random.Range(-1000, 1000), UnityEngine.Random.Range(800, 1000), UnityEngine.Random.Range(-1000, 1000)));

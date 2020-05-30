@@ -1,7 +1,6 @@
-﻿using Aether.Combat;
-using Aether.Core.Combat;
+﻿using Aether.Core.Combat;
 
-namespace Aether.Combat.SpellSystem
+namespace Aether.ScriptableObjects.Spells
 {
     internal class IllusionMissile : ArcaneMissile
     {

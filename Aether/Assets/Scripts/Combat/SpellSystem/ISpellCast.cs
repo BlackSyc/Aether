@@ -14,7 +14,7 @@ namespace Aether.Combat.SpellSystem
 
         ISpell Spell { get; }
 
-        ISpellSystem Caster { get; }
+        ICombatSystem Caster { get; }
 
         bool CastOnSelf { get; }
 

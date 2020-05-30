@@ -1,9 +1,10 @@
-﻿using Aether.Core.Movement;
+﻿using Aether.Core.Combat;
+using Aether.Core.Movement;
 using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Aether.Core.Combat.ScriptableObjects
+namespace Aether.ScriptableObjects.Modifiers
 {
     [CreateAssetMenu(menuName = "Scriptable Objects/Modifiers/Sprint")]
     [Serializable]

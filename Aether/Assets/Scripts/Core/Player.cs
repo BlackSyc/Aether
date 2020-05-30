@@ -26,7 +26,7 @@ namespace Aether.Core
                 levelController.GetLevelExit().TeleportToStartPlatform();
 
                 if (base.Has(out ICombatSystem combatSystem) && combatSystem.Has(out IHealth health))
-                    health.Heal(health.MaxHealth);
+                    health.ChangeHealth(health.MaxHealth);
 
             }
             else
@@ -34,7 +34,7 @@ namespace Aether.Core
                 transform.position = new Vector3(0, 1, 0);
 
                 if (base.Has(out ICombatSystem combatSystem) && combatSystem.Has(out IHealth health))
-                    health.Heal(health.MaxHealth);
+                    health.ChangeHealth(health.MaxHealth);
             }
         }
 

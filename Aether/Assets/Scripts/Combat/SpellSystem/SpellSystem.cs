@@ -1,5 +1,4 @@
-﻿using Aether.Combat.TargetSystem;
-using Aether.Core.Combat.ScriptableObjects;
+﻿using Aether.Core.Combat;
 using Aether.Core.Extensions;
 using Aether.Movement;
 using System;
@@ -72,7 +71,7 @@ namespace Aether.Combat.SpellSystem
 
         #region Public Methods
         // Tested in Editmode Tests
-        public void AddSpell(int libraryIndex, Spell spell, bool makeActive = true)
+        public void AddSpell(int libraryIndex, ISpell spell, bool makeActive = true)
         {
             EnsureSize(libraryIndex);
 
@@ -86,7 +85,7 @@ namespace Aether.Combat.SpellSystem
         }
 
         // Tested in Editmode Tests
-        public void RemoveSpell(int libraryIndex, Spell spell)
+        public void RemoveSpell(int libraryIndex, ISpell spell)
         {
             if (SpellLibraries.Length < libraryIndex - 1 || SpellLibraries[libraryIndex] == null)
                 return;
@@ -113,9 +112,9 @@ namespace Aether.Combat.SpellSystem
         // Tested in Editmode Tests
         public void CastSpell(int index)
         {
-            Spell requestedSpell = SpellLibraries[index].ActiveSpell;
+            ISpell requestedSpell = SpellLibraries[index].ActiveSpell;
 
-            if (!requestedSpell)
+            if (requestedSpell == null)
                 return;
 
             if (IsCasting)
@@ -132,7 +131,7 @@ namespace Aether.Combat.SpellSystem
                     return;
             }
 
-            if (!SpellLibraries[index].TryCast(out currentSpellCast, castOrigin, this, requestedSpell.OnlyCastOnSelf ? CombatSystem : TargetSystem.GetCurrentTarget(requestedSpell.LayerMask)))
+            if (!SpellLibraries[index].TryCast(out currentSpellCast, castOrigin, CombatSystem, requestedSpell.OnlyCastOnSelf ? CombatSystem : TargetSystem.GetCurrentTarget(requestedSpell.LayerMask)))
                 return;
 
             currentSpellCast.CastCancelled += ClearCurrentCast;

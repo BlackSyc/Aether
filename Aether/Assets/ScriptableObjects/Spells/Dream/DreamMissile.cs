@@ -1,6 +1,6 @@
-﻿using Aether.Combat.Health;
+﻿using Aether.Core.Combat;
 
-namespace Aether.Combat.SpellSystem
+namespace Aether.ScriptableObjects.Spells
 {
     internal class DreamMissile : ArcaneMissile
     {
@@ -16,7 +16,7 @@ namespace Aether.Combat.SpellSystem
         private void ExecuteTargetHitBehaviour(ICombatSystem target)
         {
             if (target.Has<IHealth>(out var targetHealth))
-                targetHealth.Heal(Spell.Heal);
+                targetHealth.ChangeHealth(Spell.HealthDelta);
         }
     }
 }

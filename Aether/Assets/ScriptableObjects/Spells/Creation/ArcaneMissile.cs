@@ -1,9 +1,7 @@
-﻿using Aether.Combat;
-using Aether.Combat.SpellSystem.SpellObjects;
-using Aether.Combat.TargetSystem;
+﻿using Aether.Core.Combat;
 using UnityEngine;
 
-namespace Aether.Combat.SpellSystem
+namespace Aether.ScriptableObjects.Spells
 {
     internal class ArcaneMissile : Projectile
     {
@@ -65,11 +63,12 @@ namespace Aether.Combat.SpellSystem
         {
             Vector3 hitPosition = transform.position;
 
-            if(Caster.CombatSystem.Has(out ITargetSystem targetSystem))
+            if(Caster.Has(out ITargetSystem targetSystem))
                 hitPosition = targetSystem.GetCurrentTargetExact(Spell.LayerMask);
 
             GameObject hitFlash = Instantiate(hitFlashPrefab, transform);
             hitFlash.transform.SetParent(null, true);
+            hitFlash.transform.position = hitPosition;
             Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
         }
 
@@ -77,7 +76,7 @@ namespace Aether.Combat.SpellSystem
         {
             GetComponent<Animator>().SetTrigger("CastFired");
 
-            GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, Caster.CastOrigin);
+            GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, Caster.Get<ISpellSystem>().CastOrigin);
             Destroy(muzzleFlash, muzzleFlash.GetComponent<ParticleSystem>().main.duration);
         }
     }

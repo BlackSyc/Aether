@@ -26,14 +26,14 @@ namespace Aether.Combat.SpellSystem
 
         public ISpell Spell { get; private set; }
 
-        public ISpellSystem Caster { get; private set; }
+        public ICombatSystem Caster { get; private set; }
 
-        public bool CastOnSelf => Target == Caster.CombatSystem;
+        public bool CastOnSelf => Target == Caster;
 
         public Transform CastOrigin { get; private set; }
         #endregion
 
-        public SpellCast(ISpell spell, Transform castOrigin, ISpellSystem caster, ICombatSystem target)
+        public SpellCast(ISpell spell, Transform castOrigin, ICombatSystem caster, ICombatSystem target)
         {
             this.Spell = spell;
             this.CastOrigin = castOrigin;
@@ -61,7 +61,7 @@ namespace Aether.Combat.SpellSystem
 
             if (Progress < 1f)
             {
-                if (!Spell.CastWhileMoving && Caster.MovementInterrupt)
+                if (!Spell.CastWhileMoving && Caster.Get<ISpellSystem>().MovementInterrupt)
                 {
                     Cancel();
                     return;
@@ -97,7 +97,7 @@ namespace Aether.Combat.SpellSystem
 
         public void Start()
         {
-            spellObject = GameObject.Instantiate(ISpell.SpellObject.gameObject, CastOrigin).GetComponent<SpellObject>();
+            spellObject = GameObject.Instantiate(Spell.SpellObject.gameObject, CastOrigin).GetComponent<SpellObject>();
 
             spellObject.Spell = Spell;
             spellObject.Caster = Caster;
@@ -111,7 +111,7 @@ namespace Aether.Combat.SpellSystem
 
         private void TriggerGlobalAggro()
         {
-            Caster.CombatSystem.TriggerGlobalAggro(Spell.GlobalAggro);
+            Caster.TriggerGlobalAggro(Spell.GlobalAggro);
         }
     }
 }

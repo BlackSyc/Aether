@@ -10,9 +10,7 @@ namespace Aether.Core.Combat
 
         event Action OnHealthObjectDestroyed;
 
-        void Heal(float heal);
-
-        void Damage(float damage);
+        void ChangeHealth(float healthDelta);
 
         float CurrentHealth { get; }
 

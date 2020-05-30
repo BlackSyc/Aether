@@ -1,4 +1,4 @@
-﻿using Aether.Core.Combat.ScriptableObjects;
+﻿using Aether.Core.Combat;
 using TMPro;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ public class SpellTooltip : MonoBehaviour
     private TextMeshProUGUI title;
 
     [SerializeField]
-    private TextMeshProUGUI damage;
+    private TextMeshProUGUI healthDelta;
 
 
     [SerializeField]
@@ -26,14 +26,10 @@ public class SpellTooltip : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI canBeCastWhileMoving;
 
-    [SerializeField]
-    private TextMeshProUGUI heal;
-
-    public void Show(Spell spell)
+    public void Show(ISpell spell)
     {
         title.text = spell.Name;
-        heal.text = spell.Heal.ToString();
-        damage.text = spell.Damage.ToString();
+        healthDelta.text = spell.HealthDelta.ToString();
         casttime.text = spell.CastDuration.ToString();
         cooldown.text = spell.CoolDown.ToString();
         description.text = spell.Description;

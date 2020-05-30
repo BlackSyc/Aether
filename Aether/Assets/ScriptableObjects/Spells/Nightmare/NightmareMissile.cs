@@ -1,9 +1,6 @@
-﻿using Aether.Combat;
-using Aether.Combat.AggroSystem;
-using Aether.Combat.Health;
-using Aether.Combat.Impact;
+﻿using Aether.Core.Combat;
 
-namespace Aether.Combat.SpellSystem
+namespace Aether.ScriptableObjects.Spells
 {
     internal class NightmareMissile : ArcaneMissile
     {
@@ -20,13 +17,13 @@ namespace Aether.Combat.SpellSystem
         private void ExecuteTargetHitBehaviour(ICombatSystem target)
         {
             if (target.Has(out IHealth health))
-                health.Damage(Spell.Damage);
+                health.ChangeHealth(Spell.HealthDelta);
 
             if (target.Has(out IAggroManager aggroManager))
-                aggroManager.IncreaseAggro(Caster.CombatSystem, Spell.LocalAggro);
+                aggroManager.IncreaseAggro(Caster, Spell.LocalAggro);
 
             if (target.Has(out IImpactHandler impactHandler))
-                impactHandler.HandleImpactAtPosition(transform.forward * Spell.Damage * 25, Target.Transform.Position + targetOffset);
+                impactHandler.HandleImpactAtPosition(transform.forward * Spell.HealthDelta * -25, Target.Transform.Position + targetOffset);
         }
     }
 }

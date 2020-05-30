@@ -1,8 +1,8 @@
-﻿using Aether.Combat.Extensions;
-using Aether.Combat.TargetSystem;
+﻿using Aether.Core.Combat;
+using Aether.Core.Combat.Extensions;
 using UnityEngine;
 
-namespace Aether.Combat.SpellSystem.SpellObjects
+namespace Aether.ScriptableObjects.Spells
 {
     [RequireComponent(typeof(Rigidbody))]
     internal abstract class Projectile : SpellObject
@@ -35,7 +35,7 @@ namespace Aether.Combat.SpellSystem.SpellObjects
             OnObstructionHit(collision.gameObject);
         }
 
-        public override void SetTarget(Core.Combat.ICombatSystem newTarget)
+        public override void SetTarget(ICombatSystem newTarget)
         {
             base.SetTarget(newTarget);
 

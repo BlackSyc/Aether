@@ -1,6 +1,5 @@
 ﻿using Aether.Core;
 using Aether.Core.Combat;
-using Aether.Core.Combat.ScriptableObjects;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -57,7 +56,7 @@ namespace Aether.UserInterface.Combat {
             playerSpellSystem.OnSpellIsCast += StartSpellCast;
         }
 
-        private void ChangeSpell(Spell spell)
+        private void ChangeSpell(ISpell spell)
         {
             if (spell == null)
             {

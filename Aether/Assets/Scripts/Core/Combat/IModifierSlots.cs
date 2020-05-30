@@ -7,5 +7,7 @@ namespace Aether.Core.Combat
         event Action<IModifier> OnModifierAdded;
 
         event Action<IModifier> OnModifierRemoved;
+
+        void AddModifier(IModifier modifier);
     }
 }

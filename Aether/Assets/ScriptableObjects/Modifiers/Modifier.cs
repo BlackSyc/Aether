@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using Aether.Core.Combat;
+using System.Collections;
 using UnityEngine;
 
-namespace Aether.Combat.Modifiers
+namespace Aether.ScriptableObjects.Modifiers
 {
-    internal class Modifier : IModifier, Core.Combat.IModifier
+    internal class Modifier : IModifier
     {
         public Core.Combat.IModifierType ModifierType { get; private set; }
 

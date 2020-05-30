@@ -2,7 +2,6 @@
 using Aether.Core.Cloaks;
 using Aether.Core.Cloaks.ScriptableObjects;
 using Aether.Core.Combat;
-using Aether.Core.Combat.ScriptableObjects;
 using UnityEngine;
 
 namespace Aether.Cloaks
@@ -14,7 +13,7 @@ namespace Aether.Cloaks
         public Cloak EquippedCloak { get; private set; } = null;
 
         [SerializeField]
-        private Spell defaultSpell;
+        private ISpell defaultSpell;
 
         public void EnableCloakPhysics()
         {

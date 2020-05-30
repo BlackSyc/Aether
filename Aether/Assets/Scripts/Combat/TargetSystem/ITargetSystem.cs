@@ -6,6 +6,6 @@ namespace Aether.Combat.TargetSystem
     {
         new ICombatSystem GetCurrentTarget(LayerMask layerMask);
 
-        Vector3 GetCurrentTargetExact(LayerMask layerMask);
+        new Vector3 GetCurrentTargetExact(LayerMask layerMask);
     }
 }

@@ -1,4 +1,4 @@
-﻿using Aether.Core.Combat.ScriptableObjects;
+﻿using Aether.Core.Combat;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,14 +11,14 @@ namespace Aether.Combat.SpellSystem
 
         #region Private Fields
         [SerializeField]
-        private Spell activeSpell = null;
+        private ISpell activeSpell = null;
 
         [SerializeField]
-        private List<Spell> library = new List<Spell>();
+        private List<ISpell> library = new List<ISpell>();
         #endregion
 
         #region Public Properties
-        public event Action<Spell> OnActiveSpellChanged;
+        public event Action<ISpell> OnActiveSpellChanged;
 
         public bool HasActiveSpell => ActiveSpell != null;
 
@@ -26,7 +26,7 @@ namespace Aether.Combat.SpellSystem
 
         public bool IsOnCoolDown => Time.time < CoolDownUntil;
 
-        public Spell ActiveSpell => activeSpell;
+        public ISpell ActiveSpell => activeSpell;
         #endregion
 
         #region Constructors
@@ -43,7 +43,7 @@ namespace Aether.Combat.SpellSystem
 
         #region Public Methods
         // Tested in Editmode Tests
-        public void Add(Spell spell, bool makeActive = true)
+        public void Add(ISpell spell, bool makeActive = true)
         {
             if (spell != null && !Contains(spell))
                 library.Add(spell);
@@ -55,13 +55,13 @@ namespace Aether.Combat.SpellSystem
         }
 
         // Tested in Editmode Tests
-        public bool Contains(Spell spell)
+        public bool Contains(ISpell spell)
         {
             return library.Contains(spell);
         }
 
         // Tested in Editmode Tests
-        public void Remove(Spell spell)
+        public void Remove(ISpell spell)
         {
             library.Remove(spell);
 
@@ -73,7 +73,7 @@ namespace Aether.Combat.SpellSystem
         }
 
         // Tested in Editmode Tests
-        public bool TryCast(out SpellCast spellCast, Transform castParent, ISpellSystem caster, ICombatSystem target)
+        public bool TryCast(out SpellCast spellCast, Transform castOrigin, ICombatSystem caster, ICombatSystem target)
         {
             spellCast = null;
 
@@ -86,7 +86,7 @@ namespace Aether.Combat.SpellSystem
             if (IsOnCoolDown)
                 return false;
 
-            SpellCast newSpellCast = new SpellCast(ActiveSpell, castParent, caster, target);
+            SpellCast newSpellCast = new SpellCast(ActiveSpell, castOrigin, caster, target);
             newSpellCast.CastComplete += SetCoolDown;
             spellCast = newSpellCast;
             return true;
@@ -99,7 +99,7 @@ namespace Aether.Combat.SpellSystem
             CoolDownUntil = Time.time + spellCast.Spell.CoolDown;
         }
 
-        private void MakeSpellActive(Spell spell)
+        private void MakeSpellActive(ISpell spell)
         {
             activeSpell = spell;
             OnActiveSpellChanged?.Invoke(ActiveSpell);

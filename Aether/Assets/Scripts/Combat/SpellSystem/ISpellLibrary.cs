@@ -14,7 +14,7 @@ namespace Aether.Combat.SpellSystem
         #endregion
 
         #region Methods
-        bool TryCast(out SpellCast spellCast, Transform castParent, ISpellSystem caster, ICombatSystem target);
+        bool TryCast(out SpellCast spellCast, Transform castParent, ICombatSystem caster, ICombatSystem target);
         #endregion
     }
 }

@@ -1,22 +1,38 @@
-﻿using System;
+﻿using Aether.Core.Combat;
+using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Aether.Core.Combat.ScriptableObjects
+namespace Aether.ScriptableObjects.Modifiers
 {
     [Serializable]
-    public abstract class ModifierType : ScriptableObject
+    public abstract class ModifierType : ScriptableObject, IModifierType
     {
-        public string Name;
+        #region Serialized fields
+        [SerializeField]
+        private string name;
 
-        public float Duration;
+        [SerializeField]
+        private float duration;
 
-        public string Description;
+        [SerializeField]
+        private string description;
 
-        public Sprite Icon;
+        [SerializeField]
+        private Sprite icon;
+        #endregion
 
+        #region Accessors
+        public string Name => name;
+        public float Duration => duration;
+        public string Description => description;
+        public Sprite Icon => icon;
+        #endregion
+
+        #region Methods
         public abstract IEnumerator modifierCoroutine(ICombatSystem combatSystem);
 
         public virtual void Abort(ICombatSystem combatSystem) { }
+        #endregion
     }
 }

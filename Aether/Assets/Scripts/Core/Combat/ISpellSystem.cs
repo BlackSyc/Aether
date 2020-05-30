@@ -4,6 +4,7 @@ using UnityEngine;
 namespace Aether.Core.Combat { 
     public interface ISpellSystem
     {
+        Transform CastOrigin { get; }
         bool HasActiveSpells { get; }
         void AddSpell(int libraryIndex, ISpell spell, bool makeActive = true);
 

@@ -1,40 +1,67 @@
-﻿using System;
+﻿using Aether.Core.Combat;
+using Aether.ScriptableObjects.Modifiers;
+using System;
 using UnityEngine;
 
 
-namespace Aether.Core.Combat.ScriptableObjects
+namespace Aether.ScriptableObjects.Spells
 {
     [CreateAssetMenu(menuName = "Scriptable Objects/Spell System/Spell")]
     [Serializable]
-    public class Spell : ScriptableObject
+    public class Spell : ScriptableObject, ISpell
     {
-        public string Name;
+        #region Serialized fields
+        [SerializeField]
+        private string name;
 
-        public Aspect Aspect;
+        [SerializeField]
+        private Aspect aspect;
 
-        public bool OnlyCastOnSelf;
+        [SerializeField]
+        private bool onlyCastOnSelf;
 
-        [TextArea(0, 10)]
-        public string Description;
+        [TextArea(0,10)]
+        [SerializeField]
+        private string description;
 
-        public float Damage;
+        [SerializeField]
+        private float healthDelta;
 
-        public float Heal;
+        [SerializeField]
+        private int globalAggro;
 
-        public int GlobalAggro;
+        [SerializeField]
+        private int localAggro;
 
-        public int LocalAggro;
+        [SerializeField]
+        private float castDuration;
 
-        public float CastDuration;
+        [SerializeField]
+        private float coolDown;
 
-        public float CoolDown;
+        [SerializeField]
+        private bool castWhileMoving;
 
-        public bool CastWhileMoving;
+        [SerializeField]
+        private LayerMask layerMask;
 
-        public LayerMask LayerMask;
+        [SerializeField]
+        private SpellObject spellObject;
+        #endregion
 
-        public ISpellObject SpellObject;
-
-        public ModifierType[] Modifiers;
+        #region Accessors
+        public string Name => name;
+        public Aspect Aspect => aspect;
+        public bool OnlyCastOnSelf => onlyCastOnSelf;
+        public string Description => description;
+        public float HealthDelta => healthDelta;
+        public int GlobalAggro => globalAggro;
+        public int LocalAggro => localAggro;
+        public float CastDuration => castDuration;
+        public float CoolDown => coolDown;
+        public bool CastWhileMoving => castWhileMoving;
+        public LayerMask LayerMask => layerMask;
+        public ISpellObject SpellObject => spellObject;
+        #endregion
     }
 }
