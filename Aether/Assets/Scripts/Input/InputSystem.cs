@@ -18,7 +18,6 @@ namespace Aether.Input
         private ActionMap defaultActionMap;
         #endregion
 
-
         #region MonoBehaviour
         private void Awake()
         {
@@ -33,6 +32,7 @@ namespace Aether.Input
 
         private void Start()
         {
+            Cursor.visible = false;
             SwitchToActionMap(defaultActionMap);
             SubscribeToInputActions();
         }
@@ -56,6 +56,9 @@ namespace Aether.Input
                     InputActions.UserInterface.Disable();
                     InputActions.PopUp.Disable();
                     CurrentActionMap = actionMap;
+
+                    Cursor.lockState = CursorLockMode.Locked;
+
                     OnActionMapSwitched?.Invoke(actionMap);
                     break;
                 case ActionMap.UserInterface:
@@ -63,6 +66,9 @@ namespace Aether.Input
                     InputActions.UserInterface.Enable();
                     InputActions.PopUp.Disable();
                     CurrentActionMap = actionMap;
+
+                    Cursor.lockState = CursorLockMode.None;
+
                     OnActionMapSwitched?.Invoke(actionMap);
                     break;
                 case ActionMap.PopUp:
@@ -70,6 +76,9 @@ namespace Aether.Input
                     InputActions.UserInterface.Disable();
                     InputActions.PopUp.Enable();
                     CurrentActionMap = actionMap;
+
+                    Cursor.lockState = CursorLockMode.None;
+
                     OnActionMapSwitched?.Invoke(actionMap);
                     break;
             }

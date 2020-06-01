@@ -13,7 +13,6 @@ namespace Aether.UserInterface.Effects {
 
         private void Update()
         {
-            Cursor.visible = false;
             if (CurrentActionMap == ActionMap.UserInterface)
                 transform.position = InputSystem.InputActions.UserInterface.MoveCursor.ReadValue<Vector2>();
 
