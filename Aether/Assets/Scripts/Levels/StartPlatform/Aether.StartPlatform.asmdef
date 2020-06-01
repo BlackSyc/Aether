@@ -2,7 +2,8 @@
     "name": "Aether.StartPlatform",
     "references": [
         "GUID:e9b0bf49a2fcfcc4daef70665e54d9b1",
-        "GUID:8d0f848ccc17ade45a7668cfda43214b"
+        "GUID:8d0f848ccc17ade45a7668cfda43214b",
+        "GUID:c68bd6e5bc564ba41b94612682f9b9fe"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

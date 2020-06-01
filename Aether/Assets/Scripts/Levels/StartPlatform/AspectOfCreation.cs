@@ -4,6 +4,7 @@ using Aether.Core.Dialog.ScriptableObjects;
 using Aether.Core.Interaction;
 using Aether.Core.Tutorial;
 using Aether.Input;
+using Aether.ScriptableObjects.Spells;
 using System;
 using UnityEngine;
 

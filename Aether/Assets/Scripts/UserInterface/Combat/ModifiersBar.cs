@@ -30,6 +30,9 @@ namespace Aether.UserInterface.Combat
 
         private void OnDestroy()
         {
+            if (modifierSlots == null)
+                return;
+
             modifierSlots.OnModifierAdded -= AddModifierIcon;
             modifierSlots.OnModifierRemoved -= RemoveModifierIcon;
         }
