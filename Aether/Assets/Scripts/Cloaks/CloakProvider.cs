@@ -2,71 +2,60 @@
 using Aether.Core.Cloaks;
 using Aether.Core.Cloaks.ScriptableObjects;
 using Aether.Core.Interaction;
-using System.Collections;
 using UnityEngine;
 
-internal class CloakProvider : MonoBehaviour, ICloakProvider
+namespace Aether.Cloaks
 {
-    [SerializeField]
-    private float showDelay = 4;
-
-    [SerializeField]
-    private GameObject cloakObject;
-
-    [SerializeField]
-    private Cloak cloak;
-
-    public Cloak Cloak => cloak;
-
-    public void Equip()
+    [RequireComponent(typeof(IInteractable))]
+    internal class CloakProvider : MonoBehaviour, ICloakProvider
     {
-        Player.Instance.Get<IShoulder>().EquipCloak(cloak);
-        CheckEquip(cloak);
-    }
+        
+        [SerializeField]
+        private GameObject cloakObject;
 
-    public void Interact(IInteractor interactor, IInteractable interactable)
-    {
-        Aether.Core.Cloaks.Events.Interact(this);
-    }
+        [SerializeField]
+        private Cloak cloak;
 
-    public void Unequip()
-    {
-        Player.Instance.Get<IShoulder>().UnequipCloak();
-        CheckEquip(cloak);
-    }
+        private IInteractable _interactable;
 
-    private void Start()
-    {
-        Aether.Core.Cloaks.Events.OnCloakEquipped += CheckEquip;
-        Aether.Core.Cloaks.Events.OnCloakUnequipped += CheckEquip;
-        StartCoroutine(ShowAfter(showDelay));
-    }
+        public Cloak Cloak => cloak;
 
-    private void CheckEquip(Cloak cloak)
-    {
-        if (cloak != Cloak)
-            return;
-
-        if (Cloak.IsEquipped)
+        public void Equip()
         {
-            cloakObject.SetActive(false);
+            Player.Instance.Get<IShoulder>().EquipCloak(cloak);
+            CheckEquip(cloak);
         }
-        else
+
+        public void Unequip()
         {
-            cloakObject.SetActive(true);
+            Player.Instance.Get<IShoulder>().UnequipCloak();
+            CheckEquip(cloak);
         }
-    }
 
-    private IEnumerator ShowAfter(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        cloakObject.SetActive(true);
-        GetComponent<IInteractable>().IsActive = true;
-    }
+        private void Awake()
+        {
+            _interactable = GetComponent<IInteractable>();
+        }
 
-    private void OnDestroy()
-    {
-        Aether.Core.Cloaks.Events.OnCloakEquipped -= CheckEquip;
-        Aether.Core.Cloaks.Events.OnCloakUnequipped -= CheckEquip;
+        private void Start()
+        {
+            Core.Cloaks.Events.OnCloakEquipped += CheckEquip;
+            Core.Cloaks.Events.OnCloakUnequipped += CheckEquip;
+        }
+
+        private void CheckEquip(Cloak cloak)
+        {
+            if (cloak != Cloak)
+                return;
+
+            cloakObject.SetActive(Cloak.IsEquipped);
+            _interactable.IsActive = Cloak.IsEquipped;
+        }
+
+        private void OnDestroy()
+        {
+            Core.Cloaks.Events.OnCloakEquipped -= CheckEquip;
+            Core.Cloaks.Events.OnCloakUnequipped -= CheckEquip;
+        }
     }
 }

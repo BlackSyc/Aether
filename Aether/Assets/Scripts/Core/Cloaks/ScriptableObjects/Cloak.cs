@@ -34,9 +34,12 @@ namespace Aether.Core.Cloaks.ScriptableObjects
             State.CloakObject = GameObject.Instantiate(cloakPrefab, parent);
             State.CloakObject.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[] { parent.GetComponent<CapsuleCollider>() };
 
-            for (int i = 0; i < Spells.Length; i++)
+            if (Spells != null)
             {
-                parent.GetComponent<ICombatSystem>().Get<ISpellSystem>()?.AddSpell(i, Spells[i]);
+                for (int i = 0; i < Spells.Length; i++)
+                {
+                    parent.GetComponent<ICombatSystem>().Get<ISpellSystem>()?.AddSpell(i, Spells[i]);
+                }
             }
 
             Events.CloakEquipped(this);

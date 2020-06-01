@@ -18,7 +18,20 @@ namespace Aether.Interaction
         public Interaction Interaction;
         public InteractionProposition InteractionProposition;
 
-        public bool IsActive { get; set; } = true;
+        [SerializeField]
+        private bool isActive = true;
+
+        public bool IsActive
+        {
+            get
+            {
+                return isActive;
+            }
+            set
+            {
+                isActive = value;
+            }
+        }
 
         public string InteractionMessage { get; set; } = "to interact";
 

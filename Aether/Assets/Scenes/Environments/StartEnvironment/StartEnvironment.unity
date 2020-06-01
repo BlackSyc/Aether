@@ -711,6 +711,7 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
+  isActive: 1
 --- !u!64 &166853695
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -815,6 +816,7 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
+  isActive: 1
 --- !u!65 &169073594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1996,6 +1998,7 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
+  isActive: 1
 --- !u!1 &543217669
 GameObject:
   m_ObjectHideFlags: 0
@@ -4566,9 +4569,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 984577802}
-  - component: {fileID: 984577803}
   - component: {fileID: 984577805}
   - component: {fileID: 984577804}
+  - component: {fileID: 984577806}
+  - component: {fileID: 984577803}
   m_Layer: 8
   m_Name: NightmareCloakObjectParent
   m_TagString: Untagged
@@ -4600,9 +4604,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 984577801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bad72725fbd77c4f946626501b07354, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fa673bacb7854643b41bbd6a10e9e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cloakWindowPrefab: {fileID: 1223293640570812576, guid: ccf5201339bfc3f40949cfdcc5bd9033,
+    type: 3}
+  uiContainer: 0
 --- !u!135 &984577804
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4632,8 +4639,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 984577803}
-        m_MethodName: Interact
-        m_Mode: 0
+        m_MethodName: OpenWindow
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4645,6 +4652,21 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
+  isActive: 1
+--- !u!114 &984577806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984577801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d454e6c9d562049a13dc925ef89af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloakObject: {fileID: 8296172668811736711}
+  cloak: {fileID: 11400000, guid: 295d88bd32d50fe4c917a850ff342795, type: 2}
 --- !u!1 &1023740290
 GameObject:
   m_ObjectHideFlags: 0
@@ -5189,6 +5211,7 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
+  isActive: 1
 --- !u!64 &1145111864
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5357,6 +5380,7 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
+  isActive: 1
 --- !u!64 &1183359036
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5960,6 +5984,7 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
+  isActive: 1
 --- !u!1001 &1310688951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6613,9 +6638,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1383274263}
-  - component: {fileID: 1383274264}
   - component: {fileID: 1383274266}
   - component: {fileID: 1383274265}
+  - component: {fileID: 1383274267}
+  - component: {fileID: 1383274264}
   m_Layer: 8
   m_Name: IllusionCloakObjectParent
   m_TagString: Untagged
@@ -6647,9 +6673,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1383274262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bad72725fbd77c4f946626501b07354, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fa673bacb7854643b41bbd6a10e9e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cloakWindowPrefab: {fileID: 1223293640570812576, guid: ccf5201339bfc3f40949cfdcc5bd9033,
+    type: 3}
+  uiContainer: 0
 --- !u!135 &1383274265
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6679,8 +6708,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1383274264}
-        m_MethodName: Interact
-        m_Mode: 0
+        m_MethodName: OpenWindow
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6692,6 +6721,21 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
+  isActive: 1
+--- !u!114 &1383274267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383274262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d454e6c9d562049a13dc925ef89af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloakObject: {fileID: 8296172667479919017}
+  cloak: {fileID: 11400000, guid: 1909c5330ac9b544aaba2db58c6e728f, type: 2}
 --- !u!1 &1391093069
 GameObject:
   m_ObjectHideFlags: 0
@@ -9455,9 +9499,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1897496756}
-  - component: {fileID: 1897496757}
   - component: {fileID: 1897496759}
   - component: {fileID: 1897496758}
+  - component: {fileID: 1897496760}
+  - component: {fileID: 1897496757}
   m_Layer: 8
   m_Name: DreamCloakObjectParent
   m_TagString: Untagged
@@ -9489,9 +9534,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1897496755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bad72725fbd77c4f946626501b07354, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fa673bacb7854643b41bbd6a10e9e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cloakWindowPrefab: {fileID: 1223293640570812576, guid: ccf5201339bfc3f40949cfdcc5bd9033,
+    type: 3}
+  uiContainer: 0
 --- !u!135 &1897496758
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9521,8 +9569,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1897496757}
-        m_MethodName: Interact
-        m_Mode: 0
+        m_MethodName: OpenWindow
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9534,6 +9582,21 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
+  isActive: 1
+--- !u!114 &1897496760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897496755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d454e6c9d562049a13dc925ef89af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloakObject: {fileID: 8296172668577484685}
+  cloak: {fileID: 11400000, guid: 4480b7999006e7341a7ebdd21e95d8ed, type: 2}
 --- !u!1 &1903216089 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4417447442426439750, guid: 7c44200e7d6ffb449b36428877eb5969,
@@ -9737,6 +9800,7 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
+  isActive: 1
 --- !u!1 &1955008806
 GameObject:
   m_ObjectHideFlags: 0
@@ -9815,6 +9879,7 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
+  isActive: 1
 --- !u!1 &1970733420
 GameObject:
   m_ObjectHideFlags: 0
@@ -10680,6 +10745,7 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
+  isActive: 1
 --- !u!23 &64037983504638148
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14271,7 +14337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8296172668577484685
 GameObject:
   m_ObjectHideFlags: 0
@@ -14289,7 +14355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8296172668811736711
 GameObject:
   m_ObjectHideFlags: 0
@@ -14307,7 +14373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!137 &8296172668811736714
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0

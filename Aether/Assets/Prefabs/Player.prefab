@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CombatSystem: {fileID: 0}
-  defaultSpell: {fileID: 0}
 --- !u!1 &476305285128632751
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,21 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castOrigin: {fileID: 0}
-  preFillOnAwake:
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
-  - activeSpell: {fileID: 0}
-    library: []
+  preFillOnAwake: []
 --- !u!114 &476305285128632753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +226,8 @@ MonoBehaviour:
   - {fileID: 5290570444391088140}
   - {fileID: 5719890184045665918}
   - {fileID: 476305286454964141}
+  - {fileID: 0}
+  - {fileID: 476305285026207482}
 --- !u!114 &5719890184045665918
 MonoBehaviour:
   m_ObjectHideFlags: 0

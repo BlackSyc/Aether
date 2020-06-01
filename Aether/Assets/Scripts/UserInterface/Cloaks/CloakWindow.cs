@@ -27,51 +27,39 @@ namespace Aether.UserInterface.Cloaks
         [SerializeField]
         private GameObject window;
 
-        private void Start()
+        private ICloakProvider _cloakProvider;
+
+        private CloakProviderUILink _uiLink;
+
+        public CloakWindow Link(CloakProviderUILink uiLink)
         {
-            Events.OnInteract += ShowCloakWindow;
+            _uiLink = uiLink;
+            _cloakProvider = _uiLink.CloakProvider;
+            return this;
         }
 
-        private void ShowCloakWindow(ICloakProvider cloakProvider)
+        public CloakWindow Build()
         {
-            header.text = cloakProvider.Cloak.Name;
-            keywords.text = cloakProvider.Cloak.Keywords;
-            content.text = cloakProvider.Cloak.Description;
+            header.text = _cloakProvider.Cloak.Name;
+            keywords.text = _cloakProvider.Cloak.Keywords;
+            content.text = _cloakProvider.Cloak.Description;
 
-            if (!cloakProvider.Cloak.IsEquipped)
+            if (!_cloakProvider.Cloak.IsEquipped)
             {
-                equipButton.onClick.AddListener(() =>
-                {
-                    cloakProvider.Equip();
-                    CloseWindow();
-                });
+                equipButton.onClick.AddListener(() => _cloakProvider.Equip());
                 equipButtonText.text = "Equip";
             }
             else
             {
-                equipButton.onClick.AddListener(() =>
-                {
-                    cloakProvider.Unequip();
-                    CloseWindow();
-                });
+                equipButton.onClick.AddListener(() => _cloakProvider.Unequip());
                 equipButtonText.text = "Unequip";
             }
-
-            InputSystem.SwitchToActionMap(ActionMap.PopUp);
-            window.SetActive(true);
+            return this;
         }
 
-        private void CloseWindow()
+        public void RequestCloseWindow()
         {
-            equipButton.onClick.RemoveAllListeners();
-            window.SetActive(false);
-            InputSystem.SwitchToActionMap(ActionMap.Player);
-        }
-
-        public void ClosePopup()
-        {
-            if (window.activeSelf)
-                CloseWindow();
+            _uiLink.CloseWindow();
         }
     }
 }
