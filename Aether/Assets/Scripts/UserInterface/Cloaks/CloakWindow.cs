@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Aether.Core.Cloaks;
 using Aether.Input;
+using Aether.Core;
 
 namespace Aether.UserInterface.Cloaks
 {
@@ -44,7 +45,8 @@ namespace Aether.UserInterface.Cloaks
             keywords.text = _cloakProvider.Cloak.Keywords;
             content.text = _cloakProvider.Cloak.Description;
 
-            if (!_cloakProvider.Cloak.IsEquipped)
+            bool playerEquipped = Player.Instance.Get<IShoulder>().EquippedCloak == _cloakProvider.Cloak;
+            if (!playerEquipped)
             {
                 equipButton.onClick.AddListener(() => _cloakProvider.Equip());
                 equipButtonText.text = "Equip";

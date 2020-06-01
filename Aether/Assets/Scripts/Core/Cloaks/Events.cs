@@ -1,6 +1,4 @@
-﻿using Aether.Core.Cloaks;
-using Aether.Core.Cloaks.ScriptableObjects;
-using System;
+﻿using System;
 
 namespace Aether.Core.Cloaks
 {
@@ -13,15 +11,15 @@ namespace Aether.Core.Cloaks
             OnInteract?.Invoke(cloakObject);
         }
 
-        public static event Action<Cloak> OnCloakEquipped;
-        public static event Action<Cloak> OnCloakUnequipped;
+        public static event Action<ICloak> OnCloakEquipped;
+        public static event Action<ICloak> OnCloakUnequipped;
 
-        public static void CloakUnequipped(Cloak cloakInfo)
+        public static void CloakUnequipped(ICloak cloakInfo)
         {
             OnCloakUnequipped?.Invoke(cloakInfo);
         }
 
-        public static void CloakEquipped(Cloak cloakInfo)
+        public static void CloakEquipped(ICloak cloakInfo)
         {
             OnCloakEquipped?.Invoke(cloakInfo);
         }

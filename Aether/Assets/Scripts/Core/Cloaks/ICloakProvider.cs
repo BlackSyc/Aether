@@ -1,10 +1,8 @@
-﻿using Aether.Core.Cloaks.ScriptableObjects;
-
-namespace Aether.Core.Cloaks
+﻿namespace Aether.Core.Cloaks
 {
     public interface ICloakProvider
     {
-        Cloak Cloak { get; }
+        ICloak Cloak { get; }
 
         void Equip();
 

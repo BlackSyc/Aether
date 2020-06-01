@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2868120797459138798}
   - component: {fileID: 2673095067969104084}
-  - component: {fileID: -5214996593726541444}
   - component: {fileID: 8281676102294170187}
   - component: {fileID: 630312243085508423}
+  - component: {fileID: 1572924205344233637}
   m_Layer: 0
   m_Name: Illusion Missile
   m_TagString: Untagged
@@ -54,26 +54,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-5214996593726541444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3282706551129572718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22cd16df964446a46ba0b0706835959c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spell: {fileID: 0}
-  movementSpeed: 20
-  rotationSpeed: 500
-  maxLifeTime: 10
-  muzzleFlashPrefab: {fileID: 1746341381902864788, guid: 166265a9ba620ad4da1db7bb4736fb63,
-    type: 3}
-  hitFlashPrefab: {fileID: 1746341381902864788, guid: f95fa7895b85c884da7ed7a12d0ab072,
-    type: 3}
 --- !u!54 &8281676102294170187
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -103,6 +83,23 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1572924205344233637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282706551129572718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef111698a48a3624fa9c32c4829a6e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 20
+  rotationSpeed: 500
+  maxLifeTime: 10
+  muzzleFlashPrefab: {fileID: 0}
+  hitFlashPrefab: {fileID: 0}
 --- !u!1 &5332106631852866202
 GameObject:
   m_ObjectHideFlags: 0

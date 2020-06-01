@@ -440,9 +440,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2868120797459138798}
   - component: {fileID: 2673095067969104084}
-  - component: {fileID: 7103763123758175158}
   - component: {fileID: 576957689435888325}
   - component: {fileID: 477334973183129688}
+  - component: {fileID: 6870795445100772806}
   m_Layer: 0
   m_Name: Nightmare Missile
   m_TagString: Untagged
@@ -487,26 +487,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7103763123758175158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3282706551129572718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf546563a27bc7644ad926def4932036, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spell: {fileID: 11400000, guid: b03ca272dc6d5e2448a9d427189b546c, type: 2}
-  movementSpeed: 20
-  rotationSpeed: 500
-  maxLifeTime: 10
-  muzzleFlashPrefab: {fileID: 1746341381902864788, guid: 2b8b562bbfd00174fb08d9b70616a0c6,
-    type: 3}
-  hitFlashPrefab: {fileID: 1746341381902864788, guid: d844bce2236b1744ba25ac8bbf3b29c5,
-    type: 3}
 --- !u!135 &576957689435888325
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -536,6 +516,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6870795445100772806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282706551129572718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aead59da3ba1f0440bbf9b5e3a75685c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 20
+  rotationSpeed: 500
+  maxLifeTime: 10
+  muzzleFlashPrefab: {fileID: 1746341381902864788, guid: 2b8b562bbfd00174fb08d9b70616a0c6,
+    type: 3}
+  hitFlashPrefab: {fileID: 1746341381902864788, guid: d844bce2236b1744ba25ac8bbf3b29c5,
+    type: 3}
 --- !u!1 &3579406333838031550
 GameObject:
   m_ObjectHideFlags: 0

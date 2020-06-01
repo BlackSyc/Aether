@@ -1,6 +1,5 @@
 ﻿using Aether.Core;
 using Aether.Core.Cloaks;
-using Aether.Core.Cloaks.ScriptableObjects;
 using Aether.Core.Companion;
 using System;
 using UnityEngine;
@@ -25,7 +24,7 @@ namespace Aether.Combat
                 OnCompanionRemoved?.Invoke();
             }
         }
-        private Cloak equippedCloak;
+        private ICloak equippedCloak;
 
         private void Start()
         {
@@ -35,7 +34,7 @@ namespace Aether.Combat
             Aether.Core.Cloaks.Events.OnCloakUnequipped += CloakUnequipped;
         }
 
-        private void CloakUnequipped(Cloak cloak)
+        private void CloakUnequipped(ICloak cloak)
         {
             if (cloak == equippedCloak)
             {

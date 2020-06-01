@@ -1,6 +1,5 @@
 ﻿using Aether.Combat;
 using Aether.Core.Cloaks;
-using Aether.Core.Cloaks.ScriptableObjects;
 using Aether.Core.Combat;
 using UnityEngine;
 
@@ -10,7 +9,9 @@ namespace Aether.Cloaks
     {
         public CombatSystem CombatSystem;
 
-        public Cloak EquippedCloak { get; private set; } = null;
+        public ICloak EquippedCloak { get; private set; } = null;
+
+        private GameObject equippedCloakObject;
 
         [SerializeField]
         private ISpell defaultSpell;
@@ -31,21 +32,36 @@ namespace Aether.Cloaks
             transform.GetChild(0).GetComponent<Cloth>().enabled = false;
         }
 
-        public void EquipCloak(Cloak cloak)
+        public void EquipCloak(ICloak cloak)
         {
             if (EquippedCloak != null)
                 UnequipCloak();
 
+            equippedCloakObject = Instantiate(cloak.CloakPrefab, transform);
+            equippedCloakObject.GetComponent<Cloth>().capsuleColliders = new CapsuleCollider[] { GetComponent<CapsuleCollider>() };
+
+            if (cloak.Spells != null)
+            {
+                for (int i = 0; i < cloak.Spells.Length; i++)
+                {
+                    ISpellSystem spellSystem = CombatSystem.Get<ISpellSystem>();
+                    spellSystem.AddSpell(i, cloak.Spells[i]);
+                    CombatSystem.Get<ISpellSystem>()?.AddSpell(i, cloak.Spells[i]);
+                }
+            }
+
+            
             EquippedCloak = cloak;
-            cloak.Equip(transform);
+            Events.CloakEquipped(cloak);
         }
 
         public void UnequipCloak()
         {
             var cloak = EquippedCloak;
             EquippedCloak = null;
-            cloak?.Unequip();
             CombatSystem.Get<ISpellSystem>().AddSpell(0, defaultSpell);
+
+            Events.CloakUnequipped(cloak);
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Aether.Core.Cloaks;
-using Aether.Core.Cloaks.ScriptableObjects;
 using System;
 using UnityEngine;
 
@@ -35,7 +34,7 @@ namespace Aether.Core.SceneManagement
             IShoulder playerShoulder = Player.Instance.Get<IShoulder>();
             CharacterController playerCharController = Player.Instance.Get<CharacterController>();
 
-            Cloak equippedCloak = playerShoulder.EquippedCloak;
+            ICloak equippedCloak = playerShoulder.EquippedCloak;
             playerShoulder.UnequipCloak();
             playerCharController.enabled = false;
             Player.Instance.transform.position = ExitPoint.position;

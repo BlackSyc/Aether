@@ -2,7 +2,8 @@
     "name": "Aether.Cloaks",
     "references": [
         "GUID:5d9a7a294315c4b4fa4d3bad2d048a77",
-        "GUID:e9b0bf49a2fcfcc4daef70665e54d9b1"
+        "GUID:e9b0bf49a2fcfcc4daef70665e54d9b1",
+        "GUID:c68bd6e5bc564ba41b94612682f9b9fe"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

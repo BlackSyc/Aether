@@ -1,7 +1,8 @@
 ﻿using Aether.Core;
 using Aether.Core.Cloaks;
-using Aether.Core.Cloaks.ScriptableObjects;
+using Aether.Core.Combat;
 using Aether.Core.Interaction;
+using Aether.ScriptableObjects.Cloaks;
 using UnityEngine;
 
 namespace Aether.Cloaks
@@ -18,7 +19,7 @@ namespace Aether.Cloaks
 
         private IInteractable _interactable;
 
-        public Cloak Cloak => cloak;
+        public ICloak Cloak => cloak;
 
         public void Equip()
         {
@@ -43,13 +44,13 @@ namespace Aether.Cloaks
             Core.Cloaks.Events.OnCloakUnequipped += CheckEquip;
         }
 
-        private void CheckEquip(Cloak cloak)
+        private void CheckEquip(ICloak cloak)
         {
             if (cloak != Cloak)
                 return;
 
-            cloakObject.SetActive(Cloak.IsEquipped);
-            _interactable.IsActive = Cloak.IsEquipped;
+            var playerEquipped = Player.Instance.Get<IShoulder>().EquippedCloak;
+            cloakObject.SetActive(playerEquipped == cloak);
         }
 
         private void OnDestroy()

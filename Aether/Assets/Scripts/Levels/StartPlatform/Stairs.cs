@@ -1,6 +1,6 @@
 ﻿using Aether.Assets.Assemblies.Core.Items;
 using Aether.Core;
-using Aether.Core.Cloaks.ScriptableObjects;
+using Aether.Core.Cloaks;
 using Aether.Core.Interaction;
 using Aether.Core.Items.ScriptableObjects;
 using UnityEngine;
@@ -33,7 +33,7 @@ namespace Aether.StartPlatform
             Core.Cloaks.Events.OnCloakUnequipped += CloakUnequipped;
         }
 
-        private void CloakEquipped(Cloak cloakInfo)
+        private void CloakEquipped(ICloak cloakInfo)
         {
             if (cloakInfo.Aspect.Equals(aspect))
             {
@@ -42,7 +42,7 @@ namespace Aether.StartPlatform
             }
         }
 
-        private void CloakUnequipped(Cloak cloakInfo)
+        private void CloakUnequipped(ICloak cloakInfo)
         {
             if (cloakInfo.Aspect.Equals(aspect))
             {

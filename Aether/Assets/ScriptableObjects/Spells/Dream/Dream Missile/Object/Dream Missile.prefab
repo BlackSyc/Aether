@@ -440,9 +440,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2868120797459138798}
   - component: {fileID: 2673095067969104084}
-  - component: {fileID: 1332817021308259537}
   - component: {fileID: 6688408730264888434}
   - component: {fileID: 9141536734902928725}
+  - component: {fileID: 6397507693921730528}
   m_Layer: 0
   m_Name: Dream Missile
   m_TagString: Untagged
@@ -487,26 +487,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1332817021308259537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3282706551129572718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfc63db5915d7904ea8b0e283bdc1fb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spell: {fileID: 0}
-  movementSpeed: 20
-  rotationSpeed: 500
-  maxLifeTime: 10
-  muzzleFlashPrefab: {fileID: 1746341381902864788, guid: 166265a9ba620ad4da1db7bb4736fb63,
-    type: 3}
-  hitFlashPrefab: {fileID: 1746341381902864788, guid: 4a65f991ed88b1c4ca30dfff3e67bc12,
-    type: 3}
 --- !u!135 &6688408730264888434
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -536,6 +516,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6397507693921730528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282706551129572718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 276ab45336c2a9b43a7b9499c5fc5a1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 20
+  rotationSpeed: 500
+  maxLifeTime: 10
+  muzzleFlashPrefab: {fileID: 1746341381902864788, guid: 166265a9ba620ad4da1db7bb4736fb63,
+    type: 3}
+  hitFlashPrefab: {fileID: 1746341381902864788, guid: 4a65f991ed88b1c4ca30dfff3e67bc12,
+    type: 3}
 --- !u!1 &3579406333838031550
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,22 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 130831832e22fec44a4a8d8e14e96258, type: 3}
-  m_Name: Dream Missile
+  m_Script: {fileID: 11500000, guid: 5d96818dbabae504c95b59b457801f5c, type: 3}
+  m_Name: Nightmare Blast
   m_EditorClassIdentifier: 
-  Name: 
-  Aspect: 0
-  OnlyCastOnSelf: 0
-  Description: 
-  Damage: 0
-  Heal: 0
-  GlobalAggro: 0
-  LocalAggro: 0
-  CastDuration: 0
-  CoolDown: 0
-  CastWhileMoving: 0
-  LayerMask:
+  name: 
+  aspect: 0
+  onlyCastOnSelf: 0
+  description: 
+  healthDelta: 0
+  globalAggro: 0
+  localAggro: 0
+  castDuration: 0
+  coolDown: 0
+  castWhileMoving: 0
+  layerMask:
     serializedVersion: 2
     m_Bits: 0
-  SpellObject: {fileID: 0}
-  Modifiers: []
+  spellObject: {fileID: 0}
