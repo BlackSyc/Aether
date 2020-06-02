@@ -12,14 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79012654c50abd047ae1b21e8dcb97cd, type: 3}
   m_Name: Illusion
   m_EditorClassIdentifier: 
-  Name: Illusionists' Cloak
-  Aspect: 2
-  Colour: {r: 0.34242615, g: 0.8759928, b: 0.8962264, a: 1}
-  Keywords: Controlling - Cunning - Confusing
-  Description: A trick from The Illusion, Aspect of the Aether. Lorem ipsum dolor
-    sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-    et dolore magna aliqua.
-  Spells:
-  - {fileID: 0}
+  name: Illusionists' Cloak
+  aspect: 0
+  colour: {r: 0, g: 0, b: 0, a: 0}
+  keywords: Controlling - Cunning - Confusing
+  description: A trick from The Illusion, Aspect of the Aether.
+  spells: []
   cloakPrefab: {fileID: 1511576211006047054, guid: 45a40a93d20b86d449b30955a6caf6af,
     type: 3}

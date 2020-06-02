@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 046f1a73255080f4cad7465ed46cf416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castOrigin: {fileID: 0}
-  preFillOnAwake: []
+  castOrigin: {fileID: 476305285402853955}
+  spellLibraries: []
 --- !u!114 &476305285128632753
 MonoBehaviour:
   m_ObjectHideFlags: 0

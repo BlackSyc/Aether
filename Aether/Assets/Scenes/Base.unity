@@ -1426,9 +1426,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 219592343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c3004306be2d594c998f6ebc89ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellLibraryIndex: 0
+  mainPanel: {fileID: 1204156573}
+  text: {fileID: 490953791}
+  castBar: {fileID: 151136571}
+  keybindAnimation: {fileID: 0}
+  spellTooltip: {fileID: 1241062268}
 --- !u!1 &223481061
 GameObject:
   m_ObjectHideFlags: 0
@@ -7075,9 +7081,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1241062266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 779bbc230aac94141a04e18a0a496673, type: 3}
+  m_Script: {fileID: 11500000, guid: 7595d44ee60e48e43804bf1790789c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  title: {fileID: 1730270553}
+  healthDelta: {fileID: 129245233}
+  casttime: {fileID: 1142504619}
+  cooldown: {fileID: 654452176}
+  description: {fileID: 1305495227}
+  canBeCastWhileMoving: {fileID: 1821152951}
 --- !u!1 &1259307575
 GameObject:
   m_ObjectHideFlags: 0
@@ -11337,12 +11349,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1919120305 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 476305285402853955, guid: 95de18f87247a4a42b1fb474a0bcf609,
-    type: 3}
-  m_PrefabInstance: {fileID: 476305284923640291}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923515436
 GameObject:
   m_ObjectHideFlags: 0
@@ -12939,11 +12945,6 @@ PrefabInstance:
       propertyPath: preFillOnAwake.Array.data[1].activeSpell
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 8931568597856155357, guid: 95de18f87247a4a42b1fb474a0bcf609,
-        type: 3}
-      propertyPath: castOrigin
-      value: 
-      objectReference: {fileID: 1919120305}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95de18f87247a4a42b1fb474a0bcf609, type: 3}
 --- !u!1001 &1786569466199326967

@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79012654c50abd047ae1b21e8dcb97cd, type: 3}
   m_Name: Nightmare
   m_EditorClassIdentifier: 
-  name: Nightmare Blast
+  name: Shroud of Nightmares
   aspect: 3
-  colour: {r: 0, g: 0, b: 0, a: 0}
-  keywords: 
-  description: 
+  colour: {r: 0.735849, g: 0, b: 0, a: 0}
+  keywords: Forcing - Breaking - Devastating
+  description: A request from the Aspect of Nightmare.
   spells:
+  - {fileID: 11400000, guid: b03ca272dc6d5e2448a9d427189b546c, type: 2}
   - {fileID: 11400000, guid: ce24bd7d267544b478698e3874a1749a, type: 2}
+  - {fileID: 11400000, guid: d4a4e5adc9674ac4bb5f9a4fbf6e0713, type: 2}
   cloakPrefab: {fileID: 1511576211006047054, guid: 9fd8a3fd315a3be4a8142d4122d0c2dc,
     type: 3}

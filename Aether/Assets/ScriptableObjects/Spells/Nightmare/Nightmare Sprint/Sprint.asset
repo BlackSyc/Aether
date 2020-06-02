@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d96818dbabae504c95b59b457801f5c, type: 3}
   m_Name: Sprint
   m_EditorClassIdentifier: 
-  name: 
-  aspect: 0
-  onlyCastOnSelf: 0
-  description: 
+  name: Sprint
+  aspect: 3
+  onlyCastOnSelf: 1
+  description: Increases your movement speed by 5 for 5 seconds.
   healthDelta: 0
   globalAggro: 0
   localAggro: 0
   castDuration: 0
-  coolDown: 0
+  coolDown: 10
   castWhileMoving: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
-  spellObject: {fileID: 0}
+    m_Bits: 2048
+  spellObject: {fileID: 5576310166460583981, guid: ec697dcf2c85552469e8288acae7f170,
+    type: 3}

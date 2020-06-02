@@ -12,17 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d96818dbabae504c95b59b457801f5c, type: 3}
   m_Name: Nightmare Blast
   m_EditorClassIdentifier: 
-  name: 
-  aspect: 0
+  name: Nightmare Blast
+  aspect: 3
   onlyCastOnSelf: 0
-  description: 
-  healthDelta: 0
+  description: 'Instantly blast an enemy target with 100 damage.
+
+
+    Secondary
+    effect:
+
+    Leaves a Flame Shock on the target, dealing 20 damage every second
+    for 5 seconds.'
+  healthDelta: 100
   globalAggro: 0
-  localAggro: 0
+  localAggro: 10
   castDuration: 0
-  coolDown: 0
-  castWhileMoving: 0
+  coolDown: 3
+  castWhileMoving: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  spellObject: {fileID: 0}
+  spellObject: {fileID: 6118792434820047554, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
+    type: 3}

@@ -17,8 +17,7 @@ namespace Aether.Combat.SpellSystem
         private Transform castOrigin = null;
 
         [SerializeField]
-        private SpellLibrary[] preFillOnAwake = new SpellLibrary[0];
-
+        private SpellLibrary[] spellLibraries;
 
         private SpellCast currentSpellCast;
 
@@ -29,7 +28,8 @@ namespace Aether.Combat.SpellSystem
         public event Action<Core.Combat.ISpellLibrary> OnActiveSpellChanged;
         public event Action<Core.Combat.ISpellCast> OnSpellIsCast;
 
-        public ISpellLibrary[] SpellLibraries { get; private set; }
+        public ISpellLibrary[] SpellLibraries => spellLibraries;
+
         public Transform CastOrigin => castOrigin;
 
         public bool IsCasting => currentSpellCast != null;
@@ -50,8 +50,6 @@ namespace Aether.Combat.SpellSystem
             CombatSystem = GetComponent<ICombatSystem>();
             movementSystem = GetComponent<IMovementSystem>();
 
-            SpellLibraries = new ISpellLibrary[preFillOnAwake.Length];
-            Array.Copy(preFillOnAwake, 0, SpellLibraries, 0, preFillOnAwake.Length);
             SpellLibraries.ForEach(x => x.OnActiveSpellChanged += _ => OnActiveSpellChanged?.Invoke(x));
         }
 
@@ -75,13 +73,13 @@ namespace Aether.Combat.SpellSystem
         {
             EnsureSize(libraryIndex);
 
-            if (SpellLibraries[libraryIndex] == null)
+            if (spellLibraries[libraryIndex] == null)
             {
-                SpellLibraries[libraryIndex] = new SpellLibrary();
-                SpellLibraries[libraryIndex].OnActiveSpellChanged += _ => OnActiveSpellChanged?.Invoke(SpellLibraries[libraryIndex]);
+                spellLibraries[libraryIndex] = new SpellLibrary();
+                spellLibraries[libraryIndex].OnActiveSpellChanged += _ => OnActiveSpellChanged?.Invoke(spellLibraries[libraryIndex]);
             }
 
-            SpellLibraries[libraryIndex].Add(spell, makeActive);
+            spellLibraries[libraryIndex].Add(spell, makeActive);
         }
 
         // Tested in Editmode Tests
@@ -160,14 +158,14 @@ namespace Aether.Combat.SpellSystem
         {
             if(SpellLibraries == null)
             {
-                SpellLibraries = new ISpellLibrary[1];
+                spellLibraries = new SpellLibrary[1];
             }
 
             if (libraryIndex > SpellLibraries.Length - 1)
             {
-                ISpellLibrary[] tempArray = new ISpellLibrary[libraryIndex + 1];
-                Array.Copy(SpellLibraries, 0, tempArray, 0, SpellLibraries.Length);
-                SpellLibraries = tempArray;
+                SpellLibrary[] tempArray = new SpellLibrary[libraryIndex + 1];
+                Array.Copy(spellLibraries, 0, tempArray, 0, spellLibraries.Length);
+                spellLibraries = tempArray;
             }
         }
 
