@@ -2,6 +2,8 @@
 using Aether.Core.Extensions;
 using Aether.Movement;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -16,9 +18,6 @@ namespace Aether.Combat.SpellSystem
         [SerializeField]
         private Transform castOrigin = null;
 
-        [SerializeField]
-        private SpellLibrary[] spellLibraries;
-
         private SpellCast currentSpellCast;
 
         private IMovementSystem movementSystem;
@@ -28,7 +27,7 @@ namespace Aether.Combat.SpellSystem
         public event Action<Core.Combat.ISpellLibrary> OnActiveSpellChanged;
         public event Action<Core.Combat.ISpellCast> OnSpellIsCast;
 
-        public ISpellLibrary[] SpellLibraries => spellLibraries;
+        public List<ISpellLibrary> SpellLibraries { get; private set; }
 
         public Transform CastOrigin => castOrigin;
 
@@ -46,11 +45,10 @@ namespace Aether.Combat.SpellSystem
         #region MonoBehaviour
         private void Awake()
         {
+            SpellLibraries = new List<ISpellLibrary>() { new SpellLibrary(), new SpellLibrary(), new SpellLibrary() };
             TargetSystem = GetComponent<TargetSystem.ITargetSystem>();
             CombatSystem = GetComponent<ICombatSystem>();
             movementSystem = GetComponent<IMovementSystem>();
-
-            SpellLibraries.ForEach(x => x.OnActiveSpellChanged += _ => OnActiveSpellChanged?.Invoke(x));
         }
 
         private void OnDestroy()
@@ -71,21 +69,19 @@ namespace Aether.Combat.SpellSystem
         // Tested in Editmode Tests
         public void AddSpell(int libraryIndex, ISpell spell, bool makeActive = true)
         {
-            EnsureSize(libraryIndex);
-
-            if (spellLibraries[libraryIndex] == null)
+            if (SpellLibraries[libraryIndex] == null)
             {
-                spellLibraries[libraryIndex] = new SpellLibrary();
-                spellLibraries[libraryIndex].OnActiveSpellChanged += _ => OnActiveSpellChanged?.Invoke(spellLibraries[libraryIndex]);
+                SpellLibraries[libraryIndex] = new SpellLibrary();
+                SpellLibraries[libraryIndex].OnActiveSpellChanged += _ => OnActiveSpellChanged?.Invoke(SpellLibraries[libraryIndex]);
             }
 
-            spellLibraries[libraryIndex].Add(spell, makeActive);
+            SpellLibraries[libraryIndex].Add(spell, makeActive);
         }
 
         // Tested in Editmode Tests
         public void RemoveSpell(int libraryIndex, ISpell spell)
         {
-            if (SpellLibraries.Length < libraryIndex - 1 || SpellLibraries[libraryIndex] == null)
+            if (SpellLibraries.Count < libraryIndex - 1 || SpellLibraries[libraryIndex] == null)
                 return;
 
             SpellLibraries[libraryIndex].Remove(spell);
@@ -154,20 +150,6 @@ namespace Aether.Combat.SpellSystem
         #endregion
 
         #region Private Methods
-        private void EnsureSize(int libraryIndex)
-        {
-            if(SpellLibraries == null)
-            {
-                spellLibraries = new SpellLibrary[1];
-            }
-
-            if (libraryIndex > SpellLibraries.Length - 1)
-            {
-                SpellLibrary[] tempArray = new SpellLibrary[libraryIndex + 1];
-                Array.Copy(spellLibraries, 0, tempArray, 0, spellLibraries.Length);
-                spellLibraries = tempArray;
-            }
-        }
 
         private void ClearCurrentCast(Core.Combat.ISpellCast spellCast)
         {
@@ -178,7 +160,17 @@ namespace Aether.Combat.SpellSystem
 
         public Core.Combat.ISpellLibrary GetSpellLibrary(int index)
         {
-            return SpellLibraries[index];
+            Core.Combat.ISpellLibrary result = null;
+            try
+            {
+                result = SpellLibraries[index];
+            }
+            catch(ArgumentOutOfRangeException e)
+            {
+                Debug.LogError(e);
+            }
+            return result;
+            
         }
         #endregion
     }

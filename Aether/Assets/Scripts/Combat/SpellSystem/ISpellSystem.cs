@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Aether.Combat.SpellSystem { 
@@ -8,7 +9,7 @@ namespace Aether.Combat.SpellSystem {
 
         bool IsCasting { get; }
 
-        ISpellLibrary[] SpellLibraries { get; }
+        List<ISpellLibrary> SpellLibraries { get; }
 
         Transform CastOrigin { get; }
 

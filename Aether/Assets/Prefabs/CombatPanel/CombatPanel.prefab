@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 3174951708391038911}
   - component: {fileID: 3174951708391038908}
   - component: {fileID: 3174951708391038910}
+  - component: {fileID: 7743921054690705615}
   m_Layer: 12
   m_Name: CombatPanel
   m_TagString: Untagged
@@ -502,9 +503,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b863b8a6f1ce2754582b6d20f106dda6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 7743921054690705615}
   nameText: {fileID: 3174951708003983940}
   healthBar: {fileID: 3174951707819296757}
   modifiersBar: {fileID: 2718071926699313299}
+--- !u!225 &7743921054690705615
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3174951708391038906}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3174951709001878948
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,3 +650,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifierIconPrefab: {fileID: 9008310553470574026, guid: 8ddf1876ab45f8b438228ceba5d7a3fd,
     type: 3}
+  iconScale: 1

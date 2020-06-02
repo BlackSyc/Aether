@@ -11,6 +11,9 @@ namespace Aether.UserInterface.Combat
         private CombatPanelInfo combatPanelInfo;
 
         [SerializeField]
+        private CanvasGroup canvasGroup;
+
+        [SerializeField]
         protected TextMeshProUGUI nameText;
 
         [SerializeField]
@@ -53,10 +56,15 @@ namespace Aether.UserInterface.Combat
                 modifiersBar.enabled = false;
         }
 
-        protected virtual void Update()
+        protected virtual void LateUpdate()
         {
             transform.position = transform.parent.position + combatPanelInfo.PanelOffset;
-            transform.rotation.SetLookRotation(-Player.Instance.Get<Camera>().transform.forward);
+            //Debug.Log($"Camera: {Player.Instance.Get<Camera>().transform.forward}, Player: {Player.Instance.transform.forward}");
+            transform.rotation = Quaternion.LookRotation(-Player.Instance.Get<Camera>().transform.forward, Player.Instance.Get<Camera>().transform.up);
+
+            float distanceToCamera = Vector3.Distance(transform.position, Player.Instance.Get<Camera>().transform.position);
+
+            canvasGroup.alpha = distanceToCamera - 3;
         }
     }
 }
