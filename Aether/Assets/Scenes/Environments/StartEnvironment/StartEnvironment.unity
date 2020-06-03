@@ -1541,6 +1541,7 @@ GameObject:
   - component: {fileID: 470227018}
   - component: {fileID: 470227022}
   - component: {fileID: 470227023}
+  - component: {fileID: 470227024}
   m_Layer: 11
   m_Name: Friendly Target Dummy
   m_TagString: Untagged
@@ -1575,7 +1576,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exposedObjects: []
+  exposedObjects:
+  - {fileID: 470227018}
+  - {fileID: 470227022}
+  - {fileID: 470227024}
   aggroBias: 0
 --- !u!54 &470227017
 Rigidbody:
@@ -1692,7 +1696,21 @@ MonoBehaviour:
   combatPanelPrefab: {fileID: 3174951708391038906, guid: 7b61c34880bad024392bbe28fd68e5f5,
     type: 3}
   showCombatPanelOnStart: 1
-  PanelOffset: {x: 0, y: 1, z: 0}
+  PanelOffset: {x: 0, y: 1.33, z: 0}
+--- !u!114 &470227024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470227014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f6119820856f04684f2fa39e7e3e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 1000
+  maxHealth: 1000
 --- !u!1 &470688061
 GameObject:
   m_ObjectHideFlags: 0
@@ -7191,6 +7209,7 @@ GameObject:
   - component: {fileID: 1521816068}
   - component: {fileID: 1521816063}
   - component: {fileID: 1521816069}
+  - component: {fileID: 1521816070}
   m_Layer: 12
   m_Name: Target Dummy
   m_TagString: Untagged
@@ -7225,7 +7244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exposedObjects: []
+  exposedObjects:
+  - {fileID: 1521816063}
+  - {fileID: 1521816068}
+  - {fileID: 1521816070}
   aggroBias: 0
 --- !u!114 &1521816063
 MonoBehaviour:
@@ -7342,7 +7364,21 @@ MonoBehaviour:
   combatPanelPrefab: {fileID: 3174951708391038906, guid: 7b61c34880bad024392bbe28fd68e5f5,
     type: 3}
   showCombatPanelOnStart: 1
-  PanelOffset: {x: 0, y: 1, z: 0}
+  PanelOffset: {x: 0, y: 1.33, z: 0}
+--- !u!114 &1521816070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521816060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f6119820856f04684f2fa39e7e3e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 1000
+  maxHealth: 1000
 --- !u!1 &1531830433 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1429307341168804661, guid: 7b0a5c52a4eab2e4ba729c02a275064f,

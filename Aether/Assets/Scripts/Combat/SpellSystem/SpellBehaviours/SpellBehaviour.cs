@@ -1,9 +1,9 @@
 ﻿using Aether.Core.Combat;
 using UnityEngine;
 
-namespace Aether.Combat.SpellSystem
+namespace Aether.Combat.SpellSystem.SpellBehaviours
 {
-    public abstract class SpellObject : MonoBehaviour, ISpellObject
+    public abstract class SpellBehaviour : MonoBehaviour
     {
         public ISpell Spell { get; set; }
 

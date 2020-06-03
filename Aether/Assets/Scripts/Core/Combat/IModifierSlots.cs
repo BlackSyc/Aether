@@ -8,6 +8,6 @@ namespace Aether.Core.Combat
 
         event Action<IModifier> OnModifierRemoved;
 
-        void AddModifier(IModifier modifier);
+        void AddModifier(IModifierType modifier);
     }
 }

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98cfa10febce8aa498361411a3d1dd64, type: 3}
+  m_Script: {fileID: 11500000, guid: 980effb6536d86d4785f8333365442de, type: 3}
   m_Name: FlameShock
   m_EditorClassIdentifier: 
-  Name: FlameShock
-  Duration: 5
-  Description: Damages the target for 50 every 0.5 seconds.
-  Icon: {fileID: 21300000, guid: a9fc2149d7e3f6546b101cffbe77e1b4, type: 3}
-  damageTickAmount: 20
-  tickDelay: 1
+  name: Flame Shock
+  duration: 10
+  description: Deals damage every 3 seconds
+  icon: {fileID: 0}
+  damageTickAmount: 50
+  tickDelay: 3

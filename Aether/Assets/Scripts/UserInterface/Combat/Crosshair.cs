@@ -28,7 +28,6 @@ namespace Aether.UserInterface.Combat
             playerTargetSystem = playerCombatSystem.Get<ITargetSystem>();
 
             _crosshairAnimator.keepAnimatorControllerStateOnDisable = true;
-            _crosshairContainer.SetActive(false);
             InputSystem.OnActionMapSwitched += InputSystem_OnActionMapSwitched;
         }
 
@@ -45,6 +44,7 @@ namespace Aether.UserInterface.Combat
         // Update is called once per frame
         void LateUpdate()
         {
+            _crosshairContainer.SetActive(playerSpellSystem.HasActiveSpells);
             LayerMask layerMask = playerSpellSystem.GetCombinedLayerMask();
 
             if (playerTargetSystem.GetCurrentTarget(layerMask) != null)

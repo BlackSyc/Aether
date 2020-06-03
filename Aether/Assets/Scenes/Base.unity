@@ -1433,7 +1433,7 @@ MonoBehaviour:
   mainPanel: {fileID: 1204156573}
   text: {fileID: 490953791}
   castBar: {fileID: 151136571}
-  keybindAnimation: {fileID: 0}
+  keybindAnimation: {fileID: 91564810}
   spellTooltip: {fileID: 1241062268}
 --- !u!1 &223481061
 GameObject:
@@ -7586,9 +7586,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1347755880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c3004306be2d594c998f6ebc89ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellLibraryIndex: 1
+  mainPanel: {fileID: 811352261}
+  text: {fileID: 1881081962}
+  castBar: {fileID: 22393733}
+  keybindAnimation: {fileID: 360711097}
+  spellTooltip: {fileID: 1241062268}
 --- !u!1 &1358253227
 GameObject:
   m_ObjectHideFlags: 0
@@ -10018,9 +10024,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819388356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca2d8034a001e904a9b6f255406503dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c3004306be2d594c998f6ebc89ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellLibraryIndex: 2
+  mainPanel: {fileID: 597908710}
+  text: {fileID: 1815358534}
+  castBar: {fileID: 2143276249}
+  keybindAnimation: {fileID: 1392177817}
+  spellTooltip: {fileID: 1241062268}
 --- !u!1 &1821152949
 GameObject:
   m_ObjectHideFlags: 0
@@ -12935,6 +12947,11 @@ PrefabInstance:
       propertyPath: exposedObjects.Array.data[3]
       value: 
       objectReference: {fileID: 755391422}
+    - target: {fileID: 8931568597856155357, guid: 95de18f87247a4a42b1fb474a0bcf609,
+        type: 3}
+      propertyPath: spellLibraries.Array.size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8931568597856155357, guid: 95de18f87247a4a42b1fb474a0bcf609,
         type: 3}
       propertyPath: preFillOnAwake.Array.data[0].activeSpell

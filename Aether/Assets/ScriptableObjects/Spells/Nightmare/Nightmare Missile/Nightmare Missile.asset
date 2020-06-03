@@ -36,5 +36,5 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4096
-  spellObject: {fileID: 6870795445100772806, guid: 00c8c5ec88fa5aa48ae42b8479d5af7b,
+  spellPrefab: {fileID: 3282706551129572718, guid: 00c8c5ec88fa5aa48ae42b8479d5af7b,
     type: 3}

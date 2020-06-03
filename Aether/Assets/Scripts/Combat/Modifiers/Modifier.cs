@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Aether.ScriptableObjects.Modifiers
+namespace Aether.Combat.Modifiers
 {
     internal class Modifier : IModifier
     {
@@ -17,13 +17,13 @@ namespace Aether.ScriptableObjects.Modifiers
             ModifierType = modifierType;
         }
 
-        public IEnumerator ModifierCoroutine(ICombatSystem combatSystem)
+        public IEnumerator ModifierCoroutine(Core.Combat.ICombatSystem combatSystem)
         {
             FallOffTime = Time.time + ModifierType.Duration;
             return ModifierType.modifierCoroutine(combatSystem);
         }
 
-        public void Abort(ICombatSystem combatSystem)
+        public void Abort(Core.Combat.ICombatSystem combatSystem)
         {
             ModifierType.Abort(combatSystem);
         }

@@ -1,10 +1,11 @@
-﻿using Aether.Core.Combat;
+﻿using Aether.Combat.SpellSystem.SpellBehaviours;
+using Aether.Core.Combat;
 using Aether.ScriptableObjects.Modifiers;
 using UnityEngine;
 
 namespace Aether.ScriptableObjects.Spells
 {
-    internal class Sprint : SpellObject
+    internal class Sprint : SpellBehaviour
     {
         [SerializeField]
         private ModifierType modifier;
@@ -16,7 +17,7 @@ namespace Aether.ScriptableObjects.Spells
         public override void CastFired()
         {
             if (Target.Has(out IModifierSlots modifierSlots))
-                modifierSlots.AddModifier(new Modifier(modifier));
+                modifierSlots.AddModifier(modifier);
             Destroy(gameObject);
         }
 

@@ -28,7 +28,7 @@ namespace Aether.UserInterface.Combat
             return this;
         }
 
-        protected virtual void Start()
+        private void Start()
         {
             if (nameText != null)
                 nameText.text = combatPanelInfo.CombatSystem.Name;

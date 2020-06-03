@@ -2,10 +2,10 @@
 using Aether.Core.Combat.Extensions;
 using UnityEngine;
 
-namespace Aether.ScriptableObjects.Spells
+namespace Aether.Combat.SpellSystem.SpellBehaviours
 {
     [RequireComponent(typeof(Rigidbody))]
-    internal abstract class Projectile : SpellObject
+    public abstract class Projectile : SpellBehaviour
     {
         [SerializeField]
         private float movementSpeed = 20;
@@ -35,7 +35,7 @@ namespace Aether.ScriptableObjects.Spells
             OnObstructionHit(collision.gameObject);
         }
 
-        public override void SetTarget(ICombatSystem newTarget)
+        public override void SetTarget(Core.Combat.ICombatSystem newTarget)
         {
             base.SetTarget(newTarget);
 
@@ -50,7 +50,7 @@ namespace Aether.ScriptableObjects.Spells
             throw new System.NotImplementedException();
         }
 
-        public abstract void OnTargetHit(ICombatSystem target);
+        public abstract void OnTargetHit(Core.Combat.ICombatSystem target);
 
         public abstract void OnObstructionHit(GameObject obstructionObject);
 

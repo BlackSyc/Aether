@@ -17,19 +17,20 @@ namespace Aether.Combat.Modifiers
 
         private void Start()
         {
+            CombatSystem = GetComponent<ICombatSystem>();
             activeModifiers = new List<IModifier>();
         }
 
-        public void AddModifier(IModifier modifier)
+        public void AddModifier(IModifierType modifierType)
         {
-            var sameModifier = activeModifiers.SingleOrDefault(x => x.ModifierType == modifier.ModifierType);
+            var sameModifier = activeModifiers.SingleOrDefault(x => x.ModifierType == modifierType);
             if (sameModifier != null)
             {
-                sameModifier.FallOffTime = Time.time + sameModifier.ModifierType.Duration;
+                sameModifier.FallOffTime = Time.time + modifierType.Duration;
                 return;
             }
 
-
+            Modifier modifier = new Modifier(modifierType);
             activeModifiers.Add(modifier);
             modifier.Coroutine = StartCoroutine(modifier.ModifierCoroutine(CombatSystem));
             OnModifierAdded?.Invoke(modifier);

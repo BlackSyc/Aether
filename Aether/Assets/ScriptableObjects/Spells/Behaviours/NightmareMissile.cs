@@ -4,7 +4,6 @@ namespace Aether.ScriptableObjects.Spells
 {
     internal class NightmareMissile : ArcaneMissile
     {
-
         public override void OnTargetHit(ICombatSystem target)
         {
             ExecuteTargetHitBehaviour(target);

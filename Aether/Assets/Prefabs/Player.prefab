@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castOrigin: {fileID: 476305285402853955}
-  spellLibraries: []
 --- !u!114 &476305285128632753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +258,7 @@ MonoBehaviour:
   - {fileID: 8931568597856155357}
   - {fileID: 2787966248816650534}
   - {fileID: 9222358592862991841}
+  - {fileID: 5719890184045665918}
   aggroBias: 10
 --- !u!114 &2787966248816650534
 MonoBehaviour:

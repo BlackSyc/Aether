@@ -21,9 +21,9 @@ MonoBehaviour:
   localAggro: 0
   castDuration: 0
   coolDown: 10
-  castWhileMoving: 0
+  castWhileMoving: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
-  spellObject: {fileID: 5576310166460583981, guid: ec697dcf2c85552469e8288acae7f170,
+  spellPrefab: {fileID: 3806535509503361552, guid: ec697dcf2c85552469e8288acae7f170,
     type: 3}

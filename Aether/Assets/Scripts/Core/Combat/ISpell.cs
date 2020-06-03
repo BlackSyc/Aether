@@ -11,9 +11,11 @@ namespace Aether.Core.Combat
 
         float CastDuration { get; }
 
-        ISpellObject SpellObject { get; }
+        GameObject SpellPrefab { get; }
 
         int GlobalAggro { get; }
+
+        int LocalAggro { get; }
 
         float CoolDown { get; }
 

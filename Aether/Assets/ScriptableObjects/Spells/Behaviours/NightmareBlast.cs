@@ -1,11 +1,12 @@
-﻿using Aether.Core.Combat;
+﻿using Aether.Combat.SpellSystem.SpellBehaviours;
+using Aether.Core.Combat;
 using Aether.ScriptableObjects.Modifiers;
 using System.Collections;
 using UnityEngine;
 
 namespace Aether.ScriptableObjects.Spells
 {
-    internal class NightmareBlast : SpellObject
+    internal class NightmareBlast : SpellBehaviour
     {
         [SerializeField]
         private GameObject muzzleFlashPrefab;
@@ -49,7 +50,7 @@ namespace Aether.ScriptableObjects.Spells
             Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
 
             if (Target.Has(out IModifierSlots modifierSlots))
-                modifierSlots.AddModifier(new Modifier(modifierToApply));
+                modifierSlots.AddModifier(modifierToApply);
 
             if (Target.Has(out IHealth health))
                 health.ChangeHealth(Spell.HealthDelta);

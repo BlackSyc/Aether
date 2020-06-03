@@ -46,7 +46,7 @@ namespace Aether.ScriptableObjects.Spells
         private LayerMask layerMask;
 
         [SerializeField]
-        private SpellObject spellObject;
+        private GameObject spellPrefab;
         #endregion
 
         #region Accessors
@@ -61,7 +61,7 @@ namespace Aether.ScriptableObjects.Spells
         public float CoolDown => coolDown;
         public bool CastWhileMoving => castWhileMoving;
         public LayerMask LayerMask => layerMask;
-        public ISpellObject SpellObject => spellObject;
+        public GameObject SpellPrefab => spellPrefab;
         #endregion
     }
 }

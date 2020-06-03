@@ -1,4 +1,5 @@
-﻿using Aether.Core.Combat;
+﻿using Aether.Combat.SpellSystem.SpellBehaviours;
+using Aether.Core.Combat;
 using UnityEngine;
 
 namespace Aether.ScriptableObjects.Spells
