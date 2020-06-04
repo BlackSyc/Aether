@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Nightmare Blast
   aspect: 3
   onlyCastOnSelf: 0
-  description: 'Instantly blast an enemy target with 100 damage.
+  description: 'Instantly blast an enemy target with {3} damage.
 
 
     Secondary
@@ -23,7 +23,7 @@ MonoBehaviour:
 
     Leaves a Flame Shock on the target, dealing 20 damage every second
     for 5 seconds.'
-  healthDelta: 100
+  healthDelta: -100
   globalAggro: 0
   localAggro: 10
   castDuration: 0

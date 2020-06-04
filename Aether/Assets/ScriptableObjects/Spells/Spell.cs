@@ -53,7 +53,7 @@ namespace Aether.ScriptableObjects.Spells
         public string Name => name;
         public Aspect Aspect => aspect;
         public bool OnlyCastOnSelf => onlyCastOnSelf;
-        public string Description => description;
+        public string Description => string.Format(description, name, aspect, onlyCastOnSelf, healthDelta, globalAggro, localAggro, castDuration, coolDown, castWhileMoving, layerMask, spellPrefab);
         public float HealthDelta => healthDelta;
         public int GlobalAggro => globalAggro;
         public int LocalAggro => localAggro;
