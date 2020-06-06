@@ -26,7 +26,17 @@ namespace Aether.Combat.SpellSystem
         public event Action<Core.Combat.ISpellLibrary> OnActiveSpellChanged;
         public event Action<Core.Combat.ISpellCast> OnSpellIsCast;
 
-        public List<ISpellLibrary> SpellLibraries { get; private set; }
+        public List<ISpellLibrary> SpellLibraries { get; private set; } = new List<ISpellLibrary>() {
+            new SpellLibrary(),
+            new SpellLibrary(),
+            new SpellLibrary(),
+            new SpellLibrary(),
+            new SpellLibrary(),
+            new SpellLibrary(),
+            new SpellLibrary(),
+            new SpellLibrary(),
+            new SpellLibrary(),
+            new SpellLibrary()};
 
         public Transform CastOrigin => castOrigin;
 
@@ -44,7 +54,6 @@ namespace Aether.Combat.SpellSystem
         #region MonoBehaviour
         private void Awake()
         {
-            SpellLibraries = new List<ISpellLibrary>() { new SpellLibrary(), new SpellLibrary(), new SpellLibrary() };
             TargetSystem = GetComponent<TargetSystem.ITargetSystem>();
             CombatSystem = GetComponent<ICombatSystem>();
             movementSystem = GetComponent<IMovementSystem>();

@@ -17,4 +17,4 @@ MonoBehaviour:
   description: Deals damage every 3 seconds
   icon: {fileID: 0}
   damageTickAmount: -50
-  tickDelay: 3
+  tickDelay: 2

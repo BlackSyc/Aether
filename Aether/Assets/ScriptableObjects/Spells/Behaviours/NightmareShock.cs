@@ -1,17 +1,21 @@
 ﻿using Aether.Combat.SpellSystem.SpellBehaviours;
 using Aether.Core.Combat;
+using Aether.ScriptableObjects.Modifiers;
 using System.Collections;
 using UnityEngine;
 
 namespace Aether.ScriptableObjects.Spells
 {
-    internal class NightmareBlast : SpellBehaviour
+    internal class NightmareShock : SpellBehaviour
     {
         [SerializeField]
         private GameObject muzzleFlashPrefab;
 
         [SerializeField]
         private GameObject hitFlashPrefab;
+
+        [SerializeField]
+        private ModifierType modifierToApply;
 
         public override void CastCanceled()
         {
@@ -40,16 +44,12 @@ namespace Aether.ScriptableObjects.Spells
                 hitFlash.transform.position = Target.Transform.Position;
 
 
-
-
             hitFlash.transform.LookAt(Caster.Get<ISpellSystem>().CastOrigin);
             Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
 
-            if (Target.Has(out IHealth health))
-                health.ChangeHealth(Spell.HealthDelta);
+            if (Target.Has(out IModifierSlots modifierSlots))
+                modifierSlots.AddModifier(modifierToApply);
 
-            if (Target.Has(out IImpactHandler impactHandler))
-                impactHandler.HandleImpactAtPosition(transform.forward * 3000, hitFlash.transform.position);
 
             Destroy(gameObject);
         }

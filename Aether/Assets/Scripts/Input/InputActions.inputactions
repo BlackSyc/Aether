@@ -110,6 +110,30 @@
                     "interactions": ""
                 },
                 {
+                    "name": "CastSpell8",
+                    "type": "Button",
+                    "id": "f357a149-929b-4376-b39e-45626e8ba18c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CastSpell9",
+                    "type": "Button",
+                    "id": "06c918eb-df27-4d76-99ed-7b83a31a040b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CastSpell10",
+                    "type": "Button",
+                    "id": "90e74f1c-7df2-4a12-809e-b38ea43118eb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "CancelCast",
                     "type": "Button",
                     "id": "9330279e-0330-413c-8fb1-bd9046fba5c8",
@@ -240,7 +264,7 @@
                 {
                     "name": "",
                     "id": "01c69e39-8d1d-4bc6-81a0-d1ffcc66bfb0",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -262,7 +286,7 @@
                 {
                     "name": "",
                     "id": "3c6bab15-f26f-4503-8821-0db14df6a6d9",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -273,7 +297,7 @@
                 {
                     "name": "",
                     "id": "5968dec2-b5e1-4543-a44c-3f6191bce869",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -284,7 +308,7 @@
                 {
                     "name": "",
                     "id": "33b201eb-a914-4427-8690-9948696fa1d1",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -295,7 +319,7 @@
                 {
                     "name": "",
                     "id": "92e03fe5-bf3b-4e10-8c50-a4923c095d9b",
-                    "path": "<Keyboard>/r",
+                    "path": "<Keyboard>/5",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -306,7 +330,7 @@
                 {
                     "name": "",
                     "id": "c78fda47-9721-4be5-bba9-c55d7aea68c1",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/6",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -317,7 +341,7 @@
                 {
                     "name": "",
                     "id": "9c7d1707-a7b7-4797-bb0f-a8a56846e9d8",
-                    "path": "<Keyboard>/v",
+                    "path": "<Keyboard>/7",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -333,6 +357,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "CastOnSelf",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "406cd667-86da-418f-8b71-7eba29ecc426",
+                    "path": "<Keyboard>/8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CastSpell8",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c0d406e-da19-4912-80a2-546d8df899c3",
+                    "path": "<Keyboard>/9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CastSpell9",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "694e72a8-7d48-4344-99b3-30d4057f9106",
+                    "path": "<Keyboard>/0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CastSpell10",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
