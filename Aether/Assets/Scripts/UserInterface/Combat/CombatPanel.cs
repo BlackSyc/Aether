@@ -22,6 +22,10 @@ namespace Aether.UserInterface.Combat
         [SerializeField]
         protected ModifiersBar modifiersBar;
 
+        [SerializeField]
+        protected TextEmitter textEmitter;
+
+
         public CombatPanel SetInfo(CombatPanelInfo info)
         {
             this.combatPanelInfo = info;
@@ -36,6 +40,9 @@ namespace Aether.UserInterface.Combat
             if (healthBar != null)
                 LinkHealthBar();
 
+            if(textEmitter != null)
+                LinkTextEmitter();
+
             if (modifiersBar != null)
                 LinkModifiersBar();
         }
@@ -46,6 +53,14 @@ namespace Aether.UserInterface.Combat
                 healthBar.SetHealth(health);
             else
                 healthBar.enabled = false;
+        }
+
+        protected void LinkTextEmitter()
+        {
+            if (combatPanelInfo.CombatSystem.Has(out IHealth health))
+                textEmitter.SetHealth(health);
+            else
+                textEmitter.enabled = false;
         }
 
         protected void LinkModifiersBar()
@@ -59,8 +74,8 @@ namespace Aether.UserInterface.Combat
         protected virtual void LateUpdate()
         {
             transform.position = transform.parent.position + combatPanelInfo.PanelOffset;
-            //Debug.Log($"Camera: {Player.Instance.Get<Camera>().transform.forward}, Player: {Player.Instance.transform.forward}");
-            transform.rotation = Quaternion.LookRotation(-Player.Instance.Get<Camera>().transform.forward, Player.Instance.Get<Camera>().transform.up);
+
+            transform.rotation = Quaternion.LookRotation(Player.Instance.Get<Camera>().transform.forward, Player.Instance.Get<Camera>().transform.up);
 
             float distanceToCamera = Vector3.Distance(transform.position, Player.Instance.Get<Camera>().transform.position);
 
