@@ -25,6 +25,9 @@ namespace Aether.UserInterface.Combat
         [SerializeField]
         protected TextEmitter textEmitter;
 
+        [SerializeField]
+        protected PlayerTargetIndicator playerTargetIndicator;
+
 
         public CombatPanel SetInfo(CombatPanelInfo info)
         {
@@ -40,11 +43,20 @@ namespace Aether.UserInterface.Combat
             if (healthBar != null)
                 LinkHealthBar();
 
-            if(textEmitter != null)
+            if (textEmitter != null)
                 LinkTextEmitter();
 
             if (modifiersBar != null)
                 LinkModifiersBar();
+
+            if (playerTargetIndicator != null)
+                LinkPlayerTargetIndicator();
+
+        }
+
+        protected void LinkPlayerTargetIndicator()
+        {
+            playerTargetIndicator.SetCombatSystem(combatPanelInfo.CombatSystem);
         }
 
         protected void LinkHealthBar()

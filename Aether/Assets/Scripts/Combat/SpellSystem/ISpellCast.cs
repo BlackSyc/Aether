@@ -1,5 +1,4 @@
 ﻿using Aether.Core.Combat;
-using System;
 using UnityEngine;
 
 namespace Aether.Combat.SpellSystem
@@ -8,11 +7,11 @@ namespace Aether.Combat.SpellSystem
     {
         #region Public Properties
 
-        ICombatSystem Target { get; }
+        new Core.Combat.ICombatSystem Target { get; }
 
         float Progress { get; }
 
-        ISpell Spell { get; }
+        new ISpell Spell { get; }
 
         ICombatSystem Caster { get; }
 

@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using System.Linq;
+﻿using Aether.Core.Extensions;
 using Aether.Input;
-using Aether.Core.Extensions;
+using System.Linq;
+using UnityEngine;
 
 namespace Aether.Combat.TargetSystem
 {
@@ -57,15 +57,17 @@ namespace Aether.Combat.TargetSystem
                 .Select(x => (x, x.transform.GetComponent<ICombatSystem>()))
                 .Where(x => x.Item2 != null)
                 .Select(x => x.Item2)
+                .OrderBy(x => Vector3.Distance(x.Transform.Position, playerCamera.position))
                 .FirstOrDefault();
         }
 
         public Vector3 GetCurrentTargetExact(LayerMask layerMask)
         {
-            var combatTargetPoint =  Physics.RaycastAll(playerCamera.position, playerCamera.forward, maxRange)
+            var combatTargetPoint = Physics.RaycastAll(playerCamera.position, playerCamera.forward, maxRange)
                 .Where(x => x.transform != transform)
                 .Select(x => (x, x.transform.GetComponent<ICombatSystem>()))
                 .Where(x => x.Item2 != null)
+                .OrderBy(x => Vector3.Distance(x.Item2.Transform.Position, playerCamera.position))
                 .Select(x => x.x.point)
                 .FirstOrDefault();
 

@@ -10,6 +10,7 @@ namespace Aether.Core.Combat
         event Action<ISpellCast> CastInterrupted;
         event Action<ISpellCast> CastComplete;
 
+        ICombatSystem Target { get; }
         ISpell Spell { get; }
     }
 }

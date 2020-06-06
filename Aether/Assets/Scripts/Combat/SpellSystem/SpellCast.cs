@@ -21,7 +21,7 @@ namespace Aether.Combat.SpellSystem
         public event Action<Core.Combat.ISpellCast> CastInterrupted;
         public event Action<Core.Combat.ISpellCast> CastComplete;
 
-        public ICombatSystem Target { get; private set; }
+        public Core.Combat.ICombatSystem Target { get; private set; }
 
         public float Progress { get; private set; } = 0f;
 
