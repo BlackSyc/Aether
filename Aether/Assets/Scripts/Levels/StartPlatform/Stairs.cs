@@ -29,8 +29,8 @@ namespace Aether.StartPlatform
             animator = GetComponent<Animator>();
             animator.keepAnimatorControllerStateOnDisable = true;
 
-            Core.Cloaks.Events.OnCloakEquipped += CloakEquipped;
-            Core.Cloaks.Events.OnCloakUnequipped += CloakUnequipped;
+            //Core.Cloaks.Events.OnCloakEquipped += CloakEquipped;
+            //Core.Cloaks.Events.OnCloakUnequipped += CloakUnequipped;
         }
 
         private void CloakEquipped(ICloak cloakInfo)
@@ -75,8 +75,8 @@ namespace Aether.StartPlatform
         // Update is called once per frame
         void OnDestroy()
         {
-            Core.Cloaks.Events.OnCloakEquipped -= CloakEquipped;
-            Core.Cloaks.Events.OnCloakUnequipped -= CloakUnequipped;
+            //Core.Cloaks.Events.OnCloakEquipped -= CloakEquipped;
+            //Core.Cloaks.Events.OnCloakUnequipped -= CloakUnequipped;
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Aether.Core;
 using Aether.Core.Cloaks;
-using Aether.Core.Combat;
 using Aether.Core.Interaction;
 using Aether.ScriptableObjects.Cloaks;
 using UnityEngine;
@@ -10,53 +9,40 @@ namespace Aether.Cloaks
     [RequireComponent(typeof(IInteractable))]
     internal class CloakProvider : MonoBehaviour, ICloakProvider
     {
-        
+
         [SerializeField]
         private GameObject cloakObject;
 
         [SerializeField]
         private Cloak cloak;
 
-        private IInteractable _interactable;
-
         public ICloak Cloak => cloak;
 
-        public void Equip()
+        public void Equip(IInteractor interactor)
         {
-            Player.Instance.Get<IShoulder>().EquipCloak(cloak);
-            CheckEquip(cloak);
+            if (interactor.Has(out IShoulder shoulder))
+                shoulder.EquipCloak(cloak);
         }
 
-        public void Unequip()
+        public void Unequip(IInteractor interactor)
         {
-            Player.Instance.Get<IShoulder>().UnequipCloak();
-            CheckEquip(cloak);
-        }
-
-        private void Awake()
-        {
-            _interactable = GetComponent<IInteractable>();
+            if (interactor.Has(out IShoulder shoulder))
+                shoulder.UnequipCloak();
         }
 
         private void Start()
         {
-            Core.Cloaks.Events.OnCloakEquipped += CheckEquip;
-            Core.Cloaks.Events.OnCloakUnequipped += CheckEquip;
+            Player.Instance.Get<IShoulder>().OnCloakChanged += CheckEquip;
         }
 
-        private void CheckEquip(ICloak cloak)
+        private void CheckEquip(ICloak playerEquippedCloak)
         {
-            if (cloak != Cloak)
-                return;
-
-            var playerEquipped = Player.Instance.Get<IShoulder>().EquippedCloak;
-            cloakObject.SetActive(playerEquipped == cloak);
+            cloakObject.SetActive(playerEquippedCloak != Cloak);
         }
 
         private void OnDestroy()
         {
-            Core.Cloaks.Events.OnCloakEquipped -= CheckEquip;
-            Core.Cloaks.Events.OnCloakUnequipped -= CheckEquip;
+            Player.Instance.Get<IShoulder>().OnCloakChanged += CheckEquip;
         }
     }
 }

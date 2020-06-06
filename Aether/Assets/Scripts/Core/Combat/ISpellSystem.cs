@@ -1,7 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Aether.Core.Combat { 
+namespace Aether.Core.Combat
+{
     public interface ISpellSystem
     {
         Transform CastOrigin { get; }
@@ -9,6 +10,8 @@ namespace Aether.Core.Combat {
         void AddSpell(int libraryIndex, ISpell spell, bool makeActive = true);
 
         void RemoveSpell(int libraryIndex, ISpell spell);
+
+        void RemoveAllSpells();
 
         ISpellLibrary GetSpellLibrary(int index);
 

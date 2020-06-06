@@ -43,11 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 329f58324aafd5345acc66d2ed405252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exposedObjects: []
+  exposedObjects:
+  - {fileID: 476305285026207482}
   interactionRadius: 1
   layers:
     serializedVersion: 2
     m_Bits: 256
+  isPlayer: 1
 --- !u!1 &476305285026207477
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a1dd5ec9749354f833da9ecd179b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CombatSystem: {fileID: 0}
+  CombatSystem: {fileID: 5290570444391088140}
 --- !u!1 &476305285128632751
 GameObject:
   m_ObjectHideFlags: 0

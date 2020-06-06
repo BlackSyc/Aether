@@ -54,17 +54,17 @@ namespace Aether.ScriptableObjects.Spells
 
         private void ExecuteTargetHitBehaviour(ICombatSystem target)
         {
-            //if(target.Has(out Puzzle1_MissileTarget missileTarget))
-            //{
-            //    missileTarget.Hit();
-            //}
+            if (target.Has(out ITarget missileTarget))
+            {
+                missileTarget.Hit();
+            }
         }
 
         public void PlayMissileHitAnimation()
         {
             Vector3 hitPosition = transform.position;
 
-            if(Caster.Has(out ITargetSystem targetSystem))
+            if (Caster.Has(out ITargetSystem targetSystem))
                 hitPosition = targetSystem.GetCurrentTargetExact(Spell.LayerMask);
 
             GameObject hitFlash = Instantiate(hitFlashPrefab, transform);

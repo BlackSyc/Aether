@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb82a4bd645f9247b3fb44c3aaef85d, type: 3}
   m_Name: Line3
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Others
   Speaker: Aspect Of Creation
-  Content: middle
+  Content: The others haven't even completed the -

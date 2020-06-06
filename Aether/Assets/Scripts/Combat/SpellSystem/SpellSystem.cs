@@ -2,7 +2,6 @@
 using Aether.Core.Extensions;
 using Aether.Movement;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -92,8 +91,8 @@ namespace Aether.Combat.SpellSystem
         {
             LayerMask layerMask = new LayerMask();
 
-            if (SpellLibraries != null) 
-            { 
+            if (SpellLibraries != null)
+            {
                 SpellLibraries
                     .Where(x => x.HasActiveSpell)
                     .Select(x => x.ActiveSpell.LayerMask)
@@ -119,7 +118,7 @@ namespace Aether.Combat.SpellSystem
                     return;
                 }
 
-                if(!SpellLibraries[index].IsOnCoolDown)
+                if (!SpellLibraries[index].IsOnCoolDown)
                     CancelSpellCast();
                 else
                     return;
@@ -165,12 +164,17 @@ namespace Aether.Combat.SpellSystem
             {
                 result = SpellLibraries[index];
             }
-            catch(ArgumentOutOfRangeException e)
+            catch (ArgumentOutOfRangeException e)
             {
                 Debug.LogError(e);
             }
             return result;
-            
+
+        }
+
+        public void RemoveAllSpells()
+        {
+            this.SpellLibraries.ForEach(x => x.RemoveAll());
         }
         #endregion
     }

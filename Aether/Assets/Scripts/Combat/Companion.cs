@@ -31,7 +31,7 @@ namespace Aether.Combat
             equippedCloak = Player.Instance.Get<IShoulder>().EquippedCloak;
             //Player.Instance.Companion = this; I don't want a setter on exposed objects
             Events.CompanionAdded(this);
-            Aether.Core.Cloaks.Events.OnCloakUnequipped += CloakUnequipped;
+            //Aether.Core.Cloaks.Events.OnCloakUnequipped += CloakUnequipped;
         }
 
         private void CloakUnequipped(ICloak cloak)
@@ -46,7 +46,7 @@ namespace Aether.Combat
 
         private void OnDestroy()
         {
-            Core.Cloaks.Events.OnCloakUnequipped -= CloakUnequipped;
+            //Core.Cloaks.Events.OnCloakUnequipped -= CloakUnequipped;
         }
     }
 }

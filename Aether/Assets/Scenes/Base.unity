@@ -3216,7 +3216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6.1000977, y: -6.0998535}
+  m_AnchoredPosition: {x: 6.1000977, y: -6.0999146}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &587983460
@@ -12857,11 +12857,6 @@ PrefabInstance:
       propertyPath: lel
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 476305285026207482, guid: 95de18f87247a4a42b1fb474a0bcf609,
-        type: 3}
-      propertyPath: CombatSystem
-      value: 
-      objectReference: {fileID: 522618487}
     - target: {fileID: 476305285128632748, guid: 95de18f87247a4a42b1fb474a0bcf609,
         type: 3}
       propertyPath: m_LocalPosition.x

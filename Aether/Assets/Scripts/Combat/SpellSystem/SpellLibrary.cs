@@ -91,6 +91,14 @@ namespace Aether.Combat.SpellSystem
             spellCast = newSpellCast;
             return true;
         }
+
+
+        public void RemoveAll()
+        {
+            activeSpell = null;
+            OnActiveSpellChanged?.Invoke(null);
+            library.Clear();
+        }
         #endregion
 
         #region Private Methods

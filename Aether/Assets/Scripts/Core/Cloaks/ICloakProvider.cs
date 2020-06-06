@@ -1,11 +1,13 @@
-﻿namespace Aether.Core.Cloaks
+﻿using Aether.Core.Interaction;
+
+namespace Aether.Core.Cloaks
 {
     public interface ICloakProvider
     {
         ICloak Cloak { get; }
 
-        void Equip();
+        void Equip(IInteractor interactor);
 
-        void Unequip();
+        void Unequip(IInteractor interactor);
     }
 }

@@ -17,7 +17,6 @@ namespace Aether.Core.Cloaks
 
         ISpell[] Spells { get; }
 
-
         GameObject CloakPrefab { get; }
     }
 }

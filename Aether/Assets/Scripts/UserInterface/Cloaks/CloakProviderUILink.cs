@@ -1,5 +1,6 @@
 ﻿using Aether.Core;
 using Aether.Core.Cloaks;
+using Aether.Core.Interaction;
 using Aether.Core.UserInterface;
 using Aether.Input;
 using UnityEngine;
@@ -21,10 +22,10 @@ namespace Aether.UserInterface.Cloaks
 
         private void Awake()
         {
-            CloakProvider = GetComponent<ICloakProvider>();    
+            CloakProvider = GetComponent<ICloakProvider>();
         }
 
-        public void OpenWindow()
+        public void OpenWindow(IInteractor interactor, IInteractable _)
         {
             RectTransform windowParent = Player.Instance.Get<IUserInterface>().GetContainer(uiContainer);
 
@@ -33,7 +34,7 @@ namespace Aether.UserInterface.Cloaks
 
             _activeCloakWindow = Instantiate(cloakWindowPrefab, windowParent).GetComponent<CloakWindow>()
                 .Link(this)
-                .Build();
+                .Build(interactor);
 
             InputSystem.SwitchToActionMap(ActionMap.PopUp);
         }

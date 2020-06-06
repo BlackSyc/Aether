@@ -1,6 +1,7 @@
 ﻿using Aether.Combat;
 using Aether.Core.Cloaks;
 using Aether.Core.Combat;
+using System;
 using UnityEngine;
 
 namespace Aether.Cloaks
@@ -15,6 +16,8 @@ namespace Aether.Cloaks
 
         [SerializeField]
         private ISpell defaultSpell;
+
+        public event Action<ICloak> OnCloakChanged;
 
         public void EnableCloakPhysics()
         {
@@ -50,18 +53,22 @@ namespace Aether.Cloaks
                 }
             }
 
-            
+
             EquippedCloak = cloak;
-            Events.CloakEquipped(cloak);
+            OnCloakChanged?.Invoke(cloak);
         }
 
         public void UnequipCloak()
         {
             var cloak = EquippedCloak;
             EquippedCloak = null;
+
+            Destroy(equippedCloakObject);
+
+            CombatSystem.Get<ISpellSystem>().RemoveAllSpells();
             CombatSystem.Get<ISpellSystem>().AddSpell(0, defaultSpell);
 
-            Events.CloakUnequipped(cloak);
+            OnCloakChanged?.Invoke(null);
         }
     }
 }

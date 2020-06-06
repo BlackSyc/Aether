@@ -1,9 +1,9 @@
-﻿using TMPro;
+﻿using Aether.Core;
+using Aether.Core.Cloaks;
+using Aether.Core.Interaction;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Aether.Core.Cloaks;
-using Aether.Input;
-using Aether.Core;
 
 namespace Aether.UserInterface.Cloaks
 {
@@ -39,7 +39,7 @@ namespace Aether.UserInterface.Cloaks
             return this;
         }
 
-        public CloakWindow Build()
+        public CloakWindow Build(IInteractor interactor)
         {
             header.text = _cloakProvider.Cloak.Name;
             keywords.text = _cloakProvider.Cloak.Keywords;
@@ -48,12 +48,12 @@ namespace Aether.UserInterface.Cloaks
             bool playerEquipped = Player.Instance.Get<IShoulder>().EquippedCloak == _cloakProvider.Cloak;
             if (!playerEquipped)
             {
-                equipButton.onClick.AddListener(() => _cloakProvider.Equip());
+                equipButton.onClick.AddListener(() => _cloakProvider.Equip(interactor));
                 equipButtonText.text = "Equip";
             }
             else
             {
-                equipButton.onClick.AddListener(() => _cloakProvider.Unequip());
+                equipButton.onClick.AddListener(() => _cloakProvider.Unequip(interactor));
                 equipButtonText.text = "Unequip";
             }
             return this;

@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Aether.Combat.SpellSystem
 {
@@ -15,6 +14,8 @@ namespace Aether.Combat.SpellSystem
 
         #region Methods
         bool TryCast(out SpellCast spellCast, Transform castParent, ICombatSystem caster, ICombatSystem target);
+
+        void RemoveAll();
         #endregion
     }
 }

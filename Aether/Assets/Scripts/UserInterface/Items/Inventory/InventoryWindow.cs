@@ -12,8 +12,7 @@ public class InventoryWindow : MonoBehaviour
     {
         Aether.Core.Items.Events.OnPickedUpKeystone += UpdateKeystoneImage;
         Aether.Core.Items.Events.OnExtractedKeystone += UpdateKeystoneImage;
-        Aether.Core.Cloaks.Events.OnCloakUnequipped += _ => UpdateKeystoneImage();
-        Aether.Core.Cloaks.Events.OnCloakEquipped += _ => UpdateKeystoneImage();
+        Player.Instance.Get<IShoulder>().OnCloakChanged += _ => UpdateKeystoneImage();
         UpdateKeystoneImage();
     }
 
@@ -22,7 +21,7 @@ public class InventoryWindow : MonoBehaviour
         if (!Player.Instance.Has(out IShoulder shoulder) || !Player.Instance.Has(out IInventory inventory))
             return;
 
-        if(shoulder.EquippedCloak != null)
+        if (shoulder.EquippedCloak != null)
             keystoneImageAnimator.SetBool("Show", inventory.ContainsKeystone(x => shoulder.EquippedCloak.Aspect == x.Aspect));
         else
             keystoneImageAnimator.SetBool("Show", false);
@@ -32,7 +31,6 @@ public class InventoryWindow : MonoBehaviour
     {
         Aether.Core.Items.Events.OnPickedUpKeystone -= UpdateKeystoneImage;
         Aether.Core.Items.Events.OnExtractedKeystone -= UpdateKeystoneImage;
-        Aether.Core.Cloaks.Events.OnCloakUnequipped -= _ => UpdateKeystoneImage();
-        Aether.Core.Cloaks.Events.OnCloakEquipped -= _ => UpdateKeystoneImage();
+        Player.Instance.Get<IShoulder>().OnCloakChanged -= _ => UpdateKeystoneImage();
     }
 }

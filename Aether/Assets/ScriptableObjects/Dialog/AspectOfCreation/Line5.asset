@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb82a4bd645f9247b3fb44c3aaef85d, type: 3}
   m_Name: Line5
   m_EditorClassIdentifier: 
-  Name: Never mind
+  Name: Take
   Speaker: Aspect Of Creation
-  Content: end
+  Content: Take this. Just... Don't upset the others!

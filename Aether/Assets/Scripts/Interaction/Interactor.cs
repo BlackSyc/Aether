@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using System.Linq;
+﻿using Aether.Core;
 using Aether.Core.Interaction;
-using Aether.Core;
+using System.Linq;
+using UnityEngine;
 
 namespace Aether.Interaction
 {
@@ -14,6 +14,11 @@ namespace Aether.Interaction
 
         [SerializeField]
         private LayerMask layers;
+
+        [SerializeField]
+        private bool isPlayer = false;
+
+        public bool IsPlayer => isPlayer;
 
         private Interactable currentInteractable;
 

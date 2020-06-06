@@ -5,5 +5,7 @@
         T Get<T>();
 
         bool Has<T>(out T t);
+
+        bool IsPlayer { get; }
     }
 }

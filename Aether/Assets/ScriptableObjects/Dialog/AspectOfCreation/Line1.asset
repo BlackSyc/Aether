@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb82a4bd645f9247b3fb44c3aaef85d, type: 3}
   m_Name: Line1
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Greetings
   Speaker: Aspect Of Creation
-  Content: begin
+  Content: Greetings, Scryer.
