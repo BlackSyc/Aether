@@ -19,8 +19,9 @@ MonoBehaviour:
   healthDelta: 0
   globalAggro: 0
   localAggro: 0
-  castDuration: 0
+  castDuration: 1.5
   coolDown: 2
+  onGlobalCooldown: 1
   castWhileMoving: 1
   layerMask:
     serializedVersion: 2

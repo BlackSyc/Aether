@@ -9,6 +9,8 @@ namespace Aether.Combat.SpellSystem
 
         bool IsOnCoolDown { get; }
 
+        bool IsOnGlobalCoolDown { get; }
+
         bool HasActiveSpell { get; }
         #endregion
 

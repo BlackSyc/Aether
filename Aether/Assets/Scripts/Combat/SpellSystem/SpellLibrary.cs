@@ -22,11 +22,15 @@ namespace Aether.Combat.SpellSystem
 
         public bool HasActiveSpell => ActiveSpell != null;
 
+        public float GlobalCooldownUntil { get; private set; }
+
         public float CoolDownUntil { get; private set; }
 
         public bool IsOnCoolDown => Time.time < CoolDownUntil;
 
         public ISpell ActiveSpell => activeSpell;
+
+        public bool IsOnGlobalCoolDown => Time.time < GlobalCooldownUntil;
         #endregion
 
         #region Constructors
@@ -86,6 +90,9 @@ namespace Aether.Combat.SpellSystem
             if (IsOnCoolDown)
                 return false;
 
+            if (IsOnGlobalCoolDown)
+                return false;
+
             SpellCast newSpellCast = new SpellCast(ActiveSpell, castOrigin, caster, target);
             newSpellCast.CastComplete += SetCoolDown;
             spellCast = newSpellCast;
@@ -98,6 +105,17 @@ namespace Aether.Combat.SpellSystem
             activeSpell = null;
             OnActiveSpellChanged?.Invoke(null);
             library.Clear();
+        }
+
+        public void AddGlobalCooldown(float seconds)
+        {
+            if (ActiveSpell != null && ActiveSpell.OnGlobalCooldown)
+                GlobalCooldownUntil = Time.time + seconds;
+        }
+
+        public void CancelGlobalCooldown()
+        {
+            GlobalCooldownUntil = Time.time;
         }
         #endregion
 

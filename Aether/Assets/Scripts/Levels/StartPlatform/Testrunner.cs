@@ -1,16 +1,11 @@
-﻿using Aether.Core.Items.ScriptableObjects;
-using System;
+﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Aether.StartPlatform
 {
     public class Testrunner : MonoBehaviour
     {
-        [SerializeField]
-        private List<Keystone> keystones;
-
         [SerializeField]
         private bool spawnCloaks;
 

@@ -1,5 +1,4 @@
 ﻿using Aether.Core.Combat;
-using Aether.ScriptableObjects.Modifiers;
 using System;
 using UnityEngine;
 
@@ -20,7 +19,7 @@ namespace Aether.ScriptableObjects.Spells
         [SerializeField]
         private bool onlyCastOnSelf;
 
-        [TextArea(0,10)]
+        [TextArea(0, 10)]
         [SerializeField]
         private string description;
 
@@ -38,6 +37,9 @@ namespace Aether.ScriptableObjects.Spells
 
         [SerializeField]
         private float coolDown;
+
+        [SerializeField]
+        private bool onGlobalCooldown = true;
 
         [SerializeField]
         private bool castWhileMoving;
@@ -62,6 +64,8 @@ namespace Aether.ScriptableObjects.Spells
         public bool CastWhileMoving => castWhileMoving;
         public LayerMask LayerMask => layerMask;
         public GameObject SpellPrefab => spellPrefab;
+
+        public bool OnGlobalCooldown => onGlobalCooldown;
         #endregion
     }
 }

@@ -20,6 +20,8 @@ namespace Aether.Combat.SpellSystem
         private SpellCast currentSpellCast;
 
         private IMovementSystem movementSystem;
+
+        private readonly float globalCooldownSeconds = 1.5f;
         #endregion
 
         #region Public Properties
@@ -136,7 +138,10 @@ namespace Aether.Combat.SpellSystem
             if (!SpellLibraries[index].TryCast(out currentSpellCast, castOrigin, CombatSystem, requestedSpell.OnlyCastOnSelf ? CombatSystem : TargetSystem.GetCurrentTarget(requestedSpell.LayerMask)))
                 return;
 
-            currentSpellCast.CastCancelled += ClearCurrentCast;
+            if (currentSpellCast.Spell.OnGlobalCooldown)
+                SpellLibraries.ForEach(x => ((SpellLibrary)x).AddGlobalCooldown(globalCooldownSeconds));
+
+            currentSpellCast.CastCancelled += CancelCurrentCast;
             currentSpellCast.CastComplete += ClearCurrentCast;
             currentSpellCast.Start();
             OnSpellIsCast?.Invoke(currentSpellCast);
@@ -153,11 +158,17 @@ namespace Aether.Combat.SpellSystem
         // NOT YET: Tested in Playmode Tests
         public void InterruptSpellCast()
         {
-
+            SpellLibraries.ForEach(x => ((SpellLibrary)x).CancelGlobalCooldown());
         }
         #endregion
 
         #region Private Methods
+
+        private void CancelCurrentCast(Core.Combat.ISpellCast spellCast)
+        {
+            SpellLibraries.ForEach(x => ((SpellLibrary)x).CancelGlobalCooldown());
+            ClearCurrentCast(spellCast);
+        }
 
         private void ClearCurrentCast(Core.Combat.ISpellCast spellCast)
         {

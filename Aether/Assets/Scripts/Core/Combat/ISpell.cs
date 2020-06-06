@@ -26,5 +26,6 @@ namespace Aether.Core.Combat
         string Description { get; }
 
         bool OnlyCastOnSelf { get; }
+        bool OnGlobalCooldown { get; }
     }
 }
