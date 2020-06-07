@@ -1515,7 +1515,7 @@ Transform:
   m_GameObject: {fileID: 470227014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.236, y: 0.6, z: -1.8}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 317726139}
   m_Father: {fileID: 1423121351}
@@ -1654,7 +1654,7 @@ MonoBehaviour:
   combatPanelPrefab: {fileID: 3174951708391038906, guid: 7b61c34880bad024392bbe28fd68e5f5,
     type: 3}
   showCombatPanelOnStart: 1
-  PanelOffset: {x: 0, y: 2, z: 0}
+  PanelOffset: {x: 0, y: 3, z: 0}
   PanelScale: {x: 0, y: 0, z: 0}
 --- !u!114 &470227024
 MonoBehaviour:
@@ -7331,7 +7331,7 @@ Transform:
   m_GameObject: {fileID: 1521816060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.236, y: 0.6, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 543217670}
   m_Father: {fileID: 1423121351}
@@ -7471,7 +7471,7 @@ MonoBehaviour:
   combatPanelPrefab: {fileID: 3174951708391038906, guid: 7b61c34880bad024392bbe28fd68e5f5,
     type: 3}
   showCombatPanelOnStart: 1
-  PanelOffset: {x: 0, y: 2, z: 0}
+  PanelOffset: {x: 0, y: 3, z: 0}
   PanelScale: {x: 0, y: 0, z: 0}
 --- !u!114 &1521816070
 MonoBehaviour:
