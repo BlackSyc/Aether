@@ -5,7 +5,7 @@ public class Attributes : MonoBehaviour
     // Movement speed
     public float Speed = 100;
 
-    // Casting speed
+    // Casting speed and global cooldown duration
     public float Haste = 100;
 
     // Max Health
