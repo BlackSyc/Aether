@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TextEmitter : MonoBehaviour
 {
+    [SerializeField]
+    private Color healColour;
+
+    [SerializeField]
+    private Color damageColour;
 
     [SerializeField]
     private EmittedText emittedTextPrefab;
@@ -19,7 +24,13 @@ public class TextEmitter : MonoBehaviour
     private void EmitText(float healthDelta)
     {
         EmittedText emittedText = Instantiate(emittedTextPrefab, transform.position, Quaternion.identity).GetComponent<EmittedText>();
-        emittedText.Text.text = healthDelta.ToString();
+        emittedText.Text.text = Mathf.Abs(healthDelta).ToString();
+
+        if (healthDelta <= 0)
+            emittedText.Text.color = damageColour;
+        else
+            emittedText.Text.color = healColour;
+
         emittedText.RigidBodyComponent.AddForce(new Vector3(Random.Range(-200f, 200f), Random.Range(100f, 200f), 0));
     }
 

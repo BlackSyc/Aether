@@ -28,6 +28,9 @@ namespace Aether.UserInterface.Combat
         [SerializeField]
         protected PlayerTargetIndicator playerTargetIndicator;
 
+        [SerializeField]
+        protected Castbar castBar;
+
 
         public CombatPanel SetInfo(CombatPanelInfo info)
         {
@@ -52,6 +55,17 @@ namespace Aether.UserInterface.Combat
             if (playerTargetIndicator != null)
                 LinkPlayerTargetIndicator();
 
+            if (castBar != null)
+                LinkCastbar();
+
+        }
+
+        private void LinkCastbar()
+        {
+            if (combatPanelInfo.CombatSystem.Has(out ISpellSystem spellSystem))
+                castBar.SetSpellSystem(spellSystem);
+            else
+                castBar.enabled = false;
         }
 
         protected void LinkPlayerTargetIndicator()
