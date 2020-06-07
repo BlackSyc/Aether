@@ -56,6 +56,7 @@ namespace Aether.Combat.TargetSystem
                 .Where(hit => hit.transform != transform)
                 .Select(hit => (hit, hit.transform.GetComponent<ICombatSystem>()))
                 .Where(hitTuple => hitTuple.Item2 != null)
+                .Where(hitTuple => hitTuple.Item2.CanBeTargeted)
                 .OrderBy(hitTuple => Vector3.Distance(hitTuple.hit.point, playerCamera.position))
                 .Take(1)
                 .Select(hitTuple => new Target(hitTuple.Item2, hitTuple.hit.point - hitTuple.Item2.Transform.Position))

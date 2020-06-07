@@ -1,7 +1,8 @@
 ﻿using Aether.Core.Combat;
 using UnityEngine;
 
-namespace Aether.UserInterface.Combat {
+namespace Aether.UserInterface.Combat
+{
     [RequireComponent(typeof(ICombatSystem))]
     public class CombatPanelInfo : MonoBehaviour
     {
@@ -18,6 +19,8 @@ namespace Aether.UserInterface.Combat {
         private bool showCombatPanelOnStart;
 
         public Vector3 PanelOffset;
+
+        public Vector3 PanelScale;
 
         private void Start()
         {

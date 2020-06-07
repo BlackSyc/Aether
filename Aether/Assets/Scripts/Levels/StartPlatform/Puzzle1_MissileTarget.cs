@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Aether.StartPlatform
 {
+    [RequireComponent(typeof(ICombatSystem))]
     public class Puzzle1_MissileTarget : MonoBehaviour, IMissileTarget
     {
         public struct Events
@@ -20,6 +21,8 @@ namespace Aether.StartPlatform
         [SerializeField]
         private GameObject cloakProvider;
 
+        private ICombatSystem combatSystem;
+
         [SerializeField]
         private float resetAfter = 5;
 
@@ -28,11 +31,12 @@ namespace Aether.StartPlatform
 
         private void StopResetTimerAndMoveToCloakPosition()
         {
+            combatSystem.CanBeTargeted = false;
             GetComponent<Animator>().SetTrigger("MoveToCloakPosition");
             StopAllCoroutines();
 
             if (cloakProvider != null)
-                StartCoroutine(ExecuteAfter(5, () => cloakProvider.SetActive(true)));
+                StartCoroutine(ExecuteAfter(3, () => cloakProvider.SetActive(true)));
         }
 
         private void MoveToCenter()
@@ -43,6 +47,11 @@ namespace Aether.StartPlatform
         private void MoveToOriginalPosition()
         {
             GetComponent<Animator>().SetTrigger("MoveToOriginalPosition");
+        }
+
+        private void Awake()
+        {
+            combatSystem = GetComponent<ICombatSystem>();
         }
 
         private void Start()
@@ -60,6 +69,7 @@ namespace Aether.StartPlatform
             GetComponent<Animator>().SetBool("Hit", true);
             IsHit = true;
             gameObject.layer = LayerMask.NameToLayer("Obstruction");
+            combatSystem.CanBeTargeted = false;
             StopAllCoroutines();
 
             Events.MissileTargetHit();
@@ -82,6 +92,7 @@ namespace Aether.StartPlatform
             IsHit = false;
             gameObject.layer = LayerMask.NameToLayer("Target");
             GetComponent<Animator>().SetBool("Hit", false);
+            combatSystem.CanBeTargeted = true;
         }
 
         private void OnDestroy()

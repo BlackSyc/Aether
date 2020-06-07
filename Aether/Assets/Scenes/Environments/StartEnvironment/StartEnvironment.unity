@@ -949,6 +949,7 @@ GameObject:
   - component: {fileID: 287161790}
   - component: {fileID: 287161791}
   - component: {fileID: 287161792}
+  - component: {fileID: 287161793}
   m_Layer: 9
   m_Name: Corruption Missile Target
   m_TagString: Untagged
@@ -963,12 +964,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287161785}
-  m_LocalRotation: {x: 0.5000001, y: 0.49999988, z: 0.4999999, w: 0.5000001}
-  m_LocalPosition: {x: -0.07043997, y: 0.06998004, z: 0.007420001}
+  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
+  m_LocalPosition: {x: 21.248549, y: 2.9598403, z: -20.553587}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7641953851754198981}
-  m_RootOrder: 0
+  m_Father: {fileID: 1549598432}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &287161787
 MonoBehaviour:
@@ -1148,7 +1149,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.005
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &287161790
 MonoBehaviour:
@@ -1198,6 +1199,24 @@ MonoBehaviour:
   exposedObjects:
   - {fileID: 287161790}
   aggroBias: 0
+  canBeTargeted: 1
+--- !u!114 &287161793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287161785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatPanelPrefab: {fileID: 3174951708391038906, guid: 882bfdafd9ebfd94f9b1a60c641be89f,
+    type: 3}
+  showCombatPanelOnStart: 1
+  PanelOffset: {x: 0, y: 1, z: 0}
+  PanelScale: {x: 0, y: 0, z: 0}
 --- !u!1 &317726138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,6 +1538,7 @@ MonoBehaviour:
   - {fileID: 470227022}
   - {fileID: 470227024}
   aggroBias: 0
+  canBeTargeted: 1
 --- !u!54 &470227017
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1635,6 +1655,7 @@ MonoBehaviour:
     type: 3}
   showCombatPanelOnStart: 1
   PanelOffset: {x: 0, y: 2, z: 0}
+  PanelScale: {x: 0, y: 0, z: 0}
 --- !u!114 &470227024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3105,8 +3126,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.05, y: 0.05, z: 0.05}
+    m_Center: {x: 0.0000000037252903, y: 0.008509837, z: -0.018191451}
+    m_Extent: {x: 0.024865232, y: 0.009746617, z: 0.024148384}
   m_DirtyAABB: 0
 --- !u!1 &782963003
 GameObject:
@@ -4305,7 +4326,7 @@ Transform:
   m_GameObject: {fileID: 984577801}
   m_LocalRotation: {x: 0.24361694, y: -0.66381526, z: -0.66381544, w: 0.24361695}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.010000001}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 5006512735723521172}
   m_Father: {fileID: 1189097487}
@@ -5263,6 +5284,7 @@ GameObject:
   - component: {fileID: 1189097491}
   - component: {fileID: 1189097492}
   - component: {fileID: 1189097493}
+  - component: {fileID: 1189097494}
   m_Layer: 9
   m_Name: Nightmare Missile Target
   m_TagString: Untagged
@@ -5277,13 +5299,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189097486}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07044002, y: 0.06998, z: 0.007420015}
+  m_LocalRotation: {x: -0.5000001, y: 0.4999999, z: 0.50000006, w: 0.50000006}
+  m_LocalPosition: {x: -20.739452, y: 2.9598346, z: 21.710407}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 984577802}
-  m_Father: {fileID: 1617953601652957410}
-  m_RootOrder: 0
+  m_Father: {fileID: 1549598432}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1189097488
 MonoBehaviour:
@@ -5463,7 +5485,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.005
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1189097491
 MonoBehaviour:
@@ -5513,6 +5535,24 @@ MonoBehaviour:
   exposedObjects:
   - {fileID: 1189097491}
   aggroBias: 0
+  canBeTargeted: 1
+--- !u!114 &1189097494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189097486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatPanelPrefab: {fileID: 3174951708391038906, guid: 882bfdafd9ebfd94f9b1a60c641be89f,
+    type: 3}
+  showCombatPanelOnStart: 1
+  PanelOffset: {x: 0, y: 1, z: 0}
+  PanelScale: {x: 0, y: 0, z: 0}
 --- !u!1 &1198019322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7901623080965309205, guid: 7b0a5c52a4eab2e4ba729c02a275064f,
@@ -6134,7 +6174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1617953601652957410}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1330574801
 MonoBehaviour:
@@ -6177,6 +6217,7 @@ GameObject:
   - component: {fileID: 1371069660}
   - component: {fileID: 1371069661}
   - component: {fileID: 1371069662}
+  - component: {fileID: 1371069663}
   m_Layer: 9
   m_Name: Dream Missile Target
   m_TagString: Untagged
@@ -6191,13 +6232,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371069655}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.06998, y: 0.07043999, z: 0.00742001}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -20.739454, y: 2.9598403, z: -20.553581}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1897496756}
-  m_Father: {fileID: 8359481929772053671}
-  m_RootOrder: 0
+  m_Father: {fileID: 1549598432}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1371069657
 MonoBehaviour:
@@ -6377,7 +6418,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.005
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1371069660
 MonoBehaviour:
@@ -6427,6 +6468,24 @@ MonoBehaviour:
   exposedObjects:
   - {fileID: 1371069660}
   aggroBias: 0
+  canBeTargeted: 1
+--- !u!114 &1371069663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371069655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatPanelPrefab: {fileID: 3174951708391038906, guid: 882bfdafd9ebfd94f9b1a60c641be89f,
+    type: 3}
+  showCombatPanelOnStart: 1
+  PanelOffset: {x: 0, y: 1, z: 0}
+  PanelScale: {x: 0, y: 0, z: 0}
 --- !u!1 &1372236487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3956127469989741064, guid: 7b0a5c52a4eab2e4ba729c02a275064f,
@@ -6640,7 +6699,7 @@ Transform:
   m_GameObject: {fileID: 1383274262}
   m_LocalRotation: {x: 0.6546323, y: -0.26761582, z: -0.26744303, w: -0.654456}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.010000001, y: 0.01, z: 0.010000001}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 5006512736522533818}
   m_Father: {fileID: 1895513246}
@@ -7296,6 +7355,7 @@ MonoBehaviour:
   - {fileID: 1521816070}
   - {fileID: 1521816071}
   aggroBias: 0
+  canBeTargeted: 1
 --- !u!114 &1521816063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7412,6 +7472,7 @@ MonoBehaviour:
     type: 3}
   showCombatPanelOnStart: 1
   PanelOffset: {x: 0, y: 2, z: 0}
+  PanelScale: {x: 0, y: 0, z: 0}
 --- !u!114 &1521816070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7505,6 +7566,10 @@ Transform:
   m_Children:
   - {fileID: 169073591}
   - {fileID: 615589194112213841}
+  - {fileID: 287161786}
+  - {fileID: 1189097487}
+  - {fileID: 1895513246}
+  - {fileID: 1371069656}
   - {fileID: 7641953851754198981}
   - {fileID: 3935021931425268156}
   - {fileID: 1617953601652957410}
@@ -8101,7 +8166,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7641953851754198981}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1673347811
 MonoBehaviour:
@@ -8992,7 +9057,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3935021931425268156}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1857963841
 MonoBehaviour:
@@ -9311,6 +9376,7 @@ GameObject:
   - component: {fileID: 1895513250}
   - component: {fileID: 1895513251}
   - component: {fileID: 1895513252}
+  - component: {fileID: 1895513253}
   m_Layer: 9
   m_Name: Illusion MIssile Target
   m_TagString: Untagged
@@ -9325,13 +9391,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895513245}
-  m_LocalRotation: {x: -0.00000013767877, y: -0.7071068, z: -0.70710677, w: -0.00000013767878}
-  m_LocalPosition: {x: -0.06997997, y: 0.07044002, z: 0.007419991}
+  m_LocalRotation: {x: -0.000000029802322, y: 7.1054274e-15, z: -7.1054274e-15, w: 1}
+  m_LocalPosition: {x: 21.248547, y: 2.9598403, z: 21.710403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1383274263}
-  m_Father: {fileID: 3935021931425268156}
-  m_RootOrder: 0
+  m_Father: {fileID: 1549598432}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1895513247
 MonoBehaviour:
@@ -9511,7 +9577,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.005
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1895513250
 MonoBehaviour:
@@ -9561,6 +9627,24 @@ MonoBehaviour:
   exposedObjects:
   - {fileID: 1895513250}
   aggroBias: 0
+  canBeTargeted: 1
+--- !u!114 &1895513253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895513245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatPanelPrefab: {fileID: 3174951708391038906, guid: 882bfdafd9ebfd94f9b1a60c641be89f,
+    type: 3}
+  showCombatPanelOnStart: 1
+  PanelOffset: {x: 0, y: 1, z: 0}
+  PanelScale: {x: 0, y: 0, z: 0}
 --- !u!1 &1897496755
 GameObject:
   m_ObjectHideFlags: 0
@@ -9590,7 +9674,7 @@ Transform:
   m_GameObject: {fileID: 1897496755}
   m_LocalRotation: {x: -0.33033377, y: -0.62520367, z: -0.6252037, w: 0.3303337}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.010000003, y: 0.010000002, z: 0.010000004}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 5006512735421955486}
   m_Father: {fileID: 1371069656}
@@ -10024,7 +10108,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8359481929772053671}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1983836792
 MonoBehaviour:
@@ -11264,10 +11348,9 @@ Transform:
   m_LocalPosition: {x: 0.25454664, y: 0.73384047, z: 0.5784114}
   m_LocalScale: {x: 299.9999, y: 299.99994, z: 299.99994}
   m_Children:
-  - {fileID: 1189097487}
   - {fileID: 1330574800}
   m_Father: {fileID: 1549598432}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1661359176552410053
 GameObject:
@@ -12484,10 +12567,9 @@ Transform:
   m_LocalPosition: {x: 0.25454664, y: 0.73384047, z: 0.5784114}
   m_LocalScale: {x: 300, y: 299.99997, z: 299.99997}
   m_Children:
-  - {fileID: 1895513246}
   - {fileID: 1857963840}
   m_Father: {fileID: 1549598432}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3953913238707158139
 MeshFilter:
@@ -14110,10 +14192,9 @@ Transform:
   m_LocalPosition: {x: 0.25454664, y: 0.73384047, z: 0.5784114}
   m_LocalScale: {x: 299.99994, y: 300, z: 300}
   m_Children:
-  - {fileID: 287161786}
   - {fileID: 1673347810}
   m_Father: {fileID: 1549598432}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &7644297644208309983
 MeshRenderer:
@@ -14445,8 +14526,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.05, y: 0.05, z: 0.05}
+    m_Center: {x: 0.00000011920929, y: 0.25529513, z: -0.54574364}
+    m_Extent: {x: 0.745957, y: 0.29239854, z: 0.7244517}
   m_DirtyAABB: 0
 --- !u!33 &8296172668811736716
 MeshFilter:
@@ -14483,10 +14564,9 @@ Transform:
   m_LocalPosition: {x: 0.25454664, y: 0.73384047, z: 0.5784114}
   m_LocalScale: {x: 300, y: 299.99997, z: 299.99997}
   m_Children:
-  - {fileID: 1371069656}
   - {fileID: 1983836791}
   m_Father: {fileID: 1549598432}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &8367646363301332543
 MeshRenderer:

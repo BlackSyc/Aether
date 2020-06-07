@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Aether.Core.Combat
+﻿namespace Aether.Core.Combat
 {
     public interface ICombatSystem
     {
@@ -11,5 +9,7 @@ namespace Aether.Core.Combat
         string Name { get; }
 
         ITransform Transform { get; }
+
+        bool CanBeTargeted { get; set; }
     }
 }

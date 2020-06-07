@@ -1,6 +1,5 @@
 ﻿using Aether.Core;
 using Aether.Core.Extensions;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -11,6 +10,9 @@ namespace Aether.Combat
         #region Private Fields
         [SerializeField]
         private int aggroBias;
+
+        [SerializeField]
+        private bool canBeTargeted = true;
         #endregion
 
         #region Public Properties
@@ -25,6 +27,12 @@ namespace Aether.Combat
         public bool IsEnemy => Layers.EnemyLayer.Contains(gameObject);
 
         public bool IsIn(LayerMask layerMask) => layerMask == (layerMask | (1 << gameObject.layer));
+
+        public bool CanBeTargeted
+        {
+            get { return canBeTargeted; }
+            set { canBeTargeted = value; }
+        }
         #endregion
 
         #region MonoBehaviour
