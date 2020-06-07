@@ -1,6 +1,6 @@
 ﻿namespace Aether.Core.Combat
 {
-    public interface ITarget
+    public interface IMissileTarget
     {
         void Hit();
     }

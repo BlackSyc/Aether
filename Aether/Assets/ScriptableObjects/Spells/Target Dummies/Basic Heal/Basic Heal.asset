@@ -10,36 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d96818dbabae504c95b59b457801f5c, type: 3}
-  m_Name: Dream Missile
+  m_Name: Basic Heal
   m_EditorClassIdentifier: 
-  name: Dream Missile
-  aspect: 1
-  onlyCastOnSelf: 0
-  description: 'Shoot a Dream Missile towards a target.
-
-
-    On impact with a friendly
-    target, the target will receive a minor heal.
-
-
-    Secondary effect:
-
-    Some
-    arcane entities might start to grow when they get hit by a Dream Missile.
-
-
-    Hold
-    Ctrl to cast on yourself.'
+  name: Basic Heal
+  aspect: 0
+  onlyCastOnSelf: 1
+  description: Heal yourself for minor amount.
   healthDelta: 100
-  globalAggro: 500
+  globalAggro: 0
   localAggro: 0
-  castDuration: 0.5
-  coolDown: 2
+  castDuration: 1
+  coolDown: 0
   onGlobalCooldown: 1
   castWhileMoving: 1
   requiresCombatTarget: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
-  spellPrefab: {fileID: 3282706551129572718, guid: 386382b1f5c709c4fbbfb726211b1183,
+  spellPrefab: {fileID: 3282706551129572718, guid: 4eafd2673893d3844845b885830d695a,
     type: 3}

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Aether.Combat.Health
 {
-    internal class Health : MonoBehaviour, IHealth, Core.Combat.IHealth
+    internal class Health : MonoBehaviour, IHealth
     {
         public struct Events
         {

@@ -45,6 +45,9 @@ namespace Aether.ScriptableObjects.Spells
         private bool castWhileMoving;
 
         [SerializeField]
+        private bool requiresCombatTarget;
+
+        [SerializeField]
         private LayerMask layerMask;
 
         [SerializeField]
@@ -62,6 +65,8 @@ namespace Aether.ScriptableObjects.Spells
         public float CastDuration => castDuration;
         public float CoolDown => coolDown;
         public bool CastWhileMoving => castWhileMoving;
+        public bool RequiresCombatTarget => requiresCombatTarget;
+
         public LayerMask LayerMask => layerMask;
         public GameObject SpellPrefab => spellPrefab;
 

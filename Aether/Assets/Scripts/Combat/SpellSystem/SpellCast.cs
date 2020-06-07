@@ -21,7 +21,7 @@ namespace Aether.Combat.SpellSystem
         public event Action<Core.Combat.ISpellCast> CastInterrupted;
         public event Action<Core.Combat.ISpellCast> CastComplete;
 
-        public Core.Combat.ICombatSystem Target { get; private set; }
+        public Target Target { get; private set; }
 
         public float Progress { get; private set; } = 0f;
 
@@ -34,7 +34,7 @@ namespace Aether.Combat.SpellSystem
         public Transform CastOrigin { get; private set; }
         #endregion
 
-        public SpellCast(ISpell spell, Transform castOrigin, ICombatSystem caster, ICombatSystem target)
+        public SpellCast(ISpell spell, Transform castOrigin, ICombatSystem caster, Target target)
         {
             this.Spell = spell;
             this.CastOrigin = castOrigin;
@@ -43,9 +43,15 @@ namespace Aether.Combat.SpellSystem
         }
 
 
-        public void UpdateTarget(ICombatSystem newTarget)
+        public void UpdateTarget(Target newTarget)
         {
             if (newTarget == null)
+                return;
+
+            if (Target.HasCombatTarget() && !newTarget.HasCombatTarget())
+                return;
+
+            if (Spell.RequiresCombatTarget && !newTarget.HasCombatTarget())
                 return;
 
             this.Target = newTarget;

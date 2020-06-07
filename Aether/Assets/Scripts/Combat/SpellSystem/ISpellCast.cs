@@ -7,7 +7,7 @@ namespace Aether.Combat.SpellSystem
     {
         #region Public Properties
 
-        new Core.Combat.ICombatSystem Target { get; }
+        new Target Target { get; }
 
         float Progress { get; }
 
@@ -21,7 +21,7 @@ namespace Aether.Combat.SpellSystem
         #endregion
 
 
-        void UpdateTarget(ICombatSystem newTarget);
+        void UpdateTarget(Target newTarget);
 
         void Cancel();
 

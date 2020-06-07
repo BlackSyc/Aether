@@ -16,8 +16,11 @@ namespace Aether.ScriptableObjects.Spells
 
         public override void CastFired()
         {
-            if (Target.Has(out IModifierSlots modifierSlots))
-                modifierSlots.AddModifier(modifier);
+            if (Target.HasCombatTarget(out ICombatSystem combatTarget))
+            {
+                if (combatTarget.Has(out IModifierSlots modifierSlots))
+                    modifierSlots.AddModifier(modifier);
+            }
             Destroy(gameObject);
         }
 

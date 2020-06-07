@@ -1,4 +1,4 @@
-﻿using Aether.Core.Extensions;
+﻿using Aether.Core.Combat;
 using Aether.Input;
 using System.Linq;
 using UnityEngine;
@@ -47,40 +47,20 @@ namespace Aether.Combat.TargetSystem
         #endregion
 
         #region Public Methods
-        public ICombatSystem GetCurrentTarget(LayerMask layerMask)
+        public Target GetCurrentTarget()
         {
-            if (targetSelf && layerMask.Contains(gameObject))
-                return GetComponent<ICombatSystem>();
+            if (targetSelf)
+                return new Target(GetComponent<ICombatSystem>());
 
             return Physics.RaycastAll(playerCamera.position, playerCamera.forward, maxRange)
-                .Where(x => x.transform != transform)
-                .Select(x => (x, x.transform.GetComponent<ICombatSystem>()))
-                .Where(x => x.Item2 != null)
-                .Select(x => x.Item2)
-                .OrderBy(x => Vector3.Distance(x.Transform.Position, playerCamera.position))
+                .Where(hit => hit.transform != transform)
+                .Select(hit => (hit, hit.transform.GetComponent<ICombatSystem>()))
+                .Where(hitTuple => hitTuple.Item2 != null)
+                .OrderBy(hitTuple => Vector3.Distance(hitTuple.hit.point, playerCamera.position))
+                .Take(1)
+                .Select(hitTuple => new Target(hitTuple.Item2, hitTuple.hit.point - hitTuple.Item2.Transform.Position))
+                .DefaultIfEmpty(new Target(playerCamera.position + playerCamera.forward * maxRange))
                 .FirstOrDefault();
-        }
-
-        public Vector3 GetCurrentTargetExact(LayerMask layerMask)
-        {
-            var combatTargetPoint = Physics.RaycastAll(playerCamera.position, playerCamera.forward, maxRange)
-                .Where(x => x.transform != transform)
-                .Select(x => (x, x.transform.GetComponent<ICombatSystem>()))
-                .Where(x => x.Item2 != null)
-                .OrderBy(x => Vector3.Distance(x.Item2.Transform.Position, playerCamera.position))
-                .Select(x => x.x.point)
-                .FirstOrDefault();
-
-            if (combatTargetPoint != null)
-                return combatTargetPoint;
-
-            return transform.position + (transform.forward.normalized * maxRange);
-
-        }
-
-        Core.Combat.ICombatSystem Core.Combat.ITargetSystem.GetCurrentTarget(LayerMask layerMask)
-        {
-            return GetCurrentTarget(layerMask);
         }
         #endregion
     }

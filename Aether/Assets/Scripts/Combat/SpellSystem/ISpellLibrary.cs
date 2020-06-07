@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Aether.Core.Combat;
+using UnityEngine;
 
 namespace Aether.Combat.SpellSystem
 {
@@ -11,11 +12,11 @@ namespace Aether.Combat.SpellSystem
 
         bool IsOnGlobalCoolDown { get; }
 
-        bool HasActiveSpell { get; }
+        new bool HasActiveSpell { get; }
         #endregion
 
         #region Methods
-        bool TryCast(out SpellCast spellCast, Transform castParent, ICombatSystem caster, ICombatSystem target);
+        bool TryCast(out SpellCast spellCast, Transform castParent, ICombatSystem caster, Target target);
 
         void RemoveAll();
         #endregion

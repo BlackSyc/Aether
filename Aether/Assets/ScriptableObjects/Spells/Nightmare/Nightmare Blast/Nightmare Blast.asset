@@ -30,6 +30,7 @@ MonoBehaviour:
   coolDown: 3
   onGlobalCooldown: 0
   castWhileMoving: 1
+  requiresCombatTarget: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 0

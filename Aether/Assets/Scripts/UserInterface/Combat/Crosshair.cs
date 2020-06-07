@@ -45,9 +45,8 @@ namespace Aether.UserInterface.Combat
         void LateUpdate()
         {
             _crosshairContainer.SetActive(playerSpellSystem.HasActiveSpells);
-            LayerMask layerMask = playerSpellSystem.GetCombinedLayerMask();
 
-            if (playerTargetSystem.GetCurrentTarget(layerMask) != null)
+            if (playerTargetSystem.GetCurrentTarget().HasCombatTarget())
             {
                 _crosshairAnimator.SetBool("HasObjectTarget", true);
             }

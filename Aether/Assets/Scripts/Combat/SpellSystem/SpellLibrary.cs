@@ -77,7 +77,7 @@ namespace Aether.Combat.SpellSystem
         }
 
         // Tested in Editmode Tests
-        public bool TryCast(out SpellCast spellCast, Transform castOrigin, ICombatSystem caster, ICombatSystem target)
+        public bool TryCast(out SpellCast spellCast, Transform castOrigin, ICombatSystem caster, Target target)
         {
             spellCast = null;
 
@@ -91,6 +91,12 @@ namespace Aether.Combat.SpellSystem
                 return false;
 
             if (IsOnGlobalCoolDown)
+                return false;
+
+            if (ActiveSpell.OnlyCastOnSelf)
+                target = new Target(caster);
+
+            if (ActiveSpell.RequiresCombatTarget && !target.HasCombatTarget())
                 return false;
 
             SpellCast newSpellCast = new SpellCast(ActiveSpell, castOrigin, caster, target);

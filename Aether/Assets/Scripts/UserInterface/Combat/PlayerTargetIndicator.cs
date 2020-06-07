@@ -50,7 +50,10 @@ public class PlayerTargetIndicator : MonoBehaviour
     void Update()
     {
         if (currentSpellCast != null)
-            image.enabled = currentSpellCast.Target == combatSystem;
+        {
+            if (currentSpellCast.Target.HasCombatTarget(out ICombatSystem combatTarget))
+                image.enabled = combatTarget == combatSystem;
+        }
     }
 
     private void OnDestroy()

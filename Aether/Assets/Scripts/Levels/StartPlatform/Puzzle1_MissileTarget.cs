@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Aether.StartPlatform
 {
-    public class Puzzle1_MissileTarget : MonoBehaviour, ITarget
+    public class Puzzle1_MissileTarget : MonoBehaviour, IMissileTarget
     {
         public struct Events
         {

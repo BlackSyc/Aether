@@ -10,9 +10,9 @@ namespace Aether.Combat.SpellSystem.SpellBehaviours
         public Core.Combat.ICombatSystem Caster { get; set; }
 
         [HideInInspector]
-        public Core.Combat.ICombatSystem Target { get; protected set; }
+        public Target Target { get; protected set; }
 
-        public virtual void SetTarget(Core.Combat.ICombatSystem newTarget)
+        public virtual void SetTarget(Target newTarget)
         {
             Target = newTarget;
         }

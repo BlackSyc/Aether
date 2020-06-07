@@ -33,24 +33,22 @@ namespace Aether.ScriptableObjects.Spells
 
             var hitFlash = Instantiate(hitFlashPrefab, null);
 
-
-            if (Caster.Has(out ITargetSystem targetSystem))
-                hitFlash.transform.position = targetSystem.GetCurrentTargetExact(Spell.LayerMask);
+            if (Target.HasCombatTarget(out Core.Combat.ICombatSystem combatTarget))
+                hitFlash.transform.position = Target.RelativeHitPoint + combatTarget.Transform.Position;
             else
-                hitFlash.transform.position = Target.Transform.Position;
-
-
-
+                hitFlash.transform.position = Target.RelativeHitPoint;
 
             hitFlash.transform.LookAt(Caster.Get<ISpellSystem>().CastOrigin);
             Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
 
-            if (Target.Has(out IHealth health))
-                health.ChangeHealth(Spell.HealthDelta);
+            if (combatTarget != null)
+            {
+                if (combatTarget.Has(out IHealth health))
+                    health.ChangeHealth(Spell.HealthDelta);
 
-            if (Target.Has(out IImpactHandler impactHandler))
-                impactHandler.HandleImpactAtPosition(transform.forward * 3000, hitFlash.transform.position);
-
+                if (combatTarget.Has(out IImpactHandler impactHandler))
+                    impactHandler.HandleImpactAtPosition(transform.forward * 3000, hitFlash.transform.position);
+            }
             Destroy(gameObject);
         }
 

@@ -15,5 +15,7 @@ namespace Aether.Core.Combat
         float CurrentHealth { get; }
 
         float MaxHealth { get; }
+
+        bool IsDead { get; }
     }
 }

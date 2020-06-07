@@ -22,7 +22,7 @@ namespace Aether.ScriptableObjects.Spells
                 aggroManager.IncreaseAggro(Caster, Spell.LocalAggro);
 
             if (target.Has(out IImpactHandler impactHandler))
-                impactHandler.HandleImpactAtPosition(transform.forward * Spell.HealthDelta * -25, Target.Transform.Position + targetOffset);
+                impactHandler.HandleImpactAtPosition(transform.forward * Spell.HealthDelta * -25, Target.RelativeHitPoint);
         }
     }
 }

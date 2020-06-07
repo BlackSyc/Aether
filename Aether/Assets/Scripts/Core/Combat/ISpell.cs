@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Aether.Core.Combat
 {
@@ -8,6 +7,8 @@ namespace Aether.Core.Combat
         LayerMask LayerMask { get; }
 
         bool CastWhileMoving { get; }
+
+        bool RequiresCombatTarget { get; }
 
         float CastDuration { get; }
 

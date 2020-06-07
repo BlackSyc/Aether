@@ -1,5 +1,4 @@
 ﻿using Aether.Core.Combat;
-using Aether.Core.Extensions;
 using Aether.Movement;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,6 @@ using UnityEngine;
 
 namespace Aether.Combat.SpellSystem
 {
-    [RequireComponent(typeof(TargetSystem.ITargetSystem))]
     [RequireComponent(typeof(IMovementSystem))]
     [RequireComponent(typeof(ICombatSystem))]
     internal class SpellSystem : MonoBehaviour, ISpellSystem
@@ -49,14 +47,11 @@ namespace Aether.Combat.SpellSystem
 
         public ICombatSystem CombatSystem { get; set; }
 
-        public TargetSystem.ITargetSystem TargetSystem { get; private set; }
-
         #endregion
 
         #region MonoBehaviour
         private void Awake()
         {
-            TargetSystem = GetComponent<TargetSystem.ITargetSystem>();
             CombatSystem = GetComponent<ICombatSystem>();
             movementSystem = GetComponent<IMovementSystem>();
         }
@@ -98,23 +93,7 @@ namespace Aether.Combat.SpellSystem
         }
 
         // Tested in Editmode Tests
-        public LayerMask GetCombinedLayerMask()
-        {
-            LayerMask layerMask = new LayerMask();
-
-            if (SpellLibraries != null)
-            {
-                SpellLibraries
-                    .Where(x => x.HasActiveSpell)
-                    .Select(x => x.ActiveSpell.LayerMask)
-                    .ForEach(x => layerMask |= x);
-            }
-
-            return layerMask;
-        }
-
-        // Tested in Editmode Tests
-        public void CastSpell(int index)
+        public void CastSpell(int index, Target target)
         {
             ISpell requestedSpell = SpellLibraries[index].ActiveSpell;
 
@@ -125,7 +104,7 @@ namespace Aether.Combat.SpellSystem
             {
                 if (currentSpellCast.Spell == requestedSpell)
                 {
-                    currentSpellCast.UpdateTarget(requestedSpell.OnlyCastOnSelf ? CombatSystem : TargetSystem.GetCurrentTarget(requestedSpell.LayerMask));
+                    currentSpellCast.UpdateTarget(requestedSpell.OnlyCastOnSelf ? new Target(CombatSystem) : target);
                     return;
                 }
 
@@ -135,7 +114,7 @@ namespace Aether.Combat.SpellSystem
                     return;
             }
 
-            if (!SpellLibraries[index].TryCast(out currentSpellCast, castOrigin, CombatSystem, requestedSpell.OnlyCastOnSelf ? CombatSystem : TargetSystem.GetCurrentTarget(requestedSpell.LayerMask)))
+            if (!SpellLibraries[index].TryCast(out currentSpellCast, castOrigin, CombatSystem, target))
                 return;
 
             if (currentSpellCast.Spell.OnGlobalCooldown)

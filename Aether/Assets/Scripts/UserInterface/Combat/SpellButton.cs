@@ -4,7 +4,8 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-namespace Aether.UserInterface.Combat {
+namespace Aether.UserInterface.Combat
+{
     public class SpellButton : MonoBehaviour
     {
         private ISpellLibrary spellLibrary;
@@ -117,7 +118,9 @@ namespace Aether.UserInterface.Combat {
                 text.text = ((int)(until - Time.time) + 1).ToString();
                 yield return null;
             }
-            text.text = spellLibrary.ActiveSpell.Name;
+
+            if (spellLibrary.HasActiveSpell)
+                text.text = spellLibrary.ActiveSpell.Name;
         }
 
         private void OnDestroy()
@@ -125,7 +128,7 @@ namespace Aether.UserInterface.Combat {
             if (spellLibrary != null)
                 spellLibrary.OnActiveSpellChanged -= ChangeSpell;
 
-                Player.Instance.Get<ICombatSystem>().Get<ISpellSystem>().OnSpellIsCast -= StartSpellCast;
+            Player.Instance.Get<ICombatSystem>().Get<ISpellSystem>().OnSpellIsCast -= StartSpellCast;
         }
     }
 }

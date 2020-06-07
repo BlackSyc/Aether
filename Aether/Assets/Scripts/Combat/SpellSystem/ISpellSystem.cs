@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Aether.Core.Combat;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Aether.Combat.SpellSystem { 
+namespace Aether.Combat.SpellSystem
+{
     internal interface ISpellSystem : Core.Combat.ISpellSystem
     {
         #region Properties
@@ -20,7 +21,7 @@ namespace Aether.Combat.SpellSystem {
 
         #region Methods
 
-        void CastSpell(int index);
+        new void CastSpell(int index, Target target);
 
         void CancelSpellCast();
 

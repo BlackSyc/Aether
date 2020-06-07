@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castOrigin: {fileID: 476305285402853955}
+  playerTargetSystem: {fileID: 2787966248816650534}
 --- !u!114 &476305285128632753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f6119820856f04684f2fa39e7e3e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 700
+  currentHealth: 1000
   maxHealth: 1000
 --- !u!143 &476305285128632749
 CharacterController:

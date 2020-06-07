@@ -54,7 +54,7 @@ namespace Aether.ScriptableObjects.Spells
 
         private void ExecuteTargetHitBehaviour(ICombatSystem target)
         {
-            if (target.Has(out ITarget missileTarget))
+            if (target.Has(out IMissileTarget missileTarget))
             {
                 missileTarget.Hit();
             }
@@ -62,14 +62,14 @@ namespace Aether.ScriptableObjects.Spells
 
         public void PlayMissileHitAnimation()
         {
-            Vector3 hitPosition = transform.position;
-
-            if (Caster.Has(out ITargetSystem targetSystem))
-                hitPosition = targetSystem.GetCurrentTargetExact(Spell.LayerMask);
-
             GameObject hitFlash = Instantiate(hitFlashPrefab, transform);
             hitFlash.transform.SetParent(null, true);
-            hitFlash.transform.position = hitPosition;
+
+            if (Target.HasCombatTarget(out Core.Combat.ICombatSystem combatTarget))
+                hitFlash.transform.position = Target.RelativeHitPoint + combatTarget.Transform.Position;
+            else
+                hitFlash.transform.position = Target.RelativeHitPoint;
+
             Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
         }
 

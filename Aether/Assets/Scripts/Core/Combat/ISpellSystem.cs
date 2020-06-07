@@ -15,8 +15,8 @@ namespace Aether.Core.Combat
 
         ISpellLibrary GetSpellLibrary(int index);
 
-        LayerMask GetCombinedLayerMask();
-
         event Action<ISpellCast> OnSpellIsCast;
+
+        void CastSpell(int index, Target target);
     }
 }
