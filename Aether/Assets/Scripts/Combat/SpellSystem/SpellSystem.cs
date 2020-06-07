@@ -118,13 +118,21 @@ namespace Aether.Combat.SpellSystem
                 return;
 
             if (currentSpellCast.Spell.OnGlobalCooldown)
-                SpellLibraries.ForEach(x => ((SpellLibrary)x).AddGlobalCooldown(globalCooldownSeconds));
+                ApplyGlobalCooldown();
 
             currentSpellCast.CastCancelled += CancelCurrentCast;
             currentSpellCast.CastComplete += ClearCurrentCast;
             currentSpellCast.Start();
             OnSpellIsCast?.Invoke(currentSpellCast);
             return;
+        }
+
+        private void ApplyGlobalCooldown()
+        {
+            if (CombatSystem.Has(out Attributes attributes))
+                SpellLibraries.ForEach(x => ((SpellLibrary)x).AddGlobalCooldown(globalCooldownSeconds / (attributes.Haste / 100)));
+            else
+                SpellLibraries.ForEach(x => ((SpellLibrary)x).AddGlobalCooldown(globalCooldownSeconds));
         }
 
         // NOT YET: Tested in Playmode Tests

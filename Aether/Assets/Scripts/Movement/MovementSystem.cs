@@ -36,7 +36,7 @@ namespace Aether.Movement
 
         private float CalculateMovementSpeed()
         {
-            return attributes ? attributes.Speed * 0.01f * movementSpeed : movementSpeed;
+            return attributes ? movementSpeed * (attributes.Speed / 100f) : movementSpeed;
         }
 
         #region MonoBehaviour

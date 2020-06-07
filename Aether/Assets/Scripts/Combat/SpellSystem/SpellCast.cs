@@ -74,7 +74,10 @@ namespace Aether.Combat.SpellSystem
                     return;
                 }
 
-                Progress += Time.deltaTime / Spell.CastDuration;
+                if (Caster.Has(out Attributes attributes))
+                    Progress += (Time.deltaTime / Spell.CastDuration) * (attributes.Haste / 100);
+                else
+                    Progress += Time.deltaTime / Spell.CastDuration;
 
                 CastProgress?.Invoke(Progress);
             }
