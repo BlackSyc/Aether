@@ -99,6 +99,7 @@ namespace Aether.UserInterface.Combat
 
         protected virtual void LateUpdate()
         {
+            
             transform.position = transform.parent.position + combatPanelInfo.PanelOffset;
 
             transform.rotation = Quaternion.LookRotation(Player.Instance.Get<Camera>().transform.forward, Player.Instance.Get<Camera>().transform.up);

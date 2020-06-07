@@ -1,5 +1,4 @@
 ﻿using Aether.Core.Combat;
-using Aether.Core.Movement;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -10,7 +9,7 @@ namespace Aether.ScriptableObjects.Modifiers
     [Serializable]
     public class SprintType : ModifierType
     {
-        public float MovementSpeedIncrease;
+        public float SpeedIncrease;
 
         public override IEnumerator modifierCoroutine(ICombatSystem combatSystem)
         {
@@ -26,14 +25,14 @@ namespace Aether.ScriptableObjects.Modifiers
 
         private void AddMovementSpeed(ICombatSystem combatSystem)
         {
-            if (combatSystem.Has(out IMovementSystem movementSystem))
-                movementSystem.MovementSpeed += MovementSpeedIncrease;
+            if (combatSystem.Has(out Attributes attributes))
+                attributes.Speed += SpeedIncrease;
         }
 
         private void RemoveMovementSpeed(ICombatSystem combatSystem)
         {
-            if (combatSystem.Has(out IMovementSystem movementSystem))
-                movementSystem.MovementSpeed -= MovementSpeedIncrease;
+            if (combatSystem.Has(out Attributes attributes))
+                attributes.Speed -= SpeedIncrease;
         }
     }
 }

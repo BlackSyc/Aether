@@ -9,17 +9,22 @@ namespace Aether.Movement
         #region Private Fields
 
         [SerializeField]
+        private Attributes attributes;
+
+        [SerializeField]
         private float rotationSpeed = 10;
 
         private CharacterController characterController;
 
         private float upwardsMovement = 0;
+
+        [SerializeField]
+        private float movementSpeed = 8;
         #endregion
 
         #region Public Properties
         public bool IsMoving { get; private set; } = false;
 
-        public float MovementSpeed { get; set; } = 8;
 
         public float RotationSpeed => rotationSpeed;
 
@@ -28,6 +33,11 @@ namespace Aether.Movement
         public ICombatSystem CombatSystem { get; set; }
         public bool IsActive { get; set; } = true;
         #endregion
+
+        private float CalculateMovementSpeed()
+        {
+            return attributes ? attributes.Speed * 0.01f * movementSpeed : movementSpeed;
+        }
 
         #region MonoBehaviour
         private void Awake()
@@ -42,7 +52,7 @@ namespace Aether.Movement
             if (!IsActive)
                 return;
 
-            Vector3 localMovement = (transform.right * movementInput.x + transform.forward * movementInput.y) * MovementSpeed;
+            Vector3 localMovement = (transform.right * movementInput.x + transform.forward * movementInput.y) * CalculateMovementSpeed();
             IsMoving = localMovement.magnitude > 0.01f;
 
             localMovement.y = upwardsMovement;

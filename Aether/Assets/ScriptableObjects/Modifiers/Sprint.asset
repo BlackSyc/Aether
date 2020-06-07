@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sprint
   m_EditorClassIdentifier: 
   name: Nightmare Haste
-  duration: 10
+  duration: 5
   description: Increases movement speed for 10 seconds.
   icon: {fileID: 0}
-  MovementSpeedIncrease: 10
+  SpeedIncrease: 100

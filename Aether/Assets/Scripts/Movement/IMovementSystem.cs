@@ -5,8 +5,6 @@ namespace Aether.Movement
     public interface IMovementSystem : Core.Movement.IMovementSystem
     {
         #region Public Properties
-        float MovementSpeed { get; set; }
-
         float RotationSpeed { get; }
 
         float JumpPower { get; set; }
