@@ -8,17 +8,17 @@ namespace Aether.Combat.Modifiers
 {
     internal class ModifierSlots : MonoBehaviour, Core.Combat.IModifierSlots
     {
-        public event Action<Core.Combat.IModifier> OnModifierAdded;
+        public event Action<Core.Combat.IModifierType> OnModifierAdded;
 
-        public event Action<Core.Combat.IModifier> OnModifierRemoved;
+        public event Action<Core.Combat.IModifierType> OnModifierRemoved;
 
-        private List<IModifier> activeModifiers;
+        private List<IModifierType> activeModifiers;
         public ICombatSystem CombatSystem { get; set; }
 
         private void Start()
         {
             CombatSystem = GetComponent<ICombatSystem>();
-            activeModifiers = new List<IModifier>();
+            activeModifiers = new List<IModifierType>();
         }
 
         public void AddModifier(IModifierType modifierType)
@@ -36,7 +36,7 @@ namespace Aether.Combat.Modifiers
             OnModifierAdded?.Invoke(modifier);
         }
 
-        public void RemoveModifier(IModifier modifier)
+        public void RemoveModifier(IModifierType modifier)
         {
             activeModifiers.Remove(modifier);
 

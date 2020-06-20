@@ -37,7 +37,7 @@ namespace Aether.UserInterface.Combat
             modifierSlots.OnModifierRemoved -= RemoveModifierIcon;
         }
 
-        private void RemoveModifierIcon(IModifier modifier)
+        private void RemoveModifierIcon(IModifierType modifier)
         {
             modifierIcons.RemoveAll(x =>
             {
@@ -50,7 +50,7 @@ namespace Aether.UserInterface.Combat
             });
         }
 
-        private void AddModifierIcon(IModifier modifier)
+        private void AddModifierIcon(IModifierType modifier)
         {
             var newIcon = Instantiate(modifierIconPrefab, transform).GetComponent<ModifierIcon>();
             newIcon.transform.localScale = new Vector3(iconScale, iconScale, iconScale);

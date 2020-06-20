@@ -12,8 +12,6 @@ namespace Aether.Core.Combat
 
         float CastDuration { get; }
 
-        GameObject SpellPrefab { get; }
-
         int GlobalAggro { get; }
 
         int LocalAggro { get; }
@@ -28,5 +26,7 @@ namespace Aether.Core.Combat
 
         bool OnlyCastOnSelf { get; }
         bool OnGlobalCooldown { get; }
+
+        void Initialize(ISpellCast spellCast);
     }
 }

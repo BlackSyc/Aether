@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d96818dbabae504c95b59b457801f5c, type: 3}
+  m_Script: {fileID: 11500000, guid: c4f1fbdd192457b429dcb2986cbcfc21, type: 3}
   m_Name: Sprint
   m_EditorClassIdentifier: 
   name: Sprint
@@ -21,9 +21,10 @@ MonoBehaviour:
   localAggro: 0
   castDuration: 0
   coolDown: 10
+  onGlobalCooldown: 1
   castWhileMoving: 1
+  requiresCombatTarget: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
-  spellPrefab: {fileID: 3806535509503361552, guid: ec697dcf2c85552469e8288acae7f170,
-    type: 3}
+  modifier: {fileID: 11400000, guid: d7d28433b2242d2499e59ad4073c687c, type: 2}

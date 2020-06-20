@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d96818dbabae504c95b59b457801f5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 224c183af318b8842a5aea0483fa3d71, type: 3}
   m_Name: Nightmare Blast
   m_EditorClassIdentifier: 
   name: Nightmare Blast
@@ -34,5 +34,5 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  spellPrefab: {fileID: 1518896999022840769, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
+  spellPrefab: {fileID: 6118792434820047554, guid: e8c029c6ed3dc3e469faf40686b6cd2d,
     type: 3}

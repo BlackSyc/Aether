@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Aether.Combat.Modifiers
 {
-    internal class Modifier : IModifier
+    internal class Modifier : IModifierType
     {
         public Core.Combat.IModifierType ModifierType { get; private set; }
 
@@ -20,7 +20,7 @@ namespace Aether.Combat.Modifiers
         public IEnumerator ModifierCoroutine(Core.Combat.ICombatSystem combatSystem)
         {
             FallOffTime = Time.time + ModifierType.Duration;
-            return ModifierType.modifierCoroutine(combatSystem);
+            return ModifierType.ModifierCoroutine(combatSystem);
         }
 
         public void Abort(Core.Combat.ICombatSystem combatSystem)

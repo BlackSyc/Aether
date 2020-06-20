@@ -11,10 +11,6 @@ namespace Aether.Combat
 
         bool IsEnemy { get; }
 
-        ITransform Transform { get; }
-
         bool IsIn(LayerMask layerMask);
-
-        void TriggerGlobalAggro(int globalAggro);
     }
 }

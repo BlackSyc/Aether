@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d96818dbabae504c95b59b457801f5c, type: 3}
+  m_Script: {fileID: 11500000, guid: c4f1fbdd192457b429dcb2986cbcfc21, type: 3}
   m_Name: Nightmare Shock
   m_EditorClassIdentifier: 
   name: Nightmare Shock
@@ -23,8 +23,8 @@ MonoBehaviour:
   coolDown: 2
   onGlobalCooldown: 1
   castWhileMoving: 1
+  requiresCombatTarget: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 4096
-  spellPrefab: {fileID: 1518896999022840769, guid: caad16273c4191346aa65bbdaafcc34c,
-    type: 3}
+  modifier: {fileID: 11400000, guid: 9361b6d568d05664eb0846334bf91862, type: 2}

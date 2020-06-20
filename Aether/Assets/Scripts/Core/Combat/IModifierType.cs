@@ -13,7 +13,7 @@ namespace Aether.Core.Combat
 
         Sprite Icon { get; }
 
-        IEnumerator modifierCoroutine(ICombatSystem combatSystem);
+        IEnumerator ModifierCoroutine(ICombatSystem combatSystem);
 
         void Abort(ICombatSystem combatSystem);
     }

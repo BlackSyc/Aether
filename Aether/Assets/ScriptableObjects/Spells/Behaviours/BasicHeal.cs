@@ -1,45 +1,37 @@
-﻿using Aether.Combat.Health;
+﻿using Aether.Core.Combat;
 using UnityEngine;
 
-namespace Aether.Combat.SpellSystem.SpellBehaviours
+namespace Aether.ScriptableObjects.Spells.Behaviours
 {
     public class BasicHeal : SpellBehaviour
     {
-
         [SerializeField]
         private Light castingLight;
 
-        private bool castFired = false;
+        private ISpellCast spellCast;
 
-        public override void CastCanceled()
-        {
-        }
 
-        public override void CastFired()
+
+        protected override void CastCompleted(ISpellCast spellCast)
         {
-            if (Target.HasCombatTarget(out Core.Combat.ICombatSystem combatTarget))
+            if (spellCast.Target.HasCombatTarget(out ICombatSystem combatTarget))
             {
                 if (combatTarget.Has(out IHealth health))
-                    health.ChangeHealth(Spell.HealthDelta);
+                    health.ChangeHealth(spellCast.Spell.HealthDelta);
             }
 
-            castFired = true;
             castingLight.color = Color.white;
             Destroy(gameObject, 0.1f);
         }
 
-        public override void CastInterrupted()
+        protected override void CastProgress(float progress)
         {
+            castingLight.intensity = progress * 100;
         }
 
-        public override void CastStarted()
+        protected override void CastStarted(ISpellCast spellCast)
         {
-        }
-
-        private void Update()
-        {
-            if (!castFired)
-                castingLight.intensity += (castingLight.intensity * Time.deltaTime);
+            castingLight.intensity = 0;
         }
     }
 }

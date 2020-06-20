@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Aether.Core.Combat
 {
@@ -12,5 +13,9 @@ namespace Aether.Core.Combat
 
         Target Target { get; }
         ISpell Spell { get; }
+
+        ICombatSystem Caster { get; }
+
+        Transform CastOrigin { get; }
     }
 }

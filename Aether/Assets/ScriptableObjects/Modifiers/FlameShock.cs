@@ -7,7 +7,7 @@ namespace Aether.ScriptableObjects.Modifiers
 {
     [CreateAssetMenu(menuName = "Scriptable Objects/Modifiers/FlameShock")]
     [Serializable]
-    public class FlameShock : ModifierType
+    public class FlameShock : ModifierBase
     {
         [SerializeField]
         private float damageTickAmount;
@@ -15,7 +15,12 @@ namespace Aether.ScriptableObjects.Modifiers
         [SerializeField]
         private float tickDelay;
 
-        public override IEnumerator modifierCoroutine(ICombatSystem combatSystem)
+        public override void Initialize(ISpellCast spellCast)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override IEnumerator ModifierCoroutine(ICombatSystem combatSystem)
         {
             while (true)
             {

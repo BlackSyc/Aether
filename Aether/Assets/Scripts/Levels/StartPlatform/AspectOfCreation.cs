@@ -28,7 +28,7 @@ namespace Aether.StartPlatform
 
 
         [SerializeField]
-        private Spell reward = null;
+        private ObjectSpell reward = null;
 
         private void Start()
         {

@@ -1,5 +1,4 @@
-﻿using Aether.Combat.SpellSystem.SpellBehaviours;
-using Aether.Core.Combat;
+﻿using Aether.Core.Combat;
 using System;
 using UnityEngine;
 
@@ -10,8 +9,6 @@ namespace Aether.Combat.SpellSystem
         #region Private Fields
 
         private bool casting = false;
-
-        private SpellBehaviour spellBehaviour;
         #endregion
 
         #region Public Properties
@@ -20,6 +17,7 @@ namespace Aether.Combat.SpellSystem
         public event Action<Core.Combat.ISpellCast> CastCancelled;
         public event Action<Core.Combat.ISpellCast> CastInterrupted;
         public event Action<Core.Combat.ISpellCast> CastComplete;
+        public event Action<Target> TargetChanged;
 
         public Target Target { get; private set; }
 
@@ -27,7 +25,7 @@ namespace Aether.Combat.SpellSystem
 
         public ISpell Spell { get; private set; }
 
-        public ICombatSystem Caster { get; private set; }
+        public Core.Combat.ICombatSystem Caster { get; private set; }
 
         public bool CastOnSelf => Target == Caster;
 
@@ -54,11 +52,9 @@ namespace Aether.Combat.SpellSystem
             if (Spell.RequiresCombatTarget && !newTarget.HasCombatTarget())
                 return;
 
-            this.Target = newTarget;
-            if (spellBehaviour != null)
-            {
-                spellBehaviour.SetTarget(this.Target);
-            }
+            Target = newTarget;
+
+            TargetChanged?.Invoke(newTarget);
         }
 
         public void Update()
@@ -83,9 +79,7 @@ namespace Aether.Combat.SpellSystem
             }
             else
             {
-                spellBehaviour.CastFired();
                 TriggerGlobalAggro();
-
                 casting = false;
                 CastComplete?.Invoke(this);
             }
@@ -93,27 +87,19 @@ namespace Aether.Combat.SpellSystem
 
         public void Cancel()
         {
-            spellBehaviour.CastCanceled();
             CastCancelled?.Invoke(this);
             casting = false;
         }
 
         public void Interrupt()
         {
-            spellBehaviour.CastInterrupted();
             CastInterrupted?.Invoke(this);
             Cancel();
         }
 
         public void Start()
         {
-            spellBehaviour = GameObject.Instantiate(Spell.SpellPrefab, CastOrigin).GetComponent<SpellBehaviour>();
-
-            spellBehaviour.Spell = Spell;
-            spellBehaviour.Caster = Caster;
-            spellBehaviour.SetTarget(Target);
-
-            spellBehaviour.CastStarted();
+            Spell.Initialize(this);
 
             CastStarted?.Invoke(this);
             casting = true;

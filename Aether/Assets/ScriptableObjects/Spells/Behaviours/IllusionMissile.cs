@@ -1,23 +1,13 @@
 ﻿using Aether.Core.Combat;
 
-namespace Aether.ScriptableObjects.Spells
+namespace Aether.ScriptableObjects.Spells.Behaviours
 {
     internal class IllusionMissile : ArcaneMissile
     {
 
-        public override void OnTargetHit(ICombatSystem target)
+        protected override void ExecuteTargetHitBehaviour(ICombatSystem target)
         {
-            ExecuteTargetHitBehaviour(target);
-
-            PlayMissileHitAnimation();
-
-            Destroy(gameObject);
-        }
-
-        private void ExecuteTargetHitBehaviour(ICombatSystem target)
-        {
-            target.Get<IAggroManager>()?.IncreaseAggro(target, Spell.LocalAggro);
-            
+            target.Get<IAggroManager>()?.IncreaseAggro(target, spellCast.Spell.LocalAggro);
 
             // to do: add knockback logic
         }

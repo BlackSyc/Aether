@@ -7,11 +7,11 @@ namespace Aether.ScriptableObjects.Modifiers
 {
     [CreateAssetMenu(menuName = "Scriptable Objects/Modifiers/Sprint")]
     [Serializable]
-    public class SprintType : ModifierType
+    public class SprintType : ModifierBase
     {
         public float SpeedIncrease;
 
-        public override IEnumerator modifierCoroutine(ICombatSystem combatSystem)
+        public override IEnumerator ModifierCoroutine(ICombatSystem combatSystem)
         {
             AddMovementSpeed(combatSystem);
 
@@ -33,6 +33,11 @@ namespace Aether.ScriptableObjects.Modifiers
         {
             if (combatSystem.Has(out Attributes attributes))
                 attributes.Speed -= SpeedIncrease;
+        }
+
+        public override void Initialize(ISpellCast spellCast)
+        {
+            throw new NotImplementedException();
         }
     }
 }

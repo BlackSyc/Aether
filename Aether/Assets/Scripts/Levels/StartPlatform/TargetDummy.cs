@@ -12,7 +12,7 @@ namespace Aether.StartPlatform
         private float tickDelay = 1f;
 
         [SerializeField]
-        private Spell healingSpell;
+        private ObjectSpell healingSpell;
 
         private ICombatSystem combatSystem;
 

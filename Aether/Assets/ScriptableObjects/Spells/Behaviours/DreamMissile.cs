@@ -1,22 +1,13 @@
 ﻿using Aether.Core.Combat;
 
-namespace Aether.ScriptableObjects.Spells
+namespace Aether.ScriptableObjects.Spells.Behaviours
 {
     internal class DreamMissile : ArcaneMissile
     {
-        public override void OnTargetHit(ICombatSystem target)
-        {
-            ExecuteTargetHitBehaviour(target);
-
-            PlayMissileHitAnimation();
-
-            Destroy(gameObject);
-        }
-
-        private void ExecuteTargetHitBehaviour(ICombatSystem target)
+        protected override void ExecuteTargetHitBehaviour(ICombatSystem target)
         {
             if (target.Has<IHealth>(out var targetHealth))
-                targetHealth.ChangeHealth(Spell.HealthDelta);
+                targetHealth.ChangeHealth(spellCast.Spell.HealthDelta);
         }
     }
 }

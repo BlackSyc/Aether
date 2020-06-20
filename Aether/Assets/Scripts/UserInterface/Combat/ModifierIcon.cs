@@ -7,7 +7,7 @@ namespace Aether.UserInterface.Combat
 {
     public class ModifierIcon : MonoBehaviour
     {
-        public IModifier Modifier { get; private set; }
+        public IModifierType Modifier { get; private set; }
 
         [SerializeField]
         private Image image;
@@ -15,7 +15,7 @@ namespace Aether.UserInterface.Combat
         [SerializeField]
         private TextMeshProUGUI durationText;
 
-        public void SetModifier(IModifier modifier)
+        public void SetModifier(IModifierType modifier)
         {
             Modifier = modifier;
             image.sprite = Modifier.ModifierType.Icon;

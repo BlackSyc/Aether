@@ -1,12 +1,11 @@
 ﻿using Aether.Core.Combat;
 using System;
-using System.Collections;
 using UnityEngine;
 
 namespace Aether.ScriptableObjects.Modifiers
 {
     [Serializable]
-    public abstract class ModifierType : ScriptableObject, IModifierType
+    public abstract class ModifierBase : ScriptableObject, IModifierType
     {
         #region Serialized fields
         [SerializeField]
@@ -30,9 +29,8 @@ namespace Aether.ScriptableObjects.Modifiers
         #endregion
 
         #region Methods
-        public abstract IEnumerator modifierCoroutine(ICombatSystem combatSystem);
 
-        public virtual void Abort(ICombatSystem combatSystem) { }
+        public abstract void Initialize(ISpellCast spellCast);
         #endregion
     }
 }

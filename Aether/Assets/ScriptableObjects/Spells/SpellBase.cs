@@ -1,13 +1,9 @@
 ﻿using Aether.Core.Combat;
-using System;
 using UnityEngine;
-
 
 namespace Aether.ScriptableObjects.Spells
 {
-    [CreateAssetMenu(menuName = "Scriptable Objects/Spell System/Spell")]
-    [Serializable]
-    public class Spell : ScriptableObject, ISpell
+    public abstract class SpellBase : ScriptableObject, ISpell
     {
         #region Serialized fields
         [SerializeField]
@@ -49,16 +45,13 @@ namespace Aether.ScriptableObjects.Spells
 
         [SerializeField]
         private LayerMask layerMask;
-
-        [SerializeField]
-        private GameObject spellPrefab;
         #endregion
 
         #region Accessors
         public string Name => name;
         public Aspect Aspect => aspect;
         public bool OnlyCastOnSelf => onlyCastOnSelf;
-        public string Description => string.Format(description, name, aspect, onlyCastOnSelf, healthDelta, globalAggro, localAggro, castDuration, coolDown, castWhileMoving, layerMask, spellPrefab);
+        public string Description => string.Format(description, name, aspect, onlyCastOnSelf, healthDelta, globalAggro, localAggro, castDuration, coolDown, castWhileMoving, layerMask);
         public float HealthDelta => healthDelta;
         public int GlobalAggro => globalAggro;
         public int LocalAggro => localAggro;
@@ -66,11 +59,10 @@ namespace Aether.ScriptableObjects.Spells
         public float CoolDown => coolDown;
         public bool CastWhileMoving => castWhileMoving;
         public bool RequiresCombatTarget => requiresCombatTarget;
-
         public LayerMask LayerMask => layerMask;
-        public GameObject SpellPrefab => spellPrefab;
-
         public bool OnGlobalCooldown => onGlobalCooldown;
         #endregion
+
+        public abstract void Initialize(ISpellCast spellCast);
     }
 }

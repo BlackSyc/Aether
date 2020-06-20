@@ -11,5 +11,7 @@
         ITransform Transform { get; }
 
         bool CanBeTargeted { get; set; }
+
+        void TriggerGlobalAggro(int globalAggro);
     }
 }

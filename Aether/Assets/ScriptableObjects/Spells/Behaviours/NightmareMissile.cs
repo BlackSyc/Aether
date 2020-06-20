@@ -1,28 +1,19 @@
 ﻿using Aether.Core.Combat;
 
-namespace Aether.ScriptableObjects.Spells
+namespace Aether.ScriptableObjects.Spells.Behaviours
 {
     internal class NightmareMissile : ArcaneMissile
     {
-        public override void OnTargetHit(ICombatSystem target)
-        {
-            ExecuteTargetHitBehaviour(target);
-
-            PlayMissileHitAnimation();
-
-            Destroy(gameObject);
-        }
-
-        private void ExecuteTargetHitBehaviour(ICombatSystem target)
+        protected override void ExecuteTargetHitBehaviour(ICombatSystem target)
         {
             if (target.Has(out IHealth health))
-                health.ChangeHealth(Spell.HealthDelta);
+                health.ChangeHealth(spellCast.Spell.HealthDelta);
 
             if (target.Has(out IAggroManager aggroManager))
-                aggroManager.IncreaseAggro(Caster, Spell.LocalAggro);
+                aggroManager.IncreaseAggro(spellCast.Caster, spellCast.Spell.LocalAggro);
 
             if (target.Has(out IImpactHandler impactHandler))
-                impactHandler.HandleImpactAtPosition(transform.forward * Spell.HealthDelta * -25, Target.RelativeHitPoint);
+                impactHandler.HandleImpactAtPosition(transform.forward * spellCast.Spell.HealthDelta * -25, spellCast.Target.RelativeHitPoint);
         }
     }
 }

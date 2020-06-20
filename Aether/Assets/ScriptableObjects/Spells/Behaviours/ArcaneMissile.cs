@@ -1,10 +1,11 @@
-﻿using Aether.Combat.SpellSystem.SpellBehaviours;
-using Aether.Core.Combat;
+﻿using Aether.Core.Combat;
+using System;
 using UnityEngine;
 
-namespace Aether.ScriptableObjects.Spells
+namespace Aether.ScriptableObjects.Spells.Behaviours
 {
-    internal class ArcaneMissile : Projectile
+    [Serializable]
+    internal class ArcaneMissile : ProjectileBehaviour
     {
         [SerializeField]
         private GameObject muzzleFlashPrefab;
@@ -12,33 +13,12 @@ namespace Aether.ScriptableObjects.Spells
         [SerializeField]
         protected GameObject hitFlashPrefab;
 
-        public override void CastCanceled()
-        {
-            Destroy(this.gameObject);
-        }
-
-        public override void CastStarted()
-        {
-            GetComponent<Animator>().SetFloat("CastTime", 1 / Spell.CastDuration);
-            GetComponent<Animator>().SetTrigger("CastStarted");
-        }
-
-        public override void CastFired()
-        {
-            base.CastFired();
-
-            PlayMissileFiredAnimation();
-        }
-
-        public override void CastInterrupted()
-        {
-            Debug.Log("Missile Interrupted!");
-            Destroy(this.gameObject);
-        }
-
+        #region Projectile
         public override void OnObstructionHit(GameObject obstructionObject)
         {
-            PlayMissileHitAnimation();
+            GameObject hitFlash = Instantiate(hitFlashPrefab, transform);
+            hitFlash.transform.SetParent(null, true);
+            Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
 
             Destroy(gameObject);
         }
@@ -47,12 +27,15 @@ namespace Aether.ScriptableObjects.Spells
         {
             ExecuteTargetHitBehaviour(target);
 
-            PlayMissileHitAnimation();
+            GameObject hitFlash = Instantiate(hitFlashPrefab, transform);
+            hitFlash.transform.SetParent(null, true);
+            Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
 
             Destroy(gameObject);
         }
+        #endregion
 
-        private void ExecuteTargetHitBehaviour(ICombatSystem target)
+        protected virtual void ExecuteTargetHitBehaviour(ICombatSystem target)
         {
             if (target.Has(out IMissileTarget missileTarget))
             {
@@ -60,24 +43,11 @@ namespace Aether.ScriptableObjects.Spells
             }
         }
 
-        public void PlayMissileHitAnimation()
+        protected override void CastCompleted(ISpellCast spellCast)
         {
-            GameObject hitFlash = Instantiate(hitFlashPrefab, transform);
-            hitFlash.transform.SetParent(null, true);
+            base.CastCompleted(spellCast);
 
-            if (Target.HasCombatTarget(out Core.Combat.ICombatSystem combatTarget))
-                hitFlash.transform.position = Target.RelativeHitPoint + combatTarget.Transform.Position;
-            else
-                hitFlash.transform.position = Target.RelativeHitPoint;
-
-            Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
-        }
-
-        public void PlayMissileFiredAnimation()
-        {
-            GetComponent<Animator>().SetTrigger("CastFired");
-
-            GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, Caster.Get<ISpellSystem>().CastOrigin);
+            GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, spellCast.Caster.Get<ISpellSystem>().CastOrigin);
             Destroy(muzzleFlash, muzzleFlash.GetComponent<ParticleSystem>().main.duration);
         }
     }

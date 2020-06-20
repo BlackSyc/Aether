@@ -1,5 +1,4 @@
 ﻿using Aether.Core.Combat;
-using UnityEngine;
 
 namespace Aether.Combat.SpellSystem
 {
@@ -13,11 +12,7 @@ namespace Aether.Combat.SpellSystem
 
         new ISpell Spell { get; }
 
-        ICombatSystem Caster { get; }
-
         bool CastOnSelf { get; }
-
-        Transform CastOrigin { get; }
         #endregion
 
 

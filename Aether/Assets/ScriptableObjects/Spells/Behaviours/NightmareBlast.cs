@@ -1,9 +1,8 @@
-﻿using Aether.Combat.SpellSystem.SpellBehaviours;
-using Aether.Core.Combat;
+﻿using Aether.Core.Combat;
 using System.Collections;
 using UnityEngine;
 
-namespace Aether.ScriptableObjects.Spells
+namespace Aether.ScriptableObjects.Spells.Behaviours
 {
     internal class NightmareBlast : SpellBehaviour
     {
@@ -13,19 +12,21 @@ namespace Aether.ScriptableObjects.Spells
         [SerializeField]
         private GameObject hitFlashPrefab;
 
-        public override void CastCanceled()
+        private ISpellCast spellCast;
+
+        protected override void CastCompleted(ISpellCast spellCast)
         {
-            //throw new System.NotImplementedException();
+            StartCoroutine(Fire(spellCast));
         }
 
-        public override void CastFired()
+        protected override void CastStarted(ISpellCast spellCast)
         {
-            StartCoroutine(Fire());
+            // to do: add casting effect
         }
 
-        private IEnumerator Fire()
+        private IEnumerator Fire(ISpellCast spellCast)
         {
-            GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, Caster.Get<ISpellSystem>().CastOrigin);
+            GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, spellCast.Caster.Get<ISpellSystem>().CastOrigin);
             Destroy(muzzleFlash, muzzleFlash.GetComponent<ParticleSystem>().main.duration);
 
             yield return new WaitForSeconds(0.1f);
@@ -33,33 +34,23 @@ namespace Aether.ScriptableObjects.Spells
 
             var hitFlash = Instantiate(hitFlashPrefab, null);
 
-            if (Target.HasCombatTarget(out Core.Combat.ICombatSystem combatTarget))
-                hitFlash.transform.position = Target.RelativeHitPoint + combatTarget.Transform.Position;
+            if (spellCast.Target.HasCombatTarget(out ICombatSystem combatTarget))
+                hitFlash.transform.position = spellCast.Target.RelativeHitPoint + combatTarget.Transform.Position;
             else
-                hitFlash.transform.position = Target.RelativeHitPoint;
+                hitFlash.transform.position = spellCast.Target.RelativeHitPoint;
 
-            hitFlash.transform.LookAt(Caster.Get<ISpellSystem>().CastOrigin);
+            hitFlash.transform.LookAt(spellCast.Caster.Get<ISpellSystem>().CastOrigin);
             Destroy(hitFlash, hitFlash.GetComponent<ParticleSystem>().main.duration);
 
             if (combatTarget != null)
             {
                 if (combatTarget.Has(out IHealth health))
-                    health.ChangeHealth(Spell.HealthDelta);
+                    health.ChangeHealth(spellCast.Spell.HealthDelta);
 
                 if (combatTarget.Has(out IImpactHandler impactHandler))
                     impactHandler.HandleImpactAtPosition(transform.forward * 3000, hitFlash.transform.position);
             }
             Destroy(gameObject);
-        }
-
-        public override void CastInterrupted()
-        {
-            //throw new System.NotImplementedException();
-        }
-
-        public override void CastStarted()
-        {
-            //throw new System.NotImplementedException();
         }
     }
 }

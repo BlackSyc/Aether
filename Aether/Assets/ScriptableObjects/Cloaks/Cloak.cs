@@ -4,7 +4,8 @@ using Aether.ScriptableObjects.Spells;
 using UnityEngine;
 
 
-namespace Aether.ScriptableObjects.Cloaks {
+namespace Aether.ScriptableObjects.Cloaks
+{
 
     [CreateAssetMenu(menuName = "Scriptable Objects/Cloaks/Cloak")]
     public class Cloak : ScriptableObject, ICloak
@@ -36,7 +37,7 @@ namespace Aether.ScriptableObjects.Cloaks {
         public string Description => description;
 
         [SerializeField]
-        private Spell[] spells;
+        private SpellBase[] spells;
 
         public ISpell[] Spells => spells;
 
