@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\marcv\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\marcv\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Aether.-191099500.00" t="ExcludeRecursive" />
+    <e p="C:\Users\marcv\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\marcv\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
+    <e p="D:\Private\Repositories\Aether\Aether" t="IncludeRecursive">
+      <e p="Aether.Attunement.csproj" t="IncludeRecursive" />
+      <e p="Aether.Cloaks.csproj" t="IncludeRecursive" />
+      <e p="Aether.Combat.csproj" t="IncludeRecursive" />
+      <e p="Aether.Core.csproj" t="IncludeRecursive" />
+      <e p="Aether.Input.csproj" t="IncludeRecursive" />
+      <e p="Aether.Interaction.csproj" t="IncludeRecursive" />
+      <e p="Aether.Items.csproj" t="IncludeRecursive" />
+      <e p="Aether.Movement.csproj" t="IncludeRecursive" />
+      <e p="Aether.ScriptableObjects.csproj" t="IncludeRecursive" />
+      <e p="Aether.sln" t="IncludeFlat" />
+      <e p="Aether.StartPlatform.csproj" t="IncludeRecursive" />
+      <e p="Aether.UserInterface.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="ScriptableObjects" t="Include">
+          <e p="Aether.ScriptableObjects.asmdef" t="Include" />
+          <e p="Cloaks" t="Include">
+            <e p="Cloak.cs" t="Include" />
+          </e>
+          <e p="Modifiers" t="Include">
+            <e p="FlameShock.cs" t="Include" />
+            <e p="ModifierType.cs" t="Include" />
+            <e p="SprintType.cs" t="Include" />
+          </e>
+          <e p="Spells" t="Include">
+            <e p="Behaviours" t="Include">
+              <e p="Aether.Combat.asmref" t="Include" />
+              <e p="ArcaneMissile.cs" t="Include" />
+              <e p="BasicHeal.cs" t="Include" />
+              <e p="DreamMissile.cs" t="Include" />
+              <e p="IllusionMissile.cs" t="Include" />
+              <e p="NightmareBlast.cs" t="Include" />
+              <e p="NightmareMissile.cs" t="Include" />
+              <e p="NightmareShock.cs" t="Include" />
+              <e p="Sprint.cs" t="Include" />
+            </e>
+            <e p="Spell.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Attunement" t="Include">
+            <e p="Aether.Attunement.asmdef" t="Include" />
+            <e p="AttunementDevice.cs" t="Include" />
+            <e p="KeystoneObject.cs" t="Include" />
+            <e p="Traveller.cs" t="Include" />
+            <e p="TravellerPlatform.cs" t="Include" />
+          </e>
+          <e p="Cloaks" t="Include">
+            <e p="Aether.Cloaks.asmdef" t="Include" />
+            <e p="CloakProvider.cs" t="Include" />
+            <e p="DreamCloak.cs" t="Include" />
+            <e p="Shoulder.cs" t="Include" />
+          </e>
+          <e p="Combat" t="Include">
+            <e p="Aether.Combat.asmdef" t="Include" />
+            <e p="CombatSystem.cs" t="Include" />
+            <e p="Companion.cs" t="Include" />
+            <e p="Extensions.cs" t="Include" />
+            <e p="ICombatSystem.cs" t="Include" />
+            <e p="Impact" t="Include">
+              <e p="IImpactHandler.cs" t="Include" />
+              <e p="ImpactHandler.cs" t="Include" />
+            </e>
+            <e p="Modifiers" t="Include">
+              <e p="Modifier.cs" t="Include" />
+              <e p="ModifierSlots.cs" t="Include" />
+            </e>
+            <e p="SpellSystem" t="Include">
+              <e p="ISpellCast.cs" t="Include" />
+              <e p="ISpellLibrary.cs" t="Include" />
+              <e p="ISpellSystem.cs" t="Include" />
+              <e p="PlayerSpellSystem.cs" t="Include" />
+              <e p="SpellBehaviours" t="Include">
+                <e p="Projectile.cs" t="Include" />
+                <e p="SpellBehaviour.cs" t="Include" />
+              </e>
+              <e p="SpellCast.cs" t="Include" />
+              <e p="SpellLibrary.cs" t="Include" />
+              <e p="SpellSystem.cs" t="Include" />
+            </e>
+            <e p="TargetSystem" t="Include">
+              <e p="ITargetSystem.cs" t="Include" />
+              <e p="PlayerTargetSystem.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Core" t="Include">
+            <e p="Aether.Core.asmdef" t="Include" />
+            <e p="Aspect.cs" t="Include" />
+            <e p="Attunement" t="Include">
+              <e p="Events.cs" t="Include" />
+              <e p="IAttunementDevice.cs" t="Include" />
+            </e>
+            <e p="Cloaks" t="Include">
+              <e p="ICloak.cs" t="Include" />
+              <e p="ICloakProvider.cs" t="Include" />
+              <e p="IShoulder.cs" t="Include" />
+            </e>
+            <e p="Combat" t="Include">
+              <e p="Extensions.cs" t="Include" />
+              <e p="IAggroManager.cs" t="Include" />
+              <e p="ICombatSystem.cs" t="Include" />
+              <e p="IImpactHandler.cs" t="Include" />
+              <e p="IMissileTarget.cs" t="Include" />
+              <e p="IModifier.cs" t="Include" />
+              <e p="IModifierSlots.cs" t="Include" />
+              <e p="IModifierType.cs" t="Include" />
+              <e p="ISpell.cs" t="Include" />
+              <e p="ISpellCast.cs" t="Include" />
+              <e p="ISpellLibrary.cs" t="Include" />
+              <e p="ISpellSystem.cs" t="Include" />
+              <e p="ITargetSystem.cs" t="Include" />
+              <e p="Target.cs" t="Include" />
+            </e>
+            <e p="Companion" t="Include">
+              <e p="ICompanion.cs" t="Include" />
+            </e>
+            <e p="CoreBehaviour.cs" t="Include" />
+            <e p="Dialog" t="Include">
+              <e p="ScriptableObjects" t="Include">
+                <e p="Dialog.cs" t="Include" />
+                <e p="DialogLine.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Extension.cs" t="Include" />
+            <e p="Interaction" t="Include">
+              <e p="Events.cs" t="Include" />
+              <e p="IInteractable.cs" t="Include" />
+              <e p="IInteractor.cs" t="Include" />
+            </e>
+            <e p="Items" t="Include">
+              <e p="Events.cs" t="Include" />
+              <e p="IInventory.cs" t="Include" />
+              <e p="ScriptableObjects" t="Include">
+                <e p="Keystone.cs" t="Include" />
+              </e>
+            </e>
+            <e p="ITransform.cs" t="Include" />
+            <e p="Layers.cs" t="Include" />
+            <e p="Movement" t="Include">
+              <e p="IMovementSystem.cs" t="Include" />
+            </e>
+            <e p="Player.cs" t="Include" />
+            <e p="SceneManagement" t="Include">
+              <e p="ILevelController.cs" t="Include" />
+              <e p="LevelController.cs" t="Include" />
+              <e p="LevelEntry.cs" t="Include" />
+              <e p="LevelExit.cs" t="Include" />
+              <e p="SceneController.cs" t="Include" />
+              <e p="StartPlatformController.cs" t="Include" />
+            </e>
+            <e p="ScriptableObjectLoader.cs" t="Include" />
+            <e p="Tutorial" t="Include">
+              <e p="CustomHint.cs" t="Include" />
+              <e p="Hint.cs" t="Include" />
+              <e p="HintObject.cs" t="Include" />
+              <e p="Hints.cs" t="Include" />
+            </e>
+            <e p="UserInterface" t="Include">
+              <e p="IUserInterface.cs" t="Include" />
+              <e p="UIContainer.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Input" t="Include">
+            <e p="ActionMap.cs" t="Include" />
+            <e p="Aether.PlayerInput.asmdef" t="Include" />
+            <e p="InputActions.cs" t="Include" />
+            <e p="InputSystem.cs" t="Include" />
+          </e>
+          <e p="Interaction" t="Include">
+            <e p="Aether.Interaction.asmdef" t="Include" />
+            <e p="Interactable.cs" t="Include" />
+            <e p="Interactor.cs" t="Include" />
+          </e>
+          <e p="Items" t="Include">
+            <e p="Aether.Items.asmdef" t="Include" />
+            <e p="Inventory.cs" t="Include" />
+          </e>
+          <e p="Levels" t="Include">
+            <e p="StartPlatform" t="Include">
+              <e p="Aether.StartPlatform.asmdef" t="Include" />
+              <e p="AspectOfCreation.cs" t="Include" />
+              <e p="AspectPlatform.cs" t="Include" />
+              <e p="Leaf.cs" t="Include" />
+              <e p="Puzzle1_Manager.cs" t="Include" />
+              <e p="Puzzle1_MissileTarget.cs" t="Include" />
+              <e p="Puzzle1_PressurePlate.cs" t="Include" />
+              <e p="Stairs.cs" t="Include" />
+              <e p="TargetDummy.cs" t="Include" />
+              <e p="Testrunner.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Movement" t="Include">
+            <e p="Aether.Movement.asmdef" t="Include" />
+            <e p="CameraMovement.cs" t="Include" />
+            <e p="CameraPivot.cs" t="Include" />
+            <e p="IMovementSystem.cs" t="Include" />
+            <e p="MovementSystem.cs" t="Include" />
+            <e p="PlayerMovementSystem.cs" t="Include" />
+          </e>
+          <e p="UserInterface" t="Include">
+            <e p="Aether.UserInterface.asmdef" t="Include" />
+            <e p="Attunement" t="Include">
+              <e p="AttunementWindow.cs" t="Include" />
+              <e p="KeystoneInfoPanel.cs" t="Include" />
+              <e p="KeystoneLabel.cs" t="Include" />
+              <e p="KeystoneSelector.cs" t="Include" />
+            </e>
+            <e p="Cloaks" t="Include">
+              <e p="CloakProviderUILink.cs" t="Include" />
+              <e p="CloakWindow.cs" t="Include" />
+            </e>
+            <e p="Combat" t="Include">
+              <e p="Castbar.cs" t="Include" />
+              <e p="CombatPanel.cs" t="Include" />
+              <e p="CombatPanelInfo.cs" t="Include" />
+              <e p="Crosshair.cs" t="Include" />
+              <e p="DeathPanel.cs" t="Include" />
+              <e p="EmittedText.cs" t="Include" />
+              <e p="HealthBar.cs" t="Include" />
+              <e p="ModifierIcon.cs" t="Include" />
+              <e p="ModifiersBar.cs" t="Include" />
+              <e p="PlayerCombatPanel.cs" t="Include" />
+              <e p="PlayerTargetIndicator.cs" t="Include" />
+              <e p="SpellButton.cs" t="Include" />
+              <e p="SpellTooltip.cs" t="Include" />
+              <e p="TextEmitter.cs" t="Include" />
+            </e>
+            <e p="Dialog" t="Include">
+              <e p="DialogWindow.cs" t="Include" />
+            </e>
+            <e p="Effects" t="Include">
+              <e p="CopyXRotation.cs" t="Include" />
+              <e p="CustomCursor.cs" t="Include" />
+              <e p="KeepAbsolutePosition.cs" t="Include" />
+              <e p="TooltipOffset.cs" t="Include" />
+            </e>
+            <e p="Interaction" t="Include">
+              <e p="InteractionTooltip.cs" t="Include" />
+            </e>
+            <e p="Items" t="Include">
+              <e p="Inventory" t="Include">
+                <e p="InventoryTooltip.cs" t="Include" />
+                <e p="InventoryWindow.cs" t="Include" />
+              </e>
+            </e>
+            <e p="TransitionPanel" t="Include">
+              <e p="TransitionPanel.cs" t="Include" />
+            </e>
+            <e p="Tutorial" t="Include">
+              <e p="HintCloseButton.cs" t="Include" />
+              <e p="Hints" t="Include">
+                <e p="CursorHint.cs" t="Include" />
+                <e p="HintWindow.cs" t="Include" />
+                <e p="MovementHint.cs" t="Include" />
+                <e p="TimedHintObject.cs" t="Include" />
+              </e>
+            </e>
+            <e p="UserInterface.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Syc" t="Include">
+          <e p="Combat" t="Include">
+            <e p="CombatSystem.cs" t="Include" />
+            <e p="HealthSystem" t="Include">
+              <e p="DamageRequest.cs" t="Include" />
+              <e p="HealRequest.cs" t="Include" />
+              <e p="HealthComponent.cs" t="Include" />
+            </e>
+            <e p="ICombatAttributes.cs" t="Include" />
+            <e p="ICombatSubSystem.cs" t="Include" />
+            <e p="ICombatSystem.cs" t="Include" />
+            <e p="ModifierSystem" t="Include">
+              <e p="ModifierComponent.cs" t="Include" />
+            </e>
+            <e p="SpellSystem" t="Include">
+              <e p="CancelCastReason.cs" t="Include" />
+              <e p="CastFailedReason.cs" t="Include" />
+              <e p="CastingSystem.cs" t="Include" />
+              <e p="GetSpellCastResult.cs" t="Include" />
+              <e p="ICaster.cs" t="Include" />
+              <e p="ScriptableObjects" t="Include">
+                <e p="CastHandlers" t="Include">
+                  <e p="CastHandler.cs" t="Include" />
+                  <e p="DirectSpellHit.cs" t="Include" />
+                  <e p="SpawnSpellObjectAtCasterOrigin.cs" t="Include" />
+                  <e p="SpawnSpellObjectAtCastOrigin.cs" t="Include" />
+                </e>
+                <e p="CastingRequirements" t="Include">
+                  <e p="CastingRequirement.cs" t="Include" />
+                </e>
+                <e p="SpellBehaviour.cs" t="Include" />
+                <e p="SpellHitHandlers" t="Include">
+                  <e p="Damage.cs" t="Include" />
+                  <e p="SpellHitHandler.cs" t="Include" />
+                </e>
+                <e p="TargetProviders" t="Include">
+                  <e p="NoTarget.cs" t="Include" />
+                  <e p="Self.cs" t="Include" />
+                  <e p="SingleOrDefaultTarget.cs" t="Include" />
+                  <e p="TargetProvider.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Spell.cs" t="Include" />
+              <e p="SpellCast.cs" t="Include" />
+              <e p="SpellObject.cs" t="Include" />
+              <e p="SpellRack.cs" t="Include" />
+            </e>
+            <e p="Syc.Combat.asmdef" t="Include" />
+            <e p="TargetSystem" t="Include">
+              <e p="ITargetManager.cs" t="Include" />
+              <e p="Target.cs" t="Include" />
+              <e p="TemporaryTarget.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Core" t="Include">
+            <e p="Attributes" t="Include">
+              <e p="Attribute.cs" t="Include" />
+              <e p="AttributeAddition.cs" t="Include" />
+              <e p="AttributeModification.cs" t="Include" />
+              <e p="AttributeMultiplier.cs" t="Include" />
+              <e p="IModificationHandle.cs" t="Include" />
+            </e>
+            <e p="Settings.cs" t="Include" />
+            <e p="Syc.Core.asmdef" t="Include" />
+            <e p="System" t="Include">
+              <e p="ISubSystem.cs" t="Include" />
+              <e p="SystemBase.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Game" t="Include">
+            <e p="LocalPlayer" t="Include">
+              <e p="AttributesSystem.cs" t="Include" />
+              <e p="CombatSystem.cs" t="Include" />
+              <e p="InputSystem.cs" t="Include" />
+              <e p="MovementSystem.cs" t="Include" />
+              <e p="TargetSystem.cs" t="Include" />
+            </e>
+            <e p="Syc.Game.asmdef" t="Include" />
+          </e>
+          <e p="Input" t="Include">
+            <e p="InputSystem.cs" t="Include" />
+            <e p="Syc.Input.asmdef" t="Include" />
+          </e>
+          <e p="Movement" t="Include">
+            <e p="CameraMovement.cs" t="Include" />
+            <e p="CameraPivot.cs" t="Include" />
+            <e p="IMovementAttributes.cs" t="Include" />
+            <e p="MovementSystem.cs" t="Include" />
+            <e p="Syc.Movement.asmdef" t="Include" />
+          </e>
+          <e p="Tests" t="Include">
+            <e p="Core" t="Include">
+              <e p="Attributes" t="Include">
+                <e p="AttributeModificationTests.cs" t="Include" />
+                <e p="AttributeRemapTests.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Syc.EditMode.asmdef" t="Include" />
+          </e>
+        </e>
+        <e p="Tests" t="Include">
+          <e p="EditMode" t="Include">
+            <e p="Spell System" t="Include">
+              <e p="spell_library.cs" t="Include" />
+              <e p="spell_system.cs" t="Include" />
+            </e>
+            <e p="Tests_EditMode.asmdef" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Syc.Combat.csproj" t="IncludeRecursive" />
+      <e p="Syc.Core.csproj" t="IncludeRecursive" />
+      <e p="Syc.Game.csproj" t="IncludeRecursive" />
+      <e p="Syc.Input.csproj" t="IncludeRecursive" />
+      <e p="Syc.Movement.csproj" t="IncludeRecursive" />
+      <e p="Syc.SycTests.csproj" t="IncludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Tests_EditMode.csproj" t="IncludeRecursive" />
+    </e>
+  </component>
+</project>
