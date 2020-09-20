@@ -20,7 +20,8 @@ namespace Aether.StartPlatform
             animator = GetComponent<Animator>();
             animator.keepAnimatorControllerStateOnDisable = true;
 
-            Player.Instance.Get<IShoulder>().OnCloakChanged += OnPlayerCloakEquipped;
+            if (Player.Instance.Has(out IShoulder shoulder))
+                shoulder.OnCloakChanged += OnPlayerCloakEquipped;
         }
 
         private void OnPlayerCloakEquipped(ICloak cloak)
@@ -38,7 +39,8 @@ namespace Aether.StartPlatform
         // Update is called once per frame
         void OnDestroy()
         {
-            Player.Instance.Get<IShoulder>().OnCloakChanged -= OnPlayerCloakEquipped;
+            if (Player.Instance.Has(out IShoulder shoulder))
+                shoulder.OnCloakChanged -= OnPlayerCloakEquipped;
         }
     }
 }

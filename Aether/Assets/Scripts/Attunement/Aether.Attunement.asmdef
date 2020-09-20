@@ -1,7 +1,8 @@
 {
     "name": "Aether.Attunement",
     "references": [
-        "GUID:e9b0bf49a2fcfcc4daef70665e54d9b1"
+        "GUID:e9b0bf49a2fcfcc4daef70665e54d9b1",
+        "GUID:8338c5e4d7337b34394c9cae81eba266"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

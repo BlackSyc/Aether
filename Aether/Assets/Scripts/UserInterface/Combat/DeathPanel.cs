@@ -10,7 +10,12 @@ namespace Aether.UserInterface.Combat
     {
         private void Start()
         {
-            Player.Instance.Get<ICombatSystem>().Get<HealthSystem>().OnDied += Show;
+            if (Player.Instance.Has(out ICombatSystem combatSystem) 
+                && combatSystem.Has(out HealthSystem healthSystem))
+            {
+                healthSystem.OnDied += Show;
+            }
+            
             gameObject.SetActive(false);
             GetComponent<CanvasGroup>().alpha = 1;
         }
@@ -30,7 +35,11 @@ namespace Aether.UserInterface.Combat
 
         private void OnDestroy()
         {
-            Player.Instance.Get<ICombatSystem>().Get<HealthSystem>().OnDied -= Show;
+            if (Player.Instance.Has(out ICombatSystem combatSystem) 
+                && combatSystem.Has(out HealthSystem healthSystem))
+            {
+                healthSystem.OnDied -= Show;
+            }
         }
     }
 }

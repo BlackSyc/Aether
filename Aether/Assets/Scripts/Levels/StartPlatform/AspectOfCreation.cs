@@ -1,15 +1,16 @@
-﻿using Aether.Core;
+﻿using System;
+using Aether.Core;
 using Aether.Core.Dialog.ScriptableObjects;
 using Aether.Core.Interaction;
 using Aether.Core.Tutorial;
 using Aether.Input;
-using System;
+using Aether.StartPlatform;
 using Syc.Combat;
 using Syc.Combat.SpellSystem;
 using Syc.Combat.SpellSystem.ScriptableObjects;
 using UnityEngine;
 
-namespace Aether.StartPlatform
+namespace Aether.Levels.StartPlatform
 {
     public class AspectOfCreation : MonoBehaviour
     {
@@ -61,7 +62,11 @@ namespace Aether.StartPlatform
         private void GrantArcaneMissile()
         {
             Hints.Get("Cursor").Activate();
-            Player.Instance.Get<ICombatSystem>().Get<SpellRack>().AddSpell(reward, 0);
+            if (Player.Instance.Has(out ICombatSystem combatSystem)
+                && combatSystem.Has(out SpellRack spellRack))
+            {
+                spellRack.AddSpell(reward, 0);
+            }
             InputSystem.SwitchToActionMap(ActionMap.UserInterface);
         }
 

@@ -2,7 +2,8 @@
     "name": "Aether.Core",
     "references": [
         "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:abbb46728c7ceb0459bc42227cfc5677"
+        "GUID:abbb46728c7ceb0459bc42227cfc5677",
+        "GUID:8338c5e4d7337b34394c9cae81eba266"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

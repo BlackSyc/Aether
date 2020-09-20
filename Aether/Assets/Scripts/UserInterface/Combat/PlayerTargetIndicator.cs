@@ -22,7 +22,11 @@ namespace Aether.UserInterface.Combat
         
         private void Awake()
         {
-            Player.Instance.Get<ICombatSystem>().Get<CastingSystem>().OnNewSpellCast += OnPlayerSpellCast;
+            if (Player.Instance.Has(out ICombatSystem combatSystem) 
+                && Player.Instance.Has(out CastingSystem castingSystem))
+            {
+                castingSystem.OnNewSpellCast += OnPlayerSpellCast;
+            }
         }
 
         private void OnPlayerSpellCast(SpellCast spellCast)
@@ -60,13 +64,18 @@ namespace Aether.UserInterface.Combat
 
         private void OnDestroy()
         {
-            Player.Instance.Get<ICombatSystem>().Get<CastingSystem>().OnNewSpellCast -= OnPlayerSpellCast;
-            if (_currentSpellCast != null)
+            if (Player.Instance.Has(out ICombatSystem combatSystem) 
+                && Player.Instance.Has(out CastingSystem castingSystem))
             {
-                _currentSpellCast.OnSpellCancelled -= ClearCurrentSpellCast;
-                _currentSpellCast.OnSpellCompleted -= ClearCurrentSpellCast;
-                _currentSpellCast = null;
+                castingSystem.OnNewSpellCast += OnPlayerSpellCast;
             }
+
+            if (_currentSpellCast == null)
+                return;
+
+            _currentSpellCast.OnSpellCancelled -= ClearCurrentSpellCast;
+            _currentSpellCast.OnSpellCompleted -= ClearCurrentSpellCast;
+            _currentSpellCast = null;
         }
     }
 }

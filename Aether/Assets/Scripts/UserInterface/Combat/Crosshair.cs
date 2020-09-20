@@ -19,12 +19,16 @@ namespace Aether.UserInterface.Combat
         private CastingSystem _playerSpellSystem;
 
         private ITargetManager _playerTargetSystem;
+        
+        private static readonly int HasObjectTarget = Animator.StringToHash("HasObjectTarget");
 
         private void Start()
         {
-            var playerCombatSystem = Player.Instance.Get<ICombatSystem>();
-            _playerSpellSystem = playerCombatSystem.Get<CastingSystem>();
-            _playerTargetSystem = playerCombatSystem.Get<ITargetManager>();
+            if (Player.Instance.Has(out ICombatSystem combatSystem))
+            {
+                _playerSpellSystem = combatSystem.Get<CastingSystem>();
+                _playerTargetSystem = combatSystem.Get<ITargetManager>();
+            }
 
             crosshairAnimator.keepAnimatorControllerStateOnDisable = true;
             InputSystem.OnActionMapSwitched += InputSystem_OnActionMapSwitched;
@@ -43,14 +47,10 @@ namespace Aether.UserInterface.Combat
         // Update is called once per frame
         void LateUpdate()
         {
-            if (_playerTargetSystem.GetCurrentTarget().IsCombatTarget)
-            {
-                crosshairAnimator.SetBool("HasObjectTarget", true);
-            }
-            else
-            {
-                crosshairAnimator.SetBool("HasObjectTarget", false);
-            }
+            if (_playerTargetSystem == default)
+                return;
+
+            crosshairAnimator.SetBool(HasObjectTarget, _playerTargetSystem.GetCurrentTarget().IsCombatTarget);
         }
     }
 }

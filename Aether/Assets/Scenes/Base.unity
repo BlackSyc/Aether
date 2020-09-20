@@ -1307,7 +1307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3004306be2d594c998f6ebc89ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLibraryIndex: 4
+  index: 0
   mainPanel: {fileID: 1937638092}
   text: {fileID: 187002984}
   castBar: {fileID: 258040439}
@@ -3495,7 +3495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3004306be2d594c998f6ebc89ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLibraryIndex: 6
+  index: 0
   mainPanel: {fileID: 326963067}
   text: {fileID: 1304959162}
   castBar: {fileID: 2005170208}
@@ -3595,18 +3595,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &522618487 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5290570444391088140, guid: 95de18f87247a4a42b1fb474a0bcf609,
-    type: 3}
-  m_PrefabInstance: {fileID: 476305284923640291}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &549075260
 GameObject:
   m_ObjectHideFlags: 0
@@ -4869,7 +4857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3004306be2d594c998f6ebc89ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLibraryIndex: 5
+  index: 0
   mainPanel: {fileID: 613981686}
   text: {fileID: 957755739}
   castBar: {fileID: 549075262}
@@ -5469,7 +5457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3004306be2d594c998f6ebc89ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLibraryIndex: 1
+  index: 0
   mainPanel: {fileID: 2133575273}
   text: {fileID: 941796138}
   castBar: {fileID: 665986960}
@@ -7003,7 +6991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3004306be2d594c998f6ebc89ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLibraryIndex: 3
+  index: 0
   mainPanel: {fileID: 333536888}
   text: {fileID: 589524779}
   castBar: {fileID: 212882799}
@@ -7437,7 +7425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3004306be2d594c998f6ebc89ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLibraryIndex: 9
+  index: 0
   mainPanel: {fileID: 1081030912}
   text: {fileID: 1328497027}
   castBar: {fileID: 1430611700}
@@ -7492,9 +7480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acebe6b0f5a671f49936f16cb657f93f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _crosshairAnimator: {fileID: 296477068}
-  _crosshairContainer: {fileID: 296477066}
-  _camera: {fileID: 2068457038}
+  crosshairAnimator: {fileID: 296477068}
+  crosshairContainer: {fileID: 296477066}
 --- !u!1 &1142504617
 GameObject:
   m_ObjectHideFlags: 0
@@ -9329,7 +9316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3004306be2d594c998f6ebc89ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLibraryIndex: 0
+  index: 0
   mainPanel: {fileID: 1678709482}
   text: {fileID: 1406985504}
   castBar: {fileID: 932860600}
@@ -11302,7 +11289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3004306be2d594c998f6ebc89ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLibraryIndex: 2
+  index: 0
   mainPanel: {fileID: 1751269991}
   text: {fileID: 1089631219}
   castBar: {fileID: 933447759}
@@ -13993,7 +13980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3004306be2d594c998f6ebc89ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLibraryIndex: 7
+  index: 0
   mainPanel: {fileID: 1382141496}
   text: {fileID: 1254972284}
   castBar: {fileID: 1515275094}
@@ -14167,12 +14154,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056973373}
   m_CullTransparentMesh: 0
---- !u!20 &2068457038 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 476305286454964141, guid: 95de18f87247a4a42b1fb474a0bcf609,
-    type: 3}
-  m_PrefabInstance: {fileID: 476305284923640291}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2070796491
 GameObject:
   m_ObjectHideFlags: 0
@@ -14526,7 +14507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3004306be2d594c998f6ebc89ced80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellLibraryIndex: 8
+  index: 0
   mainPanel: {fileID: 1329954248}
   text: {fileID: 296677419}
   castBar: {fileID: 1780133862}
@@ -14932,7 +14913,7 @@ PrefabInstance:
         type: 3}
       propertyPath: combatSystem
       value: 
-      objectReference: {fileID: 522618487}
+      objectReference: {fileID: 0}
     - target: {fileID: 476305285402854012, guid: 95de18f87247a4a42b1fb474a0bcf609,
         type: 3}
       propertyPath: m_Name
@@ -14958,7 +14939,12 @@ PrefabInstance:
       propertyPath: preFillOnAwake.Array.data[1].activeSpell
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8931568597856155357, guid: 95de18f87247a4a42b1fb474a0bcf609, type: 3}
+    - {fileID: 476305285128632752, guid: 95de18f87247a4a42b1fb474a0bcf609, type: 3}
+    - {fileID: 5290570444391088140, guid: 95de18f87247a4a42b1fb474a0bcf609, type: 3}
+    - {fileID: 2787966248816650534, guid: 95de18f87247a4a42b1fb474a0bcf609, type: 3}
+    - {fileID: 9222358592862991841, guid: 95de18f87247a4a42b1fb474a0bcf609, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 95de18f87247a4a42b1fb474a0bcf609, type: 3}
 --- !u!1001 &1786569466199326967
 PrefabInstance:

@@ -25,6 +25,10 @@ namespace Aether.StartPlatform
         private void Start()
         {
             combatSystem = GetComponent<ICombatSystem>();
+            
+            if (combatSystem == default)
+                return;
+
             spellSystem = combatSystem.Get<CastingSystem>();
             
             health = combatSystem.Get<HealthSystem>();

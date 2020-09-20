@@ -733,7 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: d4070c8a5f59d98459cdad6974956379, type: 2}
-  reward: {fileID: 11400000, guid: 6ec4bc03d1e78fd4cb0ac5c2a1337309, type: 2}
+  reward: {fileID: 0}
 --- !u!114 &169073593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,6 +1200,7 @@ MonoBehaviour:
   - {fileID: 287161790}
   aggroBias: 0
   canBeTargeted: 1
+  <Transform>k__BackingField: {fileID: 0}
 --- !u!114 &287161793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,11 +1525,7 @@ GameObject:
   - component: {fileID: 470227020}
   - component: {fileID: 470227019}
   - component: {fileID: 470227017}
-  - component: {fileID: 470227016}
-  - component: {fileID: 470227018}
-  - component: {fileID: 470227022}
   - component: {fileID: 470227023}
-  - component: {fileID: 470227024}
   m_Layer: 11
   m_Name: Friendly Target Dummy
   m_TagString: Untagged
@@ -1551,24 +1548,6 @@ Transform:
   m_Father: {fileID: 1423121351}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &470227016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470227014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exposedObjects:
-  - {fileID: 470227018}
-  - {fileID: 470227022}
-  - {fileID: 470227024}
-  aggroBias: 0
-  canBeTargeted: 1
 --- !u!54 &470227017
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1585,18 +1564,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &470227018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470227014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e80a6d193b37a5b489fae2b6aa6ceec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &470227019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1657,18 +1624,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470227014}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &470227022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470227014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 468ffe0b57999d049b18098943388a00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &470227023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,20 +1641,6 @@ MonoBehaviour:
   showCombatPanelOnStart: 1
   PanelOffset: {x: 0, y: 3, z: 0}
   PanelScale: {x: 0, y: 0, z: 0}
---- !u!114 &470227024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470227014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5f6119820856f04684f2fa39e7e3e72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 1000
-  maxHealth: 1000
 --- !u!1 &470688061
 GameObject:
   m_ObjectHideFlags: 0
@@ -5566,6 +5507,7 @@ MonoBehaviour:
   - {fileID: 1189097491}
   aggroBias: 0
   canBeTargeted: 1
+  <Transform>k__BackingField: {fileID: 0}
 --- !u!114 &1189097494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6515,6 +6457,7 @@ MonoBehaviour:
   - {fileID: 1371069660}
   aggroBias: 0
   canBeTargeted: 1
+  <Transform>k__BackingField: {fileID: 0}
 --- !u!114 &1371069663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7354,13 +7297,8 @@ GameObject:
   - component: {fileID: 1521816065}
   - component: {fileID: 1521816064}
   - component: {fileID: 1521816067}
-  - component: {fileID: 1521816062}
-  - component: {fileID: 1521816068}
-  - component: {fileID: 1521816063}
   - component: {fileID: 1521816069}
-  - component: {fileID: 1521816070}
   - component: {fileID: 1521816072}
-  - component: {fileID: 1521816071}
   m_Layer: 12
   m_Name: Target Dummy
   m_TagString: Untagged
@@ -7383,37 +7321,6 @@ Transform:
   m_Father: {fileID: 1423121351}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1521816062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521816060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exposedObjects:
-  - {fileID: 1521816063}
-  - {fileID: 1521816068}
-  - {fileID: 1521816070}
-  - {fileID: 1521816071}
-  aggroBias: 0
-  canBeTargeted: 1
---- !u!114 &1521816063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521816060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 468ffe0b57999d049b18098943388a00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1521816064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7490,18 +7397,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1521816068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521816060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e80a6d193b37a5b489fae2b6aa6ceec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1521816069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7519,33 +7414,6 @@ MonoBehaviour:
   showCombatPanelOnStart: 1
   PanelOffset: {x: 0, y: 3, z: 0}
   PanelScale: {x: 0, y: 0, z: 0}
---- !u!114 &1521816070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521816060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5f6119820856f04684f2fa39e7e3e72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 1000
-  maxHealth: 1000
---- !u!114 &1521816071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521816060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d564d1875df1e8a418319885fba4d5a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castOrigin: {fileID: 1521816061}
 --- !u!114 &1521816072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7559,7 +7427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickDelay: 1
-  healingSpell: {fileID: 11400000, guid: 0c6a41277746d6940be01ce970d93613, type: 2}
+  healingSpell: {fileID: 0}
 --- !u!1 &1549598430
 GameObject:
   m_ObjectHideFlags: 0
@@ -9674,6 +9542,7 @@ MonoBehaviour:
   - {fileID: 1895513250}
   aggroBias: 0
   canBeTargeted: 1
+  <Transform>k__BackingField: {fileID: 0}
 --- !u!114 &1895513253
 MonoBehaviour:
   m_ObjectHideFlags: 0

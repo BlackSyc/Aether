@@ -34,56 +34,81 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cloaks/Shoulder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cloaks/Shoulder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Cloaks/ICloak.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Cloaks/ICloak.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/Extensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/Extensions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IAggroManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IAggroManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/ICombatSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/ICombatSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IHealth.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IHealth.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IImpactHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IImpactHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IMissileTarget.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IMissileTarget.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IModifier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IModifier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IModifierSlots.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IModifierSlots.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IModifierType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IModifierType.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/ISpell.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/ISpell.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/ISpellCast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/ISpellCast.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/ISpellLibrary.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/ISpellLibrary.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/ISpellSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/ISpellSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/ITargetSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/ITargetSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/Target.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/Target.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Base.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Base.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attunement/Aether.Attunement.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attunement/Aether.Attunement.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem/AggroRelay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem/AggroRelay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem/AggroTable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem/AggroTable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem/IAggroManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem/IAggroManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/CombatSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Companion.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Companion.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Extensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Extensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Health.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Health/Health.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Health/Health.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Health/IHealth.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Health/IHealth.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/ICombatSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/ICombatSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Impact.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Impact/IImpactHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Impact/IImpactHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Impact/ImpactHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Impact/ImpactHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Modifiers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Modifiers/Modifier.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Modifiers/Modifier.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Modifiers/ModifierSlots.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Modifiers/ModifierSlots.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/ISpellCast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/ISpellCast.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/ISpellLibrary.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/ISpellLibrary.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/ISpellSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/ISpellSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/PlayerSpellSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/PlayerSpellSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/SpellBehaviours.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/SpellBehaviours/Projectile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/SpellBehaviours/Projectile.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/SpellBehaviours/SpellBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/SpellBehaviours/SpellBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/SpellCast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/SpellCast.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/SpellLibrary.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/SpellLibrary.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/SpellSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellSystem/SpellSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/TargetSystem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/TargetSystem/AITargetSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/TargetSystem/AITargetSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/TargetSystem/ITargetSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/TargetSystem/ITargetSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/TargetSystem/PlayerTargetSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/TargetSystem/PlayerTargetSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Aether.Core.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Aether.Core.asmdef" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Aether.StartPlatform.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Aether.StartPlatform.asmdef" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/AspectOfCreation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/AspectOfCreation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/AspectPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/AspectPlatform.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Puzzle1_MissileTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Puzzle1_MissileTarget.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement/MovementSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement/MovementSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Stairs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Stairs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/TargetDummy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/TargetDummy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Aether.UserInterface.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Aether.UserInterface.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Castbar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Castbar.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanelInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanelInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Crosshair.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Crosshair.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/DeathPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/DeathPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/HealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifierIcon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifierIcon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifiersBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifiersBar.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerTargetIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerTargetIndicator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellTooltip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellTooltip.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TextEmitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TextEmitter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryWindow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +120,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@910d0b0bacae18a84b72f9e539d7b125068ab4dc/Runtime/Syc/Core/System/SystemBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/GlyphInfoDrawer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@910d0b0bacae18a84b72f9e539d7b125068ab4dc/Runtime/Syc/Core/System/ISystemBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@910d0b0bacae18a84b72f9e539d7b125068ab4dc/Runtime/Syc/Combat/ICombatSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -124,25 +152,28 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelEntry.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Respawner.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Cloaks/Cloak.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/TargetDummy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Cloaks/ICloak.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Cloaks/Shoulder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/AspectOfCreation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanelInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Castbar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerTargetIndicator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/HealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TextEmitter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifierIcon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Crosshair.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/DeathPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifiersBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellTooltip.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Movement/MovementSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Puzzle1_MissileTarget.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/DeathPanel.cs" />
+        <option value="$PROJECT_DIR$/Library/PackageCache/com.aether.syc@fb9270fefdb77199255389d14531d2060f45e908/Runtime/Syc/Core/System/MonoSubSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryWindow.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Crosshair.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Stairs.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerTargetIndicator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/TargetDummy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanelInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/AspectOfCreation.cs" />
       </list>
     </option>
   </component>
@@ -158,8 +189,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.53759396" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.46115288" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.5376756" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.46104726" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -184,10 +215,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="28032">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="28032" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -216,7 +247,9 @@
       <workItem from="1600596118470" duration="3039000" />
       <workItem from="1600599181535" duration="913000" />
       <workItem from="1600600178904" duration="328000" />
-      <workItem from="1600600520863" duration="3617000" />
+      <workItem from="1600600520863" duration="3770000" />
+      <workItem from="1600605000460" duration="324000" />
+      <workItem from="1600605347452" duration="2273000" />
     </task>
     <servers />
   </component>
@@ -314,5 +347,24 @@
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state x="1137" y="321" key="SettingsEditor/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1598722454028" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanel.cs</url>
+          <line>79</line>
+          <properties documentPath="D:\Private\Repositories\Aether\Aether\Assets\Scripts\UserInterface\Combat\CombatPanel.cs" initialLine="79">
+            <startOffsets>
+              <option value="1928" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1996" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

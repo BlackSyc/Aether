@@ -43,7 +43,7 @@ namespace Aether.UserInterface.Combat
         private void Start()
         {
             if (nameText != null)
-                nameText.text = combatPanelInfo.CombatSystem.Origin.name;
+                nameText.text = combatPanelInfo.CombatSystem?.Origin.name;
 
             if (healthBar != null)
                 LinkHealthBar();

@@ -26,6 +26,9 @@ namespace Aether.UserInterface.Combat
         {
             CombatSystem = GetComponent<CombatMonoSystem>();
 
+            if (CombatSystem == default)
+                return;
+            
             if (showCombatPanelOnStart)
                 ShowCombatPanel();
         }
