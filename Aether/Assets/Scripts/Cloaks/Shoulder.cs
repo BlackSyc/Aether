@@ -1,21 +1,23 @@
-﻿using Aether.Combat;
-using Aether.Core.Cloaks;
+﻿using Aether.Core.Cloaks;
 using Aether.Core.Combat;
 using System;
+using Syc.Combat;
+using Syc.Combat.SpellSystem;
+using Syc.Combat.SpellSystem.ScriptableObjects;
 using UnityEngine;
 
 namespace Aether.Cloaks
 {
     public class Shoulder : MonoBehaviour, IShoulder
     {
-        public CombatSystem CombatSystem;
-
+        [SerializeField]
+        private CombatMonoSystem combatSystem;
         public ICloak EquippedCloak { get; private set; } = null;
 
         private GameObject equippedCloakObject;
 
         [SerializeField]
-        private ISpell defaultSpell;
+        private SpellBehaviour defaultSpell;
 
         public event Action<ICloak> OnCloakChanged;
 
@@ -45,11 +47,10 @@ namespace Aether.Cloaks
 
             if (cloak.Spells != null)
             {
-                for (int i = 0; i < cloak.Spells.Length; i++)
+                for (var i = 0; i < cloak.Spells.Length; i++)
                 {
-                    ISpellSystem spellSystem = CombatSystem.Get<ISpellSystem>();
-                    spellSystem.AddSpell(i, cloak.Spells[i]);
-                    CombatSystem.Get<ISpellSystem>()?.AddSpell(i, cloak.Spells[i]);
+                    var castingSystem = combatSystem.Get<SpellRack>();
+                    castingSystem.AddSpell(cloak.Spells[i], i);
                 }
             }
 
@@ -65,8 +66,8 @@ namespace Aether.Cloaks
 
             Destroy(equippedCloakObject);
 
-            CombatSystem.Get<ISpellSystem>().RemoveAllSpells();
-            CombatSystem.Get<ISpellSystem>().AddSpell(0, defaultSpell);
+            combatSystem.Get<SpellRack>().RemoveAllSpells();
+            combatSystem.Get<SpellRack>().AddSpell(defaultSpell, 0);
 
             OnCloakChanged?.Invoke(null);
         }

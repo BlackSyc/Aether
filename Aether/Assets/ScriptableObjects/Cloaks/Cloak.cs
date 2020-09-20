@@ -1,6 +1,5 @@
 ﻿using Aether.Core.Cloaks;
-using Aether.Core.Combat;
-using Aether.ScriptableObjects.Spells;
+using Syc.Combat.SpellSystem.ScriptableObjects;
 using UnityEngine;
 
 
@@ -36,9 +35,9 @@ namespace Aether.ScriptableObjects.Cloaks {
         public string Description => description;
 
         [SerializeField]
-        private Spell[] spells;
+        private SpellBehaviour[] spells;
 
-        public ISpell[] Spells => spells;
+        public SpellBehaviour[] Spells => spells;
 
         [SerializeField]
         private GameObject cloakPrefab;

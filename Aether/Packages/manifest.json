@@ -47,13 +47,13 @@
     "com.unity.modules.xr": "1.0.0"
   },
   "lock": {
+    "com.aether.syc": {
+      "revision": "HEAD",
+      "hash": "18eb0eb074aeb17306b8e5fc5c45c5e6003d8e78"
+    },
     "com.xeleh.enhancer": {
       "revision": "HEAD",
       "hash": "78e062bf5467bb3a4caae6315aaf74352050d116"
-    },
-    "com.aether.syc": {
-      "revision": "HEAD",
-      "hash": "8358813b26b08816adc3dcf895ca3b1d47500d86"
     }
   }
 }

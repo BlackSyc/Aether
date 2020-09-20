@@ -31,65 +31,117 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af7e0b8a-ab77-477f-8216-478e074afbb0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Syc/Combat/Syc.Combat.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Syc/Core/Syc.Core.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Syc/Core/Syc.Core.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Syc/Game/Syc.Game.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Syc/Game/Syc.Game.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Syc/Input/Syc.Input.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Syc/Input/Syc.Input.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Syc/Movement/Syc.Movement.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Syc/Movement/Syc.Movement.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Syc/Tests/Syc.EditMode.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Syc/Tests/Syc.EditMode.asmdef.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Respawner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Base.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Base.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Modifiers/FlameShock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Modifiers/FlameShock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/BasicHeal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/BasicHeal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/DreamMissile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/DreamMissile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/NightmareBlast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/NightmareBlast.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/NightmareMissile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/NightmareMissile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Syc/Combat/Syc.Combat.asmdef.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem/AggroRelay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem/AggroRelay.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem/AggroTable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem/AggroTable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem/IAggroManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/AggroSystem/IAggroManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Health.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Health/Health.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Health/Health.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Health/IHealth.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Health/IHealth.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/TargetSystem/AITargetSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/TargetSystem/AITargetSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IHealth.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Combat/IHealth.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Aether.ScriptableObjects.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Aether.ScriptableObjects.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Cloaks/Cloak.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Cloaks/Cloak.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/Aether.Combat.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/Aether.Combat.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/ArcaneMissile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/ArcaneMissile.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/BasicHeal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/BasicHeal.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/DreamMissile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/DreamMissile.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/IllusionMissile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/IllusionMissile.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/NightmareBlast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/NightmareBlast.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/NightmareMissile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/NightmareMissile.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/NightmareShock.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/NightmareShock.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/Sprint.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/Sprint.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Creation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Creation/Arcane Missile.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Creation/Arcane Missile/Arcane Missile.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Creation/Arcane Missile/Arcane Missile.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Creation/Arcane Missile/Object.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Creation/Arcane Missile/Object/Arcane Missile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Creation/Arcane Missile/Object/Arcane Missile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Creation/Arcane Missile/Object/HitFlash.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Creation/Arcane Missile/Object/HitFlash.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Creation/Arcane Missile/Object/MuzzleFlash.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Creation/Arcane Missile/Object/MuzzleFlash.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Dream.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Dream/Dream Missile.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Dream/Dream Missile/Dream Missile.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Dream/Dream Missile/Dream Missile.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Dream/Dream Missile/Object.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Dream/Dream Missile/Object/Dream Missile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Dream/Dream Missile/Object/Dream Missile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Dream/Dream Missile/Object/HitFlash.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Dream/Dream Missile/Object/HitFlash.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Dream/Dream Missile/Object/MuzzleFlash.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Dream/Dream Missile/Object/MuzzleFlash.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Illusion.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Illusion/Illusion Missile.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Illusion/Illusion Missile/Illusion Missile.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Illusion/Illusion Missile/Illusion Missile.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Illusion/Illusion Missile/Object.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Illusion/Illusion Missile/Object/Illusion Missile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Illusion/Illusion Missile/Object/Illusion Missile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Blast.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Blast/Nightmare Blast.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Blast/Nightmare Blast.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Blast/Object.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Blast/Object/HitFlash.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Blast/Object/HitFlash.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Blast/Object/MuzzleFlash.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Blast/Object/MuzzleFlash.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Blast/Object/Nightmare Blast.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Blast/Object/Nightmare Blast.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Missile.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Missile/Nightmare Missile.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Missile/Nightmare Missile.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Missile/Object.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Missile/Object/HitFlash.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Missile/Object/HitFlash.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Missile/Object/MuzzleFlash.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Missile/Object/MuzzleFlash.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Missile/Object/Nightmare Missile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Missile/Object/Nightmare Missile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Shock.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Shock/Nightmare Shock.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Shock/Nightmare Shock.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Shock/Object.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Shock/Object/HitFlash.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Shock/Object/HitFlash.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Shock/Object/MuzzleFlash.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Shock/Object/MuzzleFlash.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Shock/Object/Nightmare Shock.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Shock/Object/Nightmare Shock.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Sprint.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Sprint/Object.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Sprint/Object/SprintObject.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Sprint/Object/SprintObject.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Sprint/Sprint.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Nightmare/Nightmare Sprint/Sprint.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Spell.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Spell.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Target Dummies.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Target Dummies/Basic Heal.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Target Dummies/Basic Heal/Basic Heal.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Target Dummies/Basic Heal/Basic Heal.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Target Dummies/Basic Heal/Object.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Target Dummies/Basic Heal/Object/BasicHeal.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Target Dummies/Basic Heal/Object/BasicHeal.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cloaks/Aether.Cloaks.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cloaks/Aether.Cloaks.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cloaks/Shoulder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cloaks/Shoulder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Aether.Core.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Aether.Core.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Cloaks/ICloak.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Cloaks/ICloak.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelEntry.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Aether.StartPlatform.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Aether.StartPlatform.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/AspectOfCreation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/AspectOfCreation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/TargetDummy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/TargetDummy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Aether.UserInterface.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Aether.UserInterface.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanelInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanelInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/DeathPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/DeathPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/HealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TextEmitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TextEmitter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Combat/Combat.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Combat/Combat.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Combat/HealthSystem/HealthComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Syc/Combat/HealthSystem/HealthComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Combat/ModifierSystem/ModifierComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Syc/Combat/ModifierSystem/ModifierComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Core/Core.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Core/Core.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Game/Game.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Game/Game.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Game/LocalPlayer/CombatSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Syc/Game/LocalPlayer/CombatSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Game/LocalPlayer/TargetSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Syc/Game/LocalPlayer/TargetSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Input/Input.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Input/Input.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Movement/Movement.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Movement/Movement.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Tests/EditMode.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Syc/Tests/EditMode.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,12 +181,18 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TextEmitter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Syc/Combat/HealthSystem/HealthComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/TargetDummy.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/DreamMissile.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/NightmareBlast.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Behaviours/NightmareMissile.cs" />
         <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Modifiers/FlameShock.cs" />
         <option value="$PROJECT_DIR$/Assets/Syc/Tests/Core/Attributes/AttributeModificationTests.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelEntry.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Respawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Cloaks/Cloak.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Cloaks/ICloak.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cloaks/Shoulder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/AspectOfCreation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/TargetDummy.cs" />
       </list>
     </option>
   </component>
@@ -205,6 +263,8 @@
       <workItem from="1599594576471" duration="2665000" />
       <workItem from="1599597450698" duration="1668000" />
       <workItem from="1599676018007" duration="358000" />
+      <workItem from="1600596118470" duration="3039000" />
+      <workItem from="1600599181535" duration="913000" />
     </task>
     <servers />
   </component>

@@ -4,9 +4,12 @@ using Aether.Core.Dialog.ScriptableObjects;
 using Aether.Core.Interaction;
 using Aether.Core.Tutorial;
 using Aether.Input;
-using Aether.ScriptableObjects.Spells;
 using System;
+using Syc.Combat;
+using Syc.Combat.SpellSystem;
+using Syc.Combat.SpellSystem.ScriptableObjects;
 using UnityEngine;
+using ICombatSystem = Syc.Combat.ICombatSystem;
 
 namespace Aether.StartPlatform
 {
@@ -28,7 +31,7 @@ namespace Aether.StartPlatform
 
 
         [SerializeField]
-        private Spell reward = null;
+        private SpellBehaviour reward = null;
 
         private void Start()
         {
@@ -60,7 +63,7 @@ namespace Aether.StartPlatform
         private void GrantArcaneMissile()
         {
             Hints.Get("Cursor").Activate();
-            Player.Instance.Get<ICombatSystem>().Get<ISpellSystem>().AddSpell(0, reward);
+            Player.Instance.Get<ICombatSystem>().Get<SpellRack>().AddSpell(reward, 0);
             InputSystem.SwitchToActionMap(ActionMap.UserInterface);
         }
 

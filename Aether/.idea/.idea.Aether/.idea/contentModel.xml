@@ -29,20 +29,6 @@
             <e p="ModifierType.cs" t="Include" />
             <e p="SprintType.cs" t="Include" />
           </e>
-          <e p="Spells" t="Include">
-            <e p="Behaviours" t="Include">
-              <e p="Aether.Combat.asmref" t="Include" />
-              <e p="ArcaneMissile.cs" t="Include" />
-              <e p="BasicHeal.cs" t="Include" />
-              <e p="DreamMissile.cs" t="Include" />
-              <e p="IllusionMissile.cs" t="Include" />
-              <e p="NightmareBlast.cs" t="Include" />
-              <e p="NightmareMissile.cs" t="Include" />
-              <e p="NightmareShock.cs" t="Include" />
-              <e p="Sprint.cs" t="Include" />
-            </e>
-            <e p="Spell.cs" t="Include" />
-          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="Attunement" t="Include">
@@ -60,9 +46,18 @@
           </e>
           <e p="Combat" t="Include">
             <e p="Aether.Combat.asmdef" t="Include" />
+            <e p="AggroSystem" t="Include">
+              <e p="AggroRelay.cs" t="Include" />
+              <e p="AggroTable.cs" t="Include" />
+              <e p="IAggroManager.cs" t="Include" />
+            </e>
             <e p="CombatSystem.cs" t="Include" />
             <e p="Companion.cs" t="Include" />
             <e p="Extensions.cs" t="Include" />
+            <e p="Health" t="Include">
+              <e p="Health.cs" t="Include" />
+              <e p="IHealth.cs" t="Include" />
+            </e>
             <e p="ICombatSystem.cs" t="Include" />
             <e p="Impact" t="Include">
               <e p="IImpactHandler.cs" t="Include" />
@@ -86,6 +81,7 @@
               <e p="SpellSystem.cs" t="Include" />
             </e>
             <e p="TargetSystem" t="Include">
+              <e p="AITargetSystem.cs" t="Include" />
               <e p="ITargetSystem.cs" t="Include" />
               <e p="PlayerTargetSystem.cs" t="Include" />
             </e>
@@ -106,6 +102,7 @@
               <e p="Extensions.cs" t="Include" />
               <e p="IAggroManager.cs" t="Include" />
               <e p="ICombatSystem.cs" t="Include" />
+              <e p="IHealth.cs" t="Include" />
               <e p="IImpactHandler.cs" t="Include" />
               <e p="IMissileTarget.cs" t="Include" />
               <e p="IModifier.cs" t="Include" />
@@ -191,6 +188,7 @@
               <e p="Puzzle1_Manager.cs" t="Include" />
               <e p="Puzzle1_MissileTarget.cs" t="Include" />
               <e p="Puzzle1_PressurePlate.cs" t="Include" />
+              <e p="Respawner.cs" t="Include" />
               <e p="Stairs.cs" t="Include" />
               <e p="TargetDummy.cs" t="Include" />
               <e p="Testrunner.cs" t="Include" />
@@ -265,106 +263,6 @@
             <e p="UserInterface.cs" t="Include" />
           </e>
         </e>
-        <e p="Syc" t="Include">
-          <e p="Combat" t="Include">
-            <e p="CombatSystem.cs" t="Include" />
-            <e p="HealthSystem" t="Include">
-              <e p="DamageRequest.cs" t="Include" />
-              <e p="HealRequest.cs" t="Include" />
-              <e p="HealthComponent.cs" t="Include" />
-            </e>
-            <e p="ICombatAttributes.cs" t="Include" />
-            <e p="ICombatSubSystem.cs" t="Include" />
-            <e p="ICombatSystem.cs" t="Include" />
-            <e p="ModifierSystem" t="Include">
-              <e p="ModifierComponent.cs" t="Include" />
-            </e>
-            <e p="SpellSystem" t="Include">
-              <e p="CancelCastReason.cs" t="Include" />
-              <e p="CastFailedReason.cs" t="Include" />
-              <e p="CastingSystem.cs" t="Include" />
-              <e p="GetSpellCastResult.cs" t="Include" />
-              <e p="ICaster.cs" t="Include" />
-              <e p="ScriptableObjects" t="Include">
-                <e p="CastHandlers" t="Include">
-                  <e p="CastHandler.cs" t="Include" />
-                  <e p="DirectSpellHit.cs" t="Include" />
-                  <e p="SpawnSpellObjectAtCasterOrigin.cs" t="Include" />
-                  <e p="SpawnSpellObjectAtCastOrigin.cs" t="Include" />
-                </e>
-                <e p="CastingRequirements" t="Include">
-                  <e p="CastingRequirement.cs" t="Include" />
-                </e>
-                <e p="SpellBehaviour.cs" t="Include" />
-                <e p="SpellHitHandlers" t="Include">
-                  <e p="Damage.cs" t="Include" />
-                  <e p="SpellHitHandler.cs" t="Include" />
-                </e>
-                <e p="TargetProviders" t="Include">
-                  <e p="NoTarget.cs" t="Include" />
-                  <e p="Self.cs" t="Include" />
-                  <e p="SingleOrDefaultTarget.cs" t="Include" />
-                  <e p="TargetProvider.cs" t="Include" />
-                </e>
-              </e>
-              <e p="Spell.cs" t="Include" />
-              <e p="SpellCast.cs" t="Include" />
-              <e p="SpellObject.cs" t="Include" />
-              <e p="SpellRack.cs" t="Include" />
-            </e>
-            <e p="Syc.Combat.asmdef" t="Include" />
-            <e p="TargetSystem" t="Include">
-              <e p="ITargetManager.cs" t="Include" />
-              <e p="Target.cs" t="Include" />
-              <e p="TemporaryTarget.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Core" t="Include">
-            <e p="Attributes" t="Include">
-              <e p="Attribute.cs" t="Include" />
-              <e p="AttributeAddition.cs" t="Include" />
-              <e p="AttributeModification.cs" t="Include" />
-              <e p="AttributeMultiplier.cs" t="Include" />
-              <e p="IModificationHandle.cs" t="Include" />
-            </e>
-            <e p="Settings.cs" t="Include" />
-            <e p="Syc.Core.asmdef" t="Include" />
-            <e p="System" t="Include">
-              <e p="ISubSystem.cs" t="Include" />
-              <e p="SystemBase.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Game" t="Include">
-            <e p="LocalPlayer" t="Include">
-              <e p="AttributesSystem.cs" t="Include" />
-              <e p="CombatSystem.cs" t="Include" />
-              <e p="InputSystem.cs" t="Include" />
-              <e p="MovementSystem.cs" t="Include" />
-              <e p="TargetSystem.cs" t="Include" />
-            </e>
-            <e p="Syc.Game.asmdef" t="Include" />
-          </e>
-          <e p="Input" t="Include">
-            <e p="InputSystem.cs" t="Include" />
-            <e p="Syc.Input.asmdef" t="Include" />
-          </e>
-          <e p="Movement" t="Include">
-            <e p="CameraMovement.cs" t="Include" />
-            <e p="CameraPivot.cs" t="Include" />
-            <e p="IMovementAttributes.cs" t="Include" />
-            <e p="MovementSystem.cs" t="Include" />
-            <e p="Syc.Movement.asmdef" t="Include" />
-          </e>
-          <e p="Tests" t="Include">
-            <e p="Core" t="Include">
-              <e p="Attributes" t="Include">
-                <e p="AttributeModificationTests.cs" t="Include" />
-                <e p="AttributeRemapTests.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Syc.EditMode.asmdef" t="Include" />
-          </e>
-        </e>
         <e p="Tests" t="Include">
           <e p="EditMode" t="Include">
             <e p="Spell System" t="Include">
@@ -377,12 +275,6 @@
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="Syc.Combat.csproj" t="IncludeRecursive" />
-      <e p="Syc.Core.csproj" t="IncludeRecursive" />
-      <e p="Syc.Game.csproj" t="IncludeRecursive" />
-      <e p="Syc.Input.csproj" t="IncludeRecursive" />
-      <e p="Syc.Movement.csproj" t="IncludeRecursive" />
-      <e p="Syc.SycTests.csproj" t="IncludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="Tests_EditMode.csproj" t="IncludeRecursive" />
     </e>

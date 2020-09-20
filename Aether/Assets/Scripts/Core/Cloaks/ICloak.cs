@@ -1,4 +1,5 @@
 ﻿using Aether.Core.Combat;
+using Syc.Combat.SpellSystem.ScriptableObjects;
 using UnityEngine;
 
 namespace Aether.Core.Cloaks
@@ -15,7 +16,7 @@ namespace Aether.Core.Cloaks
 
         string Description { get; }
 
-        ISpell[] Spells { get; }
+        SpellBehaviour[] Spells { get; }
 
         GameObject CloakPrefab { get; }
     }

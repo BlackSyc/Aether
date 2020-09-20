@@ -17,10 +17,10 @@ namespace Aether.Core.SceneManagement
         }
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag.Equals("Player"))
-            {
-                TeleportToLevelOrigin();
-            }
+            // if (other.tag.Equals("Player"))
+            // {
+            //     TeleportToLevelOrigin();
+            // }
         }
 
         public void TeleportToLevelOrigin()

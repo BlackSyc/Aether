@@ -1,6 +1,8 @@
-﻿using Aether.Core.Combat;
-using Aether.ScriptableObjects.Spells;
-using System.Collections;
+﻿using System.Collections;
+using Syc.Combat;
+using Syc.Combat.HealthSystem;
+using Syc.Combat.SpellSystem;
+using Syc.Combat.SpellSystem.ScriptableObjects;
 using UnityEngine;
 
 namespace Aether.StartPlatform
@@ -12,21 +14,20 @@ namespace Aether.StartPlatform
         private float tickDelay = 1f;
 
         [SerializeField]
-        private Spell healingSpell;
+        private SpellBehaviour healingSpell;
 
         private ICombatSystem combatSystem;
 
-        private IHealth health;
+        private HealthSystem health;
 
-        private ISpellSystem spellSystem;
+        private CastingSystem spellSystem;
 
         private void Start()
         {
             combatSystem = GetComponent<ICombatSystem>();
-            spellSystem = combatSystem.Get<ISpellSystem>();
-
-            spellSystem.AddSpell(0, healingSpell);
-            health = combatSystem.Get<IHealth>();
+            spellSystem = combatSystem.Get<CastingSystem>();
+            
+            health = combatSystem.Get<HealthSystem>();
 
             StartCoroutine(HealWhenLow());
         }
@@ -37,7 +38,7 @@ namespace Aether.StartPlatform
             {
                 if (health.CurrentHealth <= 900)
                 {
-                    spellSystem.CastSpell(0, new Target(combatSystem));
+                    spellSystem.CastSpell(new Spell(healingSpell));
                 }
                 yield return new WaitForSeconds(tickDelay);
             }

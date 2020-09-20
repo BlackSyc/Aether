@@ -1,7 +1,8 @@
 {
     "name": "Aether.ScriptableObjects",
     "references": [
-        "GUID:e9b0bf49a2fcfcc4daef70665e54d9b1"
+        "GUID:e9b0bf49a2fcfcc4daef70665e54d9b1",
+        "GUID:abbb46728c7ceb0459bc42227cfc5677"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
