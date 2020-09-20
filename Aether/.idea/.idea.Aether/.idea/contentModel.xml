@@ -24,11 +24,6 @@
           <e p="Cloaks" t="Include">
             <e p="Cloak.cs" t="Include" />
           </e>
-          <e p="Modifiers" t="Include">
-            <e p="FlameShock.cs" t="Include" />
-            <e p="ModifierType.cs" t="Include" />
-            <e p="SprintType.cs" t="Include" />
-          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="Attunement" t="Include">
@@ -97,23 +92,6 @@
               <e p="ICloak.cs" t="Include" />
               <e p="ICloakProvider.cs" t="Include" />
               <e p="IShoulder.cs" t="Include" />
-            </e>
-            <e p="Combat" t="Include">
-              <e p="Extensions.cs" t="Include" />
-              <e p="IAggroManager.cs" t="Include" />
-              <e p="ICombatSystem.cs" t="Include" />
-              <e p="IHealth.cs" t="Include" />
-              <e p="IImpactHandler.cs" t="Include" />
-              <e p="IMissileTarget.cs" t="Include" />
-              <e p="IModifier.cs" t="Include" />
-              <e p="IModifierSlots.cs" t="Include" />
-              <e p="IModifierType.cs" t="Include" />
-              <e p="ISpell.cs" t="Include" />
-              <e p="ISpellCast.cs" t="Include" />
-              <e p="ISpellLibrary.cs" t="Include" />
-              <e p="ISpellSystem.cs" t="Include" />
-              <e p="ITargetSystem.cs" t="Include" />
-              <e p="Target.cs" t="Include" />
             </e>
             <e p="Companion" t="Include">
               <e p="ICompanion.cs" t="Include" />

@@ -1,5 +1,4 @@
-﻿using Aether.Core.Combat;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Aether.Movement
 {
@@ -11,28 +10,27 @@ namespace Aether.Movement
         [SerializeField]
         private float rotationSpeed = 10;
 
-        private CharacterController characterController;
+        private CharacterController _characterController;
 
-        private float upwardsMovement = 0;
+        private float _upwardsMovement;
         #endregion
 
         #region Public Properties
-        public bool IsMoving { get; private set; } = false;
+        public bool IsMoving { get; private set; }
 
         public float MovementSpeed { get; set; } = 8;
 
         public float RotationSpeed => rotationSpeed;
 
         public float JumpPower { get; set; } = 5;
-
-        public ICombatSystem CombatSystem { get; set; }
+        
         public bool IsActive { get; set; } = true;
         #endregion
 
         #region MonoBehaviour
         private void Awake()
         {
-            characterController = GetComponent<CharacterController>();
+            _characterController = GetComponent<CharacterController>();
         }
         #endregion
 
@@ -45,14 +43,14 @@ namespace Aether.Movement
             Vector3 localMovement = (transform.right * movementInput.x + transform.forward * movementInput.y) * MovementSpeed;
             IsMoving = localMovement.magnitude > 0.01f;
 
-            localMovement.y = upwardsMovement;
+            localMovement.y = _upwardsMovement;
 
-            if (!characterController.isGrounded)
+            if (!_characterController.isGrounded)
                 localMovement += Physics.gravity * Time.fixedDeltaTime;
 
-            upwardsMovement = localMovement.y;
+            _upwardsMovement = localMovement.y;
 
-            characterController.Move(localMovement * Time.fixedDeltaTime);
+            _characterController.Move(localMovement * Time.fixedDeltaTime);
 
         }
 
@@ -61,8 +59,8 @@ namespace Aether.Movement
             if (!IsActive)
                 return;
 
-            if (characterController.isGrounded)
-                upwardsMovement = JumpPower;
+            if (_characterController.isGrounded)
+                _upwardsMovement = JumpPower;
         }
 
         public void Rotate(Vector2 rotationInput)

@@ -1,7 +1,8 @@
-﻿using Aether.Core.Combat;
-using Aether.Core.SceneManagement;
+﻿using Aether.Core.SceneManagement;
 using Aether.Core.Tutorial;
 using System;
+using Syc.Combat;
+using Syc.Combat.HealthSystem;
 using UnityEngine;
 
 namespace Aether.Core
@@ -25,16 +26,16 @@ namespace Aether.Core
                 ILevelController levelController = SceneController.Instance.LoadedLevel.levelController;
                 levelController.GetLevelExit().TeleportToStartPlatform();
 
-                if (base.Has(out ICombatSystem combatSystem) && combatSystem.Has(out IHealth health))
-                    health.ChangeHealth(health.MaxHealth);
+                if (Has(out ICombatSystem combatSystem) && combatSystem.Has(out HealthSystem health))
+                    health.Reset();
 
             }
             else
             {
                 transform.position = new Vector3(0, 1, 0);
 
-                if (base.Has(out ICombatSystem combatSystem) && combatSystem.Has(out IHealth health))
-                    health.ChangeHealth(health.MaxHealth);
+                if (Has(out ICombatSystem combatSystem) && combatSystem.Has(out HealthSystem health))
+                    health.Reset();
             }
         }
 

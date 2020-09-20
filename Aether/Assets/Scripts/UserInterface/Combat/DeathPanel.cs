@@ -1,6 +1,7 @@
 ﻿using Aether.Core;
-using Aether.Core.Combat;
 using Aether.Input;
+using Syc.Combat;
+using Syc.Combat.HealthSystem;
 using UnityEngine;
 
 namespace Aether.UserInterface.Combat
@@ -9,12 +10,12 @@ namespace Aether.UserInterface.Combat
     {
         private void Start()
         {
-            Player.Instance.Get<ICombatSystem>().Get<IHealth>().OnDied += Show;
+            Player.Instance.Get<ICombatSystem>().Get<HealthSystem>().OnDied += Show;
             gameObject.SetActive(false);
             GetComponent<CanvasGroup>().alpha = 1;
         }
 
-        private void Show()
+        private void Show(DamageRequest _)
         {
             gameObject.SetActive(true);
             InputSystem.SwitchToActionMap(ActionMap.PopUp);
@@ -29,7 +30,7 @@ namespace Aether.UserInterface.Combat
 
         private void OnDestroy()
         {
-            Player.Instance.Get<ICombatSystem>().Get<IHealth>().OnDied -= Show;
+            Player.Instance.Get<ICombatSystem>().Get<HealthSystem>().OnDied -= Show;
         }
     }
 }

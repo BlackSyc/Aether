@@ -1,5 +1,4 @@
-﻿using Aether.Core.Combat;
-using Syc.Combat.SpellSystem.ScriptableObjects;
+﻿using Syc.Combat.SpellSystem.ScriptableObjects;
 using UnityEngine;
 
 namespace Aether.Core.Cloaks

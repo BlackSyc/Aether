@@ -1,9 +1,9 @@
-﻿using Aether.Core.Combat;
+﻿using Syc.Combat;
 using UnityEngine;
 
 namespace Aether.UserInterface.Combat
 {
-    [RequireComponent(typeof(ICombatSystem))]
+    [RequireComponent(typeof(CombatMonoSystem))]
     public class CombatPanelInfo : MonoBehaviour
     {
 
@@ -24,7 +24,7 @@ namespace Aether.UserInterface.Combat
 
         private void Start()
         {
-            CombatSystem = GetComponent<ICombatSystem>();
+            CombatSystem = GetComponent<CombatMonoSystem>();
 
             if (showCombatPanelOnStart)
                 ShowCombatPanel();

@@ -1,12 +1,12 @@
-﻿using Aether.Core.Combat;
-using System;
+﻿using System;
 using System.Collections;
+using Syc.Combat;
 using UnityEngine;
 
 namespace Aether.StartPlatform
 {
     [RequireComponent(typeof(ICombatSystem))]
-    public class Puzzle1_MissileTarget : MonoBehaviour, IMissileTarget
+    public class Puzzle1_MissileTarget : MonoBehaviour
     {
         public struct Events
         {

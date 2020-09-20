@@ -1,13 +1,13 @@
-﻿using Aether.Core.Combat;
+﻿using Syc.Combat.HealthSystem;
 using UnityEngine;
 
 namespace Aether.UserInterface.Combat
 {
     public class HealthBar : MonoBehaviour
     {
-        private IHealth health;
+        private HealthSystem health;
 
-        public void SetHealth(IHealth health)
+        public void SetHealth(HealthSystem health)
         {
             this.health = health;
         }

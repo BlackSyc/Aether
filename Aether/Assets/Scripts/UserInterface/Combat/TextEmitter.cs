@@ -1,5 +1,5 @@
-﻿using Aether.Core.Combat;
-using Aether.UserInterface.Combat;
+﻿using Aether.UserInterface.Combat;
+using Syc.Combat.HealthSystem;
 using UnityEngine;
 
 public class TextEmitter : MonoBehaviour
@@ -13,12 +13,12 @@ public class TextEmitter : MonoBehaviour
     [SerializeField]
     private EmittedText emittedTextPrefab;
 
-    private IHealth linkedHealth;
+    private HealthSystem _linkedHealth;
 
-    public void SetHealth(IHealth health)
+    public void SetHealth(HealthSystem health)
     {
-        linkedHealth = health;
-        linkedHealth.OnHealthChanged += EmitText;
+        _linkedHealth = health;
+        _linkedHealth.OnHealthChanged += EmitText;
     }
 
     private void EmitText(float healthDelta)
@@ -36,7 +36,7 @@ public class TextEmitter : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (linkedHealth != null)
-            linkedHealth.OnHealthChanged -= EmitText;
+        if (_linkedHealth != null)
+            _linkedHealth.OnHealthChanged -= EmitText;
     }
 }

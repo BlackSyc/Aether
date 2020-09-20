@@ -1,70 +1,72 @@
 ﻿using Aether.Core;
-using Aether.Core.Combat;
+using Syc.Combat;
+using Syc.Combat.SpellSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerTargetIndicator : MonoBehaviour
+namespace Aether.UserInterface.Combat
 {
-    private ISpellCast currentSpellCast;
-
-    private ICombatSystem combatSystem;
-
-    [SerializeField]
-    private Image image;
-
-    public void SetCombatSystem(ICombatSystem combatSystem)
+    public class PlayerTargetIndicator : MonoBehaviour
     {
-        this.combatSystem = combatSystem;
-    }
-    private void Awake()
-    {
-        Player.Instance.Get<ICombatSystem>().Get<ISpellSystem>().OnSpellIsCast += OnPlayerSpellCast;
-    }
+        private SpellCast _currentSpellCast;
 
-    private void OnPlayerSpellCast(ISpellCast spellCast)
-    {
-        if (spellCast.Spell.CastDuration < 0.01f)
-            return;
+        private ICombatSystem _combatSystem;
 
-        currentSpellCast = spellCast;
-        spellCast.CastCancelled += ClearCurrentSpellCast;
-        spellCast.CastComplete += ClearCurrentSpellCast;
-        spellCast.CastInterrupted += ClearCurrentSpellCast;
-    }
+        [SerializeField]
+        private Image image;
 
-    private void ClearCurrentSpellCast(ISpellCast spellCast)
-    {
-        if (spellCast == currentSpellCast)
+        public void SetCombatSystem(ICombatSystem combatSystem)
         {
-            currentSpellCast.CastCancelled -= ClearCurrentSpellCast;
-            currentSpellCast.CastComplete -= ClearCurrentSpellCast;
-            currentSpellCast.CastInterrupted -= ClearCurrentSpellCast;
+            _combatSystem = combatSystem;
+        }
+        
+        private void Awake()
+        {
+            Player.Instance.Get<ICombatSystem>().Get<CastingSystem>().OnNewSpellCast += OnPlayerSpellCast;
         }
 
-        currentSpellCast = null;
-        image.enabled = false;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (currentSpellCast != null)
+        private void OnPlayerSpellCast(SpellCast spellCast)
         {
-            if (currentSpellCast.Target.HasCombatTarget(out ICombatSystem combatTarget))
-                image.enabled = combatTarget == combatSystem;
+            if (spellCast.SpellBehaviour.CastTime < 0.01f)
+                return;
+
+            _currentSpellCast = spellCast;
+            spellCast.OnSpellCancelled += ClearCurrentSpellCast;
+            spellCast.OnSpellCompleted += ClearCurrentSpellCast;
         }
-    }
 
-    private void OnDestroy()
-    {
-        Player.Instance.Get<ICombatSystem>().Get<ISpellSystem>().OnSpellIsCast += OnPlayerSpellCast;
-        if (currentSpellCast != null)
+        private void ClearCurrentSpellCast(SpellCast spellCast)
         {
-            currentSpellCast.CastCancelled -= ClearCurrentSpellCast;
-            currentSpellCast.CastComplete -= ClearCurrentSpellCast;
-            currentSpellCast.CastInterrupted -= ClearCurrentSpellCast;
-            currentSpellCast = null;
+            if (spellCast == _currentSpellCast)
+            {
+                _currentSpellCast.OnSpellCancelled -= ClearCurrentSpellCast;
+                _currentSpellCast.OnSpellCompleted -= ClearCurrentSpellCast;
+            }
+
+            _currentSpellCast = null;
+            image.enabled = false;
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (_currentSpellCast == null)
+                return;
+
+            if (_currentSpellCast.Target.IsCombatTarget)
+                image.enabled = _currentSpellCast.Target.CombatSystem == _combatSystem;
+        }
+
+        private void OnDestroy()
+        {
+            Player.Instance.Get<ICombatSystem>().Get<CastingSystem>().OnNewSpellCast -= OnPlayerSpellCast;
+            if (_currentSpellCast != null)
+            {
+                _currentSpellCast.OnSpellCancelled -= ClearCurrentSpellCast;
+                _currentSpellCast.OnSpellCompleted -= ClearCurrentSpellCast;
+                _currentSpellCast = null;
+            }
         }
     }
 }

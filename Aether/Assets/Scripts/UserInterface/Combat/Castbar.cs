@@ -1,4 +1,4 @@
-﻿using Aether.Core.Combat;
+﻿using Syc.Combat.SpellSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,51 +11,54 @@ public class Castbar : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI castbarText;
 
-    private ISpellCast currentSpellCast;
+    private SpellCast _currentSpellCast;
 
-    private ISpellSystem spellSystem;
+    private CastingSystem _castingSystem;
 
-    public void SetSpellSystem(ISpellSystem spellSystem)
+    public void SetCastingSystem(CastingSystem castingSystem)
     {
-        this.spellSystem = spellSystem;
-        this.spellSystem.OnSpellIsCast += ShowSpellCast;
+        _castingSystem = castingSystem;
+        _castingSystem.OnNewSpellCast += ShowSpellCast;
     }
 
-    private void ShowSpellCast(ISpellCast newSpellCast)
+    private void ShowSpellCast(SpellCast newSpellCast)
     {
-        currentSpellCast = newSpellCast;
+        _currentSpellCast = newSpellCast;
         ShowCastBar();
     }
 
     private void ShowCastBar()
     {
-        castbarText.text = currentSpellCast.Spell.Name;
+        castbarText.text = _currentSpellCast.SpellBehaviour.SpellName;
         castbarImage.fillAmount = 0;
-        currentSpellCast.CastProgress += x => castbarImage.fillAmount = x;
+        _currentSpellCast.OnSpellCastProgress += UpdateCastProgress;
 
         castbarImage.enabled = true;
         castbarText.enabled = true;
 
-        currentSpellCast.CastCancelled += _ => HideCastBar();
-        currentSpellCast.CastComplete += _ => HideCastBar();
-        currentSpellCast.CastInterrupted += _ => HideCastBar();
+        _currentSpellCast.OnSpellCancelled += HideCastBar;
+        _currentSpellCast.OnSpellCompleted += HideCastBar;
     }
 
-    private void HideCastBar()
+    private void UpdateCastProgress(SpellCast spellCast)
     {
-        currentSpellCast.CastProgress -= x => castbarImage.fillAmount = x;
-        currentSpellCast.CastCancelled -= _ => HideCastBar();
-        currentSpellCast.CastComplete -= _ => HideCastBar();
-        currentSpellCast.CastInterrupted -= _ => HideCastBar();
+        castbarImage.fillAmount = spellCast.CurrentCastTime / spellCast.SpellBehaviour.CastTime;
+    }
 
-        currentSpellCast = null;
+    private void HideCastBar(SpellCast spellCast)
+    {
+        _currentSpellCast.OnSpellCastProgress -= UpdateCastProgress;
+        _currentSpellCast.OnSpellCancelled -= HideCastBar;
+        _currentSpellCast.OnSpellCompleted -= HideCastBar;
+
+        _currentSpellCast = null;
         castbarText.enabled = false;
         castbarImage.enabled = false;
     }
 
     private void OnDestroy()
     {
-        if (spellSystem != null)
-            spellSystem.OnSpellIsCast -= ShowSpellCast;
+        if (_castingSystem != null)
+            _castingSystem.OnNewSpellCast -= ShowSpellCast;
     }
 }

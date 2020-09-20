@@ -1,5 +1,4 @@
 ﻿using Aether.Core.Cloaks;
-using Aether.Core.Combat;
 using System;
 using Syc.Combat;
 using Syc.Combat.SpellSystem;

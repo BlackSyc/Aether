@@ -1,5 +1,7 @@
 ﻿using Aether.Core;
-using Aether.Core.Combat;
+using Syc.Combat.HealthSystem;
+using Syc.Combat.ModifierSystem;
+using Syc.Combat.SpellSystem;
 using TMPro;
 using UnityEngine;
 
@@ -41,7 +43,7 @@ namespace Aether.UserInterface.Combat
         private void Start()
         {
             if (nameText != null)
-                nameText.text = combatPanelInfo.CombatSystem.Name;
+                nameText.text = combatPanelInfo.CombatSystem.Origin.name;
 
             if (healthBar != null)
                 LinkHealthBar();
@@ -62,8 +64,8 @@ namespace Aether.UserInterface.Combat
 
         private void LinkCastbar()
         {
-            if (combatPanelInfo.CombatSystem.Has(out ISpellSystem spellSystem))
-                castBar.SetSpellSystem(spellSystem);
+            if (combatPanelInfo.CombatSystem.Has(out CastingSystem castingSystem))
+                castBar.SetCastingSystem(castingSystem);
             else
                 castBar.enabled = false;
         }
@@ -75,24 +77,24 @@ namespace Aether.UserInterface.Combat
 
         protected void LinkHealthBar()
         {
-            if (combatPanelInfo.CombatSystem.Has(out IHealth health))
-                healthBar.SetHealth(health);
+            if (combatPanelInfo.CombatSystem.Has(out HealthSystem healthSystem))
+                healthBar.SetHealth(healthSystem);
             else
                 healthBar.enabled = false;
         }
 
         protected void LinkTextEmitter()
         {
-            if (combatPanelInfo.CombatSystem.Has(out IHealth health))
-                textEmitter.SetHealth(health);
+            if (combatPanelInfo.CombatSystem.Has(out HealthSystem healthSystem))
+                textEmitter.SetHealth(healthSystem);
             else
                 textEmitter.enabled = false;
         }
 
         protected void LinkModifiersBar()
         {
-            if (combatPanelInfo.CombatSystem.Has(out IModifierSlots modifierSlots))
-                modifiersBar.SetModifierSlots(modifierSlots);
+            if (combatPanelInfo.CombatSystem.Has(out ModifierSystem modifierSystem))
+                modifiersBar.SetModifierSystem(modifierSystem);
             else
                 modifiersBar.enabled = false;
         }

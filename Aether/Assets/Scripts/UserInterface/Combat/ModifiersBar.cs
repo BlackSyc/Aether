@@ -1,5 +1,5 @@
-﻿using Aether.Core.Combat;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Syc.Combat.ModifierSystem;
 using UnityEngine;
 
 namespace Aether.UserInterface.Combat
@@ -9,37 +9,37 @@ namespace Aether.UserInterface.Combat
         [SerializeField]
         private GameObject modifierIconPrefab;
 
-        private List<ModifierIcon> modifierIcons;
+        private List<ModifierIcon> _modifierIcons;
 
-        private IModifierSlots modifierSlots;
+        private ModifierSystem _modifierSystem;
 
         [SerializeField]
         private float iconScale = 1;
 
         private void Start()
         {
-            modifierIcons = new List<ModifierIcon>();
+            _modifierIcons = new List<ModifierIcon>();
         }
 
-        public void SetModifierSlots(IModifierSlots modifierSlots)
+        public void SetModifierSystem(ModifierSystem modifierSystem)
         {
-            this.modifierSlots = modifierSlots;
-            modifierSlots.OnModifierAdded += AddModifierIcon;
-            modifierSlots.OnModifierRemoved += RemoveModifierIcon;
+            this._modifierSystem = modifierSystem;
+            modifierSystem.OnModifierAdded += AddModifierIcon;
+            modifierSystem.OnModifierRemoved += RemoveModifierIcon;
         }
 
         private void OnDestroy()
         {
-            if (modifierSlots == null)
+            if (_modifierSystem == null)
                 return;
 
-            modifierSlots.OnModifierAdded -= AddModifierIcon;
-            modifierSlots.OnModifierRemoved -= RemoveModifierIcon;
+            _modifierSystem.OnModifierAdded -= AddModifierIcon;
+            _modifierSystem.OnModifierRemoved -= RemoveModifierIcon;
         }
 
-        private void RemoveModifierIcon(IModifier modifier)
+        private void RemoveModifierIcon(Modifier modifier)
         {
-            modifierIcons.RemoveAll(x =>
+            _modifierIcons.RemoveAll(x =>
             {
                 if (x.Modifier == modifier)
                 {
@@ -50,12 +50,12 @@ namespace Aether.UserInterface.Combat
             });
         }
 
-        private void AddModifierIcon(IModifier modifier)
+        private void AddModifierIcon(Modifier modifier)
         {
             var newIcon = Instantiate(modifierIconPrefab, transform).GetComponent<ModifierIcon>();
             newIcon.transform.localScale = new Vector3(iconScale, iconScale, iconScale);
-            newIcon.SetModifier(modifier);
-            modifierIcons.Add(newIcon);
+            newIcon.SetModifierBehaviour(modifier);
+            _modifierIcons.Add(newIcon);
         }
     }
 }

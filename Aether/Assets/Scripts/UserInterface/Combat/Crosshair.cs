@@ -1,6 +1,8 @@
 ﻿using Aether.Core;
-using Aether.Core.Combat;
 using Aether.Input;
+using Syc.Combat;
+using Syc.Combat.SpellSystem;
+using Syc.Combat.TargetSystem;
 using UnityEngine;
 
 namespace Aether.UserInterface.Combat
@@ -9,25 +11,22 @@ namespace Aether.UserInterface.Combat
     {
 
         [SerializeField]
-        private Animator _crosshairAnimator;
+        private Animator crosshairAnimator;
 
         [SerializeField]
-        private GameObject _crosshairContainer;
+        private GameObject crosshairContainer;
 
-        [SerializeField]
-        private Camera _camera;
+        private CastingSystem _playerSpellSystem;
 
-        private ISpellSystem playerSpellSystem;
-
-        private ITargetSystem playerTargetSystem;
+        private ITargetManager _playerTargetSystem;
 
         private void Start()
         {
             var playerCombatSystem = Player.Instance.Get<ICombatSystem>();
-            playerSpellSystem = playerCombatSystem.Get<ISpellSystem>();
-            playerTargetSystem = playerCombatSystem.Get<ITargetSystem>();
+            _playerSpellSystem = playerCombatSystem.Get<CastingSystem>();
+            _playerTargetSystem = playerCombatSystem.Get<ITargetManager>();
 
-            _crosshairAnimator.keepAnimatorControllerStateOnDisable = true;
+            crosshairAnimator.keepAnimatorControllerStateOnDisable = true;
             InputSystem.OnActionMapSwitched += InputSystem_OnActionMapSwitched;
         }
 
@@ -38,21 +37,19 @@ namespace Aether.UserInterface.Combat
 
         private void InputSystem_OnActionMapSwitched(ActionMap newActionMap)
         {
-            _crosshairContainer.SetActive(newActionMap == ActionMap.Player && playerSpellSystem.HasActiveSpells);
+            crosshairContainer.SetActive(newActionMap == ActionMap.Player);
         }
 
         // Update is called once per frame
         void LateUpdate()
         {
-            _crosshairContainer.SetActive(playerSpellSystem.HasActiveSpells);
-
-            if (playerTargetSystem.GetCurrentTarget().HasCombatTarget())
+            if (_playerTargetSystem.GetCurrentTarget().IsCombatTarget)
             {
-                _crosshairAnimator.SetBool("HasObjectTarget", true);
+                crosshairAnimator.SetBool("HasObjectTarget", true);
             }
             else
             {
-                _crosshairAnimator.SetBool("HasObjectTarget", false);
+                crosshairAnimator.SetBool("HasObjectTarget", false);
             }
         }
     }

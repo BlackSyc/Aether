@@ -1,4 +1,5 @@
-﻿using Aether.Core.Combat;
+﻿using Syc.Combat.ModifierSystem;
+using Syc.Combat.ModifierSystem.ScriptableObjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +8,7 @@ namespace Aether.UserInterface.Combat
 {
     public class ModifierIcon : MonoBehaviour
     {
-        public IModifier Modifier { get; private set; }
+        public Modifier Modifier { get; private set; }
 
         [SerializeField]
         private Image image;
@@ -15,16 +16,16 @@ namespace Aether.UserInterface.Combat
         [SerializeField]
         private TextMeshProUGUI durationText;
 
-        public void SetModifier(IModifier modifier)
+        public void SetModifierBehaviour(Modifier modifier)
         {
             Modifier = modifier;
-            image.sprite = Modifier.ModifierType.Icon;
+            image.sprite = modifier.ModifierBehaviour.Icon.sprite;
         }
 
         public void Update()
         {
             if (Modifier != null)
-                durationText.text = ((int)(Modifier.FallOffTime - Time.time)).ToString();
+                durationText.text = ((int) (Modifier.ModifierBehaviour.Duration - Modifier.ActiveDuration)).ToString();
         }
     }
 }

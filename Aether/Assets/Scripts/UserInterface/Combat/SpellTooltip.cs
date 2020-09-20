@@ -1,4 +1,5 @@
-﻿using Aether.Core.Combat;
+﻿using System.Globalization;
+using Syc.Combat.SpellSystem.ScriptableObjects;
 using TMPro;
 using UnityEngine;
 
@@ -26,14 +27,14 @@ public class SpellTooltip : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI canBeCastWhileMoving;
 
-    public void Show(ISpell spell)
+    public void Show(SpellBehaviour spellBehaviour)
     {
-        title.text = spell.Name;
-        healthDelta.text = spell.HealthDelta.ToString();
-        casttime.text = spell.CastDuration.ToString();
-        cooldown.text = spell.CoolDown.ToString();
-        description.text = spell.Description;
-        canBeCastWhileMoving.text = spell.CastWhileMoving ? "Can be cast while moving" : "Can not be cast while moving";
+        title.text = spellBehaviour.SpellName;
+        healthDelta.text = "0";
+        casttime.text = spellBehaviour.CastTime.ToString(CultureInfo.InvariantCulture);
+        cooldown.text = spellBehaviour.CoolDown.ToString(CultureInfo.InvariantCulture);
+        description.text = spellBehaviour.SpellDescription;
+        canBeCastWhileMoving.text = "CastWhileMoving is not implemented";
 
         gameObject.SetActive(true);
     }

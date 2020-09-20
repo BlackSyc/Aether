@@ -1,5 +1,4 @@
 ﻿using Aether.Core;
-using Aether.Core.Combat;
 using Aether.Core.Dialog.ScriptableObjects;
 using Aether.Core.Interaction;
 using Aether.Core.Tutorial;
@@ -9,7 +8,6 @@ using Syc.Combat;
 using Syc.Combat.SpellSystem;
 using Syc.Combat.SpellSystem.ScriptableObjects;
 using UnityEngine;
-using ICombatSystem = Syc.Combat.ICombatSystem;
 
 namespace Aether.StartPlatform
 {
