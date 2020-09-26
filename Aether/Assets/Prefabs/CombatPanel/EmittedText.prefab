@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 146
+  m_text: 146.2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7ab61befcd2e464a94392a153628cbb, type: 2}
   m_sharedMaterial: {fileID: 6274074916431148124, guid: c7ab61befcd2e464a94392a153628cbb,
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -133,10 +133,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 3356844403162423563}
-    characterCount: 3
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -196,7 +196,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 20}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5282011590204557583
 Canvas:
@@ -286,8 +286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254c551a1ad1b1c4d9cc84ddd48bf77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: {fileID: 3356844403162423563}
-  RigidBodyComponent: {fileID: 1926382125274437208}
+  text: {fileID: 3356844403162423563}
+  rigidBodyComponent: {fileID: 1926382125274437208}
 --- !u!225 &9026626310781407538
 CanvasGroup:
   m_ObjectHideFlags: 0

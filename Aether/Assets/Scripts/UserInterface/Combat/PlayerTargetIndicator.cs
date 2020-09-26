@@ -31,7 +31,7 @@ namespace Aether.UserInterface.Combat
 
         private void OnPlayerSpellCast(SpellCast spellCast)
         {
-            if (spellCast.SpellBehaviour.CastTime < 0.01f)
+            if (spellCast.Spell.CastTime < 0.01f)
                 return;
 
             _currentSpellCast = spellCast;

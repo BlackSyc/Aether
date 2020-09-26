@@ -8,7 +8,7 @@ namespace Aether.UserInterface.Combat
 {
     public class ModifierIcon : MonoBehaviour
     {
-        public Modifier Modifier { get; private set; }
+        public ModifierState ModifierState { get; private set; }
 
         [SerializeField]
         private Image image;
@@ -16,16 +16,16 @@ namespace Aether.UserInterface.Combat
         [SerializeField]
         private TextMeshProUGUI durationText;
 
-        public void SetModifierBehaviour(Modifier modifier)
+        public void SetModifierState(ModifierState modifierState)
         {
-            Modifier = modifier;
-            image.sprite = modifier.ModifierBehaviour.Icon.sprite;
+            ModifierState = modifierState;
+            image.sprite = modifierState.Modifier.Icon.sprite;
         }
 
         public void Update()
         {
-            if (Modifier != null)
-                durationText.text = ((int) (Modifier.ModifierBehaviour.Duration - Modifier.ActiveDuration)).ToString();
+            if (ModifierState != null)
+                durationText.text = ((int) (ModifierState.Modifier.Duration - ModifierState.ActiveDuration)).ToString();
         }
     }
 }

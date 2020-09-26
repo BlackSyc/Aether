@@ -2,8 +2,10 @@
     "name": "Aether.Movement",
     "references": [
         "GUID:e9b0bf49a2fcfcc4daef70665e54d9b1",
+        "GUID:78069420aeefe844e8681f5f103c6190",
         "GUID:8d0f848ccc17ade45a7668cfda43214b",
-        "GUID:75469ad4d38634e559750d17036d5f7c"
+        "GUID:8338c5e4d7337b34394c9cae81eba266",
+        "GUID:abbb46728c7ceb0459bc42227cfc5677"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

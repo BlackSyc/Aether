@@ -50,7 +50,7 @@ namespace Aether.UserInterface.Combat
             if (_playerTargetSystem == default)
                 return;
 
-            crosshairAnimator.SetBool(HasObjectTarget, _playerTargetSystem.GetCurrentTarget().IsCombatTarget);
+            crosshairAnimator.SetBool(HasObjectTarget, _playerTargetSystem.CreateTarget().IsCombatTarget);
         }
     }
 }

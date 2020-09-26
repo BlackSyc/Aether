@@ -33,6 +33,7 @@ namespace Aether.UserInterface.Combat
         [SerializeField]
         protected Castbar castBar;
 
+        private Transform _cameraTransform;
 
         public CombatPanel SetInfo(CombatPanelInfo info)
         {
@@ -42,6 +43,11 @@ namespace Aether.UserInterface.Combat
 
         private void Start()
         {
+            if (!(Camera.main is null))
+            {
+                _cameraTransform = Camera.main.transform;
+            }
+
             if (nameText != null)
                 nameText.text = combatPanelInfo.CombatSystem?.Origin.name;
 
@@ -103,9 +109,8 @@ namespace Aether.UserInterface.Combat
         {
             transform.position = transform.parent.position + combatPanelInfo.PanelOffset;
 
-            transform.rotation = Quaternion.LookRotation(Player.Instance.Get<Camera>().transform.forward, Player.Instance.Get<Camera>().transform.up);
-
-            float distanceToCamera = Vector3.Distance(transform.position, Player.Instance.Get<Camera>().transform.position);
+            transform.rotation = Quaternion.LookRotation(_cameraTransform.forward, _cameraTransform.up);
+            float distanceToCamera = Vector3.Distance(transform.position, _cameraTransform.position);
 
             canvasGroup.alpha = distanceToCamera - 3;
         }

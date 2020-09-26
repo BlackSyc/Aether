@@ -15,7 +15,7 @@ namespace Aether.Core.Cloaks
 
         string Description { get; }
 
-        SpellBehaviour[] Spells { get; }
+        Spell[] Spells { get; }
 
         GameObject CloakPrefab { get; }
     }

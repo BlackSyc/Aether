@@ -1,7 +1,7 @@
 ﻿using Aether.Core;
-using Aether.Core.Movement;
 using Aether.Core.SceneManagement;
 using System.Collections;
+using Syc.Movement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using SceneAsset = UnityEngine.Object;
@@ -55,22 +55,27 @@ namespace Aether.Attunement
         {
             Player.Instance.gameObject.transform.parent = gameObject.transform;
             Player.Instance.gameObject.transform.localPosition = Vector3.zero;
-            
-            Player.Instance.Get<IMovementSystem>().IsActive = false;
+
+            if (Player.Instance.Has(out MovementSystem movementSystem))
+                movementSystem.IsActive = false;
 
             animator.Play(reverse ? $"{TravelAnimation.name}Reverse" : TravelAnimation.name);
             yield return new WaitForSeconds(TravelAnimation.length);
 
             Player.Instance.gameObject.transform.SetParent(null, true);
             SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneController.Instance.BaseScene);
-            Player.Instance.Get<IMovementSystem>().IsActive = true;
+            
+            if(movementSystem != default)
+                movementSystem.IsActive = true;
         }
 
         private IEnumerator TravelUsingLoadingProgress()
         {
             Player.Instance.gameObject.transform.parent = gameObject.transform;
             Player.Instance.gameObject.transform.localPosition = Vector3.zero;
-            Player.Instance.Get<IMovementSystem>().IsActive = false;
+            
+            if (Player.Instance.Has(out MovementSystem movementSystem))
+                movementSystem.IsActive = false;
 
             while (levelLoadingOperation == null)
             {
@@ -91,7 +96,9 @@ namespace Aether.Attunement
 
             Player.Instance.gameObject.transform.SetParent(null, true);
             SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneController.Instance.BaseScene);
-            Player.Instance.Get<IMovementSystem>().IsActive = true;
+            
+            if(movementSystem != default)
+                movementSystem.IsActive = true;
         }
     }
 }

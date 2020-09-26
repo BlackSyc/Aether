@@ -37,11 +37,11 @@ namespace Aether.UserInterface.Combat
             _modifierSystem.OnModifierRemoved -= RemoveModifierIcon;
         }
 
-        private void RemoveModifierIcon(Modifier modifier)
+        private void RemoveModifierIcon(ModifierState modifier)
         {
             _modifierIcons.RemoveAll(x =>
             {
-                if (x.Modifier == modifier)
+                if (x.ModifierState == modifier)
                 {
                     Destroy(x.gameObject);
                     return true;
@@ -50,11 +50,11 @@ namespace Aether.UserInterface.Combat
             });
         }
 
-        private void AddModifierIcon(Modifier modifier)
+        private void AddModifierIcon(ModifierState modifier)
         {
             var newIcon = Instantiate(modifierIconPrefab, transform).GetComponent<ModifierIcon>();
             newIcon.transform.localScale = new Vector3(iconScale, iconScale, iconScale);
-            newIcon.SetModifierBehaviour(modifier);
+            newIcon.SetModifierState(modifier);
             _modifierIcons.Add(newIcon);
         }
     }

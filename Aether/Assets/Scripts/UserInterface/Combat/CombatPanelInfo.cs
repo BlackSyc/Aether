@@ -13,7 +13,7 @@ namespace Aether.UserInterface.Combat
 
 
         [SerializeField]
-        private GameObject combatPanelPrefab;
+        private CombatPanel combatPanelPrefab;
 
         [SerializeField]
         private bool showCombatPanelOnStart;
@@ -49,7 +49,6 @@ namespace Aether.UserInterface.Combat
         private void CreateCombatPanel()
         {
             combatPanel = Instantiate(combatPanelPrefab, transform)
-                .GetComponent<CombatPanel>()
                 .SetInfo(this);
         }
     }

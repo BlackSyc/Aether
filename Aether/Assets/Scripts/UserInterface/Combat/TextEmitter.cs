@@ -1,42 +1,61 @@
-﻿using Aether.UserInterface.Combat;
+﻿using System.Globalization;
 using Syc.Combat.HealthSystem;
 using UnityEngine;
 
-public class TextEmitter : MonoBehaviour
+namespace Aether.UserInterface.Combat
 {
-    [SerializeField]
-    private Color healColour;
-
-    [SerializeField]
-    private Color damageColour;
-
-    [SerializeField]
-    private EmittedText emittedTextPrefab;
-
-    private HealthSystem _linkedHealth;
-
-    public void SetHealth(HealthSystem health)
+    public class TextEmitter : MonoBehaviour
     {
-        _linkedHealth = health;
-        _linkedHealth.OnHealthChanged += EmitText;
-    }
+        [SerializeField]
+        private Color healColour;
 
-    private void EmitText(float healthDelta)
-    {
-        EmittedText emittedText = Instantiate(emittedTextPrefab, transform.position, Quaternion.identity).GetComponent<EmittedText>();
-        emittedText.Text.text = Mathf.Abs(healthDelta).ToString();
+        [SerializeField]
+        private Color damageColour;
 
-        if (healthDelta <= 0)
-            emittedText.Text.color = damageColour;
-        else
-            emittedText.Text.color = healColour;
+        [SerializeField]
+        private EmittedText emittedTextPrefab;
 
-        emittedText.RigidBodyComponent.AddForce(new Vector3(Random.Range(-200f, 200f), Random.Range(100f, 200f), 0));
-    }
+        private HealthSystem _linkedHealth;
 
-    private void OnDestroy()
-    {
-        if (_linkedHealth != null)
-            _linkedHealth.OnHealthChanged -= EmitText;
+        public void SetHealth(HealthSystem health)
+        {
+            _linkedHealth = health;
+            _linkedHealth.OnDamageReceived += DamageReceived;
+            _linkedHealth.OnHealingReceived += HealingReceived;
+        }
+
+        private void HealingReceived(HealRequest healRequest)
+        {
+            EmitText(healRequest.AmountDealt, false);
+        }
+
+        private void DamageReceived(DamageRequest damageRequest)
+        {
+            EmitText(-damageRequest.AmountDealt, damageRequest.IsCriticalStrike);
+        }
+
+        private void EmitText(float healthDelta, bool isCriticalStrike)
+        {
+            var emittedText = Instantiate(emittedTextPrefab, transform.position, Quaternion.identity).GetComponent<EmittedText>();
+            emittedText.text.text = Mathf.Abs(healthDelta).ToString(CultureInfo.InvariantCulture);
+
+            emittedText.text.color = healthDelta <= 0 
+                ? damageColour 
+                : healColour;
+
+            if (isCriticalStrike)
+                emittedText.text.fontSize *= 2;
+
+            emittedText.rigidBodyComponent.AddForce(new Vector3(Random.Range(-200f, 200f), Random.Range(100f, 200f), 0));
+        }
+
+        private void OnDestroy()
+        {
+            if (_linkedHealth == null)
+                return;
+
+            _linkedHealth.OnDamageReceived -= DamageReceived;
+            _linkedHealth.OnHealingReceived -= HealingReceived;
+        }
     }
 }

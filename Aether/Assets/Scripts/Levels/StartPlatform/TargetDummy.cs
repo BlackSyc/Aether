@@ -5,7 +5,7 @@ using Syc.Combat.SpellSystem;
 using Syc.Combat.SpellSystem.ScriptableObjects;
 using UnityEngine;
 
-namespace Aether.StartPlatform
+namespace Aether.Levels.StartPlatform
 {
     [RequireComponent(typeof(ICombatSystem))]
     public class TargetDummy : MonoBehaviour
@@ -14,7 +14,7 @@ namespace Aether.StartPlatform
         private float tickDelay = 1f;
 
         [SerializeField]
-        private SpellBehaviour healingSpell;
+        private Spell healingSpell;
 
         private ICombatSystem combatSystem;
 
@@ -42,7 +42,7 @@ namespace Aether.StartPlatform
             {
                 if (health.CurrentHealth <= 900)
                 {
-                    spellSystem.CastSpell(new Spell(healingSpell));
+                    spellSystem.CastSpell(new SpellState(healingSpell));
                 }
                 yield return new WaitForSeconds(tickDelay);
             }

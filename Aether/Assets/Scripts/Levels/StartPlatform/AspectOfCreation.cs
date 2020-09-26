@@ -30,7 +30,7 @@ namespace Aether.Levels.StartPlatform
 
 
         [SerializeField]
-        private SpellBehaviour reward = null;
+        private Spell reward = null;
 
         private void Start()
         {

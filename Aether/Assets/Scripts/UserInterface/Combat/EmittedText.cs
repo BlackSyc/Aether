@@ -9,27 +9,34 @@ namespace Aether.UserInterface.Combat
     public class EmittedText : MonoBehaviour
     {
 
-        public TextMeshProUGUI Text;
+        public TextMeshProUGUI text;
 
-        public Rigidbody RigidBodyComponent;
+        public Rigidbody rigidBodyComponent;
 
-        private CanvasGroup canvasGroup;
+        private CanvasGroup _canvasGroup;
+
+        private Transform _mainCameraTransform;
 
         private void Awake()
         {
-            canvasGroup = GetComponent<CanvasGroup>();
-            RigidBodyComponent = GetComponent<Rigidbody>();
+            _canvasGroup = GetComponent<CanvasGroup>();
+            rigidBodyComponent = GetComponent<Rigidbody>();
+            
+            if (!(Camera.main is null))
+            {
+                _mainCameraTransform = Camera.main.transform;
+            }
+
             Destroy(gameObject, 2);
         }
 
         protected virtual void LateUpdate()
         {
+            transform.rotation = Quaternion.LookRotation(_mainCameraTransform.forward, _mainCameraTransform.up);
 
-            transform.rotation = Quaternion.LookRotation(Player.Instance.Get<Camera>().transform.forward, Player.Instance.Get<Camera>().transform.up);
+            var distanceToCamera = Vector3.Distance(transform.position, _mainCameraTransform.position);
 
-            float distanceToCamera = Vector3.Distance(transform.position, Player.Instance.Get<Camera>().transform.position);
-
-            canvasGroup.alpha = distanceToCamera - 3;
+            _canvasGroup.alpha = distanceToCamera - 3;
         }
     }
 }

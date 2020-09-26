@@ -27,13 +27,13 @@ public class SpellTooltip : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI canBeCastWhileMoving;
 
-    public void Show(SpellBehaviour spellBehaviour)
+    public void Show(Spell spell)
     {
-        title.text = spellBehaviour.SpellName;
+        title.text = spell.SpellName;
         healthDelta.text = "0";
-        casttime.text = spellBehaviour.CastTime.ToString(CultureInfo.InvariantCulture);
-        cooldown.text = spellBehaviour.CoolDown.ToString(CultureInfo.InvariantCulture);
-        description.text = spellBehaviour.SpellDescription;
+        casttime.text = spell.CastTime.ToString(CultureInfo.InvariantCulture);
+        cooldown.text = spell.CoolDown.ToString(CultureInfo.InvariantCulture);
+        description.text = spell.SpellDescription;
         canBeCastWhileMoving.text = "CastWhileMoving is not implemented";
 
         gameObject.SetActive(true);

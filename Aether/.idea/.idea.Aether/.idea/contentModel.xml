@@ -8,6 +8,7 @@
     <e p="D:\Private\Repositories\Aether\Aether" t="IncludeRecursive">
       <e p="Aether.Attunement.csproj" t="IncludeRecursive" />
       <e p="Aether.Cloaks.csproj" t="IncludeRecursive" />
+      <e p="Aether.Combat.csproj" t="IncludeRecursive" />
       <e p="Aether.Core.csproj" t="IncludeRecursive" />
       <e p="Aether.Input.csproj" t="IncludeRecursive" />
       <e p="Aether.Interaction.csproj" t="IncludeRecursive" />
@@ -17,7 +18,9 @@
       <e p="Aether.sln" t="IncludeFlat" />
       <e p="Aether.StartPlatform.csproj" t="IncludeRecursive" />
       <e p="Aether.UserInterface.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Logger.cs" t="Include" />
         <e p="ScriptableObjects" t="Include">
           <e p="Aether.ScriptableObjects.asmdef" t="Include" />
           <e p="Cloaks" t="Include">
@@ -38,9 +41,23 @@
             <e p="DreamCloak.cs" t="Include" />
             <e p="Shoulder.cs" t="Include" />
           </e>
+          <e p="Combat" t="Include">
+            <e p="Aether.Combat.asmdef" t="Include" />
+            <e p="Player" t="Include">
+              <e p="PlayerCombatSystem.cs" t="Include" />
+              <e p="PlayerSpellSystem.cs" t="Include" />
+              <e p="PlayerTargetSystem.cs" t="Include" />
+            </e>
+            <e p="TargetDummy" t="Include">
+              <e p="TargetDummyCombatSystem.cs" t="Include" />
+            </e>
+          </e>
           <e p="Core" t="Include">
             <e p="Aether.Core.asmdef" t="Include" />
             <e p="Aspect.cs" t="Include" />
+            <e p="Attributes" t="Include">
+              <e p="ScryerAttributes.cs" t="Include" />
+            </e>
             <e p="Attunement" t="Include">
               <e p="Events.cs" t="Include" />
               <e p="IAttunementDevice.cs" t="Include" />
@@ -75,9 +92,6 @@
             </e>
             <e p="ITransform.cs" t="Include" />
             <e p="Layers.cs" t="Include" />
-            <e p="Movement" t="Include">
-              <e p="IMovementSystem.cs" t="Include" />
-            </e>
             <e p="Player.cs" t="Include" />
             <e p="SceneManagement" t="Include">
               <e p="ILevelController.cs" t="Include" />
@@ -88,6 +102,9 @@
               <e p="StartPlatformController.cs" t="Include" />
             </e>
             <e p="ScriptableObjectLoader.cs" t="Include" />
+            <e p="Settings" t="Include">
+              <e p="GameSettings.cs" t="Include" />
+            </e>
             <e p="Tutorial" t="Include">
               <e p="CustomHint.cs" t="Include" />
               <e p="Hint.cs" t="Include" />
@@ -104,6 +121,7 @@
             <e p="Aether.PlayerInput.asmdef" t="Include" />
             <e p="InputActions.cs" t="Include" />
             <e p="InputSystem.cs" t="Include" />
+            <e p="PlayerInput.cs" t="Include" />
           </e>
           <e p="Interaction" t="Include">
             <e p="Aether.Interaction.asmdef" t="Include" />
@@ -131,10 +149,6 @@
           </e>
           <e p="Movement" t="Include">
             <e p="Aether.Movement.asmdef" t="Include" />
-            <e p="CameraMovement.cs" t="Include" />
-            <e p="CameraPivot.cs" t="Include" />
-            <e p="IMovementSystem.cs" t="Include" />
-            <e p="MovementSystem.cs" t="Include" />
             <e p="PlayerMovementSystem.cs" t="Include" />
           </e>
           <e p="UserInterface" t="Include">
@@ -205,6 +219,34 @@
               <e p="spell_system.cs" t="Include" />
             </e>
             <e p="Tests_EditMode.asmdef" t="Include" />
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
       </e>

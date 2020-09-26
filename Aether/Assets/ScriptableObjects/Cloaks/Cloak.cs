@@ -35,9 +35,9 @@ namespace Aether.ScriptableObjects.Cloaks {
         public string Description => description;
 
         [SerializeField]
-        private SpellBehaviour[] spells;
+        private Spell[] spells;
 
-        public SpellBehaviour[] Spells => spells;
+        public Spell[] Spells => spells;
 
         [SerializeField]
         private GameObject cloakPrefab;

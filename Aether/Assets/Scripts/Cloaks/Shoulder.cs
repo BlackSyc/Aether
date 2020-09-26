@@ -16,7 +16,7 @@ namespace Aether.Cloaks
         private GameObject equippedCloakObject;
 
         [SerializeField]
-        private SpellBehaviour defaultSpell;
+        private Spell defaultSpell;
 
         public event Action<ICloak> OnCloakChanged;
 

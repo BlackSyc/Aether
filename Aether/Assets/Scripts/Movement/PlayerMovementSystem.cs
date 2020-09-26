@@ -1,51 +1,51 @@
-﻿using Aether.Input;
+using Aether.Core.Attributes;
+using Aether.Input;
+using Syc.Movement;
 using UnityEngine;
 
 namespace Aether.Movement
 {
-    internal class PlayerMovementSystem : MovementSystem
-    {
-        #region Private Fields
-        [SerializeField]
-        private CameraPivot cameraPivot;
-        #endregion
+	public class PlayerMovementSystem : MovementSystem
+	{
+		#region Private Fields
+        
+		[SerializeField] private CameraPivot cameraPivot;
 
-        #region MonoBehaviour
-        private void Start()
-        {
-            SubscribeToInput();
-        }
+		[SerializeField] private ScryerAttributes movementDefaultAttributes;
 
-        private void OnDestroy()
-        {
-            UnsubscribeFromInput();
-        }
+		[SerializeField] private PlayerInput playerInput;
 
-        private void FixedUpdate()
-        {
-            Vector2 movementInput = InputSystem.InputActions.Player.Movement.ReadValue<Vector2>();
-            Move(movementInput);
-        }
+		#endregion
 
-        private void Update()
-        {
-            Vector2 lookInput = InputSystem.InputActions.Player.Look.ReadValue<Vector2>();
+		public override IMovementAttributes MovementAttributes => movementDefaultAttributes;
+        
+		#region MonoBehaviour
 
-            Rotate(rotationInput: new Vector2(lookInput.x, 0));
-            cameraPivot.Rotate(rotationInput: new Vector2(0, lookInput.y), rotationSpeed: RotationSpeed);
-        }
-        #endregion
+		private void Awake()
+		{
+			playerInput.OnMove += Move;
+			playerInput.OnLook += Rotate;
+			playerInput.OnLook += RotateCameraPivot;
+			playerInput.OnJump += Jump;
+		}
 
-        #region Input
-        private void SubscribeToInput()
-        {
-            InputSystem.InputActions.Player.Jump.started += x => Jump();
-        }
+		private void OnDestroy()
+		{
+			playerInput.OnMove -= Move;
+			playerInput.OnLook -= Rotate;
+			playerInput.OnLook -= RotateCameraPivot;
+			playerInput.OnJump -= Jump;
+		}
 
-        private void UnsubscribeFromInput()
-        {
-            InputSystem.InputActions.Player.Jump.started -= x => Jump();
-        }
-        #endregion
-    }
+		#endregion
+
+		#region MyRegion
+
+		private void RotateCameraPivot(Vector2 lookInput)
+		{
+			cameraPivot.Rotate(lookInput, MovementAttributes.RotationSpeed.Remap());
+		}
+
+		#endregion
+	}
 }

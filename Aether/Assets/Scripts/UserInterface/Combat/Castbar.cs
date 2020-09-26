@@ -29,7 +29,7 @@ public class Castbar : MonoBehaviour
 
     private void ShowCastBar()
     {
-        castbarText.text = _currentSpellCast.SpellBehaviour.SpellName;
+        castbarText.text = _currentSpellCast.Spell.SpellName;
         castbarImage.fillAmount = 0;
         _currentSpellCast.OnSpellCastProgress += UpdateCastProgress;
 
@@ -42,7 +42,7 @@ public class Castbar : MonoBehaviour
 
     private void UpdateCastProgress(SpellCast spellCast)
     {
-        castbarImage.fillAmount = spellCast.CurrentCastTime / spellCast.SpellBehaviour.CastTime;
+        castbarImage.fillAmount = spellCast.CurrentCastTime / spellCast.Spell.CastTime;
     }
 
     private void HideCastBar(SpellCast spellCast)

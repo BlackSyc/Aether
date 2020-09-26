@@ -2,6 +2,8 @@
 using Aether.Core.Interaction;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using InputSystem = Aether.Input.InputSystem;
 
 namespace Aether.Interaction
 {
@@ -24,16 +26,16 @@ namespace Aether.Interaction
 
         private void Start()
         {
-            Input.InputSystem.InputActions.Player.Interact.performed += _ => Interact();
+            InputSystem.InputActions.Player.Interact.performed += Interact;
         }
 
         private void OnDisable()
         {
-            Input.InputSystem.InputActions.Player.Interact.performed -= _ => Interact();
+            InputSystem.InputActions.Player.Interact.performed -= Interact;
         }
 
 
-        public void Interact()
+        public void Interact(InputAction.CallbackContext _)
         {
             currentInteractable?.Interact(with: this);
             Events.Interacted();

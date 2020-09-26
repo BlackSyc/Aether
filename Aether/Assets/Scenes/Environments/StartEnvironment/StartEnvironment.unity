@@ -733,7 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: d4070c8a5f59d98459cdad6974956379, type: 2}
-  reward: {fileID: 0}
+  reward: {fileID: 11400000, guid: 94534a67044bd1e458339a9bec7c2d54, type: 2}
 --- !u!114 &169073593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1196,11 +1196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exposedObjects:
-  - {fileID: 287161790}
-  aggroBias: 0
-  canBeTargeted: 1
-  <Transform>k__BackingField: {fileID: 0}
 --- !u!114 &287161793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1213,56 +1208,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatPanelPrefab: {fileID: 3174951708391038906, guid: 882bfdafd9ebfd94f9b1a60c641be89f,
-    type: 3}
+  combatPanelPrefab: {fileID: 0}
   showCombatPanelOnStart: 1
   PanelOffset: {x: 0, y: 1, z: 0}
   PanelScale: {x: 0, y: 0, z: 0}
---- !u!1 &317726138
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 317726139}
-  - component: {fileID: 317726140}
-  m_Layer: 11
-  m_Name: Health
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &317726139
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317726138}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.82, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 470227015}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &317726140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317726138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5f6119820856f04684f2fa39e7e3e72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 100
-  maxHealth: 1000
 --- !u!64 &321187781
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1543,8 +1492,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.236, y: 0.6, z: -1.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 317726139}
+  m_Children: []
   m_Father: {fileID: 1423121351}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1636,8 +1584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatPanelPrefab: {fileID: 3174951708391038906, guid: 7b61c34880bad024392bbe28fd68e5f5,
-    type: 3}
+  combatPanelPrefab: {fileID: 0}
   showCombatPanelOnStart: 1
   PanelOffset: {x: 0, y: 3, z: 0}
   PanelScale: {x: 0, y: 0, z: 0}
@@ -1987,51 +1934,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5455755790808708150, guid: 7b0a5c52a4eab2e4ba729c02a275064f, type: 3}
---- !u!1 &543217669
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 543217670}
-  - component: {fileID: 543217671}
-  m_Layer: 12
-  m_Name: Health
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &543217670
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543217669}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.82, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1521816061}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &543217671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543217669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5f6119820856f04684f2fa39e7e3e72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 1000
-  maxHealth: 1000
 --- !u!1 &630823153
 GameObject:
   m_ObjectHideFlags: 0
@@ -5503,11 +5405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exposedObjects:
-  - {fileID: 1189097491}
-  aggroBias: 0
-  canBeTargeted: 1
-  <Transform>k__BackingField: {fileID: 0}
 --- !u!114 &1189097494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5520,8 +5417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatPanelPrefab: {fileID: 3174951708391038906, guid: 882bfdafd9ebfd94f9b1a60c641be89f,
-    type: 3}
+  combatPanelPrefab: {fileID: 0}
   showCombatPanelOnStart: 1
   PanelOffset: {x: 0, y: 1, z: 0}
   PanelScale: {x: 0, y: 0, z: 0}
@@ -6453,11 +6349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exposedObjects:
-  - {fileID: 1371069660}
-  aggroBias: 0
-  canBeTargeted: 1
-  <Transform>k__BackingField: {fileID: 0}
 --- !u!114 &1371069663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6470,8 +6361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatPanelPrefab: {fileID: 3174951708391038906, guid: 882bfdafd9ebfd94f9b1a60c641be89f,
-    type: 3}
+  combatPanelPrefab: {fileID: 0}
   showCombatPanelOnStart: 1
   PanelOffset: {x: 0, y: 1, z: 0}
   PanelScale: {x: 0, y: 0, z: 0}
@@ -7297,8 +7187,9 @@ GameObject:
   - component: {fileID: 1521816065}
   - component: {fileID: 1521816064}
   - component: {fileID: 1521816067}
-  - component: {fileID: 1521816069}
-  - component: {fileID: 1521816072}
+  - component: {fileID: 1521816068}
+  - component: {fileID: 1521816063}
+  - component: {fileID: 1521816062}
   m_Layer: 12
   m_Name: Target Dummy
   m_TagString: Untagged
@@ -7316,11 +7207,69 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.236, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 543217670}
+  m_Children: []
   m_Father: {fileID: 1423121351}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1521816062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521816060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatPanelPrefab: {fileID: 3174951708391038910, guid: 7b61c34880bad024392bbe28fd68e5f5,
+    type: 3}
+  showCombatPanelOnStart: 1
+  PanelOffset: {x: 0, y: 2.5, z: 0}
+  PanelScale: {x: 0, y: 0, z: 0}
+--- !u!114 &1521816063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521816060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e35c024dd043dba11122476dce6c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stamina:
+    baseValue: 1000
+    remapMultiplier: 1
+    remapExponent: 1
+    remapAddition: 0
+  spellPower:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    remapAddition: 0
+  haste:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    remapAddition: 0
+  criticalStrikeRating:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    remapAddition: 0
+  armor:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    remapAddition: 0
+  movementSpeed:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    remapAddition: 0
 --- !u!65 &1521816064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7397,7 +7346,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1521816069
+--- !u!114 &1521816068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7406,28 +7355,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1521816060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
+  m_Script: {fileID: 11500000, guid: c3530cefab9a2544ca6955a071ba4c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatPanelPrefab: {fileID: 3174951708391038906, guid: 7b61c34880bad024392bbe28fd68e5f5,
-    type: 3}
-  showCombatPanelOnStart: 1
-  PanelOffset: {x: 0, y: 3, z: 0}
-  PanelScale: {x: 0, y: 0, z: 0}
---- !u!114 &1521816072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521816060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9186f5d4b2980a04e981d24850a8cef7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tickDelay: 1
-  healingSpell: {fileID: 0}
+  healthSystem:
+    currentHealth: 1000
+  attributes: {fileID: 1521816063}
 --- !u!1 &1549598430
 GameObject:
   m_ObjectHideFlags: 0
@@ -9538,11 +9471,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exposedObjects:
-  - {fileID: 1895513250}
-  aggroBias: 0
-  canBeTargeted: 1
-  <Transform>k__BackingField: {fileID: 0}
 --- !u!114 &1895513253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9555,8 +9483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatPanelPrefab: {fileID: 3174951708391038906, guid: 882bfdafd9ebfd94f9b1a60c641be89f,
-    type: 3}
+  combatPanelPrefab: {fileID: 0}
   showCombatPanelOnStart: 1
   PanelOffset: {x: 0, y: 1, z: 0}
   PanelScale: {x: 0, y: 0, z: 0}
