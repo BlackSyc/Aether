@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08e5e3e719d4acba4ea68140a37c025, type: 3}
   m_Name: HitFlash
   m_EditorClassIdentifier: 
-  types: 0
-  spawn: {fileID: 0}
+  types: 4
+  spawn: {fileID: 6055340572373671487, guid: 6c63d2c2fe82bb640950f5cd37ec2772, type: 3}
   at: 0
