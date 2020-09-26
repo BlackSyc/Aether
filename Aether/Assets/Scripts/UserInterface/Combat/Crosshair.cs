@@ -1,4 +1,5 @@
-﻿using Aether.Core;
+﻿using Aether.Combat.Player;
+using Aether.Core;
 using Aether.Input;
 using Syc.Combat;
 using Syc.Combat.SpellSystem;
@@ -9,14 +10,11 @@ namespace Aether.UserInterface.Combat
 {
     public class Crosshair : MonoBehaviour
     {
-
         [SerializeField]
         private Animator crosshairAnimator;
 
         [SerializeField]
         private GameObject crosshairContainer;
-
-        private CastingSystem _playerSpellSystem;
 
         private ITargetManager _playerTargetSystem;
         
@@ -25,13 +23,12 @@ namespace Aether.UserInterface.Combat
         private void Start()
         {
             if (Player.Instance.Has(out ICombatSystem combatSystem))
-            {
-                _playerSpellSystem = combatSystem.Get<CastingSystem>();
                 _playerTargetSystem = combatSystem.Get<ITargetManager>();
-            }
 
             crosshairAnimator.keepAnimatorControllerStateOnDisable = true;
             InputSystem.OnActionMapSwitched += InputSystem_OnActionMapSwitched;
+            
+            crosshairContainer.SetActive(InputSystem.CurrentActionMap == ActionMap.Player);
         }
 
         private void OnDestroy()

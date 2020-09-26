@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using Aether.Core;
 using Syc.Combat.HealthSystem;
 using UnityEngine;
 
@@ -26,12 +27,14 @@ namespace Aether.UserInterface.Combat
 
         private void HealingReceived(HealRequest healRequest)
         {
-            EmitText(healRequest.AmountDealt, false);
+            if(healRequest.Cause == Player.Instance.gameObject)
+                EmitText(healRequest.AmountDealt, false);
         }
 
         private void DamageReceived(DamageRequest damageRequest)
         {
-            EmitText(-damageRequest.AmountDealt, damageRequest.IsCriticalStrike);
+            if(damageRequest.Cause == Player.Instance.gameObject)
+                EmitText(-damageRequest.AmountDealt, damageRequest.IsCriticalStrike);
         }
 
         private void EmitText(float healthDelta, bool isCriticalStrike)
