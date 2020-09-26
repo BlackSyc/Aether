@@ -3,7 +3,7 @@ using Aether.Core.Cloaks;
 using Aether.Core.Interaction;
 using UnityEngine;
 
-namespace Aether.StartPlatform
+namespace Aether.Levels.StartEnvironment
 {
     [RequireComponent(typeof(IInteractable))]
     [RequireComponent(typeof(Animator))]

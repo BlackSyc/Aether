@@ -1,11 +1,12 @@
 {
-    "name": "Aether.StartPlatform",
+    "name": "Aether.StartEnvironment",
     "references": [
         "GUID:e9b0bf49a2fcfcc4daef70665e54d9b1",
         "GUID:8d0f848ccc17ade45a7668cfda43214b",
         "GUID:c68bd6e5bc564ba41b94612682f9b9fe",
         "GUID:abbb46728c7ceb0459bc42227cfc5677",
-        "GUID:8338c5e4d7337b34394c9cae81eba266"
+        "GUID:8338c5e4d7337b34394c9cae81eba266",
+        "GUID:78069420aeefe844e8681f5f103c6190"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

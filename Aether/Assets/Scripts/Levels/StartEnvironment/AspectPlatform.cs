@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Aether.Levels.StartPlatform;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Aether.StartPlatform
+namespace Aether.Levels.StartEnvironment
 {
     public class AspectPlatform : MonoBehaviour
     {

@@ -16,7 +16,7 @@
       <e p="Aether.Movement.csproj" t="IncludeRecursive" />
       <e p="Aether.ScriptableObjects.csproj" t="IncludeRecursive" />
       <e p="Aether.sln" t="IncludeFlat" />
-      <e p="Aether.StartPlatform.csproj" t="IncludeRecursive" />
+      <e p="Aether.StartEnvironment.csproj" t="IncludeRecursive" />
       <e p="Aether.UserInterface.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -47,9 +47,6 @@
               <e p="PlayerCombatSystem.cs" t="Include" />
               <e p="PlayerSpellSystem.cs" t="Include" />
               <e p="PlayerTargetSystem.cs" t="Include" />
-            </e>
-            <e p="TargetDummy" t="Include">
-              <e p="TargetDummyCombatSystem.cs" t="Include" />
             </e>
           </e>
           <e p="Core" t="Include">
@@ -133,7 +130,7 @@
             <e p="Inventory.cs" t="Include" />
           </e>
           <e p="Levels" t="Include">
-            <e p="StartPlatform" t="Include">
+            <e p="StartEnvironment" t="Include">
               <e p="Aether.StartPlatform.asmdef" t="Include" />
               <e p="AspectOfCreation.cs" t="Include" />
               <e p="AspectPlatform.cs" t="Include" />
@@ -143,8 +140,10 @@
               <e p="Puzzle1_PressurePlate.cs" t="Include" />
               <e p="Respawner.cs" t="Include" />
               <e p="Stairs.cs" t="Include" />
-              <e p="TargetDummy.cs" t="Include" />
-              <e p="Testrunner.cs" t="Include" />
+              <e p="TargetDummy" t="Include">
+                <e p="DummySpawner.cs" t="Include" />
+                <e p="TargetDummyCombatSystem.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Movement" t="Include">

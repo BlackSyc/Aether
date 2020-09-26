@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections;
-using Aether.Levels.StartPlatform;
 using Syc.Combat;
 using UnityEngine;
 
-namespace Aether.StartPlatform
+namespace Aether.Levels.StartEnvironment
 {
     [RequireComponent(typeof(ICombatSystem))]
     public class Puzzle1_MissileTarget : MonoBehaviour

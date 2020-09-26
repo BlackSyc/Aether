@@ -4,13 +4,12 @@ using Aether.Core.Dialog.ScriptableObjects;
 using Aether.Core.Interaction;
 using Aether.Core.Tutorial;
 using Aether.Input;
-using Aether.StartPlatform;
 using Syc.Combat;
 using Syc.Combat.SpellSystem;
 using Syc.Combat.SpellSystem.ScriptableObjects;
 using UnityEngine;
 
-namespace Aether.Levels.StartPlatform
+namespace Aether.Levels.StartEnvironment
 {
     public class AspectOfCreation : MonoBehaviour
     {

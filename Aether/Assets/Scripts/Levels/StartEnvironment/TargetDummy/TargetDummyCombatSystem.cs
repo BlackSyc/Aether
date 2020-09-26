@@ -1,15 +1,16 @@
-﻿using System;
-using Aether.Core.Attributes;
+﻿using Aether.Core.Attributes;
 using Syc.Combat;
 using Syc.Combat.HealthSystem;
 using Syc.Combat.SpellSystem;
 using Syc.Combat.SpellSystem.ScriptableObjects;
 using UnityEngine;
 
-namespace Aether.Combat.TargetDummy
+namespace Aether.Levels.StartEnvironment.TargetDummy
 {
     public class TargetDummyCombatSystem : CombatMonoSystem
     {
+        public DummySpawner Spawner { get; set; }
+        
         public override bool CanBeTargeted
         {
             get => !healthSystem.IsDead && enabled;
@@ -39,7 +40,14 @@ namespace Aether.Combat.TargetDummy
             AddSubsystem(castingSystem);
             
             healthSystem.OnHealthChanged += CheckIfShouldHeal;
+            healthSystem.OnDied += Died;
             castingSystem.OnNewSpellCast += NewSpellCastStarted;
+        }
+
+        private void Died(DamageRequest _)
+        {
+            Spawner.SpawnNewDummy();
+            Destroy(gameObject);
         }
 
         private void NewSpellCastStarted(SpellCast newSpellCast)
@@ -63,6 +71,9 @@ namespace Aether.Combat.TargetDummy
         {
             if (!_isHealing && _shouldBeHealing)
                 castingSystem.CastSpell(new SpellState(healingSpell));
+            
+            if(transform.position.y < -100)
+                Died(null);
         }
 
         private void OnDestroy()

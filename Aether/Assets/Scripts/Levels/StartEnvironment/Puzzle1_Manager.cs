@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Aether.StartPlatform
+namespace Aether.Levels.StartEnvironment
 {
     public class Puzzle1_Manager : MonoBehaviour
     {

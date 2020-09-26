@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Aether.StartPlatform
+namespace Aether.Levels.StartEnvironment
 {
     public class Puzzle1_PressurePlate : MonoBehaviour
     {

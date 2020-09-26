@@ -16,5 +16,5 @@ MonoBehaviour:
   damageAmount: 250
   canCrit: 1
   criticalStrikeMultiplier: 2
-  affectedBySpellPower: 0
+  affectedBySpellPower: 1
   allowDamageMitigation: 1
