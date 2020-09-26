@@ -44,9 +44,14 @@
           <e p="Combat" t="Include">
             <e p="Aether.Combat.asmdef" t="Include" />
             <e p="Player" t="Include">
+              <e p="CopyCameraRotation.cs" t="Include" />
               <e p="PlayerCombatSystem.cs" t="Include" />
               <e p="PlayerSpellSystem.cs" t="Include" />
               <e p="PlayerTargetSystem.cs" t="Include" />
+            </e>
+            <e p="SpellObjects" t="Include">
+              <e p="ParticleBurst.cs" t="Include" />
+              <e p="Projectile.cs" t="Include" />
             </e>
           </e>
           <e p="Core" t="Include">

@@ -21,3 +21,6 @@ MonoBehaviour:
   castingRequirements: []
   spellEffects:
   - {fileID: 11400000, guid: 66c44ca4a2e9bb747922586cd10c09dc, type: 2}
+  - {fileID: 11400000, guid: cd599b3ef986ce240910ccb5f249ec63, type: 2}
+  - {fileID: 11400000, guid: 7e49366c91eeb2f44b261988b07db8df, type: 2}
+  - {fileID: 11400000, guid: 8cf73b83bc2293b4d9bdb2865c6ef760, type: 2}

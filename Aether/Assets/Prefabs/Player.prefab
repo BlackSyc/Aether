@@ -186,18 +186,18 @@ MonoBehaviour:
     remapExponent: 1
     remapAddition: 0
   spellPower:
-    baseValue: 10
-    remapMultiplier: 1
-    remapExponent: 1
-    remapAddition: 0
+    baseValue: 100
+    remapMultiplier: 0.1
+    remapExponent: 0.5
+    remapAddition: 0.1
   haste:
     baseValue: 1
     remapMultiplier: 1
     remapExponent: 1
     remapAddition: 0
   criticalStrikeRating:
-    baseValue: 10
-    remapMultiplier: 1
+    baseValue: 43.7
+    remapMultiplier: 0.01
     remapExponent: 1
     remapAddition: 0
   armor:
@@ -252,8 +252,10 @@ MonoBehaviour:
   localPlayerTargetSystem:
     playerCamera: {fileID: 476305286454964140}
     maxRange: 100
+    useExactTargets: 0
   spellSystem:
-    castOrigin: {fileID: 0}
+    castOrigin: {fileID: 476305285402853955}
+    globalCooldown: 1
     spells: []
   healthSystem:
     currentHealth: 4567

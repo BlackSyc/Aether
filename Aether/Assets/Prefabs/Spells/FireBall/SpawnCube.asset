@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4ba08663c5a403eb9b2f56f5da4a36d, type: 3}
-  m_Name: Deal Damage From Range
+  m_Script: {fileID: 11500000, guid: f08e5e3e719d4acba4ea68140a37c025, type: 3}
+  m_Name: SpawnCube
   m_EditorClassIdentifier: 
-  types: 4
-  damageAmount: 100
-  canCrit: 0
-  criticalStrikeMultiplier: 2
-  affectedBySpellPower: 1
-  allowDamageMitigation: 1
-  damageCeiling: 150
+  types: 1
+  spawn: {fileID: 5754880956339687347, guid: e83eb7b0ff763f749bf56889b28d4a48, type: 3}
+  at: 1

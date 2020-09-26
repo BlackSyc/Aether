@@ -433,36 +433,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6896be7af7ee3eb4594bda2ba32746e9,
         type: 2}
-    - target: {fileID: 3768501987095304042, guid: 95de18f87247a4a42b1fb474a0bcf609,
-        type: 3}
-      propertyPath: spellPower.baseValue
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3768501987095304042, guid: 95de18f87247a4a42b1fb474a0bcf609,
-        type: 3}
-      propertyPath: spellPower.remapMultiplier
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3768501987095304042, guid: 95de18f87247a4a42b1fb474a0bcf609,
-        type: 3}
-      propertyPath: criticalStrikeRating.baseValue
-      value: 43.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3768501987095304042, guid: 95de18f87247a4a42b1fb474a0bcf609,
-        type: 3}
-      propertyPath: criticalStrikeRating.remapMultiplier
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 3768501987095304042, guid: 95de18f87247a4a42b1fb474a0bcf609,
-        type: 3}
-      propertyPath: spellPower.remapExponent
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3768501987095304042, guid: 95de18f87247a4a42b1fb474a0bcf609,
-        type: 3}
-      propertyPath: spellPower.remapAddition
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95de18f87247a4a42b1fb474a0bcf609, type: 3}
 --- !u!1 &124510860
