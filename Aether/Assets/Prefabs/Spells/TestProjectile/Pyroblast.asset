@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5e89aaaadbd02e4393182b9711a402a, type: 3}
-  m_Name: FireBall
+  m_Name: Pyroblast
   m_EditorClassIdentifier: 
-  spellName: Fire Ball
+  spellName: Pyro Blast
   icon: {fileID: 0}
-  spellDescription: A projectile dealing no damage yet.
+  spellDescription: Big fucking damage
   castTime: 1
-  coolDown: 1
+  coolDown: 5
   globalCooldown: 1
-  castWhileMoving: 0
+  castWhileMoving: 1
   target: {fileID: 11400000, guid: 4a9d2b1348120534a88f347dcbee922f, type: 2}
   castingRequirements: []
   spellEffects:
-  - {fileID: 11400000, guid: f15801b91e836824b9881c9847442b7d, type: 2}
-  - {fileID: 11400000, guid: cd599b3ef986ce240910ccb5f249ec63, type: 2}
-  - {fileID: 11400000, guid: 1ff7f568f5a45c046b56773996761ac1, type: 2}
-  - {fileID: 11400000, guid: 8cf73b83bc2293b4d9bdb2865c6ef760, type: 2}
+  - {fileID: 11400000, guid: 039e52b4f7f05124897dd3e6ac623fd9, type: 2}
+  - {fileID: 11400000, guid: 1a7345993da18a048924f4f6f65ea0c2, type: 2}
+  - {fileID: 11400000, guid: 6790f9da06eeb2c44a397856414b52f3, type: 2}
+  - {fileID: 11400000, guid: def487ff8efe2be46a0f1bd53c00d484, type: 2}

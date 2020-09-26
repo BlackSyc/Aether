@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6ea688588a34e00aa01a45349044c25, type: 3}
-  m_Name: DealDamage
+  m_Name: TargetDamage
   m_EditorClassIdentifier: 
   types: 4
   damageAmount: 250

@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5e89aaaadbd02e4393182b9711a402a, type: 3}
-  m_Name: Fireblast
+  m_Name: Sprint
   m_EditorClassIdentifier: 
-  spellName: Fireblast
+  spellName: Sprint
   icon: {fileID: 0}
-  spellDescription: A quick instant fixed amount of damage.
-  castTime: 0
-  coolDown: 5
-  globalCooldown: 0
+  spellDescription: Makes you go wee!
+  castTime: 2
+  coolDown: 10
+  globalCooldown: 1
   castWhileMoving: 1
-  target: {fileID: 11400000, guid: 4a9d2b1348120534a88f347dcbee922f, type: 2}
+  target: {fileID: 11400000, guid: 9fb99d8b309fe204f968a4234a8bc5a3, type: 2}
   castingRequirements: []
   spellEffects:
-  - {fileID: 11400000, guid: c6c18205e52b89e45be8dcc31a88fbf0, type: 2}
-  - {fileID: 11400000, guid: 9c07a403608924746bd9479436e4266e, type: 2}
-  - {fileID: 11400000, guid: 7604e8d760d4a004bbd50aa882caf2d8, type: 2}
+  - {fileID: 11400000, guid: d49c5df06bfd50745bf03c40a47ee368, type: 2}

@@ -1,4 +1,5 @@
-﻿using Syc.Combat.ModifierSystem;
+﻿using System.Globalization;
+using Syc.Combat.ModifierSystem;
 using Syc.Combat.ModifierSystem.ScriptableObjects;
 using TMPro;
 using UnityEngine;
@@ -19,13 +20,13 @@ namespace Aether.UserInterface.Combat
         public void SetModifierState(ModifierState modifierState)
         {
             ModifierState = modifierState;
-            image.sprite = modifierState.Modifier.Icon.sprite;
+            image.sprite = modifierState.ModifierType.Icon.sprite;
         }
 
         public void Update()
         {
             if (ModifierState != null)
-                durationText.text = ((int) (ModifierState.Modifier.Duration - ModifierState.ActiveDuration)).ToString();
+                durationText.text = ((int)ModifierState.TimeRemaining).ToString(CultureInfo.InvariantCulture);
         }
     }
 }

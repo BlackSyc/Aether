@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f08e5e3e719d4acba4ea68140a37c025, type: 3}
-  m_Name: SpawnMuzzleFlash
+  m_Script: {fileID: 11500000, guid: b6ea688588a34e00aa01a45349044c25, type: 3}
+  m_Name: TargetDamage
   m_EditorClassIdentifier: 
-  types: 4
-  spawn: {fileID: 8027273031043818071, guid: 889f617ded397de40b5eebbbffa6029c, type: 3}
-  at: 1
+  types: 16
+  damageAmount: 500
+  canCrit: 1
+  criticalStrikeMultiplier: 1.5
+  affectedBySpellPower: 1
+  allowDamageMitigation: 1

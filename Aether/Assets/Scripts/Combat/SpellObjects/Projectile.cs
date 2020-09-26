@@ -55,6 +55,7 @@ namespace Aether.Combat.SpellObjects
         private IEnumerator FlyToTargetCoroutine()
         {
             var currentLifeTime = 0f;
+            
             while (maxLifeTime > currentLifeTime)
             {
                 currentLifeTime += Time.deltaTime;
@@ -63,7 +64,9 @@ namespace Aether.Combat.SpellObjects
                 
                 var ownTransform = transform;
                 var position = ownTransform.position;
-                var positionDelta = Target.TargetObject.transform.position - position;
+                var positionDelta = Target.TargetObject != null 
+                    ? Target.TargetObject.transform.position - position
+                    : Target.Position - position;
                 
                 var desiredLookRotation =  Quaternion.LookRotation(positionDelta);
                 ownTransform.rotation = Quaternion.RotateTowards(ownTransform.rotation, desiredLookRotation, rotationSpeed * Time.deltaTime);

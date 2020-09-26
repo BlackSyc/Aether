@@ -23,7 +23,7 @@ namespace Aether.UserInterface.Combat
 
         public void SetModifierSystem(ModifierSystem modifierSystem)
         {
-            this._modifierSystem = modifierSystem;
+            _modifierSystem = modifierSystem;
             modifierSystem.OnModifierAdded += AddModifierIcon;
             modifierSystem.OnModifierRemoved += RemoveModifierIcon;
         }

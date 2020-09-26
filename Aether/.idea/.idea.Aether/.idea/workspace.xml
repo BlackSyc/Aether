@@ -30,79 +30,73 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af7e0b8a-ab77-477f-8216-478e074afbb0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Cube.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Cube.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Deal Damage From Range.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Deal Damage From Range.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/FireBall.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/FireBall.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/HitFlash.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/HitFlash.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/MuzzleFlash.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/MuzzleFlash.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpawnCube.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpawnCube.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpawnHitParticleSystem.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpawnHitParticleSystem.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpawnMuzzleFlash.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpawnMuzzleFlash.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/DealDamage.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/DealDamage.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Fireblast.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Fireblast.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HitFlash.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HitFlash.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HitFlash.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HitFlash.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/MuzzleFlash.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/MuzzleFlash.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/MuzzleFlash.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/MuzzleFlash.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TargetDummy.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TargetDummy/BasicHeal.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TargetDummy/BasicHeal.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TargetDummy/Heal.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TargetDummy/Heal.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/CopyCameraRotation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects/ParticleBurst.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects/Projectile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects/Projectile.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="ee8c9066-4838-4414-bd89-15ebab8dbf6a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/HitFlash.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/HitFlash.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/MuzzleFlash.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/MuzzleFlash.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpellPowerDebuff.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpellPowerDebuff.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/TargetDamage.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/TargetDamage.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/TargetDamage.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/TargetDamage.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/AddMovementSpeed.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/AddMovementSpeed.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/AddSprintModifier.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/AddSprintModifier.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/RemoveMovementSpeed.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/RemoveMovementSpeed.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/Sprint.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/Sprint.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/SprintModifier.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/SprintModifier.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/HitFlash.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/HitFlash.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/Hitflash.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/Hitflash.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/MuzzleFlash.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/MuzzleFlash.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/MuzzleFlash.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/MuzzleFlash.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/Projectile.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/Projectile.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/Projectile.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/Projectile.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/Pyroblast.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/Pyroblast.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/TargetDamage.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/TestProjectile/TargetDamage.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Robin.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Robin.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Dream.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Dream/Jade Crackle.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Dream/Jade Crackle/HitFlash.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Dream/Jade Crackle/HitFlash.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Dream/Jade Crackle/Jade Crackle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Dream/Jade Crackle/Jade Crackle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Dream/Jade Crackle/MuzzleFlash.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Dream/Jade Crackle/MuzzleFlash.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Logger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Logger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Deal Damage From Range.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Deal Damage From Range.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/FireBall.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/FireBall.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Nightmare Missile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Nightmare Missile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpawnCube.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpawnCube.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpawnHitParticleSystem.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpawnHitParticleSystem.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpawnMuzzleFlash.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/SpawnMuzzleFlash.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/DealDamage.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/DealDamage.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Fireblast.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Fireblast.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Base.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Base.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/FireBall.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/FireBall/Deal Damage From Range.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/FireBall/Deal Damage From Range.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/FireBall/FireBall.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/FireBall/FireBall.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Fireblast.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Fireblast/DealDamage.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Fireblast/DealDamage.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Fireblast/Fireblast.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/Fireblast/Fireblast.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/TargetDummy.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/TargetDummy/BasicHeal.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/TargetDummy/BasicHeal.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/TargetDummy/Heal.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Spells/TargetDummy/Heal.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerTargetSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerTargetSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerCombatSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerCombatSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects/Projectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Attributes/ScryerAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Attributes/ScryerAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifierIcon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifierIcon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifiersBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifiersBar.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,84 +108,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/PlayerInput.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7CB053E6-BFDD-4702-A675-2EC10AFDFA50/b8/72d726d9/MovementSystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@b5eb86012cc0ea46d9557c04d877be66578722f4/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/SpellEffects/SpawnObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/GlyphInfoDrawer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TargetDummy/TargetDummyCombatSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Combat/Player/CopyCameraRotation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0-preview.5/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DBD8EFCB-A000-4903-BF64-F5E954E99C39/aa/c7d3dc36/ITargetManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Logger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TargetDummy/DummySpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/351E49E2-A5BF-4FD6-BEAB-B458CE2255F3/bc/0ad61a92/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects/ParticleBurst.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DBD8EFCB-A000-4903-BF64-F5E954E99C39/f3/1acf6e63/Target.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Movement/PlayerMovementSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@b5eb86012cc0ea46d9557c04d877be66578722f4/Runtime/Syc/Combat/TargetSystem/Target.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@90bd6d1277f42ddd179b0917ac492d09a492a8e6/Runtime/Syc/Core/Attributes/Attribute.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/DeathPanel.cs" />
-        <option value="$PROJECT_DIR$/Library/PackageCache/com.aether.syc@fb9270fefdb77199255389d14531d2060f45e908/Runtime/Syc/Core/System/MonoSubSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryWindow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/Stairs.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Attunement/Traveller.cs" />
-        <option value="$PROJECT_DIR$/Library/PackageCache/com.aether.syc@18552b6c93d1e6fb88a20da5f5290e5ea7ab955c/Runtime/Syc/Game/LocalPlayer/LocalPlayerMovementSystem.cs" />
-        <option value="$PROJECT_DIR$/Library/PackageCache/com.aether.syc@18552b6c93d1e6fb88a20da5f5290e5ea7ab955c/Runtime/Syc/Core/Settings.cs" />
-        <option value="$PROJECT_DIR$/Library/PackageCache/com.aether.syc@8a9d0e31065a3272e7215823eb9a8c65ebae1fd0/Runtime/Syc/Game/LocalPlayer/PlayerInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Attributes/PlayerAttributesSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Attributes/AetherAttributes.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Settings/GameSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Attributes/ScryerAttributes.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Movement/PlayerMovementSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactor.cs" />
-        <option value="$PROJECT_DIR$/Library/PackageCache/com.aether.syc@7cc61e9129a10668f848c5198d88fc3139568273/Runtime/Syc/Combat/TargetSystem/TemporaryTarget.cs" />
-        <option value="$PROJECT_DIR$/Library/PackageCache/com.aether.syc@6d67652b7ec70c7bbbb12e6093aab6bea372d0cc/Runtime/Syc/Combat/SpellSystem/Spell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/PlayerSpellSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Input/PlayerInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Cloaks/ICloak.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Castbar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifiersBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifierIcon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerTargetIndicator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/AspectOfCreation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartPlatform/TargetDummy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Cloaks/Shoulder.cs" />
-        <option value="$PROJECT_DIR$/Assets/ScriptableObjects/Cloaks/Cloak.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/PlayerTargetSystem.cs" />
-        <option value="$PROJECT_DIR$/Library/PackageCache/com.aether.syc@726d249aa2e5d6b126660fc54e720d8d13c6c96a/Runtime/Syc/Combat/TargetSystem/Target.cs" />
-        <option value="$PROJECT_DIR$/Assets/Logger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/PlayerCombatSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerCombatSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanelInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/EmittedText.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Crosshair.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TextEmitter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellTooltip.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/TargetDummy/TargetDummyCombatSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/AspectOfCreation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/DummySpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TargetDummy/DummySpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TargetDummy/TargetDummyCombatSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerTargetSystem.cs" />
-        <option value="$PROJECT_DIR$/Library/PackageCache/com.aether.syc@b5eb86012cc0ea46d9557c04d877be66578722f4/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/SpellEffects/SpawnObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects/ParticleBurst.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects/Projectile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/Player/CopyCameraPitch.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/Player/CopyCameraRotation.cs" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectId" id="1gmU2UIX5KReGzMaOPbh9BfSIkP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1i44yg85LGYu10IZjppE7qEZHeu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -200,14 +120,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.6019108" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.34076434" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34982577" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30034843" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="XThreadsFramesViewSplitterKey" value="0.32224533" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
@@ -227,10 +144,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1100">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="1100" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -240,38 +157,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="af7e0b8a-ab77-477f-8216-478e074afbb0" name="Default Changelist" comment="" />
-      <created>1598719057853</created>
+      <changelist id="ee8c9066-4838-4414-bd89-15ebab8dbf6a" name="Default Changelist" comment="" />
+      <created>1601153785792</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1598719057853</updated>
-      <workItem from="1598719067660" duration="2253000" />
-      <workItem from="1598740736945" duration="1605000" />
-      <workItem from="1598895517754" duration="181000" />
-      <workItem from="1599406610534" duration="877000" />
-      <workItem from="1599423781791" duration="637000" />
-      <workItem from="1599591300270" duration="779000" />
-      <workItem from="1599592406194" duration="1954000" />
-      <workItem from="1599594395441" duration="153000" />
-      <workItem from="1599594576471" duration="2665000" />
-      <workItem from="1599597450698" duration="1668000" />
-      <workItem from="1599676018007" duration="358000" />
-      <workItem from="1600596118470" duration="3039000" />
-      <workItem from="1600599181535" duration="913000" />
-      <workItem from="1600600178904" duration="328000" />
-      <workItem from="1600600520863" duration="3770000" />
-      <workItem from="1600605000460" duration="324000" />
-      <workItem from="1600605347452" duration="5733000" />
-      <workItem from="1600621986951" duration="1937000" />
-      <workItem from="1600623941874" duration="127000" />
-      <workItem from="1600624134682" duration="2925000" />
-      <workItem from="1600798319302" duration="2604000" />
-      <workItem from="1600889420332" duration="2116000" />
-      <workItem from="1600975907942" duration="6490000" />
-      <workItem from="1601102039440" duration="127000" />
-      <workItem from="1601102186068" duration="5801000" />
-      <workItem from="1601113213037" duration="4144000" />
-      <workItem from="1601118736197" duration="6836000" />
+      <updated>1601153785792</updated>
+      <workItem from="1601153794299" duration="38000" />
     </task>
     <servers />
   </component>
@@ -290,185 +181,74 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="480" height="464" key="DebuggerActiveHint" timestamp="1601123208559">
+    <state width="1466" height="509" key="GridCell.Tab.0.bottom" timestamp="1601153831518">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="480" height="464" key="DebuggerActiveHint/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601123208559" />
-    <state width="442" height="464" key="DebuggerActiveHint/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890615397" />
-    <state width="973" height="463" key="GridCell.Tab.0.bottom" timestamp="1601125708637">
+    <state width="1466" height="509" key="GridCell.Tab.0.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831518" />
+    <state width="1466" height="509" key="GridCell.Tab.0.center" timestamp="1601153831517">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.0.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708637" />
-    <state width="1042" height="339" key="GridCell.Tab.0.bottom/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885451" />
-    <state width="832" height="360" key="GridCell.Tab.0.bottom/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.0.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.0.center" timestamp="1601125708637">
+    <state width="1466" height="509" key="GridCell.Tab.0.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831517" />
+    <state width="1466" height="509" key="GridCell.Tab.0.left" timestamp="1601153831517">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.0.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708637" />
-    <state width="1042" height="339" key="GridCell.Tab.0.center/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885451" />
-    <state width="832" height="360" key="GridCell.Tab.0.center/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.0.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.0.left" timestamp="1601125708637">
+    <state width="1466" height="509" key="GridCell.Tab.0.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831517" />
+    <state width="1466" height="509" key="GridCell.Tab.0.right" timestamp="1601153831517">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.0.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708637" />
-    <state width="1042" height="339" key="GridCell.Tab.0.left/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885451" />
-    <state width="832" height="360" key="GridCell.Tab.0.left/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.0.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.0.right" timestamp="1601125708637">
+    <state width="1466" height="509" key="GridCell.Tab.0.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831517" />
+    <state width="1466" height="509" key="GridCell.Tab.1.bottom" timestamp="1601153831518">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.0.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708637" />
-    <state width="1042" height="339" key="GridCell.Tab.0.right/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885451" />
-    <state width="832" height="360" key="GridCell.Tab.0.right/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.0.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.1.bottom" timestamp="1601125708637">
+    <state width="1466" height="509" key="GridCell.Tab.1.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831518" />
+    <state width="1466" height="509" key="GridCell.Tab.1.center" timestamp="1601153831518">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.1.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708637" />
-    <state width="1042" height="339" key="GridCell.Tab.1.bottom/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885451" />
-    <state width="832" height="360" key="GridCell.Tab.1.bottom/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.1.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.1.center" timestamp="1601125708637">
+    <state width="1466" height="509" key="GridCell.Tab.1.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831518" />
+    <state width="1466" height="509" key="GridCell.Tab.1.left" timestamp="1601153831518">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.1.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708637" />
-    <state width="1042" height="339" key="GridCell.Tab.1.center/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885451" />
-    <state width="832" height="360" key="GridCell.Tab.1.center/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.1.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.1.left" timestamp="1601125708637">
+    <state width="1466" height="509" key="GridCell.Tab.1.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831518" />
+    <state width="1466" height="509" key="GridCell.Tab.1.right" timestamp="1601153831518">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.1.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708637" />
-    <state width="1042" height="339" key="GridCell.Tab.1.left/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885451" />
-    <state width="832" height="360" key="GridCell.Tab.1.left/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.1.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.1.right" timestamp="1601125708637">
+    <state width="1466" height="509" key="GridCell.Tab.1.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831518" />
+    <state width="1466" height="509" key="GridCell.Tab.2.bottom" timestamp="1601153831518">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.1.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708637" />
-    <state width="1042" height="339" key="GridCell.Tab.1.right/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885451" />
-    <state width="832" height="360" key="GridCell.Tab.1.right/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.1.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.2.bottom" timestamp="1601125708637">
+    <state width="1466" height="509" key="GridCell.Tab.2.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831518" />
+    <state width="1466" height="509" key="GridCell.Tab.2.center" timestamp="1601153831518">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.2.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708637" />
-    <state width="1042" height="339" key="GridCell.Tab.2.bottom/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885451" />
-    <state width="832" height="360" key="GridCell.Tab.2.bottom/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.2.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.2.center" timestamp="1601125708637">
+    <state width="1466" height="509" key="GridCell.Tab.2.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831518" />
+    <state width="1466" height="509" key="GridCell.Tab.2.left" timestamp="1601153831518">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.2.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708637" />
-    <state width="1042" height="339" key="GridCell.Tab.2.center/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885451" />
-    <state width="832" height="360" key="GridCell.Tab.2.center/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.2.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.2.left" timestamp="1601125708637">
+    <state width="1466" height="509" key="GridCell.Tab.2.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831518" />
+    <state width="1466" height="509" key="GridCell.Tab.2.right" timestamp="1601153831518">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.2.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708637" />
-    <state width="1042" height="339" key="GridCell.Tab.2.left/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885451" />
-    <state width="832" height="360" key="GridCell.Tab.2.left/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.2.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.2.right" timestamp="1601125708637">
+    <state width="1466" height="509" key="GridCell.Tab.2.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831518" />
+    <state width="1466" height="509" key="GridCell.Tab.3.bottom" timestamp="1601153831518">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.2.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708637" />
-    <state width="1042" height="339" key="GridCell.Tab.2.right/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885451" />
-    <state width="832" height="360" key="GridCell.Tab.2.right/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.2.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.3.bottom" timestamp="1601125708638">
+    <state width="1466" height="509" key="GridCell.Tab.3.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831518" />
+    <state width="1466" height="509" key="GridCell.Tab.3.center" timestamp="1601153831518">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.3.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708638" />
-    <state width="1042" height="339" key="GridCell.Tab.3.bottom/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885452" />
-    <state width="832" height="360" key="GridCell.Tab.3.bottom/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857899" />
-    <state width="832" height="360" key="GridCell.Tab.3.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.3.center" timestamp="1601125708638">
+    <state width="1466" height="509" key="GridCell.Tab.3.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831518" />
+    <state width="1466" height="509" key="GridCell.Tab.3.left" timestamp="1601153831518">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.3.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708638" />
-    <state width="1042" height="339" key="GridCell.Tab.3.center/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885452" />
-    <state width="832" height="360" key="GridCell.Tab.3.center/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.3.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.3.left" timestamp="1601125708637">
+    <state width="1466" height="509" key="GridCell.Tab.3.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831518" />
+    <state width="1466" height="509" key="GridCell.Tab.3.right" timestamp="1601153831518">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="973" height="463" key="GridCell.Tab.3.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708637" />
-    <state width="1042" height="339" key="GridCell.Tab.3.left/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885451" />
-    <state width="832" height="360" key="GridCell.Tab.3.left/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857898" />
-    <state width="832" height="360" key="GridCell.Tab.3.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state width="973" height="463" key="GridCell.Tab.3.right" timestamp="1601125708638">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state width="973" height="463" key="GridCell.Tab.3.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601125708638" />
-    <state width="1042" height="339" key="GridCell.Tab.3.right/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601016885452" />
-    <state width="832" height="360" key="GridCell.Tab.3.right/-1920.30.1920.1050/0.30.2560.1050@0.30.2560.1050" timestamp="1600936857899" />
-    <state width="832" height="360" key="GridCell.Tab.3.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1600890667026" />
-    <state x="873" y="467" key="Rider.ProjectTemplateDialog.Size" timestamp="1598723498241">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state x="873" y="467" key="Rider.ProjectTemplateDialog.Size/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1598723498241" />
-    <state x="696" y="399" key="RiderGenerateDialog" timestamp="1600981438812">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state x="696" y="399" key="RiderGenerateDialog/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1600981438812" />
-    <state x="1137" y="321" key="SettingsEditor" timestamp="1598722454028">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state x="1137" y="321" key="SettingsEditor/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1598722454028" />
-    <state x="442" y="466" width="663" height="534" key="find.popup" timestamp="1601120765132">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state x="442" y="466" width="663" height="534" key="find.popup/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601120765132" />
-    <state x="431" y="390" width="670" height="676" key="search.everywhere.popup" timestamp="1601102679153">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state x="431" y="390" width="670" height="676" key="search.everywhere.popup/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601102679153" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@3113f1801ce3d2cf582bae8a7f0f2705a8afec96/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/SpellBehaviour.cs</url>
-          <line>93</line>
-          <properties documentPath="D:\Private\Repositories\Aether\Aether\Library\PackageCache\com.aether.syc@3113f1801ce3d2cf582bae8a7f0f2705a8afec96\Runtime\Syc\Combat\SpellSystem\ScriptableObjects\SpellBehaviour.cs" initialLine="93" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@3113f1801ce3d2cf582bae8a7f0f2705a8afec96/Runtime/Syc/Combat/SpellSystem/CastingSystem.cs</url>
-          <line>26</line>
-          <properties documentPath="D:\Private\Repositories\Aether\Aether\Library\PackageCache\com.aether.syc@3113f1801ce3d2cf582bae8a7f0f2705a8afec96\Runtime\Syc\Combat\SpellSystem\CastingSystem.cs" initialLine="26" />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@3113f1801ce3d2cf582bae8a7f0f2705a8afec96/Runtime/Syc/Combat/SpellSystem/CastingSystem.cs</url>
-          <line>53</line>
-          <properties documentPath="D:\Private\Repositories\Aether\Aether\Library\PackageCache\com.aether.syc@3113f1801ce3d2cf582bae8a7f0f2705a8afec96\Runtime\Syc\Combat\SpellSystem\CastingSystem.cs" initialLine="53" />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@3113f1801ce3d2cf582bae8a7f0f2705a8afec96/Runtime/Syc/Combat/SpellSystem/CastingSystem.cs</url>
-          <line>63</line>
-          <properties documentPath="D:\Private\Repositories\Aether\Aether\Library\PackageCache\com.aether.syc@3113f1801ce3d2cf582bae8a7f0f2705a8afec96\Runtime\Syc\Combat\SpellSystem\CastingSystem.cs" initialLine="63" />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@3113f1801ce3d2cf582bae8a7f0f2705a8afec96/Runtime/Syc/Combat/SpellSystem/CastingSystem.cs</url>
-          <line>41</line>
-          <properties documentPath="D:\Private\Repositories\Aether\Aether\Library\PackageCache\com.aether.syc@3113f1801ce3d2cf582bae8a7f0f2705a8afec96\Runtime\Syc\Combat\SpellSystem\CastingSystem.cs" initialLine="41" />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="1466" height="509" key="GridCell.Tab.3.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601153831518" />
   </component>
 </project>

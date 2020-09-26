@@ -433,6 +433,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6896be7af7ee3eb4594bda2ba32746e9,
         type: 2}
+    - target: {fileID: 3313298053226653178, guid: 95de18f87247a4a42b1fb474a0bcf609,
+        type: 3}
+      propertyPath: spellSystem.spells.Array.data[2].spell
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e6db3359cd47f94b9c2ec574e9c3494,
+        type: 2}
+    - target: {fileID: 3313298053226653178, guid: 95de18f87247a4a42b1fb474a0bcf609,
+        type: 3}
+      propertyPath: spellSystem.spells.Array.data[3].spell
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a7df26c6c9f63d44be80a563768fd51,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95de18f87247a4a42b1fb474a0bcf609, type: 3}
 --- !u!1 &124510860
@@ -800,6 +812,7 @@ GameObject:
   - component: {fileID: 157504499}
   - component: {fileID: 157504498}
   - component: {fileID: 157504496}
+  - component: {fileID: 157504501}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -879,6 +892,18 @@ MonoBehaviour:
     remapMultiplier: 1
     remapExponent: 1
     remapAddition: 0
+--- !u!114 &157504501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157504495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e12415bc978dc44bc706749c25f7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &165310081
 GameObject:
   m_ObjectHideFlags: 0

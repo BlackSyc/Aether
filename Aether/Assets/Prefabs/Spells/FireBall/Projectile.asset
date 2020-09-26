@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f08e5e3e719d4acba4ea68140a37c025, type: 3}
-  m_Name: SpawnHitParticleSystem
+  m_Name: Projectile
   m_EditorClassIdentifier: 
-  types: 16
-  spawn: {fileID: 6055340572373671487, guid: 63cbc2d0127327e4aa36ce698ea829e2, type: 3}
-  at: 0
+  types: 1
+  spawn: {fileID: 7179524948221068205, guid: 89cffe2cb629c4b44ab2a382cc7a6830, type: 3}
+  at: 1
