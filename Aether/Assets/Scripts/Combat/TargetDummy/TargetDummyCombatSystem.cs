@@ -56,7 +56,7 @@ namespace Aether.Combat.TargetDummy
 
         private void CheckIfShouldHeal(float newHealth)
         {
-            _shouldBeHealing = newHealth < healthSystem.MaxHealth / 2;
+            _shouldBeHealing = newHealth < healthSystem.MaxHealth;
         }
 
         private void FixedUpdate()

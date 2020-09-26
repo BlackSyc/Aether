@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6ea688588a34e00aa01a45349044c25, type: 3}
-  m_Name: New Deal Damage
+  m_Name: DealDamage
   m_EditorClassIdentifier: 
   types: 4
-  damageAmount: 136
-  criticalStrikeMultiplier: 1.5
-  allowDamageMitigation: 0
-  applyAttributeBias: 1
+  damageAmount: 250
+  canCrit: 1
+  criticalStrikeMultiplier: 2
+  affectedBySpellPower: 0
+  allowDamageMitigation: 1

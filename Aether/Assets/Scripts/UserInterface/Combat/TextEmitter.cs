@@ -40,7 +40,7 @@ namespace Aether.UserInterface.Combat
         private void EmitText(float healthDelta, bool isCriticalStrike)
         {
             var emittedText = Instantiate(emittedTextPrefab, transform.position, Quaternion.identity).GetComponent<EmittedText>();
-            emittedText.text.text = Mathf.Abs(healthDelta).ToString(CultureInfo.InvariantCulture);
+            emittedText.text.text = $"{Mathf.Abs(healthDelta):0}";
 
             emittedText.text.color = healthDelta <= 0 
                 ? damageColour 

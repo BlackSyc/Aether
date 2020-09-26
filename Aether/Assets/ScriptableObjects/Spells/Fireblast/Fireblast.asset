@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5e89aaaadbd02e4393182b9711a402a, type: 3}
-  m_Name: BasicHeal
+  m_Name: Fireblast
   m_EditorClassIdentifier: 
-  spellName: Basic Heal
-  spellDescription: Heals for a set amount.
-  castTime: 10
-  coolDown: 0
+  spellName: Fireblast
+  spellDescription: A quick instant fixed amount of damage.
+  castTime: 0
+  coolDown: 5
   globalCooldown: 0
-  target: {fileID: 11400000, guid: 9fb99d8b309fe204f968a4234a8bc5a3, type: 2}
+  target: {fileID: 11400000, guid: 4a9d2b1348120534a88f347dcbee922f, type: 2}
   castingRequirements: []
   spellEffects:
-  - {fileID: 11400000, guid: 808c00ef9ef47eb45b1e779fdc0c3bc3, type: 2}
+  - {fileID: 11400000, guid: c6c18205e52b89e45be8dcc31a88fbf0, type: 2}

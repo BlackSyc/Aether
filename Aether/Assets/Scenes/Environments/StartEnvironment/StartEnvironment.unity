@@ -1879,7 +1879,7 @@ MonoBehaviour:
   Interaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 961188339}
+      - m_Target: {fileID: 0}
         m_MethodName: StepThrough
         m_Mode: 0
         m_Arguments:
@@ -2882,7 +2882,8 @@ PrefabInstance:
       propertyPath: triggerConstraint
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 390c31099ec54594d8730653194466ca, type: 3}
 --- !u!4 &744803171
 Transform:
@@ -3047,7 +3048,6 @@ GameObject:
   m_Component:
   - component: {fileID: 800934962}
   - component: {fileID: 800934961}
-  - component: {fileID: 800934960}
   m_Layer: 0
   m_Name: Leaf [Illusion]
   m_TagString: Untagged
@@ -3055,18 +3055,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &800934960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 800934959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91bc19e0e539bda42b9e8a101aa46697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &800934961
 Animator:
   serializedVersion: 3
@@ -4135,7 +4123,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 744803171}
-  - component: {fileID: 961188339}
   m_Layer: 0
   m_Name: Arch
   m_TagString: Untagged
@@ -4143,19 +4130,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &961188339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 7378388745246124331, guid: 390c31099ec54594d8730653194466ca,
-    type: 3}
-  m_PrefabInstance: {fileID: 744803170}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961188338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e8f4095ca1f7f141948189121a33912, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &968346317
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6912,7 +6886,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1423121351}
   - component: {fileID: 1423121350}
-  - component: {fileID: 1423121349}
   m_Layer: 0
   m_Name: Leaf [Corruption]
   m_TagString: Untagged
@@ -6920,18 +6893,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1423121349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423121348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91bc19e0e539bda42b9e8a101aa46697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1423121350
 Animator:
   serializedVersion: 3
@@ -7241,13 +7202,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stamina:
-    baseValue: 10000
+    baseValue: 5000
     remapMultiplier: 1
     remapExponent: 1
     remapAddition: 0
   spellPower:
     baseValue: 10
-    remapMultiplier: 1
+    remapMultiplier: 0.1
     remapExponent: 1
     remapAddition: 0
   haste:
@@ -7256,12 +7217,12 @@ MonoBehaviour:
     remapExponent: 1
     remapAddition: 0
   criticalStrikeRating:
-    baseValue: 10
-    remapMultiplier: 1
+    baseValue: 20
+    remapMultiplier: 0.01
     remapExponent: 1
     remapAddition: 0
   armor:
-    baseValue: 10
+    baseValue: 1
     remapMultiplier: 1
     remapExponent: 1
     remapAddition: 0
@@ -7358,9 +7319,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3530cefab9a2544ca6955a071ba4c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthSystem:
-    currentHealth: 10000
   attributes: {fileID: 1521816063}
+  healthSystem:
+    currentHealth: 5000
+  castingSystem:
+    castOrigin: {fileID: 1521816061}
+    globalCooldown: 1
+  healingSpell: {fileID: 11400000, guid: 7b142e2d767291f4ca31f91ef2fdcb07, type: 2}
 --- !u!1 &1549598430
 GameObject:
   m_ObjectHideFlags: 0
@@ -8689,7 +8654,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1837385325}
   - component: {fileID: 1837385324}
-  - component: {fileID: 1837385323}
   m_Layer: 0
   m_Name: Leaf [Nightmare]
   m_TagString: Untagged
@@ -8697,18 +8661,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1837385323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837385322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91bc19e0e539bda42b9e8a101aa46697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1837385324
 Animator:
   serializedVersion: 3
@@ -14739,7 +14691,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5255582980723974437}
   - component: {fileID: 9130147988246811447}
-  - component: {fileID: 9130147988246811448}
   m_Layer: 0
   m_Name: Leaf [Dream]
   m_TagString: Untagged
@@ -14766,18 +14717,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9130147988246811448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9130147988246811446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91bc19e0e539bda42b9e8a101aa46697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9211257583638801067
 GameObject:
   m_ObjectHideFlags: 0

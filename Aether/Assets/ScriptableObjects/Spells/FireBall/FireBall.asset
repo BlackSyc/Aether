@@ -20,4 +20,4 @@ MonoBehaviour:
   target: {fileID: 11400000, guid: 0aee0871d2efc1f4f8d9569b670e1aa5, type: 2}
   castingRequirements: []
   spellEffects:
-  - {fileID: 11400000, guid: 6791259222a5980419640d3081defbbf, type: 2}
+  - {fileID: 11400000, guid: 66c44ca4a2e9bb747922586cd10c09dc, type: 2}

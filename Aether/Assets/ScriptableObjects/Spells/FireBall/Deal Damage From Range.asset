@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b01d8fc67aed45479180858b9a2a8baf, type: 3}
-  m_Name: Heal
+  m_Script: {fileID: 11500000, guid: a4ba08663c5a403eb9b2f56f5da4a36d, type: 3}
+  m_Name: Deal Damage From Range
   m_EditorClassIdentifier: 
   types: 4
-  healAmount: 100
+  damageAmount: 100
+  canCrit: 0
   criticalStrikeMultiplier: 2
-  applyAttributeBias: 1
-  healCeiling: 150
+  affectedBySpellPower: 1
+  allowDamageMitigation: 1
+  damageCeiling: 150
