@@ -15,7 +15,7 @@ MonoBehaviour:
   spellName: Fire Ball
   spellDescription: A projectile dealing no damage yet.
   castTime: 1
-  coolDown: 5
+  coolDown: 1
   globalCooldown: 1
   target: {fileID: 11400000, guid: 0aee0871d2efc1f4f8d9569b670e1aa5, type: 2}
   castingRequirements: []
