@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a51ab7a05ce480c9cca005893f2d481, type: 3}
   m_Name: Ignite
   m_EditorClassIdentifier: 
-  types: 0
-  modifier: {fileID: 0}
-  useSpellAsReferenceObject: 0
+  types: 4
+  modifier: {fileID: 11400000, guid: 8e089742cb0ca43498453d8f16f5ea69, type: 2}
+  useSpellAsReferenceObject: 1

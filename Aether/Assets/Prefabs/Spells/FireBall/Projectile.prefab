@@ -149,9 +149,9 @@ Animation:
   m_GameObject: {fileID: 342397723485207874}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 22f1db7f94d4500408f3fa34523b69c0, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 22f1db7f94d4500408f3fa34523b69c0, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -439,11 +439,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2868120797459138798}
-  - component: {fileID: 2673095067969104084}
   - component: {fileID: 576957689435888325}
-  - component: {fileID: 7179524948221068205}
+  - component: {fileID: 314435146628857323}
   m_Layer: 0
-  m_Name: Nightmare Missile
+  m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -467,25 +466,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2673095067969104084
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3282706551129572718}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b5213abba8fbc2f419f54bb4ae2ebe2a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!135 &576957689435888325
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -499,7 +479,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7179524948221068205
+--- !u!114 &314435146628857323
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -508,7 +488,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3282706551129572718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c732bb9f08fed6b44a05e68f6ba1ba14, type: 3}
+  m_Script: {fileID: 11500000, guid: e1a951e228e429d439f6e6fcfec5f48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 20

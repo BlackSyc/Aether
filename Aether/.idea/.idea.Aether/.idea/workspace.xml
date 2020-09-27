@@ -31,25 +31,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee8c9066-4838-4414-bd89-15ebab8dbf6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/Ignite.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/Ignite/DealDamage.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/Ignite/DealDamage.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/Ignite/Ignite.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/Ignite/Ignite.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Ignite.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Ignite.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/TargetDamage.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/TargetDamage.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/AddMovementSpeed.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/AddMovementSpeed.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/RemoveMovementSpeed.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/RemoveMovementSpeed.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/SprintModifier.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/SprintModifier.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Levels/StartEnvironment/Target Dummy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Levels/StartEnvironment/Target Dummy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/Ignite/DealDamage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/Ignite/DealDamage.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/Ignite/Ignite.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/Ignite/Ignite.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Fireblast.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Fireblast.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Ignite.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Ignite.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects/ParticleBurst.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects/ParticleBurst.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects/Projectile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects/Projectile.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TargetDummy/DummySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TargetDummy/DummySpawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TargetDummy/TargetDummyCombatSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TargetDummy/TargetDummyCombatSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifierIcon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifierIcon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,16 +58,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@a6ffa2a801f4e088291a2fbee3fd8ec48f75c667/Runtime/Syc/Combat/TargetSystem/Target.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@a6ffa2a801f4e088291a2fbee3fd8ec48f75c667/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/TargetProviders/SingleOrDefaultTarget.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TargetDummy/TargetDummyCombatSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifierIcon.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.aether.syc@cf4087c53ddc35cdf85c3e64de2d4faa06a0422e/Runtime/Syc/Combat/ModifierSystem/ModifierState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TargetDummy/TargetDummyCombatSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TargetDummy/DummySpawner.cs" />
       </list>
     </option>
   </component>
@@ -135,7 +130,7 @@
       <workItem from="1601192733505" duration="71000" />
       <workItem from="1601192822002" duration="1102000" />
       <workItem from="1601194203386" duration="71000" />
-      <workItem from="1601194283584" duration="393000" />
+      <workItem from="1601194283584" duration="2130000" />
     </task>
     <servers />
   </component>

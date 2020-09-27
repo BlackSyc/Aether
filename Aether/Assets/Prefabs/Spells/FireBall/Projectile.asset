@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Projectile
   m_EditorClassIdentifier: 
   types: 1
-  spawn: {fileID: 7179524948221068205, guid: 89cffe2cb629c4b44ab2a382cc7a6830, type: 3}
+  spawn: {fileID: 314435146628857323, guid: 89cffe2cb629c4b44ab2a382cc7a6830, type: 3}
   at: 1

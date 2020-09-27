@@ -51,7 +51,7 @@ namespace Aether.Levels.StartEnvironment.TargetDummy
         private void Died(DamageRequest _)
         {
             Spawner.SpawnNewDummy();
-            Destroy(gameObject);
+            Destroy(gameObject, 5);
         }
 
         private void NewSpellCastStarted(SpellCast newSpellCast)
@@ -73,6 +73,12 @@ namespace Aether.Levels.StartEnvironment.TargetDummy
 
         private void FixedUpdate()
         {
+            if (healthSystem.IsDead)
+            {
+                castingSystem.MovementIntterupt();
+                return;
+            }
+            
             if (!_isHealing && _shouldBeHealing)
                 castingSystem.CastSpell(new SpellState(healingSpell));
             

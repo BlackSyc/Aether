@@ -14,7 +14,8 @@ namespace Aether.Levels.StartEnvironment.TargetDummy
 
 		public void SpawnNewDummy()
 		{
-			Instantiate(dummyPrefab, gameObject.transform).Spawner = this;
+			var ownTransform = transform;
+			Instantiate(dummyPrefab, ownTransform.position, Quaternion.identity).Spawner = this;
 		}
 	}
 }

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bdf361d68044d9b8130456329f3be4, type: 3}
   m_Name: DealDamage
   m_EditorClassIdentifier: 
-  types: 0
-  damageAmount: 0
-  canCrit: 0
+  types: 1
+  damageAmount: 100
+  canCrit: 1
   criticalStrikeMultiplier: 2
-  affectedBySpellPower: 0
-  allowDamageMitigation: 0
-  timePeriod: 0
+  affectedBySpellPower: 1
+  allowDamageMitigation: 1
+  timePeriod: 2

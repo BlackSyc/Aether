@@ -49,10 +49,6 @@
               <e p="PlayerSpellSystem.cs" t="Include" />
               <e p="PlayerTargetSystem.cs" t="Include" />
             </e>
-            <e p="SpellObjects" t="Include">
-              <e p="ParticleBurst.cs" t="Include" />
-              <e p="Projectile.cs" t="Include" />
-            </e>
           </e>
           <e p="Core" t="Include">
             <e p="Aether.Core.asmdef" t="Include" />

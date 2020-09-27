@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HitFlash
   m_EditorClassIdentifier: 
   types: 16
-  spawn: {fileID: 6055340572373671487, guid: 63cbc2d0127327e4aa36ce698ea829e2, type: 3}
+  spawn: {fileID: 6394613611793851106, guid: 63cbc2d0127327e4aa36ce698ea829e2, type: 3}
   at: 0

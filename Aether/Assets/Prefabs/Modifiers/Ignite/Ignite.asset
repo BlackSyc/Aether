@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9cd48d2801a4a2ea6c9f88eae906a05, type: 3}
   m_Name: Ignite
   m_EditorClassIdentifier: 
-  modifierName: 
-  modifierDescription: 
+  modifierName: Ignite
+  modifierDescription: Deals periodic damage
   icon: {fileID: 0}
-  duration: 0
-  modifierEffects: []
+  duration: 10
+  modifierEffects:
+  - {fileID: 11400000, guid: 0da82e19d705909499aceaa844f0b7c4, type: 2}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2228517021524089327}
   - component: {fileID: 3182780083050123462}
   - component: {fileID: 8757372786885853216}
-  - component: {fileID: 6055340572373671487}
+  - component: {fileID: 6394613611793851106}
   m_Layer: 0
   m_Name: HitFlash
   m_TagString: Untagged
@@ -4813,7 +4813,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &6055340572373671487
+--- !u!114 &6394613611793851106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4822,6 +4822,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1746341381902864788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89a4e8ee96aaa3840b355c9ee2d32d03, type: 3}
+  m_Script: {fileID: 11500000, guid: 73f70351b261c554e860b296562e349a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

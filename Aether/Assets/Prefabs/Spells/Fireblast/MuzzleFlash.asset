@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MuzzleFlash
   m_EditorClassIdentifier: 
   types: 4
-  spawn: {fileID: 8027273031043818071, guid: 1699f24e7c5cfd44aa1dbf01c6b80e6a, type: 3}
+  spawn: {fileID: 2296160185090464910, guid: 1699f24e7c5cfd44aa1dbf01c6b80e6a, type: 3}
   at: 1
