@@ -49,7 +49,7 @@
   "lock": {
     "com.aether.syc": {
       "revision": "HEAD",
-      "hash": "90bd6d1277f42ddd179b0917ac492d09a492a8e6"
+      "hash": "c7c32b78917f689e0b31e4d4830ee57afb696864"
     },
     "com.xeleh.enhancer": {
       "revision": "HEAD",

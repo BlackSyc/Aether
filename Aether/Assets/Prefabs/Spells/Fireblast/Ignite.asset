@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6ea688588a34e00aa01a45349044c25, type: 3}
-  m_Name: TargetDamage
+  m_Script: {fileID: 11500000, guid: 7a51ab7a05ce480c9cca005893f2d481, type: 3}
+  m_Name: Ignite
   m_EditorClassIdentifier: 
-  types: 4
-  damageAmount: 250
-  canCrit: 1
-  criticalStrikeMultiplier: 2
-  affectedBySpellPower: 1
-  allowDamageMitigation: 1
+  types: 0
+  modifier: {fileID: 0}
+  useSpellAsReferenceObject: 0

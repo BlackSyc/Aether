@@ -20,7 +20,9 @@ namespace Aether.UserInterface.Combat
         public void SetModifierState(ModifierState modifierState)
         {
             ModifierState = modifierState;
-            image.sprite = modifierState.ModifierType.Icon.sprite;
+            
+            if(modifierState.ModifierType.Icon != null)
+                image.sprite = modifierState.ModifierType.Icon.sprite;
         }
 
         public void Update()
