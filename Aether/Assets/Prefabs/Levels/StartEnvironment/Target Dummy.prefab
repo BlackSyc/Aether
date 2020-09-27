@@ -179,32 +179,38 @@ MonoBehaviour:
     baseValue: 1000
     remapMultiplier: 1
     remapExponent: 1
-    remapAddition: 0
+    horizontalOffset: 0
+    verticalOffset: 0
   spellPower:
     baseValue: 10
     remapMultiplier: 0.1
     remapExponent: 1
-    remapAddition: 0
+    horizontalOffset: 0
+    verticalOffset: 0
   haste:
     baseValue: 10
     remapMultiplier: 1
     remapExponent: 1
-    remapAddition: 0
+    horizontalOffset: 0
+    verticalOffset: 0
   criticalStrikeRating:
     baseValue: 20
     remapMultiplier: 0.01
     remapExponent: 1
-    remapAddition: 0
+    horizontalOffset: 0
+    verticalOffset: 0
   armor:
-    baseValue: 1
+    baseValue: 100
     remapMultiplier: 1
-    remapExponent: 1
-    remapAddition: 0
+    remapExponent: -0.1
+    horizontalOffset: 1
+    verticalOffset: 0
   movementSpeed:
     baseValue: 10
     remapMultiplier: 1
     remapExponent: 1
-    remapAddition: 0
+    horizontalOffset: 0
+    verticalOffset: 0
 --- !u!114 &5156933501123730989
 MonoBehaviour:
   m_ObjectHideFlags: 0

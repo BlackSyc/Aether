@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9cd48d2801a4a2ea6c9f88eae906a05, type: 3}
-  m_Name: Ignite
+  m_Name: SunderArmor
   m_EditorClassIdentifier: 
-  modifierName: Ignite
-  modifierDescription: Deals periodic damage
-  icon: {fileID: 21300000, guid: e552152048bbe454285f4d26252ac476, type: 3}
+  modifierName: Sunder Armor
+  modifierDescription: Reduces the targets armor by 20% for 20s.
+  icon: {fileID: 21300000, guid: a9fc2149d7e3f6546b101cffbe77e1b4, type: 3}
   duration: 20
   canStack: 1
   modifierEffects:
-  - {fileID: 11400000, guid: 0da82e19d705909499aceaa844f0b7c4, type: 2}
+  - {fileID: 11400000, guid: b95a67b6a9316ca4c9cab66e5ec104a8, type: 2}
+  - {fileID: 11400000, guid: 2dcb022ba70cb6f4ba23dbeacb74b736, type: 2}

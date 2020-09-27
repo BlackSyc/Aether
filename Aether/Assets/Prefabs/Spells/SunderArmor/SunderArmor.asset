@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5e89aaaadbd02e4393182b9711a402a, type: 3}
-  m_Name: Fireblast
+  m_Name: SunderArmor
   m_EditorClassIdentifier: 
-  spellName: Fireblast
+  spellName: Sunder Armor
   icon: {fileID: 0}
-  spellDescription: A quick instant fixed amount of damage.
-  castTime: 1
-  coolDown: 2
-  globalCooldown: 0
+  spellDescription: Reduces the targets armor by 20%.
+  castTime: 0.5
+  coolDown: 0
+  globalCooldown: 1
   castWhileMoving: 1
   target: {fileID: 11400000, guid: 4a9d2b1348120534a88f347dcbee922f, type: 2}
   castingRequirements: []
   spellEffects:
-  - {fileID: 11400000, guid: 1da35e75d0babfd4dab8ba7778df5523, type: 2}
-  - {fileID: 11400000, guid: 9c07a403608924746bd9479436e4266e, type: 2}
-  - {fileID: 11400000, guid: 7604e8d760d4a004bbd50aa882caf2d8, type: 2}
+  - {fileID: 11400000, guid: 843379d0048471c4c8ce259f8052f9c4, type: 2}

@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76bdf361d68044d9b8130456329f3be4, type: 3}
-  m_Name: DealDamage
+  m_Script: {fileID: 11500000, guid: 7a51ab7a05ce480c9cca005893f2d481, type: 3}
+  m_Name: AddSunderArmor
   m_EditorClassIdentifier: 
-  types: 1
-  damageAmount: 50
-  canCrit: 0
-  criticalStrikeMultiplier: 2
-  affectedBySpellPower: 1
-  allowDamageMitigation: 1
-  timePeriod: 2
+  types: 4
+  modifier: {fileID: 11400000, guid: 1cd9ce96a8cd77343ae81ded3af14419, type: 2}
+  useSpellAsReferenceObject: 0

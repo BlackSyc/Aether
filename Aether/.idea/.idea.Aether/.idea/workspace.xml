@@ -31,14 +31,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee8c9066-4838-4414-bd89-15ebab8dbf6a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/SunderArmor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/SunderArmor/AddArmorMultiplication.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/SunderArmor/AddArmorMultiplication.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/SunderArmor/RemoveArmorMultiplication.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/SunderArmor/RemoveArmorMultiplication.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/SunderArmor/SunderArmor.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/SunderArmor/SunderArmor.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/SunderArmor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/SunderArmor/AddSunderArmor.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/SunderArmor/AddSunderArmor.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/SunderArmor/SunderArmor.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/SunderArmor/SunderArmor.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CombatPanel/CombatPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CombatPanel/CombatPanel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CombatPanel/ModifierIcon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CombatPanel/ModifierIcon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Levels/StartEnvironment/Target Dummy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Levels/StartEnvironment/Target Dummy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/Ignite/DealDamage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/Ignite/DealDamage.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/Ignite/Ignite.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Modifiers/Ignite/Ignite.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/SpellObjects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifierIcon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifierIcon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Fireblast.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Fireblast.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/TargetDummy.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/BasicHeal.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/TargetDummy/BasicHeal.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/BasicHeal/BasicHeal.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/TargetDummy/BasicHeal.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/BasicHeal/BasicHeal.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/TargetDummy/Heal.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/BasicHeal/Heal.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/TargetDummy/Heal.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/BasicHeal/Heal.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Base.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Base.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +64,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@cda3e44937e5fef732adf51c969c5c5180407420/Runtime/Syc/Combat/HealthSystem/DamageRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@cda3e44937e5fef732adf51c969c5c5180407420/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/SpellEffects/Health/DealDamageFromRange.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@cda3e44937e5fef732adf51c969c5c5180407420/Runtime/Syc/Combat/HealthSystem/HealthSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -121,7 +142,7 @@
       <workItem from="1601192733505" duration="71000" />
       <workItem from="1601192822002" duration="1102000" />
       <workItem from="1601194203386" duration="71000" />
-      <workItem from="1601194283584" duration="4255000" />
+      <workItem from="1601194283584" duration="5167000" />
     </task>
     <servers />
   </component>
@@ -147,74 +168,74 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="423" height="464" key="DebuggerActiveHint" timestamp="1601194341118">
+    <state width="499" height="464" key="DebuggerActiveHint" timestamp="1601205099494">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="423" height="464" key="DebuggerActiveHint/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601194341118" />
-    <state width="1466" height="509" key="GridCell.Tab.0.bottom" timestamp="1601194295147">
+    <state width="499" height="464" key="DebuggerActiveHint/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205099494" />
+    <state width="1466" height="509" key="GridCell.Tab.0.bottom" timestamp="1601205013607">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.0.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601194295147" />
-    <state width="1466" height="509" key="GridCell.Tab.0.center" timestamp="1601194295147">
+    <state width="1466" height="509" key="GridCell.Tab.0.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205013607" />
+    <state width="1466" height="509" key="GridCell.Tab.0.center" timestamp="1601205013607">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.0.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601194295147" />
-    <state width="1466" height="509" key="GridCell.Tab.0.left" timestamp="1601194295147">
+    <state width="1466" height="509" key="GridCell.Tab.0.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205013607" />
+    <state width="1466" height="509" key="GridCell.Tab.0.left" timestamp="1601205013607">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.0.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601194295147" />
-    <state width="1466" height="509" key="GridCell.Tab.0.right" timestamp="1601194295147">
+    <state width="1466" height="509" key="GridCell.Tab.0.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205013607" />
+    <state width="1466" height="509" key="GridCell.Tab.0.right" timestamp="1601205013607">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.0.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601194295147" />
-    <state width="1466" height="509" key="GridCell.Tab.1.bottom" timestamp="1601194311639">
+    <state width="1466" height="509" key="GridCell.Tab.0.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205013607" />
+    <state width="1466" height="509" key="GridCell.Tab.1.bottom" timestamp="1601205056335">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.1.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601194311639" />
-    <state width="1466" height="509" key="GridCell.Tab.1.center" timestamp="1601194311638">
+    <state width="1466" height="509" key="GridCell.Tab.1.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205056335" />
+    <state width="1466" height="509" key="GridCell.Tab.1.center" timestamp="1601205056335">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.1.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601194311638" />
-    <state width="1466" height="509" key="GridCell.Tab.1.left" timestamp="1601194311638">
+    <state width="1466" height="509" key="GridCell.Tab.1.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205056335" />
+    <state width="1466" height="509" key="GridCell.Tab.1.left" timestamp="1601205056334">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.1.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601194311638" />
-    <state width="1466" height="509" key="GridCell.Tab.1.right" timestamp="1601194311639">
+    <state width="1466" height="509" key="GridCell.Tab.1.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205056334" />
+    <state width="1466" height="509" key="GridCell.Tab.1.right" timestamp="1601205056335">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.1.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601194311639" />
-    <state width="1466" height="509" key="GridCell.Tab.2.bottom" timestamp="1601193924083">
+    <state width="1466" height="509" key="GridCell.Tab.1.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205056335" />
+    <state width="1466" height="509" key="GridCell.Tab.2.bottom" timestamp="1601205013457">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.2.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601193924083" />
-    <state width="1466" height="509" key="GridCell.Tab.2.center" timestamp="1601193924083">
+    <state width="1466" height="509" key="GridCell.Tab.2.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205013457" />
+    <state width="1466" height="509" key="GridCell.Tab.2.center" timestamp="1601205013457">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.2.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601193924083" />
-    <state width="1466" height="509" key="GridCell.Tab.2.left" timestamp="1601193924083">
+    <state width="1466" height="509" key="GridCell.Tab.2.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205013457" />
+    <state width="1466" height="509" key="GridCell.Tab.2.left" timestamp="1601205013457">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.2.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601193924083" />
-    <state width="1466" height="509" key="GridCell.Tab.2.right" timestamp="1601193924083">
+    <state width="1466" height="509" key="GridCell.Tab.2.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205013457" />
+    <state width="1466" height="509" key="GridCell.Tab.2.right" timestamp="1601205013457">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.2.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601193924083" />
-    <state width="1466" height="509" key="GridCell.Tab.3.bottom" timestamp="1601193924083">
+    <state width="1466" height="509" key="GridCell.Tab.2.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205013457" />
+    <state width="1466" height="509" key="GridCell.Tab.3.bottom" timestamp="1601205013457">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.3.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601193924083" />
-    <state width="1466" height="509" key="GridCell.Tab.3.center" timestamp="1601193924083">
+    <state width="1466" height="509" key="GridCell.Tab.3.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205013457" />
+    <state width="1466" height="509" key="GridCell.Tab.3.center" timestamp="1601205013457">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.3.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601193924083" />
-    <state width="1466" height="509" key="GridCell.Tab.3.left" timestamp="1601193924083">
+    <state width="1466" height="509" key="GridCell.Tab.3.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205013457" />
+    <state width="1466" height="509" key="GridCell.Tab.3.left" timestamp="1601205013457">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.3.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601193924083" />
-    <state width="1466" height="509" key="GridCell.Tab.3.right" timestamp="1601193924083">
+    <state width="1466" height="509" key="GridCell.Tab.3.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205013457" />
+    <state width="1466" height="509" key="GridCell.Tab.3.right" timestamp="1601205013457">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state width="1466" height="509" key="GridCell.Tab.3.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601193924083" />
+    <state width="1466" height="509" key="GridCell.Tab.3.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205013457" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -249,6 +270,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Library/PackageCache/com.aether.syc@cda3e44937e5fef732adf51c969c5c5180407420/Runtime/Syc/Combat/HealthSystem/HealthSystem.cs</url>
+          <line>32</line>
+          <properties documentPath="D:\Private\Repositories\Aether\Aether\Library\PackageCache\com.aether.syc@cda3e44937e5fef732adf51c969c5c5180407420\Runtime\Syc\Combat\HealthSystem\HealthSystem.cs" initialLine="32">
+            <startOffsets>
+              <option value="794" />
+            </startOffsets>
+            <endOffsets>
+              <option value="867" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
