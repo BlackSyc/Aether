@@ -17,18 +17,26 @@ namespace Aether.UserInterface.Combat
         [SerializeField]
         private TextMeshProUGUI durationText;
 
+        [SerializeField] private TextMeshProUGUI stacksText;
+
         public void SetModifierState(ModifierState modifierState)
         {
             ModifierState = modifierState;
             
             if(modifierState.ModifierType.Icon != null)
-                image.sprite = modifierState.ModifierType.Icon.sprite;
+                image.sprite = modifierState.ModifierType.Icon;
         }
 
         public void Update()
         {
-            if (ModifierState != null)
-                durationText.text = ((int)ModifierState.TimeRemaining).ToString(CultureInfo.InvariantCulture);
+            if (ModifierState == null)
+                return;
+            
+            durationText.text = ((int)ModifierState.TimeRemaining).ToString(CultureInfo.InvariantCulture);
+            var stacks = ModifierState.Stacks;
+            stacksText.text = stacks < 1 
+                ? string.Empty
+                : stacks.ToString();
         }
     }
 }
