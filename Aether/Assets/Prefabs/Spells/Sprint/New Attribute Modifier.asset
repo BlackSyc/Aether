@@ -9,10 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9a61df0d9b415997845011be5f6843, type: 3}
-  m_Name: RemoveArmorMultiplication
+  m_Script: {fileID: 11500000, guid: 09fd9d35d25a4c9986b972e0ab7453ed, type: 3}
+  m_Name: New Attribute Modifier
   m_EditorClassIdentifier: 
-  types: 16
-  attributeName: Armor
-  value: 1.25
-  useModifierAsSource: 1
+  auraName: 
+  description: 
+  icon: {fileID: 0}
+  duration: 5
+  stackLimit: 1
+  attributeName: MovementSpeed
+  value: 2
+  type: 1
+  useAuraAsReference: 0

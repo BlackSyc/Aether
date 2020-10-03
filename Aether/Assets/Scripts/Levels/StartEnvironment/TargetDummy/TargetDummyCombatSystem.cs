@@ -1,7 +1,7 @@
 ﻿using Aether.Core.Attributes;
 using Syc.Combat;
+using Syc.Combat.Auras;
 using Syc.Combat.HealthSystem;
-using Syc.Combat.ModifierSystem;
 using Syc.Combat.SpellSystem;
 using Syc.Combat.SpellSystem.ScriptableObjects;
 using UnityEngine;
@@ -30,7 +30,7 @@ namespace Aether.Levels.StartEnvironment.TargetDummy
 
         [SerializeField] private CastingSystem castingSystem;
 
-        [SerializeField] private ModifierSystem modifierSystem;
+        [SerializeField] private AuraSystem auraSystem;
 
         [SerializeField] private Spell healingSpell;
 
@@ -41,7 +41,7 @@ namespace Aether.Levels.StartEnvironment.TargetDummy
         {
             AddSubsystem(healthSystem);
             AddSubsystem(castingSystem);
-            AddSubsystem(modifierSystem);
+            AddSubsystem(auraSystem);
             
             healthSystem.OnHealthChanged += CheckIfShouldHeal;
             healthSystem.OnDied += Died;

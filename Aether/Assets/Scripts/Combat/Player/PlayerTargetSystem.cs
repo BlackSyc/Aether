@@ -19,11 +19,18 @@ namespace Aether.Combat.Player
 		
 		public Target CreateTarget()
 		{
+			var maxRangePosition = maxRange * playerCamera.forward + playerCamera.position;
+			
+			if (playerCamera == null)
+			{
+				return new Target(null, maxRangePosition);
+			}
+			
 			var hits = Physics.RaycastAll(playerCamera.position, playerCamera.forward, maxRange);
 			
 			if (!hits.Any())
 			{
-				var maxRangePosition = maxRange * playerCamera.forward + playerCamera.position;
+				
 				return new Target(null, maxRangePosition);
 			}
 

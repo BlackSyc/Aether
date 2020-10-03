@@ -1,8 +1,8 @@
 using Aether.Core.Attributes;
 using Aether.Input;
 using Syc.Combat;
+using Syc.Combat.Auras;
 using Syc.Combat.HealthSystem;
-using Syc.Combat.ModifierSystem;
 using Syc.Combat.SpellSystem;
 using UnityEngine;
 
@@ -23,7 +23,7 @@ namespace Aether.Combat.Player
 
 		[SerializeField] private HealthSystem healthSystem;
 
-		[SerializeField] private ModifierSystem modifierSystem;
+		[SerializeField] private AuraSystem auraSystem;
 
 		[SerializeField] private ScryerAttributes defaultAttributesSystem;
 
@@ -32,7 +32,7 @@ namespace Aether.Combat.Player
 			AddSubsystem(localPlayerTargetSystem);
 			AddSubsystem(spellSystem);
 			AddSubsystem(healthSystem);
-			AddSubsystem(modifierSystem);
+			AddSubsystem(auraSystem);
 
 			playerInput.OnCastSpell += spellSystem.CastSpell;
 			playerInput.OnMove += _ => spellSystem.MovementIntterupt();

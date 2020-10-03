@@ -48,7 +48,11 @@ namespace Aether.Core.Attributes
 
 		public Attribute Get(string attributeName)
 		{
-			return _attributeMap[attributeName.ToLower()];
+			if (_attributeMap.TryGetValue(attributeName.ToLower(), out var value))
+				return value;
+
+			Debug.LogWarning($"Attribute {attributeName} was not found on {gameObject.name}, returning a new attribute instead.");
+			return new Attribute();
 		}
 	}
 }

@@ -440,7 +440,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2868120797459138798}
   - component: {fileID: 576957689435888325}
-  - component: {fileID: 314435146628857323}
+  - component: {fileID: -4394785002918235766}
+  - component: {fileID: 8701164512111814793}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -479,7 +480,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &314435146628857323
+--- !u!114 &-4394785002918235766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -488,13 +489,62 @@ MonoBehaviour:
   m_GameObject: {fileID: 3282706551129572718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1a951e228e429d439f6e6fcfec5f48f, type: 3}
+  m_Script: {fileID: 11500000, guid: 21fea565a178bf54a9d680e689bce989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 20
   rotationSpeed: 100
   rotationSpeedFactor: 50
   maxLifeTime: 10
+--- !u!114 &8701164512111814793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282706551129572718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: 58bd3f8378b904a4db3b370e849d3bd2, type: 2}
+    m_AmplitudeGain: 0.2
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+    m_PropagationSpeed: 343
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_IgnoreTag: 
+  m_UseImpactDirection: 0
+  m_ScaleImpactWithMass: 0
+  m_ScaleImpactWithSpeed: 0
 --- !u!1 &3579406333838031550
 GameObject:
   m_ObjectHideFlags: 0

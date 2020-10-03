@@ -5465,7 +5465,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1236075212}
   - component: {fileID: 1236075213}
-  - component: {fileID: 1236075214}
   - component: {fileID: 1236075215}
   m_Layer: 0
   m_Name: LevelController
@@ -5512,18 +5511,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisableOnStart: 0
---- !u!114 &1236075214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1236075211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a991531037333f44ba96857495f4bb04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1236075215
 MonoBehaviour:
   m_ObjectHideFlags: 0

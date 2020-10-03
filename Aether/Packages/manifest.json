@@ -1,7 +1,8 @@
 {
   "dependencies": {
-    "com.aether.syc": "https://github.com/BlackSyc/SCGS.git",
+    "com.aether.syc": "file:D:/Private/Repositories/Syc/Packages/Syc",
     "com.unity.2d.sprite": "1.0.0",
+    "com.unity.cinemachine": "2.6.3",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
     "com.unity.ide.vscode": "1.1.4",
@@ -47,10 +48,6 @@
     "com.unity.modules.xr": "1.0.0"
   },
   "lock": {
-    "com.aether.syc": {
-      "revision": "HEAD",
-      "hash": "cda3e44937e5fef732adf51c969c5c5180407420"
-    },
     "com.xeleh.enhancer": {
       "revision": "HEAD",
       "hash": "78e062bf5467bb3a4caae6315aaf74352050d116"

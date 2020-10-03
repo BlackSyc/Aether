@@ -1,6 +1,5 @@
-﻿using Aether.Core;
+﻿using Syc.Combat.Auras;
 using Syc.Combat.HealthSystem;
-using Syc.Combat.ModifierSystem;
 using Syc.Combat.SpellSystem;
 using TMPro;
 using UnityEngine;
@@ -22,7 +21,7 @@ namespace Aether.UserInterface.Combat
         protected HealthBar healthBar;
 
         [SerializeField]
-        protected ModifiersBar modifiersBar;
+        protected AuraBar auraBar;
 
         [SerializeField]
         protected TextEmitter textEmitter;
@@ -57,7 +56,7 @@ namespace Aether.UserInterface.Combat
             if (textEmitter != null)
                 LinkTextEmitter();
 
-            if (modifiersBar != null)
+            if (auraBar != null)
                 LinkModifiersBar();
 
             if (playerTargetIndicator != null)
@@ -99,10 +98,10 @@ namespace Aether.UserInterface.Combat
 
         protected void LinkModifiersBar()
         {
-            if (combatPanelInfo.CombatSystem.Has(out ModifierSystem modifierSystem))
-                modifiersBar.SetModifierSystem(modifierSystem);
+            if (combatPanelInfo.CombatSystem.Has(out AuraSystem auraSystem))
+                auraBar.SetAuraSystem(auraSystem);
             else
-                modifiersBar.enabled = false;
+                auraBar.enabled = false;
         }
 
         protected virtual void LateUpdate()

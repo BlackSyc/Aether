@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1565c4815c8d4b89a621bfffa70a51ba, type: 3}
-  m_Name: AddMovementSpeed
+  m_Script: {fileID: 11500000, guid: fcb002b0f46d4de394a17dcffbd8b883, type: 3}
+  m_Name: HotStreakAugment
   m_EditorClassIdentifier: 
-  types: 1
-  attributeName: MovementSpeed
-  value: 200
-  useModifierAsSource: 1
+  removeOnUse: 0
+  appliesTo:
+  - {fileID: 11400000, guid: 2e6db3359cd47f94b9c2ec574e9c3494, type: 2}
+  multiplyBaseDamage: 1
+  addCritChance: 1

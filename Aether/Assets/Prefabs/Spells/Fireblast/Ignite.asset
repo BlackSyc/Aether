@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Ignite
   m_EditorClassIdentifier: 
   types: 4
-  modifier: {fileID: 11400000, guid: 8e089742cb0ca43498453d8f16f5ea69, type: 2}
+  aura: {fileID: 11400000, guid: 0dbd57a79ce715e48a42af563d1b7110, type: 2}
+  applyTo: 1
   useSpellAsReferenceObject: 1
