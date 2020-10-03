@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09fd9d35d25a4c9986b972e0ab7453ed, type: 3}
   m_Name: SunderArmor 1
   m_EditorClassIdentifier: 
-  auraName: 
-  description: 
-  icon: {fileID: 0}
+  auraName: Sunder Armor
+  description: Decreases the targets armor by a lot!
+  icon: {fileID: 21300000, guid: 1e95efa1fa5e9a040b5191ffb50d7d19, type: 3}
   duration: 20
   stackLimit: 10
   attributeName: Armor

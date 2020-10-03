@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: AddSprintModifier
   m_EditorClassIdentifier: 
   types: 4
-  aura: {fileID: 0}
+  aura: {fileID: 11400000, guid: 209b2c568e7df9c45adad31659b27e5d, type: 2}
   applyTo: 0
   useSpellAsReferenceObject: 1

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: AddSunderArmor
   m_EditorClassIdentifier: 
   types: 4
-  aura: {fileID: 0}
-  applyTo: 0
-  useSpellAsReferenceObject: 0
+  aura: {fileID: 11400000, guid: d9e7054616ee0bc45af95a578e0109d8, type: 2}
+  applyTo: 1
+  useSpellAsReferenceObject: 1

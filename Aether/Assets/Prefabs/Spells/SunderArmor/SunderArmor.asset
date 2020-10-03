@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: SunderArmor
   m_EditorClassIdentifier: 
   spellName: Sunder Armor
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 1e95efa1fa5e9a040b5191ffb50d7d19, type: 3}
   spellDescription: Reduces the targets armor by 20%.
   castTime: 0.5
   coolDown: 0
-  globalCooldown: 1
+  onGlobalCooldown: 0
   castWhileMoving: 1
   target: {fileID: 11400000, guid: 4a9d2b1348120534a88f347dcbee922f, type: 2}
   castingRequirements: []

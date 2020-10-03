@@ -33,7 +33,7 @@ namespace Aether.UserInterface.Combat
             
             durationText.text = ((int)(AuraState.AuraType.Duration - AuraState.ElapsedTime)).ToString(CultureInfo.InvariantCulture);
             var stacks = AuraState.Stacks;
-            stacksText.text = stacks < 1 
+            stacksText.text = stacks < 2 
                 ? string.Empty
                 : stacks.ToString();
         }

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: FireBall
   m_EditorClassIdentifier: 
   spellName: Fire Ball
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ed82e1103d373974eb15cb9961ec3e25, type: 3}
   spellDescription: A projectile dealing no damage yet.
   castTime: 1
   coolDown: 1
-  globalCooldown: 1
+  onGlobalCooldown: 1
   castWhileMoving: 0
   target: {fileID: 11400000, guid: 4a9d2b1348120534a88f347dcbee922f, type: 2}
   castingRequirements: []

@@ -4,32 +4,34 @@ using Syc.Combat;
 using Syc.Combat.SpellSystem;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Aether.UserInterface.Combat
 {
     public class SpellButton : MonoBehaviour
     {
-        [SerializeField]
-        private int index;
+        [SerializeField] private int index;
 
-        [SerializeField]
-        private GameObject mainPanel;
+        [SerializeField] private GameObject mainPanel;
 
-        [SerializeField]
-        private TextMeshProUGUI text;
+        [SerializeField] private Image icon;
 
-        [SerializeField]
-        private Animator castBar;
+        [SerializeField] private TextMeshProUGUI cooldownText;
 
-        [SerializeField]
-        private Animation keybindAnimation;
+        [SerializeField] private Image globalCooldownOverlay;
 
-        [SerializeField]
-        private SpellTooltip spellTooltip;
+        [SerializeField] private Image cooldownOverlay;
+
+        [SerializeField] private Animator castBar;
+
+        [SerializeField] private Animation keybindAnimation;
+
+        [SerializeField] private SpellTooltip spellTooltip;
 
         private SpellState _spellState;
-
         private SpellCast _spellCast;
+
+        private Coroutine _globalCooldownCoroutine;
 
         public void ShowTooltip()
         {
@@ -53,6 +55,8 @@ namespace Aether.UserInterface.Combat
             playerSpellRack.OnSpellAdded += OnSpellAdded;
             playerSpellRack.OnSpellRemoved += OnSpellRemoved;
             playerSpellRack.OnNewSpellCast += OnNewSpellCast;
+            playerSpellRack.OnGlobalCooldownStarted += StartGlobalCooldown;
+            playerSpellRack.OnGlobalCooldownCancelled += CancelGlobalCooldown;
 
             _spellState = playerSpellRack.GetSpell(index);
 
@@ -60,7 +64,39 @@ namespace Aether.UserInterface.Combat
                 return;
             
             mainPanel.SetActive(true);
-            text.text = _spellState.Spell.SpellName;
+            icon.sprite = _spellState.Spell.Icon
+                ? _spellState.Spell.Icon
+                : icon.sprite;
+        }
+
+        private void CancelGlobalCooldown()
+        {
+            if(_globalCooldownCoroutine != null)
+                StopCoroutine(_globalCooldownCoroutine);
+            
+            globalCooldownOverlay.fillAmount = 0;
+        }
+
+        private void StartGlobalCooldown(float globalCooldownRemaining)
+        {
+            if (!(_spellState.Spell is null) && _spellState.Spell.OnGlobalCooldown)
+            {
+                _globalCooldownCoroutine = StartCoroutine(GlobalCooldownCoroutine(globalCooldownRemaining));
+            }
+        }
+
+        private IEnumerator GlobalCooldownCoroutine(float globalCooldownRemaining)
+        {
+            var startingGlobalCooldown = globalCooldownRemaining;
+            
+            while (globalCooldownRemaining > 0)
+            {
+                globalCooldownOverlay.fillAmount = globalCooldownRemaining / startingGlobalCooldown;
+                yield return null;
+                globalCooldownRemaining -= Time.deltaTime;
+            }
+
+            globalCooldownOverlay.fillAmount = 0;
         }
 
         private void OnSpellRemoved(SpellState spellState, int changedIndex)
@@ -77,7 +113,7 @@ namespace Aether.UserInterface.Combat
         {
             if (_spellState?.Spell == default)
                 return;
-            
+
             if (newSpellCast?.Spell != _spellState.Spell)
                 return;
             
@@ -96,8 +132,9 @@ namespace Aether.UserInterface.Combat
             _spellState = spellState;
         
             mainPanel.SetActive(true);
-            text.text = _spellState.Spell.SpellName;
-            //TODO: Change button icon like: icon.sprite = linkedSpellSlot.Spell.Icon;
+            icon.sprite = _spellState.Spell.Icon 
+                ? _spellState.Spell.Icon 
+                : icon.sprite;
         }
         
         private void UpdateCast(SpellCast spellCast)
@@ -133,14 +170,17 @@ namespace Aether.UserInterface.Combat
         
         private IEnumerator CoolDown(float until)
         {
+            cooldownOverlay.enabled = true;
             while (Time.time < until)
             {
-                text.text = ((int)(until - Time.time) + 1).ToString();
+                cooldownText.text = ((int)(until - Time.time) + 1).ToString();
                 yield return null;
             }
 
             if (_spellState != default)
-                text.text = _spellState.Spell.SpellName;
+                cooldownText.text = string.Empty;
+
+            cooldownOverlay.enabled = false;
         }
         
         private void OnDestroy()

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   auraName: Ignite
   description: Deals periodic damage
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 22f5ea23fff770a4b9930f54be6b2a19, type: 3}
   duration: 10
   stackLimit: 3
   baseDamage: 100

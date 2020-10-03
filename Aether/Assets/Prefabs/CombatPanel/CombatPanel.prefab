@@ -738,7 +738,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 7743921054690705615}
   nameText: {fileID: 3174951708003983940}
   healthBar: {fileID: 3174951707819296757}
-  modifiersBar: {fileID: 2718071926699313299}
+  auraBar: {fileID: 2718071926699313299}
   textEmitter: {fileID: 788523237675005611}
   playerTargetIndicator: {fileID: 5877822124224038892}
   castBar: {fileID: 4987031334715636261}
@@ -952,7 +952,7 @@ GameObject:
   - component: {fileID: 2210786729351763289}
   - component: {fileID: 2718071926699313299}
   m_Layer: 12
-  m_Name: Modifiers
+  m_Name: AuraBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1003,7 +1003,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: 2
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -1022,7 +1022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0604a01981b3a714aa6a6ce78d46534d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modifierIconPrefab: {fileID: 9008310553470574026, guid: 8ddf1876ab45f8b438228ceba5d7a3fd,
+  auraIconPrefab: {fileID: 9008310553470574026, guid: 8ddf1876ab45f8b438228ceba5d7a3fd,
     type: 3}
   iconScale: 1
 --- !u!1 &7103179394248992811

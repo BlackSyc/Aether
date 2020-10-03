@@ -259,6 +259,9 @@
       <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="Tests_EditMode.csproj" t="IncludeRecursive" />
     </e>
+    <e p="D:\Private\Repositories\Syc\Packages\Syc\Editor" t="Include">
+      <e p="AssetCreateMenu.cs" t="Include" />
+    </e>
     <e p="D:\Private\Repositories\Syc\Packages\Syc\Runtime\Syc\Combat" t="Include">
       <e p="Auras" t="Include">
         <e p="AuraState.cs" t="Include" />
@@ -321,7 +324,6 @@
         <e p="SpellCast.cs" t="Include" />
         <e p="SpellObject.cs" t="Include" />
         <e p="SpellObjects" t="Include">
-          <e p="AssetCreateMenu.cs" t="Include" />
           <e p="ParticleBurst.cs" t="Include" />
           <e p="Projectile.cs" t="Include" />
         </e>
