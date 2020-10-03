@@ -17,6 +17,7 @@
       <e p="Aether.ScriptableObjects.csproj" t="IncludeRecursive" />
       <e p="Aether.sln" t="IncludeFlat" />
       <e p="Aether.StartEnvironment.csproj" t="IncludeRecursive" />
+      <e p="aether.syc.editor.csproj" t="IncludeRecursive" />
       <e p="Aether.UserInterface.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -260,6 +261,7 @@
       <e p="Tests_EditMode.csproj" t="IncludeRecursive" />
     </e>
     <e p="D:\Private\Repositories\Syc\Packages\Syc\Editor" t="Include">
+      <e p="aether.syc.editor.asmdef" t="Include" />
       <e p="AssetCreateMenu.cs" t="Include" />
     </e>
     <e p="D:\Private\Repositories\Syc\Packages\Syc\Runtime\Syc\Combat" t="Include">

@@ -15,6 +15,7 @@ namespace Aether.Core.Attributes
 		[SerializeField] private Attribute criticalStrikeRating;
 		[SerializeField] private Attribute armor;
 		[SerializeField] private Attribute movementSpeed;
+		[SerializeField] private Attribute jumpPower;
 
 		public Attribute Stamina => stamina;
 
@@ -28,7 +29,7 @@ namespace Aether.Core.Attributes
 
 		public Attribute MovementSpeed => movementSpeed;
 
-		public Attribute JumpPower => movementSpeed;
+		public Attribute JumpPower => jumpPower;
 
 		public Attribute RotationSpeed => GameSettings.Instance.MouseSensitivity;
 		

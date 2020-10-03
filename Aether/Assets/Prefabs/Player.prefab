@@ -212,7 +212,13 @@ MonoBehaviour:
     verticalOffset: 0
   movementSpeed:
     baseValue: 100
-    remapMultiplier: 0.05
+    remapMultiplier: 0.1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  jumpPower:
+    baseValue: 10
+    remapMultiplier: 0.5
     remapExponent: 1
     horizontalOffset: 0
     verticalOffset: 0
@@ -339,7 +345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476305286045033348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.534, z: -0.467}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 476305285128632748}

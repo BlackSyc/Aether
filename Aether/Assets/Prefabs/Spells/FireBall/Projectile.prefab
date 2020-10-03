@@ -510,9 +510,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ImpulseDefinition:
     m_ImpulseChannel: 1
-    m_RawSignal: {fileID: 11400000, guid: 58bd3f8378b904a4db3b370e849d3bd2, type: 2}
-    m_AmplitudeGain: 0.2
-    m_FrequencyGain: 1
+    m_RawSignal: {fileID: 11400000, guid: b83bbf1544eca09478c1d1c9455df535, type: 2}
+    m_AmplitudeGain: 0.1
+    m_FrequencyGain: 4
     m_RepeatMode: 0
     m_Randomize: 1
     m_TimeEnvelope:

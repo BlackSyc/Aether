@@ -11,11 +11,11 @@ namespace Aether
         private CinemachineImpulseSource _impulseSource;
         
         // Start is called before the first frame update
-        protected override void Start()
+        public override void Initialize()
         {
             _impulseSource = GetComponent<CinemachineImpulseSource>();
             SpellCast.OnSpellCompleted += TriggerImpulse;
-            base.Start();
+            base.Initialize();
         }
 
         private void TriggerImpulse(SpellCast obj)
