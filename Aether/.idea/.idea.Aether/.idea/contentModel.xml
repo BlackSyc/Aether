@@ -168,6 +168,7 @@
             <e p="Combat" t="Include">
               <e p="AuraBar.cs" t="Include" />
               <e p="AuraIcon.cs" t="Include" />
+              <e p="AuraTooltip.cs" t="Include" />
               <e p="Castbar.cs" t="Include" />
               <e p="CombatPanel.cs" t="Include" />
               <e p="CombatPanelInfo.cs" t="Include" />
@@ -180,6 +181,7 @@
               <e p="SpellButton.cs" t="Include" />
               <e p="SpellTooltip.cs" t="Include" />
               <e p="TextEmitter.cs" t="Include" />
+              <e p="TooltipManager.cs" t="Include" />
             </e>
             <e p="Dialog" t="Include">
               <e p="DialogWindow.cs" t="Include" />

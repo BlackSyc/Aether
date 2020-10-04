@@ -44,7 +44,9 @@ namespace Aether.UserInterface.Combat
         {
             if (!(Camera.main is null))
             {
-                _cameraTransform = Camera.main.transform;
+                var mainCamera = Camera.main;
+                _cameraTransform = mainCamera.transform;
+                GetComponent<Canvas>().worldCamera = mainCamera;
             }
 
             if (nameText != null)
@@ -64,7 +66,6 @@ namespace Aether.UserInterface.Combat
 
             if (castBar != null)
                 LinkCastbar();
-
         }
 
         private void LinkCastbar()

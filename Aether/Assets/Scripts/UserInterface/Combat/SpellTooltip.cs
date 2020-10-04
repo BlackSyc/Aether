@@ -7,39 +7,30 @@ using Syc.Combat.SpellSystem.ScriptableObjects;
 using Syc.Combat.SpellSystem.ScriptableObjects.SpellEffects.Health;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class SpellTooltip : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI title;
-
-    [SerializeField]
-    private TextMeshProUGUI healthDelta;
-
-
-    [SerializeField]
-    private TextMeshProUGUI casttime;
-
-
-    [SerializeField]
-    private TextMeshProUGUI cooldown;
-
-
-    [SerializeField]
-    private TextMeshProUGUI description;
-
-
-    [SerializeField]
-    private TextMeshProUGUI canBeCastWhileMoving;
+    [SerializeField] private TextMeshProUGUI title;
+    [SerializeField] private TextMeshProUGUI healthDelta;
+    [SerializeField] private TextMeshProUGUI casttime;
+    [SerializeField] private TextMeshProUGUI cooldown;
+    [SerializeField] private TextMeshProUGUI description;
+    [SerializeField] private TextMeshProUGUI canBeCastWhileMoving;
+    [SerializeField] private Image icon;
+    public Spell CurrentSpell { get; private set; }
 
     public void Show(Spell spell)
     {
+        CurrentSpell = spell;
         title.text = spell.SpellName;
         healthDelta.text = GetHealthDelta(spell);
         casttime.text = spell.CastTime.ToString(CultureInfo.InvariantCulture);
         cooldown.text = spell.CoolDown.ToString(CultureInfo.InvariantCulture);
         description.text = spell.SpellDescription;
         canBeCastWhileMoving.text = "CastWhileMoving is not implemented";
+        icon.sprite = spell.Icon;
 
         gameObject.SetActive(true);
     }
@@ -87,6 +78,7 @@ public class SpellTooltip : MonoBehaviour
 
     internal void Hide()
     {
+        CurrentSpell = null;
         gameObject.SetActive(false);
     }
 }

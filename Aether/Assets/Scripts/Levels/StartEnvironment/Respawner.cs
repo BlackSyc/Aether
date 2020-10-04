@@ -9,37 +9,24 @@ namespace Aether.Levels.StartEnvironment
         [SerializeField]
         private Transform respawnLocation;
 
-        [SerializeField] private float scaleSpeed = 1f;
-    
-        private bool _isRespawning;
     
     
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
-            if (_isRespawning)
-                return;
-        
             if (Player.Instance.transform.position.y < -100f)
             {
-                _isRespawning = true;
-                StartCoroutine(RespawnCoroutine());
+                StartCoroutine(RespawnRoutine());
             }
         }
 
-        private IEnumerator RespawnCoroutine()
+        private IEnumerator RespawnRoutine()
         {
-            
-        
-            Player.Instance.GetComponent<CharacterController>().enabled = false;
-            yield return null;
+            Player.Instance.GetComponent<CharacterController>().detectCollisions = false;
             Player.Instance.transform.position = respawnLocation.position;
-            yield return null;
-            Player.Instance.GetComponent<CharacterController>().enabled = true;
-            
-
-            _isRespawning = false;
+            yield return new WaitForFixedUpdate();
+            Player.Instance.GetComponent<CharacterController>().detectCollisions = true;
         }
     
     }

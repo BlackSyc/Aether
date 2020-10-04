@@ -26,8 +26,6 @@ namespace Aether.UserInterface.Combat
 
         [SerializeField] private Animation keybindAnimation;
 
-        [SerializeField] private SpellTooltip spellTooltip;
-
         private SpellState _spellState;
         private SpellCast _spellCast;
 
@@ -35,12 +33,12 @@ namespace Aether.UserInterface.Combat
 
         public void ShowTooltip()
         {
-            spellTooltip.Show(_spellState.Spell);
+            TooltipManager.Instance.ShowTooltipFor(_spellState.Spell);
         }
 
         public void HideTooltip()
         {
-            spellTooltip.Hide();
+            TooltipManager.Instance.HideTooltipFor(_spellState.Spell);
         }
 
         private void Start()

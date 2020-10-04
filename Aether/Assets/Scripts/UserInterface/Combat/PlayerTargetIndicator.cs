@@ -23,7 +23,7 @@ namespace Aether.UserInterface.Combat
         private void Awake()
         {
             if (Player.Instance.Has(out ICombatSystem combatSystem) 
-                && Player.Instance.Has(out CastingSystem castingSystem))
+                && combatSystem.Has(out ICaster castingSystem))
             {
                 castingSystem.OnNewSpellCast += OnPlayerSpellCast;
             }
@@ -48,8 +48,9 @@ namespace Aether.UserInterface.Combat
             }
 
             _currentSpellCast = null;
-            image.enabled = false;
-
+            
+            if(image != null)
+                image.enabled = false;
         }
 
         // Update is called once per frame

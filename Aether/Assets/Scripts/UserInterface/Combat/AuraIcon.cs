@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using Syc.Combat.Auras;
 using TMPro;
 using UnityEngine;
@@ -24,6 +25,21 @@ namespace Aether.UserInterface.Combat
             
             if(auraState.AuraType.Icon != null)
                 image.sprite = auraState.AuraType.Icon;
+        }
+
+        public void ShowTooltip()
+        {
+            TooltipManager.Instance.ShowTooltipFor(AuraState.AuraType);
+        }
+
+        public void HideTooltip()
+        {
+            TooltipManager.Instance.HideTooltipFor(AuraState.AuraType);
+        }
+
+        public void OnDestroy()
+        {
+            HideTooltip();
         }
 
         public void Update()
