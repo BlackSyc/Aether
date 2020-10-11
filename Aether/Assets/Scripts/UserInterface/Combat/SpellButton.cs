@@ -77,7 +77,7 @@ namespace Aether.UserInterface.Combat
 
         private void StartGlobalCooldown(float globalCooldownRemaining)
         {
-            if (!(_spellState.Spell is null) && _spellState.Spell.OnGlobalCooldown)
+            if (!(_spellState?.Spell is null) && _spellState.Spell.OnGlobalCooldown)
             {
                 _globalCooldownCoroutine = StartCoroutine(GlobalCooldownCoroutine(globalCooldownRemaining));
             }

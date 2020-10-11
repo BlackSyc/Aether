@@ -425,7 +425,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 22901388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
+  m_Script: {fileID: 11500000, guid: 891ec178349b2a44da92d65ca5cb4c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Interaction:
@@ -490,6 +490,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &22901393
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22901388}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &46120909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3730327429019136688, guid: 7b0a5c52a4eab2e4ba729c02a275064f,
@@ -742,8 +758,9 @@ GameObject:
   m_Component:
   - component: {fileID: 169073591}
   - component: {fileID: 169073594}
-  - component: {fileID: 169073593}
   - component: {fileID: 169073592}
+  - component: {fileID: 169073593}
+  - component: {fileID: 169073595}
   m_Layer: 8
   m_Name: Aspect Of Creation
   m_TagString: Untagged
@@ -759,7 +776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169073590}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.25454664, y: 0.73384047, z: 0.5784114}
+  m_LocalPosition: {x: 0.25454664, y: 2.42, z: 0.58}
   m_LocalScale: {x: 300, y: 299.99997, z: 299.99997}
   m_Children: []
   m_Father: {fileID: 1549598432}
@@ -778,7 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: {fileID: 11400000, guid: d4070c8a5f59d98459cdad6974956379, type: 2}
-  reward: {fileID: 11400000, guid: 94534a67044bd1e458339a9bec7c2d54, type: 2}
+  reward: {fileID: 11400000, guid: cf76a7a79ad508a49826307295ea7b40, type: 2}
 --- !u!114 &169073593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,7 +805,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 169073590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
+  m_Script: {fileID: 11500000, guid: 891ec178349b2a44da92d65ca5cb4c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Interaction:
@@ -808,7 +825,7 @@ MonoBehaviour:
   InteractionProposition:
     m_PersistentCalls:
       m_Calls: []
-  isActive: 0
+  isActive: 1
 --- !u!65 &169073594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -818,10 +835,26 @@ BoxCollider:
   m_GameObject: {fileID: 169073590}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.020503303, y: 0.02053787, z: 0.00905296}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &169073595
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169073590}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &190045525
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -993,6 +1026,7 @@ GameObject:
   - component: {fileID: 287161789}
   - component: {fileID: 287161790}
   - component: {fileID: 287161791}
+  - component: {fileID: 287161794}
   - component: {fileID: 287161792}
   - component: {fileID: 287161793}
   m_Layer: 9
@@ -1238,10 +1272,68 @@ MonoBehaviour:
   m_GameObject: {fileID: 287161785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 92e35c024dd043dba11122476dce6c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &287161793
+  stamina:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  spellPower:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  haste:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  criticalStrikeRating:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  armor:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  movementSpeed:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  jumpPower:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+--- !u!54 &287161793
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287161785}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &287161794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1250,13 +1342,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 287161785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 14c5002cc16766d4699f643c60f48337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatPanelPrefab: {fileID: 0}
-  showCombatPanelOnStart: 1
-  PanelOffset: {x: 0, y: 1, z: 0}
-  PanelScale: {x: 0, y: 0, z: 0}
+  scryerAttributes: {fileID: 287161792}
+  canBeTargeted: 0
 --- !u!64 &321187781
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1794,24 +1884,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interaction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: StepThrough
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  InteractionProposition:
-    m_PersistentCalls:
-      m_Calls: []
-  isActive: 1
 --- !u!1 &503227708 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3730327429019136688, guid: 7b0a5c52a4eab2e4ba729c02a275064f,
@@ -2293,7 +2365,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 662853663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
+  m_Script: {fileID: 11500000, guid: 891ec178349b2a44da92d65ca5cb4c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Interaction:
@@ -2333,6 +2405,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &662853669
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662853663}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &677968858
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4200,9 +4288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa673bacb7854643b41bbd6a10e9e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloakWindowPrefab: {fileID: 1223293640570812576, guid: ccf5201339bfc3f40949cfdcc5bd9033,
-    type: 3}
-  uiContainer: 0
 --- !u!135 &984577804
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4225,7 +4310,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 984577801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
+  m_Script: {fileID: 11500000, guid: 891ec178349b2a44da92d65ca5cb4c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Interaction:
@@ -5139,6 +5224,7 @@ GameObject:
   - component: {fileID: 1189097490}
   - component: {fileID: 1189097491}
   - component: {fileID: 1189097492}
+  - component: {fileID: 1189097495}
   - component: {fileID: 1189097493}
   - component: {fileID: 1189097494}
   m_Layer: 9
@@ -5385,10 +5471,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1189097486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 14c5002cc16766d4699f643c60f48337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1189097494
+  scryerAttributes: {fileID: 1189097495}
+  canBeTargeted: 0
+--- !u!54 &1189097494
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189097486}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1189097495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5397,13 +5501,51 @@ MonoBehaviour:
   m_GameObject: {fileID: 1189097486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 92e35c024dd043dba11122476dce6c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatPanelPrefab: {fileID: 0}
-  showCombatPanelOnStart: 1
-  PanelOffset: {x: 0, y: 1, z: 0}
-  PanelScale: {x: 0, y: 0, z: 0}
+  stamina:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  spellPower:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  haste:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  criticalStrikeRating:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  armor:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  movementSpeed:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  jumpPower:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
 --- !u!1 &1198019322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7901623080965309205, guid: 7b0a5c52a4eab2e4ba729c02a275064f,
@@ -5823,24 +5965,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interaction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1203963238}
-        m_MethodName: StepThrough
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  InteractionProposition:
-    m_PersistentCalls:
-      m_Calls: []
-  isActive: 1
 --- !u!1001 &1310688951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6068,6 +6192,7 @@ GameObject:
   - component: {fileID: 1371069659}
   - component: {fileID: 1371069660}
   - component: {fileID: 1371069661}
+  - component: {fileID: 1371069664}
   - component: {fileID: 1371069662}
   - component: {fileID: 1371069663}
   m_Layer: 9
@@ -6314,10 +6439,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1371069655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 14c5002cc16766d4699f643c60f48337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1371069663
+  scryerAttributes: {fileID: 1371069664}
+  canBeTargeted: 0
+--- !u!54 &1371069663
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371069655}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1371069664
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6326,13 +6469,51 @@ MonoBehaviour:
   m_GameObject: {fileID: 1371069655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 92e35c024dd043dba11122476dce6c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatPanelPrefab: {fileID: 0}
-  showCombatPanelOnStart: 1
-  PanelOffset: {x: 0, y: 1, z: 0}
-  PanelScale: {x: 0, y: 0, z: 0}
+  stamina:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  spellPower:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  haste:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  criticalStrikeRating:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  armor:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  movementSpeed:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  jumpPower:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
 --- !u!1 &1372236487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3956127469989741064, guid: 7b0a5c52a4eab2e4ba729c02a275064f,
@@ -6564,9 +6745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa673bacb7854643b41bbd6a10e9e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloakWindowPrefab: {fileID: 1223293640570812576, guid: ccf5201339bfc3f40949cfdcc5bd9033,
-    type: 3}
-  uiContainer: 0
 --- !u!135 &1383274265
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6589,7 +6767,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1383274262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
+  m_Script: {fileID: 11500000, guid: 891ec178349b2a44da92d65ca5cb4c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Interaction:
@@ -7296,7 +7474,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1571134242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
+  m_Script: {fileID: 11500000, guid: 891ec178349b2a44da92d65ca5cb4c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Interaction:
@@ -7336,6 +7514,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &1571134248
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571134242}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &1571977192
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7899,7 +8093,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1696242687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
+  m_Script: {fileID: 11500000, guid: 891ec178349b2a44da92d65ca5cb4c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Interaction:
@@ -7939,6 +8133,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &1696242693
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696242687}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1716101324 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4290580503629584641, guid: 7b0a5c52a4eab2e4ba729c02a275064f,
@@ -9022,6 +9232,7 @@ GameObject:
   - component: {fileID: 1895513249}
   - component: {fileID: 1895513250}
   - component: {fileID: 1895513251}
+  - component: {fileID: 1895513254}
   - component: {fileID: 1895513252}
   - component: {fileID: 1895513253}
   m_Layer: 9
@@ -9268,10 +9479,68 @@ MonoBehaviour:
   m_GameObject: {fileID: 1895513245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84e96830a7a1fda4086d9873155201ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 92e35c024dd043dba11122476dce6c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1895513253
+  stamina:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  spellPower:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  haste:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  criticalStrikeRating:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  armor:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  movementSpeed:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+  jumpPower:
+    baseValue: 10
+    remapMultiplier: 1
+    remapExponent: 1
+    horizontalOffset: 0
+    verticalOffset: 0
+--- !u!54 &1895513253
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895513245}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1895513254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9280,13 +9549,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1895513245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da175ddcb305ad47a4212d673d368cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 14c5002cc16766d4699f643c60f48337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatPanelPrefab: {fileID: 0}
-  showCombatPanelOnStart: 1
-  PanelOffset: {x: 0, y: 1, z: 0}
-  PanelScale: {x: 0, y: 0, z: 0}
+  scryerAttributes: {fileID: 1895513252}
+  canBeTargeted: 0
 --- !u!1 &1897496755
 GameObject:
   m_ObjectHideFlags: 0
@@ -9334,9 +9601,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa673bacb7854643b41bbd6a10e9e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloakWindowPrefab: {fileID: 1223293640570812576, guid: ccf5201339bfc3f40949cfdcc5bd9033,
-    type: 3}
-  uiContainer: 0
 --- !u!135 &1897496758
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9359,7 +9623,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1897496755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
+  m_Script: {fileID: 11500000, guid: 891ec178349b2a44da92d65ca5cb4c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Interaction:
@@ -9623,24 +9887,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interaction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 366380479}
-        m_MethodName: StepThrough
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  InteractionProposition:
-    m_PersistentCalls:
-      m_Calls: []
-  isActive: 1
 --- !u!1 &1970733420
 GameObject:
   m_ObjectHideFlags: 0
@@ -10476,24 +10722,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d05813ecb43c749aa56ab053e2607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interaction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6983215121072446115}
-        m_MethodName: Travel
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  InteractionProposition:
-    m_PersistentCalls:
-      m_Calls: []
-  isActive: 1
 --- !u!23 &64037983504638148
 MeshRenderer:
   m_ObjectHideFlags: 0

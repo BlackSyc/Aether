@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5e89aaaadbd02e4393182b9711a402a, type: 3}
+  m_Name: Arcane Missile
+  m_EditorClassIdentifier: 
+  spellName: Arcane Missile
+  icon: {fileID: 21300000, guid: 0cec62a4bd4591d489c75c76b247dc01, type: 3}
+  spellDescription: A simple missile spell used to hit arcane entities.
+  castTime: 2
+  coolDown: 2
+  onGlobalCooldown: 1
+  castWhileMoving: 0
+  target: {fileID: 11400000, guid: 2d7bb053f59c86c4a95573fdf0e1555b, type: 2}
+  castingRequirements: []
+  spellEffects:
+  - {fileID: 11400000, guid: 3773c23436ce4394791448cbef09fca8, type: 2}
+  - {fileID: 11400000, guid: c9a1ba1d991e15a4dbcc0def829e85ed, type: 2}

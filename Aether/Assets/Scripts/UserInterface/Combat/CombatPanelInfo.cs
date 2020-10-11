@@ -9,7 +9,7 @@ namespace Aether.UserInterface.Combat
 
         public ICombatSystem CombatSystem { get; private set; }
 
-        private CombatPanel combatPanel;
+        private CombatPanel _combatPanel;
 
 
         [SerializeField]
@@ -35,21 +35,24 @@ namespace Aether.UserInterface.Combat
 
         public void ShowCombatPanel()
         {
-            if (combatPanel == null)
+            if (_combatPanel == null)
                 CreateCombatPanel();
 
-            combatPanel.gameObject.SetActive(true);
+            _combatPanel.gameObject.SetActive(true);
         }
 
         public void HideCombatPanel()
         {
-            combatPanel.gameObject.SetActive(false);
+            _combatPanel.gameObject.SetActive(false);
         }
 
         private void CreateCombatPanel()
         {
-            combatPanel = Instantiate(combatPanelPrefab, transform)
-                .SetInfo(this);
+            if (combatPanelPrefab != null)
+            {
+                _combatPanel = Instantiate(combatPanelPrefab, transform)
+                    .SetInfo(this);
+            }
         }
     }
 }

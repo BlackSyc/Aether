@@ -1,4 +1,4 @@
-﻿using Aether.Core.Interaction;
+﻿using Syc.Core.Interaction;
 using UnityEngine;
 
 namespace Aether.Attunement
@@ -10,7 +10,7 @@ namespace Aether.Attunement
         [SerializeField]
         private bool travelReverse;
 
-        public void Travel(IInteractor _, IInteractable __)
+        public void Travel(Interactor _, Interactable __)
         {
             Traveller.StartTravel(travelReverse);
         }

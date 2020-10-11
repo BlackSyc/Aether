@@ -1,8 +1,6 @@
-﻿using Aether.Core;
-using Aether.Core.Cloaks;
-using Aether.Core.Interaction;
-using Aether.Core.UserInterface;
+﻿using Aether.Core.Cloaks;
 using Aether.Input;
+using Syc.Core.Interaction;
 using UnityEngine;
 
 namespace Aether.UserInterface.Cloaks
@@ -10,14 +8,6 @@ namespace Aether.UserInterface.Cloaks
     [RequireComponent(typeof(ICloakProvider))]
     public class CloakProviderUILink : MonoBehaviour
     {
-        [SerializeField]
-        private CloakWindow cloakWindowPrefab;
-
-        [SerializeField]
-        private UIContainer uiContainer;
-
-        private CloakWindow _activeCloakWindow;
-
         public ICloakProvider CloakProvider { get; private set; }
 
         private void Awake()
@@ -25,27 +15,17 @@ namespace Aether.UserInterface.Cloaks
             CloakProvider = GetComponent<ICloakProvider>();
         }
 
-        public void OpenWindow(IInteractor interactor, IInteractable _)
+        public void OpenWindow(Interactor interactor, Interactable _)
         {
-            RectTransform windowParent = Player.Instance.Get<IUserInterface>().GetContainer(uiContainer);
-
-            if (windowParent == null)
-                return;
-
-            _activeCloakWindow = Instantiate(cloakWindowPrefab, windowParent).GetComponent<CloakWindow>()
-                .Link(this)
-                .Build(interactor);
+            WindowManager.Instance.ShowCloakWindowFor(this, interactor);
 
             InputSystem.SwitchToActionMap(ActionMap.PopUp);
         }
 
         public void CloseWindow()
         {
-            Destroy(_activeCloakWindow.gameObject);
-            _activeCloakWindow = null;
+            WindowManager.Instance.HideCloakWindow();
             InputSystem.SwitchToActionMap(ActionMap.Player);
         }
-
-
     }
 }

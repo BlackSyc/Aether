@@ -1,4 +1,4 @@
-﻿using Aether.Core.Interaction;
+﻿using Syc.Core.Interaction;
 
 namespace Aether.Core.Cloaks
 {
@@ -6,8 +6,8 @@ namespace Aether.Core.Cloaks
     {
         ICloak Cloak { get; }
 
-        void Equip(IInteractor interactor);
+        void Equip(Interactor interactor);
 
-        void Unequip(IInteractor interactor);
+        void Unequip(Interactor interactor);
     }
 }

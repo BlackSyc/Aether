@@ -18,9 +18,10 @@ MonoBehaviour:
   keywords: Forcing - Breaking - Devastating
   description: A request from the Aspect of Nightmare.
   spells:
-  - {fileID: 11400000, guid: b03ca272dc6d5e2448a9d427189b546c, type: 2}
-  - {fileID: 11400000, guid: ce24bd7d267544b478698e3874a1749a, type: 2}
-  - {fileID: 11400000, guid: d4a4e5adc9674ac4bb5f9a4fbf6e0713, type: 2}
-  - {fileID: 11400000, guid: 0d2bbc6e969173f4985b53dbcbbaf178, type: 2}
+  - {fileID: 11400000, guid: 94534a67044bd1e458339a9bec7c2d54, type: 2}
+  - {fileID: 11400000, guid: 6896be7af7ee3eb4594bda2ba32746e9, type: 2}
+  - {fileID: 11400000, guid: 2e6db3359cd47f94b9c2ec574e9c3494, type: 2}
+  - {fileID: 11400000, guid: 9ab0c50d1bc659f4e858d865fa0230f1, type: 2}
+  - {fileID: 11400000, guid: 6a7df26c6c9f63d44be80a563768fd51, type: 2}
   cloakPrefab: {fileID: 1511576211006047054, guid: 9fd8a3fd315a3be4a8142d4122d0c2dc,
     type: 3}

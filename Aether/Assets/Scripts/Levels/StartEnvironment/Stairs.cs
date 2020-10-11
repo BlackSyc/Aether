@@ -1,21 +1,21 @@
 ﻿using Aether.Core;
 using Aether.Core.Cloaks;
-using Aether.Core.Interaction;
+using Syc.Core.Interaction;
 using UnityEngine;
 
 namespace Aether.Levels.StartEnvironment
 {
-    [RequireComponent(typeof(IInteractable))]
+    [RequireComponent(typeof(Interactable))]
     [RequireComponent(typeof(Animator))]
     public class Stairs : MonoBehaviour
     {
         private Animator animator;
 
-        private IInteractable interactable;
+        private Interactable interactable;
 
         void Start()
         {
-            interactable = GetComponent<IInteractable>();
+            interactable = GetComponent<Interactable>();
 
             animator = GetComponent<Animator>();
             animator.keepAnimatorControllerStateOnDisable = true;

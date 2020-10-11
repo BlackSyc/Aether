@@ -1,10 +1,10 @@
 using Aether.Assets.Assemblies.Core.Items;
 using Aether.Core.Attunement;
-using Aether.Core.Interaction;
 using Aether.Core.Items.ScriptableObjects;
 using Aether.Core.SceneManagement;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Syc.Core.Interaction;
 using UnityEngine;
 
 namespace Aether.Attunement
@@ -63,7 +63,7 @@ namespace Aether.Attunement
         }
 
         // Interaction Handler
-        public void Interact(IInteractor interactor, IInteractable _)
+        public void Interact(Interactor interactor)
         {
             IInventory interactorInventory = interactor.Get<IInventory>();
 
@@ -75,9 +75,9 @@ namespace Aether.Attunement
             Core.Attunement.Events.Interact(this);
         }
 
-        public void PrepareForInteraction(IInteractor interactor, IInteractable interactable)
+        public void PrepareForInteraction(Interactor interactor, Interactable interactable)
         {
-            if (interactable != GetComponent<IInteractable>())
+            if (interactable != GetComponent<Interactable>())
                 return;
 
             if (interactor.Get<IInventory>().Keystones.Count > 0)

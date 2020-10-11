@@ -1,6 +1,6 @@
 ﻿using Aether.Core;
 using Aether.Core.Cloaks;
-using Aether.Core.Interaction;
+using Syc.Core.Interaction;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,7 +39,7 @@ namespace Aether.UserInterface.Cloaks
             return this;
         }
 
-        public CloakWindow Build(IInteractor interactor)
+        public CloakWindow Build(Interactor interactor)
         {
             header.text = _cloakProvider.Cloak.Name;
             keywords.text = _cloakProvider.Cloak.Keywords;

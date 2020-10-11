@@ -108,8 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a1dd5ec9749354f833da9ecd179b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatSystem: {fileID: 0}
-  defaultSpell: {fileID: 0}
+  combatSystem: {fileID: 3313298053226653178}
+  defaultSpell: {fileID: 11400000, guid: cf76a7a79ad508a49826307295ea7b40, type: 2}
 --- !u!1 &476305285128632751
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subSystems:
   - {fileID: 3313298053226653178}
+  - {fileID: 476305285026207482}
 --- !u!114 &1015774075186322829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +269,23 @@ MonoBehaviour:
   spellSystem:
     castOrigin: {fileID: 476305285402853955}
     globalCooldown: 1
-    spells: []
+    spells:
+    - spell: {fileID: 0}
+      coolDownUntil: 0
+    - spell: {fileID: 0}
+      coolDownUntil: 0
+    - spell: {fileID: 0}
+      coolDownUntil: 0
+    - spell: {fileID: 0}
+      coolDownUntil: 0
+    - spell: {fileID: 0}
+      coolDownUntil: 0
+    - spell: {fileID: 0}
+      coolDownUntil: 0
+    - spell: {fileID: 0}
+      coolDownUntil: 0
+    - spell: {fileID: 0}
+      coolDownUntil: 0
   healthSystem:
     currentHealth: 4567
   defaultAttributesSystem: {fileID: 3768501987095304042}

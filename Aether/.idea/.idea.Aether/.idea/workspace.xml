@@ -31,23 +31,469 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee8c9066-4838-4414-bd89-15ebab8dbf6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/AuraTooltip.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TooltipManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Puzzle1_Missile/Arcane Missile.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Puzzle1_Missile/Arcane Missile.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Puzzle1_Missile/New Spawn Object.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Puzzle1_Missile/New Spawn Object.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Puzzle1_Missile/Projectile.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Puzzle1_Missile/TriggerMissileEffect.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Puzzle1_Missile/TriggerMissileEffect.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/BasicCombatSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TriggerMissileTarget.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/WindowManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Settings.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CombatPanel/AuraIcon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CombatPanel/AuraIcon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CombatPanel/CombatPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CombatPanel/CombatPanel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HotStreak.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HotStreak.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/SprintAura.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Sprint/SprintAura.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Puzzle1_Missile.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Demo.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Demo.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Puzzle1_Missile/Projectile.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Druideskill_15_nobg.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Druideskill_15_nobg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Druideskill_15_nobg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Druideskill_15_nobg.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Druideskill_21_nobg.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Druideskill_21_nobg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Druideskill_21_nobg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Druideskill_21_nobg.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Druideskill_26_nobg.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Druideskill_26_nobg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Druideskill_26_nobg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Druideskill_26_nobg.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Druideskill_31_nobg.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Druideskill_31_nobg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Druideskill_31_nobg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Druideskill_31_nobg.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Druideskill_32_nobg.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Druideskill_32_nobg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Druideskill_32_nobg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Druideskill_32_nobg.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Mageskill_49_nobg.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Mageskill_49_nobg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Mageskill_49_nobg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Mageskill_49_nobg.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Shamanskill_09_nobg.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Shamanskill_09_nobg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Shamanskill_09_nobg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Shamanskill_09_nobg.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Shamanskill_10_nobg.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Shamanskill_10_nobg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Shamanskill_10_nobg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Shamanskill_10_nobg.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Warlock_25_nobg.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Warlock_25_nobg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/500_skillicons/Skill_nobg/Warlock_25_nobg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Icons/Warlock_25_nobg.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Character.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/Armature_Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Character/Armature_Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/Armature_Idle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Character/Armature_Idle.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/Character.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Character/Character.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/Character.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Character/Character.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/LeafPlatforms.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/LeafPlatforms.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/LeafPlatforms/Dream.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/LeafPlatforms/Dream.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/LeafPlatforms/Dream/Despawn.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/LeafPlatforms/Dream/Despawn.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/LeafPlatforms/Dream/Despawn.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/LeafPlatforms/Dream/Despawn.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/LeafPlatforms/Dream/Leaf.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/LeafPlatforms/Dream/Leaf.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/LeafPlatforms/Dream/Leaf.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/LeafPlatforms/Dream/Leaf.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/LeafPlatforms/Dream/Spawn.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/LeafPlatforms/Dream/Spawn.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/LeafPlatforms/Dream/Spawn.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/LeafPlatforms/Dream/Spawn.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Corruption.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Corruption/Hit_Corruption.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/Hit_Corruption.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Corruption/Hit_Corruption.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/Hit_Corruption.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Corruption/MissileTarget_Corruption.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/MissileTarget_Corruption.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Corruption/MissileTarget_Corruption.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/MissileTarget_Corruption.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToCenter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToCenter.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToCenter.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToCenter.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToCloakPosition_Corruption.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToCloakPosition_Corruption.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToCloakPosition_Corruption.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToCloakPosition_Corruption.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToOriginalPosition.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToOriginalPosition.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToOriginalPosition.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToOriginalPosition.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Corruption/Unhit_Corruption.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/Unhit_Corruption.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Corruption/Unhit_Corruption.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/Unhit_Corruption.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Dream.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Dream/Hit_Dream.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/Hit_Dream.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Dream/Hit_Dream.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/Hit_Dream.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Dream/MissileTarget_Dream.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/MissileTarget_Dream.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Dream/MissileTarget_Dream.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/MissileTarget_Dream.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToCenter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToCenter.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToCenter.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToCenter.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToCloakPosition_Dream.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToCloakPosition_Dream.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToCloakPosition_Dream.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToCloakPosition_Dream.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToOriginalPosition.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToOriginalPosition.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToOriginalPosition.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToOriginalPosition.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Dream/Unhit_Dream.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/Unhit_Dream.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Dream/Unhit_Dream.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/Unhit_Dream.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Illusion.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Illusion/Hit_Illusion.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/Hit_Illusion.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Illusion/Hit_Illusion.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/Hit_Illusion.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Illusion/MissileTarget_Illusion.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/MissileTarget_Illusion.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Illusion/MissileTarget_Illusion.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/MissileTarget_Illusion.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToCenter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToCenter.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToCenter.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToCenter.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToCloakPosition_Illusion.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToCloakPosition_Illusion.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToCloakPosition_Illusion.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToCloakPosition_Illusion.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToOriginalPosition.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToOriginalPosition.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToOriginalPosition.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToOriginalPosition.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Illusion/Unhit_Illusion.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/Unhit_Illusion.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Illusion/Unhit_Illusion.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/Unhit_Illusion.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Nightmare.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Nightmare/Hit_Nightmare.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/Hit_Nightmare.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Nightmare/Hit_Nightmare.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/Hit_Nightmare.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Nightmare/MissileTarget_Nightmare.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/MissileTarget_Nightmare.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Nightmare/MissileTarget_Nightmare.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/MissileTarget_Nightmare.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToCenter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToCenter.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToCenter.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToCenter.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToCloakPosition_Nightmare.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToCloakPosition_Nightmare.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToCloakPosition_Nightmare.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToCloakPosition_Nightmare.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToOriginalPosition.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToOriginalPosition.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToOriginalPosition.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToOriginalPosition.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Nightmare/Unhit_Nightmare.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/Unhit_Nightmare.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Puzzle1/Missile Targets/Target_Nightmare/Unhit_Nightmare.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/Unhit_Nightmare.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Dream Stairs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Dream Stairs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Dream Stairs/Dream Stairs.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Dream Stairs/Dream Stairs.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Dream Stairs/Dream Stairs.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Dream Stairs/Dream Stairs.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Dream Stairs/Dream_Activated.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Dream Stairs/Dream_Activated.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Dream Stairs/Dream_Activated.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Dream Stairs/Dream_Activated.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Dream Stairs/Dream_Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Dream Stairs/Dream_Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Dream Stairs/Dream_Idle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Dream Stairs/Dream_Idle.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Dream Stairs/Dream_Moved.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Dream Stairs/Dream_Moved.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Dream Stairs/Dream_Moved.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Dream Stairs/Dream_Moved.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Illusion Stairs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Illusion Stairs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Illusion Stairs/Illusion Stairs.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Illusion Stairs/Illusion Stairs.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Illusion Stairs/Illusion Stairs.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Illusion Stairs/Illusion Stairs.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Illusion Stairs/Illusion_Activated.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Illusion Stairs/Illusion_Activated.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Illusion Stairs/Illusion_Activated.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Illusion Stairs/Illusion_Activated.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Illusion Stairs/Illusion_Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Illusion Stairs/Illusion_Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Illusion Stairs/Illusion_Idle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Illusion Stairs/Illusion_Idle.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Illusion Stairs/Illusion_Moved.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Illusion Stairs/Illusion_Moved.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Illusion Stairs/Illusion_Moved.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Illusion Stairs/Illusion_Moved.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Nightmare Stairs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Nightmare Stairs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Nightmare Stairs/Nightmare Stairs.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Nightmare Stairs/Nightmare Stairs.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Nightmare Stairs/Nightmare Stairs.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Nightmare Stairs/Nightmare Stairs.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Nightmare Stairs/Nightmare_Activated.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Nightmare Stairs/Nightmare_Activated.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Nightmare Stairs/Nightmare_Activated.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Nightmare Stairs/Nightmare_Activated.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Nightmare Stairs/Nightmare_Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Nightmare Stairs/Nightmare_Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Nightmare Stairs/Nightmare_Idle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Nightmare Stairs/Nightmare_Idle.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Nightmare Stairs/Nightmare_Moved.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Nightmare Stairs/Nightmare_Moved.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Stairs/Nightmare Stairs/Nightmare_Moved.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Stairs/Nightmare Stairs/Nightmare_Moved.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Travel.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Travel.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Travel/Dream.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Travel/Dream.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Travel/Dream/DreamLevel1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Travel/Dream/DreamLevel1.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Travel/Dream/DreamLevel1.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Travel/Dream/DreamLevel1.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Travel/Dream/DreamLevel2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Travel/Dream/DreamLevel2.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Travel/Dream/DreamLevel2.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Travel/Dream/DreamLevel2.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Travel/Dream/DreamTraveller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Travel/Dream/DreamTraveller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Travel/Dream/DreamTraveller.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Travel/Dream/DreamTraveller.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/AttunementWindow.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/AttunementWindow.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/AttunementWindow/Click.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/AttunementWindow/Click.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/AttunementWindow/Click.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/AttunementWindow/Click.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/AttunementWindow/Hover.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/AttunementWindow/Hover.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/AttunementWindow/Hover.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/AttunementWindow/Hover.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/AttunementWindow/KeystoneSelector.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/AttunementWindow/KeystoneSelector.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/AttunementWindow/KeystoneSelector.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/AttunementWindow/KeystoneSelector.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/AttunementWindow/New.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/AttunementWindow/New.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/AttunementWindow/New.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/AttunementWindow/New.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/AttunementWindow/Selected.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/AttunementWindow/Selected.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/AttunementWindow/Selected.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/AttunementWindow/Selected.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/CastBar.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/CastBar.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/CastBar/Cast.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/CastBar/Cast.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/CastBar/Cast.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/CastBar/Cast.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/CastBar/CastBar.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/CastBar/CastBar.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/CastBar/CastBar.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/CastBar/CastBar.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/CastBar/CastCancelled.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/CastBar/CastCancelled.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/CastBar/CastCancelled.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/CastBar/CastCancelled.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/CastBar/CastComplete.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/CastBar/CastComplete.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/CastBar/CastComplete.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/CastBar/CastComplete.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Crosshair.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Crosshair.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Crosshair/Crosshair.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Crosshair/Crosshair.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Crosshair/Crosshair.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Crosshair/Crosshair.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Crosshair/Show.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Crosshair/Show.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Crosshair/Show.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Crosshair/Show.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Crosshair/TargetFound.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Crosshair/TargetFound.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Crosshair/TargetFound.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Crosshair/TargetFound.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Crosshair/TargetLost.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Crosshair/TargetLost.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Crosshair/TargetLost.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Crosshair/TargetLost.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/DialogWindow.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/DialogWindow.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/DialogWindow/Appear.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/DialogWindow/Appear.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/DialogWindow/Appear.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/DialogWindow/Appear.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/DialogWindow/DialogWindow.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/DialogWindow/DialogWindow.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/DialogWindow/DialogWindow.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/DialogWindow/DialogWindow.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/DialogWindow/Disappear.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/DialogWindow/Disappear.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/DialogWindow/Disappear.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/DialogWindow/Disappear.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/HealthTooltips.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/HealthTooltips.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/HealthTooltips/Health.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/HealthTooltips/Health.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/HealthTooltips/Health.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/HealthTooltips/Health.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/HealthTooltips/HealthDelta_Show.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/HealthTooltips/HealthDelta_Show.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/HealthTooltips/HealthDelta_Show.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/HealthTooltips/HealthDelta_Show.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/HintWindow.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/HintWindow.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/HintWindow/HintContainer.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/HintWindow/HintContainer.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/HintWindow/HintContainer.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/HintWindow/HintContainer.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/HintWindow/Hints.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/HintWindow/Hints.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/HintWindow/Hints/HIntSpawn.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/HintWindow/Hints/HIntSpawn.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/HintWindow/Hints/HIntSpawn.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/HintWindow/Hints/HIntSpawn.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/HintWindow/Hints/HintDespawn.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/HintWindow/Hints/HintDespawn.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/HintWindow/Hints/HintDespawn.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/HintWindow/Hints/HintDespawn.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/InteractionTooltip.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/InteractionTooltip.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/InteractionTooltip/Appear.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/InteractionTooltip/Appear.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/InteractionTooltip/Appear.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/InteractionTooltip/Appear.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/InteractionTooltip/Disappear.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/InteractionTooltip/Disappear.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/InteractionTooltip/Disappear.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/InteractionTooltip/Disappear.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/InteractionTooltip/Hidden.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/InteractionTooltip/Hidden.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/InteractionTooltip/Hidden.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/InteractionTooltip/Hidden.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/InteractionTooltip/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/InteractionTooltip/Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/InteractionTooltip/Idle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/InteractionTooltip/Idle.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/InteractionTooltip/InteractionTooltip.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/InteractionTooltip/InteractionTooltip.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/InteractionTooltip/InteractionTooltip.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/InteractionTooltip/InteractionTooltip.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/InteractionTooltip/Performed.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/InteractionTooltip/Performed.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/InteractionTooltip/Performed.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/InteractionTooltip/Performed.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Inventory.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Inventory.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Inventory/Active.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Inventory/Active.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Inventory/Active.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Inventory/Active.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Inventory/Hide.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Inventory/Hide.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Inventory/Hide.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Inventory/Hide.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Inventory/Hover.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Inventory/Hover.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Inventory/Hover.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Inventory/Hover.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Inventory/KeystoneInventory.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Inventory/KeystoneInventory.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Inventory/KeystoneInventory.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Inventory/KeystoneInventory.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Inventory/Show.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Inventory/Show.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Inventory/Show.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Inventory/Show.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Inventory/Unhover.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Inventory/Unhover.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Inventory/Unhover.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Inventory/Unhover.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/PlayerHealth.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/PlayerHealth.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/PlayerHealth/Health.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/PlayerHealth/Health.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/PlayerHealth/Health.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/PlayerHealth/Health.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/Hover.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/Hover.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/Hover.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/Hover.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/SpellButton.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/SpellButton.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/SpellButton.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/SpellButton.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/SpellButtonPanel.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/SpellButtonPanel.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/SpellButtonPanel/Hover.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/SpellButtonPanel/Hover.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/SpellButtonPanel/Hover.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/SpellButtonPanel/Hover.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/SpellButtonPanel/KeybindHighlight.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/SpellButtonPanel/KeybindHighlight.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/SpellButtonPanel/KeybindHighlight.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/SpellButtonPanel/KeybindHighlight.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/SpellButtonPanel/NewSpellSelected.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/SpellButtonPanel/NewSpellSelected.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/SpellButtonPanel/NewSpellSelected.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/SpellButtonPanel/NewSpellSelected.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/SpellButtonPanel/SpellButtonPanel.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/SpellButtonPanel/SpellButtonPanel.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/SpellButtonPanel/SpellButtonPanel.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/SpellButtonPanel/SpellButtonPanel.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/SpellButtonPanel/Unhover.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/SpellButtonPanel/Unhover.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/Spell Buttons/SpellButtonPanel/Unhover.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/Spell Buttons/SpellButtonPanel/Unhover.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/TransitionPanel.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/TransitionPanel.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/TransitionPanel/Transition.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/TransitionPanel/Transition.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/TransitionPanel/Transition.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/TransitionPanel/Transition.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/TransitionPanel/TransitionPanel.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/TransitionPanel/TransitionPanel.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/User Interface/TransitionPanel/TransitionPanel.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/User Interface/TransitionPanel/TransitionPanel.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Graphics.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Cloudymorning4k.hdr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Graphics/Cloudymorning4k.hdr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Cloudymorning4k.hdr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Graphics/Cloudymorning4k.hdr.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Diffusion Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Graphics/Diffusion Profile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Diffusion Profile.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Graphics/Diffusion Profile.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/HDRI_SkyBox.hdr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Graphics/HDRI_SkyBox.hdr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/HDRI_SkyBox.hdr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Graphics/HDRI_SkyBox.hdr.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Pipeline.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Graphics/Pipeline.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Pipeline.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Graphics/Pipeline.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputSystem.inputsettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/InputSystem.inputsettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputSystem.inputsettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/InputSystem.inputsettings.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Logger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Logger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/BasicCombatSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Arcane.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Arcane.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Arcane/Arcane.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Arcane/Arcane.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Arcane/Arcane.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Arcane/Arcane.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Arcane/ArcaneGraph.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Arcane/ArcaneGraph.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Arcane/ArcaneGraph.shadergraph.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Arcane/ArcaneGraph.shadergraph.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Body.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Body.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Body.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Body.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cloaks.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Cloaks.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cloaks/Black.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Cloaks/Black.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cloaks/Black.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Cloaks/Black.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cloaks/DreamCloak.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Cloaks/DreamCloak.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cloaks/DreamCloak.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Cloaks/DreamCloak.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cloaks/IllusionCloak.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Cloaks/IllusionCloak.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cloaks/IllusionCloak.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Cloaks/IllusionCloak.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cloaks/NightmareCloak.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Cloaks/NightmareCloak.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cloaks/NightmareCloak.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Cloaks/NightmareCloak.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Glass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Glass.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Glass.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Gold.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Gold.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Gold/Gold.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Gold/Gold.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Gold/Gold.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Gold/Gold.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Gold/GoldGraph.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Gold/GoldGraph.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Gold/GoldGraph.shadergraph.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Gold/GoldGraph.shadergraph.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Grass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Grass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Grass.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Grass.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Hands.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Hands.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Hands.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Hands.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Corruption.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Corruption.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Corruption/LeafMeshCorruption.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Corruption/LeafMeshCorruption.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Corruption/LeafMeshCorruption.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Corruption/LeafMeshCorruption.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Corruption/LeafMeshCorruption.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Corruption/LeafMeshCorruption.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Corruption/LeafMeshCorruption.shadergraph.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Corruption/LeafMeshCorruption.shadergraph.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Dream.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Dream.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Dream/LeafMeshDream.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Dream/LeafMeshDream.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Dream/LeafMeshDream.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Dream/LeafMeshDream.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Dream/LeafMeshDream.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Dream/LeafMeshDream.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Dream/LeafMeshDream.shadergraph.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Dream/LeafMeshDream.shadergraph.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Illusion.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Illusion.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Illusion/LeafMeshIllusion.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Illusion/LeafMeshIllusion.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Illusion/LeafMeshIllusion.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Illusion/LeafMeshIllusion.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Illusion/LeafMeshIllusion.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Illusion/LeafMeshIllusion.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Illusion/LeafMeshIllusion.shadergraph.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Illusion/LeafMeshIllusion.shadergraph.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Nightmare.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Nightmare.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Nightmare/LeafMeshNightmare.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Nightmare/LeafMeshNightmare.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Nightmare/LeafMeshNightmare.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Nightmare/LeafMeshNightmare.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Nightmare/LeafMeshNightmare.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Nightmare/LeafMeshNightmare.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LeafPlatforms/Nightmare/LeafMeshNightmare.shadergraph.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/LeafPlatforms/Nightmare/LeafMeshNightmare.shadergraph.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/ArcaneMissile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/ArcaneMissile.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/ArcaneMissile.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/ArcaneMissile.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/ArcaneMissile2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/ArcaneMissile2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/ArcaneMissile2.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/ArcaneMissile2.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/DreamMissile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/DreamMissile.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/DreamMissile.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/DreamMissile.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/DreamMissile2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/DreamMissile2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/DreamMissile2.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/DreamMissile2.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/Missile.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/Missile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/Missile.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/Missile.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/NightmareMissile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/NightmareMissile.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/NightmareMissile.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/NightmareMissile.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/NightmareMissile2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/NightmareMissile2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Missiles/NightmareMissile2.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Missiles/NightmareMissile2.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Stairs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Stairs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Stairs/DreamStairs.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Stairs/DreamStairs.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Stairs/DreamStairs.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Stairs/DreamStairs.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Stairs/IllusionStairs.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Stairs/IllusionStairs.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Stairs/IllusionStairs.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Stairs/IllusionStairs.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Stairs/Nightmare Stairs.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Stairs/Nightmare Stairs.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Stairs/Nightmare Stairs.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Stairs/Nightmare Stairs.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Textures/Albedo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Textures/Albedo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Textures/Albedo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Textures/Albedo.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Textures/AmbientOcclusion.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Textures/AmbientOcclusion.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Textures/AmbientOcclusion.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Textures/AmbientOcclusion.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Textures/HeightMap.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Textures/HeightMap.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Textures/HeightMap.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Textures/HeightMap.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Textures/NormalMap.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Textures/NormalMap.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Textures/NormalMap.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Textures/NormalMap.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Textures/Rougness.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Textures/Rougness.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Textures/Rougness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Textures/Rougness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Tiles 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Tiles 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Tiles 1.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Tiles 1.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Tiles.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Tiles.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/Tiles.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/Tiles.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/TilesGraph.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/TilesGraph.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/TiledFloor/TilesGraph.shadergraph.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/TiledFloor/TilesGraph.shadergraph.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Transparent.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Transparent.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Transparent/Black 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Transparent/Black 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Transparent/Black 1.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Transparent/Black 1.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Transparent/DreamCloak 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Transparent/DreamCloak 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Transparent/DreamCloak 1.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Transparent/DreamCloak 1.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Access Point.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Access Point.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Access Point.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Access Point.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Arch.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Arch.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Arch.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Arch.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/CharacterModel.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/CharacterModel.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/CharacterModel.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/CharacterModel.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Cloak.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Cloak.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Cloak.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Cloak.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Dream_level1.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Dream_level1.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Dream_level1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Dream_level1.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Lantern.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Lantern.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Lantern.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Lantern.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Leaf.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Leaf.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Leaf.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Leaf.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Missile.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Missile.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Missile.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Missile.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Platform1.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Platform1.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Platform1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Platform1.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/PlatformStairs.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/PlatformStairs.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/PlatformStairs.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/PlatformStairs.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Sigil.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Sigil.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Sigil.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/Sigil.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/TravellerPlatform.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/TravellerPlatform.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/TravellerPlatform.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Models/TravellerPlatform.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Base.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Base.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Respawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Respawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/AuraIcon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/AuraIcon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerCombatPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerCombatPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerTargetIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerTargetIndicator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Cloaks/Nightmare.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Cloaks/Nightmare.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attunement/AttunementDevice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attunement/AttunementDevice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attunement/TravellerPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attunement/TravellerPlatform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cloaks/CloakProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cloaks/CloakProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cloaks/Shoulder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cloaks/Shoulder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/CopyCameraRotation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/CopyCameraRotation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TriggerMissileTarget.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerSpellSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerSpellSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Cloaks/ICloakProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Cloaks/ICloakProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Interaction.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Interaction/Events.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Interaction/Events.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/WindowManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Interaction/IInteractable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Interaction/IInteractable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Interaction/IInteractor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Interaction/IInteractor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/UserInterface/IUserInterface.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/UserInterface/IUserInterface.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/PlayerInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Aether.Interaction.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Aether.Interaction.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/AspectOfCreation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/AspectOfCreation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Puzzle1_Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Puzzle1_Manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Puzzle1_MissileTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Puzzle1MissileTarget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Puzzle1_MissileTarget.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Puzzle1MissileTarget.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Stairs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Stairs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Cloaks/CloakProviderUILink.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Cloaks/CloakProviderUILink.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Cloaks/CloakWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Cloaks/CloakWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanelInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanelInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellTooltip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellTooltip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Interaction/InteractionTooltip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Interaction/InteractionSuggestion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Interaction/InteractionTooltip.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Interaction/InteractionSuggestion.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/UserInterface.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/UserInterface.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Crosshair.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crosshair.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Crosshair/CrossHair_Fill.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crosshair/CrossHair_Fill.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Crosshair/CrossHair_Fill.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crosshair/CrossHair_Fill.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Crosshair/CrossHair_Open.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crosshair/CrossHair_Open.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Crosshair/CrossHair_Open.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crosshair/CrossHair_Open.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Crosshair/Crosshair_Closed.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crosshair/Crosshair_Closed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Crosshair/Crosshair_Closed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crosshair/Crosshair_Closed.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Cursor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Cursor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Cursor/cursor.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Cursor/cursor.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Cursor/cursor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Cursor/cursor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Cursor/cursor_highlighted.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Cursor/cursor_highlighted.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Cursor/cursor_highlighted.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Cursor/cursor_highlighted.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/General.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/General.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/General/EmptySprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/General/EmptySprite.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/General/EmptySprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/General/EmptySprite.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/General/KeyboardSprites.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/General/KeyboardSprites.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/General/KeyboardSprites.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/General/KeyboardSprites.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/General/MouseButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/General/MouseButton.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/General/MouseButton.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/General/MouseButton.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/General/MoveMouse.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/General/MoveMouse.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/General/MoveMouse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/General/MoveMouse.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/General/MoveMouse_background.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/General/MoveMouse_background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/General/MoveMouse_background.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/General/MoveMouse_background.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Inventory.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Inventory.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Inventory/KeyIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Inventory/KeyIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Inventory/KeyIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Inventory/KeyIcon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/SpellButtons.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/SpellButtons.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/SpellButtons/CastBar_Caret.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/SpellButtons/CastBar_Caret.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/SpellButtons/CastBar_Caret.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/SpellButtons/CastBar_Caret.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/SpellButtons/MoveButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/SpellButtons/MoveButton.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/SpellButtons/MoveButton.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/SpellButtons/MoveButton.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/SpellButtons/SpellButton_Backdrop.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/SpellButtons/SpellButton_Backdrop.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/SpellButtons/SpellButton_Backdrop.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/SpellButtons/SpellButton_Backdrop.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/SpellButtons/SpellButton_CastBar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/SpellButtons/SpellButton_CastBar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/SpellButtons/SpellButton_CastBar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/SpellButtons/SpellButton_CastBar.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/_Tests.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests/EditMode.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/_Tests/EditMode.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests/EditMode/Spell System.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests/EditMode/Spell System/spell_library.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests/EditMode/Spell System/spell_library.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests/EditMode/Spell System/spell_system.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests/EditMode/Spell System/spell_system.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests/EditMode/Tests_EditMode.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/_Tests/EditMode/Tests_EditMode.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests/EditMode/Tests_EditMode.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/_Tests/EditMode/Tests_EditMode.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests/Tests.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/_Tests/Tests.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests/Tests.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/_Tests/Tests.asmdef.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,30 +504,25 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Behaviours/CinemachineVirtualCamera.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TooltipManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Editor/Utility/BaseEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Syc/Packages/Syc/Editor/AssetCreateMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Volume/Volume.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TriggerMissileTarget.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserInterface/WindowManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ImpulseProjectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0-preview.5/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/AuraTooltip.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Editor/Editors/CinemachineBrainEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Behaviours/CinemachineVirtualCamera.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TooltipManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Volume/Volume.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/Interactor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/AuraTooltip.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18B38ADE-9B85-49A5-AFF4-B379F33ECCEC/f4/45fe2839/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/CinemachineVirtualCameraBase.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Library/PackageCache/com.aether.syc@cf4087c53ddc35cdf85c3e64de2d4faa06a0422e/Runtime/Syc/Combat/ModifierSystem/ModifierState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TargetDummy/DummySpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerTargetSystem.cs" />
-        <option value="$PROJECT_DIR$/Library/PackageCache/com.aether.syc@cda3e44937e5fef732adf51c969c5c5180407420/Runtime/Syc/Combat/SpellSystem/SpellObjects/Projectile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifierIcon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerCombatSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TargetDummy/TargetDummyCombatSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/ModifiersBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/AuraBar.cs" />
         <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/Spell.cs" />
         <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/SpellCast.cs" />
         <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/CastingSystem.cs" />
@@ -96,10 +537,43 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerTargetIndicator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellTooltip.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TooltipManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/AuraIcon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/AuraTooltip.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cloaks/DreamCloak.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TriggerMissileTarget.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Puzzle1_MissileTarget.cs" />
+        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/CombatMonoSystem.cs" />
+        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/ICombatSystem.cs" />
+        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/BasicCombatSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Combat/BasicCombatSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/CombatPanelInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Puzzle1MissileTarget.cs" />
+        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/SpellRack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Interaction/Events.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Interaction/IInteractor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Interaction/InteractionTooltip.cs" />
+        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/System/MonoSystemBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cloaks/Shoulder.cs" />
+        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/System/MonoSubSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactor.cs" />
+        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/InteractionInput.cs" />
+        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/IInteractionInput.cs" />
+        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/Interactable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Attunement/TravellerPlatform.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Attunement/AttunementDevice.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Cloaks/CloakProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Cloaks/ICloakProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Stairs.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Cloaks/CloakProviderUILink.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/WindowManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Cloaks/CloakWindow.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Input/PlayerInput.cs" />
+        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Utility/Extensions/LayerMaskExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/AspectOfCreation.cs" />
+        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/Interactor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Interaction/InteractionSuggestion.cs" />
       </list>
     </option>
   </component>
@@ -116,8 +590,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.51250947" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.3009856" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.51280624" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30066815" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -143,10 +617,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="10480">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17264">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="10480" />
+      <option name="pid" value="17264" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -170,7 +644,10 @@
       <workItem from="1601194283584" duration="6016000" />
       <workItem from="1601662821534" duration="19933000" />
       <workItem from="1601767156345" duration="119000" />
-      <workItem from="1601767305646" duration="5348000" />
+      <workItem from="1601767305646" duration="13313000" />
+      <workItem from="1601812425986" duration="208000" />
+      <workItem from="1602159995324" duration="612000" />
+      <workItem from="1602412445002" duration="4191000" />
     </task>
     <servers />
   </component>
@@ -200,130 +677,132 @@
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state x="1358" y="400" key="#xdebugger.evaluate/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205225410" />
-    <state width="499" height="464" key="DebuggerActiveHint" timestamp="1601724091191">
+    <state width="499" height="464" key="DebuggerActiveHint" timestamp="1602414416584">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="499" height="464" key="DebuggerActiveHint/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601724091191" />
-    <state width="1350" height="190" key="GridCell.Tab.0.bottom" timestamp="1601773005098">
+    <state width="499" height="464" key="DebuggerActiveHint/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602414416584" />
+    <state width="1827" height="187" key="GridCell.Tab.0.bottom" timestamp="1602416883540">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1643" height="166" key="GridCell.Tab.0.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871314" />
     <state width="1464" height="509" key="GridCell.Tab.0.bottom/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171861" />
     <state width="1641" height="166" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1350" height="190" key="GridCell.Tab.0.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773005098" />
-    <state width="1350" height="190" key="GridCell.Tab.0.center" timestamp="1601773005098">
+    <state width="1827" height="187" key="GridCell.Tab.0.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
+    <state width="1827" height="187" key="GridCell.Tab.0.center" timestamp="1602416883540">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1643" height="166" key="GridCell.Tab.0.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871314" />
     <state width="1464" height="509" key="GridCell.Tab.0.center/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171861" />
     <state width="1641" height="166" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1350" height="190" key="GridCell.Tab.0.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773005098" />
-    <state width="1350" height="190" key="GridCell.Tab.0.left" timestamp="1601773005098">
+    <state width="1827" height="187" key="GridCell.Tab.0.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
+    <state width="1827" height="187" key="GridCell.Tab.0.left" timestamp="1602416883540">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1643" height="166" key="GridCell.Tab.0.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871314" />
     <state width="1464" height="509" key="GridCell.Tab.0.left/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171861" />
     <state width="1641" height="166" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1350" height="190" key="GridCell.Tab.0.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773005098" />
-    <state width="1350" height="190" key="GridCell.Tab.0.right" timestamp="1601773005098">
+    <state width="1827" height="187" key="GridCell.Tab.0.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
+    <state width="1827" height="187" key="GridCell.Tab.0.right" timestamp="1602416883540">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1643" height="166" key="GridCell.Tab.0.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871314" />
     <state width="1464" height="509" key="GridCell.Tab.0.right/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171861" />
     <state width="1641" height="166" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1350" height="190" key="GridCell.Tab.0.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773005098" />
-    <state width="1350" height="190" key="GridCell.Tab.1.bottom" timestamp="1601773060678">
+    <state width="1827" height="187" key="GridCell.Tab.0.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
+    <state width="1827" height="187" key="GridCell.Tab.1.bottom" timestamp="1602416883540">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1647" height="166" key="GridCell.Tab.1.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738902430" />
     <state width="1464" height="509" key="GridCell.Tab.1.bottom/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171862" />
     <state width="1641" height="166" key="GridCell.Tab.1.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1350" height="190" key="GridCell.Tab.1.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773060678" />
-    <state width="1350" height="190" key="GridCell.Tab.1.center" timestamp="1601773060678">
+    <state width="1827" height="187" key="GridCell.Tab.1.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
+    <state width="1827" height="187" key="GridCell.Tab.1.center" timestamp="1602416883540">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1647" height="166" key="GridCell.Tab.1.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738902430" />
     <state width="1464" height="509" key="GridCell.Tab.1.center/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171862" />
     <state width="1641" height="166" key="GridCell.Tab.1.center/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1350" height="190" key="GridCell.Tab.1.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773060678" />
-    <state width="1350" height="190" key="GridCell.Tab.1.left" timestamp="1601773060678">
+    <state width="1827" height="187" key="GridCell.Tab.1.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
+    <state width="1827" height="187" key="GridCell.Tab.1.left" timestamp="1602416883540">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1647" height="166" key="GridCell.Tab.1.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738902430" />
     <state width="1464" height="509" key="GridCell.Tab.1.left/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171862" />
     <state width="1641" height="166" key="GridCell.Tab.1.left/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1350" height="190" key="GridCell.Tab.1.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773060678" />
-    <state width="1350" height="190" key="GridCell.Tab.1.right" timestamp="1601773060678">
+    <state width="1827" height="187" key="GridCell.Tab.1.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
+    <state width="1827" height="187" key="GridCell.Tab.1.right" timestamp="1602416883540">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1647" height="166" key="GridCell.Tab.1.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738902430" />
     <state width="1464" height="509" key="GridCell.Tab.1.right/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171862" />
     <state width="1641" height="166" key="GridCell.Tab.1.right/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1350" height="190" key="GridCell.Tab.1.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773060678" />
-    <state width="1350" height="190" key="GridCell.Tab.2.bottom" timestamp="1601773004920">
+    <state width="1827" height="187" key="GridCell.Tab.1.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
+    <state width="1827" height="187" key="GridCell.Tab.2.bottom" timestamp="1602416883540">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1643" height="166" key="GridCell.Tab.2.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
     <state width="1464" height="509" key="GridCell.Tab.2.bottom/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171862" />
     <state width="1641" height="166" key="GridCell.Tab.2.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333898" />
-    <state width="1350" height="190" key="GridCell.Tab.2.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773004920" />
-    <state width="1350" height="190" key="GridCell.Tab.2.center" timestamp="1601773004920">
+    <state width="1827" height="187" key="GridCell.Tab.2.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
+    <state width="1827" height="187" key="GridCell.Tab.2.center" timestamp="1602416883540">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1643" height="166" key="GridCell.Tab.2.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
     <state width="1464" height="509" key="GridCell.Tab.2.center/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171862" />
     <state width="1641" height="166" key="GridCell.Tab.2.center/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1350" height="190" key="GridCell.Tab.2.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773004920" />
-    <state width="1350" height="190" key="GridCell.Tab.2.left" timestamp="1601773004920">
+    <state width="1827" height="187" key="GridCell.Tab.2.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
+    <state width="1827" height="187" key="GridCell.Tab.2.left" timestamp="1602416883540">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1643" height="166" key="GridCell.Tab.2.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
     <state width="1464" height="509" key="GridCell.Tab.2.left/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171862" />
     <state width="1641" height="166" key="GridCell.Tab.2.left/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1350" height="190" key="GridCell.Tab.2.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773004920" />
-    <state width="1350" height="190" key="GridCell.Tab.2.right" timestamp="1601773004920">
+    <state width="1827" height="187" key="GridCell.Tab.2.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
+    <state width="1827" height="187" key="GridCell.Tab.2.right" timestamp="1602416883540">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1643" height="166" key="GridCell.Tab.2.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
     <state width="1464" height="509" key="GridCell.Tab.2.right/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171862" />
     <state width="1641" height="166" key="GridCell.Tab.2.right/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333898" />
-    <state width="1350" height="190" key="GridCell.Tab.2.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773004920" />
-    <state width="1350" height="190" key="GridCell.Tab.3.bottom" timestamp="1601773004921">
+    <state width="1827" height="187" key="GridCell.Tab.2.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
+    <state width="1827" height="187" key="GridCell.Tab.3.bottom" timestamp="1602416883541">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1643" height="166" key="GridCell.Tab.3.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
     <state width="1464" height="509" key="GridCell.Tab.3.bottom/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171862" />
     <state width="1641" height="166" key="GridCell.Tab.3.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333898" />
-    <state width="1350" height="190" key="GridCell.Tab.3.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773004921" />
-    <state width="1350" height="190" key="GridCell.Tab.3.center" timestamp="1601773004921">
+    <state width="1827" height="187" key="GridCell.Tab.3.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883541" />
+    <state width="1827" height="187" key="GridCell.Tab.3.center" timestamp="1602416883541">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1643" height="166" key="GridCell.Tab.3.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
     <state width="1464" height="509" key="GridCell.Tab.3.center/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171862" />
     <state width="1641" height="166" key="GridCell.Tab.3.center/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333898" />
-    <state width="1350" height="190" key="GridCell.Tab.3.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773004921" />
-    <state width="1350" height="190" key="GridCell.Tab.3.left" timestamp="1601773004920">
+    <state width="1827" height="187" key="GridCell.Tab.3.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883541" />
+    <state width="1827" height="187" key="GridCell.Tab.3.left" timestamp="1602416883541">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1643" height="166" key="GridCell.Tab.3.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
     <state width="1464" height="509" key="GridCell.Tab.3.left/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171862" />
     <state width="1641" height="166" key="GridCell.Tab.3.left/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333898" />
-    <state width="1350" height="190" key="GridCell.Tab.3.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773004920" />
-    <state width="1350" height="190" key="GridCell.Tab.3.right" timestamp="1601773004921">
+    <state width="1827" height="187" key="GridCell.Tab.3.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883541" />
+    <state width="1827" height="187" key="GridCell.Tab.3.right" timestamp="1602416883541">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state width="1643" height="166" key="GridCell.Tab.3.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
     <state width="1464" height="509" key="GridCell.Tab.3.right/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1601276171862" />
     <state width="1641" height="166" key="GridCell.Tab.3.right/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333898" />
-    <state width="1350" height="190" key="GridCell.Tab.3.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601773004921" />
-    <state x="858" y="402" key="RiderGenerateDialog" timestamp="1601722805261">
+    <state width="1827" height="187" key="GridCell.Tab.3.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883541" />
+    <state x="858" y="402" key="RiderGenerateDialog" timestamp="1601811487387">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
     <state x="858" y="402" key="RiderGenerateDialog/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601722805261" />
-    <state x="587" y="349" width="672" height="678" key="search.everywhere.popup" timestamp="1601770951942">
+    <state x="858" y="402" key="RiderGenerateDialog/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601811487387" />
+    <state x="587" y="349" width="672" height="678" key="search.everywhere.popup" timestamp="1601803525317">
       <screen x="0" y="31" width="2560" height="1409" />
     </state>
-    <state x="587" y="349" width="672" height="678" key="search.everywhere.popup/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601770951942" />
+    <state x="587" y="349" width="672" height="678" key="search.everywhere.popup/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601803525317" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

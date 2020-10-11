@@ -26,13 +26,13 @@ namespace Aether.Levels.StartEnvironment
         private List<Puzzle1_PressurePlate> pressurePlates;
 
         [SerializeField]
-        private List<Puzzle1_MissileTarget> missileTargets;
+        private List<Puzzle1MissileTarget> missileTargets;
 
 
         private void Start()
         {
             Puzzle1_PressurePlate.Events.OnTriggered += CheckForStage1Completion;
-            Puzzle1_MissileTarget.Events.OnMissileTargetHit += CheckForStage2Completion;
+            Puzzle1MissileTarget.Events.OnMissileTargetHit += CheckForStage2Completion;
         }
 
         private void CheckForStage1Completion()
@@ -50,7 +50,7 @@ namespace Aether.Levels.StartEnvironment
         private void OnDestroy()
         {
             Puzzle1_PressurePlate.Events.OnTriggered -= CheckForStage1Completion;
-            Puzzle1_MissileTarget.Events.OnMissileTargetHit -= CheckForStage2Completion;
+            Puzzle1MissileTarget.Events.OnMissileTargetHit -= CheckForStage2Completion;
         }
     }
 }

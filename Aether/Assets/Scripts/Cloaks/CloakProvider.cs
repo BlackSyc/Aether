@@ -1,12 +1,12 @@
 ﻿using Aether.Core;
 using Aether.Core.Cloaks;
-using Aether.Core.Interaction;
 using Aether.ScriptableObjects.Cloaks;
+using Syc.Core.Interaction;
 using UnityEngine;
 
 namespace Aether.Cloaks
 {
-    [RequireComponent(typeof(IInteractable))]
+    [RequireComponent(typeof(Interactable))]
     internal class CloakProvider : MonoBehaviour, ICloakProvider
     {
 
@@ -18,13 +18,13 @@ namespace Aether.Cloaks
 
         public ICloak Cloak => cloak;
 
-        public void Equip(IInteractor interactor)
+        public void Equip(Interactor interactor)
         {
             if (interactor.Has(out IShoulder shoulder))
                 shoulder.EquipCloak(cloak);
         }
 
-        public void Unequip(IInteractor interactor)
+        public void Unequip(Interactor interactor)
         {
             if (interactor.Has(out IShoulder shoulder))
                 shoulder.UnequipCloak();
@@ -32,7 +32,8 @@ namespace Aether.Cloaks
 
         private void Start()
         {
-            Player.Instance.Get<IShoulder>().OnCloakChanged += CheckEquip;
+            if(Player.Instance.Has(out IShoulder shoulder))
+                shoulder.OnCloakChanged += CheckEquip;
         }
 
         private void CheckEquip(ICloak playerEquippedCloak)
@@ -42,7 +43,8 @@ namespace Aether.Cloaks
 
         private void OnDestroy()
         {
-            Player.Instance.Get<IShoulder>().OnCloakChanged += CheckEquip;
+            if(Player.Instance.Has(out IShoulder shoulder))
+                shoulder.OnCloakChanged += CheckEquip;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Aether.Input
@@ -13,6 +14,8 @@ namespace Aether.Input
 		public event Action OnJump;
 
 		public event Action<int> OnCastSpell;
+
+		public UnityEvent onInteract;
 
 		private void Start()
 		{
@@ -37,6 +40,7 @@ namespace Aether.Input
 
 		protected virtual void SubscribeToInputEvents()
 		{
+			InputSystem.InputActions.Player.Interact.started += Interact;
 			InputSystem.InputActions.Player.Jump.started += Jump;
 			InputSystem.InputActions.Player.CastSpell1.started += CastSpell1;
 			InputSystem.InputActions.Player.CastSpell2.started += CastSpell2;
@@ -47,7 +51,7 @@ namespace Aether.Input
 			InputSystem.InputActions.Player.CastSpell7.started += CastSpell7;
 			InputSystem.InputActions.Player.CastSpell8.started += CastSpell8;
 		}
-		
+
 		protected virtual void UnSubscribeFromInputEvents()
 		{
 			InputSystem.InputActions.Player.Jump.started -= Jump;
@@ -60,10 +64,13 @@ namespace Aether.Input
 			InputSystem.InputActions.Player.CastSpell7.started -= CastSpell7;
 			InputSystem.InputActions.Player.CastSpell8.started -= CastSpell8;
 		}
-		
-		
 
 		#region Input Event Handlers
+		
+		private void Interact(InputAction.CallbackContext context)
+		{
+			onInteract?.Invoke();
+		}
 		
 		private void CastSpell1(InputAction.CallbackContext context)
 		{

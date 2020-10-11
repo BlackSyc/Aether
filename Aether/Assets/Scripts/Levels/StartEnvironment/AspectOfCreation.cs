@@ -1,12 +1,12 @@
 ﻿using System;
 using Aether.Core;
 using Aether.Core.Dialog.ScriptableObjects;
-using Aether.Core.Interaction;
 using Aether.Core.Tutorial;
 using Aether.Input;
 using Syc.Combat;
 using Syc.Combat.SpellSystem;
 using Syc.Combat.SpellSystem.ScriptableObjects;
+using Syc.Core.Interaction;
 using UnityEngine;
 
 namespace Aether.Levels.StartEnvironment
@@ -23,13 +23,11 @@ namespace Aether.Levels.StartEnvironment
             }
         }
 
+        [SerializeField]
+        private Dialog dialog;
 
         [SerializeField]
-        private Dialog dialog = null;
-
-
-        [SerializeField]
-        private Spell reward = null;
+        private Spell reward;
 
         private void Start()
         {
@@ -38,7 +36,7 @@ namespace Aether.Levels.StartEnvironment
             dialog.OnComplete += AspectOfCreationDialogComplete;
         }
 
-        public void Interact(IInteractor interactor, IInteractable interactable)
+        public void Interact(Interactor interactor, Interactable interactable)
         {
             interactable.IsActive = false;
             dialog.Start();
@@ -46,8 +44,8 @@ namespace Aether.Levels.StartEnvironment
 
         private void ActivateAspect()
         {
-            GetComponent<IInteractable>().IsActive = true;
-
+            GetComponent<Interactable>().IsActive = true;
+            GetComponent<Collider>().enabled = true;
             // To do: Spawn Aspect model
             // Instantiate(this.aspectPrefab, this.transform);
         }
