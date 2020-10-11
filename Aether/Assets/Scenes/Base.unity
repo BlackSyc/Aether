@@ -465,12 +465,14 @@ PrefabInstance:
         type: 3}
       propertyPath: spellSystem.spells.Array.data[0].spell
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 6896be7af7ee3eb4594bda2ba32746e9,
+        type: 2}
     - target: {fileID: 3313298053226653178, guid: 95de18f87247a4a42b1fb474a0bcf609,
         type: 3}
       propertyPath: spellSystem.spells.Array.data[1].spell
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 2e6db3359cd47f94b9c2ec574e9c3494,
+        type: 2}
     - target: {fileID: 3313298053226653178, guid: 95de18f87247a4a42b1fb474a0bcf609,
         type: 3}
       propertyPath: spellSystem.spells.Array.data[2].spell
@@ -495,6 +497,11 @@ PrefabInstance:
         type: 3}
       propertyPath: movementSpeed.remapMultiplier
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768501987095304042, guid: 95de18f87247a4a42b1fb474a0bcf609,
+        type: 3}
+      propertyPath: criticalStrikeRating.baseValue
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5646777190263655523, guid: 95de18f87247a4a42b1fb474a0bcf609,
         type: 3}

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a51ab7a05ce480c9cca005893f2d481, type: 3}
   m_Name: AddSunderArmor
   m_EditorClassIdentifier: 
-  types: 4
+  triggers:
+  - {fileID: 11400000, guid: c468064fc844a5041abae33193babca1, type: 2}
   aura: {fileID: 11400000, guid: d9e7054616ee0bc45af95a578e0109d8, type: 2}
   applyTo: 1
   useSpellAsReferenceObject: 1

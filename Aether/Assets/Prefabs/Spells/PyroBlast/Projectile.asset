@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08e5e3e719d4acba4ea68140a37c025, type: 3}
   m_Name: Projectile
   m_EditorClassIdentifier: 
-  types: 1
+  triggers:
+  - {fileID: 11400000, guid: c468064fc844a5041abae33193babca1, type: 2}
   spawn: {fileID: 1172246697626732610, guid: 5f02c6ac067ebb74dbadd4c9fe2886f2, type: 3}
   at: 1

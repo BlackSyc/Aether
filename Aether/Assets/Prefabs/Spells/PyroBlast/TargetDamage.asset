@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ea688588a34e00aa01a45349044c25, type: 3}
   m_Name: TargetDamage
   m_EditorClassIdentifier: 
-  types: 16
+  triggers:
+  - {fileID: 11400000, guid: 328e165cf7cde054eaeff1f0ec8b3866, type: 2}
   damageAmount: 500
   canCrit: 1
   criticalStrikeMultiplier: 1.5

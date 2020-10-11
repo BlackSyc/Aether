@@ -9,11 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcb002b0f46d4de394a17dcffbd8b883, type: 3}
-  m_Name: HotStreakAugment
+  m_Script: {fileID: 11500000, guid: 51b2388796ee4be18af4242154347466, type: 3}
+  m_Name: HotStreak 1
   m_EditorClassIdentifier: 
-  removeOnUse: 0
+  auraName: Hot Streak
+  description: Increases the critical strike chance of your next Pyroblast by 100%.
+  icon: {fileID: 21300000, guid: 22f5ea23fff770a4b9930f54be6b2a19, type: 3}
+  duration: 10
+  stackLimit: 1
   appliesTo:
   - {fileID: 11400000, guid: 2e6db3359cd47f94b9c2ec574e9c3494, type: 2}
+  onUse: 0
   multiplyBaseDamage: 1
-  addCritChance: 1
+  addCritChance: 100

@@ -249,7 +249,11 @@
         <e p="AuraSystem.cs" t="Include" />
         <e p="ScriptableObjects" t="Include">
           <e p="AttributeAura.cs" t="Include" />
-          <e p="AugmentAura.cs" t="Include" />
+          <e p="AugmentAuras" t="Include">
+            <e p="AugmentAura.cs" t="Include" />
+            <e p="DamageAugmentAura.cs" t="Include" />
+            <e p="HealAugmentAura.cs" t="Include" />
+          </e>
           <e p="Aura.cs" t="Include" />
           <e p="PeriodicDamageAura.cs" t="Include" />
         </e>
@@ -270,11 +274,6 @@
         <e p="CreateSpellCastResult.cs" t="Include" />
         <e p="ICaster.cs" t="Include" />
         <e p="ScriptableObjects" t="Include">
-          <e p="Augments" t="Include">
-            <e p="Augment.cs" t="Include" />
-            <e p="DamageAugment.cs" t="Include" />
-            <e p="HealAugment.cs" t="Include" />
-          </e>
           <e p="CastingRequirements" t="Include">
             <e p="CastingRequirement.cs" t="Include" />
           </e>
@@ -292,8 +291,10 @@
             </e>
             <e p="SpawnObject.cs" t="Include" />
             <e p="SpellEffect.cs" t="Include" />
-            <e p="SpellEffectType.cs" t="Include" />
             <e p="TargetType.cs" t="Include" />
+            <e p="Triggers" t="Include">
+              <e p="SpellEffectTrigger.cs" t="Include" />
+            </e>
           </e>
           <e p="TargetProviders" t="Include">
             <e p="NoTarget.cs" t="Include" />

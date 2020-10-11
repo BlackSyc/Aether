@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a51ab7a05ce480c9cca005893f2d481, type: 3}
   m_Name: AddSprintModifier
   m_EditorClassIdentifier: 
-  types: 4
+  triggers:
+  - {fileID: 11400000, guid: c468064fc844a5041abae33193babca1, type: 2}
   aura: {fileID: 11400000, guid: 209b2c568e7df9c45adad31659b27e5d, type: 2}
   applyTo: 0
   useSpellAsReferenceObject: 1

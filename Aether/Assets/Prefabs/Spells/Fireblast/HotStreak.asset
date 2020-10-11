@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 651c81693f4d49b283cee5c128d0ada1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a51ab7a05ce480c9cca005893f2d481, type: 3}
   m_Name: HotStreak
   m_EditorClassIdentifier: 
-  auraName: Hot Streak
-  description: Increases critical strike of your next pyroblast by 100%
-  icon: {fileID: 21300000, guid: 22f5ea23fff770a4b9930f54be6b2a19, type: 3}
-  duration: 10
-  stackLimit: 1
-  augments:
-  - {fileID: 11400000, guid: aa29aa40f57ad7241b81ede71ada205c, type: 2}
+  triggers:
+  - {fileID: 11400000, guid: c468064fc844a5041abae33193babca1, type: 2}
+  aura: {fileID: 11400000, guid: 2ed2b4c71ffdbc745b2b8475bc47c496, type: 2}
+  applyTo: 0
+  useSpellAsReferenceObject: 0
