@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Hitflash
   m_EditorClassIdentifier: 
   triggers:
-  - {fileID: 11400000, guid: c468064fc844a5041abae33193babca1, type: 2}
+  - {fileID: 11400000, guid: 328e165cf7cde054eaeff1f0ec8b3866, type: 2}
   spawn: {fileID: 2322144974381007907, guid: b6351cbbc0d3e224e923c0618a64fefb, type: 3}
   at: 0

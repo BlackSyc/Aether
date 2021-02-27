@@ -29,6 +29,8 @@ namespace Aether.Levels.StartEnvironment
         [SerializeField]
         private Spell reward;
 
+        [SerializeField] private GameObject mesh;
+
         private void Start()
         {
             Puzzle1_Manager.Events.OnStage1Completed += ActivateAspect;
@@ -44,6 +46,7 @@ namespace Aether.Levels.StartEnvironment
 
         private void ActivateAspect()
         {
+            mesh.SetActive(true);
             GetComponent<Interactable>().IsActive = true;
             GetComponent<Collider>().enabled = true;
             // To do: Spawn Aspect model

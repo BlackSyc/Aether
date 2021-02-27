@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df323a8e72a3d0b478385b4c1181fd9d, type: 3}
   m_Name: TriggerMissileEffect
   m_EditorClassIdentifier: 
-  types: 16
+  triggers:
+  - {fileID: 11400000, guid: 328e165cf7cde054eaeff1f0ec8b3866, type: 2}

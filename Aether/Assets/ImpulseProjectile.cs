@@ -22,7 +22,6 @@ namespace Aether
         {
             _impulseSource.GenerateImpulse(Camera.main.transform.forward);
             SpellCast.OnSpellCompleted -= TriggerImpulse;
-
         }
     }
 }

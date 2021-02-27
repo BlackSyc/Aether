@@ -140,6 +140,16 @@
             <e p="Aether.Movement.asmdef" t="Include" />
             <e p="PlayerMovementSystem.cs" t="Include" />
           </e>
+          <e p="Networking" t="Include">
+            <e p="CommandCenter.cs" t="Include" />
+            <e p="MovementCommand.cs" t="Include" />
+            <e p="MovementResponse.cs" t="Include" />
+            <e p="NetworkInterface.cs" t="Include" />
+            <e p="NetworkMovementSystem.cs" t="Include" />
+            <e p="Request.cs" t="Include" />
+            <e p="Response.cs" t="Include" />
+            <e p="TestClass.cs" t="Include" />
+          </e>
           <e p="UserInterface" t="Include">
             <e p="Aether.UserInterface.asmdef" t="Include" />
             <e p="Attunement" t="Include">
@@ -293,6 +303,11 @@
             <e p="SpellEffect.cs" t="Include" />
             <e p="TargetType.cs" t="Include" />
             <e p="Triggers" t="Include">
+              <e p="OnCastCancelled.cs" t="Include" />
+              <e p="OnCastCompleted.cs" t="Include" />
+              <e p="OnCastProgress.cs" t="Include" />
+              <e p="OnCastStarted.cs" t="Include" />
+              <e p="OnImpact.cs" t="Include" />
               <e p="SpellEffectTrigger.cs" t="Include" />
             </e>
           </e>

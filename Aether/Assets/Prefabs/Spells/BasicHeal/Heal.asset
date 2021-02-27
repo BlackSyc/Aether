@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01d8fc67aed45479180858b9a2a8baf, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: 
-  types: 4
+  triggers:
+  - {fileID: 11400000, guid: c468064fc844a5041abae33193babca1, type: 2}
   healAmount: 100
+  canCrit: 0
   criticalStrikeMultiplier: 2
-  applyAttributeBias: 1
+  affectedBySpellPower: 0
   healCeiling: 150
