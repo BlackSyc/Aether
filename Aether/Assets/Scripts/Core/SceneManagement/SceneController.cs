@@ -100,15 +100,15 @@ namespace Aether.Core.SceneManagement
                 throw new Exception("There is more than one SceneController object in the game!");
 
             Instance = this;
-            BaseScene = gameObject.scene;
-
-            if (SceneManager.sceneCount > 1)
-            {
-                if (SceneManager.GetSceneAt(1).buildIndex == startPlatformSceneBuildIndex)
-                    return;
-            }
-
-            SceneManager.LoadScene(startPlatformSceneBuildIndex, LoadSceneMode.Additive);
+            // BaseScene = gameObject.scene;
+            //
+            // if (SceneManager.sceneCount > 1)
+            // {
+            //     if (SceneManager.GetSceneAt(1).buildIndex == startPlatformSceneBuildIndex)
+            //         return;
+            // }
+            //
+            // SceneManager.LoadScene(startPlatformSceneBuildIndex, LoadSceneMode.Additive);
         }
 
         private void OnDestroy()

@@ -31,8 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee8c9066-4838-4414-bd89-15ebab8dbf6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/NetworkedGameStarter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NetworkedGameStarter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Environments/Arena/Arena1.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Environments/Arena/Arena1.unity.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +107,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerCombatSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/AuraBar.cs" />
       <option value="$PROJECT_DIR$/../../SCGS/Runtime/Syc/Movement/MovementSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Input/PlayerInput.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1i44yg85LGYu10IZjppE7qEZHeu" />
