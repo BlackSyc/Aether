@@ -1,11 +1,12 @@
 ﻿using System;
+using MLAPI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Aether.Input
 {
-    public class PlayerInput : MonoBehaviour
+    public class PlayerInput : NetworkedBehaviour
     {
         public event Action<Vector2> OnMove;
 
@@ -19,23 +20,32 @@ namespace Aether.Input
 
 		private void Start()
 		{
-			SubscribeToInputEvents();
+			if (IsLocalPlayer)
+			{
+				SubscribeToInputEvents();
+			}
 		}
 
 		private void OnDestroy()
 		{
-			UnSubscribeFromInputEvents();
+			if (IsLocalPlayer)
+			{
+				UnSubscribeFromInputEvents();
+			}
 		}
 
 		protected virtual void Update()
 		{
-			var movementVector = InputSystem.InputActions.Player.Movement.ReadValue<Vector2>();
-			if(movementVector != Vector2.zero)
-				OnMove?.Invoke(movementVector);
+			if (IsLocalPlayer)
+			{
+				var movementVector = InputSystem.InputActions.Player.Movement.ReadValue<Vector2>();
+				if (movementVector != Vector2.zero)
+					OnMove?.Invoke(movementVector);
 
-			var lookVector = InputSystem.InputActions.Player.Look.ReadValue<Vector2>();
-			if(lookVector != Vector2.zero)
-				OnLook?.Invoke(lookVector);
+				var lookVector = InputSystem.InputActions.Player.Look.ReadValue<Vector2>();
+				if (lookVector != Vector2.zero)
+					OnLook?.Invoke(lookVector);
+			}
 		}
 
 		protected virtual void SubscribeToInputEvents()
