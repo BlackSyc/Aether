@@ -30,56 +30,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee8c9066-4838-4414-bd89-15ebab8dbf6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/ILocalPlayerLink.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/ILocalPlayerLink.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/MuzzleFlash.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/MuzzleFlash.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HitFlash.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HitFlash.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HotStreak.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HotStreak.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Ignite.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Ignite.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/MuzzleFlash.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/MuzzleFlash.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/PyroBlast/MuzzleFlash.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/PyroBlast/MuzzleFlash.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/PyroBlast/Projectile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/PyroBlast/Projectile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToCenter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToCenter.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToCenter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToCenter.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToCenter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToCenter.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToCenter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToCenter.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Base.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Base.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attunement/KeystoneObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attunement/KeystoneObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attunement/Traveller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attunement/Traveller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cloaks/CloakProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cloaks/CloakProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cloaks/DreamCloak.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cloaks/DreamCloak.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerCombatSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerCombatSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerTargetSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerTargetSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelEntry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelExit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelExit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/AspectOfCreation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/AspectOfCreation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Respawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Respawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Stairs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Stairs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Cloaks/CloakWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Cloaks/CloakWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Crosshair.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Crosshair.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/DeathPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/DeathPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerCombatPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerCombatPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerTargetIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerTargetIndicator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellTooltip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellTooltip.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TextEmitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TextEmitter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Interaction/InteractionSuggestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Interaction/InteractionSuggestion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryTooltip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryTooltip.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="ee8c9066-4838-4414-bd89-15ebab8dbf6a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,9 +97,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Cloaks/DreamCloak.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Attunement/KeystoneObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Attunement/Traveller.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerTargetSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerCombatSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/AuraBar.cs" />
+      <option value="$PROJECT_DIR$/../../SCGS/Runtime/Syc/Movement/MovementSystem.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1i44yg85LGYu10IZjppE7qEZHeu" />
@@ -226,7 +179,7 @@
       <workItem from="1602926415211" duration="627000" />
       <workItem from="1602927667340" duration="1052000" />
       <workItem from="1603585960338" duration="658000" />
-      <workItem from="1614515326325" duration="6753000" />
+      <workItem from="1614515326325" duration="7228000" />
     </task>
     <servers />
   </component>
@@ -324,13 +277,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Core/Player.cs</url>
-          <line>44</line>
+          <line>49</line>
           <properties documentPath="C:\Users\marcv\Documents\Private\Repositories\Aether\Aether\Assets\Scripts\Core\Player.cs" initialLine="43" containingFunctionPresentation="method 'SetLocalPlayer'">
             <startOffsets>
-              <option value="1074" />
+              <option value="1215" />
             </startOffsets>
             <endOffsets>
-              <option value="1087" />
+              <option value="1228" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="18" />

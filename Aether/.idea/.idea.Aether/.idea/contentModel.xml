@@ -103,6 +103,7 @@
             </e>
             <e p="ITransform.cs" t="Include" />
             <e p="Layers.cs" t="Include" />
+            <e p="LocalObject.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="SceneManagement" t="Include">
               <e p="ILevelController.cs" t="Include" />
