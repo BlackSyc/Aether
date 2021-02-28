@@ -7,7 +7,7 @@ namespace Aether.Levels.StartEnvironment
 {
     [RequireComponent(typeof(Interactable))]
     [RequireComponent(typeof(Animator))]
-    public class Stairs : MonoBehaviour
+    public class Stairs : MonoBehaviour, ILocalPlayerLink
     {
         private Animator animator;
 
@@ -20,8 +20,7 @@ namespace Aether.Levels.StartEnvironment
             animator = GetComponent<Animator>();
             animator.keepAnimatorControllerStateOnDisable = true;
 
-            if (Player.Instance.Has(out IShoulder shoulder))
-                shoulder.OnCloakChanged += OnPlayerCloakEquipped;
+            Player.LinkToLocalPlayer(this);
         }
 
         private void OnPlayerCloakEquipped(ICloak cloak)
@@ -39,7 +38,18 @@ namespace Aether.Levels.StartEnvironment
         // Update is called once per frame
         void OnDestroy()
         {
-            if (Player.Instance.Has(out IShoulder shoulder))
+            Player.UnlinkFromLocalPlayer(this);
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            if (player.Has(out IShoulder shoulder))
+                shoulder.OnCloakChanged += OnPlayerCloakEquipped;
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
+            if (player.Has(out IShoulder shoulder))
                 shoulder.OnCloakChanged -= OnPlayerCloakEquipped;
         }
     }

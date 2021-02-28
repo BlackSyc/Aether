@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
-public class SpellTooltip : MonoBehaviour
+public class SpellTooltip : MonoBehaviour, ILocalPlayerLink
 {
     [SerializeField] private TextMeshProUGUI title;
     [SerializeField] private TextMeshProUGUI healthDelta;
@@ -20,6 +20,18 @@ public class SpellTooltip : MonoBehaviour
     [SerializeField] private TextMeshProUGUI canBeCastWhileMoving;
     [SerializeField] private Image icon;
     public Spell CurrentSpell { get; private set; }
+
+    private Player _player;
+
+    private void Awake()
+    {
+        Player.LinkToLocalPlayer(this);
+    }
+
+    private void OnDestroy()
+    {
+        Player.UnlinkFromLocalPlayer(this);
+    }
 
     public void Show(Spell spell)
     {
@@ -37,7 +49,7 @@ public class SpellTooltip : MonoBehaviour
 
     private string GetHealthDelta(Spell spell)
     {
-        if (!Player.Instance.Has(out ICombatSystem combatSystem))
+        if (!_player || _player.Has(out ICombatSystem combatSystem))
             return "?";
 
         if (spell.SpellEffects.OfType<DealDamage>().Any())
@@ -80,5 +92,15 @@ public class SpellTooltip : MonoBehaviour
     {
         CurrentSpell = null;
         gameObject.SetActive(false);
+    }
+
+    public void OnLocalPlayerLinked(Player player)
+    {
+        _player = player;
+    }
+
+    public void OnLocalPlayerUnlinked(Player player)
+    {
+        _player = null;
     }
 }

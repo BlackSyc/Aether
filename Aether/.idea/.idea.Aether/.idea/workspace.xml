@@ -31,43 +31,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee8c9066-4838-4414-bd89-15ebab8dbf6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/New Animator Controller.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/New Animator Controller.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/FireBall.vfx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/FireBall.vfx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/CommandCenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/CommandCenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/MovementCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/MovementCommand.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/MovementResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/MovementResponse.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkInterface.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkInterface.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkMovementSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkMovementSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Request.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Request.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Response.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/Response.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/TestClass.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Networking/TestClass.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/VFXDefaultResources.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/VFXDefaultResources.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/aspect.dae" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/aspect.dae.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/ILocalPlayerLink.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/ILocalPlayerLink.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/riderModule.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ImpulseProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImpulseProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/BasicHeal/Heal.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/BasicHeal/Heal.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/MuzzleFlash.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/MuzzleFlash.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/FireBall/Projectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HitFlash.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HitFlash.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HotStreak.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/HotStreak.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Ignite.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/Ignite.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Puzzle1_Missile/TriggerMissileEffect.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Puzzle1_Missile/TriggerMissileEffect.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/PyroBlast/Hitflash.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/PyroBlast/Hitflash.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/MuzzleFlash.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/Fireblast/MuzzleFlash.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/PyroBlast/MuzzleFlash.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/PyroBlast/MuzzleFlash.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spells/PyroBlast/Projectile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spells/PyroBlast/Projectile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToCenter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Corruption/MoveToCenter.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToCenter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Dream/MoveToCenter.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToCenter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Illusion/MoveToCenter.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToCenter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Puzzle1/Missile Targets/Target_Nightmare/MoveToCenter.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Base.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Base.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Environments/StartEnvironment/StartEnvironment.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attunement/KeystoneObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attunement/KeystoneObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attunement/Traveller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attunement/Traveller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cloaks/CloakProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cloaks/CloakProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cloaks/DreamCloak.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cloaks/DreamCloak.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerCombatSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerCombatSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerTargetSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerTargetSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelEntry.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelExit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelExit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/AspectOfCreation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/AspectOfCreation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Respawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Respawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Stairs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Stairs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Cloaks/CloakWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Cloaks/CloakWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Crosshair.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Crosshair.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/DeathPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/DeathPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerCombatPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerCombatPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerTargetIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerTargetIndicator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellTooltip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellTooltip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TextEmitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TextEmitter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Interaction/InteractionSuggestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Interaction/InteractionSuggestion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryTooltip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryTooltip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,81 +88,68 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Impulse/CinemachineCollisionImpulseSource.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Editor/Utility/BaseEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18B38ADE-9B85-49A5-AFF4-B379F33ECCEC/f4/45fe2839/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0-preview.5/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Syc/Packages/Syc/Editor/AssetCreateMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/TriggerMissileTarget.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserInterface/WindowManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/ImpulseProjectile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0-preview.5/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Editor/Editors/CinemachineBrainEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Behaviours/CinemachineVirtualCamera.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TooltipManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Volume/Volume.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/Interactor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/AuraTooltip.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/18B38ADE-9B85-49A5-AFF4-B379F33ECCEC/f4/45fe2839/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserInterface/WindowManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Editor/Editors/CinemachineBrainEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Editor/Utility/BaseEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Impulse/CinemachineCollisionImpulseSource.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Volume/Volume.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/CinemachineVirtualCameraBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ImpulseProjectile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/Interactor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Behaviours/CinemachineVirtualCamera.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Puzzle1MissileTarget.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/SpellRack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Interaction/Events.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Interaction/IInteractor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Interaction/InteractionTooltip.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/System/MonoSystemBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Cloaks/Shoulder.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/System/MonoSubSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/Interactor.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/InteractionInput.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/IInteractionInput.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/Interactable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Attunement/TravellerPlatform.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Attunement/AttunementDevice.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Cloaks/CloakProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Cloaks/ICloakProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Stairs.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Cloaks/CloakProviderUILink.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/WindowManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Cloaks/CloakWindow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Input/PlayerInput.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Utility/Extensions/LayerMaskExtensions.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Core/Interaction/Interactor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Interaction/InteractionSuggestion.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/Auras/ScriptableObjects/AugmentAuras/DamageAugmentAura.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/Auras/ScriptableObjects/AugmentAuras/AugmentAura.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/Auras/ScriptableObjects/AugmentAuras/HealAugmentAura.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/SpellEffects/Health/ApplyHealFromRange.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/SpellEffects/Health/ApplyHeal.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/SpellEffects/Health/DealDamage.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/SpellEffects/Health/DealDamageFromRange.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/CastingSystem.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/ICaster.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/Auras/AuraSystem.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/SpellCast.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/SpellEffects/SpellEffect.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Response.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Networking/MovementResponse.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Networking/Request.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkInterface.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Networking/TestClass.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Networking/CommandCenter.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Movement/MovementSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Networking/MovementCommand.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Networking/NetworkMovementSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/ImpulseProjectile.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/SpellObjects/Projectile.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/SpellEffects/Triggers/SpellEffectTrigger.cs" />
-        <option value="$PROJECT_DIR$/../../Syc/Packages/Syc/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/Spell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/AspectOfCreation.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/../../SCGS/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/SpellEffects/Triggers/SpellEffectTrigger.cs" />
+      <option value="$PROJECT_DIR$/../../SCGS/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/SpellEffects/SpellEffect.cs" />
+      <option value="$PROJECT_DIR$/../../SCGS/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/Spell.cs" />
+      <option value="$PROJECT_DIR$/../../SCGS/Runtime/Syc/Combat/SpellSystem/SpellObjects/Projectile.cs" />
+      <option value="$PROJECT_DIR$/../../SCGS/Runtime/Syc/Combat/SpellSystem/ScriptableObjects/SpellEffects/SpellEffectTrigger.cs" />
+      <option value="$PROJECT_DIR$/../../SCGS/Runtime/Syc/Core/System/MonoSubSystem.cs" />
+      <option value="$PROJECT_DIR$/../../SCGS/Runtime/Syc/Core/System/MonoSystemBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/ILocalPlayerSubscriber.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/ILocalPlayerLink.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/Crosshair.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/DeathPanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerCombatPanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/PlayerTargetIndicator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellTooltip.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/TextEmitter.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Cloaks/CloakWindow.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Interaction/InteractionSuggestion.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryTooltip.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserInterface/Items/Inventory/InventoryWindow.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/AspectOfCreation.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Respawner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Levels/StartEnvironment/Stairs.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelEntry.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/SceneManagement/LevelExit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Cloaks/CloakProvider.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Cloaks/DreamCloak.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Attunement/KeystoneObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Attunement/Traveller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerTargetSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Combat/Player/PlayerCombatSystem.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1i44yg85LGYu10IZjppE7qEZHeu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -166,8 +164,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.5128721" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.3004827" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.5127479" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30028328" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -189,16 +187,16 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="32236">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="32236" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -228,6 +226,7 @@
       <workItem from="1602926415211" duration="627000" />
       <workItem from="1602927667340" duration="1052000" />
       <workItem from="1603585960338" duration="658000" />
+      <workItem from="1614515326325" duration="6753000" />
     </task>
     <servers />
   </component>
@@ -251,138 +250,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="1358" y="400" key="#xdebugger.evaluate" timestamp="1601205225410">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state x="1358" y="400" key="#xdebugger.evaluate/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601205225410" />
-    <state width="499" height="464" key="DebuggerActiveHint" timestamp="1602928029939">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state width="499" height="464" key="DebuggerActiveHint/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1602928029939" />
-    <state width="499" height="464" key="DebuggerActiveHint/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602414416584" />
-    <state width="2517" height="202" key="GridCell.Tab.0.bottom" timestamp="1602927823224">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state width="2517" height="202" key="GridCell.Tab.0.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1602927823224" />
-    <state width="1827" height="187" key="GridCell.Tab.0.bottom/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1827" height="187" key="GridCell.Tab.0.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
-    <state width="2517" height="202" key="GridCell.Tab.0.center" timestamp="1602927823224">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state width="2517" height="202" key="GridCell.Tab.0.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1602927823224" />
-    <state width="1827" height="187" key="GridCell.Tab.0.center/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1827" height="187" key="GridCell.Tab.0.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
-    <state width="2517" height="202" key="GridCell.Tab.0.left" timestamp="1602927823224">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state width="2517" height="202" key="GridCell.Tab.0.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1602927823224" />
-    <state width="1827" height="187" key="GridCell.Tab.0.left/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1827" height="187" key="GridCell.Tab.0.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
-    <state width="2517" height="202" key="GridCell.Tab.0.right" timestamp="1602927823224">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state width="2517" height="202" key="GridCell.Tab.0.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1602927823224" />
-    <state width="1827" height="187" key="GridCell.Tab.0.right/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1827" height="187" key="GridCell.Tab.0.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
-    <state width="2517" height="202" key="GridCell.Tab.1.bottom" timestamp="1602927838228">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state width="2517" height="202" key="GridCell.Tab.1.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1602927838228" />
-    <state width="1827" height="187" key="GridCell.Tab.1.bottom/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.1.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1827" height="187" key="GridCell.Tab.1.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
-    <state width="2517" height="202" key="GridCell.Tab.1.center" timestamp="1602927838228">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state width="2517" height="202" key="GridCell.Tab.1.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1602927838228" />
-    <state width="1827" height="187" key="GridCell.Tab.1.center/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.1.center/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1827" height="187" key="GridCell.Tab.1.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
-    <state width="2517" height="202" key="GridCell.Tab.1.left" timestamp="1602927838228">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state width="2517" height="202" key="GridCell.Tab.1.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1602927838228" />
-    <state width="1827" height="187" key="GridCell.Tab.1.left/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.1.left/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1827" height="187" key="GridCell.Tab.1.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
-    <state width="2517" height="202" key="GridCell.Tab.1.right" timestamp="1602927838228">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state width="2517" height="202" key="GridCell.Tab.1.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1602927838228" />
-    <state width="1827" height="187" key="GridCell.Tab.1.right/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.1.right/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1827" height="187" key="GridCell.Tab.1.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
-    <state width="1827" height="187" key="GridCell.Tab.2.bottom" timestamp="1602486784342">
-      <screen x="0" y="30" width="2560" height="1050" />
-    </state>
-    <state width="1643" height="166" key="GridCell.Tab.2.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
-    <state width="1827" height="187" key="GridCell.Tab.2.bottom/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.2.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333898" />
-    <state width="1827" height="187" key="GridCell.Tab.2.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
-    <state width="1827" height="187" key="GridCell.Tab.2.center" timestamp="1602486784342">
-      <screen x="0" y="30" width="2560" height="1050" />
-    </state>
-    <state width="1643" height="166" key="GridCell.Tab.2.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
-    <state width="1827" height="187" key="GridCell.Tab.2.center/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.2.center/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1827" height="187" key="GridCell.Tab.2.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
-    <state width="1827" height="187" key="GridCell.Tab.2.left" timestamp="1602486784342">
-      <screen x="0" y="30" width="2560" height="1050" />
-    </state>
-    <state width="1643" height="166" key="GridCell.Tab.2.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
-    <state width="1827" height="187" key="GridCell.Tab.2.left/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.2.left/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333897" />
-    <state width="1827" height="187" key="GridCell.Tab.2.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
-    <state width="1827" height="187" key="GridCell.Tab.2.right" timestamp="1602486784342">
-      <screen x="0" y="30" width="2560" height="1050" />
-    </state>
-    <state width="1643" height="166" key="GridCell.Tab.2.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
-    <state width="1827" height="187" key="GridCell.Tab.2.right/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.2.right/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333898" />
-    <state width="1827" height="187" key="GridCell.Tab.2.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883540" />
-    <state width="1827" height="187" key="GridCell.Tab.3.bottom" timestamp="1602486784343">
-      <screen x="0" y="30" width="2560" height="1050" />
-    </state>
-    <state width="1643" height="166" key="GridCell.Tab.3.bottom/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
-    <state width="1827" height="187" key="GridCell.Tab.3.bottom/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784343" />
-    <state width="1641" height="166" key="GridCell.Tab.3.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333898" />
-    <state width="1827" height="187" key="GridCell.Tab.3.bottom/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883541" />
-    <state width="1827" height="187" key="GridCell.Tab.3.center" timestamp="1602486784342">
-      <screen x="0" y="30" width="2560" height="1050" />
-    </state>
-    <state width="1643" height="166" key="GridCell.Tab.3.center/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
-    <state width="1827" height="187" key="GridCell.Tab.3.center/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.3.center/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333898" />
-    <state width="1827" height="187" key="GridCell.Tab.3.center/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883541" />
-    <state width="1827" height="187" key="GridCell.Tab.3.left" timestamp="1602486784342">
-      <screen x="0" y="30" width="2560" height="1050" />
-    </state>
-    <state width="1643" height="166" key="GridCell.Tab.3.left/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
-    <state width="1827" height="187" key="GridCell.Tab.3.left/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.3.left/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333898" />
-    <state width="1827" height="187" key="GridCell.Tab.3.left/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883541" />
-    <state width="1827" height="187" key="GridCell.Tab.3.right" timestamp="1602486784342">
-      <screen x="0" y="30" width="2560" height="1050" />
-    </state>
-    <state width="1643" height="166" key="GridCell.Tab.3.right/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601738871017" />
-    <state width="1827" height="187" key="GridCell.Tab.3.right/-1920.30.1920.1050/0.30.2560.1050/2560.30.1920.1050@0.30.2560.1050" timestamp="1602486784342" />
-    <state width="1641" height="166" key="GridCell.Tab.3.right/0.30.1920.1050@0.30.1920.1050" timestamp="1601739333898" />
-    <state width="1827" height="187" key="GridCell.Tab.3.right/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602416883541" />
-    <state x="858" y="402" key="RiderGenerateDialog" timestamp="1602528563511">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state x="858" y="402" key="RiderGenerateDialog/-1920.1111.1920.1034/0.31.2560.1409@0.31.2560.1409" timestamp="1601722805261" />
-    <state x="858" y="402" key="RiderGenerateDialog/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1602528563511" />
-    <state x="587" y="349" width="672" height="678" key="search.everywhere.popup" timestamp="1601803525317">
-      <screen x="0" y="31" width="2560" height="1409" />
-    </state>
-    <state x="587" y="349" width="672" height="678" key="search.everywhere.popup/0.31.2560.1409/-1920.1095.1920.1050@0.31.2560.1409" timestamp="1601803525317" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -441,6 +308,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/UserInterface/Combat/SpellButton.cs</url>
+          <line>169</line>
+          <properties documentPath="C:\Users\marcv\Documents\Private\Repositories\Aether\Aether\Assets\Scripts\UserInterface\Combat\SpellButton.cs" initialLine="169" containingFunctionPresentation="method 'OnLocalPlayerLinked'">
+            <startOffsets>
+              <option value="4999" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5138" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Core/Player.cs</url>
+          <line>44</line>
+          <properties documentPath="C:\Users\marcv\Documents\Private\Repositories\Aether\Aether\Assets\Scripts\Core\Player.cs" initialLine="43" containingFunctionPresentation="method 'SetLocalPlayer'">
+            <startOffsets>
+              <option value="1074" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1087" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

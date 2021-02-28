@@ -8,7 +8,7 @@ using SceneAsset = UnityEngine.Object;
 
 namespace Aether.Attunement
 {
-    public class Traveller : MonoBehaviour
+    public class Traveller : MonoBehaviour, ILocalPlayerLink
     {
         [HideInInspector]
         public AnimationClip TravelAnimation;
@@ -22,10 +22,13 @@ namespace Aether.Attunement
 
         private bool levelIsLoaded => SceneController.Instance.IsLevelLoaded(SceneBuildIndex);
 
+        private Player _player;
+
         private void Awake()
         {
             animator = GetComponent<Animator>();
             SceneController.Events.OnLevelStartedLoading += LevelStartedLoading;
+            Player.LinkToLocalPlayer(this);
         }
 
         private void LevelStartedLoading(int buildIndex, AsyncOperation asyncOperation)
@@ -41,40 +44,40 @@ namespace Aether.Attunement
             // if the level is already loaded (or reverse is true), just play the (possibly reversed) animation in default time;
             if (levelIsLoaded || reverse)
             {
-                StartCoroutine(TravelDefault(reverse));
+                StartCoroutine(TravelDefault(reverse, _player));
                 return;
             }
 
             levelLoadingOperation = null;
             SceneController.Instance.LoadLevel(SceneBuildIndex);
 
-            StartCoroutine(TravelUsingLoadingProgress());
+            StartCoroutine(TravelUsingLoadingProgress(_player));
         }
 
-        private IEnumerator TravelDefault(bool reverse)
+        private IEnumerator TravelDefault(bool reverse, Player player)
         {
-            Player.Instance.gameObject.transform.parent = gameObject.transform;
-            Player.Instance.gameObject.transform.localPosition = Vector3.zero;
+            player.gameObject.transform.parent = gameObject.transform;
+            player.gameObject.transform.localPosition = Vector3.zero;
 
-            if (Player.Instance.Has(out MovementSystem movementSystem))
+            if (player.Has(out MovementSystem movementSystem))
                 movementSystem.IsActive = false;
 
             animator.Play(reverse ? $"{TravelAnimation.name}Reverse" : TravelAnimation.name);
             yield return new WaitForSeconds(TravelAnimation.length);
 
-            Player.Instance.gameObject.transform.SetParent(null, true);
-            SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneController.Instance.BaseScene);
+            player.gameObject.transform.SetParent(null, true);
+            SceneManager.MoveGameObjectToScene(player.gameObject, SceneController.Instance.BaseScene);
             
             if(movementSystem != default)
                 movementSystem.IsActive = true;
         }
 
-        private IEnumerator TravelUsingLoadingProgress()
+        private IEnumerator TravelUsingLoadingProgress(Player player)
         {
-            Player.Instance.gameObject.transform.parent = gameObject.transform;
-            Player.Instance.gameObject.transform.localPosition = Vector3.zero;
+            player.gameObject.transform.parent = gameObject.transform;
+            player.gameObject.transform.localPosition = Vector3.zero;
             
-            if (Player.Instance.Has(out MovementSystem movementSystem))
+            if (player.Has(out MovementSystem movementSystem))
                 movementSystem.IsActive = false;
 
             while (levelLoadingOperation == null)
@@ -94,11 +97,21 @@ namespace Aether.Attunement
 
             animator.Play(TravelAnimation.name, -1, 1f);
 
-            Player.Instance.gameObject.transform.SetParent(null, true);
-            SceneManager.MoveGameObjectToScene(Player.Instance.gameObject, SceneController.Instance.BaseScene);
+            player.gameObject.transform.SetParent(null, true);
+            SceneManager.MoveGameObjectToScene(player.gameObject, SceneController.Instance.BaseScene);
             
             if(movementSystem != default)
                 movementSystem.IsActive = true;
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            _player = player;
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
+            _player = null;
         }
     }
 }

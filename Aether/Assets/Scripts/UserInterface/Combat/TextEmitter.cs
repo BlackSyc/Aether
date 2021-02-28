@@ -1,11 +1,13 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using Aether.Core;
 using Syc.Combat.HealthSystem;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Aether.UserInterface.Combat
 {
-    public class TextEmitter : MonoBehaviour
+    public class TextEmitter : MonoBehaviour, ILocalPlayerLink
     {
         [SerializeField]
         private Color healColour;
@@ -18,6 +20,13 @@ namespace Aether.UserInterface.Combat
 
         private HealthSystem _linkedHealth;
 
+        private Player _player;
+
+        private void Awake()
+        {
+            Player.LinkToLocalPlayer(this);
+        }
+
         public void SetHealth(HealthSystem health)
         {
             _linkedHealth = health;
@@ -27,13 +36,13 @@ namespace Aether.UserInterface.Combat
 
         private void HealingReceived(HealRequest healRequest)
         {
-            if(healRequest.Cause == Player.Instance.gameObject)
+            if(_player && healRequest.Cause == _player.gameObject)
                 EmitText(healRequest.AmountDealt, false);
         }
 
         private void DamageReceived(DamageRequest damageRequest)
         {
-            if(damageRequest.Cause == Player.Instance.gameObject)
+            if(_player && damageRequest.Cause == _player.gameObject)
                 EmitText(-damageRequest.AmountDealt, damageRequest.IsCriticalStrike);
         }
 
@@ -54,11 +63,22 @@ namespace Aether.UserInterface.Combat
 
         private void OnDestroy()
         {
+            Player.UnlinkFromLocalPlayer(this);
             if (_linkedHealth == null)
                 return;
 
             _linkedHealth.OnDamageReceived -= DamageReceived;
             _linkedHealth.OnHealingReceived -= HealingReceived;
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            _player = player;
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
+            _player = null;
         }
     }
 }

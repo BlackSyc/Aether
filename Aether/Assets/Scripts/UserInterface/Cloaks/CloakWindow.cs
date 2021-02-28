@@ -1,4 +1,5 @@
-﻿using Aether.Core;
+﻿using System;
+using Aether.Core;
 using Aether.Core.Cloaks;
 using Syc.Core.Interaction;
 using TMPro;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 namespace Aether.UserInterface.Cloaks
 {
-    public class CloakWindow : MonoBehaviour
+    public class CloakWindow : MonoBehaviour, ILocalPlayerLink
     {
 
         [SerializeField]
@@ -32,6 +33,18 @@ namespace Aether.UserInterface.Cloaks
 
         private CloakProviderUILink _uiLink;
 
+        private Player _player;
+
+        private void Awake()
+        {
+            Player.LinkToLocalPlayer(this);
+        }
+
+        private void OnDestroy()
+        {
+            Player.UnlinkFromLocalPlayer(this);
+        }
+
         public CloakWindow Link(CloakProviderUILink uiLink)
         {
             _uiLink = uiLink;
@@ -45,7 +58,12 @@ namespace Aether.UserInterface.Cloaks
             keywords.text = _cloakProvider.Cloak.Keywords;
             content.text = _cloakProvider.Cloak.Description;
 
-            bool playerEquipped = Player.Instance.Get<IShoulder>().EquippedCloak == _cloakProvider.Cloak;
+            if (_player == null)
+            {
+                return this;
+            }
+
+            bool playerEquipped = _player.Get<IShoulder>().EquippedCloak == _cloakProvider.Cloak;
             if (!playerEquipped)
             {
                 equipButton.onClick.AddListener(() => _cloakProvider.Equip(interactor));
@@ -62,6 +80,16 @@ namespace Aether.UserInterface.Cloaks
         public void RequestCloseWindow()
         {
             _uiLink.CloseWindow();
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            _player = player;
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
+            _player = null;
         }
     }
 }

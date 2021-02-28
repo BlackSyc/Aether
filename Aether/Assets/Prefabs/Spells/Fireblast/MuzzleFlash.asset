@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08e5e3e719d4acba4ea68140a37c025, type: 3}
   m_Name: MuzzleFlash
   m_EditorClassIdentifier: 
-  triggers:
-  - {fileID: 11400000, guid: c468064fc844a5041abae33193babca1, type: 2}
+  triggers: 02000000
   spawn: {fileID: 2296160185090464910, guid: 1699f24e7c5cfd44aa1dbf01c6b80e6a, type: 3}
   at: 1

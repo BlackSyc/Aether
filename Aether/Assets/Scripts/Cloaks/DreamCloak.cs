@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Aether.Cloaks
 {
-    public class DreamCloak : MonoBehaviour
+    public class DreamCloak : MonoBehaviour, ILocalPlayerLink
     {
         [SerializeField]
         private GameObject robinPrefab;
@@ -15,10 +15,24 @@ namespace Aether.Cloaks
 
         private void Start()
         {
-            if (spawnRobinIfFound.IsFound && Player.Instance.Has<ICompanion>())
+            Player.LinkToLocalPlayer(this);
+        }
+
+        private void OnDestroy()
+        {
+            Player.UnlinkFromLocalPlayer(this);
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            if (spawnRobinIfFound.IsFound && player.Has<ICompanion>())
             {
-                Instantiate(robinPrefab, Player.Instance.transform.position + new Vector3(0, 5, 0), Quaternion.identity);
+                Instantiate(robinPrefab, player.transform.position + new Vector3(0, 5, 0), Quaternion.identity);
             }
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
         }
     }
 }

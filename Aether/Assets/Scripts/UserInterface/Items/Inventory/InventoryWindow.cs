@@ -3,25 +3,27 @@ using Aether.Core;
 using Aether.Core.Cloaks;
 using UnityEngine;
 
-public class InventoryWindow : MonoBehaviour
+public class InventoryWindow : MonoBehaviour, ILocalPlayerLink
 {
     [SerializeField]
     private Animator keystoneImageAnimator;
+
+    private Player _player;
 
     void Start()
     {
         Aether.Core.Items.Events.OnPickedUpKeystone += UpdateKeystoneImage;
         Aether.Core.Items.Events.OnExtractedKeystone += UpdateKeystoneImage;
-
-        if (Player.Instance.Has(out IShoulder shoulder))
-            shoulder.OnCloakChanged += UpdateKeystoneImage;
-
-        UpdateKeystoneImage();
     }
 
     private void UpdateKeystoneImage(ICloak _)
     {
-        if (!Player.Instance.Has(out IShoulder shoulder) || !Player.Instance.Has(out IInventory inventory))
+        if (!_player)
+        {
+            return;
+        }
+        
+        if (!_player.Has(out IShoulder shoulder) || !_player.Has(out IInventory inventory))
             return;
 
         if (shoulder.EquippedCloak != null)
@@ -36,8 +38,23 @@ public class InventoryWindow : MonoBehaviour
     {
         Aether.Core.Items.Events.OnPickedUpKeystone -= UpdateKeystoneImage;
         Aether.Core.Items.Events.OnExtractedKeystone -= UpdateKeystoneImage;
-        
-        if (Player.Instance.Has(out IShoulder shoulder))
+        Player.UnlinkFromLocalPlayer(this);
+    }
+
+    public void OnLocalPlayerLinked(Player player)
+    {
+        if (player.Has(out IShoulder shoulder))
+            shoulder.OnCloakChanged += UpdateKeystoneImage;
+
+        UpdateKeystoneImage();
+        _player = player;
+    }
+
+    public void OnLocalPlayerUnlinked(Player player)
+    {
+        if (player.Has(out IShoulder shoulder))
             shoulder.OnCloakChanged -= UpdateKeystoneImage;
+
+        _player = null;
     }
 }

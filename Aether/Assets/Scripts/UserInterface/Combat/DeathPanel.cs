@@ -6,18 +6,11 @@ using UnityEngine;
 
 namespace Aether.UserInterface.Combat
 {
-    public class DeathPanel : MonoBehaviour
+    public class DeathPanel : MonoBehaviour, ILocalPlayerLink
     {
         private void Start()
         {
-            if (Player.Instance.Has(out ICombatSystem combatSystem) 
-                && combatSystem.Has(out HealthSystem healthSystem))
-            {
-                healthSystem.OnDied += Show;
-            }
-            
-            gameObject.SetActive(false);
-            GetComponent<CanvasGroup>().alpha = 1;
+            Player.LinkToLocalPlayer(this);
         }
 
         private void Show(DamageRequest _)
@@ -28,15 +21,31 @@ namespace Aether.UserInterface.Combat
 
         public void Respawn()
         {
-            Player.Instance.Respawn();
+            Player.Respawn();
             gameObject.SetActive(false);
             InputSystem.SwitchToActionMap(ActionMap.Player);
         }
 
         private void OnDestroy()
         {
-            if (Player.Instance.Has(out ICombatSystem combatSystem) 
+            Player.UnlinkFromLocalPlayer(this);
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            if (player.Has(out ICombatSystem combatSystem) 
                 && combatSystem.Has(out HealthSystem healthSystem))
+            {
+                healthSystem.OnDied += Show;
+            }
+            
+            gameObject.SetActive(false);
+            GetComponent<CanvasGroup>().alpha = 1;
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
+            if (player.Has(out ICombatSystem combatSystem) && combatSystem.Has(out HealthSystem healthSystem))
             {
                 healthSystem.OnDied -= Show;
             }

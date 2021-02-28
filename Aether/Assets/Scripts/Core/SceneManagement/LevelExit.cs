@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Aether.Core.SceneManagement
 {
-    public class LevelExit : MonoBehaviour
+    public class LevelExit : MonoBehaviour, ILocalPlayerLink
     {
         public struct Events
         {
@@ -17,6 +17,9 @@ namespace Aether.Core.SceneManagement
         }
 
         public Transform ExitPoint;
+        
+        private Player _player;
+
 
         private void OnTriggerEnter(Collider other)
         {
@@ -26,18 +29,38 @@ namespace Aether.Core.SceneManagement
             }
         }
 
+        private void Awake()
+        {
+            Player.LinkToLocalPlayer(this);
+        }
+
+        private void OnDestroy()
+        {
+            Player.UnlinkFromLocalPlayer(this);
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            _player = player;
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
+            _player = null;
+        }
+
         public void TeleportToStartPlatform()
         {
             Events.ExitingLevel();
             SceneController.Instance.StartPlatformLevelController.Enable();
 
-            IShoulder playerShoulder = Player.Instance.Get<IShoulder>();
-            CharacterController playerCharController = Player.Instance.Get<CharacterController>();
+            IShoulder playerShoulder = _player.Get<IShoulder>();
+            CharacterController playerCharController = _player.Get<CharacterController>();
 
             ICloak equippedCloak = playerShoulder.EquippedCloak;
             playerShoulder.UnequipCloak();
             playerCharController.enabled = false;
-            Player.Instance.transform.position = ExitPoint.position;
+            _player.transform.position = ExitPoint.position;
             playerCharController.enabled = true;
             playerShoulder.EquipCloak(equippedCloak);
 

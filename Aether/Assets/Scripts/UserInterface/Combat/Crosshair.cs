@@ -1,14 +1,12 @@
-﻿using Aether.Combat.Player;
-using Aether.Core;
+﻿using Aether.Core;
 using Aether.Input;
 using Syc.Combat;
-using Syc.Combat.SpellSystem;
 using Syc.Combat.TargetSystem;
 using UnityEngine;
 
 namespace Aether.UserInterface.Combat
 {
-    public class Crosshair : MonoBehaviour
+    public class Crosshair : MonoBehaviour, ILocalPlayerLink
     {
         [SerializeField]
         private Animator crosshairAnimator;
@@ -20,19 +18,16 @@ namespace Aether.UserInterface.Combat
         
         private static readonly int HasObjectTarget = Animator.StringToHash("HasObjectTarget");
 
-        private void Start()
+        private void Awake()
         {
-            if (Player.Instance.Has(out ICombatSystem combatSystem))
-                _playerTargetSystem = combatSystem.Get<ITargetManager>();
-
             crosshairAnimator.keepAnimatorControllerStateOnDisable = true;
             InputSystem.OnActionMapSwitched += InputSystem_OnActionMapSwitched;
-            
-            crosshairContainer.SetActive(InputSystem.CurrentActionMap == ActionMap.Player);
+            Player.LinkToLocalPlayer(this);
         }
 
         private void OnDestroy()
         {
+            Player.UnlinkFromLocalPlayer(this);
             InputSystem.OnActionMapSwitched -= InputSystem_OnActionMapSwitched;
         }
 
@@ -48,6 +43,20 @@ namespace Aether.UserInterface.Combat
                 return;
 
             crosshairAnimator.SetBool(HasObjectTarget, _playerTargetSystem.CreateTarget().IsCombatTarget);
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            if (player.Has(out ICombatSystem combatSystem))
+                _playerTargetSystem = combatSystem.Get<ITargetManager>();
+
+            crosshairContainer.SetActive(InputSystem.CurrentActionMap == ActionMap.Player);
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
+            _playerTargetSystem = null;
+            crosshairContainer.SetActive(false);
         }
     }
 }

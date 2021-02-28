@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Aether.Cloaks
 {
     [RequireComponent(typeof(Interactable))]
-    internal class CloakProvider : MonoBehaviour, ICloakProvider
+    internal class CloakProvider : MonoBehaviour, ICloakProvider, ILocalPlayerLink
     {
 
         [SerializeField]
@@ -30,10 +30,9 @@ namespace Aether.Cloaks
                 shoulder.UnequipCloak();
         }
 
-        private void Start()
+        private void Awake()
         {
-            if(Player.Instance.Has(out IShoulder shoulder))
-                shoulder.OnCloakChanged += CheckEquip;
+            Player.LinkToLocalPlayer(this);
         }
 
         private void CheckEquip(ICloak playerEquippedCloak)
@@ -43,7 +42,18 @@ namespace Aether.Cloaks
 
         private void OnDestroy()
         {
-            if(Player.Instance.Has(out IShoulder shoulder))
+            Player.UnlinkFromLocalPlayer(this);
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            if(player.Has(out IShoulder shoulder))
+                shoulder.OnCloakChanged += CheckEquip;
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
+            if(player.Has(out IShoulder shoulder))
                 shoulder.OnCloakChanged += CheckEquip;
         }
     }

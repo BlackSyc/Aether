@@ -11,22 +11,32 @@ namespace Aether.Combat.Player
 	{
 		public ICombatSystem System { get; set; }
 		
-		[SerializeField] private Transform playerCamera;
+		private Transform _playerCamera;
 
 		[SerializeField] private float maxRange;
 
 		[SerializeField] private bool useExactTargets;
+
+		public void SetPlayerCamera(Transform playerCameraTransform)
+		{
+			_playerCamera = playerCameraTransform;
+		}
 		
 		public Target CreateTarget()
 		{
-			var maxRangePosition = maxRange * playerCamera.forward + playerCamera.position;
+			if (!_playerCamera)
+			{
+				return new Target(null, Vector3.zero);
+			}
 			
-			if (playerCamera == null)
+			var maxRangePosition = maxRange * _playerCamera.forward + _playerCamera.position;
+			
+			if (_playerCamera == null)
 			{
 				return new Target(null, maxRangePosition);
 			}
 			
-			var hits = Physics.RaycastAll(playerCamera.position, playerCamera.forward, maxRange);
+			var hits = Physics.RaycastAll(_playerCamera.position, _playerCamera.forward, maxRange);
 			
 			if (!hits.Any())
 			{

@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace Aether.Levels.StartEnvironment
 {
-    public class AspectOfCreation : MonoBehaviour
+    public class AspectOfCreation : MonoBehaviour, ILocalPlayerLink
     {
         public struct Events
         {
@@ -30,6 +30,13 @@ namespace Aether.Levels.StartEnvironment
         private Spell reward;
 
         [SerializeField] private GameObject mesh;
+
+        private Player _player;
+
+        private void Awake()
+        {
+            Player.LinkToLocalPlayer(this);
+        }
 
         private void Start()
         {
@@ -61,8 +68,13 @@ namespace Aether.Levels.StartEnvironment
 
         private void GrantArcaneMissile()
         {
+            if (!_player)
+            {
+                return;
+            }
+            
             Hints.Get("Cursor").Activate();
-            if (Player.Instance.Has(out ICombatSystem combatSystem)
+            if (_player.Has(out ICombatSystem combatSystem)
                 && combatSystem.Has(out SpellRack spellRack))
             {
                 spellRack.AddSpell(reward, 0);
@@ -75,6 +87,17 @@ namespace Aether.Levels.StartEnvironment
             Puzzle1_Manager.Events.OnStage1Completed -= ActivateAspect;
             dialog.GetDialogLine("Never mind").OnComplete -= GrantArcaneMissile;
             dialog.OnComplete -= AspectOfCreationDialogComplete;
+            Player.UnlinkFromLocalPlayer(this);
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            _player = player;
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
+            _player = null;
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Aether.UserInterface.Interaction
 {
-    public class InteractionSuggestion : MonoBehaviour
+    public class InteractionSuggestion : MonoBehaviour, ILocalPlayerLink
     {
         [SerializeField]
         private TextMeshProUGUI text;
@@ -14,16 +14,14 @@ namespace Aether.UserInterface.Interaction
         [SerializeField]
         private Animator animator;
 
+        private void Awake()
+        {
+            Player.LinkToLocalPlayer(this);
+        }
+
         private void Start()
         {
             InputSystem.OnActionMapSwitched += InputSystem_OnActionMapSwitched;
-            
-            if (!Player.Instance.Has(out Interactor interactor))
-                return;
-
-            interactor.OnInteracted += PerformAnimation;
-            interactor.OnInteractionProposed += Activate;
-            interactor.OnProposedInteractionCancelled += Deactivate;
         }
 
         private void InputSystem_OnActionMapSwitched(ActionMap newActionMap)
@@ -52,8 +50,22 @@ namespace Aether.UserInterface.Interaction
         private void OnDestroy()
         {
             InputSystem.OnActionMapSwitched -= InputSystem_OnActionMapSwitched;
-            
-            if (!Player.Instance.Has(out Interactor interactor))
+            Player.UnlinkFromLocalPlayer(this);
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            if (!player.Has(out Interactor interactor))
+                return;
+
+            interactor.OnInteracted += PerformAnimation;
+            interactor.OnInteractionProposed += Activate;
+            interactor.OnProposedInteractionCancelled += Deactivate;
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
+            if (!player.Has(out Interactor interactor))
                 return;
 
             interactor.OnInteracted -= PerformAnimation;

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace Aether.UserInterface.Combat
 {
-    public class SpellButton : MonoBehaviour
+    public class SpellButton : MonoBehaviour, ILocalPlayerLink
     {
         [SerializeField] private int index;
 
@@ -41,30 +41,9 @@ namespace Aether.UserInterface.Combat
             TooltipManager.Instance.HideTooltipFor(_spellState.Spell);
         }
 
-        private void Start()
+        private void Awake()
         {
-            var playerSpellRack = Player.Instance.Has(out ICombatSystem combatSystem)
-                ? combatSystem.Get<SpellRack>()
-                : default;
-
-            if (playerSpellRack == default)
-                return;
-        
-            playerSpellRack.OnSpellAdded += OnSpellAdded;
-            playerSpellRack.OnSpellRemoved += OnSpellRemoved;
-            playerSpellRack.OnNewSpellCast += OnNewSpellCast;
-            playerSpellRack.OnGlobalCooldownStarted += StartGlobalCooldown;
-            playerSpellRack.OnGlobalCooldownCancelled += CancelGlobalCooldown;
-
-            _spellState = playerSpellRack.GetSpell(index);
-
-            if (_spellState?.Spell == null)
-                return;
-            
-            mainPanel.SetActive(true);
-            icon.sprite = _spellState.Spell.Icon
-                ? _spellState.Spell.Icon
-                : icon.sprite;
+            Player.LinkToLocalPlayer(this);
         }
 
         private void CancelGlobalCooldown()
@@ -183,7 +162,38 @@ namespace Aether.UserInterface.Combat
         
         private void OnDestroy()
         {
-            var playerSpellRack = Player.Instance.Has(out ICombatSystem combatSystem)
+            Player.UnlinkFromLocalPlayer(this);
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            var playerSpellRack = player.Has(out ICombatSystem combatSystem)
+                ? combatSystem.Get<SpellRack>()
+                : default;
+
+            if (playerSpellRack == default)
+                return;
+        
+            playerSpellRack.OnSpellAdded += OnSpellAdded;
+            playerSpellRack.OnSpellRemoved += OnSpellRemoved;
+            playerSpellRack.OnNewSpellCast += OnNewSpellCast;
+            playerSpellRack.OnGlobalCooldownStarted += StartGlobalCooldown;
+            playerSpellRack.OnGlobalCooldownCancelled += CancelGlobalCooldown;
+
+            _spellState = playerSpellRack.GetSpell(index);
+
+            if (_spellState?.Spell == null)
+                return;
+            
+            mainPanel.SetActive(true);
+            icon.sprite = _spellState.Spell.Icon
+                ? _spellState.Spell.Icon
+                : icon.sprite;
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
+            var playerSpellRack = player.Has(out ICombatSystem combatSystem)
                 ? combatSystem.Get<SpellRack>()
                 : default;
 

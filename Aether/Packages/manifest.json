@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.aether.syc": "file:D:/Private/Repositories/Syc/Packages/Syc",
+    "com.aether.syc": "file:C:/Users/marcv/Documents/Private/Repositories/SCGS",
     "com.hwaet.projectcloner": "https://github.com/hwaet/UnityProjectCloner.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.cinemachine": "2.6.3",
@@ -49,13 +49,13 @@
     "com.unity.modules.xr": "1.0.0"
   },
   "lock": {
-    "com.xeleh.enhancer": {
-      "revision": "HEAD",
-      "hash": "78e062bf5467bb3a4caae6315aaf74352050d116"
-    },
     "com.hwaet.projectcloner": {
       "revision": "HEAD",
       "hash": "2b7497d79e7513a524c99cb1917ad146b2a3a866"
+    },
+    "com.xeleh.enhancer": {
+      "revision": "HEAD",
+      "hash": "78e062bf5467bb3a4caae6315aaf74352050d116"
     }
   }
 }

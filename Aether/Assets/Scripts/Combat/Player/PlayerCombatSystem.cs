@@ -1,3 +1,4 @@
+using Aether.Core;
 using Aether.Core.Attributes;
 using Aether.Input;
 using Syc.Combat;
@@ -8,7 +9,7 @@ using UnityEngine;
 
 namespace Aether.Combat.Player
 {
-	public class PlayerCombatSystem : CombatMonoSystem
+	public class PlayerCombatSystem : CombatMonoSystem, ILocalPlayerLink
 	{
 		[SerializeField] private PlayerInput playerInput;
 		public override object Allegiance => gameObject.layer;
@@ -36,11 +37,24 @@ namespace Aether.Combat.Player
 
 			playerInput.OnCastSpell += spellSystem.CastSpell;
 			playerInput.OnMove += _ => spellSystem.MovementIntterupt();
+			
+			Core.Player.LinkToLocalPlayer(this);
 		}
 
 		private void OnDestroy()
 		{
 			playerInput.OnCastSpell -= spellSystem.CastSpell;
+			Core.Player.UnlinkFromLocalPlayer(this);
+		}
+
+		public void OnLocalPlayerLinked(Core.Player player)
+		{
+			localPlayerTargetSystem.SetPlayerCamera(player.CameraTransform);
+		}
+
+		public void OnLocalPlayerUnlinked(Core.Player player)
+		{
+			localPlayerTargetSystem.SetPlayerCamera(null);
 		}
 	}
 }

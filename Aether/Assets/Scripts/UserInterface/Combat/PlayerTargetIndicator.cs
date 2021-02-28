@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Aether.UserInterface.Combat
 {
-    public class PlayerTargetIndicator : MonoBehaviour
+    public class PlayerTargetIndicator : MonoBehaviour, ILocalPlayerLink
     {
         private SpellCast _currentSpellCast;
 
@@ -22,11 +22,7 @@ namespace Aether.UserInterface.Combat
         
         private void Awake()
         {
-            if (Player.Instance.Has(out ICombatSystem combatSystem) 
-                && combatSystem.Has(out ICaster castingSystem))
-            {
-                castingSystem.OnNewSpellCast += OnPlayerSpellCast;
-            }
+            Player.LinkToLocalPlayer(this);
         }
 
         private void OnPlayerSpellCast(SpellCast spellCast)
@@ -65,8 +61,22 @@ namespace Aether.UserInterface.Combat
 
         private void OnDestroy()
         {
-            if (Player.Instance.Has(out ICombatSystem combatSystem) 
-                && Player.Instance.Has(out CastingSystem castingSystem))
+            Player.UnlinkFromLocalPlayer(this);
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            if (player.Has(out ICombatSystem combatSystem) 
+                && combatSystem.Has(out ICaster castingSystem))
+            {
+                castingSystem.OnNewSpellCast += OnPlayerSpellCast;
+            }
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
+            if (player.Has(out ICombatSystem combatSystem) 
+                && player.Has(out CastingSystem castingSystem))
             {
                 castingSystem.OnNewSpellCast += OnPlayerSpellCast;
             }

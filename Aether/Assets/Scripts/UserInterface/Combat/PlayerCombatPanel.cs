@@ -1,4 +1,5 @@
-﻿using Aether.Core;
+﻿using System;
+using Aether.Core;
 using Syc.Combat;
 using Syc.Combat.Auras;
 using Syc.Combat.HealthSystem;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace Aether.UserInterface.Combat
 {
-    public class PlayerCombatPanel : MonoBehaviour
+    public class PlayerCombatPanel : MonoBehaviour, ILocalPlayerLink
     {
         [SerializeField]
         protected TextMeshProUGUI nameText;
@@ -18,10 +19,20 @@ namespace Aether.UserInterface.Combat
         [SerializeField]
         protected AuraBar auraBar;
 
-        public void Start()
+        public void Awake()
         {
-            nameText.text = Player.Instance.name;
-            if (!Player.Instance.Has(out ICombatSystem combatSystem))
+            Player.LinkToLocalPlayer(this);
+        }
+
+        public void OnDestroy()
+        {
+            Player.UnlinkFromLocalPlayer(this);
+        }
+
+        public void OnLocalPlayerLinked(Player player)
+        {
+            nameText.text = player.name;
+            if (!player.Has(out ICombatSystem combatSystem))
                 return;
 
             if (combatSystem.Has(out HealthSystem healthSystem))
@@ -29,6 +40,14 @@ namespace Aether.UserInterface.Combat
 
             if (combatSystem.Has(out AuraSystem auraSystem))
                 auraBar.SetAuraSystem(auraSystem);
+        }
+
+        public void OnLocalPlayerUnlinked(Player player)
+        {
+            nameText.text = "no player found";
+
+            healthBar.SetHealth(null);
+            auraBar.SetAuraSystem(null);
         }
     }
 }

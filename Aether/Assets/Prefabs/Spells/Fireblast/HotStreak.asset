@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a51ab7a05ce480c9cca005893f2d481, type: 3}
   m_Name: HotStreak
   m_EditorClassIdentifier: 
-  triggers:
-  - {fileID: 11400000, guid: c468064fc844a5041abae33193babca1, type: 2}
+  triggers: 02000000
   aura: {fileID: 11400000, guid: 2ed2b4c71ffdbc745b2b8475bc47c496, type: 2}
   applyTo: 0
   useSpellAsReferenceObject: 0

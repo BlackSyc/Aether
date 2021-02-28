@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelUserStore">
-    <attachedFolders />
+    <attachedFolders>
+      <Path>../../Syc/Packages/Syc</Path>
+    </attachedFolders>
     <explicitIncludes>
       <Path>Library/PackageCache/com.aether.syc@2388f5ec22f7c115a7717a40ecd46950eff446bb</Path>
       <Path>Library/PackageCache/com.aether.syc@5c849b89bcf50bf0e283f7921eddfab38474acc5</Path>
@@ -10,6 +12,7 @@
       <Path>Library/PackageCache/com.aether.syc@c992771e34113f159476f29354f3e48963615722</Path>
       <Path>Library/PackageCache/com.aether.syc@cda3e44937e5fef732adf51c969c5c5180407420</Path>
       <Path>Library/PackageCache/com.aether.syc@eea9fc1fdba158b8b3bfbc22ad2b1eafcb6207e0</Path>
+      <Path>Library/PackageCache/com.hwaet.projectcloner@2b7497d79e7513a524c99cb1917ad146b2a3a866</Path>
       <Path>Library/PackageCache/com.unity.cinemachine@2.6.3</Path>
       <Path>Library/PackageCache/com.unity.collab-proxy@1.2.16</Path>
       <Path>Library/PackageCache/com.unity.ext.nunit@1.0.0</Path>
@@ -29,7 +32,7 @@
       <Path>Library/PackageCache/com.xeleh.enhancer@78e062bf5467bb3a4caae6315aaf74352050d116</Path>
       <Path>Packages</Path>
       <Path>ProjectSettings</Path>
-      <Path>../../Syc/Packages/Syc</Path>
+      <Path>../../SCGS</Path>
     </explicitIncludes>
     <explicitExcludes>
       <Path>.idea</Path>
