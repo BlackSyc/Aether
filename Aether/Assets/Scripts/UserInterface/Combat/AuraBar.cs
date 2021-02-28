@@ -23,9 +23,23 @@ namespace Aether.UserInterface.Combat
 
         public void SetAuraSystem(AuraSystem auraSystem)
         {
-            _auraSystem = auraSystem;
-            auraSystem.OnAuraAdded += AddAuraIcon;
-            auraSystem.OnAuraRemoved += RemoveAuraIcon;
+            if (auraSystem != null)
+            {
+                _auraSystem = auraSystem;
+                auraSystem.OnAuraAdded += AddAuraIcon;
+                auraSystem.OnAuraRemoved += RemoveAuraIcon;
+                return;
+            }
+            else
+            {
+                if (_auraSystem != null)
+                {
+                    _auraSystem.OnAuraAdded -= AddAuraIcon;
+                    _auraSystem.OnAuraRemoved -= RemoveAuraIcon;
+                    _auraSystem = null;
+                }
+            }
+            
         }
 
         private void OnDestroy()
